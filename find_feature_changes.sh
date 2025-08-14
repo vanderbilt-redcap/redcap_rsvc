@@ -238,6 +238,9 @@ if [ "$upload" = true ]; then
     exit
   fi
 fi
+#Generate a temporary file of all features
+ALL_FEATURE_FILES=$(git ls-files '*.feature')
+echo "$ALL_FEATURE_FILES" > all_features.txt.tmp
 
 #Generate a temporary file of all features
 ALL_FEATURE_FILES=$(git ls-files '*.feature')
