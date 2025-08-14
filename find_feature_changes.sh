@@ -104,7 +104,16 @@ awk_script='
   }
 }
 
+#We ingest a temporary file of all features here so we do not miss any
+BEGIN {
+  while ((getline line < "all_features.txt.tmp") > 0) {
+    all_files[line] = 1
+  }
+}
+
 END {
+  count = 1
+
   # Remove any files that were old paths in renames
   for (op in old_paths) {
     delete files[op]
@@ -116,7 +125,7 @@ END {
   total_deleted = 0
   printf "%10s %10s %10s   %s\n", "Added", "Deleted", "Total", "File"
 
-  for (file in files) {
+  for (file in all_files) {
     file_added = added[file]
     file_deleted = deleted[file]
     file_total = file_added + file_deleted
@@ -139,6 +148,10 @@ END {
     mod = (file_added < file_deleted ? file_added : file_deleted)
     pure_added = file_added - mod
     pure_deleted = file_deleted - mod
+
+    #Outputting this is helpful so we know how many features we have
+    printf count
+    count++
 
     if (upload == "true") {
       cmd = "sh push_lines_changes.sh \"" feature "\" " \
@@ -198,8 +211,15 @@ else
 
 fi
 
+#Generate a temporary file of all features
+ALL_FEATURE_FILES=$(git ls-files '*.feature')
+echo "$ALL_FEATURE_FILES" > all_features.txt.tmp
+
 # Get the line changes for .feature files between the dates
 git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --ignore-space-change | awk -F'\t' -v upload="$upload" "$awk_script"
+
+#Remove the temporary file
+rm all_features.txt.tmp
 
 if [ -z $CUR_TAG ]; then
   echo ""
