@@ -69,7 +69,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I type "my usename"
     And I type "my 6-digit" PIN"
     And I click the button labeled "Save"
-    Then I should see " Instrument locked by teresa.bosler@vumc.org (Teresa Bosler) on 08-01-2025 16:51"
+    Then I should see " Instrument locked by test_admin@test.edu (Admin User) on 08-01-2025 16:51"
 
   Scenario: ##ACTION: Lock entire record C.2.19.1400._NewManual
     When I click on the link labeled "Record Status Dashboard"
@@ -113,7 +113,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I type "my usename"
     And I type "my 6-digit" PIN"
     And I click the button labeled "Save"
-    Then I should see " Instrument locked by teresa.bosler@vumc.org (Teresa Bosler) on 08-01-2025 16:51"
+    Then I should see " Instrument locked by test_admin@test.edu (Admin User) on 08-01-2025 16:51"
     When I click on the link labeled "Record Status Dashboard"
     And I click on the link labeled "3"
     And I select "Lock entire record" from the dropdown labeled "Choose action for record"
@@ -132,7 +132,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I type "my 6-digit" PIN"
 #M you should see black dots in the password field 
     And I click the button labeled "Save"
-    Then I should see " Instrument locked by teresa.bosler@vumc.org (Teresa Bosler) on 08-01-2025 16:51"
+    Then I should see " Instrument locked by test_admin@test.edu (Admin User) on 08-01-2025 16:51"
 
   Scenario: #VERIFY LOGGING
     And I click on the link labeled "Logging"
