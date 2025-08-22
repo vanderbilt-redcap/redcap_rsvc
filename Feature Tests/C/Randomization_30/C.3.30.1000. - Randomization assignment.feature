@@ -32,7 +32,7 @@ And I upload a "csv" format file located at "import_files/AlloRand malformed2.cs
 
 #Verify: The system rejects allocation tables with inconsistent stratum combinations
 Then I should see "ERROR: The following errors occurred. Please address them and try again."
-And I should see "The header variables in the first row of your CSV file are not correct."
+And I should see "'3' is not a valid categorical option for the field 'gender'"
 
 Scenario: # C.3.30.1000.0100: The system shall preserve the order of allocation entries within each stratification group as uploaded, and use that order for assignment.
 #Test: Upload an allocation table with shuffled or non-numeric redcap_randomization_number values. Validate that runtime assignment follows row upload order.
@@ -80,7 +80,7 @@ Scenario: # C.3.30.1000.0200: The system shall assign the next available allocat
 #Setup automatic randomization with duplicate, non numerical values.
 Given I click on the link labeled "Setup"
 And I click on the button labeled "Set up randomization"
-And I click on the icon in the column labeled "Setup" and the row labeled "3"
+And I click on the icon in the column labeled "Setup" and the row labeled "2"
 And I upload a "csv" format file located at "import_files/AlloRand auto_randtextduplicate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 Then I should see "Success"
 

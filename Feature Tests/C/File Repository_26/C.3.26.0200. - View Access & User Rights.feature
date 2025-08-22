@@ -520,7 +520,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | 1-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
             | 2-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
-  #Scenario: Delete folders - unable to delete with file in folder
+  Scenario: Delete folders - unable to delete with file in folder
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION C.3.26.500.100 Delete folders - unable to delete with file in folder
@@ -602,3 +602,53 @@ Feature: User Interface: The system shall support limiting file repository user 
             | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
         And I should NOT see "TestGroup1_Folder"
+
+   Scenario: C.3.26.1000.0100 Admin can create administrator-only folder in File Repository
+        Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "C.3.26.200.100"
+        And I click on the link labeled "File Repository"
+        When I click on the button labeled "Create folder"
+        And I enter "Admin_Folder" into the input field labeled "New folder name"
+        And I check the checkbox labeled "Limit access to REDCap administrators only"
+        And I click on the button labeled "Create folder" in the dialog box
+        Then I should see "Admin_Folder"
+        And I should see "Admin-Restricted" in the row labeled "Admin_Folder"
+
+    Scenario: C.3.26.1000.0200 Non-admin users cannot see or access admin-only folders
+        Given I logout
+        And I login to REDCap with the user "Test_User1"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "C.3.26.200.100"
+        And I click on the link labeled "File Repository"
+        Then I should NOT see "Admin_Folder"
+    
+    Scenario: C.3.26.1000.0300 Admin-only overrides DAG and role limits
+        And I login to REDCap with the user "Test_User1"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "C.3.26.200.100"
+        And I click on the link labeled "File Repository"
+        Then I should NOT see "Admin_Folder"
+    
+    Scenario: C.3.26.1000.0400 Nested folders inherit admin-only restriction
+        Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "C.3.26.200.100"
+        And I click on the link labeled "File Repository"
+        And I click on the link labeled "Admin_Folder"
+        When I click on the button labeled "Create folder"
+        And I enter "Nested_Admin_Only" into the input field labeled "New folder name"
+        And I click on the button labeled "Create folder" in the dialog box
+        Then I should see "All Files/Admin_Folder" in the File Repository breadcrumb
+        Then I should see "Nested_Admin_Only"
+        #Manual: Make sure it says "Admin-Restricted" in the "All Files/Admin_Folder" row.  Should we consider a way to verify this on Automation as well?
+        And I should see "Admin-Restricted"
+       
+        Given I logout
+        And I login to REDCap with the user "Test_User1"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "C.3.26.200.100"
+        And I click on the link labeled "File Repository"
+        Then I should NOT see "Admin_Folder"
+        And I should NOT see "Nested_Admin_Only"
+#END

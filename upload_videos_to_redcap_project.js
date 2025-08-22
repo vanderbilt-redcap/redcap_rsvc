@@ -125,19 +125,8 @@ class UploadVideosToREDCapProject {
                                     }
 
                                     //Run the import of video to REDCAP VUMC
-                                    execSync(`sh import_video.sh "${file_path}" "${filename}" ${folder_id}`,
-                                        (error, stdout, stderr) => {
-                                            if (error) {
-                                                console.error(`Error executing script: ${error.message}`)
-                                                return
-                                            }
-                                            if (stderr) {
-                                                console.error(`stderr: ${stderr}`)
-                                                return
-                                            }
-                                            console.log(`stdout: ${stdout}`)
-                                        })
-
+                                    const output = execSync(`sh import_video.sh "${file_path}" "${filename}" ${folder_id}`, { encoding: 'utf8' })
+                                    console.log(output)
                                 })
 
                             }

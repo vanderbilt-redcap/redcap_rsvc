@@ -32,6 +32,10 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
 #FUNCTIONAL_REQUIREMENT C.3.30.0500.100: User with Randomization Randomize rights can Randomize.
     When I click on the link labeled "Add / Edit Records"
     And I click on a button labeled "Add new record"
+    And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
+    And I select the radio option "Man" for the field labeled "Do you describe yourself as a man, a woman, or in some other way?"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    Then I should see " Record ID 6 successfully added."
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
     Then I should see "Randomization group"
     And I should see "Blinded randomization"
@@ -39,12 +43,11 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I should see "Randomize"
 ##VERIFY User with Randomization Randomize rights can Randomize.
     When I click on a button labeled "Randomize"
-    Then I should see the radio labeled "Do you describe yourself as a man, a woman, or in some other way?" with option "man" unselected
-    And I select the radio option "man" for the field labeled "Do you describe yourself as a man, a woman, or in some other way?"
+    Then I should see the radio labeled "Do you describe yourself as a man, a woman, or in some other way?" with option "Man" selected
     And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Drug B" (2).' 
+    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).' 
     When I click on the button labeled "Close"
-    Then I should see the radio labeled "Randomization group" with option "Drug B" selected
+    Then I should see the radio labeled "Randomization group" with option "Drug A" selected
 
   Scenario: #SETUP User Rights (Takeaway User Rand - Setup Rights)
     When I click on the link labeled "User Rights"

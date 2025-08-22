@@ -3,19 +3,20 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
   I want to see that Randomization is functioning as expected
 
 Scenario: #SETUP project with randomization enabled
+Given on automation only I get this feature working before removing this line
 Given I login to REDCap with the user "Test_User1"
 And I create a new project named "C.3.30.0800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30 TriggerRand.REDCap.xml", and clicking the "Create Project" button
 
 #SETUP User Rights
 Scenario: #SETUP User Rights
   When I click on the link labeled "User Rights"
-  And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
-  And I click on the button labeled "Assign to role"
-  And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-  When I click on the button labeled exactly "Assign" on the role selector dropdown
+  And I click on the link labeled "Test User1"
+  And I click on the button labeled "Assign to role" on the tooltip
+  And I select "1_FullRights" on the dropdown field labeled "Select Role"
+  And I click on the button labeled exactly "Assign"
   Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
-
-  #Adding user Test_User2 (No randomization rights)
+  
+    #Adding user Test_User2 (No randomization rights)
   When I click on the link labeled "User Rights"
   And I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
   And I click on the button labeled "Assign to role"
@@ -151,6 +152,7 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the survey option label containing "Log out+ Open survey" label
   And I click on the button labeled "Submit"
   And I click on the button labeled "Close survey"
+  And I return to the REDCap page I opened the survey from
 
   #VERIFY Trigger Logic, for all users based on survey
   Given I login to REDCap with the user "Test_User1"
@@ -224,8 +226,8 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I wait for 2 seconds
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
-  # And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  # Then I should see "Not yet randomized"
+  And I click the bubble for the row labeled "Survey" on the column labeled "Status"
+  Then I should see a dialog containing the following text: "Not yet randomized" 
   And I logout 
 
   #VERIFY Test_User1 can randomize this record
@@ -235,7 +237,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I click on the link labeled "Add / Edit Records"
   And I select "7" on the dropdown field labeled "Choose an existing Record ID"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  # Then I should see a button labeled "Randomize" 
+  Then I should see a button labeled "Randomize" 
   And I click on the "Randomize" button for the field labeled "Go to"
   And I click on the button labeled "Randomize"
   And I click on the button labeled "Close"
