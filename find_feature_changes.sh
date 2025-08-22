@@ -1,15 +1,10 @@
 #!/bin/bash
 
+set -e
+
 # Load environment variables from .env file
 if [ -f .env ]; then
   source .env
-fi
-
-if [ "$upload" = true ]; then
-  if [ -z "$REDCAP_API_TOKEN" ]; then
-    echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
-    exit 1
-  fi
 fi
 
 # Default values
@@ -158,7 +153,11 @@ END {
             file_added " " pure_added " " \
             file_deleted " " pure_deleted " " \
             file_total " " mod
-      system(cmd)
+      return_code = system(cmd)
+      if (return_code != 0) {
+        print "push_lines_changes.sh failed on " feature
+        exit 1
+      }
       printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, file
     } else {
       printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file
@@ -207,8 +206,37 @@ else
     END_DATE=$(git log -1 --format=%ad --date=short $CUR_TAG)
   fi
 
-  echo "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
+  echo -e "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
 
+fi
+
+if [ "$upload" = true ]; then
+  if [ -z "$REDCAP_API_TOKEN" ]; then
+    echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
+    exit 1
+  fi
+
+  if [ -z $CUR_TAG ]; then
+    echo "Tags must be used when uploading to ensure we're uploading to the matching REDCap project."
+    exit
+  fi
+
+  CURL=`which curl`
+  if [ "$REDCAP_API_URL" == "https://redcap.loc/api/" ]; then
+    CURL="$CURL --ssl-revoke-best-effort"
+  fi
+
+  PROJECT_LTS_VERSION=`$CURL -X POST "$REDCAP_API_URL" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "token=$REDCAP_API_TOKEN" \
+    -d "content=project" \
+    -d "format=json" \
+    -d "returnFormat=json" |cut -d'"' -f 6|cut -d' ' -f 6`
+
+  if [[ "$CUR_TAG" != "V$PROJECT_LTS_VERSION-ABC" ]]; then
+    echo "Tag and project LTS version do not match ($CUR_TAG vs. $PROJECT_LTS_VERSION)"
+    exit
+  fi
 fi
 
 #Generate a temporary file of all features
@@ -224,6 +252,6 @@ rm all_features.txt.tmp
 if [ -z $CUR_TAG ]; then
   echo ""
 else
-  echo "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
+  echo -e "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
 fi
-echo "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
+echo -e "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
