@@ -165,7 +165,7 @@ END {
   }
 
   printf "%s\n", "---------------------------------------------------------------"
-  printf "%10d %10d %10d   %s\n", total_added, total_deleted, total_added + total_deleted, "TOTAL"
+  printf "   %10d %10d %10d   %s\n", total_added, total_deleted, total_added + total_deleted, "TOTAL"
 }'
 
 # Validate input
