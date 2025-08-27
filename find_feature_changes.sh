@@ -206,7 +206,7 @@ else
     END_DATE=$(git log -1 --format=%ad --date=short $CUR_TAG)
   fi
 
-  echo -e "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
+  printf "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
 
 fi
 
@@ -255,6 +255,6 @@ rm all_features.txt.tmp
 if [ -z $CUR_TAG ]; then
   echo ""
 else
-  echo -e "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
+  printf "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
 fi
-echo -e "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
+printf "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
