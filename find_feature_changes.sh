@@ -149,11 +149,22 @@ END {
     count++
 
     if (upload == "true") {
-      cmd = "sh push_lines_changes.sh \"" feature "\" " \
-            file_added " " pure_added " " \
-            file_deleted " " pure_deleted " " \
-            file_total " " mod
-      return_code = system(cmd)
+
+      if(file_added == 0 && file_deleted == 0){
+              printf feature
+              cmd = "sh push_lines_changes.sh \"" feature "\" " 0 " " 0 " " 0 " " 0 " " 0 " " 0
+              return_code = system(cmd)
+      } else {
+            cmd = "sh push_lines_changes.sh \"" feature "\" " \
+                  file_added " " \
+                  pure_added " " \
+                  file_deleted " " \
+                  pure_deleted " " \
+                  file_total " " \
+                  mod
+            return_code = system(cmd)
+      }
+
       if (return_code != 0) {
         print "push_lines_changes.sh failed on " feature
         exit 1
