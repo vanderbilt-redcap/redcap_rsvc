@@ -150,19 +150,28 @@ END {
 
     if (upload == "true") {
 
-      if(file_added == 0 && file_deleted == 0){
-              printf feature
-              cmd = "sh push_lines_changes.sh \"" feature "\" " 0 " " 0 " " 0 " " 0 " " 0 " " 0
-              return_code = system(cmd)
+      #Skip these files for upload
+      if( feature == "C.6.11.0400." || feature == "C.3.30.1000." || feature == "C.3.30.0800." || feature == "A.3.28.1200." || feature == "A.3.28.1300." || feature == "A.3.28.1100."){
+
+        #Do nothing here because these records do not exist within the VUMC REDCap project for one reason or another
+        #NOTE: This skip block will probably change with each new version of LTS tested
+
       } else {
-            cmd = "sh push_lines_changes.sh \"" feature "\" " \
-                  file_added " " \
-                  pure_added " " \
-                  file_deleted " " \
-                  pure_deleted " " \
-                  file_total " " \
-                  mod
-            return_code = system(cmd)
+
+        if(file_added == 0 && file_deleted == 0){
+                printf feature
+                cmd = "sh push_lines_changes.sh \"" feature "\" " 0 " " 0 " " 0 " " 0 " " 0 " " 0
+                return_code = system(cmd)
+        } else {
+              cmd = "sh push_lines_changes.sh \"" feature "\" " \
+                    file_added " " \
+                    pure_added " " \
+                    file_deleted " " \
+                    pure_deleted " " \
+                    file_total " " \
+                    mod
+              return_code = system(cmd)
+        }
       }
 
       if (return_code != 0) {
