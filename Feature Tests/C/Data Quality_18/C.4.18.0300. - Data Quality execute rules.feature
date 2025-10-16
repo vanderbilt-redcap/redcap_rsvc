@@ -25,7 +25,7 @@ Feature: User Interface: The system shall support executing a rule.
         When I click on the link labeled "Data Quality"
         And I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                     | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
             | B      | Blank values* (required fields only)          | -                                        | 2                   |
             | C      | Field validation errors (incorrect data type) | -                                        | 1                   |

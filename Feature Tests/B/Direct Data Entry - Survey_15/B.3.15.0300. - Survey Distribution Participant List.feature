@@ -39,7 +39,7 @@ Feature: The system shall allow creation of a participant list automatically usi
     When I click on the link labeled "Survey Distribution Tools"
     And I click on the tab labeled "Participant List"
     Then I should see the dropdown field labeled "belonging to" with the option '[Initial survey] "Text Validation" - Event 1 (Arm 1: Arm 1)' selected
-    And I should see a table header and rows containing the following values in the participant list table:
-      | Email          | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent ? | Link   | Survey Access Code |
+    And I should see a table header and rows containing the following values in the a table:
+      | Email          | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent? | Link   | Survey Access Code |
       | email@test.edu | 1      | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
 #END

@@ -76,7 +76,7 @@ Scenario: #C.3.30.1600.0100 ensures that access is denied when the user lacks th
     And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Randomization ID |
             | 1      | rand_group |                 | strat_1        | 2                              | 0                           |       | 2                |
     
     And I should NOT see a button labeled "Dashboard"

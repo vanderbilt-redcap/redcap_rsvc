@@ -19,8 +19,8 @@ Feature: User Interface: Survey Project Settings: The system shall support a par
     When I click on the link labeled "Survey Distribution Tools"
     When I select '"Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Participant List"
     ##VERIFY: YOU SEE RECORD 1
-    Then I should see a table header and rows containing the following values in the participant list table:
-      | Email             | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent ? | Link   | Survey Access Code |
+    Then I should see a table header and rows containing the following values in the a table:
+      | Email             | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent? | Link   | Survey Access Code |
       | [No email listed] |        | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
       | [No email listed] |        | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
       | email@test.edu    | 1      | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
@@ -29,8 +29,8 @@ Feature: User Interface: Survey Project Settings: The system shall support a par
     ###ACTION: Change survey distribution to form not in position 1
     When I select '"Survey" - Event Three (Arm 1: Arm 1)' on the dropdown field labeled "Participant List"
     ##VERIFY: YOU SEE RECORD 1
-    Then I should see a table header and rows containing the following values in the participant list table:
-      | Email             | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent ? | Link   | Survey Access Code |
+    Then I should see a table header and rows containing the following values in the a table:
+      | Email             | Record | Participant Identifier | Responded | Invitation Scheduled? | Invitation Sent? | Link   | Survey Access Code |
       | [No email listed] |        | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
       | [No email listed] |        | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
       | email@test.edu    | 1      | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |

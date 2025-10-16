@@ -50,8 +50,8 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         And I click on the button labeled "Update & Close Editor" in the dialog box
         And I click on the button labeled "Add"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name  | Rule Logic (Show discrepancy only if...)              |
-            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]="testgroup1") |
+            | Rule # | Rule Name  | Rule Logic  (Show discrepancy only if...)              |
+            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]='testgroup1') |
         And I logout
 
         #FUNCTIONAL_REQUIREMENT
@@ -65,8 +65,8 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         When I click on the button labeled "All"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name  | Rule Logic (Show discrepancy only if...)              | Total Discrepancies |
-            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]="testgroup1") | 2                   |
+            | Rule # | Rule Name  | Rule Logic  (Show discrepancy only if...)              | Total Discrepancies |
+            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]='testgroup1') | 2                   |
         And I logout
 
         #FUNCTIONAL_REQUIREMENT
@@ -80,6 +80,6 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         When I click on the button labeled "All"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name  | Rule Logic (Show discrepancy only if...)              | Total Discrepancies |
-            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]="testgroup1") | 0                   |
+            | Rule # | Rule Name  | Rule Logic  (Show discrepancy only if...)              | Total Discrepancies |
+            | 3      | TestGroup1 | ([ptname]<>[name]) AND ([user-dag-name]='testgroup1') | 0                   |
 #END

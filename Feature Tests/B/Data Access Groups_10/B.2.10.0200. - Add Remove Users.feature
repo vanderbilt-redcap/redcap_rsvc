@@ -51,7 +51,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     And I click on the button labeled "Assign"
 
     ##VERIFY: DAG assignment
-    Then I should see a table header and rows containing the following values in data access groups table:
+    Then I should see a table header and rows containing the following values in a table:
       | Data Access Groups | Users in group |
       | TestGroup1         | test_user1     |
 
@@ -96,7 +96,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     And I click on the button labeled "Assign"
 
     ##VERIFY
-    Then I should see a table header and rows containing the following values in data access groups table:
+    Then I should see a table header and rows containing the following values in a table:
       | Data Access Groups        | Users in group          |
       | [Not assigned to a group] | test_user1 (Test User1) |
     And I logout

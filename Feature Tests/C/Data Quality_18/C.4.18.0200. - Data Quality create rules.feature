@@ -28,7 +28,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled "Add" on the active Data Quality rule
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1999'          |
 
     #FUNCTIONAL_REQUIREMENT
@@ -45,7 +45,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     Then I should see "Data Quality Rules"
     ##VERIFY
     And I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 4      | Integer   | [integer]<>'1999'                        |
 
     ##ACTION: create record for new rule
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I click on the link labeled "Data Quality"
     And I click on the button labeled exactly "All"
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1999'          |
       | 4      | Integer   | [integer]<>'1999'                        |
         
@@ -85,7 +85,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Save" on the active Data Quality rule
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
             
     ##ACTION: edit existing rule
@@ -95,7 +95,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled "Save" on the active Data Quality rule
 
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 4      | Integer   | [integer]='2'                            |
     #Manual: refresh browser page
 
@@ -104,7 +104,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled exactly "All"
     And I should see "Processing Complete!"
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
       | 4      | Integer   | [integer]='2'                            |
 
@@ -113,7 +113,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     #Manual: confirmation windows are automatically accepted on automated side
     And I click on the button labeled "Delete" in the dialog box
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
     And I should NOT see "[integer]='2'"
 

@@ -18,7 +18,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I click on the button labeled "Add Group"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups |
             | TestGroup1         |
             | TestGroup2         |
@@ -28,7 +28,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         When I click on a table cell containing the text "TestGroup3" in the data access groups table and clear field and enter "RenameGroup3"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups |
             | TestGroup1         |
             | TestGroup2         |
@@ -49,7 +49,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group          |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
@@ -63,7 +63,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         Then I should see "The group could not be deleted because users or roles are still assigned to it."
 
         ##VERIFY
-        And I should see a table header and rows containing the following values in data access groups table:
+        And I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group          |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
@@ -75,7 +75,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         |                |
             | TestGroup2         |                |
@@ -88,7 +88,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         When I click on the button labeled "Delete" on the dialog box
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups |
             | TestGroup1         |
             | TestGroup2         |

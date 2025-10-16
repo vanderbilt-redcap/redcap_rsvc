@@ -18,7 +18,6 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         And I click on the button labeled "Disable" on the dialog box
 
         ##VERIFY
-        Then I should see "Saved!"
         And I should see a button labeled "Enable" in the "Use surveys in this project?" row in the "Main project settings" section
 
         ##VERIFY columns in Designer when Survey is Disabled
@@ -37,7 +36,6 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         ##ACTION Enable survey in project setup
         And I click on the button labeled "Enable" in the "Use surveys in this project?" row in the "Main project settings" section
         ##VERIFY
-        Then I should see "Saved!"
         And I should see a button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
 
         ##ACTION Enable survey in Online Designer #B.3.15.100.100

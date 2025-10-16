@@ -72,9 +72,9 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
-            | Record | Form Name       | Locked?     |
-            | 3      | Text Validation | [lock icon] |
-            | 3      | Consent         |             |
+            | Record | Event Name | Form Name       | Repeat Instance | Locked?     |
+            | 3      |            | Text Validation |                 | [lock icon] |
+            | 3      |            | Consent         |                 |             |
 
         ##ACTION Lock icon for event
         When I click on the link labeled "Record Status Dashboard"
@@ -101,9 +101,9 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
-            | Record           | Form Name | Locked?     |
-            | 3 (Arm 1: Arm 1) |           | [lock icon] |
-            | (entire record)  |           |             |
+            | Record           | Event Name | Form Name | Repeat Instance | Locked?     |
+            | 3 (Arm 1: Arm 1) |            |           |                 | [lock icon] |
+            | (entire record)  |            |           |                 |             |
 
         ##ACTION : unlock record 3
         When I click on the link labeled "Record Status Dashboard"
@@ -161,7 +161,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
-            | Record | Form Name       | Locked? |
-            | 3      | Text Validation |         |
-            | 3      | Consent         |         |
+            | Record | Event Name | Form Name       | Repeat Instance | Locked? |
+            | 3      |            | Text Validation |                 |         |
+            | 3      |            | Consent         |                 |         |
 #END

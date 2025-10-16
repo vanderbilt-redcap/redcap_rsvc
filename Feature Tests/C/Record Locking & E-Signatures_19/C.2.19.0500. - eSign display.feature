@@ -91,7 +91,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
 
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
-            | Record | Form Name       | Locked?     | E-signed?       |
-            | 3      | Text Validation | [lock icon] | [e-signed icon] |
-            | 3      | Consent         |             | N/A             |
+            | Record | Form Name       | Repeat Instance | Locked?     | E-signed?       |
+            | 3      | Text Validation |                 | [lock icon] | [e-signed icon] |
+            | 3      | Consent         |                 |             | N/A             |
 #END

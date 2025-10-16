@@ -58,7 +58,6 @@ As a REDCap administrator
       #Manual: Close document 
 #VERIFY Confirm file exists in local server directory 
  # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    # Assuming Baker likes this "latest file" language, we should be good.  If we switch to something different, we should consider whether we need to clear the edocs folder between test runs
     Then I should see the following values in the most recent file in the local storage path
       | PID 13 - LastNameLocal |
       | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant      |

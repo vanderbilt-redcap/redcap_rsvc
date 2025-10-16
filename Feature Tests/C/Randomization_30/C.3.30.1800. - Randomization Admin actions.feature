@@ -165,10 +165,10 @@ Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
-    And I should see "Edit Target Field"
-    And I should see "Edit Target Alternate"
-    And I should see "Manual Randomization"
-    And I should see "Make Sequence Unavailable"
+    And I should see an icon labeled "Edit Target Field" in the row labeled "1"
+    And I should see an icon labeled "Edit Target Alternate" in the row labeled "1"
+    And I should see an icon labeled "Manual Randomization" in the row labeled "1"
+    And I should see an icon labeled "Make Sequence Unavailable" in the row labeled "1"
   
     #VERIFY: Logging
     Given I click on the link labeled "Logging"
@@ -199,7 +199,7 @@ Scenario: #C.3.30.1800.0400. Admin can mark a sequence as unavailable with reaso
     And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
-    And I should see "Restore"
+    And I should see an icon labeled "Restore" in the row labeled "1"
 
     #VERIFY: Logging
     Given I click on the link labeled "Logging"
@@ -237,10 +237,10 @@ Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
     And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
-    And I should see "Edit Target Field"
-    And I should see "Edit Target Alternate"
-    And I should see "Manual Randomization"
-    And I should see "Make Sequence Unavailable"
+    And I should see an icon labeled "Edit Target Field" in the row labeled "1"
+    And I should see an icon labeled "Edit Target Alternate" in the row labeled "1"
+    And I should see an icon labeled "Manual Randomization" in the row labeled "1"
+    And I should see an icon labeled "Make Sequence Unavailable" in the row labeled "1"
 
     #VERIFY: Logging
     Given I click on the link labeled "Logging"

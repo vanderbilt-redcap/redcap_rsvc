@@ -24,22 +24,22 @@ I want to verify that the File Upload field enhancement requires a password or P
 #M this script assumes File Storage Methods is configured (File storage is needed for base REDCap file Storage) 
 ##ACTION: Configure the File Storage   
     When I click on the link labeled "Control Center"
-    And I click on the link labeled "File Upload Settings "
+    And I click on the link labeled "File Upload Settings"
     Then I should see "Microsoft Azure Blob Storage"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
-    When I enter "staeusp11prod01" in the box labeled "Azure storage account name:"
-    And I enter "xxx" in the box labeled "Azure storage account key"
+    When I enter "devstoreaccount1" into the input field labeled "Azure storage account name:"
+    And I enter "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==" into the input field labeled "Azure storage account key"
     And I click on the button labeled "Save Changes"
-    And I should see "Your configuration values have now been changed"
+    And I should see "Your system configuration values have now been changed"
 #FUNCTIONAL_REQUIREMENT   
 #File Vault Storage is required for Part 11 Compliance 
 ##ACTION: Configure the File Vault for File Uploads 
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
-    Then I should see " Enable this system-level setting for password verification" for the section labeled "'File Upload' field enhancement: Password verification & automatic external file storage"
+    Then I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable this system-level setting for password verification"
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
-    And I select "Microsoft Azure Blob Storage"
-    And I enter "redcap-part11" in the field labeled Azure/S3-only settings"
+    And I enter "redcap-part11" into the first input field labeled "Bucket/container name"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
 #SETUP 
@@ -47,59 +47,66 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I create a new project named " A.3.28.1100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 #M Once the project is created, you must add Additional Customizations 
 #SETUP ADDITIONAL CUSTOMIZATIONS 
-    When I click the button labeled "Additional Customizations"
-    And I enable "File Version History for File Upload Fields"
-    And I enable "File Upload' field enhancement: Password verification & automatic external file storage"
+    When I click on the button labeled "Additional customizations"
+    And I enable the checkbox labeled "Enable the File Version History for 'File Upload' fields?"
+    And I enable the checkbox labeled "File Upload' field enhancement: Password verification & automatic external file storage"
 #M for testing for Part 11 this must be enabled 
-    And I enable "Require a 'reason' when making changes to existing records?"
-    And I click the button labeled "Save"
+    And I enable the checkbox labeled "Require a 'reason' when making changes to existing records?"
+    And I click on the button labeled "Save"
     Then I should see "Success"
 ##ACTION: add record to file upload 
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
-    And I click on the bubble labeled "Data Types" for event "Event 1"
+    And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 5"
-    When I click on the button labeled "Save & Stay"
-    And I click on the link labeled "File Upload" in the dialog box
-    And I click the button labeled "Choose File"
-    And I select xxx.pdf
-    And I click the button labeled "Upload"
-    And I enter "My password or PIN"
-    And I click the button labeled "Confirm"
-    And I click the button labeled "Upload file"
-    Then I should see "File successfully uploaded"
-    And I should see "xxx.pdf"
-    And I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    
+    And I click on the link labeled "Upload file" in the row labeled "File Upload"
+    And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
+    And I enter "Testing123" into the input field labeled "Password:"
+    And I click on the button labeled "Confirm"
+    Then I should see "consent.pdf" in the row labeled "File Upload"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I enter "lock form" into the textarea field labeled "Reason for changes"
+    And I click on the button labeled "Save Changes"
 #VERIFY LOGGING 
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-    And I log out
+        | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                             |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | file_upload =                                                       |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | Document upload was confirmed with password (field = 'file_upload') |
+        | mm/dd/yyyy hh:mm | test_admin | Create record 5  |                                                                     |
+    And I logout
 #M Test_Admin Logs out  and logs back in to ensure that when they enter another record with a file upload that it requires the PIN again 
 #SETUP 
     Given I login to REDCap with the user "Test_Admin"
-    And I open a project named " A.3.28.1100"
 ##ACTION: add record to file upload 
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
-    And I click on the bubble labeled "Data Types" for event "Event 1"
+    And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 6"
-    When I click on the button labeled "Save & Stay"
-    And I click on the link labeled "File Upload" in the dialog box
-    And I click the button labeled "Choose File"
-    And I select xxx.pdf
-    And I click the button labeled "Upload"
-    And I enter "My password or PIN"
-    And I click the button labeled "Confirm"
-    And I click the button labeled "Upload file"
-    Then I should see "File successfully uploaded"
-    And I should see "xxx.pdf"
-    And I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the link labeled "Upload file" in the row labeled "File Upload"
+    And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
+    And I enter "Testing123" into the input field labeled "Password:"
+    And I click on the button labeled "Confirm"
+    Then I should see "consent.pdf" in the row labeled "File Upload"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I enter "lock form" into the textarea field labeled "Reason for changes"
+    And I click on the button labeled "Save Changes"
 #VERIFY LOGGING 
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-    And I log out
+        | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                             |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | file_upload =                                                       |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | Document upload was confirmed with password (field = 'file_upload') |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | file_upload =                                                       |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | Document upload was confirmed with password (field = 'file_upload') |
+        | mm/dd/yyyy hh:mm | test_admin | Create record 5  |                                                                     |
+    And I logout
 #FUNCTIONAL_REQUIREMENT  
-###ACTION: Setup in control center - admin only 
+###ACTION: Setup in control center - admin only
+    Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
@@ -107,25 +114,23 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 #SETUP 
-    Given I login to REDCap with the user "Test_Admin"
-    And I open a project named " A.3.28.1100"
+    And I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.1100"
 ##ACTION: add record to file upload 
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
-    And I click on the bubble labeled "Data Types" for event "Event 1"
+    And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 7"
-    When I click on the button labeled "Save & Stay"
-    And I click on the link labeled "File Upload" in the dialog box
-    And I click the button labeled "Choose File"
-    And I select xxx.pdf
-    And I click the button labeled "Upload"
-    And I enter " PIN"
-    And I click the button labeled "Confirm"
-    Then I should see "Error the username or password that you entered is incorrect"
-    And I click the button labeled "Close"
-    And I click the button labeled "Cancel"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the link labeled "Upload file" in the row labeled "File Upload"
+    And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
+    And I enter "something invalid" into the input field labeled "Password"
+    And I click on the button labeled "Confirm"
+    Then I should see "The username or password that you entered is incorrect"
+    And I click on the button labeled "Close"
+    And I click on the button labeled "Cancel"
+    And I click on the button labeled "Close"
 #VERIFY LOGGING 
     And I click on the link labeled "Logging"
-    Then I should see a table header and rows containing the following values in the logging table:
-    And there will not be an entry for a File upload with Record 7
-    And I log out
+    Then I should NOT see "Update record\n7"
+    And I logout

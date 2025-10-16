@@ -46,9 +46,9 @@ Feature: User Interface: The tool shall support the filtering the record list:
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
-            | Record | Form Name       | Locked?     |
-            | 3      | Text Validation | [lock icon] |
-            | 3      | Consent         |             |
+            | Record | Event Name | Form Name       | Repeat Instance | Locked?     |
+            | 3      |            | Text Validation |                 | [lock icon] |
+            | 3      |            | Consent         |                 |             |
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable Locking/E-signatures at instrument level

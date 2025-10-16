@@ -17,7 +17,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         When I click on the link labeled "Data Quality"
         And I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                     | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
             | B      | Blank values* (required fields only)          | -                                        | 2                   |
             | C      | Field validation errors (incorrect data type) | -                                        | 1                   |
@@ -54,7 +54,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         Then I click on the button labeled "Clear"
         When I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                              | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                              | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | D      | Field validation errors (out of range) | -                                        | 3                   |
 
         #FUNCTIONAL_REQUIREMENT
@@ -89,6 +89,6 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         Then I click on the button labeled "Clear"
         When I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                              | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                              | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | D      | Field validation errors (out of range) | -                                        | 4                   |
 #END

@@ -40,7 +40,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         ##ACTION: confirm user with full rights can execute
         When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy  only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                                                 | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                                             | -                                         | 395                 |
             | B      | Blank values* (required fields only)                                      | -                                         | 2                   |
             | C      | Field validation errors (incorrect data type)                             | -                                         | 1                   |
@@ -50,7 +50,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                         | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                         | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                         | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9.9'                            | 1                   |
+            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                           | 1                   |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                          | 8                   |
 
         #FUNCTIONAL_REQUIREMENT
@@ -76,7 +76,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         ##ACTION: confirm user with full rights can execute but NOT view discrepancy
         When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                                                 | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                                             | -                                        | 0                   |
             | B      | Blank values* (required fields only)                                      | -                                        | 0                   |
             | C      | Field validation errors (incorrect data type)                             | -                                        | 1                   |
@@ -86,7 +86,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                        | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                        | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                        | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9.9'                           | ERROR               |
+            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                          | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
         When I click on the "view" link for Data Quality Rule # "C"

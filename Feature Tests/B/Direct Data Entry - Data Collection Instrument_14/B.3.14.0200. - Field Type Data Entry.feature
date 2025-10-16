@@ -76,7 +76,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
       | A | All data (all records and fields) |
 
     When I click on the button labeled "View Report"
-    Then I should see a table header and rows containing the following values in the report data table:
-      | Record ID | Event name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email | Complete? | radio           | Multiple Choice Dropdown Manual | Notes box 2 | Checkbox1   | Checkbox2   | Checkbox3     | Signature | File Upload | True/False | Yes/No | Slider |
+    Then I should see a table header and rows containing the following values in the a table:
+      | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email | Complete? | radio           | Multiple Choice Dropdown Manual | Notes box 2 | Checkbox    |             |               | Signature | File Upload | True/False | Yes/No | Slider |
       | 7         | Event 1 (Arm 1: Arm 1) | Data Types        | 1               |                   |                   |      |       |           | Choice99 (9..9) | DDChoice6 (6)                   | Notes box   | Checked (1) | Checked (1) | Unchecked (0) | [button]  | [button]    | True (1)   | No (0) | 65     |
 #END

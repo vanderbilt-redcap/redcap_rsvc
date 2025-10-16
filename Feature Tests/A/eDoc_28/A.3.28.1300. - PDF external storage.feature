@@ -13,19 +13,19 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     Then I should see " Security & Authentication "
     And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
     And I click on the button labeled "Save Changes"
-    Then I should see " Your system configuration values have now been changed!"
+    Then I should see "Your system configuration values have now been changed!"
 #FUNCTIONAL_REQUIREMENT A.3.28.1100._NewManual 
 #M this script assumes File Storage Methods is configured (File storage is needed for base REDCap file Storage) 
 
   Scenario: ##ACTION: Configure the External File Storage
     When I click on the link labeled "Control Center"
-    And I click on the link labeled "File Upload Settings "
+    And I click on the link labeled "File Upload Settings"
     Then I should see "Microsoft Azure Blob Storage"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
-    When I enter "staeusp11prod01" in the box labeled "Azure storage account name:"
-    And I enter "xxx" in the box labeled "Azure storage account key"
+    When I enter "devstoreaccount1" into the input field labeled "Azure storage account name:"
+    And I enter "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==" into the input field labeled "Azure storage account key"
     And I click on the button labeled "Save Changes"
-    And I should see "Your configuration values have now been changed"
+    And I should see "Your system configuration values have now been changed"
 #FUNCTIONAL_REQUIREMENT   
 #File Vault Storage is required for Part 11 Compliance 
 
@@ -33,7 +33,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "e-Consent Framework: PDF External Storage Settings (for all projects)"
-    And I enable Microsoft Azure Blob Storage for the section labeled " Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
         #SETUP 
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "A.3.28.1300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button

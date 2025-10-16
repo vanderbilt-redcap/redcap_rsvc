@@ -54,7 +54,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user1     |
             | TestGroup2         |                |
@@ -65,7 +65,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         |                |
             | TestGroup2         | test_user1     |

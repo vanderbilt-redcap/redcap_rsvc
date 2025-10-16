@@ -19,7 +19,7 @@ Feature: User Interface: The system shall provide default rules after installati
         When I click on the link labeled "Data Quality"
         Then I should see "Data Quality Rules"
         And I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy  only if...) |
+            | Rule # | Rule Name                                                                 | Rule Logic  (Show discrepancy only if...) |
             | A      | Blank values*                                                             | -                                         |
             | B      | Blank values* (required fields only)                                      | -                                         |
             | C      | Field validation errors (incorrect data type)                             | -                                         |

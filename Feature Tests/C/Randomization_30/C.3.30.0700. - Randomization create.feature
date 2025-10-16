@@ -194,7 +194,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     #VERIFY Randomization model was not added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
 			
     #VERIFY_log Randomization saved in logging table
@@ -216,7 +216,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #VERIFY Randomization model was added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #     | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #     | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1     | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
             | 2     | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 			
@@ -241,7 +241,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #VERIFY Randomization model was added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
             | 2      | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 	    | 3      | rand_group_3 |                 | gender | 0                              | 0                           |       |           | 5                |
@@ -263,7 +263,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #VERIFY Randomization model was added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
             | 2      | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 	    | 3      | rand_group_3 |                 | gender | 0                              | 0                           |       |           | 5                |
@@ -287,7 +287,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #VERIFY Randomization model was added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
             | 2      | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 	    | 3      | rand_group_3 |                 | gender | 0                              | 0                           |       |           | 5                |
@@ -311,7 +311,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #VERIFY Randomization model was added to the randomization summary.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
-            | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
+            | #      | Target     | Allocation Type | Stratification | Total Allocations (Development) |Total Allocations (Production)| Setup | Dashboard | Randomization ID |
             | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
             | 2      | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 	    | 3      | rand_group_3 |                 | gender | 0                              | 0                           |       |           | 5                |

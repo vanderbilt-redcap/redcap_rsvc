@@ -46,14 +46,14 @@ Feature: User Interface: The system shall support editing of user defined rules.
         And I click on the button labeled "Add"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+            | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
             | 3      | Integer   | [integer]='1'                            |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION executing rule
         When I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                     | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
             | B      | Blank values* (required fields only)          | -                                        | 2                   |
             | C      | Field validation errors (incorrect data type) | -                                        | 1                   |
@@ -86,7 +86,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
         When I click on the button labeled exactly "All"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                     | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
+            | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
             | B      | Blank values* (required fields only)          | -                                        | 2                   |
             | C      | Field validation errors (incorrect data type) | -                                        | 1                   |

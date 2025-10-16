@@ -26,7 +26,7 @@ Feature: User Interface: The system shall support the ability to run custom data
         And I check the checkbox labeled "Execute in real time on data entry forms"
         And I click on the button labeled "Add"
         Then I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+            | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
             | 3      | Integer   | [integer]<>'1999'                        |
 
         #FUNCTIONAL_REQUIREMENT

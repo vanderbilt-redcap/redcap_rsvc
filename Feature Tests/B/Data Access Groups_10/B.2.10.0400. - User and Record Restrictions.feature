@@ -103,7 +103,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
 
@@ -112,7 +112,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user1     |
             | TestGroup1         | test_user3     |
@@ -123,7 +123,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
@@ -133,7 +133,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I select "TestGroup2" on the dropdown field labeled "to"
         And I click on the button labeled "Assign"
 
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
