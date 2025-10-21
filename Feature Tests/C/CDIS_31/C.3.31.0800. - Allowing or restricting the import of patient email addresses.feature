@@ -40,21 +40,18 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
     #Verify email address drop down is diabled in the project settings (Control Center).
         When I click on the link labeled "Edit Project Settings"
         Then I should see "CDIS: Allow the patient's email address to be imported from the EHR?"
-    ######The below step will need to be added to the RCTF to allow cypress to see this###############
-        #And I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
+        And I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
         
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-    ######The below steps are not working and may need to be added to the RCTF. This is also documented in our swim lanes######
-        # And I click on the button labeled "Find more source fields to map"
-        # Then I should see "nothing selected"
-        # When I click on the dropdown field labeled "nothing selected"
-        # And I enter "email" into the text area labeled "Filter..."
-        # And I click on the option labeled "Demographics"
-        # Then I should see "fetching has been disabled at system level."
-        # Then I should not see 'email address' in the dropdown field labeled "Select EHR Source Field to Map:"
-    ################################################################################################################
+        And I click on the button labeled "Find more source fields to map"
+        Then I should see "nothing selected"
+        When I click on the dropdown field labeled "nothing selected"
+        And I enter "email" into the text area labeled "Filter..."
+        And I click on the option labeled "Demographics"
+        Then I should see "fetching has been disabled at system level."
+        Then I should not see 'email address' in the dropdown field labeled "Select EHR Source Field to Map:"
         
     #VERIFY LOG
         When I click on the link labeled "Logging"
@@ -74,22 +71,19 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         When I click on the link labeled "Edit Project Settings"
-    ######The below step will need to be added to the RCTF to allow cypress to see this###############
-        #Then I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
+        Then I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
         
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-    ######The below steps are not working and may need to be added to the RCTF. This is also documented in our swim lanes######
-        # And I click on the button labeled "Find more source fields to map"
-        # Then I should see "nothing selected"
-        # When I click on the dropdown field labeled "nothing selected"
-        # And I enter "email" into the text area labeled "Filter..."
-        # And I click on the option labeled "Demographics"
-        # Then I should see 'email'
-        # And I should see 'email-2' 
-        # And I should see 'email-3'        
-    ################################################################################################################
+        And I click on the button labeled "Find more source fields to map"
+        Then I should see "nothing selected"
+        When I click on the dropdown field labeled "nothing selected"
+        And I enter "email" into the text area labeled "Filter..."
+        And I click on the option labeled "Demographics"
+        Then I should see 'email'
+        And I should see 'email-2' 
+        And I should see 'email-3'        
     
 #Activate CDIS Settings (Allow individual projects to decide)
         When I click on the link labeled "Control Center"
@@ -103,7 +97,6 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         When I click on the link labeled "Edit Project Settings"
-    ######The below step will need to be added to the RCTF to allow cypress to see this###############
         Then I should see "CDIS: Allow the patient's email address to be imported from the EHR"
         When I select "Enabled" on the dropdown field labeled "Allow the patient's email address to be imported from the EHR?"
         And I click on the button labeled "Save Changes"    
@@ -111,16 +104,14 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-    ######The below steps are not working and may need to be added to the RCTF. This is also documented in our swim lanes######
-        # And I click on the button labeled "Find more source fields to map"
-        # Then I should see "nothing selected"
-        # When I click on the dropdown field labeled "nothing selected"
-        # And I enter "email" into the text area labeled "Filter..."
-        # And I click on the option labeled "Demographics"
-        # Then I should see 'email'
-        # And I should see 'email-2' 
-        # And I should see 'email-3'        
-    ################################################################################################################
+        And I click on the button labeled "Find more source fields to map"
+        Then I should see "nothing selected"
+        When I click on the dropdown field labeled "nothing selected"
+        And I enter "email" into the text area labeled "Filter..."
+        And I click on the option labeled "Demographics"
+        Then I should see 'email'
+        And I should see 'email-2' 
+        And I should see 'email-3'        
 
     
 #END
