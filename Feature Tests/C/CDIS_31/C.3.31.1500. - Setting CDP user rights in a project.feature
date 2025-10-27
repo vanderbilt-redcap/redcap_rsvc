@@ -63,11 +63,9 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1500"
-        #####WE NEED TO FIGURE OUT THIS PIECE##########################################################################
-        #Then I should see a button "Set up Clinical Data Pull from EHR" that is in the disabled state
-        #Then I should see a toggle button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
-        #Then I should see a button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
-        ###############################################################################################################
+        Then I should see a button "Set up Clinical Data Pull from EHR" that is in the disabled state
+        Then I should see a toggle button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
+        Then I should see a button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
         And I logout
         
     #Adding CDP mapping right
@@ -128,16 +126,13 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-       ###Something needs to be added here so that the JavaScript will fire the pop-up adjudication window. Something like and I tab or click the blank space on the screen. ### 
-        #########################################################################
+        And something needs to be added here so that the JavaScript will fire the pop-up adjudication window. Something like and I tab or click the blank space on the screen.
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"
         And I should see "birthDate:"
         When I click on the button labeled "Save record and fetch data"
         Then I should see "Adjudicate data from External System"
-       ##For some reason the below "Save" actions isn't working.####
-       ############################################################# 
         When I click on the button labeled "Save"
         Then I should see "Saving adjudicated data..."
         When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
