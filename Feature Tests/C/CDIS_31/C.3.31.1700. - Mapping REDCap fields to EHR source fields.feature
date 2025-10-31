@@ -1,0 +1,92 @@
+Feature: C.3.31.1700. User Interface: The system shall support mapping REDCap fields to EHR source fields for one-time or temporal clinical data using the CDP interface.
+
+    As a REDCap end user
+    I want to see that temporal and non-temporal data can be mapped using CDP.
+    
+   Scenario: C.3.31.1700. User Interface: The system shall support mapping REDCap fields to EHR source fields for one-time or temporal clinical data using the CDP interface.
+    #Activate CDIS Settings
+      Given I login to REDCap with the user "Test_Admin"
+      And I click on the link labeled "Control Center"
+      And I click on the link labeled "Clinical Data Interoperability Services"
+      Then I should see "Clinical Data Interoperability Services"
+      When I select "Enable" on the dropdown field labeled "Clinical Data Pull"
+      And I click on the button labeled "Save Changes"
+      Then I should see "Loading"
+
+    #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+      When I click on the link labeled "FHIR Systems"
+      Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
+      When I click on the button labeled exactly "Add"
+      And I enter "Test" into the input field labeled "Client ID:"
+      And I enter "any_secret" into the input field labeled "Client Secret:"
+      And I enter "Test" into the input field labeled "Client ID:"
+      And I enter "EHR" into the input field labeled "Custom name for the EHR system"
+      And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/fhir" into the input field labeled "FHIR Base URL"
+      And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/auth/token" into the input field labeled "FHIR Token URL"
+      And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/auth/authorize" into the input field labeled "FHIR Authorize URL"
+      And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/fhir" into the input field labeled "Identity provider (optional)"
+      And I enter "http://hospital.smarthealthit.org" into the input field labeled "EHR's patient identifier string for medical record numbers (optional)"
+      And I click on the button labeled "Save"
+      Then I should see "New FHIR system created"
+      And I click on the link labeled "Home"
+      And I logout
+
+    #SET UP NEW PROJECT
+      Given I login to REDCap with the user "Test_Admin"
+      And I create a new project named "C.3.31.1700" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
+      Then I should see "C.3.31.1700"
+      And I should NOT see "Setup Clinical Data Pull from EHR"
+      And I should see "Clinical Data Pull from EHR"
+      When I click on the button labeled "Enable" in the row labeled "Clinical Data Pull from EHR" 
+      Then I should see "Set up Clinical Data Pull from EHR"
+      When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
+      Then I should see "Clinical Data Pull from EHR"
+
+   Scenario: FUNCTIONAL REQUIREMENT: C.3.31.1700.100 User Interface: The system shall support mapping REDCap fields to EHR source fields for one-time non-temporal data.
+      When I click on the button labeled "Find more source fields to map"
+      And I click on the first dropwdown labeled "nothing selected"
+      When I enter "gender" into the textarea field labeled "Filter..."
+      And I click the dropdown labeled "Demographics"
+      And I select "gender (Sex)" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Event 1" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Gender" from the list
+      And I click on the button labeled "Save"
+      Then I should see "Data saved"
+    #VERIFY_LOG
+      When I click on the link labeled "Logging"
+      Then I should see a table header and rows containing the following values in the logging table:
+         | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | CDIS settings updated                   |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Mapping configuration created           |
+
+   Scenario: FUNCTIONAL REQUIREMENT: C.3.31.1700.200 User Interface: The system shall support mapping REDCap fields to EHR source fields for temporal data.
+      When I click on the button labeled "Setup"
+      And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
+      Then I should see "Clinical Data Pull from EHR"
+      When I click on the button labeled "Find more source fields to map"
+      And I click on the first dropwdown labeled "nothing selected"
+      When I enter "8480-6" into the textarea field labeled "Filter..."
+      And I click the dropdown labeled "Vital Signs"
+      And I select "8480-6 (Systolic blood pressure)" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Event 1" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Systolic blood pressure" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Visit Date" from the list
+      And I click on the dropwdown labeled "nothing selected"
+      And I select "Lowest numerical value" from the list
+      And I click on the button labeled "Save"
+      Then I should see "Data saved"
+
+    #VERIFY_LOG
+      When I click on the link labeled "Logging"
+      Then I should see a table header and rows containing the following values in the logging table:
+         | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | CDIS settings updated                   |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Mapping configuration created           |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | CDIS settings updated                   |
+         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Mapping configuration created           |
+#END
