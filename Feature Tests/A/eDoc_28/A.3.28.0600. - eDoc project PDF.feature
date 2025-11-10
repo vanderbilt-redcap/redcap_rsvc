@@ -26,7 +26,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -67,7 +67,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."

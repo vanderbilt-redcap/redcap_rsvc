@@ -12,7 +12,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         When I click on the button labeled "Online Designer"
@@ -31,9 +31,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I should see the instrument named "Text Validation" in the second row
 
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Changes Were Made Automatically"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"

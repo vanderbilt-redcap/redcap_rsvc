@@ -12,7 +12,7 @@ Feature: User Interface: The tool shall support the filtering the record list:
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #FUNCTIONAL REQUIREMENT
@@ -43,7 +43,7 @@ Feature: User Interface: The tool shall support the filtering the record list:
 
         ##VERIFY_LOCK_ESIG: Record instrument lock on Locking Management
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Event Name | Form Name       | Repeat Instance | Locked?     |

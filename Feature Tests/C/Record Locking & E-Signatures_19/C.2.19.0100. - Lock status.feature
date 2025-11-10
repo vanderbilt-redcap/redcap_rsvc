@@ -12,12 +12,12 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [ ]                                            | [text box]              |
@@ -67,7 +67,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         #FUNCTIONAL REQUIREMENT
         ##ACTION Edit / Remove Custom Text
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
 
         And I click on the icon labeled "Edit" in the row labeled "Text Validation"
         And I clear field and enter "New custom text" into the textarea field labeled "Text Validation"

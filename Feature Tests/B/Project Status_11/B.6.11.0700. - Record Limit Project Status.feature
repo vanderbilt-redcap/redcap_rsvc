@@ -24,7 +24,7 @@ Scenario: #SETUP
     And I click on the link labeled "B.6.11.0700"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
     #Adding record 5
     When I click on the link labeled "Add / Edit Records"
@@ -57,7 +57,7 @@ Scenario: B.6.11.0700.0200. - A project with no prior limit, when moved from pro
     Then I should see "Your new REDCap project has been created"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
     #Set global limit in control center to 3
     When I click on the link labeled "Control Center"
@@ -85,7 +85,7 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     And I click on the link labeled "B.6.11.0700.0200"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
     #Action remove global record limit
     When I click on the link labeled "Control Center"

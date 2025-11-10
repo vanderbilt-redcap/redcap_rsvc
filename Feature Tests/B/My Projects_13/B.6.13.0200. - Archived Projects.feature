@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the ability to show or hide ar
         And I create a new project named "B.6.13.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "Other Functionality"
         And I click on the button labeled "Mark project as Completed"
-        And I click on the button labeled "Mark project as Completed" in the dialog box
+        And I click on the button labeled "Mark project as Completed"
         #And I click on the button labeled "OK" in the pop-up box
         Then I should see "My Projects"
         And I should NOT see "B.6.13.0200.100"
@@ -18,9 +18,9 @@ Feature: User Interface: The system shall support the ability to show or hide ar
         Then I should see "B.6.13.0200.100"
 
         When I click on the link labeled "B.6.13.0200.100"
-        And I click on the button labeled "Restore Project" in the dialog box
+        And I click on the button labeled "Restore Project"
         Then I should see a dialog containing the following text: "PROJECT RESTORED"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see "Project status:  Development"
 #END

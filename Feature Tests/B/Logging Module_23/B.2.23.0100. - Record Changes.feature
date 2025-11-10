@@ -11,7 +11,7 @@ Feature: User Interface: The logging module shall record all changes with userna
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT

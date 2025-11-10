@@ -21,7 +21,7 @@ Feature: User Interface: The system shall require changes made to data collectio
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
@@ -51,9 +51,9 @@ Feature: User Interface: The system shall require changes made to data collectio
     ##ACTION
     Given I click on the button labeled "RETURN TO PREVIOUS PAGE"
     And I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Changes Were Made Automatically"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##VERIFY_LOG
     When I click on the link labeled "Logging"

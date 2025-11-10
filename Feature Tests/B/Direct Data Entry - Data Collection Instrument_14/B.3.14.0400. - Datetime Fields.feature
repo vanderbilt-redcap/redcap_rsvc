@@ -22,7 +22,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     Given I click on the link labeled "Add / Edit Records"
@@ -38,7 +38,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     And I click on the link labeled "1"
     And I move the Hour slider for the open date picker widget to 0
     And I move the Minute slider for the open date picker widget to 0
-    And I click on the button labeled "Done" in the open date picker widget
+    And I click on the button labeled "Done"
 
     ##VERIFY
     Then I should see the date and time "2023-08-01 00:00:00" in the field labeled "datetime YMD HMSS"

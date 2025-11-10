@@ -34,9 +34,9 @@ Feature: User Interface: General: The system shall support the ability to delete
     When I click on the button labeled "Delete the project"
     And I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
     And I click on the button labeled "Delete the project" in the dialog box
-    And I click on the button labeled "CONFIRM DELETION" in the dialog box
+    And I click on the button labeled "CONFIRM DELETION"
     Then I should see "Project successfully deleted!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     Given I logout
 
   Scenario: B.6.4.1200.200 Projects in production with no records can be deleted by user
@@ -51,7 +51,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     ##ACTION Verify record do NOT exist ##VERIFY_RSD
@@ -67,7 +67,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     When I click on the button labeled "Request delete project"
     #When I click on the button labeled "OK" in the pop-up box
     Then I should see "Project successfully deleted!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
   Scenario: B.6.4.1200.300 Projects in production with records require admin
     ##SETUP_PRODUCTION
@@ -76,7 +76,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     ##ACTION Verify record exist ##VERIFY_RSD

@@ -10,7 +10,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     #Adding user Test_User2 (No randomization rights)
     When I click on the link labeled "User Rights"
@@ -70,9 +70,9 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
+    And I click on the button labeled "Randomize"
     Then I should see "was randomized for the field"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1-1 successfully edited."
     #M This number may be diferent with manual testing.
@@ -123,7 +123,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     When I select "DAG 1" on the dropdown field labeled "Assign this record to a Data Access Group"
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I should see "Already randomized" 
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 6 successfully edited."

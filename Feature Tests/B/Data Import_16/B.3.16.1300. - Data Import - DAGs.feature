@@ -20,7 +20,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
 
         And I check the User Right named "Data Import Tool"
         And I select "Test_Group1" in the dropdown field labeled "Assign To DAG" in the dialog box
-        And I click on the button labeled "Add user" in the dialog box
+        And I click on the button labeled "Add user"
         Then I should see a table header and rows containing the following values in a table:
             | Role | Username or users assigned to a role | Expiration | Data Access Group |
             |   —   | test_admin  (Admin User)                         |   never         | —                 |
@@ -30,7 +30,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         Given I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         Given I click on the link labeled "Data Import Tool"

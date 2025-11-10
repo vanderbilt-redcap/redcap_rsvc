@@ -12,20 +12,20 @@ Feature: User Interface: The system shall support the ability for a user to chan
         ##ACTION: move to production
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         ##VERIFY
         Then I should see "Project status:  Production"
 
         ##ACTION: move to analysis/cleanup
         When I click on the link labeled "Other Functionality"
         And I click on the button labeled "Move to Analysis/Cleanup status"
-        And I click on the button labeled "YES, Move to Analysis/Cleanup" in the dialog box
+        And I click on the button labeled "YES, Move to Analysis/Cleanup"
         ##VERIFY
         Then I should see "Project status:  Analysis/Cleanup"
 
         ##ACTION: move to Completed
         When I click on the button labeled "Mark project as Completed"
-        And I click on the button labeled "Mark project as Completed" in the dialog box
+        And I click on the button labeled "Mark project as Completed"
         And I click on the link labeled "Show Completed Projects"
         Then I should see a link labeled "B.6.11.0200.100"
         ##VERIFY
@@ -34,16 +34,16 @@ Feature: User Interface: The system shall support the ability for a user to chan
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: move to analysis/cleanup
-        When I click on the button labeled "Restore Project" in the dialog box
+        When I click on the button labeled "Restore Project"
         Then I should see a dialog containing the following text: "PROJECT RESTORED"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         ##VERIFY
         Then I should see "Project status:  Analysis/Cleanup"
 
         ##ACTION: move to production
         When I click on the link labeled "Other Functionality"
         And I click on the button labeled "Move back to Production status"
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         ##VERIFY
         Then I should see "Project status:  Production"
 

@@ -11,7 +11,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
@@ -23,7 +23,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     Then I should see "Your report has been saved!"
 
     ##VERIFY: saved name
-    When I click on the button labeled "View report" in the dialog box
+    When I click on the button labeled "View report"
     Then I should see "C.5.22.0200.100 REPORT"
 
     When I click on the button labeled "Edit Report"
@@ -38,7 +38,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     Then I should see "Your report has been saved!"
 
     ##VERIFY: edited name
-    When I click on the button labeled "View report" in the dialog box
+    When I click on the button labeled "View report"
     Then I should see "C.5.22.0200.100 REPORT_EDIT"
 
     When I click on the button labeled "Edit Report"
@@ -50,7 +50,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     Then I should see "Your report has been saved!"
 
     ##VERIFY: edited name
-    When I click on the button labeled "View report" in the dialog box
+    When I click on the button labeled "View report"
     Then I should see "C.5.22.0200.100 REPORT_EDIT2"
 
     When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -62,7 +62,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     When  I click on the button labeled "Copy" for the report named "C.5.22.0200.100 REPORT_EDIT2"
     Then I should see "COPY REPORT?"
 
-    When I click on the button labeled "Copy" in the dialog box
+    When I click on the button labeled "Copy"
     ##VERIFY: copy
     Then I should see a table row containing the following values in the reports table:
       | 2 | C.5.22.0200.100 REPORT_EDIT2        |
@@ -73,7 +73,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     When  I click on the button labeled "Delete" for the report named "C.5.22.0200.100 REPORT_EDIT2"
     Then I should see "DELETE REPORT?"
 
-    When I click on the button labeled "Delete" in the dialog box
+    When I click on the button labeled "Delete"
     ##VERIFY: delete
     Then I should see a table row containing the following values in the reports table:
       | 2 | C.5.22.0200.100 REPORT_EDIT2 (copy) |

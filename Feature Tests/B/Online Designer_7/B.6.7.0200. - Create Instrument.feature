@@ -21,7 +21,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I click on the last button labeled "Create"
         Then I should see "SUCCESS!"
 
-        Given I click on the button labeled "Close" in the dialog box
+        Given I click on the button labeled "Close"
 
         #VERIFY
         Then I should see a table header and rows containing the following values in a table:

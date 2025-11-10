@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the ability to assign the User
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: #USER_RIGHTS User 1 Dag 1
@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
-    And I click on the button labeled "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            | Data Access Group |
       | —                       | test_admin          |                   |
@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Assign to role"
     And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
-    And I click on the button labeled "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     And I should see a table header and rows containing the following values in a table:
       | Role name               | Username            | Data Access Group |
       | —                       | test_admin          |                   |
@@ -66,7 +66,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 1 was successfully assigned to a Data Access Group"
 
   Scenario: Assign record 2 to DAG2
@@ -75,7 +75,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
 
   Scenario: #SETUP: Create report

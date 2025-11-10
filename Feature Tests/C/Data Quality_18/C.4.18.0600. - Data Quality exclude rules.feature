@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         ##ACTION executing all rules.
@@ -47,7 +47,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | Record | Discrepant fields with their values | Status       | Exclude          |
             | 5 (#1) | integer = 1111111111                | Out of range | remove exclusion |
 
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         #Manual: refresh the page
 
         ##VERIFY
@@ -82,7 +82,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | number_1_period = 4.2               | Out of range | exclude |
             | 5 (#1) | number = 10.000                     | Out of range | exclude |
 
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         #Manual: refresh the page
 
         ##VERIFY

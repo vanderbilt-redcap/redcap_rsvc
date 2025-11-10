@@ -11,7 +11,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
@@ -78,7 +78,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Phone (North America)             |
       | Time (HH:MM:SS)                   |
       | Zipcode (U.S.)                    |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 
     #SETUP
     Given I click on the link labeled "Control Center"
@@ -139,5 +139,5 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Time (HH:MM:SS)                             |
       | Time (HH:MM)                                |
       | Zipcode (U.S.)                              |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 #End

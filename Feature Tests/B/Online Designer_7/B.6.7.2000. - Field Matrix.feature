@@ -26,11 +26,11 @@ Feature: Field Creation: The system shall support the creation and spliting matr
 
         And I enter "Vanilla" into the last input field in the Matrix column labeled exactly "Field Label" in the dialog box
         And I enter "flavor1" into the last input field in the Matrix column labeled exactly "Variable Name" in the dialog box
-        And I click on the button labeled "Add another row" in the dialog box
+        And I click on the button labeled "Add another row"
 
         And I enter "Chocolate" into the last input field in the Matrix column labeled exactly "Field Label" in the dialog box
         And I enter "flavor2" into the last input field in the Matrix column labeled exactly "Variable Name" in the dialog box
-        And I click on the button labeled "Add another row" in the dialog box
+        And I click on the button labeled "Add another row"
 
         And I enter "Strawberry" into the last input field in the Matrix column labeled exactly "Field Label" in the dialog box
         And I enter "flavor3" into the last input field in the Matrix column labeled exactly "Variable Name" in the dialog box
@@ -38,7 +38,7 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         And I enter "1, Dislike {enter} 2, Neutral {enter} 3, Love" into the textarea field labeled "Matrix Column Choices" in the dialog box
         And I enter "ice_cream" into the input field labeled "Matrix group name" in the dialog box
 
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
 
         Then I should see the field labeled "Matrix Group:  ice_cream"
         And I should see a table row containing the following values in a table:
@@ -56,8 +56,8 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         And I click on the Edit Matrix image for the field named "ice_cream"
 
         Given I see "Edit Matrix of Fields"
-        And I click on the button labeled "Save & split matrix into separate fields" in the dialog box
-        And I click on the button labeled "Split matrix" in the dialog box
+        And I click on the button labeled "Save & split matrix into separate fields"
+        And I click on the button labeled "Split matrix"
 
         Then I should see the field labeled "Vanilla"
         And I should see the field labeled "Chocolate"

@@ -12,7 +12,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I create a new project named "B.2.6.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #FUNCTIONAL REQUIREMENT
@@ -261,7 +261,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         When I click on a button labeled "Remove user"
         Then I should see a dialog containing the following text: "Remove user?"
-        And I click on the button labeled "Remove user" in the dialog box
+        And I click on the button labeled "Remove user"
 
         ##VERIFY_LOG: Verify Logging of Delete user
         When I click on the link labeled "Logging"

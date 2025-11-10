@@ -21,7 +21,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #SET UP_USER_RIGHTS
@@ -29,7 +29,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     ##VERIFY - COUNT OF ROWS
@@ -48,7 +48,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
     Given I click the "X" icon for the row labeled "Delete all data on event:" on the event column labeled "Event 1"
     Then I should see a dialog containing the following text: 'DELETE ALL DATA ON THIS EVENT FOR RECORD "1"?'
 
-    Given I click on the button labeled "Delete this event" in the dialog box
+    Given I click on the button labeled "Delete this event"
     Then I should see "Record ID 1 successfully deleted entire event of data"
 
     #VERIFY

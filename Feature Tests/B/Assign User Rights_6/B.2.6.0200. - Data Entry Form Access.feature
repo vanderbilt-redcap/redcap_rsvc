@@ -11,7 +11,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
 
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     When I click on the link labeled "User Rights"
@@ -30,9 +30,9 @@ Feature: Project Level:  The system shall allow data entry form user access to b
       | test_user3 |
       | test_user4 |
 
-    Given I click on the button labeled "Upload" in the dialog box
+    Given I click on the button labeled "Upload"
     Then I should see a dialog containing the following text: "SUCCESS!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     And I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |

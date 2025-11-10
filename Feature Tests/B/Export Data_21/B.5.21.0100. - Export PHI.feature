@@ -14,7 +14,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should see "Assign To DAG"
 
     When I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
-    And I click on the button labeled "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see a table header and rows containing the following values in a table:
       | Role name           | Username   |
       | 4_NoAccess_Noexport | test_user1 |
@@ -68,7 +68,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     ##ACTION: export all
     Given I click on the "Export Data" button for the "All data (all records and fields)" report in the My Reports & Exports table
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-    And I click on the button labeled "Export Data" in the dialog box
+    And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
@@ -77,7 +77,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should have a "csv" file that contains the headings below
       | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | ptname | textbox | radio | notesbox | identifier | identifier_2 | date_ymd | datetime_ymd_hmss | data_types_complete |
 
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: remove identifiers from export
@@ -87,7 +87,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     When I check the checkbox labeled "Remove All Identifier Fields" in the dialog box
     And I check the checkbox labeled "Hash the Record ID field" in the dialog box
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-    And I click on the button labeled "Export Data" in the dialog box
+    And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
@@ -96,7 +96,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should have a "csv" file that contains the headings below
       | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | data_types_timestamp | textbox | notesbox | identifier_2 | date_ymd | datetime_ymd_hmss | data_types_complete |
 
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: add identifiers back and remove unvalidated texts fields and notesbox fields
@@ -106,7 +106,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Remove unvalidated Text fields" in the dialog box
     And I check the checkbox labeled "Remove Notes/Essay box fields" in the dialog box
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-    And I click on the button labeled "Export Data" in the dialog box
+    And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
@@ -114,7 +114,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should have a "csv" file that contains the headings below
       | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | radio | date_ymd | datetime_ymd_hmss | data_types_complete |
 
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: remove date, datetime fields
@@ -123,7 +123,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I uncheck the checkbox labeled "Remove Notes/Essay box fields" in the dialog box
     And I check the checkbox labeled "Remove all date and datetime fields" in the dialog box
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-    And I click on the button labeled "Export Data" in the dialog box
+    And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
@@ -131,7 +131,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should have a "csv" file that contains the headings below
       | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier  | ptname | textbox | radio | notesbox | identifier | identifier_2 | data_types_complete |
 
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##ACTION: create record and enter dates in survey mode
     When I click on the link labeled "Add / Edit Records"
@@ -152,7 +152,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
 
     Given I return to the REDCap page I opened the survey from
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I click on the button labeled "Leave without saving changes"
     And I click on the link labeled "Record Status Dashboard"
     And I should see the "Completed Survey Response" icon for the "Data Types" instrument for record "5"
 
@@ -164,7 +164,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Shift all dates by value between 0 and 364 days" in the dialog box
     And I check the checkbox labeled "Also shift all survey completion timestamps by value between 0 and 364 days" in the dialog box
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-    And I click on the button labeled "Export Data" in the dialog box
+    And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
     And I should see a dialog containing the following text: "All dates within your data have been DATE SHIFTED to an unknown value between 0 and  364 days."
 
@@ -180,7 +180,7 @@ Feature: User Interface: The system shall support the ability to identify data a
 
     #Manual: Close the report & refresh page
 
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I logout
 
     Given I login to REDCap with the user "Test_User1"

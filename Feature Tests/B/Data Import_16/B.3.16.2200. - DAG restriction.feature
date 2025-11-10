@@ -16,7 +16,7 @@ Feature: User Interface: The system shall restrict users by DAGs when using the 
         And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
 
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         When I click on the link labeled "User Rights"
@@ -25,14 +25,14 @@ Feature: User Interface: The system shall restrict users by DAGs when using the 
         And I should see "Assign To DAG"
         And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         #SETUP_PRODUCTION
         Given I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #Import file with all DAGs

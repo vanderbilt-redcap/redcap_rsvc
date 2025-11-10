@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support viewing discrepancies found in
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         ##ACTION executing all rules.
@@ -38,7 +38,7 @@ Feature: User Interface: The system shall support viewing discrepancies found in
             | 6  Event 1 (Arm 1: Arm 1) | email = HelloWorld                  | Validation error | exclude |
 
         #FUNCTIONAL_REQUIREMENT
-        Given I click on the button labeled "Export results (CSV)" in the dialog box
+        Given I click on the button labeled "Export results (CSV)"
         Then I should see "SUCCESS! The data quality results were successfully downloaded."
         And the downloaded CSV with filename "C4180500100_DataQualityDiscrepancies_FieldValidationErrorsIncorrect_yyyy-mm-dd.csv" has the header and rows below
             | record_id	| redcap_event_name	| redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | result-status      | result-is-excluded    | email      |

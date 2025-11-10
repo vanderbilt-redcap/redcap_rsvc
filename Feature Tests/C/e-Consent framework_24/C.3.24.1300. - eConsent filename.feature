@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
       #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
       #SETUP_eConsent for participant consent process
       #SETUP_eConsent for participant consent process
@@ -58,7 +58,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -71,7 +71,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -94,7 +94,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
     When I click on the button labeled "Next Page"

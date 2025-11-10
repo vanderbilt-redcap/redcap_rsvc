@@ -12,7 +12,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #SET UP_USER_RIGHTS
@@ -32,9 +32,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -106,7 +106,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
         ##ACTION Verify records deleted
@@ -147,7 +147,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
 
@@ -190,7 +190,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] data_types"
         And I should see "for 1 record(s)"
@@ -236,7 +236,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] text_validation"
         And I should see "[event_1_arm_1] data_types"
@@ -348,7 +348,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
         ##ACTION Verify records deleted
@@ -393,7 +393,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
 
@@ -438,7 +438,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"
         And I should see "for 1 record(s)"
@@ -486,7 +486,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
         And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"
         And I should see "for 1 record(s)"

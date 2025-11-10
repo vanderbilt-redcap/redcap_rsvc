@@ -50,16 +50,16 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
         ##ACTION: change branching logic for one
         When I click on the link labeled "Designer"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I click on the button labeled "Leave without saving changes"
         And I click on the link labeled "Data Types"
         And I click on the icon labeled "Branching Logic" in the row labeled "ptname"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
         And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
-        And I click on the button labeled "Update & Close Editor" in the dialog box
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Update & Close Editor"
+        And I click on the button labeled "Save"
         Then I should see a dialog containing the following text: "Also edit Branching Logic for OTHER fields?"
-        And I click on the button labeled "No" in the dialog box
+        And I click on the button labeled "No"
         Then I should see "Branching logic: [record_id] <> '999'" within the field with variable name "ptname"
 
         ##ACTION: change branching logic for all
@@ -67,10 +67,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
         And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
-        And I click on the button labeled "Update & Close Editor" in the dialog box
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Update & Close Editor"
+        And I click on the button labeled "Save"
         Then I should see a dialog containing the following text: "Also edit Branching Logic for OTHER fields?"
-        And I click on the button labeled "Yes" in the dialog box
+        And I click on the button labeled "Yes"
         Then I should NOT see "Add/Edit Branching Logic"
         Then I should see "Branching logic: [record_id] <> '999'" within the field with variable name "text2"
         And I should see "Branching logic: [record_id] <> '999'" within the field with variable name "notesbox"
@@ -103,14 +103,14 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
         ##ACTION
         When I click on the link labeled "Designer"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I click on the button labeled "Leave without saving changes"
         And I click on the link labeled "Data Types"
         And I click on the icon labeled "Branching Logic" in the row labeled "descriptive_text_file"
         And I click on the radio labeled exactly "Drag-N-Drop Logic Builder" in the dialog box
         Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "radio_button_manual = Choice101 (101)" to the box labeled "Show the field ONLY if..."
-        And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box
+        And I click on the button labeled "Save"
         Then I should see "Branching logic: [radio_button_manual] = '101'" within the field with variable name "descriptive_text_file"
 
         Given I click on the icon labeled "Branching Logic" in the row labeled "required"
@@ -118,7 +118,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "checkbox = Checkbox3 (3)" to the box labeled "Show the field ONLY if..."
-        And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box
+        And I click on the button labeled "Save"
         Then I should see "Branching logic: [checkbox(3)] = '1'" within the field with variable name "required"
 
         #FUNCTIONAL_REQUIREMENT: survey mode

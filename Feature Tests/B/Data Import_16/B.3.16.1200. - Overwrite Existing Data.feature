@@ -13,7 +13,7 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     ##Verify Data present
@@ -57,7 +57,7 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     Then I should see "Choose an import option"
 
     And I select "Yes, blank values in the file will overwrite existing values" on the dropdown field labeled "Overwrite data with blank values?"
-    And I click on the button labeled "Yes, I understand" in the dialog box
+    And I click on the button labeled "Yes, I understand"
     When I upload a "csv" format file located at "import_files/B3161200100_ACCURATE.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 
     ##VERIFY

@@ -47,14 +47,14 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 2: Arm Two)"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
         #SETUP_PRODUCTION
 
   Scenario:
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: add record with consent framework
@@ -67,7 +67,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -110,7 +110,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -124,7 +124,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -145,7 +145,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
         ##ACTION: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
     When I locate the bubble for the "Participant Consent" instrument on event "Event Three" for record ID "1" and click on the bubble
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -159,7 +159,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -181,7 +181,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I wait for 1 second
     When I click on the button labeled "Add new" in the row labeled "Participant Consent"
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -197,7 +197,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I draw a signature in the signature field area
 
   Scenario:
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -224,7 +224,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -238,7 +238,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -265,7 +265,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Add new"
     And I click on the icon in the column labeled "NEW" and the row labeled "Participant Consent"
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -279,7 +279,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:

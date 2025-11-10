@@ -11,7 +11,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #SETUP_RECORD
@@ -28,7 +28,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
     Then I should see a dialog containing the following text: "Recommended: Leave this page while survey is in session"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I click on the button labeled "Leave without saving changes"
 
     ##VERIFY_LOG:
     Given I click on the link labeled "Logging"
@@ -50,7 +50,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     ##ACTION Verify stay on page and edit survey
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
-    When I click on the button labeled "Stay on page" in the dialog box
+    When I click on the button labeled "Stay on page"
     And I clear field and enter "Overwrite Name" into the data entry form field labeled "Name"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 6 successfully edited."

@@ -25,7 +25,7 @@ Feature: A.2.2.0800. Add/Manage users
     Given I wait for another 2 minutes
     Then I should see a dialog containing the following text: "Due to inactivity, your REDCap session has expired"
 
-    Given I click on the button labeled "Log In" in the dialog box
+    Given I click on the button labeled "Log In"
     Then I should see "Please log in with your user name and password."
 
     Given I successfully login to REDCap with the user "Test_User1"
@@ -50,7 +50,7 @@ Feature: A.2.2.0800. Add/Manage users
     Given I wait for 1 minute
     Then I should see a dialog containing the following text: "Due to inactivity, your REDCap session has expired"
 
-    Given I click on the button labeled "Log In" in the dialog box
+    Given I click on the button labeled "Log In"
     Then I should see "Please log in with your user name and password."
 
     Given I successfully login to REDCap with the user "Test_User1"

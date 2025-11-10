@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: #SETUP_eConsent for custom header
@@ -41,7 +41,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -57,7 +57,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
