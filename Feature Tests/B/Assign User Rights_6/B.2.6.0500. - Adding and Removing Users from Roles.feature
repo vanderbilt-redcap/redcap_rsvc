@@ -68,7 +68,7 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
     And I click on the button labeled "Assign to role" on the tooltip
     # I have to select this twice. Not sure why
     And I select "TestRole" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
 
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -88,7 +88,7 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
     And I click on the button labeled "Re-assign to role" on the tooltip
     # I have to select this twice. Not sure why
     And I select "1_FullRights" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
 
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:

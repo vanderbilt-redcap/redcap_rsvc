@@ -23,7 +23,7 @@ Feature: User Interface: The system shall support executing a rule.
         #FUNCTIONAL REQUIREMENT
         ##ACTION The system shall support executing all rules.
         When I click on the link labeled "Data Quality"
-        And I click on the button labeled exactly "All"
+        And I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |

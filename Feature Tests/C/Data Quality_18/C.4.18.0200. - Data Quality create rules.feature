@@ -72,7 +72,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     #VERIFY
     When I click on the link labeled "Data Quality"
-    And I click on the button labeled exactly "All"
+    And I click on the button labeled "All"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1999'          |
@@ -101,7 +101,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     #VERIFY
     When I click on the link labeled "Data Quality"
-    And I click on the button labeled exactly "All"
+    And I click on the button labeled "All"
     And I should see "Processing Complete!"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |

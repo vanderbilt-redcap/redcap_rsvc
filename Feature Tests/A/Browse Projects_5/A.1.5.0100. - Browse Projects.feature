@@ -53,6 +53,6 @@ Feature: A.1.5.0100. Browse Projects
     Then I should see "Viewing projects accessible by user:"
 
     When I enter "Test_Admin" into the input field labeled "Viewing projects accessible by user:"
-    And I click on the button labeled exactly "View"
+    And I click on the button labeled "View"
     Then I should see "A.1.5.0100.100"
 #End

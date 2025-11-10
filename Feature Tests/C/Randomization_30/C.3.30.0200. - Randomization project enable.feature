@@ -10,7 +10,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Assign to role" on the tooltip
     And I select "1_FullRights" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
   Scenario: C.3.30.0200.0100. Enabling adds randomization module to project setup.

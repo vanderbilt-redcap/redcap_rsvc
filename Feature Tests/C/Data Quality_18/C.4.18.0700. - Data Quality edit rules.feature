@@ -51,7 +51,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION executing rule
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         And I should NOT see a button labeled "Add"
         And I should see a button labeled "Execute"
 
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |

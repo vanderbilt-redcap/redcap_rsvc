@@ -12,7 +12,7 @@ Scenario: #SETUP User Rights
   And I click on the link labeled "Test User1"
   And I click on the button labeled "Assign to role" on the tooltip
   And I select "1_FullRights" on the dropdown field labeled "Select Role"
-  And I click on the button labeled exactly "Assign"
+  And I click on the button labeled "Assign"
   Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
   
     #Adding user Test_User2 (No randomization rights)
@@ -20,7 +20,7 @@ Scenario: #SETUP User Rights
   And I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
   And I click on the button labeled "Assign to role"
   And I select "5_NoRand" on the dropdown field labeled "Select Role" on the role selector dropdown
-  When I click on the button labeled exactly "Assign" on the role selector dropdown
+  When I click on the button labeled "Assign" on the role selector dropdown
   Then I should see "Test User2" within the "5_NoRand" row of the column labeled "Username" of the User Rights table
 
   #SETUP randomization for 0100

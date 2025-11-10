@@ -12,7 +12,7 @@ When I click on the link labeled "User Rights"
 And I click on the link labeled "test_user1" 
 And I click on the button labeled "Assign to role"
 And I select "1_FullRights" on the dropdown field labeled "select role"
-And I click on the button labeled exactly "Assign"
+And I click on the button labeled "Assign"
 Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
 Scenario: # C.3.30.1000.0300: The system shall reject allocation tables missing required structural elements (e.g., target field column, inconsistent stratum combinations).

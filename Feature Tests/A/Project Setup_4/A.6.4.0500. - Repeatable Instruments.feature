@@ -12,7 +12,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
             And I click on the button labeled "Assign to role"
             And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-            When I click on the button labeled exactly "Assign" on the role selector dropdown
+            When I click on the button labeled "Assign" on the role selector dropdown
             Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
             Given I click on the link labeled "Setup"

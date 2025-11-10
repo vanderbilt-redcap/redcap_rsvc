@@ -70,7 +70,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "test_user1 (Test User1)"
         And I click on the button labeled "Assign to role" on the tooltip
         And I select "1_FullRights" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -87,7 +87,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "test_user2 (Test User2)"
         And I click on the button labeled "Assign to role" on the tooltip
         And I select "1_FullRights" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -104,7 +104,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "test_user3 (Test User3)"
         And I click on the button labeled "Assign to role" on the tooltip
         And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -120,7 +120,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "test_user4 (Test User4)"
         And I click on the button labeled "Assign to role" on the tooltip
         And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |

@@ -103,7 +103,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
         When I click on the radio labeled exactly "Delete entire records"
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
@@ -144,7 +144,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Note: We need the space before the digits because REDCap has them in the label
         Given I click on the checkbox labeled exactly " 2"
         And I click on the checkbox labeled exactly " 6"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
@@ -188,7 +188,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
         Then I should see "Deleted forms"
@@ -234,7 +234,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
         Then I should see "Deleted forms"
@@ -345,7 +345,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
         When I click on the radio labeled exactly "Delete entire records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
@@ -390,7 +390,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I click on the checkbox labeled exactly " 6"
         And I click on the checkbox labeled exactly " 8"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
@@ -436,7 +436,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
         Then I should see "Deleted forms"
@@ -484,7 +484,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
         And I click on the button labeled "Delete" in the dialog box
         Then I should see "Deleted forms"

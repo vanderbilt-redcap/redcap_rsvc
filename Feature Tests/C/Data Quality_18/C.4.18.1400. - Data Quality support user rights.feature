@@ -19,13 +19,13 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         Then I should see "Test User2" within the "4_NoAccess_Noexport" row of the column labeled "Username" of the User Rights table
 
         And I logout

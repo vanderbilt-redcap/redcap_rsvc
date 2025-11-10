@@ -51,7 +51,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -67,7 +67,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -82,7 +82,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User3" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -96,7 +96,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User4" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |

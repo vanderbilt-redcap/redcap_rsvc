@@ -14,7 +14,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Then I should see "Assign To DAG"
 
     When I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign" on the role selector dropdown
     Then I should see a table header and rows containing the following values in a table:
       | Role name           | Username   |
       | 4_NoAccess_Noexport | test_user1 |

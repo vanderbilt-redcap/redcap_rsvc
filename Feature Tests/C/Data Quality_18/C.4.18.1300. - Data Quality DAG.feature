@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup1" on the dropdown field labeled "[No Assignment]" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         Then I should see a table header and rows containing the following values in a table:
@@ -33,7 +33,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup2" on the dropdown field labeled "[No Assignment]" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign" on the role selector dropdown
         Then I should see "Test User2" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         Then I should see a table header and rows containing the following values in a table:
             | Role         | Username or users assigned to a role | Expiration | Data Access Group |
