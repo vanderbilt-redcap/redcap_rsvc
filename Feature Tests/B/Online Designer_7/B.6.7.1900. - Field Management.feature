@@ -32,7 +32,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         ##SETUP_PRODUCTION
         When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
         And I logout
@@ -77,7 +77,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I click on the Move image for the field named "Required"
 
         #Then I should see "Move field to another location"
-        And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:" in the dialog box
+        And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:"
         And I click on the button labeled "Move field"
         ##VERIFY
         Then I should see "SUCCESSFULLY MOVED"

@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the ability for a user to chan
         #FUNCTIONAL REQUIREMENT
         ##ACTION: move to production
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         ##VERIFY
         Then I should see "Project status:  Production"

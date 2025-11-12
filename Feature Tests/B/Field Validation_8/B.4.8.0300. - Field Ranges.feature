@@ -26,7 +26,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         #SETUP_PRODUCTION PROJECT
         Given I create a new project named "B.4.8.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.8.xml", and clicking the "Create Project" button
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -39,72 +39,72 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Data Types"
 
         And I click on the Edit image for the field named "date YMD"
-        And I should see the dropdown field labeled "Validation?" with the option "Date (Y-M-D)" selected in the dialog box
-        And I verify "2023-08-01" is within the input field labeled "Minimum" in the dialog box
-        And I verify "2023-08-31" is within the input field labeled "Maximum" in the dialog box
+        And I should see the dropdown field labeled "Validation?" with the option "Date (Y-M-D)" selected
+        And I verify "2023-08-01" is within the input field labeled "Minimum"
+        And I verify "2023-08-31" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Datetime validation
         When I click on the Edit image for the field named "Datetime"
-        Then I should see the dropdown field labeled "Validation?" with the option "Datetime (Y-M-D H:M)" selected in the dialog box
-        And I verify "2023-09-01 01:01" is within the input field labeled "Minimum" in the dialog box
-        And I verify "2023-09-30 01:59" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Datetime (Y-M-D H:M)" selected
+        And I verify "2023-09-01 01:01" is within the input field labeled "Minimum"
+        And I verify "2023-09-30 01:59" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Datetime YMD HMSS validation
         When I click on the Edit image for the field named "Datetime YMD HMSS"
-        Then I should see the dropdown field labeled "Validation?" with the option "Datetime w/ seconds (Y-M-D H:M:S)" selected in the dialog box
-        And I verify "2023-09-01 11:01:01" is within the input field labeled "Minimum" in the dialog box
-        And I verify "2023-09-30 11:01:01" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Datetime w/ seconds (Y-M-D H:M:S)" selected
+        And I verify "2023-09-01 11:01:01" is within the input field labeled "Minimum"
+        And I verify "2023-09-30 11:01:01" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Time HH:MM validation
         When I click on the Edit image for the field named "Time HH:MM"
-        Then I should see the dropdown field labeled "Validation?" with the option "Time (HH:MM)" selected in the dialog box
-        And I verify "08:05" is within the input field labeled "Minimum" in the dialog box
-        And I verify "23:00" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Time (HH:MM)" selected
+        And I verify "08:05" is within the input field labeled "Minimum"
+        And I verify "23:00" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Time HH:MM:SS validation
         When I click on the Edit image for the field named "Time HH:MM:SS"
-        Then I should see the dropdown field labeled "Validation?" with the option "Time (HH:MM:SS)" selected in the dialog box
-        And I verify "08:01:01" is within the input field labeled "Minimum" in the dialog box
-        And I verify "23:00:00" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Time (HH:MM:SS)" selected
+        And I verify "08:01:01" is within the input field labeled "Minimum"
+        And I verify "23:00:00" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Time MM:SS validation
         When I click on the Edit image for the field named "Time MM:SS"
-        Then I should see the dropdown field labeled "Validation?" with the option "Time (MM:SS)" selected in the dialog box
-        And I verify "02:01" is within the input field labeled "Minimum" in the dialog box
-        And I verify "59:00" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Time (MM:SS)" selected
+        And I verify "02:01" is within the input field labeled "Minimum"
+        And I verify "59:00" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Integer validation
         When I click on the Edit image for the field named "Integer"
-        Then I should see the dropdown field labeled "Validation?" with the option "Integer" selected in the dialog box
-        And I verify "1" is within the input field labeled "Minimum" in the dialog box
-        And I verify "100" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Integer" selected
+        And I verify "1" is within the input field labeled "Minimum"
+        And I verify "100" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Number validation
         When I click on the Edit image for the field named "Number"
-        Then I should see the dropdown field labeled "Validation?" with the option "Number" selected in the dialog box
-        And I verify "1" is within the input field labeled "Minimum" in the dialog box
-        And I verify "5" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Number" selected
+        And I verify "1" is within the input field labeled "Minimum"
+        And I verify "5" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Number 1 Decimal validation
         When I click on the Edit image for the field named "Number Decimal"
-        Then I should see the dropdown field labeled "Validation?" with the option "Number (1 decimal place)" selected in the dialog box
-        And I verify "1" is within the input field labeled "Minimum" in the dialog box
-        And I verify "5" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Number (1 decimal place)" selected
+        And I verify "1" is within the input field labeled "Minimum"
+        And I verify "5" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         ## ACTION:M Number Comma validation
         When I click on the Edit image for the field named "Number Comma"
-        Then I should see the dropdown field labeled "Validation?" with the option "Number (1 decimal place - comma as decimal)" selected in the dialog box
-        And I verify "1,0" is within the input field labeled "Minimum" in the dialog box
-        And I verify "2,0" is within the input field labeled "Maximum" in the dialog box
+        Then I should see the dropdown field labeled "Validation?" with the option "Number (1 decimal place - comma as decimal)" selected
+        And I verify "1,0" is within the input field labeled "Minimum"
+        And I verify "2,0" is within the input field labeled "Maximum"
         And I click on the button labeled "Save"
 
         #FUNCTIONAL REQUIREMENT

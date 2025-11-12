@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         And I enter "TestGroup1" into the textarea field labeled "Enter descriptive name for new rule"
         And I click on "" in the textarea field labeled "Enter logic for new rule"
         And I wait for 1 second
-        And I clear field and enter "([ptname]<>[name]) AND ([user-dag-name]='testgroup1')" in the textarea field labeled "Logic Editor" in the dialog box
+        And I clear field and enter "([ptname]<>[name]) AND ([user-dag-name]='testgroup1')" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Add"
         Then I should see a table header and rows containing the following values in a table:

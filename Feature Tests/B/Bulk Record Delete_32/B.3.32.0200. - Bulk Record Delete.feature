@@ -11,7 +11,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -105,7 +105,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
         And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
@@ -146,7 +146,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the checkbox labeled exactly " 6"
         And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
@@ -189,7 +189,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] data_types"
@@ -235,7 +235,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] text_validation"
@@ -347,7 +347,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
@@ -392,7 +392,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the checkbox labeled exactly " 8"
         And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
@@ -437,7 +437,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I click on the button labeled "Delete"
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"
@@ -485,7 +485,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
         And I click on the button labeled "Delete"
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"

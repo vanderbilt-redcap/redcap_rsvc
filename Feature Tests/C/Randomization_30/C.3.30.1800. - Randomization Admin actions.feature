@@ -68,9 +68,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I should see "Enter new value"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "3" into the input field labeled "Enter new value" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "3" into the input field labeled "Enter new value"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "3" within the "1" row of the column labeled "Target Field"
 
@@ -99,9 +99,9 @@ Scenario: #C.3.30.1800.0200. Admin can edit target alternative with reason.
     And I should see "Enter new value"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "1" into the input field labeled "Enter new value" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "1" into the input field labeled "Enter new value"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "1" within the "1" row of the column labeled "Alternate"
 
@@ -130,8 +130,8 @@ Scenario: #C.3.30.1800.0300. Admin can manually randomize a record with reason.
     And I should see "Existing record to assign"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "3" into the input field labeled "Existing record to assign" in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "3" into the input field labeled "Existing record to assign"
     And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box 
     And I click on the button labeled "Confirm"
     Then I should see a "3" within the "1" row of the column labeled "Record"
@@ -161,8 +161,8 @@ Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Edit Target Field" in the row labeled "1"
@@ -195,8 +195,8 @@ Scenario: #C.3.30.1800.0400. Admin can mark a sequence as unavailable with reaso
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Restore" in the row labeled "1"
@@ -233,8 +233,8 @@ Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Edit Target Field" in the row labeled "1"

@@ -79,7 +79,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 

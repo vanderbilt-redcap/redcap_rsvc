@@ -14,7 +14,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the button labeled "PDF Snapshot"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"

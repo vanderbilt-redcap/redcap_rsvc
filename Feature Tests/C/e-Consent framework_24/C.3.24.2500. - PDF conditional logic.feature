@@ -8,7 +8,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I create a new project named "C.3.24.2500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
       #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click on the button labeled "PDF Snapshot"
     And I click on the button labeled "Add new trigger"
     And I enter "Snapshot 1" into the input field labeled "Name of trigger"
-    And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -34,10 +34,10 @@ Feature: User Interface: The system shall support conditional logic integration 
       ##ACTION: When the following logic becomes true (only once per record)
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 2" into the input field labeled "Name of trigger"
-    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[participant_consent_complete]='2'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[participant_consent_complete]='2'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -56,10 +56,10 @@ Feature: User Interface: The system shall support conditional logic integration 
    ##ACTION: When the following logic becomes true (only once per record)
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 3" into the input field labeled "Name of trigger"
-    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"

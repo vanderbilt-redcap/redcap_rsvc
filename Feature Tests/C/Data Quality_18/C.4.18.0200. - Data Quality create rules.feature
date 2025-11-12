@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -23,7 +23,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
     And I click on "" in the textarea field labeled "Enter logic for new rule"
     And I wait for 2 seconds
-    And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Add"
     ##VERIFY
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     ##ACTION: edit existing rule for longitudinal projects
     When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
     And I wait for 2 seconds
-    And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
@@ -90,7 +90,7 @@ Feature: User Interface: The system shall support data quality rule creation.
             
     ##ACTION: edit existing rule
     When I click the element containing the following text: "[integer]<>'1999'"
-    And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save"
 

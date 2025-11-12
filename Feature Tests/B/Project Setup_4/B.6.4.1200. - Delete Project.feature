@@ -32,8 +32,8 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     ##ACTION Delete the project
     When I click on the button labeled "Delete the project"
-    And I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-    And I click on the button labeled "Delete the project" in the dialog box
+    And I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW'
+    And I click on the button labeled "Delete the project"
     And I click on the button labeled "CONFIRM DELETION"
     Then I should see "Project successfully deleted!"
     And I click on the button labeled "Close"
@@ -50,7 +50,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     Then I should see "B.6.4.1200.200.PROD"
 
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -75,7 +75,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I create a new project named "B.6.4.1200.300.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 

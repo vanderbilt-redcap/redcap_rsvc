@@ -45,7 +45,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     And I create a new project named "A.3.28.1300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION 
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 

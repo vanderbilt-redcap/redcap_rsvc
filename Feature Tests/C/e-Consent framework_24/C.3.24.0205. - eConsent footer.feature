@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I wait for 1 second
-        And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey"
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
         And I click on "" in the textarea field labeled "When the following logic becomes true"
         And I wait for 1 second
-        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I check the checkbox labeled "Save to File Repository"
         And I check the checkbox labeled "Save to specified field"

@@ -45,7 +45,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
     ##SETUP_PRODUCTION
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -62,7 +62,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
     And I click on the link labeled "My Projects"
     And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 

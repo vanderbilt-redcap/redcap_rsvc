@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -21,11 +21,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: #Add consent with no DAG
     When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
-    And I enter "NO DAG" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I enter "This is my NO DAG consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
+    And I enter "NO DAG" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my NO DAG consent form" into the textarea field labeled "Consent Form (Rich Text)"
     And I click on the button labeled "Add new consent form"
     And I wait for 1 second
     Then I should see "vNO DAG" in the row labeled "Participant Consent"
@@ -43,10 +43,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
   Scenario: #Add consent with DAG TestGroup1
       #Add consent with DAG TestGroup1
     When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
-    And I enter "DAG 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
+    And I enter "DAG 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
     And I click on the button labeled "Consent Form (Inline PDF)"
     And I upload a "pdf" format file located at "import_files/DAG1.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
     And I wait for 1 second
@@ -56,10 +56,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
   Scenario: #Add consent with DAG TestGroup2
       #Add consent with DAG TestGroup2
     When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
-    And I enter "DAG 2" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
+    And I enter "DAG 2" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
     And I click on the button labeled "Consent Form (Inline PDF)"
     And I upload a "pdf" format file located at "import_files/DAG2.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
     And I wait for 1 second
@@ -145,7 +145,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Choose action for record"
     And I click on the link labeled "Assign to Data Access Group"
     Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
-    And I select "TestGroup1" on the dropdown field labeled "[No Assignment]" in the dialog box
+    And I select "TestGroup1" on the dropdown field labeled "[No Assignment]"
     And I click on the button labeled "Assign to Data Access Group"
 
   Scenario: ##VERIFY
@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Choose action for record"
     And I click on the link labeled "Assign to Data Access Group"
     Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
-    And I select "TestGroup2" on the dropdown field labeled "[No Assignment]" in the dialog box
+    And I select "TestGroup2" on the dropdown field labeled "[No Assignment]"
     And I click on the button labeled "Assign to Data Access Group"
 
   Scenario: ##VERIFY

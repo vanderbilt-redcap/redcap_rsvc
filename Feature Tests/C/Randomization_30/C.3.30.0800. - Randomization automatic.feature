@@ -70,7 +70,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor" in the dialog box
+  And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor"
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
 
@@ -109,7 +109,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I select "Survey" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+  And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor"
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
   And I click on the link labeled "Home"
@@ -174,7 +174,7 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the link labeled "My Projects"
   And I click on the link labeled "C.3.30.0800"
   And I click on the button labeled "Move project to production"
-  And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+  And I click on the radio labeled "Keep ALL data saved so far"
   And I click on the button labeled "YES, Move to Production Status"
   Then I should see an alert box with the following text: "WARNING: RANDOMIZATION FIELD'S DATA WILL BE DELETED"
   Then I should see "Project status:  Production"
@@ -205,7 +205,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+  And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor"
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
   And I logout

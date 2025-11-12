@@ -11,7 +11,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -158,7 +158,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Survey response is editable"
-        And I verify "NewFirstName" is within the input field labeled "First Name" in the dialog box
+        And I verify "NewFirstName" is within the input field labeled "First Name"
 
 
     Scenario: Verification e-Consent saved and logged correctly

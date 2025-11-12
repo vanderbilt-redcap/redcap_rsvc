@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
       And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
@@ -19,7 +19,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I click on the button labeled "Enable the e-Consent Framework for a survey"
-      And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+      And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
       Then I should see "Enable e-Consent"
       And I should see "Primary settings"
 
@@ -50,10 +50,10 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 1 second
-      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
       And I click on the button labeled "Update & Close Editor"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"

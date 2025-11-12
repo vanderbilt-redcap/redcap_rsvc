@@ -30,7 +30,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see a button labeled "Move project to production"
 
         When I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "Yes, Request Admin to Move to Production Status"
         Then I should see "Your request to move the project to production status has been sent to a REDCap administrator"
         And I wait for 1 second
@@ -93,7 +93,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see a button labeled "Move project to production"
 
         Given I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far."
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
         Given I click on the link labeled "Logging"

@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -25,11 +25,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Consent form version"
 
   Scenario: #CROSS-REF ##C.3.24.1600.100 Add consent form version via rich text
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)"
     And I click on the button labeled "Cancel"
     Then I should see "v1.0" in the row labeled "Participant Consent"
 
@@ -38,11 +38,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Consent form version"
 
   Scenario:
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)"
     And I click on the button labeled "Add new consent form"
     And I wait for 1 second
     Then I should see "vtest 1" in the row labeled "Participant Consent"
@@ -135,7 +135,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
         # Unable to add an existing version name
 
   Scenario:
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
     And I click on the button labeled "Add new consent form"
         #Verify error
     Then I should see "ERROR: You must provide your consent form"
@@ -143,10 +143,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Close"
         #Add unique version
-    And I clear field and enter "test 2" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
+    And I clear field and enter "test 2" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
     And I click on the button labeled "Consent Form (Inline PDF)"
         #Adding a .png file will cause an error
     And I upload a "pdf" format file located at "import_files/consent.png", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file

@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
         #USER_RIGHTS
@@ -41,7 +41,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
         And I click on "" in the textarea field labeled "Enter logic for new rule"
         And I wait for 1 second
-        And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
+        And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Add"
         ##VERIFY

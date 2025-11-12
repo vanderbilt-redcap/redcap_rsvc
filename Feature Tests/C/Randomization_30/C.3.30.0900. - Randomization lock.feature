@@ -14,7 +14,7 @@ And I upload a "csv" format file located at "import_files/AlloRand rand_group3.c
 And I upload a "csv" format file located at "import_files/AlloRand rand_group4.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 When I click on the link labeled "Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far"
 And I click on the button labeled "YES, Move to Production Status" in the dialog box 
 Then I should see "Project status:  Production"
 

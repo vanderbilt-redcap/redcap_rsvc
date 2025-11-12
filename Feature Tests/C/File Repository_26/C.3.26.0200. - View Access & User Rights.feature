@@ -24,14 +24,14 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the button labeled "Create folder"
         And I enter "TestGroup1_Folder" into the input field labeled "New folder name:"
         And I select "TestGroup1" on the dropdown field labeled "Limit access by Data Access Group?"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "TestGroup1_Folder"
 
     #Create role limited folder
         And I click on the button labeled "Create folder"
         And I enter "Role1_Folder" into the input field labeled "New folder name"
         And I select "1_FullRights" on the dropdown field labeled "Limit access by User Role?"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "Role1_Folder"
 
   #Scenario: SETUP User Rights
@@ -611,7 +611,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the button labeled "Create folder"
         And I enter "Admin_Folder" into the input field labeled "New folder name"
         And I check the checkbox labeled "Limit access to REDCap administrators only"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "Admin_Folder"
         And I should see "Admin-Restricted" in the row labeled "Admin_Folder"
 
@@ -638,7 +638,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the link labeled "Admin_Folder"
         When I click on the button labeled "Create folder"
         And I enter "Nested_Admin_Only" into the input field labeled "New folder name"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "All Files/Admin_Folder"
         Then I should see "Nested_Admin_Only"
         #Manual: Make sure it says "Admin-Restricted" in the "All Files/Admin_Folder" row.  Should we consider a way to verify this on Automation as well?

@@ -10,7 +10,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         And I create a new project named "B.2.6.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -118,11 +118,11 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"
 
         ##VERIFY_DE
@@ -150,11 +150,11 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"
         ##VERIFY_DE
         #And I open the Excel CSV File
@@ -180,11 +180,11 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"
         ##VERIFY_DE
 

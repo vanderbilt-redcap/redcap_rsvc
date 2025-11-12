@@ -33,7 +33,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario: #SETUP_PRODUCTION
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
     And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
@@ -44,7 +44,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "1 multi data form same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='1' and [trigger2]='1'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[trigger1]='1' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -63,7 +63,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "2 multi data form and survey same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='2' and [trigger2]='1'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[trigger1]='2' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -83,7 +83,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "3 multi survey same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='2' and [trigger2]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[trigger1]='2' and [trigger2]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -104,7 +104,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "4 multi data form different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -126,7 +126,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "5 multi data form and survey different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -149,7 +149,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "6 multi survey different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"

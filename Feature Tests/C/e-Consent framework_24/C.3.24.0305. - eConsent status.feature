@@ -11,7 +11,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
@@ -21,7 +21,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey" in the dialog box
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey"
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
