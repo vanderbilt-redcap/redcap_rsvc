@@ -24,7 +24,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
 
         When I click on the checkbox for the field labeled "Logging"
         And I click on the checkbox for the field labeled "Record Locking Customization"
-        And I select the radio option "Locking / Unlocking with E-signature authority" for the field labeled "Lock/Unlock Records (instrument level)"
+        And I click on the radio labeled "Locking / Unlocking with E-signature authority" in the row labeled "Lock/Unlock Records (instrument level)"
         And I should see "Please note that giving a user 'Locking / Unlocking with E-signature authority' privileges"
         And I click on the button labeled "Close"
         And I click on the button labeled "Add user"
