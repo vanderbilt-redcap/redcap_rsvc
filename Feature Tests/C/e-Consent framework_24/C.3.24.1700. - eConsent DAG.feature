@@ -153,7 +153,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     Then I should see "Record ID 2 was successfully assigned to a Data Access Group!"
     And I should see "Arm 1: Arm 1 — TestGroup1"
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
-    Then I should see the consent pdf has loaded in the iframe
+    Then I should see the consent pdf has loaded
     #Manual: Then I should see "CONSENT DAG 1" in the PDF content displayed within the page
     And I should NOT see "This is my NO DAG consent form"
 
@@ -163,7 +163,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
-    And I should see the consent pdf has loaded in the iframe
+    And I should see the consent pdf has loaded
     #Manual: Then I should see "CONSENT DAG 1" in the PDF content displayed within the page
     And I should NOT see "This is my NO DAG consent form"
 
@@ -210,7 +210,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     Then I should see "Record ID 3 was successfully assigned to a Data Access Group!"
     And I should see "Arm 1: Arm 1 — TestGroup2"
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
-    Then I should see the consent pdf has loaded in the iframe
+    Then I should see the consent pdf has loaded
     #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
     And I should NOT see "This is my NO DAG consent form"
 
@@ -220,7 +220,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
-    And I should see the consent pdf has loaded in the iframe
+    And I should see the consent pdf has loaded
     #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
     And I should NOT see "This is my NO DAG consent form"
     When I clear field and enter "FirstName" into the input field labeled "First Name"
