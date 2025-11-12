@@ -24,10 +24,10 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
       | test_user3 |
       | test_user4 |
 
-    Given I click on the button labeled "Upload" in the dialog box
+    Given I click on the button labeled "Upload"
     Then I should see a dialog containing the following text: "SUCCESS!"
 
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
       | —                       | test_admin          |

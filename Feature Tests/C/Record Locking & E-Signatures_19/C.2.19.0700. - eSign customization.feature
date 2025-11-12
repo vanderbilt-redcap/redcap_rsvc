@@ -11,14 +11,14 @@ Feature: User Interface: The Record Locking Customization module shall allow the
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Lock Record Custom Text
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         Then I should see "Record Locking Customization"
 
         Given I uncheck the checkbox in the column labeled "Display the Lock option for this instrument?" and the row labeled "Survey"
@@ -67,7 +67,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         Then I should see "E-signature: Username/password verification"
 
         Given I provide E-Signature credentials for the user "Test_Admin"
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
         Then I should see "E-signed by test_admin"
         And I should see "Instrument locked by test_admin"
 
@@ -84,7 +84,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         #FUNCTIONAL REQUIREMENT
         ##ACTION Edit and Delete Lock Record Custom Text
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         Then I should see "Record Locking Customization"
 
         When I click on the icon labeled "Edit" in the row labeled "Text Validation"
@@ -126,7 +126,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         Then I should see "E-signature: Username/password verification"
 
         Given I provide E-Signature credentials for the user "Test_Admin"
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
         Then I should see "E-signed by test_admin"
         And I should see "Instrument locked by test_admin"
 
@@ -137,7 +137,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I should NOT see a checkbox labeled "E-signature"
 
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I click on the button labeled "Leave without saving changes"
         And I locate the bubble for the "Survey" instrument on event "Event Three" for record ID "1" and click on the bubble
         Then I should see "Survey"
         And I should NOT see a checkbox labeled "Lock"

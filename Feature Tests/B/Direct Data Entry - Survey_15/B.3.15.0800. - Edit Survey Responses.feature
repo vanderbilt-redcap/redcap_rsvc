@@ -20,8 +20,8 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     ##USER_RIGHTS - 1_FullRights
@@ -29,7 +29,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     #SETUP_RECORD
@@ -88,7 +88,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Re-assign to role"
     And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see "Test User1" within the "3_ReadOnly_Deidentified" row of the column labeled "Username" of the User Rights table
 
     #FUNCTIONAL_REQUIREMENT

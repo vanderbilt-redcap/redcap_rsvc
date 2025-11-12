@@ -38,10 +38,10 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Given I click on the Edit image for the field named "Text Box"
         And I enter "2" into the Variable Name of the open "Edit Field" dialog box
         #Because we cannot ACTUALLY save due to the alert window that pops up, do NOT add "Edit Field" before dialog box in the step below - will not work!
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
         Then I should see a dialog containing the following text: "Please enter a value for the variable name"
 
-        Given I click on the button labeled "Close" in the dialog box
+        Given I click on the button labeled "Close"
         And I enter "2ABC" into the Variable Name of the open "Edit Field" dialog box
         And I click on the button labeled "Save"
 

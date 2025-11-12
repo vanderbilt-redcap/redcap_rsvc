@@ -19,7 +19,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
     And I click on the button labeled "Add"
     And I click on the button labeled "Add"
     Then I should see a dialog containing the following text: "check one or more"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     Given I clear field and enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
     And I enable the Administrator Privilege "Set administrator privileges" for a new administrator
@@ -98,7 +98,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
     And I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
     Then I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
 
-    Given I click on the button labeled "Close" in the dialog box
+    Given I click on the button labeled "Close"
     When I click on the link labeled "Administrator Privileges"
     Then I should see "Set administrator privileges"
     And I should NOT see "Test_User1"

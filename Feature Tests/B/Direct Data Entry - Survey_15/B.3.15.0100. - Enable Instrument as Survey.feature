@@ -23,8 +23,8 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
@@ -48,7 +48,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I click on the button labeled "Close survey"
 
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
 
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
@@ -99,9 +99,9 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
 
     And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
-    And I click on the button labeled "Delete Survey Settings" in the dialog box
+    And I click on the button labeled "Delete Survey Settings"
     Then I should see a dialog containing the following text: "Survey successfully deleted!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##VERIFY
     Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"

@@ -16,12 +16,12 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Delete ALL data in the project" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Delete ALL data in the project"
+    And I click on the button labeled "YES, Move to Production Status"
     #Manual: Will have to accept confirmation window "And I click on the button labeled "Ok" in the pop-up box"
     Then I should see "Project status:  Production"
 
@@ -38,11 +38,11 @@ Feature: User Interface: The system shall require the repeating instrument and i
     When I click on the link labeled "Setup"
     When I click on the button labeled "Enable" in the row labeled "Repeating instruments and events"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
-    And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Text Validation" in the dialog box
-    And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Data Types" in the dialog box
+    And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Text Validation"
+    And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Data Types"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: import without repeat instrument

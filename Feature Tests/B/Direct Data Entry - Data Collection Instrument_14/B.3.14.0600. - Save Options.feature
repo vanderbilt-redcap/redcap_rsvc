@@ -20,8 +20,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #FUNCTIONAL_REQUIREMENT:
@@ -54,7 +54,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
     Scenario: B.3.14.0600.300 Save & Mark as Complete
         #SETUP create record
         Given I click on the link labeled "Add / Edit Records"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I click on the button labeled "Leave without saving changes"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
         Then I should see "Adding new Record ID 9"

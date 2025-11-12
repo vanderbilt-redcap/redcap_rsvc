@@ -22,8 +22,8 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #VERIFY_DESIGNER
@@ -54,16 +54,16 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I click on the link labeled "Setup"
     When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     Then I should see a dialog containing the following text: "WARNING"
-    Given I click on the button labeled "Close" in the dialog box
+    Given I click on the button labeled "Close"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
-    And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey" in the dialog box
+    And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
-    #Then I should see "Successfully saved" in the dialog box
-    #And I click on the button labeled "Close" in the dialog box
+    #Then I should see "Successfully saved"
+    #And I click on the button labeled "Close"
 
     #ACTION - Create repeatable survey
     Given I click on the link labeled "Designer"

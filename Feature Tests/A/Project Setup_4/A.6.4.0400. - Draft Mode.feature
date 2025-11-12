@@ -26,13 +26,13 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     And I click on the link labeled "Logging"
@@ -63,7 +63,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     When I click on the link labeled "Designer"
     When I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Awaiting review of project changes"
     And I click on the link labeled "Logging"
 
@@ -81,7 +81,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     When I click on the button labeled "Project Modification Module"
     And I click on the button labeled "Reject Changes"
-    And I click on the button labeled "Reject Changes" in the dialog box
+    And I click on the button labeled "Reject Changes"
     Then I should see "Project Changes Rejected / User Notified"
     Given I logout
 
@@ -100,7 +100,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     #Then I should see "The project is now in Draft Mode"
 
     When I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Awaiting review of project changes"
     And I click on the link labeled "Logging"
 
@@ -118,7 +118,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     When I click on the button labeled "Project Modification Module"
     And I click on the button labeled "COMMIT CHANGES"
-    And I click on the button labeled "COMMIT CHANGES" in the dialog box
+    And I click on the button labeled "COMMIT CHANGES"
     Then I should see "Project Changes Committed / User Notified"
     Given I logout
 
@@ -146,13 +146,13 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     When I click on the link labeled "Control Center"
@@ -177,7 +177,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Given I logout
 
     Given I login to REDCap with the user "Test_Admin"
@@ -188,7 +188,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     When I click on the button labeled "Project Modification Module"
     And I click on the button labeled "Remove All Drafted Changes"
-    And I click on the button labeled "Remove All Drafted Changes" in the dialog box
+    And I click on the button labeled "Remove All Drafted Changes"
     Then I should see "Project Changes Removed / User Notified"
     Given I logout
 
@@ -210,9 +210,9 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Text Box 2"
 
     When I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Changes Were Made Automatically"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
@@ -231,13 +231,13 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     When I click on the link labeled "Control Center"
@@ -256,9 +256,9 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "The project is now in Draft Mode"
 
     When I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Changes Were Made Automatically"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     And I click on the button labeled "Enter Draft Mode"
     Then I should see "The project is now in Draft Mode"
@@ -283,7 +283,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Awaiting review of project changes"
     And I click on the link labeled "Logging"
 
@@ -302,7 +302,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     When I click on the button labeled "Project Modification Module"
     Then I should see "Total potentially critical issues: 1"
     And I click on the button labeled "Remove All Drafted Changes"
-    And I click on the button labeled "Remove All Drafted Changes" in the dialog box
+    And I click on the button labeled "Remove All Drafted Changes"
     Then I should see "Project Changes Removed / User Notified"
     Given I logout
 
@@ -327,7 +327,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Awaiting review of project changes"
     And I click on the link labeled "Logging"
 
@@ -346,7 +346,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     When I click on the button labeled "Project Modification Module"
     Then I should see "Total potentially critical issues: 1"
     And I click on the button labeled "COMMIT CHANGES"
-    And I click on the button labeled "COMMIT CHANGES" in the dialog box
+    And I click on the button labeled "COMMIT CHANGES"
     Then I should see "Project Changes Committed / User Notified"
     Given I logout
 
@@ -367,7 +367,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the Edit image for the field named "Radio Button Manual"
     Then I should see a dialog containing the following text: "Edit Field"
     When I verify Choice of "101, Choice100" in the open "Edit Field" dialog box
-    Then I click on the button labeled "Cancel" in the dialog box
+    Then I click on the button labeled "Cancel"
 
     When I click on the link labeled "Data Exports, Reports, and Stats"
 
@@ -400,7 +400,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
-    And I click on the button labeled "Submit" in the dialog box
+    And I click on the button labeled "Submit"
     Then I should see "Changes Were Made Automatically"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 #End

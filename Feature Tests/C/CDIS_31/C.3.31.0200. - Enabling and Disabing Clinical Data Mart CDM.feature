@@ -20,7 +20,7 @@ And I click on the button labeled "Save Changes"
 #SET UP SMARTHEALTH IT IN CONTROL CENTER 
 When I click on the link labeled "FHIR Systems"
 Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
-When I click on the button labeled exactly "Add"
+When I click on the button labeled "Add"
 And I enter "Test" into the input field labeled "Client ID:"
 And I enter "any_secret" into the input field labeled "Client Secret:"
 And I enter "Test" into the input field labeled "Client ID:"

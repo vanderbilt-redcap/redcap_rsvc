@@ -11,8 +11,8 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
       When I click on the link labeled "Designer"
@@ -29,7 +29,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       ##ACTION: New PDF Trigger
       And I click on the button labeled "Add new trigger"
       And I enter "Custom Dropdown 1 Form Snapshot" into the input field labeled "Name of trigger"
-      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
@@ -83,10 +83,10 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 2 seconds
-      And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+      And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
       And I click on the button labeled "Update & Close Editor" in the dialog box  
       And I click on the icon labeled '[All instruments]'
       And I click on the link labeled 'deselect all'
@@ -131,7 +131,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I select "Complete" on the dropdown field labeled "Complete?"
@@ -162,7 +162,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Adding new Record ID 2."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -176,7 +176,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
@@ -202,7 +202,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Coordinator's Name Typed"
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -211,7 +211,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"

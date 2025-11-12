@@ -10,9 +10,9 @@ And I create a new project named "C.3.30.0800" by clicking on "New Project" in t
 Scenario: #SETUP User Rights
   When I click on the link labeled "User Rights"
   And I click on the link labeled "Test User1"
-  And I click on the button labeled "Assign to role" on the tooltip
+  And I click on the button labeled "Assign to role"
   And I select "1_FullRights" on the dropdown field labeled "Select Role"
-  And I click on the button labeled exactly "Assign"
+  And I click on the button labeled "Assign"
   Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
   
     #Adding user Test_User2 (No randomization rights)
@@ -20,7 +20,7 @@ Scenario: #SETUP User Rights
   And I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
   And I click on the button labeled "Assign to role"
   And I select "5_NoRand" on the dropdown field labeled "Select Role" on the role selector dropdown
-  When I click on the button labeled exactly "Assign" on the role selector dropdown
+  When I click on the button labeled "Assign"
   Then I should see "Test User2" within the "5_NoRand" row of the column labeled "Username" of the User Rights table
 
   #SETUP randomization for 0100
@@ -70,8 +70,8 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor" in the dialog box
-  And I click on the button labeled "Update & Close Editor" in the dialog box
+  And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor"
+  And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
 
   When I click on the link labeled "Add / Edit Records"
@@ -109,7 +109,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I select "Survey" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+  And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor"
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
   And I click on the link labeled "Home"
@@ -174,8 +174,8 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the link labeled "My Projects"
   And I click on the link labeled "C.3.30.0800"
   And I click on the button labeled "Move project to production"
-  And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-  And I click on the button labeled "YES, Move to Production Status" in the dialog box
+  And I click on the radio labeled "Keep ALL data saved so far"
+  And I click on the button labeled "YES, Move to Production Status"
   Then I should see an alert box with the following text: "WARNING: RANDOMIZATION FIELD'S DATA WILL BE DELETED"
   Then I should see "Project status:  Production"
   And I logout
@@ -205,7 +205,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 2 seconds
-  And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+  And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor"
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
   And I logout

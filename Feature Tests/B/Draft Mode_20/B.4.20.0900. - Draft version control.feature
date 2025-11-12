@@ -20,8 +20,8 @@ Feature: User Interface: The system shall record all versions of the data dictio
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #ACTION: Draft Mode
@@ -41,9 +41,9 @@ Feature: User Interface: The system shall record all versions of the data dictio
 
         #ACTION: Commit Changes
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         #ACTION
         When I click on the link labeled "Project Home"

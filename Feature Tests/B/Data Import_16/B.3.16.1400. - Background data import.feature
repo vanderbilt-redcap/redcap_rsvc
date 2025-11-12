@@ -10,8 +10,8 @@ Feature: User Interface: The system shall allow data to be uploaded as backgroun
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         Given I click on the link labeled "Data Import Tool"
@@ -45,7 +45,7 @@ Feature: User Interface: The system shall allow data to be uploaded as backgroun
             | 4         | 44             | 3       | value-4-3 | value-4-4 | value-4-10 | value-4-11 | value-4-12 | value-4-13 | 1               |
             | 7         | 99-3           | 1       | value-7-3 | value-7-4 | value-7-10 | value-7-11 | value-7-12 | value-7-13 | 1               |
         
-        Then I click on the button labeled "Close" in the dialog box
+        Then I click on the button labeled "Close"
 
 
         Given I click on the link labeled "Record Status Dashboard"

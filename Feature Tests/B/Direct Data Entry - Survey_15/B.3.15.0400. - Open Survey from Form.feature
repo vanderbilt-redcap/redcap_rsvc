@@ -20,8 +20,8 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
@@ -39,7 +39,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     And I click on the button labeled "Close survey"
 
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Log out + Open survey

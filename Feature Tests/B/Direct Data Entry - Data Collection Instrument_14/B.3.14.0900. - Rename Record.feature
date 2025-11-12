@@ -20,8 +20,8 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #SET UP_USER_RIGHTS
@@ -29,7 +29,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        When I click on the button labeled exactly "Assign" on the role selector dropdown
+        When I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##VERIFY - INITIAL RECORD ROW IN REPORT
@@ -50,8 +50,8 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         And I click on the link labeled "Rename record"
         Then I should see a dialog containing the following text: 'Rename record "1"'
 
-        Given I clear field and enter "1.A" into the input field labeled 'Rename record "1"' in the dialog box
-        And I click on the button labeled "Rename record" in the dialog box
+        Given I clear field and enter "1.A" into the input field labeled 'Rename record "1"'
+        And I click on the button labeled "Rename record"
         Then I should see "Record ID 1.A was successfully renamed!"
 
         #VERIFY_RSD: Record 1 is now 1.A

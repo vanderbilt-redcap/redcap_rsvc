@@ -26,14 +26,14 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##SETUP_PRODUCTION
         When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
         And I logout
 
@@ -77,12 +77,12 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I click on the Move image for the field named "Required"
 
         #Then I should see "Move field to another location"
-        And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:" in the dialog box
-        And I click on the button labeled "Move field" in the dialog box
+        And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:"
+        And I click on the button labeled "Move field"
         ##VERIFY
         Then I should see "SUCCESSFULLY MOVED"
         And I should see 'Successfully moved the field(s) to a new location on another data collection instrument'
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         #The following button is covering the "Return to list of instruments" button
         Given I click on the button labeled "Dismiss"
@@ -121,7 +121,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         ##ACTION: delete field
         Given I see the field labeled "Multiple Choice Dropdown Manual"
         And I click on the Delete Field image for the field named "Multiple Choice Dropdown Manual"
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
 
         ##VERIFY
         Then I should NOT see a field labeled "Multiple Choice Dropdown Manual"
@@ -144,7 +144,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         ##SETUP_PRODUCTION
         When I click on the button labeled "RETURN TO PREVIOUS PAGE"
         And I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Awaiting review of project changes"
         And I logout
 
@@ -158,7 +158,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         When I click on the button labeled "Project Modification Module"
         And I click on the button labeled "COMMIT CHANGES"
         Then I should see a dialog containing the following text: "COMMIT CHANGES TO PROJECT?"
-        And I click on the button labeled "COMMIT CHANGES" in the dialog box
+        And I click on the button labeled "COMMIT CHANGES"
         Then I should see "Project Changes Committed / User Notified"
 
         ##VERIFY_CODEBOOK

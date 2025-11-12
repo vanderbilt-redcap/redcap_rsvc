@@ -9,13 +9,13 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         And I create a new project named "C.4.18.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         ##ACTION executing all rules.
         When I click on the link labeled "Data Quality"
-        And I click on the button labeled exactly "All"
+        And I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
@@ -47,12 +47,12 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | Record | Discrepant fields with their values | Status       | Exclude          |
             | 5 (#1) | integer = 1111111111                | Out of range | remove exclusion |
 
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         #Manual: refresh the page
 
         ##VERIFY
         Then I click on the button labeled "Clear"
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                              | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | D      | Field validation errors (out of range) | -                                        | 3                   |
@@ -82,12 +82,12 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | number_1_period = 4.2               | Out of range | exclude |
             | 5 (#1) | number = 10.000                     | Out of range | exclude |
 
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         #Manual: refresh the page
 
         ##VERIFY
         Then I click on the button labeled "Clear"
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                              | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | D      | Field validation errors (out of range) | -                                        | 4                   |
