@@ -187,7 +187,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
-    And I should see the consent pdf has loaded
+    And I should see the consent pdf has loaded in the iframe
     #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
@@ -196,7 +196,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
-    And I should see the consent pdf has loaded
+    And I should see the consent pdf has loaded in the iframe
     #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
