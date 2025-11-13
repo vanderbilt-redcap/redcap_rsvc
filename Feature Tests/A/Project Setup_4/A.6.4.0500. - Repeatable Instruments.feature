@@ -79,7 +79,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
 
             And I click on the icon in the row labeled "Instance #1"
-            Then I see "Current instance:"
+            Then I should see "Current instance:"
 
             Given I click on the link labeled "Record ID 1"
             And I click the bubble to select a record for the "Data Types" longitudinal instrument on event "Event 1"
@@ -120,9 +120,9 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
             Then I should NOT see "Current instance:"
             And I click on the button labeled "Cancel"
-            Then I see "data entry cancelled - not saved"
+            Then I should see "data entry cancelled - not saved"
             And I click the bubble to select a record for the "Data Types" longitudinal instrument on event "Event 1"
-            Then I see "Current instance:"
+            Then I should see "Current instance:"
 
             Given I click on the link labeled "Data Exports, Reports, and Stats"
 
@@ -182,7 +182,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
             And I click on the button labeled "Close"
 
-            Given I see the link labeled "Data Exports, Reports, and Stats"
+            Given I should see the link labeled "Data Exports, Reports, and Stats"
             And I click on the link labeled "Data Exports, Reports, and Stats"
             Then I should see a table row containing the following values in the reports table:
                   | A | All data (all records and fields) |

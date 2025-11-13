@@ -55,7 +55,7 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         And I click on the link labeled "Form 1"
         And I click on the Edit Matrix image for the field named "ice_cream"
 
-        Given I see "Edit Matrix of Fields"
+        Given I should see "Edit Matrix of Fields"
         And I click on the button labeled "Save & split matrix into separate fields"
         And I click on the button labeled "Split matrix"
 

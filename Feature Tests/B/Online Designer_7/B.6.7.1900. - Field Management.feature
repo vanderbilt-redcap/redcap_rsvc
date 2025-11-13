@@ -111,7 +111,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: copy field
-        Given I see the field labeled "Notes box"
+        Given I should see the field labeled "Notes box"
         And I click on the Copy image for the field named "Notes box"
 
         ##VERIFY
@@ -119,7 +119,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: delete field
-        Given I see the field labeled "Multiple Choice Dropdown Manual"
+        Given I should see the field labeled "Multiple Choice Dropdown Manual"
         And I click on the Delete Field image for the field named "Multiple Choice Dropdown Manual"
         And I click on the button labeled "Delete"
 
