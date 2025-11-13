@@ -56,7 +56,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Then I should see a dialog containing the following text: "WARNING"
     Given I click on the button labeled "Close"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
-    And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey"
+    And I check the checkbox labeled "Survey" in the row labeled "Event Three (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
     And I click on the button labeled "Close"
