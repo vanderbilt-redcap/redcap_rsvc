@@ -59,10 +59,10 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Text Validation"
         And I should see "Test custom text"
-        And I should see a checkbox labeled exactly "E-signature" that is unchecked
+        And I should see a checkbox labeled "E-signature" that is unchecked
 
-        When I check the checkbox labeled exactly "Lock"
-        And I check the checkbox labeled exactly "E-signature"
+        When I check the checkbox labeled "Lock"
+        And I check the checkbox labeled "E-signature"
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         Then I should see "E-signature: Username/password verification"
 
@@ -118,10 +118,10 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
         And I should see "Edit Test custom text"
-        And I should see a checkbox labeled exactly "E-signature" that is unchecked
+        And I should see a checkbox labeled "E-signature" that is unchecked
 
-        When I check the checkbox labeled exactly "Lock"
-        And I check the checkbox labeled exactly "E-signature"
+        When I check the checkbox labeled "Lock"
+        And I check the checkbox labeled "E-signature"
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         Then I should see "E-signature: Username/password verification"
 
@@ -133,7 +133,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I click on the link labeled "Data Types"
         And I click on the icon in the row labeled "Instance #1"
         Then I should see "Data Types"
-        And I should see a checkbox labeled exactly "Lock" that is unchecked
+        And I should see a checkbox labeled "Lock" that is unchecked
         And I should NOT see a checkbox labeled "E-signature"
 
         When I click on the link labeled "Record Status Dashboard"

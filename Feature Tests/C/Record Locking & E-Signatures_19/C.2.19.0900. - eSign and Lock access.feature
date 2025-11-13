@@ -128,7 +128,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
         ##VERIFY - Locking / Unlocking with E-signature authority is enabled
-        And I should see a checkbox labeled exactly "Lock" that is unchecked
+        And I should see a checkbox labeled "Lock" that is unchecked
         And I should see a checkbox labeled "E-signature" that is unchecked
         And I click on the button labeled "Cancel"
         ##VERIFY - Lock/Unlock *Entire* Records (record level) is enabled
@@ -173,7 +173,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
         ##VERIFY - Locking / Unlock is enabled with no e-signature
-        And I should see a checkbox labeled exactly "Lock" that is unchecked
+        And I should see a checkbox labeled "Lock" that is unchecked
         And I should NOT see a checkbox labeled "E-signature"
         When I click on the link labeled "Record Status Dashboard"
         When I click on the link labeled "3"

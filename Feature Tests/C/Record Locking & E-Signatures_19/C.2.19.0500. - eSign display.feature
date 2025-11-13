@@ -57,8 +57,8 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
 
-        When I click on the checkbox labeled exactly "Lock"
-        And I click on the checkbox labeled exactly "E-signature"
+        When I click on the checkbox labeled "Lock"
+        And I click on the checkbox labeled "E-signature"
         And I click on the button labeled "Save & Exit Form"
         Then I should see a dialog containing the following text: "E-signature: Username/password verification"
 
