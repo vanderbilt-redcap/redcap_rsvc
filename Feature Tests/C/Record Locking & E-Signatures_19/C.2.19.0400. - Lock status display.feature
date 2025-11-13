@@ -49,7 +49,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         Then I should see "Text Validation"
         #FUNCTIONAL REQUIREMENT C.2.19.200.100 Display forms that are designated
         And I should see a checkbox labeled "Lock this instrument?" that is unchecked
-        When I click on the checkbox for the field labeled "Lock this instrument?"
+        When I click on the checkbox labeled "Lock this instrument?"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record Home Page"
         And I should see "Record ID 3 successfully edited."

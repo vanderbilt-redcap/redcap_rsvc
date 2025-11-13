@@ -22,8 +22,8 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         And I click on the button labeled "Add with custom rights"
         Then I should see 'Adding new user "Test_User1"'
 
-        When I click on the checkbox for the field labeled "Logging"
-        And I click on the checkbox for the field labeled "Record Locking Customization"
+        When I click on the checkbox labeled "Logging"
+        And I click on the checkbox labeled "Record Locking Customization"
         And I click on the radio labeled "Locking / Unlocking with E-signature authority" in the row labeled "Lock/Unlock Records (instrument level)"
         And I should see "Please note that giving a user 'Locking / Unlocking with E-signature authority' privileges"
         And I click on the button labeled "Close"

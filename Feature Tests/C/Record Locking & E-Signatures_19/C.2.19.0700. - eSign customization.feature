@@ -74,7 +74,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I click on the link labeled "Data Types"
         Then I should see "Data Types"
         And I should see "Test custom text"
-        And I should NOT see a checkbox for the field labeled "E-signature"
+        And I should NOT see a checkbox labeled "E-signature"
 
         When I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Survey" instrument on event "Event Three" for record ID "1" and click on the bubble
