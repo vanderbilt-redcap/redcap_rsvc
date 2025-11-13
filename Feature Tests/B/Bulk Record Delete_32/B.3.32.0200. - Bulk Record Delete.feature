@@ -92,8 +92,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
 
-        And I click on the radio exactly "Delete entire records"
-        And I click on the radio exactly "Enter a custom list of records"
+        And I click on the radio labeled "Delete entire records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "3,5" into the textarea field labeled "Step 3: Enter records to delete"
         # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
@@ -101,7 +101,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
-        When I click on the radio exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
         And I click on the button labeled "Delete"
 
@@ -135,9 +135,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         And I wait for 2 seconds
-        When I click on the radio exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio exactly "Select records from a list"
+        And I click on the radio labeled "Select records from a list"
         Then I should see "Step 3: Select records to delete"
         And I wait for 2 seconds
 
@@ -179,7 +179,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled "Partial delete (instrument-level data only)"
 
         Given the Event Name "Event 1", I click on the checkbox labeled "Data Types"
-        When I click on the radio exactly "Enter a custom list of records"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "1" into the textarea field labeled "Step 3: Enter records to delete"
         # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
@@ -225,7 +225,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Given the Event Name "Event 1", I click on the checkbox labeled "Text Validation"
         And the Event Name "Event 1", I click on the checkbox labeled "Data Types"
         And the Event Name "Event 1", I click on the checkbox labeled "Consent"
-        When I click on the radio exactly "Enter a custom list of records"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "4" into the textarea field labeled "Step 3: Enter records to delete"
         # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
@@ -333,8 +333,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
 
-        And I click on the radio exactly "Delete entire records"
-        And I click on the radio exactly "Enter a custom list of records"
+        And I click on the radio labeled "Delete entire records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I enter "5,7" into the textarea field labeled "Step 3: Enter records to delete"
@@ -343,7 +343,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
-        When I click on the radio exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I click on the button labeled "Delete"
 
@@ -380,9 +380,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         And I wait for 2 seconds
-        When I click on the radio exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio exactly "Select records from a list"
+        And I click on the radio labeled "Select records from a list"
         Then I should see "Step 3: Select records to delete"
         And I wait for 2 seconds
 
@@ -425,7 +425,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the radio exactly "Enter a custom list of records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         And I click on the checkbox labeled "Data Types"
@@ -472,7 +472,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
 
-        When I click on the radio exactly "Enter a custom list of records"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."        
         And I click on the checkbox labeled "Data Types"
