@@ -65,7 +65,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     And I locate the bubble for the "Survey" instrument on event "Event Three" for record ID "5" and click on the bubble
     Then I should see the button labeled "Edit response"
 
-    When I click on button labeled "Edit response"
+    When I click on the button labeled "Edit response"
     Then I should see "(now editing)"
 
     Given I clear field and enter "Name_EDITRESPONSE" into the data entry form field labeled "Name"
