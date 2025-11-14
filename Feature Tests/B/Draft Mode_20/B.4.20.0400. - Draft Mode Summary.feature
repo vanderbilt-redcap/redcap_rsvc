@@ -39,7 +39,7 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
         And I enter "Notes Box" into the Field Label of the open "Add New Field" dialog box
         And I enter "notesbox4" into the Variable Name of the open "Add New Field" dialog box
         And I click on the button labeled "Save"
-        Then I should see the field labeled "Notes Box"
+        Then I should see the textarea labeled "Notes Box"
 
         #FUNCTIONAL_REQUIREMENT
         When I click on the link labeled "View detailed summary of all drafted changes"

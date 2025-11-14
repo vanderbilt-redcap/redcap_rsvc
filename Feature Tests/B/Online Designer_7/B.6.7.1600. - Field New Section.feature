@@ -44,7 +44,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         And I click on the button labeled "Save"
 
         #VERIFY
-        Then I should see the field labeled "Notes Box"
+        Then I should see the textarea labeled "Notes Box"
 
         When I click on the Add Field input button below the field named "Record ID"
         When I select "Begin New Section (with optional text)" from the Field Type dropdown of the open "Add New Field" dialog box
