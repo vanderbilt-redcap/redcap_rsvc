@@ -14,7 +14,7 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##SETUP auto-archive
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        And I enable the toggle button labeled "Consent"
+        And I check the checkbox labeled "Consent"
         And I should see a toggle button labeled "Consent" that is in the enabled state
 
     ##SETUP File Repository

@@ -21,12 +21,12 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "e-Consent"
         Then I should see a checkbox labeled "Hide inactive" that is checked
 
-        Given I enable the toggle button labeled "Participant Consent"
+        Given I check the checkbox labeled "Participant Consent"
         And I should see a toggle button labeled "Participant Consent" that is in the enabled state
 
         When I uncheck the checkbox labeled "Hide inactive"
         And I wait for 5 seconds
-        And I disable the toggle button labeled "Participant Consent"
+        And I uncheck the checkbox labeled "Participant Consent"
         Then I should see a dialog containing the following text: "Set as inactive"
 
         Given I click on the button labeled "Set as inactive"
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         When I uncheck the checkbox labeled "Hide inactive"
-        And I enable the toggle button labeled "Participant Consent"
+        And I check the checkbox labeled "Participant Consent"
         And I should see a toggle button labeled "Participant Consent" that is in the enabled state
 
     ##ACTION: add record to get participant signature
