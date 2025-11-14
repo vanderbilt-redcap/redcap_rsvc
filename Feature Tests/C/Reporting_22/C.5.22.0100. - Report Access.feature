@@ -221,9 +221,9 @@ Feature: User Interface: The system shall support the ability to assign the User
       |         1 | Event Three (Arm 1: Arm 1) |                 |
       |         1 | Event 2 (Arm 1: Arm 1)     |               1 |
       |         1 | Event 2 (Arm 1: Arm 1)     |               2 |
-    And I should NOT see a link labeled exactly "2"
-    And I should NOT see a link labeled exactly "3"
-    And I should NOT see a link labeled exactly "4"
+    And I should NOT see a link labeled "2"
+    And I should NOT see a link labeled "3"
+    And I should NOT see a link labeled "4"
     ##VERIFY: Edit Report button
     And I should see a button labeled "Edit Report"
     And I logout
