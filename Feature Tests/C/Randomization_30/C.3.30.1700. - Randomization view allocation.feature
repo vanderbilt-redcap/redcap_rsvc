@@ -68,7 +68,7 @@ I want to see that Randomization is functioning as expected
     When I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.1700."
     And I click on the link labeled "Setup"
-    Then I should NOT see the button labeled "Set up a randomization model"
+    Then I should see a button labeled "Set up randomization" that is disabled
     And I logout
 
  Scenario:#C.3.30.1700.0200. User with dashboard rights cannot access View Allocation Table.

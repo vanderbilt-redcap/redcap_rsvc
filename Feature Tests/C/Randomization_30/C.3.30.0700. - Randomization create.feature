@@ -44,7 +44,7 @@ Scenario: C.3.30.0700.2300. User without Randomization Setup rights cannot acces
     When I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.0700."
     And I click on the link labeled "Setup"
-    Then I should NOT see the button labeled "Set up a randomization model"
+    Then I should see a button labeled "Set up randomization" that is disabled
     
 Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratification
     Given I logout
