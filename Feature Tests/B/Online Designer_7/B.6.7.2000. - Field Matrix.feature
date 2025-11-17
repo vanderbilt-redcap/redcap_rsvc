@@ -59,9 +59,9 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         And I click on the button labeled "Save & split matrix into separate fields"
         And I click on the button labeled "Split matrix"
 
-        Then I should see the field labeled "Vanilla"
-        And I should see the field labeled "Chocolate"
-        And I should see the field labeled "Strawberry"
+        Then I should see a radio labeled "Love" in the row labeled "Vanilla"
+        And I should see a radio labeled "Love" in the row labeled "Chocolate"
+        And I should see a radio labeled "Love" in the row labeled "Strawberry"
         And I should NOT see the field labeled "Matrix Group:  ice_cream"
 
         ##VERIFY_LOGGING
