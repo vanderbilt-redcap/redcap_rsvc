@@ -37,7 +37,7 @@ And I click on the button labeled "Set up randomization"
 And I click on the icon in the column labeled "Setup" and the row labeled "1"
 
 # #verify unable to erase randomization model
-And I should see the button labeled "Erase randomization model" is disabled
+And I should see the button labeled "Erase randomization model" that is disabled
 
 #Verify unable to modify Stratification
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
@@ -47,7 +47,7 @@ And I should see a checkbox labeled "B) Randomize by group/site?" that is disabl
 
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" that is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" in the row labeled "for use in DEVELOPMENT status" that is disabled
@@ -64,7 +64,7 @@ And I click on the link labeled "C.3.30.0900"
 And I click on the link labeled "Project Setup"
 And I click on the link labeled "Other Functionality"
 Then I should see "Because Randomization is enabled, the project cannot be moved back to Development status."
-And I should see the button labeled "Move back to Development status" is disabled
+And I should see the button labeled "Move back to Development status" that is disabled
 
 # Scenario: C.3.30.0900.0300. Admin cannot modify setup in production.  
 Given I click on the link labeled "Project Setup"
@@ -72,7 +72,7 @@ And I click on the button labeled "Set up randomization"
 And I click on the icon in the column labeled "Setup" and the row labeled "1"
 
 # # # #verify unable to erase randomization model
-And I should see the button labeled "Erase randomization model" is disabled
+And I should see the button labeled "Erase randomization model" that is disabled
 
 # # # # #Verify unable to modify Stratification
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
@@ -81,7 +81,7 @@ And I should see a checkbox labeled "A) Use stratified randomization?" that is c
 And I should see a checkbox labeled "B) Randomize by group/site?" that is disabled
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" that is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 

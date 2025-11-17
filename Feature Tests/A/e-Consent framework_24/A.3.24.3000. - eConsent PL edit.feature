@@ -107,7 +107,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see the button labeled "Submit" is disabled
+    And I should see the button labeled "Submit" that is disabled
 
   Scenario:
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."

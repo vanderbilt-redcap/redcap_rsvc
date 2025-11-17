@@ -124,7 +124,7 @@ Scenario: #C.3.30.1500.0300. All users with export rights can export randomized 
     
 Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can access and export the full allocation table directly from the setup interface, regardless of model type.
     When I click on the link labeled "Setup"
-    Then I should see the button labeled "Set up randomization" is disabled
+    Then I should see the button labeled "Set up randomization" that is disabled
     Given I logout
 
     #Verify user with setup rights can access and export the full allocation table directly from the setup interface, (rand_group) open randomization type

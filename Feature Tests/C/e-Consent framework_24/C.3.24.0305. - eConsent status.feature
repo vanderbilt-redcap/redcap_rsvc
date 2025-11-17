@@ -61,7 +61,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the button labeled "Submit" is disabled
+        And I should see the button labeled "Submit" that is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Submit"
@@ -99,14 +99,14 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the button labeled "Submit" is disabled
+        And I should see the button labeled "Submit" that is disabled
 
         And I click on the button labeled "Previous Page"
         Then I should see "Erase your signature(s) in this survey?"
 
         When I click on the button labeled "Cancel"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the button labeled "Submit" is disabled
+        And I should see the button labeled "Submit" that is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Previous Page"
@@ -145,7 +145,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the button labeled "Submit" is disabled
+        And I should see the button labeled "Submit" that is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Submit"

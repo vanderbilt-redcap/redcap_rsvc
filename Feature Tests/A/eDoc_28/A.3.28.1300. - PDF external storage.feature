@@ -86,7 +86,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     Then I should see a link labeled "Remove signature"
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see the button labeled "Submit" is disabled
+    And I should see the button labeled "Submit" that is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
