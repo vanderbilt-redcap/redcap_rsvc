@@ -43,7 +43,7 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         And I click on the button labeled "Save"
 
         ##VERIFY
-        Then I should see the field labeled "Descriptive Text with File"
+        Then I should see "Descriptive Text with File"
         And I should see the link labeled "B.6.7.1500_Upload File"
 
         ##SETUP_PRODUCTION
@@ -67,7 +67,7 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         ##ACTION: Download file from descriptive field
         Given I click on the link labeled "Add / Edit Records"
         When I click on the button labeled "Add new record"
-        Then I should see the field labeled "Descriptive Text with File"
+        Then I should see "Descriptive Text with File"
         And I should see "Attachment:"
         And I should see a link labeled "B.6.7.1500_Upload File"
 

@@ -21,10 +21,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         Then I should NOT see the field labeled "Name"
         And I should NOT see the field labeled "Text2"
         And I should NOT see the field labeled "Text box"
-        And I should NOT see the field labeled "Notes box"
+        And I should NOT see the textarea labeled "Notes box"
         And I should see the field labeled "Calculated Field"
-        And I should see the field labeled "Multiple Choice dropdown Auto"
-        And I should see the field labeled "Multiple Choice Dropdown Manual"
+        And I should see the dropdown labeled "Multiple Choice dropdown Auto"
+        And I should see the dropdown labeled "Multiple Choice Dropdown Manual"
         #Manual: Close the survey page
 
         #FUNCTIONAL_REQUIREMENT: data entry mode
@@ -43,10 +43,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         Then I should NOT see the field labeled "Name"
         And I should NOT see the field labeled "Text2"
         And I should NOT see the field labeled "Text box"
-        And I should NOT see the field labeled "Notes box"
+        And I should NOT see the textarea labeled "Notes box"
         And I should see the field labeled "Calculated Field"
-        And I should see the field labeled "Multiple Choice dropdown Auto"
-        And I should see the field labeled "Multiple Choice Dropdown Manual"
+        And I should see the dropdown labeled "Multiple Choice dropdown Auto"
+        And I should see the dropdown labeled "Multiple Choice Dropdown Manual"
 
         ##ACTION: change branching logic for one
         When I click on the link labeled "Designer"
@@ -82,10 +82,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I should see the field labeled "Name"
         And I should see the field labeled "Text2"
         And I should see the field labeled "Text box"
-        And I should see the field labeled "Notes box"
+        And I should see the textarea labeled "Notes box"
         And I should see the field labeled "Calculated Field"
-        And I should see the field labeled "Multiple Choice dropdown Auto"
-        And I should see the field labeled "Multiple Choice Dropdown Manual"
+        And I should see the dropdown labeled "Multiple Choice dropdown Auto"
+        And I should see the dropdown labeled "Multiple Choice Dropdown Manual"
         #Manual: Close tab
 
         #FUNCTIONAL_REQUIREMENT: data entry mode
@@ -96,10 +96,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         Then I should see the field labeled "Name"
         And I should see the field labeled "Text2"
         And I should see the field labeled "Text box"
-        And I should see the field labeled "Notes box"
+        And I should see the textarea labeled "Notes box"
         And I should see the field labeled "Calculated Field"
-        And I should see the field labeled "Multiple Choice dropdown Auto"
-        And I should see the field labeled "Multiple Choice Dropdown Manual"
+        And I should see the dropdown labeled "Multiple Choice dropdown Auto"
+        And I should see the dropdown labeled "Multiple Choice Dropdown Manual"
 
         ##ACTION
         When I click on the link labeled "Designer"
@@ -125,10 +125,10 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         When I click on the link labeled "Survey Distribution Tools"
         And I click on the button labeled "Open public survey"
         And I select the radio option "Choice101" for the field labeled "Radio Button Manual"
-        Then I should see the field labeled "Descriptive Text with File"
+        Then I should see "Descriptive Text with File"
 
         When I select the radio option "Choice99" for the field labeled "Radio Button Manual"
-        Then I should NOT see the field labeled "Descriptive Text with File"
+        Then I should NOT see "Descriptive Text with File"
 
         When I check the checkbox labeled "Checkbox3"
         Then I should see the field labeled "Required"
