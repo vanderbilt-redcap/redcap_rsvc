@@ -37,7 +37,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         And I enter "DD History" into the Field Label of the open "Add New Field" dialog box
         And I enter "dd_history" into the Variable Name of the open "Add New Field" dialog box
         And I click on the button labeled "Save"
-        Then I should see the field labeled "DD History"
+        Then I should see the textarea labeled "DD History"
 
         #ACTION: Commit Changes
         When I click on the button labeled "Submit Changes for Review"
