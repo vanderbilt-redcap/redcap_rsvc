@@ -15,7 +15,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I check the checkbox labeled "Consent"
-        And I should see a toggle button labeled "Consent" that is in the enabled state
+        And I should see a checkbox labeled "Consent" that is checked
 
     ##SETUP File Repository
         And I click on the link labeled "File Repository"

@@ -147,7 +147,7 @@ Scenario: #C.3.30.1800.0300. Admin can manually randomize a record with reason.
     And I select "3" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     Then I should see "Already randomized"
-    And I should see a radio labeled "Placebo" that is in the disabled state 
+    And I should see a radio labeled "Placebo" that is disabled 
 
 Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     Given I click on the link labeled "Setup"

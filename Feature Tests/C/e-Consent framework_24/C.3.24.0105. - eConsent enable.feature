@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         Then I should see a checkbox labeled "Hide inactive" that is checked
 
         Given I check the checkbox labeled "Participant Consent"
-        And I should see a toggle button labeled "Participant Consent" that is in the enabled state
+        And I should see a checkbox labeled "Participant Consent" that is checked
 
         When I uncheck the checkbox labeled "Hide inactive"
         And I wait for 5 seconds
@@ -31,10 +31,10 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         Given I click on the button labeled "Set as inactive"
         Then I should see 'e-Consent has been successfully disabled for survey "participant_consent"'
-        And I should see a toggle button labeled "Participant Consent" that is in the disabled state
+        And I should see a checkbox labeled "Participant Consent" that is unchecked
 
         When I check the checkbox labeled "Hide inactive"
-        Then I should NOT see a toggle button labeled "Participant Consent"
+        Then I should NOT see a checkbox labeled "Participant Consent"
 
 
         ##ACTION: add record to get participant signature
@@ -82,7 +82,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "e-Consent"
         When I uncheck the checkbox labeled "Hide inactive"
         And I check the checkbox labeled "Participant Consent"
-        And I should see a toggle button labeled "Participant Consent" that is in the enabled state
+        And I should see a checkbox labeled "Participant Consent" that is checked
 
     ##ACTION: add record to get participant signature
     Scenario: Add record to get participant signature
@@ -90,7 +90,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 2"
-        And I should see a field labeled "Consent file"
+        And I should see "Consent file"
 
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay"

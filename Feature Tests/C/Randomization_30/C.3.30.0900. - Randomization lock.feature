@@ -43,7 +43,7 @@ And I should see the button labeled "Erase randomization model" is disabled
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
 
 #Verify unable to change randomize by group/site
-And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
+And I should see a checkbox labeled "B) Randomize by group/site?" that is disabled
 
 
 #verify unable to change randomization field
@@ -78,7 +78,7 @@ And I should see the button labeled "Erase randomization model" is disabled
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
 
 # #Verify unable to change randomize by group/site
-And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
+And I should see a checkbox labeled "B) Randomize by group/site?" that is disabled
 
 #verify unable to change randomization field
 And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
