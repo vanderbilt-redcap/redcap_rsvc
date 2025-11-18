@@ -16,7 +16,10 @@ Feature: User Interface: The system shall allow data to be uploaded as backgroun
 
         Given I click on the link labeled "Data Import Tool"
         When I select "Import as background process (better for large data sets)" on the dropdown field labeled "Choose an import option"
-        And I upload a "csv" format file located at "import_files/BigDataTestProjectbadDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        And I upload a "csv" format file located at "import_files/BigDataTestProjectbadDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file
+        And I should see "Confirm the data file is the correct file"
+        And I click on the button labeled "Confirm"
+        And I click on the button labeled "Upload File"
         And I should see "File was uploaded and will be processed soon"
         And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
@@ -29,6 +32,7 @@ Feature: User Interface: The system shall allow data to be uploaded as backgroun
         # We've intermittently seen that it takes three cron runs to get through two batches. Perhaps the import is sometimes bumped by other crons.
         And I wait for background processes to finish
         #Manual: this may take several minutes
+        And I should see "Completed" in the row labeled "BigDataTestProjectbadDATA.csv"
 
         When I click on the button labeled "View details"
         And I click on the button labeled "Download list of all errors"
