@@ -33,7 +33,7 @@ Scenario: #SETUP project with randomization enabled
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     

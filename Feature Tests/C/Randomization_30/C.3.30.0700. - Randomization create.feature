@@ -63,7 +63,7 @@ Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     
@@ -149,7 +149,7 @@ Scenario: C.3.30.0700.0300. Enable stratified randomization with up to 14 strata
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
-    And I select "strat_2 (Stratification 2)" on the second dropdown field labeled "- select a field -"
+    And I select "strat_2 (Stratification 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Add another stratum"
     And I select "strat_3 (Stratification 3)" on the third dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
@@ -189,7 +189,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
-    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see an alert box with the following text: "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
 
@@ -211,7 +211,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -236,7 +236,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use an existing field to designate each group/site"
     And I select "gender" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group_3 (Randomization group 3)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_3 (Randomization group 3)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 

@@ -40,7 +40,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
