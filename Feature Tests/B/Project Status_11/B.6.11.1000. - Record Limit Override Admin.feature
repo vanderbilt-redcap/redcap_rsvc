@@ -57,7 +57,8 @@ Scenario:B.6.11.1000.0100. Allow admin to copy project that exceeds record limit
     When I click on the link labeled "Setup"  
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Copy the Project"
-    Then I should see a checkbox labeled "All records (4 records total)" that is disabled
+    Then I should see a checkbox labeled "All records" that is disabled
+    And I should see "All records (4 records total)"
     And I should see "Note: The records cannot be copied to the new project because the amount exceeds the max number of records that a development project may have."
     When I enter "B.6.11.1000.copy2" into the input field labeled "Project title:"
     And I click on the button labeled "Copy project"
