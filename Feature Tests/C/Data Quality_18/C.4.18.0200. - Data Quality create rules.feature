@@ -109,8 +109,9 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 4      | Integer   | [integer]='2'                            |
 
     ##ACTION: delete rule
-    When I click on the icon in the column labeled "Delete rule" and the row labeled "4"
+    When I check the checkbox in the column labeled "Delete rule" and the row labeled "4"
     #Manual: confirmation windows are automatically accepted on automated side
+    And I click on the button labeled "Delete selected"
     And I click on the button labeled "Delete"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
