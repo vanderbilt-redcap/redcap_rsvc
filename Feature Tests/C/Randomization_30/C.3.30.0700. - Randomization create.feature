@@ -149,7 +149,7 @@ Scenario: C.3.30.0700.0300. Enable stratified randomization with up to 14 strata
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
-    And I select "strat_2 (Stratification 2)" on the dropdown field labeled "Choose your randomization field"
+    And I select "strat_2 (Stratification 2)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
     And I select "strat_3 (Stratification 3)" on the third dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
