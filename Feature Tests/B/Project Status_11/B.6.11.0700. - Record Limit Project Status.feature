@@ -25,7 +25,7 @@ Scenario: #SETUP
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
     #Adding record 5
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
@@ -43,7 +43,7 @@ Scenario: B.6.11.0700.0100. - A project that had a record limit, when moved from
     Given I click on the link labeled "Setup"
     And  I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Validation ensure new records can't be added
     When I click on the link labeled "Add / Edit Records"
     Then I should see "You are currently using 6 of 5 test records allowed while in Development status"
@@ -58,7 +58,7 @@ Scenario: B.6.11.0700.0200. - A project with no prior limit, when moved from pro
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
     #Set global limit in control center to 3
     When I click on the link labeled "Control Center"
     And I click on the link labeled "General Configuration"
@@ -72,7 +72,7 @@ Scenario: B.6.11.0700.0200. - A project with no prior limit, when moved from pro
     And I click on the link labeled "Setup"
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Action try entering a record when project is already over limit.
     When I click on the link labeled "Add / Edit Records"
     Then I should see "You are currently using 4 of 3 test records allowed while in Development status"
@@ -86,7 +86,7 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
     #Action remove global record limit
     When I click on the link labeled "Control Center"
     And I click on the link labeled "General Configuration"
@@ -100,7 +100,7 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     And I click on the link labeled "Setup"
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Action add record
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"

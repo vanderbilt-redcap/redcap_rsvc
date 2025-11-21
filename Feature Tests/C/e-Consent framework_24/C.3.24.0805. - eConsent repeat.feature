@@ -40,13 +40,13 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the link labeled "Setup"
-    And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And I select "Repeat Instruments" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And I check the second checkbox labeled "Participant Consent"
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 2: Arm Two)"
     And I click on the button labeled "Save"
-    Then I should see "Successfully saved"
+    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
     And I click on the button labeled "Close" in the dialog box
         #SETUP_PRODUCTION
 
@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: add record with consent framework
         ##ACTION: add record with consent framework in Arm 1 Event 1  (repeatable event)

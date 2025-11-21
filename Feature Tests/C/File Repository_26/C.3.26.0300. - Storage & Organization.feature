@@ -88,7 +88,7 @@ Feature: User Interface: The system shall support the storage, organization, and
             | Name                     | Time Uploaded    | Comments                |
             | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
-        When I click on the Restore icon for the File Repository file named "testusers_bulkupload.csv"
+        When I click on the icon labeled "Restore deleted file" in the row labeled "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
@@ -98,7 +98,7 @@ Feature: User Interface: The system shall support the storage, organization, and
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Restore deleted file
-        When I click on the Restore icon for the File Repository file named "testusers_bulkupload.csv"
+        When I click on the icon labeled "Restore deleted file" in the row labeled "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Restore" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
@@ -143,7 +143,7 @@ Feature: User Interface: The system shall support the storage, organization, and
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                     | Time Uploaded    | Comments                |
             | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
-        When I click on the Delete Permanently icon for the File Repository file named "testusers_bulkupload.csv"
+        When I click on the icon labeled "Permanently delete file" in the row labeled "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
@@ -153,7 +153,7 @@ Feature: User Interface: The system shall support the storage, organization, and
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Permanently deleted file
-        When I click on the Delete Permanently icon for the File Repository file named "testusers_bulkupload.csv"
+        When I click on the icon labeled "Permanently delete file" in the row labeled "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Delete" in the dialog box
     ##VERIFY file deleted in recycle folder

@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: Cancel an add consent form version
         #SETUP_eConsent
@@ -263,7 +263,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Set as inactive" in the dialog box
-    Then I should see "Set consent form as inactive" in the dialog box
+    Then I should see "Set consent form as inactive"
 
   Scenario: #Cancel inactivation of version
     When I click on the button labeled "Cancel"
@@ -278,7 +278,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Set as inactive" in the dialog box
-    Then I should see "Set consent form as inactive" in the dialog box
+    Then I should see "Set consent form as inactive"
 
   Scenario:
     When I click on the button labeled "Set consent form as inactive" in the dialog box

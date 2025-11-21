@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #USER_RIGHTS: add two users with diff access levels
         When I click on the link labeled "User Rights"
@@ -55,9 +55,9 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: verify ability to view discrepancies with access
-        When I click on the "view" link for Data Quality Rule # "C"
-        Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
-        And I should see "Discrepancies found: 1" in the dialog box
+        When I click on the link labeled "view" in the row labeled "C"
+        Then I should see "Rule: Field validation errors (incorrect data type)"
+        And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values | Status           | Exclude |
             | 6  Event 1 (Arm 1: Arm 1) | email = HelloWorld                  | Validation error | exclude |
@@ -89,9 +89,9 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | 1      | [radio]=9.9                                                               | [radio]= '9..9'                          | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
-        When I click on the "view" link for Data Quality Rule # "C"
-        Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
-        And I should see "Discrepancies found: 1" in the dialog box
+        When I click on the link labeled "view" in the row labeled "C"
+        Then I should see "Rule: Field validation errors (incorrect data type)"
+        And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values                             | Status           | Exclude |
             | 6  Event 1 (Arm 1: Arm 1) | email = [cannot display data] (Reason: Lack of user privileges) | Validation error | exclude |

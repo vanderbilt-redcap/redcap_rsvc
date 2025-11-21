@@ -21,7 +21,7 @@ Feature: Field Creation: The system shall support the creation and spliting matr
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: matrix fields creation
-        When I click on the instrument labeled "Form 1"
+        When I click on the link labeled "Form 1"
         And I click on the button labeled "Add Matrix of Fields"
 
         And I enter "Vanilla" into the last input field in the Matrix column labeled exactly "Field Label" in the dialog box
@@ -52,10 +52,10 @@ Feature: Field Creation: The system shall support the creation and spliting matr
 
         #VERIFY: SPLIT OF MATRIX
         When I click on the link labeled "Designer"  
-        And I click on the instrument labeled "Form 1"
+        And I click on the link labeled "Form 1"
         And I click on the Edit Matrix image for the field named "ice_cream"
 
-        Given I see "Edit Matrix of Fields" in the dialog box
+        Given I see "Edit Matrix of Fields"
         And I click on the button labeled "Save & split matrix into separate fields" in the dialog box
         And I click on the button labeled "Split matrix" in the dialog box
 

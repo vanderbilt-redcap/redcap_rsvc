@@ -51,12 +51,16 @@ Feature: A.2.19.1000 PIN usage instead of password
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Security & Authentication"
         Then I should see "Security & Authentication Configuration"
+        And I select "Enable" on the dropdown field labeled "Two-Factor Authentication"
         When I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
         And I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
 
     #Verify PIN is new method 
         When I click on the link labeled "My Projects"
+        And I click on the radio labeled "Send an email containing your verification code"
+        And I enter the code that was emailed to the current user into the input field labeled "Enter the verification code"
+        And I click on the button labeled "Submit"
         And I click on the link labeled "A.2.19.1000"
         And I click on the link labeled "Add / Edit Records"
         When I click on the button labeled "Add new record for the arm selected above"
@@ -66,17 +70,12 @@ Feature: A.2.19.1000 PIN usage instead of password
         And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Upload file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
         Then I should see "By providing your REDCap password and clicking the Confirm button below, you are confirming that the following file is the correct file that you wish to upload here:" 
         And I should see "Your file will be uploaded once you successfully initiate this confirmation process"
-        And I should see "Username"
-    #Manual Steps until Cypress can be updated for authentication
-        #And I should see "Password or 6-digit PIN"
-        #When I click on the button labeled "Obtain PIN via SMS"
-        # OR
-        #When I click on the button labeled "Obtain PIN via email"
-        #Then I should recieve a 6-digit PIN via SMS or email
-        #When I enter the 6-digit PIN into the input field labeled "Password or 6-digit PIN"
-        #And I click on the button labeled "Confirm" 
-        #And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
-        #Then I should see "Record ID 5 successfully added"
+        Then I verify "test_admin" is within the input field labeled "Username:"
+        And I click on the button labeled "Obtain PIN via email"
+        And I enter the code that was emailed to the current user into the input field labeled "Password or 6-digit PIN:"
+        And I click on the button labeled "Confirm" 
+        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        Then I should see "Record ID 5 successfully added"
         
 #END
 

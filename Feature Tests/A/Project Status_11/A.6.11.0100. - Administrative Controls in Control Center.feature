@@ -51,7 +51,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     When I click on the link labeled "Setup"
     And I click on the button labeled "Cancel request"
     And I click on the button labeled "Submit" in the dialog box
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     And I logout
 
     #SETUP
@@ -77,7 +77,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
 
     ##VERIFY
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##VERIFY_LOG
     When I click on the link labeled "Logging"

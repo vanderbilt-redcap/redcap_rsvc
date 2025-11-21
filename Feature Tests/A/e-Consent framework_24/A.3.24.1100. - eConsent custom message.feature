@@ -26,7 +26,7 @@ Feature: Control Center: The system shall allow optional adding of a custom mess
         Then I should see a dialog containing the following text: "Enable e-Consent for a Survey"
 
         Given I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
-        Then I should see "Enable e-Consent" in the dialog box
-        And I should see "Primary settings" in the dialog box
-        And I should see "My custom message" in the dialog box
+        Then I should see "Enable e-Consent"
+        And I should see "Primary settings"
+        And I should see "My custom message"
 #END

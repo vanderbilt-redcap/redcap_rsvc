@@ -13,7 +13,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: #FUNCTIONAL_REQUIREMENT
         ##ACTION: Hide e-Consent Framework option
@@ -63,7 +63,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: #FUNCTIONAL_REQUIREMENT Capture IP Address
         ##ACTION: Capture the IP Address in the e-Consent Framework option
@@ -162,7 +162,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: #FUNCTIONAL_REQUIREMENT Custom Message on e-Consent Framework
         ##ACTION: Add a Custom Message in the e-Consent Framework option

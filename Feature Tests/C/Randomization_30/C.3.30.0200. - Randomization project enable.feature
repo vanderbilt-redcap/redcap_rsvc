@@ -15,9 +15,9 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
 
   Scenario: C.3.30.0200.0100. Enabling adds randomization module to project setup.
     When I click on the link labeled "Setup"
-    And I click on the button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    And I click on the button labeled "Enable" in the row labeled "Randomization module"
      ##VERIFY Enabling adds randomization module to project setup.
-    And I should see a button labeled "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    And I should see a button labeled "Disable" in the row labeled "Randomization module"
     And I should see "Set up a randomization model"
 
      #VERIFY _log Enabling adds randomization module to project setup.
@@ -51,10 +51,10 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
 
   Scenario: C.3.30.0200.0400. Disabling removes randomization module from project setup
     When I click on the link labeled "Setup"
-    Then I should see a button labeled "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section
-    When I click on the button labeled "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Disable" in the row labeled "Randomization module"
+    When I click on the button labeled "Disable" in the row labeled "Randomization module"
      #VERIFY Disabling removes randomization module from project setup
-    Then I should see a button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Enable" in the row labeled "Randomization module"
     And I should NOT see "Set up a randomization model" 
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
@@ -63,7 +63,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
 
   Scenario: C.3.30.0200.0500. Disabling removes randomization module from application box.
     When I click on the link labeled "Setup"
-    Then I should see a button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Enable" in the row labeled "Randomization module"
      #VERIFY Disabling removes randomization module from application box.
     And I should NOT see a link labeled "Randomization"
     And I should NOT see "Set up a randomization model"

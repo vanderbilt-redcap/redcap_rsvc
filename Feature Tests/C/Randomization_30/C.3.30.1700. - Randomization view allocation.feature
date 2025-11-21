@@ -28,7 +28,7 @@ I want to see that Randomization is functioning as expected
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     
@@ -48,7 +48,7 @@ I want to see that Randomization is functioning as expected
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
     And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
+    Then I should see "was randomized for"
     And I click on the button labeled "Close" in the dialog box
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."

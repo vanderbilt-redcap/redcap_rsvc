@@ -14,7 +14,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
@@ -44,8 +44,8 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
-        And for the Column Name "Display the Lock option for this instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
-        And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I check the checkbox in the column labeled "Display the Lock option for this instrument?" and the row labeled "Text Validation"
+        And I check the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? |
             | [x]                                          | Text Validation            | [x]                                            |

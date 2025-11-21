@@ -13,7 +13,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
     Scenario: #SETUP_eConsent for participant consent process
         #SETUP_eConsent for participant consent process
@@ -21,7 +21,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
-        Then I should see "Enable e-Consent" in the dialog box
+        Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
@@ -47,7 +47,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I wait for 1 second
         And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
-        Then I should see "Enable e-Consent" in the dialog box
+        Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"

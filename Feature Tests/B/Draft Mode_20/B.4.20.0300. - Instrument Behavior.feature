@@ -22,7 +22,7 @@ Feature: User Interface: The system shall require changes made to data collectio
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: Draft Mode
@@ -31,10 +31,10 @@ Feature: User Interface: The system shall require changes made to data collectio
     Then I should see "The project is now in Draft Mode"
 
     #ACTION: Make changes to instrument
-    When I click on the instrument labeled "Data Types"
+    When I click on the link labeled "Data Types"
     And I click on the Edit image for the field named "Radio Button Manual"
     And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
-    And I click on the button labeled "Save" in the "Edit Field" dialog box
+    And I click on the button labeled "Save"
 
     ##VERIFY INSTRUMENT
     Given I click on the link labeled "Record Status Dashboard"

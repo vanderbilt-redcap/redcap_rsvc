@@ -20,7 +20,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
         Then I should see a dialog containing the following text: "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
-        Then I should see a downloaded file named "B521200100_DATA_yyyy-mm-dd_hhmm.csv"
+        Then I should see a downloaded file named "B5210200100_DATA_yyyy-mm-dd_hhmm.csv"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box
@@ -47,7 +47,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
         Then I should see a dialog containing the following text: "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "SPSS Statistical Software" format in the dialog box
-        Then I should see a downloaded file named "B521200100-TestReport_SPSS_yyyy-mm-dd_hhmm.sps"
+        Then I should see a downloaded file named "B5210200100-TestReport_SPSS_yyyy-mm-dd_hhmm.sps"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box
@@ -59,7 +59,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
         And I click on the button labeled "Export Data" in the dialog box
         Then I should see a dialog containing the following text: "Data export was successful!"
         Given I click on the download icons to receive the files for the "SAS Statistical Software" format in the dialog box
-        Then I should see a downloaded file named "B521200100-TestReport_SAS_yyyy-mm-dd_hhmm.sas"
+        Then I should see a downloaded file named "B5210200100-TestReport_SAS_yyyy-mm-dd_hhmm.sas"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box
@@ -73,7 +73,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
 
         Given I click on the download icons to receive the files for the "R Statistical Software" format in the dialog box
 
-        Then I should see a downloaded file named "B521200100_R_yyyy-mm-dd_hhmm.r"
+        Then I should see a downloaded file named "B5210200100_R_yyyy-mm-dd_hhmm.r"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box
@@ -86,7 +86,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
         Then I should see a dialog containing the following text: "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "Stata Statistical Software" format in the dialog box
-        Then I should see a downloaded file named "B521200100-TestReport_STATA_yyyy-mm-dd_hhmm.do"
+        Then I should see a downloaded file named "B5210200100-TestReport_STATA_yyyy-mm-dd_hhmm.do"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box
@@ -99,7 +99,7 @@ Feature: User Interface: The system shall allow data to be exported in the follo
         Then I should see a dialog containing the following text: "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CDISC ODM (XML)" format in the dialog box
-        Then I should see a downloaded file named "B521200100_CDISC_ODM_yyyy-mm-dd_hhmm.xml"
+        Then I should see a downloaded file named "B5210200100_CDISC_ODM_yyyy-mm-dd_hhmm.xml"
         #Manual: Close file
 
         And I click on the button labeled "Close" in the dialog box

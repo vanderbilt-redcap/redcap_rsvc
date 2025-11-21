@@ -33,7 +33,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     And I click on the link labeled "Logging"
 
@@ -153,7 +153,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
@@ -238,7 +238,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"

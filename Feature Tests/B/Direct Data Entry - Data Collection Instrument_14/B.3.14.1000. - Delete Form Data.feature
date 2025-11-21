@@ -22,7 +22,7 @@ Feature: B.3.14.1000. The system shall allow users to delete all data on the cur
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #SET UP_USER_RIGHTS
     When I click on the link labeled "User Rights"

@@ -14,14 +14,14 @@ Feature: User Interface: The system shall support the ability for a user to chan
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         ##ACTION: move to analysis/cleanup
         When I click on the link labeled "Other Functionality"
         And I click on the button labeled "Move to Analysis/Cleanup status"
         And I click on the button labeled "YES, Move to Analysis/Cleanup" in the dialog box
         ##VERIFY
-        Then I should see Project status: "Analysis/Cleanup"
+        Then I should see "Project status:  Analysis/Cleanup"
 
         ##ACTION: move to Completed
         When I click on the button labeled "Mark project as Completed"
@@ -38,19 +38,19 @@ Feature: User Interface: The system shall support the ability for a user to chan
         Then I should see a dialog containing the following text: "PROJECT RESTORED"
         And I click on the button labeled "Close" in the dialog box
         ##VERIFY
-        Then I should see Project status: "Analysis/Cleanup"
+        Then I should see "Project status:  Analysis/Cleanup"
 
         ##ACTION: move to production
         When I click on the link labeled "Other Functionality"
         And I click on the button labeled "Move back to Production status"
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         ##ACTION: move to development
         When I click on the button labeled "Move back to Development status"
         ##VERIFY
-        Then I should see Project status: "Development"
+        Then I should see "Project status:  Development"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

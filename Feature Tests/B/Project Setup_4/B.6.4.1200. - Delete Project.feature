@@ -52,7 +52,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##ACTION Verify record do NOT exist ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -66,7 +66,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     ##ACTION Delete the project
     When I click on the button labeled "Request delete project"
     #When I click on the button labeled "OK" in the pop-up box
-    Then I should see "Project successfully deleted!" in the dialog box
+    Then I should see "Project successfully deleted!"
     And I click on the button labeled "Close" in the dialog box
 
   Scenario: B.6.4.1200.300 Projects in production with records require admin
@@ -77,7 +77,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##ACTION Verify record exist ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -108,13 +108,13 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     Given I should see the "Delete project" request created for the project named "B.6.4.1200.300.PROD" within the "Pending Requests" table
     When I click on the "process request" icon for the "Delete project" request created for the project named "B.6.4.1200.300.PROD" within the "Pending Requests" table
-    Then I should see "Permanently delete this project?" in the dialog box in the iframe
+    Then I should see "Permanently delete this project?"
 
     ##ACTION Delete project
     Given I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW' in the iframe
-    And I click on the button labeled "Delete the project" in the dialog box in the iframe
-    And I click on the button labeled "Yes, delete the project" in the dialog box in the iframe
-    Then I should see "Project successfully deleted!" in the dialog box in the iframe
+    And I click on the button labeled "Delete the project"
+    And I click on the button labeled "Yes, delete the project"
+    Then I should see "Project successfully deleted!"
 
     ##VERIFY
     And I close the iframe window

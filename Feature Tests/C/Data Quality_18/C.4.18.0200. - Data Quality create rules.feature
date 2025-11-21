@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
     ##REDUNDANT C.4.18.1100 Data quality rule creation for longitudinal projects
@@ -25,7 +25,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Add" on the active Data Quality rule
+    And I click on the button labeled "Add"
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
@@ -36,7 +36,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled "Upload or download Data Quality Rules"
     And I click on the link labeled "Upload Data Quality Rule (CSV)"
     And I upload a "csv" format file located at "import_files/C418100TEST_DataQualityRules_Upload.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see "Upload Data Quality Rule (CSV) - Confirm" in the dialog box
+    Then I should see "Upload Data Quality Rule (CSV) - Confirm"
 
     When I click on the button labeled "Upload" in the dialog box
     Then I should see "SUCCESS!"
@@ -83,7 +83,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Save" on the active Data Quality rule
+    And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
@@ -92,7 +92,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I click the element containing the following text: "[integer]<>'1999'"
     And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Save" on the active Data Quality rule
+    And I click on the button labeled "Save"
 
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
@@ -109,7 +109,7 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 4      | Integer   | [integer]='2'                            |
 
     ##ACTION: delete rule
-    When I click on the Delete icon for Data Quality Rule # "4"
+    When I click on the icon in the column labeled "Delete rule" and the row labeled "4"
     #Manual: confirmation windows are automatically accepted on automated side
     And I click on the button labeled "Delete" in the dialog box
     Then I should see a table header and rows containing the following values in a table:

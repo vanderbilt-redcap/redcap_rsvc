@@ -19,7 +19,7 @@ Feature: A.3.30.0100 Control Center: The system shall support enabling or disabl
     Given I create a new project named "A.3.30.0100." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     Then I should see "Main project settings"
     And I click on the link labeled "Setup"
-    Then I should see a button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Enable" in the row labeled "Randomization module"
     
   #A.3.30.0100.0200: Disabled at system level removes randomization module option at the project level.
   Scenario: A.3.30.0100.0200. Disable randomization at system level

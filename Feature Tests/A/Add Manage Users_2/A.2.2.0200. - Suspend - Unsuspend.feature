@@ -27,7 +27,8 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the button labeled "Suspend user account" and cancel the confirmation window
+    And I remember to click cancel on the confirmation dialog that appears after the following step
+    When I click on the button labeled "Suspend user account"
     Then I should NOT see "Success! The user has now been suspended from REDCap"
     And I should NOT see "unsuspend user"
 
@@ -72,7 +73,8 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the link labeled "unsuspend user" and cancel the confirmation window
+    And I remember to click cancel on the confirmation dialog that appears after the following step
+    When I click on the link labeled "unsuspend user"
     Then I should see "unsuspend user"
 
     Given I logout

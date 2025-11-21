@@ -22,7 +22,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #SET UP_USER_RIGHTS
     When I click on the link labeled "User Rights"
@@ -42,7 +42,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
 
     #FUNCTIONAL_REQUIREMENT
     When I click on the link labeled "Record Status Dashboard"
-    And I click on the link labeled exactly "1"
+    And I click on the link labeled "1"
 
     ###ACTION delete this event
     Given I click the "X" icon for the row labeled "Delete all data on event:" on the event column labeled "Event 1"

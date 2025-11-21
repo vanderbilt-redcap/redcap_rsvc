@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"

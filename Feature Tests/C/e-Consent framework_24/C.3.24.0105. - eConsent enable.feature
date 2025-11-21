@@ -13,7 +13,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
     Scenario: ##ACTION: e-consent survey settings - disabled
@@ -149,7 +149,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
           | Name                             | Record | Survey Completed                             |
           | pid13_formParticipantConsent_id2 | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
 
-        Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+        Given I click on the link labeled "_formParticipantConsent_id2_"
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |

@@ -81,7 +81,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in production mode
@@ -129,7 +129,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the button labeled "Move to Analysis/Cleanup status"
     And I click on the button labeled "YES, Move to Analysis/Cleanup Status"
     Then I should see an alert box with the following text: "The project has now been set to ANALYSIS/CLEANUP"
-    And I should see Project status: "Analysis/Cleanup"
+    And I should see "Project status:  Analysis/Cleanup"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in analysis mode

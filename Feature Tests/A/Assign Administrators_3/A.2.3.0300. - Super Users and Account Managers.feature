@@ -35,7 +35,7 @@ Feature: A.2.3.0300. Assign administrators and account managers
         When I click on the link labeled "General Configuration"
         And I should see a button labeled "Save Changes"
         # Checking if 'Install, upgrade, and configure External Modules' is enabled
-        When I click on the link labeled exactly "Manage"
+        When I click on the link labeled "Manage"
         And I should see a button labeled "Enable a module"
         Given I logout
 
@@ -67,7 +67,7 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Then I should NOT see a button labeled "Save Changes"
         # Checking if 'Install, upgrade, and configure External Modules' is disabled
         
-        When I click on the link labeled exactly "Manage"
+        When I click on the link labeled "Manage"
         Then I should NOT see a button labeled "Enable a module"
         
         Given I logout

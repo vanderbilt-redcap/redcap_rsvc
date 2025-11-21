@@ -23,7 +23,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         ##ACTION
         Given I click on the link labeled "Add / Edit Records"
@@ -35,7 +35,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         Then I should see "Record ID 7 successfully edited"
 
-        When I click the "reset" link for the field labeled "radio"
+        When I click on the link labeled "reset" in the row labeled "radio"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited"
 

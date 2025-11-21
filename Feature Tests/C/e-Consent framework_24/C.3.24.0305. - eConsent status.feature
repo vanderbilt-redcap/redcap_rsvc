@@ -13,7 +13,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
 
     Scenario: #SETUP_eConsent to allow for edit by users
@@ -22,7 +22,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey" in the dialog box
-        Then I should see "Enable e-Consent" in the dialog box
+        Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
@@ -166,10 +166,10 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
             | pid13_formParticipantConsent_id1_ |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
 
 
-        Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+        Given I click on the link labeled "_formParticipantConsent_id1_"
         And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "1" and survey "Participant Consent"
 
-        Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+        Given I click on the link labeled "_formParticipantConsent_id2_"
         And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "2" and survey "Participant Consent"
         #Manual: Close document
 

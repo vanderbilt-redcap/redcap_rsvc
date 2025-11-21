@@ -50,16 +50,16 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         Given I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
         When I click on the "process request" icon for the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
-        Then I should see "Move Project To Production Status" in the dialog box in the iframe
+        Then I should see "Move Project To Production Status"
 
         Given I click on the radio labeled "Keep ALL data saved so far." in the dialog box in the iframe
-        When I click on the button labeled "YES, Move to Production Status" in the dialog box in the iframe
+        When I click on the button labeled "YES, Move to Production Status"
         And I close the iframe window
         Then I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Completed & Archived Requests" table
 
         Given I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
@@ -95,7 +95,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
         Given I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |

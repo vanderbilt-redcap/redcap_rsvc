@@ -10,7 +10,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then if running via automation, start external storage services
 
   Scenario: Setup in control center - admin only
-#FUNCTIONAL_REQUIREMENT A.2.19.1000._NewManual 
+#FUNCTIONAL_REQUIREMENT A.2.19.1000. 
 ###ACTION: Setup in control center - admin only 
     Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
@@ -20,7 +20,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
-#FUNCTIONAL_REQUIREMENT A.3.28.1100._NewManual 
+#FUNCTIONAL_REQUIREMENT A.3.28.1100. 
 #M this script assumes File Storage Methods is configured (File storage is needed for base REDCap file Storage) 
 
   Scenario: ##ACTION: Configure the File Storage
@@ -35,7 +35,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I enter "mycontainer" into the input field labeled "Azure storage blob container"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
-#FUNCTIONAL_REQUIREMENT  C.2.19.1300._NewManual 
+#FUNCTIONAL_REQUIREMENT  C.2.19.1300. 
 #File Vault Storage is required for Part 11 Compliance 
 
   Scenario: ##ACTION: Configure the File Vault for Record-level Locking Enhancement: PDF confirmation & automatic external file storage
@@ -86,7 +86,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Save"
     Then I should see "Instrument locked by test_admin"
 
-  Scenario: ##ACTION: Lock entire record C.2.19.1400._NewManual
+  Scenario: ##ACTION: Lock entire record C.2.19.1400.
     When I click on the link labeled "Record Status Dashboard"
     And I click on the link labeled "1"
     When I click on the button labeled "Choose action for record"
@@ -113,7 +113,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
       | Record ID 1 |
       | Please complete the survey below |
 
-#FUNCTIONAL_REQUIREMENT A.2.19.1100._NewManual 
+#FUNCTIONAL_REQUIREMENT A.2.19.1100. 
 
   Scenario: ###ACTION: Setup in control center - admin only
     When I click on the link labeled "Control Center"
@@ -123,7 +123,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
-  Scenario: ##ACTION: Lock entire record Record 2 confirms that PIN is not usedC.2.19.1400._NewManual
+  Scenario: ##ACTION: Lock entire record Record 2 confirms that PIN is not usedC.2.19.1400.
     Then I click on the link labeled "My Projects"
     Then I click on the link labeled "A.3.28.1200"
     And I click on the link labeled "Record Status Dashboard"
@@ -163,7 +163,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
   Scenario: #VERIFY LOGGING
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-
+      | this is a placeholder table to ensure full automation failure of this step until we can finish this feature |
   Scenario: #VERIFY FILE REPO
     And I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Archive of Locked Records"

@@ -13,7 +13,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
@@ -29,7 +29,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         #FUNCTIONAL REQUIREMENT
         ##ACTION Lock Record Custom Text
         When I enter "Test custom text" into the textarea field labeled "Text Validation"
-        And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I click on the button labeled "Save" in the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [ ]                                            | Test custom text        |
@@ -38,7 +38,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
             | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
         And I enter "Test custom text" into the textarea field labeled "Data Types"
-        And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        And I click on the button labeled "Save" in the row labeled "Data Types"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [ ]                                            | Test custom text        |
@@ -69,9 +69,9 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
 
-        And I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I click on the icon labeled "Edit" in the row labeled "Text Validation"
         And I clear field and enter "New custom text" into the textarea field labeled "Text Validation"
-        And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I click on the button labeled "Save" in the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [ ]                                            | New custom text         |
@@ -79,7 +79,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
             | [x]                                          | Survey                     | [ ]                                            | [text box]              |
             | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
-        And I click on the Delete icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        And I click on the icon labeled "Remove" in the row labeled "Data Types"
 
         #Manual: confirmation windows are automatically accepted on automated side
         # And I click on the button labeled "OK" in the pop-up box

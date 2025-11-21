@@ -22,7 +22,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #SET UP_USER_RIGHTS
         When I click on the link labeled "User Rights"
@@ -44,7 +44,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
 
         #FUNCTIONAL REQUIREMENT
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "1"
+        And I click on the link labeled "1"
         ##ACTION Rename record
         When I click on the button labeled "Choose action for record"
         And I click on the link labeled "Rename record"
@@ -57,7 +57,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         #VERIFY_RSD: Record 1 is now 1.A
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Record Status Dashboard (all records)"
-        Then I should see a link labeled exactly "1.A"
+        Then I should see a link labeled "1.A"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

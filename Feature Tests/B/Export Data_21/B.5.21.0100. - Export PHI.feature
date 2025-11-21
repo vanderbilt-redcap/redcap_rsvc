@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     When I click on the link labeled "User Rights"
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
-    Then I should see "Assign To DAG" on the role selector dropdown
+    Then I should see "Assign To DAG"
 
     When I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown

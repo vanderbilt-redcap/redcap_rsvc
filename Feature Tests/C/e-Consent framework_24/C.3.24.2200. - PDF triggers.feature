@@ -13,7 +13,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
-      Then I should see Project status: "Production"
+      Then I should see "Project status:  Production"
 
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
@@ -85,7 +85,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I click on "" in the textarea field labeled "When the following logic becomes true"
-      And I wait for 1 second
+      And I wait for 2 seconds
       And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
       And I click on the button labeled "Update & Close Editor" in the dialog box  
       And I click on the icon labeled '[All instruments]'
@@ -192,7 +192,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Editing existing Record ID 2."
       Then I should see "Custom_" in the row labeled "Participant Consent file"
 
-      When I click on the link "Custom_"
+      When I click on the link labeled "Custom_"
       Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document
@@ -230,7 +230,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Custom_" in the row labeled "Participant Consent file"
       And I should see "Custom_" in the row labeled "Combine both files together"
 
-      When I click on the link "Custom_" in the row labeled "Combine both files together"
+      When I click on the link labeled "Custom_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
         | Page 3\nCoordinator Signature |

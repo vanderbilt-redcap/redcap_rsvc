@@ -50,7 +50,7 @@ And I click the bubble for the row labeled "Randomization" instrument on the col
 And I click on a button labeled "Randomize" 
 And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
 And I click on the button labeled "Randomize"
-Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Placebo" (3).'
+Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Placebo" (3).'
 And I click on the button labeled "Close"
 And I click on the button labeled "Save & Exit Form"
 
@@ -60,7 +60,7 @@ And I click the bubble for the row labeled "Randomization" instrument on the col
 And I click on a button labeled "Randomize"
 And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
 And I click on the button labeled "Randomize"
-Then I should see a dialog containing the following text: 'Record ID "7" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).'
+Then I should see a dialog containing the following text: 'Record ID "7" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
 And I click on the button labeled "Close"
 And I click on the button labeled "Save & Exit Form"
 
@@ -71,7 +71,7 @@ And I click the bubble for the row labeled "Randomization" instrument on the col
 And I click on a button labeled "Randomize"
 And I click on the radio labeled "Other" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
 And I click on the button labeled "Randomize"
-Then I should see a dialog containing the following text: 'Record ID "8" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).' 
+Then I should see a dialog containing the following text: 'Record ID "8" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
 And I click on the button labeled "Close"
 And I click on the button labeled "Save & Exit Form"
 

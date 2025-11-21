@@ -12,7 +12,7 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
         When I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
@@ -49,13 +49,13 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
 
         #VERIFY_RSD: 1 record
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see a link labeled exactly "1"
+        Then I should see a link labeled "100"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                   |
-            | test_admin | Create record (import) 1 |
+            | test_admin | Create record (import) 100 |
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Import (with records in columns)
@@ -68,11 +68,11 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
 
         #VERIFY_RSD: 2 records
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see a link labeled exactly "2"
+        Then I should see a link labeled "200"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                   |
-            | test_admin | Create record (import) 2 |
+            | test_admin | Create record (import) 200 |
 #End

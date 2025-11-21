@@ -12,7 +12,7 @@ Feature: User Interface: The system shall provide the ability to require a reaso
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #SETUP DRW
         When I click on the button labeled "Additional customizations"

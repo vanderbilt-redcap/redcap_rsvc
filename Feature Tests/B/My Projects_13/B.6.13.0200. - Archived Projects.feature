@@ -22,5 +22,5 @@ Feature: User Interface: The system shall support the ability to show or hide ar
         Then I should see a dialog containing the following text: "PROJECT RESTORED"
 
         When I click on the button labeled "Close" in the dialog box
-        Then I should see Project status: "Development"
+        Then I should see "Project status:  Development"
 #END

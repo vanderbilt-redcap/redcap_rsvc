@@ -18,17 +18,17 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "B.6.4.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     #VERIFY_SETUP repeat instrument
-    Then I should see a button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Modify" in the row labeled "Repeating instruments and events"
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #VERIFY_DESIGNER
     When I click on the link labeled "Designer"
-    Then I should see the enabled survey icon link for the instrument row labeled "Survey"
+    Then I should see a button labeled "Survey settings" in the row labeled "Survey"
 
     #FUNCTIONAL REQUIREMENT
     Given I click on the link labeled "Record Status Dashboard"
@@ -52,12 +52,14 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #SETUP modify repeat instrument
     Given I click on the link labeled "Setup"
-    When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     Then I should see a dialog containing the following text: "WARNING"
     Given I click on the button labeled "Close" in the dialog box
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey" in the dialog box
-    And I click on the button labeled "Save" on the dialog box for the Repeatable Instruments and Events module
+    And I click on the button labeled "Save"
+    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    And I click on the button labeled "Close" in the dialog box
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
     #Then I should see "Successfully saved" in the dialog box
@@ -65,7 +67,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #ACTION - Create repeatable survey
     Given I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Survey"
+    And I click on the button labeled "Survey settings" in the row labeled "Survey"
     And I click on the checkbox labeled "(Optional) Repeat the survey"
     And I click on the button labeled "Save Changes"
     #VERIFY

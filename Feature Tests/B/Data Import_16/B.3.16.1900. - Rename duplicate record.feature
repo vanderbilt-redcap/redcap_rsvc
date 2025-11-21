@@ -11,7 +11,7 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         Given I click on the link labeled "Data Import Tool"
         When I select "Import in real time" on the dropdown field labeled "Choose an import option"
@@ -39,8 +39,8 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I should see the "Showing 1 to 10 of 30 entries"
 
         When I click on the link labeled "Setup"
-        And I click on the button labeled "Disable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
-        Then I should see a button labeled "Enable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
+        And I click on the button labeled "Disable" in the row labeled "Auto-numbering for records"
+        Then I should see a button labeled "Enable" in the row labeled "Auto-numbering for records"
 
         When I click on the link labeled "Data Import Tool"
         And I select "Import in real time" on the dropdown field labeled "Choose an import option"

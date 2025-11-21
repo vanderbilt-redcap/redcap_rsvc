@@ -21,18 +21,18 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##VERIFY_SDT
     Given I click on the link labeled "Survey Distribution Tools"
-    When I click on the tab labeled "Participant List"
+    When I click on the link labeled "Participant List"
     Then I should see the dropdown field labeled "Participant List" with the option '"Consent" - Event 1 (Arm 1: Arm 1)' selected
     And I should see a "gray bubble" within the "1)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
     And I should see a "gray bubble" within the "2)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION
-    When I click on the link labeled exactly "1"
+    When I click on the link labeled "1"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     And I click on the button labeled "Next Page >>"
@@ -46,7 +46,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
     And I click on the link labeled "Survey Distribution Tools"
-    When I click on the tab labeled "Participant List"
+    When I click on the link labeled "Participant List"
     Then I should see the dropdown field labeled "Participant List" with the option '"Consent" - Event 1 (Arm 1: Arm 1)' selected
     And I should see a "green checkmark" within the "1)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
     And I should see a "gray bubble" within the "2)  email@test.edu" row of the column labeled "Responded?" of the Participant List table

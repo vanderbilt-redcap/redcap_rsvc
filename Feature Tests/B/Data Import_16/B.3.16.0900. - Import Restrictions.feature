@@ -13,7 +13,7 @@ Feature: User Interface: The system shall not allow data to be changed on locked
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##ACTION: Import data
     When I click on the link labeled "Data Import Tool"
@@ -28,7 +28,7 @@ Feature: User Interface: The system shall not allow data to be changed on locked
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: lock record 1
     When I click on the link labeled "Record Status Dashboard"
-    And I click on the link labeled exactly "1"
+    And I click on the link labeled "1"
     #And I select the dropdown option labeled "Lock entire record" for the dropdown field labeled "Choose action for record"
     When I click on the button labeled "Choose action for record"
     And I click on the link labeled "Lock entire record"

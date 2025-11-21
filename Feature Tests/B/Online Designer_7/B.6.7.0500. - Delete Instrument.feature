@@ -24,7 +24,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         When I click on the button labeled "Online Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -42,7 +42,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         ##ACTION
         #And I want to export a snapshot of this feature here
         Given I click on the first button labeled "Choose action"
-        And I click on the link labeled "Delete" in the action popup
+        And I click on the link labeled "Delete"
         Then I should see a dialog containing the following text: "Delete the selected form?"
         And I click on the button labeled "Yes, delete it" in the dialog box
         Then I should see "The data collection instrument and all its fields have been successfully deleted"

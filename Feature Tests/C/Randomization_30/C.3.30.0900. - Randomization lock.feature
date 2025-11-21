@@ -16,7 +16,7 @@ When I click on the link labeled "Setup"
 And I click on the button labeled "Move project to production"
 And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box 
-Then I should see Project status: "Production"
+Then I should see "Project status:  Production"
 
 #SETUP User Rights
 When I click on the link labeled "User Rights"
@@ -47,7 +47,7 @@ And I should see a checkbox labeled "B) Randomize by group/site?" that is in the
 
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" in the row labeled "for use in DEVELOPMENT status" that is disabled
@@ -81,7 +81,7 @@ And I should see a checkbox labeled "A) Use stratified randomization?" that is c
 And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 
@@ -93,7 +93,7 @@ And I should see a button labeled "Download table"
 And I should see "(only REDCap admins may download the allocation table while in production)"
 
 Given I click on the second button labeled "Download table"
-Then I should see a downloaded file named "RandomizationAllocationTemplate_Prod.csv"
+Then I should see a downloaded file named "RandomizationAllocationTable_Prod.csv"
 
 # Scenario: C.3.30.0900.0500. Admin cannot modify existing allocation table in production. 
 # #verify unable to delete or change allocation table for use in Production

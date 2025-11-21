@@ -18,7 +18,7 @@ Feature: C.3.31.1100. Project Setup: The system shall support enabling and disab
         And I click on the button labeled "Save Changes"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
-        When I click on the tab labeled "FHIR Systems"
+        When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled exactly "Add"
         And I enter "Test" into the input field labeled "Client ID:"
@@ -52,9 +52,8 @@ Feature: C.3.31.1100. Project Setup: The system shall support enabling and disab
     #Turn off CDP at the project level
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1100"
-        And I click on the tab labeled "Project Setup"
+        And I click on the link labeled "Project Setup"
         Then I should see a "Clinical Data Pull from EHR"
-        # When I click on the tab labeled "Project Setup"
         And I wait for 2 second
         When I click on the button labeled "Disable" in the row labeled "Clinical Data Pull from EHR" 
         Then I should NOT see "Set up Clinical Data Pull from EHR"

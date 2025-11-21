@@ -21,7 +21,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     When I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
@@ -42,7 +42,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I enter Choices of "5, DDChoice5" into the open "Add New Field" dialog box
     And I enter Choices of "7, DDChoice7" into the open "Add New Field" dialog box
     And I enter Choices of "6, DDChoice6" into the open "Add New Field" dialog box
-    And I click on the button labeled "Save" in the "Add New Field" dialog box
+    And I click on the button labeled "Save"
 
     #VERIFY
     Then I should see a field named "Multiple Choice Dropdown Manual"

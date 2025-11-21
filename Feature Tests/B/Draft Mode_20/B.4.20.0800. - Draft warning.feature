@@ -22,7 +22,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         ##ACTION: Draft Mode
         When I click on the link labeled "Designer"
@@ -37,7 +37,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
 
         ##ACTION
         When I click on the link labeled "Designer"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
 
         #DATA WILL BE LOST

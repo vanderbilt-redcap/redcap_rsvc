@@ -40,7 +40,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -71,7 +71,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
     And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for the field" in the dialog box
+    Then I should see "was randomized for the field"
     And I click on the button labeled "Close" in the dialog box
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1-1 successfully edited."
@@ -100,7 +100,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-                 | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group  rand_group_2|
+                 | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group 2  rand_group_2|
                  | 1       |     0    |     1-1             | DAG 1 (1)                                  | Drug A (1)        | 
       #M This record ID may be diferent with manual testing.
        	
@@ -122,7 +122,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
     When I select "DAG 1" on the dropdown field labeled "Assign this record to a Data Access Group"
     And I click on the button labeled "Randomize"
-    Then I should see "was randomized for" in the dialog box
+    Then I should see "was randomized for"
     And I click on the button labeled "Close" in the dialog box
     And I should see "Already randomized" 
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument

@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: #USER_RIGHTS User 1 Dag 1
     When I click on the link labeled "User Rights"
@@ -62,7 +62,7 @@ Feature: User Interface: The system shall support the ability to assign the User
 
   Scenario: Assign record 1 to DAG1
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "1"
+        And I click on the link labeled "1"
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
@@ -71,7 +71,7 @@ Feature: User Interface: The system shall support the ability to assign the User
 
   Scenario: Assign record 2 to DAG2
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "2"
+        And I click on the link labeled "2"
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
     #FUNCTIONAL_REQUIREMENT
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     When I click on the button labeled "Return to My Reports & Exports"
     And I logout
 
@@ -176,7 +176,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I select the radio option "Custom user access" for the field labeled "Edit Access"
     And I select "test_user1 (Test User1)" on the multiselect field labeled "Selected users" in the Edit Access section of User Access
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     And I click on the button labeled "Return to My Reports & Exports"
     And I logout
 

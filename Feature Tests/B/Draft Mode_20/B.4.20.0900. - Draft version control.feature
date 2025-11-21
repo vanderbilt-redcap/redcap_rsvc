@@ -22,7 +22,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #ACTION: Draft Mode
         When I click on the link labeled "Designer"
@@ -30,7 +30,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         Then I should see "The project is now in Draft Mode"
 
         #ACTION
-        Given I click on the instrument labeled "Data Types"
+        Given I click on the link labeled "Data Types"
         And I click on the last button labeled "Add Field"
 
         And I select "Notes Box (Paragraph Text)" on the dropdown field labeled "Field Type:"
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         And I click on the button labeled "Close" in the dialog box
 
         #ACTION
-        When I click on the tab labeled "Project Home"
+        When I click on the link labeled "Project Home"
         And I click on the link labeled "Project Revision History"
         Then I should see "Project Revision History"
 

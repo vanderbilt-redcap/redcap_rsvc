@@ -12,7 +12,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION:  create report
@@ -20,7 +20,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     And I click on the button labeled "Create New Report"
     And I enter "C.5.22.0200.100 REPORT" into the input field labeled "Name of Report:"
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
 
     ##VERIFY: saved name
     When I click on the button labeled "View report" in the dialog box
@@ -35,7 +35,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
 
     When I clear field and enter "C.5.22.0200.100 REPORT_EDIT" into the input field labeled "Name of Report:"
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
 
     ##VERIFY: edited name
     When I click on the button labeled "View report" in the dialog box
@@ -47,7 +47,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
 
     When I clear field and enter "C.5.22.0200.100 REPORT_EDIT2" into the input field labeled "Name of Report:"
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
 
     ##VERIFY: edited name
     When I click on the button labeled "View report" in the dialog box

@@ -22,11 +22,11 @@ Feature: User Interface: The system shall support the following statuses for sur
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #SETUP_DESIGNER
         When I click on the link labeled "Designer"
-        And I click on the "Survey settings" button for the instrument row labeled "Survey"
+        And I click on the button labeled "Survey settings" in the row labeled "Survey"
         And I select "Yes" on the dropdown field labeled "Allow 'Save & Return Later' option for respondents?"
         And I click on the button labeled "Save Changes"
         Then I should see "Your survey settings were successfully saved!"

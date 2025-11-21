@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: New multi data form same event PDF Trigger
     When I click on the link labeled "Designer"
@@ -135,6 +135,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "multi data form and survey different event" into the input field labeled "File name:"
     And I click on the button labeled "Save"
     Then I should see "Saved!"
+    Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                                         | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
       | [x]    |               |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
       | [x]    |               |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
@@ -157,6 +158,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "multi survey different event" into the input field labeled "File name:"
     And I click on the button labeled "Save"
     Then I should see "Saved!"
+    Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                                         | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
       | [x]    |               |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
       | [x]    |               |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |

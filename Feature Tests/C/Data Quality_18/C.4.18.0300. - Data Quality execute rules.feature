@@ -11,11 +11,11 @@ Feature: User Interface: The system shall support executing a rule.
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
         #FUNCTIONAL REQUIREMENT
         ##ACTION The system shall support executing a single rule.
         When I click on the link labeled "Data Quality"
-        And I click on the "Execute" button for Data Quality Rule # "1"
+        And I click on the button labeled "Execute" in the row labeled "[radio]=9.9"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name   | Rule Logic  | Total Discrepancies |
             | 1      | [radio]=9.9 | [radio]=9.9 | 1                   |

@@ -1,4 +1,4 @@
-redcap_randomization_number,rand_group,gender,,,,
+redcap_randomization_number,redcap_randomization_group,gender,,,,
 ,A,0,,,,
 ,A,0,,,NOTES:,
 ,A,0,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file.",

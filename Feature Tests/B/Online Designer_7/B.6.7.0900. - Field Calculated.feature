@@ -20,7 +20,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -39,7 +39,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I enter "Calculated Field" into the Field Label of the open "Add New Field" dialog box
         And I enter "calculated_field" into the Variable Name of the open "Add New Field" dialog box
         And I enter the equation "3*2" into Calculation Equation of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see a field named "Calculated Field"

@@ -13,7 +13,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
 
     Scenario: #SETUP_eConsent to NOT allow for edit by users
@@ -153,6 +153,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I clear field and enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1"
+        And I wait for 1 second
         Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
 
         When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"

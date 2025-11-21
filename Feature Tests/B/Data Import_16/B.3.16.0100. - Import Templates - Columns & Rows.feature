@@ -11,13 +11,13 @@ Feature: User Interface: The system shall support the ability to download two ve
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Data Import Template (with records in rows)
     When I click on the link labeled "Data Import Tool"
     Then I should see a link labeled "Download your Data Import Template"
-    And I click on the link labeled "Download your Data Import Template" to download a file
+    And I click on the link labeled "Download your Data Import Template"
     Then I should see a downloaded file named "B3160100100_ImportTemplate_yyyy-mm-dd.csv"
 
     ##VERIFY
@@ -28,7 +28,7 @@ Feature: User Interface: The system shall support the ability to download two ve
     #FUNCTIONAL REQUIREMENT
     ##ACTION Data Import Template (with records in columns)
     Then I should see a link labeled "column format"
-    And I click on the link labeled "column format" to download a file
+    And I click on the link labeled "column format"
     Then I should see a downloaded file named "B3160100100_ImportTemplate_yyyy-mm-dd.csv"
     #Manual: close csv file
 

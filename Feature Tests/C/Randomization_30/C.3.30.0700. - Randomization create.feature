@@ -63,7 +63,7 @@ Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     
@@ -94,7 +94,7 @@ Scenario: C.3.30.0700.2000. Modify an existing randomization model
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
     And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
+    Then I should see "was randomized for"
     And I click on the button labeled "Close" in the dialog box
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."
@@ -131,8 +131,10 @@ Scenario: C.3.30.0700.1100. Erase randomization model.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     #VERIFY_log Randomization at project level enabled recorded in logging table
     When I click on the link labeled "Logging"
@@ -172,7 +174,7 @@ Scenario: C.3.30.0700.0300. Enable stratified randomization with up to 14 strata
     And I select "strat_13 (Stratification 13)" on the thirteenth dropdown field labeled "- select a field -"
     And I click on the button labeled "Add another stratum"
     And I select "strat_14 (Stratification 14)" on the fourteenth dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group)" on the fifteenth dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the fifteenth dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
    	
@@ -187,7 +189,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
-    And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see an alert box with the following text: "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
 
@@ -209,7 +211,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -234,7 +236,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use an existing field to designate each group/site"
     And I select "gender" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group_3 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_3 (Randomization group 3)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -367,7 +369,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -406,7 +408,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the second button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -420,7 +422,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the link labeled "Delete allocation table?"
-    Then I should see a downloaded file named "Success! The allocation table has been deleted."
+    Then I should see "Success! The allocation table has been deleted."
     And I wait for 1 second
     #VERIFY_log Randomization deleted in logging table
     When I click on the link labeled "Logging"
@@ -450,38 +452,50 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
     
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
   
     #SETUP_PRODUCTION (Re-adding allocation tables so the project can be moved to production)
@@ -508,7 +522,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
 
     #VERIFY
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
  Scenario: C.3.30.0700.1900. Admin uploads an additional allocation table in PRODUCTION status.
     Given I click on the link labeled "Setup"

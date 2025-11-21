@@ -9,7 +9,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
         ##VERIFY: Branching logic
         When I click on the link labeled "Designer"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         Then I should see "Branching logic: [record_id] = '999'" within the field with variable name "ptname"
         Then I should see "Branching logic: [record_id] = '999'" within the field with variable name "textbox"
         Then I should see "Branching logic: [record_id] = '999'" within the field with variable name "text2"
@@ -51,8 +51,8 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         ##ACTION: change branching logic for one
         When I click on the link labeled "Designer"
         And I click on the button labeled "Leave without saving changes" in the dialog box
-        And I click on the instrument labeled "Data Types"
-        And I click on the Branching Logic icon for the variable "ptname"
+        And I click on the link labeled "Data Types"
+        And I click on the icon labeled "Branching Logic" in the row labeled "ptname"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
         And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
@@ -63,7 +63,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         Then I should see "Branching logic: [record_id] <> '999'" within the field with variable name "ptname"
 
         ##ACTION: change branching logic for all
-        When I click on the Branching Logic icon for the variable "text2"
+        When I click on the icon labeled "Branching Logic" in the row labeled "text2"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
         And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
@@ -104,18 +104,18 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         ##ACTION
         When I click on the link labeled "Designer"
         And I click on the button labeled "Leave without saving changes" in the dialog box
-        And I click on the instrument labeled "Data Types"
-        And I click on the Branching Logic icon for the variable "descriptive_text_file"
+        And I click on the link labeled "Data Types"
+        And I click on the icon labeled "Branching Logic" in the row labeled "descriptive_text_file"
         And I click on the radio labeled exactly "Drag-N-Drop Logic Builder" in the dialog box
-        Then I should see "Displaying field choices for the following data collection instrument" in the dialog box
+        Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "radio_button_manual = Choice101 (101)" to the box labeled "Show the field ONLY if..."
         And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box
         Then I should see "Branching logic: [radio_button_manual] = '101'" within the field with variable name "descriptive_text_file"
 
-        Given I click on the Branching Logic icon for the variable "required"
+        Given I click on the icon labeled "Branching Logic" in the row labeled "required"
         And I click on the radio labeled exactly "Drag-N-Drop Logic Builder" in the dialog box
-        Then I should see "Displaying field choices for the following data collection instrument" in the dialog box
+        Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "checkbox = Checkbox3 (3)" to the box labeled "Show the field ONLY if..."
         And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box

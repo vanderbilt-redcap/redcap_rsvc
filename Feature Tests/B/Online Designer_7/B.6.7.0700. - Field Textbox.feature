@@ -29,7 +29,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I select "Text Box (Short Text, Number, Date/Time, ...)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Text Box" into the Field Label of the open "Add New Field" dialog box
         And I enter "textbox" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see a field named "Text Box"
@@ -43,7 +43,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         Given I click on the button labeled "Close" in the dialog box
         And I enter "2ABC" into the Variable Name of the open "Edit Field" dialog box
-        And I click on the button labeled "Save" in the "Edit Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see "Field Name: abc"
@@ -53,7 +53,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I select "Text Box (Short Text, Number, Date/Time, ...)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "ABC#2" into the Field Label of the open "Add New Field" dialog box
         And I enter "ABC#2" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see "Field Name: abc_2"

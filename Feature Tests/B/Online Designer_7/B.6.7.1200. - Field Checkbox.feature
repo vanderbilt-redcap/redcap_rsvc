@@ -18,7 +18,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -26,7 +26,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: checkbox field creation
-        Given I click on the instrument labeled "Form 1"
+        Given I click on the link labeled "Form 1"
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "Checkboxes (Multiple Answers)" from the Field Type dropdown of the open "Add New Field" dialog box
@@ -36,7 +36,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         And I enter Choices of "2, Checkbox2" into the open "Add New Field" dialog box
         And I enter Choices of "3, Checkbox3" into the open "Add New Field" dialog box
         And I enter Choices of "Abc123, Checkbox Abc123" into the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see the field labeled "Checkbox"
         And I should see the multiselect field labeled "checkbox" with the options below
             | Checkbox1       |

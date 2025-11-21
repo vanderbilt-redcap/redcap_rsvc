@@ -51,7 +51,7 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid13_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 13 - LastNameLocal |
       | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant     |
@@ -101,7 +101,7 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid14_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 14 - LastNameAzure |
       | FirstName LastNameAzure, 2000-01-01, Version: 1.0, Participant     |
@@ -152,7 +152,7 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid15_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 15 - LastNameS3 |
       | FirstName LastNameS3, 2000-01-01, Version: 1.0, Participant     |
@@ -201,7 +201,7 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid16_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 16 - LastNameGCS |
       | FirstName LastNameGCS, 2000-01-01, Version: 1.0, Participant     |
@@ -248,7 +248,7 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid17_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 17 - LastNameWebDAV |
       | FirstName LastNameWebDAV, 2000-01-01, Version: 1.0, Participant     |

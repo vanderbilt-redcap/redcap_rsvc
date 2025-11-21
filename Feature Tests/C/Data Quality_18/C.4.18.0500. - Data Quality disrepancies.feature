@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support viewing discrepancies found in
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         ##ACTION executing all rules.
         When I click on the link labeled "Data Quality"
@@ -30,10 +30,9 @@ Feature: User Interface: The system shall support viewing discrepancies found in
             | 1      | [radio]=9.9                                   | [radio]=9.9                              | 1                   |
             | 2      | [ptname]<>[name]                              | [ptname]<>[name]                         | 8                   |
 
-        When I click on the "view" link for Data Quality Rule # "C"
-        #When I click on the link labeled "view" for the Rule Name labeled "Field validation errors (incorrect data type)"
-        Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
-        And I should see "Discrepancies found: 1" in the dialog box
+        When I click on the link labeled "view" in the row labeled "C"
+        Then I should see "Rule: Field validation errors (incorrect data type)"
+        And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values | Status           | Exclude |
             | 6  Event 1 (Arm 1: Arm 1) | email = HelloWorld                  | Validation error | exclude |
