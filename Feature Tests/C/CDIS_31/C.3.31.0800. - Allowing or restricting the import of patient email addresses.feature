@@ -16,6 +16,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
+        And I should see "New FHIR System"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
         And I enter "Test" into the input field labeled "Client ID:"
@@ -40,7 +41,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
     #Verify email address drop down is diabled in the project settings (Control Center).
         When I click on the link labeled "Edit Project Settings"
         Then I should see "CDIS: Allow the patient's email address to be imported from the EHR?"
-        And I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
+        And I should see a dropdown labeled "CDIS: Allow the patient's email address" that is disabled
         
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
@@ -71,7 +72,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         When I click on the link labeled "Edit Project Settings"
-        Then I should see a dropdown labeled "CDIS: Allow the patient's email address" that is in the disabled state
+        Then I should see a dropdown labeled "CDIS: Allow the patient's email address" that is disabled
         
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"

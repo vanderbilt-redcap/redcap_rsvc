@@ -63,9 +63,9 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1500"
-        Then I should see a button "Set up Clinical Data Pull from EHR" that is in the disabled state
-        Then I should see a toggle button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
-        Then I should see a button labeled "Set up mapping for Clinical Data Pull (CDP)" that is in the disabled state
+        Then I should see a button "Set up Clinical Data Pull from EHR" that is disabled
+        Then I should see a toggle button labeled "Set up mapping for Clinical Data Pull (CDP)" that is disabled
+        Then I should see a button labeled "Set up mapping for Clinical Data Pull (CDP)" that is disabled
         And I logout
         
     #Adding CDP mapping right
