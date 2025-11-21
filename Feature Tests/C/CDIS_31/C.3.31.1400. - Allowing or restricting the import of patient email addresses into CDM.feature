@@ -14,7 +14,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Save Changes"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
-        When I click on the tab labeled "FHIR Systems"
+        When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled exactly "Add"
         And I enter "Test" into the input field labeled "Client ID:"
@@ -49,7 +49,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 
     #Check email access #1
-        When I click on the tab labeled "Project Home"
+        When I click on the link labeled "Project Home"
         And I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
@@ -66,7 +66,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
     #Check email access #2
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1400"
-        And I click on the tab labeled "Project Home"
+        And I click on the link labeled "Project Home"
         And I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
