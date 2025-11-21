@@ -41,7 +41,7 @@ Feature: C.3.31.1200. Control Center: The system shall support allowing or restr
         When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
         And I click on the button labeled "Find more source fields to map"
         Then I should see "nothing selected"
-        When I click on the dropdown field labeled "nothing selected"
+        When I click on the dropdown labeled "nothing selected"
         And I enter "email" into the text area labeled "Filter..."
         And I click on the option labeled "Demographics"
         Then I should see "fetching has been disabled at system level."
@@ -68,7 +68,7 @@ Feature: C.3.31.1200. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
         And I click on the button labeled "Find more source fields to map"
         Then I should see "nothing selected"
-        When I click on the dropdown field labeled "nothing selected"
+        When I click on the dropdown labeled "nothing selected"
         And I enter "email" into the text area labeled "Filter..."
         And I click on the option labeled "Demographics"
         Then I should see 'email'
