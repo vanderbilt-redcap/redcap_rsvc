@@ -49,7 +49,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Find more source fields to map"
         Then I should see "nothing selected"
         When I click on the dropdown labeled "nothing selected"
-        And I enter "email" into the text area labeled "Filter..."
+        And I enter "email" into the textarea field labeled "Filter..."
         And I click on the option labeled "Demographics"
         Then I should see "fetching has been disabled at system level."
         Then I should not see 'email address' in the dropdown field labeled "Select EHR Source Field to Map:"
@@ -80,7 +80,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Find more source fields to map"
         Then I should see "nothing selected"
         When I click on the dropdown labeled "nothing selected"
-        And I enter "email" into the text area labeled "Filter..."
+        And I enter "email" into the textarea field labeled "Filter..."
         And I click on the option labeled "Demographics"
         Then I should see 'email'
         And I should see 'email-2' 
@@ -108,7 +108,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Find more source fields to map"
         Then I should see "nothing selected"
         When I click on the dropdown labeled "nothing selected"
-        And I enter "email" into the text area labeled "Filter..."
+        And I enter "email" into the textarea field labeled "Filter..."
         And I click on the option labeled "Demographics"
         Then I should see 'email'
         And I should see 'email-2' 
