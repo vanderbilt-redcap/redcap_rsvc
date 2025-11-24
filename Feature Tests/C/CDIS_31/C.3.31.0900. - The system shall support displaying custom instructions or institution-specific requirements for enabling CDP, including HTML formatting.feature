@@ -14,13 +14,13 @@ Feature: C.3.31.0900. Control Center: The system shall support displaying custom
         And I select "Disable" on the dropdown field labeled "Enable Instant Adjudication for all CDP projects?"
         And I select "Disable" on the dropdown field labeled "Break-the-Glass"
         And I select "SystemLogin" on the dropdown field labeled "EHR User type"
-        And I enter "Some CDIS text for home page" into the input field labeled "Custom text specific to your institution to display to"
+        And I enter "Some CDIS text for home page" into the textarea field labeled "Custom text specific to your institution to display to"
         And I click on the button labeled "Save Changes"
 
      #SET UP SMARTHEALTH IT IN CONTROL CENTER 
-        When I click on the tab labeled "FHIR Systems"
+        When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
-        When I click on the button labeled exactly "Add"
+        When I click on the button labeled "Add"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
         And I enter "Test" into the input field labeled "Client ID:"
@@ -39,7 +39,7 @@ Feature: C.3.31.0900. Control Center: The system shall support displaying custom
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "C.3.31.0900." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
         Then I should see "C.3.31.0900."
-        When I click on the question mark icon in the "Clinical Data Pull from EHR" row in the "Enable optional modules and customizations" section
+        When I click on the link labeled "?" in the row labeled "Clinical Data Pull from EHR"
         Then I should see "Some CDIS text for home page"
 
     
