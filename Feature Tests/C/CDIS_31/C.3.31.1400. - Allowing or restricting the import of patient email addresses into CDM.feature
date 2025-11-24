@@ -53,8 +53,8 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
-        And I click on the button labeled "Demographics" and NOT the "Select all" option
-        Then I should verify that the Email address option has a strikethrough
+        And I click on "Demographics"
+        Then I should see the strikethrough text "Email address"
     
     #Activate CDIS Settings (Yes Email)
         When I click on the link labeled "Control Center"
@@ -70,7 +70,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
-        And I click on the button labeled "Demographics" and NOT the "Select all" option
-        Then I should see that the Email address option does not have a strikethrough
+        And I click on "Demographics"
+        Then I should NOT see the strikethrough text "Email address"
     
 #END
