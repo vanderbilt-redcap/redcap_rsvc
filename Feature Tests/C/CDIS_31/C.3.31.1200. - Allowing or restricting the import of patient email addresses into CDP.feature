@@ -45,6 +45,8 @@ Feature: C.3.31.1200. Control Center: The system shall support allowing or restr
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see "fetching has been disabled at system level."
+        # The followins step is simply to cause the selection dialog to disappear
+        And I click on the first button labeled "nothing selected"
         Then I should NOT see 'email address'
 
         
