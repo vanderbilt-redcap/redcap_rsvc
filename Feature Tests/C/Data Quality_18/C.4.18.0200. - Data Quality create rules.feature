@@ -10,8 +10,8 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
@@ -23,8 +23,8 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
     And I click on "" in the textarea field labeled "Enter logic for new rule"
     And I wait for 2 seconds
-    And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
-    And I click on the button labeled "Update & Close Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor"
+    And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Add"
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -37,11 +37,11 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the link labeled "Upload Data Quality Rule (CSV)"
     And I upload a "csv" format file located at "import_files/C418100TEST_DataQualityRules_Upload.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Upload Data Quality Rule (CSV) - Confirm"
-
-    When I click on the button labeled "Upload" in the dialog box
+    And I wait for 1 second
+    When I click on the button labeled "Upload"
     Then I should see "SUCCESS!"
 
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see "Data Quality Rules"
     ##VERIFY
     And I should see a table header and rows containing the following values in a table:
@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     Then I should see "Adding new Record ID 11"
 
     When I enter "1999" into the data entry form field labeled "Integer"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 11 successfully added."
 
@@ -66,13 +66,13 @@ Feature: User Interface: The system shall support data quality rule creation.
     Then I should see "Adding new Record ID 12."
 
     When I enter "2000" into the data entry form field labeled "Integer"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 12 successfully added."
 
     #VERIFY
     When I click on the link labeled "Data Quality"
-    And I click on the button labeled exactly "All"
+    And I click on the button labeled "All"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1999'          |
@@ -81,8 +81,8 @@ Feature: User Interface: The system shall support data quality rule creation.
     ##ACTION: edit existing rule for longitudinal projects
     When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
     And I wait for 2 seconds
-    And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
-    And I click on the button labeled "Update & Close Editor" in the dialog box
+    And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor"
+    And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
@@ -90,8 +90,8 @@ Feature: User Interface: The system shall support data quality rule creation.
             
     ##ACTION: edit existing rule
     When I click the element containing the following text: "[integer]<>'1999'"
-    And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor" in the dialog box
-    And I click on the button labeled "Update & Close Editor" in the dialog box
+    And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor"
+    And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save"
 
     Then I should see a table header and rows containing the following values in a table:
@@ -101,7 +101,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     #VERIFY
     When I click on the link labeled "Data Quality"
-    And I click on the button labeled exactly "All"
+    And I click on the button labeled "All"
     And I should see "Processing Complete!"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
@@ -109,9 +109,10 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 4      | Integer   | [integer]='2'                            |
 
     ##ACTION: delete rule
-    When I click on the icon in the column labeled "Delete rule" and the row labeled "4"
+    When I check the checkbox in the column labeled "Delete rule" and the row labeled "4"
     #Manual: confirmation windows are automatically accepted on automated side
-    And I click on the button labeled "Delete" in the dialog box
+    And I click on the button labeled "Delete selected"
+    And I click on the button labeled "Delete"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |

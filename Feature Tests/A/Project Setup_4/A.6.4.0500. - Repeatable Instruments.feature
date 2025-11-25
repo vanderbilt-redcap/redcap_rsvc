@@ -12,13 +12,13 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
             And I click on the button labeled "Assign to role"
             And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-            When I click on the button labeled exactly "Assign" on the role selector dropdown
+            When I click on the button labeled "Assign"
             Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
             Given I click on the link labeled "Setup"
             And I click on the button labeled "Move project to production"
-            And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-            And I click on the button labeled "YES, Move to Production Status" in the dialog box
+            And I click on the radio labeled "Keep ALL data saved so far"
+            And I click on the button labeled "YES, Move to Production Status"
             Then I should see "Project status:  Production"
 
             When I click on the link labeled "Control Center"
@@ -56,14 +56,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
             And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I check the checkbox labeled "Survey"
             And I click on the button labeled "Save"
             Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
@@ -79,7 +79,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
 
             And I click on the icon in the row labeled "Instance #1"
-            Then I see "Current instance:"
+            Then I should see "Current instance:"
 
             Given I click on the link labeled "Record ID 1"
             And I click the bubble to select a record for the "Data Types" longitudinal instrument on event "Event 1"
@@ -102,14 +102,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
             And I check the checkbox labeled "Data Types"
             And I select "-- not repeating --" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
             Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             When I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
@@ -120,9 +120,9 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
             Then I should NOT see "Current instance:"
             And I click on the button labeled "Cancel"
-            Then I see "data entry cancelled - not saved"
+            Then I should see "data entry cancelled - not saved"
             And I click the bubble to select a record for the "Data Types" longitudinal instrument on event "Event 1"
-            Then I see "Current instance:"
+            Then I should see "Current instance:"
 
             Given I click on the link labeled "Data Exports, Reports, and Stats"
 
@@ -138,13 +138,13 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
             And I select "Repeat Entire Event (repeat all instruments together)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
             Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
@@ -175,14 +175,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
-            Given I click on the button labeled "Close" in the dialog box
+            Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I select "Repeat Entire Event (repeat all instruments together)" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
             Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-            And I click on the button labeled "Close" in the dialog box
+            And I click on the button labeled "Close"
 
-            Given I see the link labeled "Data Exports, Reports, and Stats"
+            Given I should see the link labeled "Data Exports, Reports, and Stats"
             And I click on the link labeled "Data Exports, Reports, and Stats"
             Then I should see a table row containing the following values in the reports table:
                   | A | All data (all records and fields) |
@@ -197,7 +197,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I click on the link labeled "Add / Edit Records"
             And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
             And I click the X to delete all data related to the event named "#2"
-            And I click on the button labeled "Delete this instance of this event" in the dialog box
+            And I click on the button labeled "Delete this instance of this event"
             Then I should see "successfully deleted entire event of data"
             And I should NOT see "(#2)"
 #End

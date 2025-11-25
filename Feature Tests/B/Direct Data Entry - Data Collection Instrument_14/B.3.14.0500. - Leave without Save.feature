@@ -11,7 +11,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -21,8 +21,8 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         #SETUP_PRODUCTION
         When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #FUNCTIONAL_REQUIREMENT
@@ -59,7 +59,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         Then I should see a dialog containing the following text: "Save your changes"
 
         ##ACTION Save changes and leave
-        When I click on the button labeled "Save changes and leave" in the dialog box
+        When I click on the button labeled "Save changes and leave"
         ##VERIFY
         Then I should see "Main project settings"
 
@@ -77,7 +77,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         Then I should see a dialog containing the following text: "Save your changes"
 
         ##ACTION Stay on page
-        When I click on the button labeled "Stay on page" in the dialog box
+        When I click on the button labeled "Stay on page"
         ##VERIFY
         Then I should see "Adding new Record ID 8"
         And I should see a checkbox labeled "Checkbox1" that is checked

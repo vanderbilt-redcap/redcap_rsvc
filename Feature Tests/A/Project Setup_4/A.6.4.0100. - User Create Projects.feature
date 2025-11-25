@@ -30,7 +30,7 @@ Feature: A.6.4.0100. Manage project creation, deletion, and settings.   Control 
 
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "A.6.4.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Send Request" button
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
     Then I should see "Request Sent!"
     Given I logout
 
@@ -46,6 +46,6 @@ Feature: A.6.4.0100. Manage project creation, deletion, and settings.   Control 
 
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "A.6.4.100.101" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
     Then I should see "Your new REDCap project has been created"
 #End

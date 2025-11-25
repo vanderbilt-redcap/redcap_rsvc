@@ -28,10 +28,10 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         # We wait for a second because the "Upload" button sometimes doesn't work if clicked immediately during automation
         Then I wait for 1 second
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
@@ -77,7 +77,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 3 was successfully assigned to a Data Access Group"
 
         # -- Record ID 4 - TestGroup2 --
@@ -90,7 +90,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 4 was successfully assigned to a Data Access Group"
 
         When I click on the link labeled "DAGs"
@@ -182,7 +182,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         Given I return to the REDCap page I opened the survey from
         #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-        #And I click on the button labeled "Leave without saving changes" in the dialog box
+        #And I click on the button labeled "Leave without saving changes"
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"
         Then I should see "Time / Date"

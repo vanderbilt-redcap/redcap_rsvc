@@ -12,14 +12,14 @@ When I click on the link labeled "User Rights"
 And I click on the link labeled "test_user1" 
 And I click on the button labeled "Assign to role"
 And I select "1_FullRights" on the dropdown field labeled "select role"
-And I click on the button labeled exactly "Assign"
+And I click on the button labeled "Assign"
 Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
 Scenario: # C.3.30.1000.0300: The system shall reject allocation tables missing required structural elements (e.g., target field column, inconsistent stratum combinations).
 # Test: Upload malformed CSV (e.g., missing redcap_randomization_group). Confirm that REDCap rejects the file with a descriptive error.
 Given I click on the link labeled "Project Setup"
 And I click on the button labeled "Set up randomization"
-And I click on the icon in the column labeled "Setup" and the row labeled "2"
+And I click on the icon in the column labeled "Setup" and the row labeled "auto_rand"
 And I upload a "csv" format file located at "import_files/AlloRand malformed.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 
 #Verify: The system rejects allocation tables missing required structural elements.

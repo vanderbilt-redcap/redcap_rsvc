@@ -17,7 +17,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
     Then I should see a dialog containing the following text: "Creating new role"
 
     ##VERIFY_UR
-    When I click on the button labeled "Create role" in the dialog box
+    When I click on the button labeled "Create role"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               |
       | 1_FullRights            |
@@ -40,10 +40,10 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
     Then I should see a dialog containing the following text: "Editing existing user role"
 
     ##ACTION: User Rights Copy role
-    Given I click on the button labeled "Copy role" in the dialog box
+    Given I click on the button labeled "Copy role"
     And I clear field and enter "Copy role" into the input field labeled "New role name:"
-    And I click on the button labeled "Copy role" in the dialog box
-    And I click on the button labeled "Cancel" in the dialog box
+    And I click on the button labeled "Copy role"
+    And I click on the button labeled "Cancel"
 
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -59,9 +59,9 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
     Given I click on the link labeled "TestRole2"
 
     ##ACTION: User Rights delete role
-    Given I click on the button labeled "Delete role" in the dialog box
+    Given I click on the button labeled "Delete role"
     When I see a dialog containing the following text: "Delete role?"
-    And I click on the button labeled "Delete role" in the dialog box
+    And I click on the button labeled "Delete role"
 
     ##VERIFY
     Then I should NOT see "TestRole2"

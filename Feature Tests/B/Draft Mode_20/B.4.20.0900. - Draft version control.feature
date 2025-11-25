@@ -11,7 +11,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,8 +20,8 @@ Feature: User Interface: The system shall record all versions of the data dictio
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #ACTION: Draft Mode
@@ -37,13 +37,13 @@ Feature: User Interface: The system shall record all versions of the data dictio
         And I enter "DD History" into the Field Label of the open "Add New Field" dialog box
         And I enter "dd_history" into the Variable Name of the open "Add New Field" dialog box
         And I click on the button labeled "Save"
-        Then I should see the field labeled "DD History"
+        Then I should see the textarea labeled "DD History"
 
         #ACTION: Commit Changes
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         #ACTION
         When I click on the link labeled "Project Home"

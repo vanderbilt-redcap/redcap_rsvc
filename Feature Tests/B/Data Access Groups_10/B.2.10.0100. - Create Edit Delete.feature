@@ -59,7 +59,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I wait for 2 seconds
         Given I click on the icon in the column labeled "Delete" and the row labeled "RenameGroup3"
         Then I should see a dialog containing the following text: "Delete group?"
-        When I click on the button labeled "Delete" on the dialog box
+        When I click on the button labeled "Delete"
         Then I should see "The group could not be deleted because users or roles are still assigned to it."
 
         ##VERIFY
@@ -85,7 +85,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I wait for 2 seconds
         Given I click on the icon in the column labeled "Delete" and the row labeled "RenameGroup3"
         Then I should see a dialog containing the following text: "Delete group?"
-        When I click on the button labeled "Delete" on the dialog box
+        When I click on the button labeled "Delete"
 
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:

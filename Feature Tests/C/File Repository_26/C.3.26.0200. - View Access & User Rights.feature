@@ -14,8 +14,8 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##SETUP auto-archive
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        And I enable the toggle button labeled "Consent"
-        And I should see a toggle button labeled "Consent" that is in the enabled state
+        And I check the checkbox labeled "Consent"
+        And I should see a checkbox labeled "Consent" that is checked
 
     ##SETUP File Repository
         And I click on the link labeled "File Repository"
@@ -24,14 +24,14 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the button labeled "Create folder"
         And I enter "TestGroup1_Folder" into the input field labeled "New folder name:"
         And I select "TestGroup1" on the dropdown field labeled "Limit access by Data Access Group?"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "TestGroup1_Folder"
 
     #Create role limited folder
         And I click on the button labeled "Create folder"
         And I enter "Role1_Folder" into the input field labeled "New folder name"
         And I select "1_FullRights" on the dropdown field labeled "Limit access by User Role?"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "Role1_Folder"
 
   #Scenario: SETUP User Rights
@@ -49,9 +49,9 @@ Feature: User Interface: The system shall support limiting file repository user 
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -68,9 +68,9 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     ##SETUP Assign to roles
         When I click on the link labeled "test_user1 (Test User1)"
-        And I click on the button labeled "Assign to role" on the tooltip
+        And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -85,9 +85,9 @@ Feature: User Interface: The system shall support limiting file repository user 
             | TestRole                | [No users assigned] |
 
         When I click on the link labeled "test_user2 (Test User2)"
-        And I click on the button labeled "Assign to role" on the tooltip
+        And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -102,9 +102,9 @@ Feature: User Interface: The system shall support limiting file repository user 
             | TestRole                | [No users assigned] |
 
         When I click on the link labeled "test_user3 (Test User3)"
-        And I click on the button labeled "Assign to role" on the tooltip
+        And I click on the button labeled "Assign to role"
         And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -118,9 +118,9 @@ Feature: User Interface: The system shall support limiting file repository user 
             | TestRole                | [No users assigned] |
 
         When I click on the link labeled "test_user4 (Test User4)"
-        And I click on the button labeled "Assign to role" on the tooltip
+        And I click on the button labeled "Assign to role"
         And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" in the role selector dropdown
-        And I click on the button labeled exactly "Assign"
+        And I click on the button labeled "Assign"
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -530,12 +530,12 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##VERIFY will not let you delete folder with file inside
         Then I should see a dialog containing the following text: "Alert"
         And I should see a dialog containing the following text: "Sorry, but folders can't be deleted this way. They must instead be deleted individually by clicking the X on the right-hand side of each folder."
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see "TestGroup1_Folder"
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
         Then I should see a dialog containing the following text: "Cannot delete folder!"
         And I should see a dialog containing the following text: "Sorry, but the folder below cannot be deleted because it still has files in it."
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
             | Data Export Files           |                  |                         |
@@ -555,7 +555,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I check the checkbox labeled "testusers_bulk_upload.csv"
         And I click on the button labeled "Delete"
         Then I should see a dialog containing the following text: "DELETE MULTIPLE FILES?"
-        And I click on the button labeled "Cancel" in the dialog box
+        And I click on the button labeled "Cancel"
     ##VERIFY file still in folder
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                      | Time Uploaded    | Comments                |
@@ -565,10 +565,10 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I check the checkbox labeled "testusers_bulk_upload.csv"
         And I click on the button labeled "Delete"
         Then I should see a dialog containing the following text: "DELETE MULTIPLE FILES?"
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
     ##VERIFY file deleted in folder
         Then I should see a dialog containing the following text: "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         Then I should see a table row containing the following values in the file repository table:
             | No files or subfolders exist in this folder |
 
@@ -578,7 +578,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     ##VERIFY Cancel deletion
         Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
-        When I click on the button labeled "Cancel" in the dialog box
+        When I click on the button labeled "Cancel"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
             | Data Export Files           |                  |                         |
@@ -592,7 +592,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
     ##VERIFY Folder deleted
         Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
-        When I click on the button labeled "Delete" in the dialog box
+        When I click on the button labeled "Delete"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
             | Data Export Files           |                  |                         |
@@ -611,7 +611,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the button labeled "Create folder"
         And I enter "Admin_Folder" into the input field labeled "New folder name"
         And I check the checkbox labeled "Limit access to REDCap administrators only"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "Admin_Folder"
         And I should see "Admin-Restricted" in the row labeled "Admin_Folder"
 
@@ -638,7 +638,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the link labeled "Admin_Folder"
         When I click on the button labeled "Create folder"
         And I enter "Nested_Admin_Only" into the input field labeled "New folder name"
-        And I click on the button labeled "Create folder" in the dialog box
+        And I click on the button labeled "Create folder"
         Then I should see "All Files/Admin_Folder"
         Then I should see "Nested_Admin_Only"
         #Manual: Make sure it says "Admin-Restricted" in the "All Files/Admin_Folder" row.  Should we consider a way to verify this on Automation as well?
