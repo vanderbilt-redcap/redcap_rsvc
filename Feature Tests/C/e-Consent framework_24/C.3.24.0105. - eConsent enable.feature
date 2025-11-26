@@ -165,6 +165,6 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
           | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field     |
           | [survey respondent] | Save PDF Snapshot 2                        | record = "2"                               |
           | [survey respondent] | Save PDF Snapshot 2                        | field = "participant_file (event_1_arm_1)" |
-          | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | participant_file = '8'                     |
+          | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | participant_file = '                       |
 
 #END

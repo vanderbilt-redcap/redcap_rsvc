@@ -110,8 +110,17 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
     And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I click on the link labeled "File Repository"
-    Then I click on the link labeled "PDF Snapshot Archive"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see a table header and rows containing the following values in a table:
+      | Name      | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
+      | Snapshot2 | -                                |      1 |                                              |                        |         |      |
+      | Snapshot1 | -                                |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+
     When I click on the link labeled "Snapshot1_" in the row labeled "Participant Consent"
+    Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
+
+    When I click on the link labeled "Snapshot2_" in the row labeled ""
     Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document

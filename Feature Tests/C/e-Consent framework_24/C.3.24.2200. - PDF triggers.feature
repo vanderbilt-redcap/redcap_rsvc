@@ -36,7 +36,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I check the checkbox labeled "Save to specified field:"
       And I select "participant_file" in the dropdown field labeled "Save to specified field:"
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
-      And I enter "Custom" into the input field labeled "File name:"
+      And I enter "CustomParticipant" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
       Then I click on the button labeled "OK"
@@ -99,7 +99,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I check the checkbox labeled "Save to specified field:"
       And I select "combo_file" in the dropdown field labeled "Save to specified field:"
       And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
-      And I enter "Custom" into the input field labeled "File name:"
+      And I enter "CustomCombined" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
@@ -147,12 +147,16 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see a table header and rows containing the following values in a table:
          | Name | PDF utilized e-Consent Framework | Record | Survey Completed | Identifier (Name, DOB) | Version | Type |
 
+      And I should NOT see "Participant Consent (Event 1 (Arm 1: Arm 1))"
+
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username   | Action                                   | List of Data Changes OR Fields Exported |
          | test_admin | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                         |
+
+      And I should NOT see "Save PDF Snapshot"
 
    Scenario: Add record in survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
@@ -190,9 +194,9 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
       Then I should see "Editing existing Record ID 2."
-      Then I should see "Custom_" in the row labeled "Participant Consent file"
-
-      When I click on the link labeled "Custom_"
+      Then I should see "CustomParticipant_" in the row labeled "Participant Consent file"
+      And I should NOT see "CustomCombined_"
+      When I click on the link labeled "CustomParticipant_"
       Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document
@@ -227,10 +231,10 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
       Then I should see "Editing existing Record ID 2."
-      Then I should see "Custom_" in the row labeled "Participant Consent file"
-      And I should see "Custom_" in the row labeled "Combine both files together"
+      Then I should see "CustomParticipant_" in the row labeled "Participant Consent file"
+      And I should see "CustomCombined_" in the row labeled "Combine both files together"
 
-      When I click on the link labeled "Custom_" in the row labeled "Combine both files together"
+      When I click on the link labeled "CustomCombined_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
         | Page 3\nCoordinator Signature |
@@ -242,16 +246,16 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom_    | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
-         | Custom_    | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Name               | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
+         | CustomCombined_    | -                                | 2      |                                              |                        |         |      |
+         | CustomParticipant_ | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
+         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =   |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
          | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |

@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I check the checkbox labeled "Save to File Repository"
       And I check the checkbox labeled "Save to specified field:"
       And I select "participant_file" in the dropdown field labeled "Save to specified field:"
-        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
+      And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -45,6 +45,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       ##ACTION: Edit trigger
       When I click on the button labeled "Edit trigger" in the column labeled "Edit settings" and the row labeled "2"
       And I enter "Hide Snapshot" into the input field labeled "Name of trigger"
+      And I enter "CustomHide" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
@@ -99,9 +100,9 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom_    | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
-         | Custom_    | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Name        | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
+         | CustomHide_ | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Custom_     | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
 
    Scenario: Cancel Inactivate triggers
@@ -162,6 +163,11 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name | Type of trigger | Save snapshot when... | Scope of the snapshot | Location(s) to save the snapshot |
 
+      And I should NOT see "Hide Snapshot"
+      # Below doesn't work due to text - No PDF Snapshot triggers to display
+      # And I should NOT see "Snapshot"
+      And I should NOT see 'Complete survey "Participant Consent"'
+      And I should see "No PDF Snapshot triggers to display"
 
    Scenario: Add record in data survey mode (pdf snapshot NOT created)
       #Add record
@@ -203,8 +209,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom_ | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
-         | Custom_ | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | CustomHide | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Custom_    | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
    #I should NOT see Record 2
 
    Scenario: Reactivate triggers
@@ -263,8 +269,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom_ | -                                | 3      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
-         | Custom_ | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
-         | Custom_ | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Custom_    | -                                | 3      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | CustomHide | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Custom_    | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 #I should NOT see Record 2
 #END

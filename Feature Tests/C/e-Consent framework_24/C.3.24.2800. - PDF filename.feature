@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the customization of the file 
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
-         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                               |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                            |
+         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                                     |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1" |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1"                                              |
 #END
