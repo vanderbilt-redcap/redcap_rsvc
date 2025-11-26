@@ -237,7 +237,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "CustomCombined_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
-        | Page 5\nCoordinator Signature |
+        | Page 3\nCoordinator Signature |
    #Manual: Close document
 
 
