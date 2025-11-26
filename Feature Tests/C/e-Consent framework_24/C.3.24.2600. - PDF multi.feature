@@ -17,7 +17,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "trigger1" into the input field labeled "Variable Name"
     And I enter "1, Data Mode\n2, Survey Mode" into the textarea field labeled "Choices (one choice per line)"
     And I click on the button labeled "Save"
-    # Then I should see the field labeled "Form 1 Trigger"
+    Then I should see the checkbox labeled "Form 1 Trigger"
 
   Scenario: #SETUP_DESIGNER #SETUP PDF Snapshot Field Trigger
     When I click on the link labeled "Designer"
@@ -28,7 +28,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "trigger2" into the input field labeled "Variable Name"
     And I enter "1, Data Mode\n2, Survey Mode" into the textarea field labeled "Choices (one choice per line)"
     And I click on the button labeled "Save"
-    # Then I should see the field labeled "Form 2 Trigger"
+    Then I should see the checkbox labeled "Form 2 Trigger"
 
   Scenario: #SETUP_PRODUCTION
     When I click on the link labeled "Setup"
