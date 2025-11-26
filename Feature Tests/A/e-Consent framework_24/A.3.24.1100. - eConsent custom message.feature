@@ -43,4 +43,7 @@ Feature: Control Center: The system shall allow optional adding of a custom mess
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
         And I should see "My custom message"
+        And I click on the button labeled "Save settings"
+        And I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
+        Then I should see "My custom message"
 #END
