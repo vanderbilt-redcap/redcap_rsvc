@@ -48,10 +48,10 @@ I want to verify that the File Upload field enhancement requires a password or P
 #M Once the project is created, you must add Additional Customizations 
 #SETUP ADDITIONAL CUSTOMIZATIONS 
     When I click on the button labeled "Additional customizations"
-    And I enable the checkbox labeled "Enable the File Version History for 'File Upload' fields?"
-    And I enable the checkbox labeled "File Upload' field enhancement: Password verification & automatic external file storage"
+    And I check the checkbox labeled "Enable the File Version History for 'File Upload' fields?"
+    And I check the checkbox labeled "File Upload' field enhancement: Password verification & automatic external file storage"
 #M for testing for Part 11 this must be enabled 
-    And I enable the checkbox labeled "Require a 'reason' when making changes to existing records?"
+    And I check the checkbox labeled "Require a 'reason' when making changes to existing records?"
     And I click on the button labeled "Save"
     Then I should see "Success"
 ##ACTION: add record to file upload 

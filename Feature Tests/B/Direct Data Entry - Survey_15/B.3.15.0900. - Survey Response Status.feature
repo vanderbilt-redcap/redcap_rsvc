@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support the following statuses for sur
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,13 +20,13 @@ Feature: User Interface: The system shall support the following statuses for sur
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #SETUP_DESIGNER
         When I click on the link labeled "Designer"
-        And I click on the "Survey settings" button for the instrument row labeled "Survey"
+        And I click on the button labeled "Survey settings" in the row labeled "Survey"
         And I select "Yes" on the dropdown field labeled "Allow 'Save & Return Later' option for respondents?"
         And I click on the button labeled "Save Changes"
         Then I should see "Your survey settings were successfully saved!"
@@ -48,11 +48,11 @@ Feature: User Interface: The system shall support the following statuses for sur
 
         ##VERIFY_RSD
         Given I click on the button labeled "Save & Return Later"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         #Manual: Close browser tab
         #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-        #And I click on the button labeled "Leave without saving changes" in the dialog box
+        #And I click on the button labeled "Leave without saving changes"
 
         When I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"

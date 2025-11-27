@@ -11,7 +11,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -22,13 +22,13 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #VERIFY_DESIGNER
     When I click on the link labeled "Designer"
-    Then I should see the enabled survey icon link for the instrument row labeled "Survey"
+    Then I should see a button labeled "Survey settings" in the row labeled "Survey"
 
     #FUNCTIONAL REQUIREMENT
     Given I click on the link labeled "Record Status Dashboard"
@@ -54,18 +54,20 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I click on the link labeled "Setup"
     When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     Then I should see a dialog containing the following text: "WARNING"
-    Given I click on the button labeled "Close" in the dialog box
+    Given I click on the button labeled "Close"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
-    And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey" in the dialog box
+    And I check the checkbox labeled "Survey" in the row labeled "Event Three (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
+    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    And I click on the button labeled "Close"
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
-    #Then I should see "Successfully saved" in the dialog box
-    #And I click on the button labeled "Close" in the dialog box
+    #Then I should see "Successfully saved"
+    #And I click on the button labeled "Close"
 
     #ACTION - Create repeatable survey
     Given I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Survey"
+    And I click on the button labeled "Survey settings" in the row labeled "Survey"
     And I click on the checkbox labeled "(Optional) Repeat the survey"
     And I click on the button labeled "Save Changes"
     #VERIFY

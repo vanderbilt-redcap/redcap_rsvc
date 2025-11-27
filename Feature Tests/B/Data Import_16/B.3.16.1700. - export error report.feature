@@ -11,13 +11,16 @@ Feature: User Interface: The system shall report background process data import 
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         Given I click on the link labeled "Data Import Tool"
         When I select "Import as background process (better for large data sets)" on the dropdown field labeled "Choose an import option"
-        And I upload a "csv" format file located at "import_files/BigDataTestProjectbadDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        And I upload a "csv" format file located at "import_files/BigDataTestProjectbadDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file
+        And I should see "Confirm the data file is the correct file"
+        And I click on the button labeled "Confirm"
+        And I click on the button labeled "Upload File"
         And I should see "File was uploaded and will be processed soon"
         And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
@@ -28,6 +31,7 @@ Feature: User Interface: The system shall report background process data import 
         # Wait for import batch 2
         And I wait for background processes to finish
         #Manual: this may take several minutes
+        And I should see "Completed" in the row labeled "BigDataTestProjectbadDATA.csv"
 
         When I click on the button labeled "View details"
         And I click on the button labeled "Download list of all errors"
@@ -44,7 +48,7 @@ Feature: User Interface: The system shall report background process data import 
             | 4         | 44             | 3       | value-4-3 | value-4-4 | value-4-10 | value-4-11 | value-4-12 | value-4-13 | 1               |
             | 7         | 99-3           | 1       | value-7-3 | value-7-4 | value-7-10 | value-7-11 | value-7-12 | value-7-13 | 1               |
 
-        Then I click on the button labeled "Close" in the dialog box
+        Then I click on the button labeled "Close"
         
         Given I click on the link labeled "Record Status Dashboard"
         And I select "100" on the dropdown field labeled "records per page"

@@ -11,7 +11,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,9 +20,9 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status:  "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
         And I click on the link labeled "test_user1"
@@ -41,8 +41,8 @@ Feature: User Interface: The system shall support editing of user defined rules.
         When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
         And I click on "" in the textarea field labeled "Enter logic for new rule"
         And I wait for 1 second
-        And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
-        And I click on the button labeled "Update & Close Editor" in the dialog box
+        And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor"
+        And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Add"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
@@ -51,7 +51,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION executing rule
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         And I should NOT see a button labeled "Add"
         And I should see a button labeled "Execute"
 
-        When I click on the button labeled exactly "All"
+        When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                     | Rule Logic  (Show discrepancy only if...) | Total Discrepancies |
             | A      | Blank values*                                 | -                                        | 395                 |

@@ -13,7 +13,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     And I logout
 
@@ -26,7 +26,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: designate identifier through online designer
-    When I click on the instrument labeled "Data Types"
+    When I click on the link labeled "Data Types"
     #MANUAL NOTE: the last button is the one at the bottom of the instrument
     And I click on the last button labeled "Add Field"
 

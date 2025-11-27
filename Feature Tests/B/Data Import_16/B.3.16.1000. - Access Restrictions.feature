@@ -11,9 +11,9 @@ Feature: User Interface: The system shall not allow a new record to be imported 
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
@@ -23,7 +23,7 @@ Feature: User Interface: The system shall not allow a new record to be imported 
 
         When I check the User Right named "Data Import Tool"
         And I uncheck the User Right named "Create Records"
-        And I click on the button labeled "Add user" in the dialog box
+        And I click on the button labeled "Add user"
         Then I should see a table header and rows containing the following values in a table:
             | Role name | Username   |
             | —         | test_user3 |

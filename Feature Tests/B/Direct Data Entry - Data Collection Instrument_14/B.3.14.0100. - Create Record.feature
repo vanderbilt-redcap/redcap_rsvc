@@ -9,9 +9,9 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I create a new project named "B.3.14.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         ##SETUP_USER_RIGHTS
         # User with create access
@@ -54,7 +54,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
         #VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "7"
+        And I click on the link labeled "7"
         Then I should see "Record ID 7"
 
         ##VERIFY_DE

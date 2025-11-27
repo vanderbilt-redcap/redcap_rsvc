@@ -11,7 +11,7 @@ Scenario: #SETUP - Create new project
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     #SETUP- Randomization model 1 setup
@@ -20,7 +20,7 @@ Scenario: #SETUP - Create new project
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -30,7 +30,7 @@ Scenario: #SETUP - Create new project
     When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
-    And I select "rand_group_6 (Randomization group)" on the first dropdown field labeled "- select a field -"
+    And I select "rand_group_6 (Randomization group 6)" on the first dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_1basic.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -47,16 +47,16 @@ Scenario:#C.3.30.1400.0100. A record can be randomized across distinct models (e
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the first button labeled "Randomize"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
-    And I click on the button labeled "Close" in the dialog box 
+    And I click on the button labeled "Randomize"
+    Then I should see "was randomized for"
+    And I click on the button labeled "Close"
 
     #Randomizing to second model
     When I click on the button labeled "Randomize"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
-    And I click on the button labeled "Close" in the dialog box 
+    And I click on the button labeled "Randomize"
+    Then I should see "was randomized for"
+    And I click on the button labeled "Close"
 
     #VERIFY: Logging
     Given I click on the link labeled "Logging"

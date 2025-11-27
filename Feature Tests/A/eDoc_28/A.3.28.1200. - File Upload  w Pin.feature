@@ -163,7 +163,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
   Scenario: #VERIFY LOGGING
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-
+      | this is a placeholder table to ensure full automation failure of this step until we can finish this feature |
   Scenario: #VERIFY FILE REPO
     And I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Archive of Locked Records"

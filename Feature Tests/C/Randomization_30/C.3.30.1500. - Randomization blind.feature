@@ -11,7 +11,7 @@ Scenario: #SETUP project with randomization enabled
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
       
     #Adding user Test_User2 (without randomize rights)
@@ -29,7 +29,7 @@ Scenario: #SETUP project with randomization enabled
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -54,15 +54,15 @@ Scenario: #SETUP project with randomization enabled
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the first button labeled "Randomize"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    When I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
-    And I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Randomize"
+    Then I should see "was randomized for"
+    And I click on the button labeled "Close"
 
     When I click on the button labeled "Randomize"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    When I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
-    And I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Randomize"
+    Then I should see "was randomized for"
+    And I click on the button labeled "Close"
     
     When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."
@@ -79,7 +79,7 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
     And I should see "01" in the data entry form field "Blinded randomization" 
     
     #Verify the user can only see a concealed allocation code in reports with no visible group assignment.  
-    When I click on the link "Data Exports, Reports, and Stats"
+    When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Blinded randomization |
@@ -96,12 +96,12 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
 
     #Verify the user can see the assigned group allocation code directly in the record
     Then I should see "Already randomized"
-    And I should see a radio labeled "Drug A" in the row labeled "Already randomized" that is disabled
-    And I should see a radio labeled "Drug B" in the row labeled "Already randomized" that is disabled
-    And I should see a radio labeled "Placebo" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Drug A" in the row labeled "Randomization group 1" that is disabled
+    And I should see a radio labeled "Drug B" in the row labeled "Randomization group 1" that is disabled
+    And I should see a radio labeled "Placebo" in the row labeled "Randomization group 1" that is disabled
    
     #Verify the user can see the assigned group allocation code directly in reports
-    When I click on the link "Data Exports, Reports, and Stats"
+    When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Stratification 1 |
@@ -112,7 +112,7 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
             | 5         |                       |
 
 Scenario: #C.3.30.1500.0300. All users with export rights can export randomized records, seeing the allocation assigned to each record as displayed in the record view.  
-    Given I click on the link "Data Exports, Reports, and Stats"
+    Given I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Stratification 1 | Randomization group | Blinded randomization|
@@ -124,17 +124,17 @@ Scenario: #C.3.30.1500.0300. All users with export rights can export randomized 
     
 Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can access and export the full allocation table directly from the setup interface, regardless of model type.
     When I click on the link labeled "Setup"
-    Then I should see the button labeled "Set up randomization" is disabled
+    Then I should see the button labeled "Set up randomization" that is disabled
     Given I logout
 
     #Verify user with setup rights can access and export the full allocation table directly from the setup interface, (rand_group) open randomization type
     Given I login to REDCap with the user "Test_User1"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
-    And I click on the icon in the column labeled "Setup" and the row labeled "1" 
+    And I click on the icon in the column labeled "Setup" and the row labeled "rand_group" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -145,10 +145,10 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     #Verify User with setup rights can access and export the full allocation table directly from the setup interface, (rand_blind) blind randomization type
     When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
-    And I click on the icon in the column labeled "Setup" and the row labeled "2" 
+    And I click on the icon in the column labeled "Setup" and the row labeled "rand_blind" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -162,10 +162,10 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
-    And I click on the icon in the column labeled "Setup" and the row labeled "1" 
+    And I click on the icon in the column labeled "Setup" and the row labeled "rand_group" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -176,10 +176,10 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     #Verify User with setup rights can access and export the full allocation table directly from the setup interface, (rand_blind) blind randomization type
     When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
-    And I click on the icon in the column labeled "Setup" and the row labeled "2" 
+    And I click on the icon in the column labeled "Setup" and the row labeled "rand_blind" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
