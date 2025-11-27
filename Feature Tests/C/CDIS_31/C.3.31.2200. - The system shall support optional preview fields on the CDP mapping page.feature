@@ -14,7 +14,7 @@ Feature: C.3.31.2200. User Interface: The system shall support optional preview 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
-        When I click on the button labeled exactly "Add"
+        When I click on the button labeled "Add"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
         And I enter "Test" into the input field labeled "Client ID:"
@@ -41,7 +41,8 @@ Feature: C.3.31.2200. User Interface: The system shall support optional preview 
         Then I should see "Clinical Data Pull from EHR"
         And I should see "Preview Fields (optional):"
         When I click on the button labeled "Add field"
-        And I select "address-state" on the dropdown field labeled "Select.."
+        And I click on the button labeled "Select..."
+        And I click on "address-state"
         And I click on the button labeled "Save"
         Then I should see "Data saved"
     #VERIFY LOG
@@ -53,6 +54,7 @@ Feature: C.3.31.2200. User Interface: The system shall support optional preview 
 
     #VERIFY User Interface
         When I click on the link labeled "Standalone Launch"
+        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
         And I click on the link labeled "Add / Edit Records"
