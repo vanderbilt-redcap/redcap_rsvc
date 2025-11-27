@@ -14,6 +14,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         And I select "SystemLogin" on the dropdown field labeled "EHR User type"
         And I select "No, hide all information about CDP" on the dropdown field labeled "Display information about CDP on Project Setup page in a project?"
         And I click on the button labeled "Save Changes"
+        And I should NOT see "Loading"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
         When I click on the link labeled "FHIR Systems"
@@ -51,6 +52,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.2500"
         And I click on the link labeled "Standalone Launch"
+        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
         And I wait for 15 seconds 
@@ -59,13 +61,15 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        And I wait for 1 second
-        And I press the tab key to unfocus the current input field
-        And I wait for 1 second
+        Then I should see "Are the values below correct for"
+        And I should see "name-given:"
+        And I should see "name-family:"
+        And I should see "birthDate:"
         And I click on the button labeled "Save record and fetch data"
+        Then I should see "New items: 3"
         And I click on the button labeled "Save"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 1 successfully added."
+        Then I should see "Study ID 1 successfully edited."
     # #Verify logging
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
@@ -77,18 +81,20 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        And I wait for 1 second
-        And I press the tab key to unfocus the current input field
-        And I wait for 1 second
+        Then I should see "Are the values below correct for"
+        And I should see "name-given:"
+        And I should see "name-family:"
+        And I should see "birthDate:"
+        And I click on the button labeled "Save record and fetch data"
+        Then I should see "New items: 3"
         And I click on the button labeled "Save"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 2 successfully added."
+        Then I should see "Study ID 2 successfully edited."
         And I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date" 
-        And I wait for another 1 second
-        And I press the tab key to unfocus the current input field
         Then I should see "Adjudicate data from External System"
         And I click on the button labeled "Cancel"
+        And I wait for 1 second
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 2 successfully edited."
         And I should see "2 new items from source system"
