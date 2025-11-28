@@ -16,6 +16,7 @@ Feature: C.3.31.2300. User Interface: The system shall support up to five previe
         And I select "SystemLogin" on the dropdown field labeled "EHR User type"
         And I select "No, hide all information about CDP" on the dropdown field labeled "Display information about CDP on Project Setup page in a project?"
         And I click on the button labeled "Save Changes"
+        And I should NOT see "Loading"
 
      #SET UP SMARTHEALTH IT IN CONTROL CENTER 
         When I click on the link labeled "FHIR Systems"
@@ -46,9 +47,11 @@ Feature: C.3.31.2300. User Interface: The system shall support up to five previe
     Scenario: C.3.31.2300. User Interface: The system shall support up to five preview fields per CDP-enabled project.
         When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
         And I click on the button labeled "Add field"
-        And I select "address-city" on the dropdown field labeled "Select..."
+        And I click on the button labeled "Select..."
+        And I click on "address-city"
         And I click on the button labeled "Add field"
-        And I select "address-state" on the dropdown field labeled "Select..."
+        And I click on the button labeled "Select..."
+        And I click on "address-state"
         Then I should see "name-given"
         And I should see "name-family"
         And I should see "birthDate"
