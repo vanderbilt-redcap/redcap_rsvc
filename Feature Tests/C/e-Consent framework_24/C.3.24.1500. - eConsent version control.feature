@@ -9,8 +9,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: Cancel an add consent form version
@@ -25,12 +25,12 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Consent form version"
 
   Scenario: #CROSS-REF ##C.3.24.1600.100 Add consent form version via rich text
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
-    And I click on the button labeled "Cancel" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)"
+    And I click on the button labeled "Cancel"
     Then I should see "v1.0" in the row labeled "Participant Consent"
 
   Scenario: Add consent form version via rich text
@@ -38,12 +38,12 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Consent form version"
 
   Scenario:
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
-    And I click on the button labeled "Add new consent form" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)"
+    And I click on the button labeled "Add new consent form"
     And I wait for 1 second
     Then I should see "vtest 1" in the row labeled "Participant Consent"
 
@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       |            | test 1  |                    | Test_Admin (Admin User) |                           0 |                   |              | "This is my test 1 consent form"      |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see "vtest 1" in the row labeled "Participant Consent"
 
   Scenario: ##VERIFY_Logging
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -88,7 +88,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -111,8 +111,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type |                       |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  |      | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id1_"
@@ -135,19 +135,19 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
         # Unable to add an existing version name
 
   Scenario:
-    When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I click on the button labeled "Add new consent form" in the dialog box
+    When I enter "test 1" into the input field labeled "Consent form version:"
+    And I click on the button labeled "Add new consent form"
         #Verify error
     Then I should see "ERROR: You must provide your consent form"
 
   Scenario:
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
         #Add unique version
-    And I clear field and enter "test 2" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
+    And I clear field and enter "test 2" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I click on the button labeled "Consent Form (Inline PDF)"
         #Adding a .png file will cause an error
     And I upload a "pdf" format file located at "import_files/consent.png", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
 
@@ -155,7 +155,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "ERROR: Only PDF files are allowed"
 
   Scenario:
-    When I click on the button labeled "OK" in the dialog box
+    When I click on the button labeled "OK"
         #Adding a .pdf file will upload
     And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
     And I wait for 1 second
@@ -172,7 +172,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see "vtest 2" in the row labeled "Participant Consent"
 
   Scenario: ##VERIFY_Logging
@@ -192,7 +192,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -209,7 +209,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -232,9 +232,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type |                       |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 2  |      | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  |      | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id2_"
@@ -262,7 +262,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario:
-    When I click on the button labeled "Set as inactive" in the dialog box
+    When I click on the button labeled "Set as inactive"
     Then I should see "Set consent form as inactive"
 
   Scenario: #Cancel inactivation of version
@@ -277,11 +277,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario:
-    When I click on the button labeled "Set as inactive" in the dialog box
+    When I click on the button labeled "Set as inactive"
     Then I should see "Set consent form as inactive"
 
   Scenario:
-    When I click on the button labeled "Set consent form as inactive" in the dialog box
+    When I click on the button labeled "Set consent form as inactive"
     Then I should see "Consent form has been successfully removed"
     And I wait for 5 seconds
     And I should see a table header and rows containing the following values in a table:
@@ -301,7 +301,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     #Manual: Close document
 
   Scenario:
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should NOT see "Consent form vtest 2" in the row labeled "Participant Consent"
 
   Scenario: ##ACTION: Test e-Consent version is gone by adding record
@@ -313,7 +313,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -329,7 +329,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
@@ -352,10 +352,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
       | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 2  | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id3_"

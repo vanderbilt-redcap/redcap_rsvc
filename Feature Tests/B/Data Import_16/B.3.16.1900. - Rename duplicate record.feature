@@ -9,8 +9,8 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I create a new project named "B.3.16.1900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         Given I click on the link labeled "Data Import Tool"
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I select "Import in real time" on the dropdown field labeled "Choose an import option"
         And I select "Yes, display uploaded data prior to importing" on the dropdown field labeled "Display the data comparison table"
         And I select "Yes, blank values in the file will overwrite existing values" on the dropdown field labeled "Overwrite data with blank values?"
-        And I click on the button labeled "Yes, I understand" in the dialog box
+        And I click on the button labeled "Yes, I understand"
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATARename2.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
         And I click on the button labeled "Import Data"
         Then I should see "Import Successful!"

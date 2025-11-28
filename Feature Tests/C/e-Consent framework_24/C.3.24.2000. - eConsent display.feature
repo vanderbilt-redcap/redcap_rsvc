@@ -10,8 +10,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
    #FUNCTIONAL_REQUIREMENT
@@ -39,7 +39,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see "Adding new Record ID 1."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -53,7 +53,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
@@ -96,7 +96,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see "Adding new Record ID 2."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -110,7 +110,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Submit"
@@ -136,7 +136,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+         |            | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
       And I click on the button labeled "Close"
 
@@ -148,7 +149,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see "Adding new Record ID 3."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -162,7 +163,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
@@ -176,6 +177,20 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
       Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "3"
+
+      When I click on the link labeled "Designer"
+      And I click on the button labeled "e-Consent"
+      Then I should see a table header and rows containing the following values in a table:
+         | e-Consent active? | Survey                                      |
+         | [x]               | "Participant Consent" (participant_consent) |
+
+      #VERIFY: Verify number of records consented
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
+      Then I should see a table header and rows containing the following values in a table:
+         | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+         |            | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+
+      And I click on the button labeled "Close"
 
    Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe

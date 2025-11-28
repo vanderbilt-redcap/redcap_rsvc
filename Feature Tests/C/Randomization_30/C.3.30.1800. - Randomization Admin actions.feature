@@ -11,7 +11,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
        
     #SETUP Creating randomiztion stategy and adding allocation table.
@@ -20,7 +20,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     
@@ -38,9 +38,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
+    And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."
 
@@ -68,9 +68,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I should see "Enter new value"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "3" into the input field labeled "Enter new value" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "3" into the input field labeled "Enter new value"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "3" within the "1" row of the column labeled "Target Field"
 
@@ -99,9 +99,9 @@ Scenario: #C.3.30.1800.0200. Admin can edit target alternative with reason.
     And I should see "Enter new value"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "1" into the input field labeled "Enter new value" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "1" into the input field labeled "Enter new value"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "1" within the "1" row of the column labeled "Alternate"
 
@@ -130,8 +130,8 @@ Scenario: #C.3.30.1800.0300. Admin can manually randomize a record with reason.
     And I should see "Existing record to assign"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "3" into the input field labeled "Existing record to assign" in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "3" into the input field labeled "Existing record to assign"
     And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box 
     And I click on the button labeled "Confirm"
     Then I should see a "3" within the "1" row of the column labeled "Record"
@@ -147,7 +147,7 @@ Scenario: #C.3.30.1800.0300. Admin can manually randomize a record with reason.
     And I select "3" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     Then I should see "Already randomized"
-    And I should see a radio labeled "Placebo" that is in the disabled state 
+    And I should see a radio labeled "Placebo" that is disabled 
 
 Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     Given I click on the link labeled "Setup"
@@ -161,8 +161,8 @@ Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Edit Target Field" in the row labeled "1"
@@ -195,8 +195,8 @@ Scenario: #C.3.30.1800.0400. Admin can mark a sequence as unavailable with reaso
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Restore" in the row labeled "1"
@@ -214,10 +214,10 @@ Scenario: #C.3.30.1800.0400. Admin can mark a sequence as unavailable with reaso
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
+    And I click on the button labeled "Randomize"
     Then I should see "RANDOMIZATION ERROR"
     And I should see "cannot be randomized because there are no allocations available for assignment based upon the values you just submitted. If this is a problem, please speak to the person(s) in charge of randomization for this project (e.g., your project manager, data analyst, statistician) in order to resolve this."
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."
 
@@ -233,8 +233,8 @@ Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
     And I should see "Specify Reason"
     And I should see 'Type "CONFIRM"'
 
-    When I enter "Test reason" into the input field labeled "Specify Reason" in the dialog box
-    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"' in the dialog box
+    When I enter "Test reason" into the input field labeled "Specify Reason"
+    And I enter "CONFIRM" into the input field labeled 'Type "CONFIRM"'
     And I click on the button labeled "Confirm"
     Then I should see a "" within the "1" row of the column labeled "Record"
     And I should see an icon labeled "Edit Target Field" in the row labeled "1"
@@ -254,9 +254,9 @@ Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
+    And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."
     

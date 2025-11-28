@@ -8,8 +8,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I create a new project named "C.3.24.2500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
       #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: New PDF Trigger testing Every time the following survey is completed
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click on the button labeled "PDF Snapshot"
     And I click on the button labeled "Add new trigger"
     And I enter "Snapshot 1" into the input field labeled "Name of trigger"
-    And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -34,11 +34,11 @@ Feature: User Interface: The system shall support conditional logic integration 
       ##ACTION: When the following logic becomes true (only once per record)
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 2" into the input field labeled "Name of trigger"
-    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[participant_consent_complete]='2'" in the textarea field labeled "Logic Editor" in the dialog box
-    And I click on the button labeled "Update & Close Editor" in the dialog box
+    And I clear field and enter "[participant_consent_complete]='2'" in the textarea field labeled "Logic Editor"
+    And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -56,11 +56,11 @@ Feature: User Interface: The system shall support conditional logic integration 
    ##ACTION: When the following logic becomes true (only once per record)
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 3" into the input field labeled "Name of trigger"
-    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-    And I click on the button labeled "Update & Close Editor" in the dialog box
+    And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
+    And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -88,7 +88,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -100,7 +100,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
@@ -110,8 +110,17 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
     And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I click on the link labeled "File Repository"
-    Then I click on the link labeled "PDF Snapshot Archive"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see a table header and rows containing the following values in a table:
+      | Name      | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
+      | Snapshot2 | -                                |      1 |                                              |                        |         |      |
+      | Snapshot1 | -                                |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+
     When I click on the link labeled "Snapshot1_" in the row labeled "Participant Consent"
+    Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
+
+    When I click on the link labeled "Snapshot2_" in the row labeled ""
     Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document
@@ -123,7 +132,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
     And I select "Complete" on the dropdown field labeled "Complete?"

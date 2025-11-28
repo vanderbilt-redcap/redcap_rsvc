@@ -31,7 +31,7 @@ Feature: A.2.2.0600. Add/Manage users
     Given I wait for 2 minutes
 
     Given I login to REDCap with the user "Test_User1"
-    And I see "My Projects"
+    And I should see "My Projects"
     Given I logout
 
     Given I login to REDCap with the user "Test_Admin"
@@ -65,6 +65,6 @@ Feature: A.2.2.0600. Add/Manage users
     Given I wait for 1 minute
 
     Given I login to REDCap with the user "Test_User1"
-    And I see "My Projects"
+    And I should see "My Projects"
     Given I logout
 #End

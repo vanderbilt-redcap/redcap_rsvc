@@ -13,8 +13,8 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #ACTION Upload to top tier file repo (all users will see file) - using the Select files to upload button
@@ -50,8 +50,8 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
 
     Given I click on the icon in the column labeled "Share" and the row labeled "testusers_bulkupload.csv"
     Then I should see "Send the file securely using Send-It"
-    And I should NOT see "Share a public link to view the file" in the dialog box
-    And I click on the button labeled "Close" in the dialog box
+    And I should NOT see "Share a public link to view the file"
+    And I click on the button labeled "Close"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: Enable File Repository Module
@@ -70,5 +70,5 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     Given I click on the icon in the column labeled "Share" and the row labeled "testusers_bulkupload.csv"
     Then I should see "Send the file securely using Send-It"
     And I should see "Share a public link to view the file"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 #End

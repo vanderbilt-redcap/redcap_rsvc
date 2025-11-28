@@ -38,7 +38,7 @@ Feature: Control Center: The system shall allow the survey feature to be enabled
     Then I should see a button labeled "Disable" in the row labeled "Use surveys in this project?"
 
     When I click on the button labeled "Disable" in the row labeled "Use surveys in this project?"
-    And I click on the button labeled "Disable" in the dialog box
+    And I click on the button labeled "Disable"
     Then I should see a button labeled "Enable" in the row labeled "Use surveys in this project?"
 
     ##VERIFY_LOG

@@ -12,7 +12,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        When I click on the button labeled exactly "Assign" on the role selector dropdown
+        When I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         When I click on the link labeled "Control Center"
@@ -30,8 +30,8 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see a button labeled "Move project to production"
 
         When I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "Yes, Request Admin to Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "Yes, Request Admin to Move to Production Status"
         Then I should see "Your request to move the project to production status has been sent to a REDCap administrator"
         And I wait for 1 second
         And I click on the link labeled "Logging"
@@ -52,7 +52,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         When I click on the "process request" icon for the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
         Then I should see "Move Project To Production Status"
 
-        Given I click on the radio labeled "Keep ALL data saved so far." in the dialog box in the iframe
+        Given I click on the radio labeled "Keep ALL data saved so far."
         When I click on the button labeled "YES, Move to Production Status"
         And I close the iframe window
         Then I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Completed & Archived Requests" table
@@ -75,7 +75,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         When I click on the link labeled "Control Center"
@@ -93,8 +93,8 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see a button labeled "Move project to production"
 
         Given I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far."
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
         Given I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:

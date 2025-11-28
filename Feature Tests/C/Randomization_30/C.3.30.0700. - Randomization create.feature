@@ -10,14 +10,14 @@ Scenario: #SETUP project with randomization enabled
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     #Adding user rights Test_Admin
     When I click on the link labeled "User Rights"
     And I enter "Test_Admin" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_admin" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     #Adding user Test_User2 (No randomization rights)
     When I click on the link labeled "User Rights"
@@ -44,7 +44,7 @@ Scenario: C.3.30.0700.2300. User without Randomization Setup rights cannot acces
     When I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.0700."
     And I click on the link labeled "Setup"
-    Then I should NOT see the button labeled "Set up a randomization model"
+    Then I should see a button labeled "Set up randomization" that is disabled
     
 Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratification
     Given I logout
@@ -63,7 +63,7 @@ Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     And I select "strat_1 (Stratification 1)" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group (Randomization group 1)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group (Randomization group 1)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     
@@ -93,9 +93,9 @@ Scenario: C.3.30.0700.2000. Modify an existing randomization model
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize" in the dialog box
+    And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."
     
@@ -189,7 +189,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
-    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see an alert box with the following text: "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
 
@@ -211,7 +211,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -236,7 +236,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use an existing field to designate each group/site"
     And I select "gender" on the first dropdown field labeled "- select a field -"
-    And I select "rand_group_3 (Randomization group 3)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_3 (Randomization group 3)" on the dropdown field labeled "Choose your randomization field"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -518,8 +518,8 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
    #SETUP
     And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
 
     #VERIFY
     Then I should see "Project status:  Production"

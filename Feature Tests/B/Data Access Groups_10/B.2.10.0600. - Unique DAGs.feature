@@ -23,7 +23,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 3 was successfully assigned to a Data Access Group"
 
         Then I should see "Record Home Page"
@@ -38,7 +38,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 4 was successfully assigned to a Data Access Group"
 
         Then I should see "Record Home Page"

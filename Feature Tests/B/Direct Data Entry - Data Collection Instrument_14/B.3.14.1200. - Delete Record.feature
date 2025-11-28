@@ -11,7 +11,7 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,8 +20,8 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #SET UP_USER_RIGHTS
@@ -29,7 +29,7 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        When I click on the button labeled exactly "Assign" on the role selector dropdown
+        When I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##VERIFY - COUNT OF ROWS
@@ -52,10 +52,10 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
         And I click on the link labeled "Delete record (all forms/events)"
         Then I should see a dialog containing the following text: 'DELETE RECORD "1"?'
 
-        Given I click on the button labeled "DELETE RECORD" in the dialog box
+        Given I click on the button labeled "DELETE RECORD"
         ##VERIFY
         Then I should see a dialog containing the following text: 'Record ID "1" was successfully deleted'
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

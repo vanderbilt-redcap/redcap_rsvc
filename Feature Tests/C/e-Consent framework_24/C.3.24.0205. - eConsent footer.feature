@@ -11,8 +11,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
     Scenario: #SETUP_eConsent for participant consent process
@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
@@ -42,11 +42,21 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
             | [x]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
+        When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+        And I enter "1.0" into the input field labeled "Consent form version:"
+        And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+        And I click on the button labeled "Consent Form (Inline PDF)"
+        # Then I should see "ERROR: You must provide your consent form"
+        # When I click on the button labeled "Close"
+        And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+        And I wait for 1 second
+        Then I should see "v1.0" in the row labeled "Participant Consent"
+
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I wait for 1 second
-        And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey"
         Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
@@ -74,8 +84,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
         And I click on "" in the textarea field labeled "When the following logic becomes true"
         And I wait for 1 second
-        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-        And I click on the button labeled "Update & Close Editor" in the dialog box
+        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
+        And I click on the button labeled "Update & Close Editor"
         And I check the checkbox labeled "Save to File Repository"
         And I check the checkbox labeled "Save to specified field"
         And I select "combo_file" in the dropdown field labeled "Save to specified field:"
@@ -96,7 +106,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see "Adding new Record ID 1."
 
         When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-        And I click on the button labeled "Okay" in the dialog box
+        And I click on the button labeled "Okay"
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
@@ -110,7 +120,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Given I click on the link labeled "Add signature"
         And I see a dialog containing the following text: "Add signature"
         And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
+        When I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"
 
         When I click on the button labeled "Next Page"
@@ -137,7 +147,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Given I click on the link labeled "Add signature"
         And I see a dialog containing the following text: "Add signature"
         And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
+        When I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"
 
         When I click on the button labeled "Next Page"
@@ -171,6 +181,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
+          | FirstName LastName, 2000-01-01, Version: 1.0, Participant |
 
         When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
         And I wait for 1 second
@@ -184,6 +195,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
           | PID 13 - LastName   |
           | Participant Consent |
           | Coordinator Signature |
+          | Coordinator         |
 
         #Manual: Close document
 
