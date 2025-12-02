@@ -46,11 +46,19 @@ Feature: C.3.31.2800. User Interface: The system shall support importing and exp
     Scenario: C.3.31.2800. User Interface: The system shall support importing and exporting CDP mapping configurations, including field linkages.
         #Exporting
         When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        # And I click on the button labeled "Export"
-        # Then I should see "Your data is ready to be downloaded!"
-        # When I click on the link labeled "click here to download"
-        # Then I should see a downloaded file named "yyyymmddhhmmss_c3312800-cdp-mapping.csv"
-
+        And I click on the button labeled "Export"
+        Then I should see "Your data is ready to be downloaded!"
+        When I click on the link labeled "click here to download"
+        Then I should see the following values in the last file downloaded
+            | external_source_field_name,is_record_identifier,field_name,temporal_field,preselect,event_name |
+            | 29463-7,,body_weight,visit_date,MAX,event_1_arm_1 |
+            | birthDate,,dob,,,event_1_arm_1 |
+            | name-given,,first_name,,,event_1_arm_1 |
+            | name-family,,last_name,,,event_1_arm_1 |
+            | id,1,mrn,,,event_1_arm_1 |
+            | 2947-0,,na,visit_date,NEAR,event_1_arm_1 |
+        Then I click on the button labeled "Close"
+        
         #Importing
         And I upload a "csv" format file located at "import_files/CDIS_Setting_Import.csv", by clicking the button near "Import" to browse for the file, and clicking the button labeled "Open" to upload the file
         Then I should see "Total imported mappings: 6"
