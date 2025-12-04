@@ -102,12 +102,13 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                | List of Data Changes OR Fields Exported             |
         | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 1  | Action: Lock entire record Record: 1 - Arm 1: Arm 1 |
+        | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 1  | Form: Text Validation                               |
 
   Scenario: #VERIFY FILE REPO
     And I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Archive of Locked Records"
     And I should see "Showing 1 to 1 of 1 entries"
-    Then I should see a link labeled ".pdf" in the row labeled "1"
+    Then I should see a link labeled "_id1_" in the row labeled "1"
     Then I should see the following values in the most recent file in the Azure Blob Storage container
       | E-signed by test_admin |
       | Record ID 1 |
@@ -123,7 +124,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
-  Scenario: ##ACTION: Lock entire record Record 2 confirms that PIN is not usedC.2.19.1400.
+  Scenario: ##ACTION: Lock form for Record 2 and confirm that PIN is not used C.2.19.1400.
     Then I click on the link labeled "My Projects"
     Then I click on the link labeled "A.3.28.1200"
     And I click on the link labeled "Record Status Dashboard"
@@ -133,12 +134,12 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I enter "lock form" into the textarea field labeled "Reason for changes"
     And I click on the button labeled "Save Changes"
-    Then I enter "test_admin" into the input field labeled "Username:"
-    And I click on the button labeled "Obtain PIN via email"
-    And I enter the code that was emailed to the current user into the input field labeled "Password or 6-digit PIN:"
+    And I should see "Since you have already entered your 6-digit PIN, you will not be required to enter it again during this session"
     And I click on the button labeled "Save"
     Then I should see "Instrument locked by test_admin"
     When I click on the link labeled "Record Status Dashboard"
+  
+  Scenario: Lock entire record 3 and confirm locking/esigning individual forms is no longer possible
     And I click on the link labeled "3"
     When I click on the button labeled "Choose action for record"
     And I click on the link labeled "Lock entire record"
@@ -147,28 +148,25 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Lock entire record"
     And I click on the icon in the column labeled "Event 2" and the row labeled "Text Validation"
     Then I should see "The entire record was locked by test_admin"
-    And I click on the link labeled "Record Status Dashboard"
-    And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
-    And I check the checkbox labeled "Lock"
-    And I check the checkbox labeled "E-signature"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I enter "lock form" into the textarea field labeled "Reason for changes"
-    And I click on the button labeled "Save Changes"
-    Then I see "my usename" and PIN have been filled in
-    And I type "my 6-digit" PIN"
-#M you should see black dots in the password field 
-    And I click on the button labeled "Save"
-    Then I should see " Instrument locked by test_admin@test.edu (Admin User) on 08-01-2025 16:51"
+    And I should see a checkbox labeled "Lock" that is disabled
+    And I should see a checkbox labeled "E-signature" that is disabled
 
   Scenario: #VERIFY LOGGING
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-      | this is a placeholder table to ensure full automation failure of this step until we can finish this feature |
+        | Time / Date      | Username   | Action                | List of Data Changes OR Fields Exported             |
+        | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 1  | Action: Lock entire record Record: 1 - Arm 1: Arm 1 |
+        | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 2  | Form: Text Validation                               |
+
   Scenario: #VERIFY FILE REPO
     And I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Archive of Locked Records"
-    Then I should see a file named " pid274_id2_2025-08-01_172633.pdf"
-    And I confirm with System Admin that the file is on the External Storage
+    And I should see "Showing 1 to 2 of 2 entries"
+    Then I should see a link labeled "_id3_" in the row labeled "3"
+    Then I should see the following values in the most recent file in the Azure Blob Storage container
+      | Record ID 3 |
+      | Text Validation |
+      | Data Types |
 
   Scenario: Stop external storage services
     Then if running via automation, stop external storage services
