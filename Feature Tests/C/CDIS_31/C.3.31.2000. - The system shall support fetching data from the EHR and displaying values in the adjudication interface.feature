@@ -27,10 +27,8 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         And I click on the button labeled "Save"
         Then I should see "New FHIR system created"
         And I click on the link labeled "Home"
-        And I logout
 
      #Turn on CDP at the project level
-        Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "C.3.31.2000" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
         Then I should see "C.3.31.2000"
         Then I should see a "Clinical Data Pull from EHR"
@@ -56,8 +54,8 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         And I should see "Lockman"
         When I click on the button labeled "Save"
         Then I should see "Saving adjudicated data..."
-        And I should see "Morris"
-        And I should see "Lockman"
+        And I verify "Morris" is within the input field labeled "First Name"
+        And I verify "Lockman" is within the input field labeled "Last Name"
         When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Study ID 1 successfully edited."
         And I logout
@@ -69,6 +67,6 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                        | List of Data Changes OR Fields Exported   |
-        | mm/dd/yyyy hh:mm | test_user1 | Update record (CDP) 1         | first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24'                  |
+        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24'                  |
 
 #END
