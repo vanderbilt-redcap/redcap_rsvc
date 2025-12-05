@@ -73,12 +73,8 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         Then I should see "95.902896432667" in the data entry form field "Body weight" 
         When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Study ID 1 successfully edited."
-        #And I logout
 
     #VERIFY LOG
-        #Given I login to REDCap with the user "Test_Admin"
-        #When I click on the link labeled "My Projects"
-       #And I click on the link labeled "C.3.31.2100."    
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                        | List of Data Changes OR Fields Exported                              |
