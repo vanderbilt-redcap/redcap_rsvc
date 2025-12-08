@@ -44,14 +44,14 @@ Feature: C.3.31.1700. User Interface: The system shall support mapping REDCap fi
 
    Scenario: FUNCTIONAL REQUIREMENT: C.3.31.1700.100 User Interface: The system shall support mapping REDCap fields to EHR source fields for one-time non-temporal data.
       When I click on the button labeled "Find more source fields to map"
-      And I click on the first dropwdown labeled "nothing selected"
-      When I enter "gender" into the textarea field labeled "Filter..."
-      And I click the dropdown labeled "Demographics"
-      And I select "gender (Sex)" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Event 1" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Gender" from the list
+      And I click on the first button labeled "nothing selected"
+      When I enter "gender" into the input field labeled "Filter..."
+      And I click on "Demographics"
+      And I click on "Sex"
+      And I click on the first button labeled "nothing selected"
+      And I click on "Event 1"
+      And I click on the first button "nothing selected"
+      And I click on "Gender"
       And I click on the button labeled "Save"
       Then I should see "Data saved"
     #VERIFY_LOG
@@ -62,22 +62,22 @@ Feature: C.3.31.1700. User Interface: The system shall support mapping REDCap fi
          | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Mapping configuration created           |
 
    Scenario: FUNCTIONAL REQUIREMENT: C.3.31.1700.200 User Interface: The system shall support mapping REDCap fields to EHR source fields for temporal data.
-      When I click on the button labeled "Setup"
+      When I click on the link labeled "Setup"
       And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
       Then I should see "Clinical Data Pull from EHR"
       When I click on the button labeled "Find more source fields to map"
-      And I click on the first dropwdown labeled "nothing selected"
-      When I enter "8480-6" into the textarea field labeled "Filter..."
-      And I click the dropdown labeled "Vital Signs"
-      And I select "8480-6 (Systolic blood pressure)" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Event 1" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Systolic blood pressure" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Visit Date" from the list
-      And I click on the dropwdown labeled "nothing selected"
-      And I select "Lowest numerical value" from the list
+      And I click on the first button labeled "nothing selected"
+      When I enter "8480-6" into the input field labeled "Filter..."
+      And I click on "Vital Signs"
+      And I click on "8480-6(Systolic blood pressure)"
+      And I click on the first button labeled "nothing selected"
+      And I click on "Event 1"
+      And I click on the first button labeled "nothing selected"
+      And I click on "Systolic blood pressure"
+      And I click on the first button labeled "nothing selected"
+      And I click on "Visit date"
+      And I click on the first button labeled "nothing selected"
+      And I click on "Lowest numerical value"
       And I click on the button labeled "Save"
       Then I should see "Data saved"
 
