@@ -28,7 +28,8 @@ Feature: A.2.2.0400. Add/Manage users
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Cancel delete user
-    Given I click on the button labeled "Delete user from system" and cancel the confirmation window
+    And I remember to click cancel on the confirmation dialog that appears after the following step 
+    Given I click on the button labeled "Delete user from system"
     Then I should NOT see "The user 'Delete_User' has now been removed and deleted from all REDCap projects"
 
     When I click on the link labeled "Browse Users"

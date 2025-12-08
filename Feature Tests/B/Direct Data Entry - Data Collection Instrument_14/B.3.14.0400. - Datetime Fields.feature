@@ -11,7 +11,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -21,9 +21,9 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     #SETUP_PRODUCTION
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
@@ -35,10 +35,10 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     Given I click on the date picker widget on the field labeled "datetime YMD HMSS"
     And I select "Aug" in the dropdown of the open date picker widget for "datetime YMD HMSS"
     And I select "2023" in the dropdown of the open date picker widget for "datetime YMD HMSS"
-    And I click on the link labeled exactly "1" in the open date picker widget
+    And I click on the link labeled "1"
     And I move the Hour slider for the open date picker widget to 0
     And I move the Minute slider for the open date picker widget to 0
-    And I click on the button labeled "Done" in the open date picker widget
+    And I click on the button labeled "Done"
 
     ##VERIFY
     Then I should see the date and time "2023-08-01 00:00:00" in the field labeled "datetime YMD HMSS"

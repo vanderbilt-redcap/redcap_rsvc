@@ -12,7 +12,7 @@ Feature: User Interface: General: The system shall support customization of proj
         ##ACTION: Modify title
         And I click on the button labeled "Modify project title, purpose, etc."
         And I enter "B.6.4.0800.MODIFY" into the input field labeled "Project title:"
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
         Then I should see "Success! Your changes have been saved."
 
         ##VERIFY

@@ -165,7 +165,7 @@
 		<CodeListRef CodeListOID="demographics_complete.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_group" Name="rand_group" DataType="text" Length="1" redcap:Variable="rand_group" redcap:FieldType="radio">
-		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<Question><TranslatedText>Randomization group 1</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_blind" Name="rand_blind" DataType="text" Length="999" redcap:Variable="rand_blind" redcap:FieldType="text">

@@ -12,7 +12,7 @@ Feature: A.2.3.0400. Assign administrators and account managers
         And I enable the Administrator Privilege "Access to Control Center dashboards" for a new administrator
         And I click on the button labeled "Add"
         Then I should see 'The user "Test_User1" has now been granted one or more administrator privileges'
-        And I click on the button labeled "OK" in the dialog box
+        And I click on the button labeled "OK"
 
         Given I logout
         And I login to REDCap with the user "Test_User1"

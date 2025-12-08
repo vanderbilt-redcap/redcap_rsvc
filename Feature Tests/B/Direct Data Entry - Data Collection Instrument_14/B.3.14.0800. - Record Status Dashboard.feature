@@ -16,7 +16,7 @@ Feature: Saving Data: The system shall support a Record Status Dashboard to disp
 
     ##VERIFY
     Then I should see "Default dashboard"
-    And I should see the link labeled exactly "1"
+    And I should see the link "1"
     And I should see the "Incomplete" icon for the "Text Validation" longitudinal instrument on event "Event 1" for record "1"
     And I should see the link labeled "Arm 2:Arm Two"
 #END

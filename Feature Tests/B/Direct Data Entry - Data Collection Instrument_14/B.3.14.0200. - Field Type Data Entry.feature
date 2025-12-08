@@ -11,7 +11,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -23,9 +23,9 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     And I click on the link labeled "B.3.14.0200.100"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #SETUP
     Given I click on the link labeled "Add / Edit Records"
@@ -43,7 +43,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
     Given I click on the link labeled "Upload file"

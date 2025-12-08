@@ -37,7 +37,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see " Record ID 6 successfully added."
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
-    Then I should see "Randomization group"
+    Then I should see "Randomization group 1"
     And I should see "Blinded randomization"
     And I should see "Automatic Randomization"
     And I should see "Randomize"
@@ -45,9 +45,9 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     When I click on a button labeled "Randomize"
     Then I should see the radio labeled "Do you describe yourself as a man, a woman, or in some other way?" with option "Man" selected
     And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).' 
+    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
     When I click on the button labeled "Close"
-    Then I should see the radio labeled "Randomization group" with option "Drug A" selected
+    Then I should see the radio labeled "Randomization group 1" with option "Drug A" selected
 
   Scenario: #SETUP User Rights (Takeaway User Rand - Setup Rights)
     When I click on the link labeled "User Rights"
@@ -64,7 +64,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
 
   ##VERIFY User without Randomization Randomize rights cannot Randomize.
-    Then I should see "Randomization group"
+    Then I should see "Randomization group 1"
     And I should NOT see a button labeled "Randomize"
 
 #END

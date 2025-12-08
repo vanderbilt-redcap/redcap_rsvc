@@ -11,9 +11,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far."
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the button labeled "Online Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -30,9 +30,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
         Given I click on the first button labeled "Choose action"
-        And I click on the link labeled "Copy" in the action popup
+        And I click on the link labeled "Copy"
         Then I should see a dialog containing the following text: "Copy instrument"
-        And I click on the button labeled "Copy instrument" in the dialog box
+        And I click on the button labeled "Copy instrument"
 
         ##VERIFY
         Then I should see "SUCCESS! The instrument was successfully copied."
@@ -57,9 +57,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I should see "Data Collection Instruments"
 
         Given I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Changes Were Made Automatically"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"

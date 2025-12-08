@@ -9,14 +9,14 @@ Feature: User Interface: The system shall support the ability to limit access to
 
     Scenario: ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
     Scenario: #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
-        And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I click on the button labeled "I understand. Let me make changes"
+        And I check the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [x]                                            | [text box]              |
@@ -39,10 +39,10 @@ Feature: User Interface: The system shall support the ability to limit access to
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
@@ -59,19 +59,19 @@ Feature: User Interface: The system shall support the ability to limit access to
     Scenario:  #USER_RIGHTS - Assign eSign and Lock user rights to users
         ##ACTION - Assign users rights for Test_User1; Lock/Unlock *Entire* Records (record level)
         Given I click on the link labeled "Test User1"
-        And I click on the button labeled "Edit user privileges" on the tooltip
+        And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking with E-signature authority"
         Then I should see a dialog containing the following text: "NOTICE"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         Given I check the User Right named "Lock/Unlock *Entire* Records (record level)"
         And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user1" was successfully edited'
 
         ##ACTION - Assign users rights for Test_User2; Disable Lock/Unlock Records
         Given I click on the link labeled "Test User2"
-        And I click on the button labeled "Edit user privileges" on the tooltip
+        And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
@@ -80,7 +80,7 @@ Feature: User Interface: The system shall support the ability to limit access to
 
         ##ACTION - Assign users rights for Test_User3; Enable Locking / Unlocking records
         Given I click on the link labeled "Test User3"
-        And I click on the button labeled "Edit user privileges" on the tooltip
+        And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
@@ -89,7 +89,7 @@ Feature: User Interface: The system shall support the ability to limit access to
 
         ##ACTION - Assign users rights for Test_User4;  Disable Lock/Unlock Records
         Given I click on the link labeled "Test User4"
-        And I click on the button labeled "Edit user privileges" on the tooltip
+        And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
@@ -121,14 +121,14 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##VERIFY - Record Locking Customization module enabled
         Then I should see a link labeled "Customize & Manage Locking/E-signatures"
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         Then I should see a link labeled "Record Locking Customization"
         And I should see a link labeled "E-signature and Locking Management"
         When I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
         ##VERIFY - Locking / Unlocking with E-signature authority is enabled
-        And I should see a checkbox labeled exactly "Lock" that is unchecked
+        And I should see a checkbox labeled "Lock" that is unchecked
         And I should see a checkbox labeled "E-signature" that is unchecked
         And I click on the button labeled "Cancel"
         ##VERIFY - Lock/Unlock *Entire* Records (record level) is enabled
@@ -144,7 +144,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##VERIFY - Record Locking Customization module is enabled
         Then I should see a link labeled "Customize & Manage Locking/E-signatures"
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         Then I should see a link labeled "Record Locking Customization"
         And I should NOT see a link labeled "E-signature and Locking Management"
         When I click on the link labeled "Record Status Dashboard"
@@ -173,7 +173,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
         ##VERIFY - Locking / Unlock is enabled with no e-signature
-        And I should see a checkbox labeled exactly "Lock" that is unchecked
+        And I should see a checkbox labeled "Lock" that is unchecked
         And I should NOT see a checkbox labeled "E-signature"
         When I click on the link labeled "Record Status Dashboard"
         When I click on the link labeled "3"

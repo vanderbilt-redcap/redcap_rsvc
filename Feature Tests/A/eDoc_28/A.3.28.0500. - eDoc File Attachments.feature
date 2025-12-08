@@ -54,11 +54,13 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
     And I click on the button labeled "Upload file"
     And I should see "Document was successfully uploaded"
+    And I click on the button labeled "Close"
     And I should see "testusers_bulkupload.csv"
 
     #VERIFY: Upload fails if file exceeds limit
     And I click on the link labeled "Remove"
     And I click on the button labeled "Delete"
+    And I wait for 3 seconds
     And I click on the link labeled "Upload file"
     And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
     And I click on the button labeled "Upload file"

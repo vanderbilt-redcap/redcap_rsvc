@@ -11,7 +11,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     ##SETUP_DEV
@@ -34,9 +34,9 @@ Feature: User Interface: General: The system shall support the ability to erase 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Erase data
     When I click on the button labeled "Erase all data"
-    And I click on the button labeled "Erase all data" in the dialog box
+    And I click on the button labeled "Erase all data"
     Then I should see "SUCCESS!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -45,9 +45,9 @@ Feature: User Interface: General: The system shall support the ability to erase 
     ##SETUP_PRODUCTION
     When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Erase data button missing in production mode
@@ -62,9 +62,9 @@ Feature: User Interface: General: The system shall support the ability to erase 
     And I click on the link labeled "My Projects"
     And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     ##ACTION Verify record exist ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -84,9 +84,9 @@ Feature: User Interface: General: The system shall support the ability to erase 
     When I click on the button labeled "Erase all data"
     When I click on the button labeled "Erase all data"
     And I enter "ERASE ALL DATA" into the input field labeled 'TYPE "ERASE ALL DATA" BELOW'
-    And I click on the button labeled "Erase all data" in the dialog box
+    And I click on the button labeled "Erase all data"
     Then I should see "SUCCESS!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"

@@ -10,9 +10,9 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         And I create a new project named "B.2.6.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         ##USER_RIGHTS
         When I click on the link labeled "User Rights"
@@ -32,9 +32,9 @@ Feature: Project Level:  The system shall allow instrument level data export rig
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
@@ -51,7 +51,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -67,7 +67,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -82,7 +82,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User3" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -96,7 +96,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I enter "Test_User4" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         Then I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I click on the button labeled exactly "Assign" on the role selector dropdown
+        And I click on the button labeled "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -118,12 +118,12 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-        And I click on the button labeled "Export Data" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
+        And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
-        And I click on the button labeled "Close" in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
+        And I click on the button labeled "Close"
 
         ##VERIFY_DE
         Then I should have a "csv" file that contains the headings below
@@ -150,12 +150,12 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-        And I click on the button labeled "Export Data" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
+        And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
-        And I click on the button labeled "Close" in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
+        And I click on the button labeled "Close"
         ##VERIFY_DE
         #And I open the Excel CSV File
 
@@ -180,12 +180,12 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         ##ACTION
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
-        When I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
-        And I click on the button labeled "Export Data" in the dialog box
+        When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
+        And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
 
-        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
-        And I click on the button labeled "Close" in the dialog box
+        Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
+        And I click on the button labeled "Close"
         ##VERIFY_DE
 
         Then I should have a "csv" file that contains the headings below

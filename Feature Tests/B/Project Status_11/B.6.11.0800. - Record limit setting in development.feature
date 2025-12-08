@@ -79,7 +79,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "Listed below are the REDCap project"
         When I click on the link labeled "B.6.11.0800"
         And I click on the link labeled "Designer"
-        And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+        And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
         And I enter "1" into the input field labeled "Response Limit (optional)"
         And I click on the button labeled "Save Changes"
         Then I should see "Your survey settings were successfully saved!"

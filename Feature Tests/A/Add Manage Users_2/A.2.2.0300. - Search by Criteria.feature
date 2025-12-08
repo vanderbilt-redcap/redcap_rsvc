@@ -53,7 +53,7 @@ Feature: A.2.2.0300. Add/Manage users Control Center - Users: The system shall s
     ##ACTION Edit user information
     When I click on the link labeled "View User List By Criteria"
     And I click on the button labeled "Display User List"
-    When I click on the link labeled exactly "test_user1"
+    When I click on the link labeled "test_user1"
     Then I should see "Editable user attributes"
     And I click on the button labeled "Edit user info"
     And I clear the field labeled "First name:"

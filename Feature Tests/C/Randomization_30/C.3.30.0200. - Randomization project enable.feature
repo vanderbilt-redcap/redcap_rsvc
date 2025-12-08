@@ -8,9 +8,9 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
      #SETUP User Rights
     When I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1"
-    And I click on the button labeled "Assign to role" on the tooltip
+    And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
   Scenario: C.3.30.0200.0100. Enabling adds randomization module to project setup.
@@ -40,14 +40,14 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
     When I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1" 
     And I click on the button labeled "Remove from role"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
     And I click on the link labeled "Test User1" 
     And I click on the button labeled "Edit user privileges"
     Then I should see "Randomization"
     And I should see "Setup"
     And I should see "Dashboard"
     And I should see "Randomize"
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 
   Scenario: C.3.30.0200.0400. Disabling removes randomization module from project setup
     When I click on the link labeled "Setup"
@@ -76,6 +76,6 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
     And I should NOT see a checkbox labeled "Setup"
     And I should NOT see a checkbox labeled "Dashboard"
     And I should NOT see a checkbox labeled "Randomize"
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
     And I logout
 #END

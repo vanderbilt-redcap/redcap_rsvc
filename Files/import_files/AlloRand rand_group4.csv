@@ -6,7 +6,7 @@ redcap_randomization_number,redcap_randomization_group,gender
 ,2,1,,," - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored)."
 ,3,1,,," - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups."
 ,1,2
-,2,2,,,"Randomization Field: ""rand_group"" (Randomization group)"
+,2,2,,,"Randomization Field: ""rand_group"" (Randomization group 1)"
 ,3,2,,,"Your randomization field is a single-select field (for open allocation):"
 ,,,,," - Values in the redcap_randomization_number column are optional"
 ,,,,," - Values in the redcap_randomization_group column are REQUIRED and must match the values for your randomization field"

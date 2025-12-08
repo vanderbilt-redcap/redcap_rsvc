@@ -25,6 +25,11 @@ Feature: User Interface: The system shall support the search function within PDF
          | Active | Edit settings | Name       | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot              |
          | [x]    |               | combo file | Logic-based     | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository Specified field: [combo_file] |
 
+      And I should NOT see "Governed by e-Consent"
+      And I should NOT see "Survey completion"
+      And I should NOT see 'Complete survey "Participant Consent"'
+      And I should NOT see 'Complete survey "Coordinator Signature"'
+
       ##ACTION: clear search
       When I enter "" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:

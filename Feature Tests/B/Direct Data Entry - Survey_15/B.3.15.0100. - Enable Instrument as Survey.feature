@@ -11,7 +11,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -23,14 +23,14 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Enable survey in Online Designer #B.3.15.0100.100
     Given I click on the link labeled "Designer"
-    Then I click on the "Enable" button for the instrument row labeled "Text Validation"
+    Then I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I click on the button labeled "Save Changes"
     ##VERIFY
     Then I should see "Your survey settings were successfully saved!"
@@ -48,7 +48,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I click on the button labeled "Close survey"
 
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
 
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
@@ -71,7 +71,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     ##ACTION Survey Offline
     #B.3.15.200.100
     Given I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I select "Survey Offline" on the dropdown field labeled "Survey Status"
     And I click on the button labeled "Save Changes"
     ##VERIFY
@@ -97,14 +97,14 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     ###ACTION Disable survey in Online Designer
     Given I click on the link labeled "Designer"
 
-    And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
-    And I click on the button labeled "Delete Survey Settings" in the dialog box
+    And I click on the button labeled "Delete Survey Settings"
     Then I should see a dialog containing the following text: "Survey successfully deleted!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     ##VERIFY
-    Then I should see the "Enable" button for the instrument row labeled "Text Validation"
+    Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
 
     #VERIFY_LOG
     When I click on the link labeled "Logging"

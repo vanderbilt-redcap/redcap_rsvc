@@ -14,16 +14,16 @@ And I upload a "csv" format file located at "import_files/AlloRand rand_group3.c
 And I upload a "csv" format file located at "import_files/AlloRand rand_group4.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 When I click on the link labeled "Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-And I click on the button labeled "YES, Move to Production Status" in the dialog box 
-Then I should see Project status: "Production"
+And I click on the radio labeled "Keep ALL data saved so far"
+And I click on the button labeled "YES, Move to Production Status"
+Then I should see "Project status:  Production"
 
 #SETUP User Rights
 When I click on the link labeled "User Rights"
 And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role" 
 And I click on the button labeled "Assign to role"
 And I select "1_FullRights" on the dropdown field labeled "Select Role"
-And I click on the button labeled exactly "Assign"
+And I click on the button labeled "Assign"
 Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
 And I logout
@@ -37,17 +37,17 @@ And I click on the button labeled "Set up randomization"
 And I click on the icon in the column labeled "Setup" and the row labeled "1"
 
 # #verify unable to erase randomization model
-And I should see the button labeled "Erase randomization model" is disabled
+And I should see the button labeled "Erase randomization model" that is disabled
 
 #Verify unable to modify Stratification
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
 
 #Verify unable to change randomize by group/site
-And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
+And I should see a checkbox labeled "B) Randomize by group/site?" that is disabled
 
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" that is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" in the row labeled "for use in DEVELOPMENT status" that is disabled
@@ -64,7 +64,7 @@ And I click on the link labeled "C.3.30.0900"
 And I click on the link labeled "Project Setup"
 And I click on the link labeled "Other Functionality"
 Then I should see "Because Randomization is enabled, the project cannot be moved back to Development status."
-And I should see the button labeled "Move back to Development status" is disabled
+And I should see the button labeled "Move back to Development status" that is disabled
 
 # Scenario: C.3.30.0900.0300. Admin cannot modify setup in production.  
 Given I click on the link labeled "Project Setup"
@@ -72,16 +72,16 @@ And I click on the button labeled "Set up randomization"
 And I click on the icon in the column labeled "Setup" and the row labeled "1"
 
 # # # #verify unable to erase randomization model
-And I should see the button labeled "Erase randomization model" is disabled
+And I should see the button labeled "Erase randomization model" that is disabled
 
 # # # # #Verify unable to modify Stratification
 And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
 
 # #Verify unable to change randomize by group/site
-And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
+And I should see a checkbox labeled "B) Randomize by group/site?" that is disabled
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" that is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 
@@ -93,7 +93,7 @@ And I should see a button labeled "Download table"
 And I should see "(only REDCap admins may download the allocation table while in production)"
 
 Given I click on the second button labeled "Download table"
-Then I should see a downloaded file named "RandomizationAllocationTemplate_Prod.csv"
+Then I should see a downloaded file named "RandomizationAllocationTable_Prod.csv"
 
 # Scenario: C.3.30.0900.0500. Admin cannot modify existing allocation table in production. 
 # #verify unable to delete or change allocation table for use in Production

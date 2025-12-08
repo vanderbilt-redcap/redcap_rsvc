@@ -12,7 +12,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -21,24 +21,24 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #SETUP: DESIGNER
     Given I click on the link labeled "Designer"
-    And I click on the "Enable" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I click on the button labeled "Save Changes"
-    Then I should see the enabled survey icon link for the instrument row labeled "Text Validation"
+    Then I should see a button labeled "Survey settings" in the row labeled "Text Validation"
 
-    Given I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    Given I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     When I select "Yes" on the dropdown field labeled "Allow 'Save & Return Later' option for respondents?"
     And I click on the button labeled "Save Changes"
     Then I should see "Your survey settings were successfully saved"
 
     ##VERIFY_SDT: verifying survey link and return codes are available
     Given I click on the link labeled "Survey Distribution Tools"
-    And I click on the tab labeled "Participant List"
+    And I click on the link labeled "Participant List"
     Then I should see a button labeled "Add participants"
     And I should see the dropdown field labeled "Participant List" with the options below
       | [Initial survey] "Text Validation" - Event 1 (Arm 1: Arm 1) |
@@ -72,7 +72,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
     When I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
@@ -85,12 +85,12 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     #FUNCTIONAL REQUIREMENT
     ##ACTION
     When I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
-    And I click on the button labeled "Delete Survey Settings" in the dialog box
+    And I click on the button labeled "Delete Survey Settings"
     Then I should see "Survey successfully deleted!"
-    When I click on the button labeled "Close" in the dialog box
-    Then I should see the "Enable" button for the instrument row labeled "Text Validation"
+    When I click on the button labeled "Close"
+    Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
 
     ##VERIFY_DE: confirm
     When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -108,7 +108,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
 
     ##VERIFY_SDT: verifying survey link and return codes are NOT available
     Given I click on the link labeled "Survey Distribution Tools"
-    And I click on the tab labeled "Participant List"
+    And I click on the link labeled "Participant List"
 
     #Manual: We are verifying that you do NOT see "Text Validation" in the dropdown labeled "Participant List".
     # For comparison, see line 43 where "Text Validation" is included in this list ...

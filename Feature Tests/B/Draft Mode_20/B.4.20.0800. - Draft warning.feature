@@ -11,7 +11,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,9 +20,9 @@ Feature: User Interface: The system shall flag any changes that may negatively i
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         ##ACTION: Draft Mode
         When I click on the link labeled "Designer"
@@ -37,7 +37,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
 
         ##ACTION
         When I click on the link labeled "Designer"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
 
         #DATA WILL BE LOST
@@ -67,5 +67,5 @@ Feature: User Interface: The system shall flag any changes that may negatively i
             | 100            | Removed | 8                                   |
             | 101            | Altered | 0                                   |
 
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 #END

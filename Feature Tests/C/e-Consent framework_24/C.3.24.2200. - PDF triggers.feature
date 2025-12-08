@@ -11,9 +11,9 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
-      Then I should see Project status: "Production"
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
+      Then I should see "Project status:  Production"
 
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
@@ -29,14 +29,14 @@ Feature: User Interface: The system shall support the creation, modification, an
       ##ACTION: New PDF Trigger
       And I click on the button labeled "Add new trigger"
       And I enter "Custom Dropdown 1 Form Snapshot" into the input field labeled "Name of trigger"
-      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
       And I check the checkbox labeled "Save to specified field:"
       And I select "participant_file" in the dropdown field labeled "Save to specified field:"
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
-      And I enter "Custom" into the input field labeled "File name:"
+      And I enter "CustomParticipant" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
       Then I click on the button labeled "OK"
@@ -83,11 +83,11 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 2 seconds
-      And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-      And I click on the button labeled "Update & Close Editor" in the dialog box  
+      And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
+      And I click on the button labeled "Update & Close Editor"
       And I click on the icon labeled '[All instruments]'
       And I click on the link labeled 'deselect all'
       And I check the first checkbox labeled 'Participant Consent'
@@ -99,7 +99,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I check the checkbox labeled "Save to specified field:"
       And I select "combo_file" in the dropdown field labeled "Save to specified field:"
       And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
-      And I enter "Custom" into the input field labeled "File name:"
+      And I enter "CustomCombined" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
@@ -131,7 +131,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I select "Complete" on the dropdown field labeled "Complete?"
@@ -147,12 +147,16 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see a table header and rows containing the following values in a table:
          | Name | PDF utilized e-Consent Framework | Record | Survey Completed | Identifier (Name, DOB) | Version | Type |
 
+      And I should NOT see "Participant Consent (Event 1 (Arm 1: Arm 1))"
+
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username   | Action                                   | List of Data Changes OR Fields Exported |
          | test_admin | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                         |
+
+      And I should NOT see "Save PDF Snapshot"
 
    Scenario: Add record in survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
@@ -162,7 +166,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Adding new Record ID 2."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -176,7 +180,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
@@ -190,9 +194,9 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
       Then I should see "Editing existing Record ID 2."
-      Then I should see "Custom_" in the row labeled "Participant Consent file"
-
-      When I click on the link "Custom_"
+      Then I should see "CustomParticipant_" in the row labeled "Participant Consent file"
+      And I should NOT see "CustomCombined_"
+      When I click on the link labeled "CustomParticipant_"
       Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document
@@ -202,7 +206,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Coordinator's Name Typed"
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -211,7 +215,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
@@ -227,10 +231,10 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
       Then I should see "Editing existing Record ID 2."
-      Then I should see "Custom_" in the row labeled "Participant Consent file"
-      And I should see "Custom_" in the row labeled "Combine both files together"
+      Then I should see "CustomParticipant_" in the row labeled "Participant Consent file"
+      And I should see "CustomCombined_" in the row labeled "Combine both files together"
 
-      When I click on the link "Custom_" in the row labeled "Combine both files together"
+      When I click on the link labeled "CustomCombined_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
         | Page 3\nCoordinator Signature |
@@ -242,16 +246,16 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom_    | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
-         | Custom_    | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Name               | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
+         | CustomCombined_    | -                                | 2      |                                              |                        |         |      |
+         | CustomParticipant_ | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
+         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =   |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
          | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |

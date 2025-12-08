@@ -9,13 +9,13 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I create a new project named "A.6.4.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        Then I should see Project status: "Development"
+        Then I should see "Project status:  Development"
 
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        When I click on the button labeled exactly "Assign" on the role selector dropdown
+        When I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         Given I logout
 
@@ -171,9 +171,9 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
@@ -246,7 +246,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 2"
         And I click on the link labeled "Rename Arm 2"
         Then I should see "Sorry, but arms can only be renamed by REDCap administrators"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         Then I should see "Arm 2"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -258,7 +258,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         When I click on the Edit image for the event named "Event 2"
         Then I should see a dialog containing the following text: "Sorry, but events can only be renamed by REDCap administrators when a project is in production status"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         When I click on the link labeled "Record Status Dashboard"
         And I click on the link labeled "Arm 1"
@@ -277,7 +277,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I upload a "csv" format file located at "import_files/instrument_designation.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
         Then I should see a dialog containing the following text: "ERROR"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         Given I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"

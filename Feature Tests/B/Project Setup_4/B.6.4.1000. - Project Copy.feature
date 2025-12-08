@@ -31,7 +31,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     #SETUP_DEV
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "B.6.4.1000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
 
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.6.4.1000.100"
@@ -44,7 +44,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I enter "B.6.4.1000.100.DEV" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
     Then I should see "COPY SUCCESSFUL!"
 
     ##VERIFY_UR
@@ -79,9 +79,9 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in production mode
@@ -92,7 +92,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I enter "B.6.4.1000.100.PROD" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
     Then I should see "COPY SUCCESSFUL!"
 
     ##VERIFY_UR
@@ -129,7 +129,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the button labeled "Move to Analysis/Cleanup status"
     And I click on the button labeled "YES, Move to Analysis/Cleanup Status"
     Then I should see an alert box with the following text: "The project has now been set to ANALYSIS/CLEANUP"
-    And I should see Project status: "Analysis/Cleanup"
+    And I should see "Project status:  Analysis/Cleanup"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in analysis mode
@@ -137,7 +137,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I enter "B.6.4.1000.100.ANALYSIS" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
-    And I click on the button labeled "I Agree" in the dialog box
+    And I click on the button labeled "I Agree"
     Then I should see "COPY SUCCESSFUL!"
 
     ##VERIFY_UR
@@ -175,7 +175,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Mark project as Completed"
-    And I click on the button labeled "Mark project as Completed" in the dialog box
+    And I click on the button labeled "Mark project as Completed"
 
     #TODO: Need to verify with Manual Validation why this is here.  Is it supposed to redirect to the My Projects page?  Shrug.
     Then I should see "My Projects"
@@ -186,7 +186,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     ##VERIFY
     Then I should see a dialog containing the following text: "NOTICE: Project was marked as Completed"
-    And I click on the button labeled "Return to My Projects page" in the dialog box
+    And I click on the button labeled "Return to My Projects page"
     And I logout
 
     ##ACTION: UNABLE to Copy original in complete mode as Admin

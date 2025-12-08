@@ -10,14 +10,14 @@ Feature: User Interface: The tool shall only display forms that are designated t
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
   Scenario: #SETUP form lock to display
         #FUNCTIONAL REQUIREMENT  C.2.19.200.100 
     When I click on the link labeled "Customize & Manage Locking/E-signatures"
-    And I click on the button labeled "I understand. Let me make changes" in the dialog box
+    And I click on the button labeled "I understand. Let me make changes"
     And I should see "Lock Record Custom Text"
 
     #FUNCTIONAL REQUIREMENT
@@ -53,11 +53,11 @@ Feature: User Interface: The tool shall only display forms that are designated t
     #FUNCTIONAL REQUIREMENT
     ##ACTION Edit / Remove Custom Text
     When I click on the link labeled "Customize & Manage Locking/E-signatures"
-    And I click on the button labeled "I understand. Let me make changes" in the dialog box
-    And I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+    And I click on the button labeled "I understand. Let me make changes"
+    And I click on the icon labeled "Edit" in the row labeled "Text Validation"
     And I enter "New custom text" into the textarea field labeled "Text Validation"
     And I click on the first button labeled "Save"
-    And I click on the Delete icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+    And I click on the icon labeled "Remove" in the row labeled "Data Types"
     Then I should see a table header and rows containing the following values in a table:
       | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
       | [x]                                          | Text Validation            | [ ]                                            | New custom text         |
