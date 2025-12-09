@@ -61,15 +61,11 @@ Feature: C.3.31.2600. User Interface: The system shall support displaying a coun
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        And I wait for another 1 second
-        And I press the tab key to unfocus the current input field
         And I click on the button labeled "Save"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully added."
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date" 
-        And I wait for another 1 second
-        And I press the tab key to unfocus the current input field
         Then I should see "Adjudicate data from External System"
         And I click on the button labeled "Cancel"
     #Validation of count of new unadjudicated values
