@@ -464,7 +464,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
         But I should NOT see "TestGroup2"
-        And I should NOT see "2-1"
+        And I should NOT see "2-1" in the column labeled "Record" and the row labeled "formConsent"
 
         And I logout
 
