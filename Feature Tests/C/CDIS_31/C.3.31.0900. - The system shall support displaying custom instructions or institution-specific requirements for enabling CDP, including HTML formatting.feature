@@ -14,7 +14,7 @@ Feature: C.3.31.0900. Control Center: The system shall support displaying custom
         And I select "Disable" on the dropdown field labeled "Enable Instant Adjudication for all CDP projects?"
         And I select "Disable" on the dropdown field labeled "Break-the-Glass"
         And I select "SystemLogin" on the dropdown field labeled "EHR User type"
-        And I enter "Some CDIS text for home page" into the textarea field labeled "Custom text specific to your institution to display to"
+        And I enter "<p><span style='color: #e03e2d;'>Some CDIS text for home page</span></p>" into the textarea field labeled "Custom text specific to your institution to display to users"
         And I click on the button labeled "Save Changes"
 
      #SET UP SMARTHEALTH IT IN CONTROL CENTER 
@@ -41,6 +41,9 @@ Feature: C.3.31.0900. Control Center: The system shall support displaying custom
         Then I should see "C.3.31.0900."
         When I click on the link labeled "?" in the row labeled "Clinical Data Pull from EHR"
         Then I should see "Some CDIS text for home page"
+        And I should NOT see "<p><span style=" 
+        And I should NOT see "</span></p>"
+
 
     
 #END

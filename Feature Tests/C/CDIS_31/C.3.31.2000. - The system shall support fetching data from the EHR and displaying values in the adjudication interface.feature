@@ -37,13 +37,13 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
 
     #Functional Requirement-Adding a record, fetching data from EHR, and viewing it in adjudication page.
         When I click on the link labeled "Standalone Launch"
+        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
         And I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        #Something needs to be added here so that the JavaScript will fire the pop-up adjudication window. Something like and I tab or click the blank space on the screen.
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"
