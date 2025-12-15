@@ -75,7 +75,7 @@ Feature: C.3.31.3200. User Interface: The system shall support fetching clinical
     Scenario: C.3.31.3200. User Interface: The system shall support fetching clinical data in bulk from the EHR using Clinical Data Mart (CDM) functionality.
         When I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Fetch data"
-        And I click on the button labeled "Confirm"
+        And I click on "Confirm"
         And I wait for 10 seconds
         Then I should see "Demographics"
         And I should see "32"
