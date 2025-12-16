@@ -43,6 +43,18 @@ echo Setting fields for $ID
 DURATION_MINUTES=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION / 60)}"`
 DURATION_SECONDS=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION % 60)}"`
 
+read -r -d '' data << EOF
+[
+  {
+    "record_id": "$ID",
+    "result_feature": 1,
+    "feature_test_outcome": 1,
+    "time_test": "$DURATION_MINUTES:$DURATION_SECONDS",
+    "date_test_run": "$(date +%Y-%m-%d)"
+  }
+]
+EOF
+
 #Set a few fields in the REDCap project
 $CURL -X POST \
       -F "token=$REDCAP_API_TOKEN" \
@@ -54,5 +66,5 @@ $CURL -X POST \
       -F "forceAutoNumber=false" \
       -F "returnContent=count" \
       -F "returnFormat=json" \
-      -F "data=[{\"record_id\": \"$ID\", \"result_feature\": 1, \"feature_test_outcome\": 1, \"time_test\": \"$DURATION_MINUTES:$DURATION_SECONDS\", \"date_test_run\": \"`date +"%Y-%m-%d"`\"}]" \
+      -F "data=$data" \
       $REDCAP_API_URL
