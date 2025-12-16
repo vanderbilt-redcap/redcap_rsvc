@@ -70,7 +70,7 @@ class UploadVideosToREDCapProject {
 
                     //If feature passed, upload to REDCap VUMC
                     if(feature.status === "PASSED"){
-                        passed_features.push(`${feature.spec.path.replace(/redcap_rsvc\/Feature Tests/g, '/home/circleci/project/coverage/cypress/videos')}.mp4`)
+                        passed_features.push(`${feature.spec.path.replace(/redcap_rsvc\/Feature Tests\/.*\/.*\//g, '/home/circleci/project/coverage/cypress/videos/')}.mp4`)
                     }
                 })
 
