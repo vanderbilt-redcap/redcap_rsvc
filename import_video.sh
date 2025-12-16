@@ -43,6 +43,14 @@ echo Setting fields for $ID
 DURATION_MINUTES=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION / 60)}"`
 DURATION_SECONDS=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION % 60)}"`
 
+read -r -d '' TEST_ENV << EOF
+<ul>
+  <li>Operating System: Linux $(cat /etc/os-release|grep PRETTY_NAME|cut -d'"' -f2)</li>
+  <li>Testing Platform: Cypress v$(npm ls cypress --prefix=../../ --json --depth=0|grep version|cut -d'"' -f4)</li>
+  <li>Browser: Chrome v$(google-chrome --version|cut -d' ' -f 3)</li>
+</ul>
+EOF
+
 read -r -d '' data << EOF
 [
   {
@@ -51,7 +59,8 @@ read -r -d '' data << EOF
     "feature_test_outcome": 1,
     "time_test": "$DURATION_MINUTES:$DURATION_SECONDS",
     "date_test_run": "$(date +%Y-%m-%d)",
-    "cloud_machine_number": $(($CIRCLE_NODE_INDEX + 1))
+    "cloud_machine_number": $(($CIRCLE_NODE_INDEX + 1)),
+    "circle_test_env": "$TEST_ENV"
   }
 ]
 EOF
