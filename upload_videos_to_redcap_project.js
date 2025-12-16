@@ -125,7 +125,7 @@ class UploadVideosToREDCapProject {
                                     }
 
                                     //Run the import of video to REDCAP VUMC
-                                    const output = execSync(`sh import_video.sh "${file_path}" "${filename}" ${folder_id}`, { encoding: 'utf8' })
+                                    const output = execSync(`bash import_video.sh "${file_path}" "${filename}" ${folder_id}`, { encoding: 'utf8' })
                                     console.log(output)
                                 })
 

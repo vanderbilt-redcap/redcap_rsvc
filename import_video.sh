@@ -1,5 +1,3 @@
-#!/bin/sh
-
 set -e
 
 CURL=`which curl`
