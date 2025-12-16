@@ -50,7 +50,8 @@ read -r -d '' data << EOF
     "result_feature": 1,
     "feature_test_outcome": 1,
     "time_test": "$DURATION_MINUTES:$DURATION_SECONDS",
-    "date_test_run": "$(date +%Y-%m-%d)"
+    "date_test_run": "$(date +%Y-%m-%d)",
+    "cloud_machine_number": $(($CIRCLE_NODE_INDEX + 1))
   }
 ]
 EOF
