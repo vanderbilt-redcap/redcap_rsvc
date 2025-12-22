@@ -70,7 +70,7 @@ class UploadVideosToREDCapProject {
 
                     //If feature passed, upload to REDCap VUMC
                     if(feature.status === "PASSED"){
-                        passed_features.push(`${feature.spec.path.replace(/redcap_rsvc\/Feature Tests/g, '/home/circleci/project/coverage/cypress/videos')}.mp4`)
+                        passed_features.push(`${feature.spec.path.replace(/redcap_rsvc\/Feature Tests\/.*\/.*\//g, '/home/circleci/project/coverage/cypress/videos/')}.mp4`)
                     }
                 })
 
@@ -125,7 +125,7 @@ class UploadVideosToREDCapProject {
                                     }
 
                                     //Run the import of video to REDCAP VUMC
-                                    const output = execSync(`sh import_video.sh "${file_path}" "${filename}" ${folder_id}`, { encoding: 'utf8' })
+                                    const output = execSync(`bash import_video.sh "${file_path}" "${filename}" ${folder_id}`, { encoding: 'utf8' })
                                     console.log(output)
                                 })
 
