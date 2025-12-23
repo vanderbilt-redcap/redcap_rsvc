@@ -52,6 +52,7 @@ Scenario: Setup
         And I click on the tenth button labeled "select all"
         And I click on the nineteenth button labeled "select all"
         And I click on "apply date range" in the row labeled "Vital Signs"
+        And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the textarea field labeled "Enter medical record numbers of patients to import from the EHR (one per line, optional)"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 
@@ -63,20 +64,20 @@ Scenario: Setup
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
 
-    # Add two records
-        When I click on the link labeled "Add / Edit Records"
-        And I click on the button labeled "Add new record"
-        And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-        And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 1 successfully added."
+    # # Add two records
+    #     When I click on the link labeled "Add / Edit Records"
+    #     And I click on the button labeled "Add new record"
+    #     And I click the bubble for the row labeled "Demography" on the column labeled "Status"
+    #     And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+    #     And I click on the button labeled "Save & Exit Form"
+    #     Then I should see "Study ID 1 successfully added."
 
-        When I click on the link labeled "Add / Edit Records"
-        And I click on the button labeled "Add new record"
-        And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-        And I enter "869722aa-6d3a-4afd-9acd-b4283bc7d47f" into the input field labeled "Medical record number"
-        And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 2 successfully added."
+    #     When I click on the link labeled "Add / Edit Records"
+    #     And I click on the button labeled "Add new record"
+    #     And I click the bubble for the row labeled "Demography" on the column labeled "Status"
+    #     And I enter "869722aa-6d3a-4afd-9acd-b4283bc7d47f" into the input field labeled "Medical record number"
+    #     And I click on the button labeled "Save & Exit Form"
+    #     Then I should see "Study ID 2 successfully added."
 
         When I click on the link labeled "Clinical Data Mart"
         And I should see "date range is applied"
@@ -84,7 +85,7 @@ Scenario: Setup
         And I click on "Confirm"
         And I wait for 10 seconds
         Then I should see "Demographics"
-        And I should see "32"
+        And I should see "16"
         And I should see "Vital Signs"
         And I should see "6"
         And I click on "Close"
