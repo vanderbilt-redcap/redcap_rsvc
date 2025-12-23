@@ -33,7 +33,7 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         When I click on the link labeled "Browse Users"
         And I enter "test_admin" into the input field labeled "User Search:"
         And I wait for 2 seconds
-        #And I click on the button labeled "Search"
+        And I click on the button labeled "Search"
         And I click on the button labeled "Edit user info" 
         And I click on the checkbox labeled "Can create project and pull medical records using Clinical Data Mart?"
         And I click on the button labeled "Save"
