@@ -91,7 +91,7 @@ Feature: C.3.31.3700. User Interface: The system shall support the ability to re
 
 Scenario: C.3.31.3700. User Interface: The system shall support the ability to request a configuration change in a CDM-enabled project.
         When I click on the link labeled "Clinical Data Mart"
-        And I click on "Request a configuration change"
+        And I click on the button labeled "Request a configuration change"
         And I enter "2017-07-01" into the input field labeled "from"
         And I enter "2017-07-31" into the input field labeled "to"
         And I click on "apply date range" in the row labeled "Vital Signs"
