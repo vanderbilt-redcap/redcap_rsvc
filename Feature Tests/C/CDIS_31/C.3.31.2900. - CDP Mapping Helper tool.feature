@@ -58,6 +58,6 @@ Feature: C.3.31.2900. User Interface: The system shall support using the CDP Map
         And I should see "Total entries: 120"
         And I should see "Gender: M"
         And I should see "DOB: 1970-12-24"
-        And I should see "Age: 54"
+        And I should see "Age: 55"
 
 #END
