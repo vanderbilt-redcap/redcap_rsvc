@@ -67,6 +67,7 @@ Feature: C.3.31.2600. User Interface: The system shall support displaying a coun
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully added."
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
+        And I wait for 1 hour
         And I enter "2017-07-14" into the input field labeled "Visit date" 
         Then I should see "Adjudicate data from External System"
         And I click on the button labeled "Cancel"
