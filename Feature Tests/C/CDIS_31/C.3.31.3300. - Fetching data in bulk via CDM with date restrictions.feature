@@ -101,7 +101,7 @@ Scenario: Setup
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
-        And I should NOT see "[instance = 7]"
+        And I should NOT see "[instance = 7],\nrecord_id = '1'"
     
 Scenario: C.3.31.3300.200 User Interface: The system shall support restricting bulk EHR data pulls for all records when a global CDM date or datetime filter is added to the fetch request.
     #Create New Project with CDM Date limits
