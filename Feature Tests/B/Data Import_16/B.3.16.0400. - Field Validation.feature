@@ -28,6 +28,7 @@ Feature: User Interface: The system shall import only valid formats for text fie
 
         #VERIFY_RSD: 3 records
         When I click on the link labeled "Record Status Dashboard"
+        And I should see a table with 3 rows   
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID |
             | 100       |

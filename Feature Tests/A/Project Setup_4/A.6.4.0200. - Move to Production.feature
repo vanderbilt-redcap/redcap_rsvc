@@ -9,6 +9,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "User Rights"
+        And I should see a table with 6 rows
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown

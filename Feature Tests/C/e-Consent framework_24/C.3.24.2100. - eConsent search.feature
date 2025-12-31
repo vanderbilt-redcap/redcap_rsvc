@@ -22,12 +22,14 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
             | e-Consent active? | Survey                |
             | [x]               | Participant Consent   |
             | [x]               | Coordinator Signature |
+      And I should see a table with 2 rows
 
       Given I should see '"Coordinator Signature" (coordinator_signature)'
       When I enter "Participant Consent" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [x]               | Participant Consent |
+      And I should see a table with 1 row
       And I should NOT see '"Coordinator Signature" (coordinator_signature)'
 
       ##ACTION: clear search
@@ -36,4 +38,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
             | e-Consent active? | Survey              |
             | [x]               | Participant Consent |
             | [x]               | Coordinator Signature |
+      And I should see a table with 2 rows
 #END
