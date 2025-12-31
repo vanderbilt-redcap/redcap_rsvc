@@ -51,6 +51,7 @@ Scenario: Setup
         And I click on the button labeled "select all" in the row labeled "Vital Signs"
         And I click on "apply date range" in the row labeled "Vital Signs"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the textarea field labeled "Enter medical record numbers of patients to import from the EHR (one per line, optional)"
+        And I wait for 1 second
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 
