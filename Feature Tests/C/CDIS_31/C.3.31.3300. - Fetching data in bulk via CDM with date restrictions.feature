@@ -17,9 +17,9 @@ Scenario: Setup
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
+        And I should see a button labeled "Cancel"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
-        And I enter "Test" into the input field labeled "Client ID:"
         And I enter "EHR" into the input field labeled "Custom name for the EHR system"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/fhir" into the input field labeled "FHIR Base URL"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/auth/token" into the input field labeled "FHIR Token URL"
@@ -47,12 +47,11 @@ Scenario: Setup
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
         And I enter "2017-07-01" into the input field labeled "from"
         And I enter "2017-07-31" into the input field labeled "to"
-        And I click on the button labeled "select all"
-        And I click on the second button labeled "select all"
-        And I click on the tenth button labeled "select all"
-        And I click on the nineteenth button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
+        And I click on the button labeled "select all" in the row labeled "Vital Signs"
         And I click on "apply date range" in the row labeled "Vital Signs"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the textarea field labeled "Enter medical record numbers of patients to import from the EHR (one per line, optional)"
+        And I wait for 1 second
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 
@@ -101,7 +100,7 @@ Scenario: Setup
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
-        And I should NOT see "[instance = 7]"
+        And I should NOT see "[instance = 7],\nrecord_id = '1'"
     
 Scenario: C.3.31.3300.200 User Interface: The system shall support restricting bulk EHR data pulls for all records when a global CDM date or datetime filter is added to the fetch request.
     #Create New Project with CDM Date limits

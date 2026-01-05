@@ -21,9 +21,9 @@ Feature: C.3.31.2900. User Interface: The system shall support using the CDP Map
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
+        And I should see a button labeled "Cancel"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
-        And I enter "Test" into the input field labeled "Client ID:"
         And I enter "EHR" into the input field labeled "Custom name for the EHR system"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/fhir" into the input field labeled "FHIR Base URL"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/auth/token" into the input field labeled "FHIR Token URL"
@@ -58,6 +58,6 @@ Feature: C.3.31.2900. User Interface: The system shall support using the CDP Map
         And I should see "Total entries: 120"
         And I should see "Gender: M"
         And I should see "DOB: 1970-12-24"
-        And I should see "Age: 54"
+        And I should see "Age: 55"
 
 #END
