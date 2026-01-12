@@ -1,8 +1,8 @@
 Feature: Project Interface Administrator Access: The system shall support administrator-only access to the randomization module's View Allocation Table page.
-As a REDCap end user
-I want to see that Randomization is functioning as expected
+  As a REDCap end user
+  I want to see that Randomization is functioning as expected
   
-   Scenario: #SETUP project with randomization enabled
+  Scenario: #SETUP project with randomization enabled
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "C.3.30.1700." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 baserand.REDCap.xml", and clicking the "Create Project" button
     
@@ -14,14 +14,6 @@ I want to see that Randomization is functioning as expected
     When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
       
-    #Adding user Test_User2 (No randomization rights)
-    When I click on the link labeled "User Rights"
-    And I enter "Test_User2" into the field with the placeholder text of "Add new user"
-    And I click on the button labeled "Add with custom rights"
-    And I click on the checkbox labeled "Project Design and Setup"
-    And I click on the button labeled "Add user"
-    Then I should see 'User "Test_User2" was successfully added'
-    
     #SETUP Creating randomiztion stategy and adding allocation table.
     When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
@@ -36,7 +28,7 @@ I want to see that Randomization is functioning as expected
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
-    # Create Record for one stratum
+    #Create Record for one stratum
     When I click on the link labeled "Add / Edit Records"
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
@@ -53,44 +45,24 @@ I want to see that Randomization is functioning as expected
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."
 
- Scenario:#C.3.30.1700.0100. Admin accesses View Allocation Table page.  
-    Given I click on the link labeled "Randomization"
+    When  I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-            |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
-            |       | 0       |     1    |                   | No (0)           | Drug B (2)        |   
-	          |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        | 
-     
-    
-    #VERIFY Non project Admin can not see Allocation Table page from the Dashboard.
-    Given I logout
-    And I login to REDCap with the user "Test_User2"
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "C.3.30.1700."
-    And I click on the link labeled "Setup"
-    Then I should see a button labeled "Set up randomization" that is disabled
+      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+      |       | 0       |     1    |                   | No (0)           | Drug B (2)        |
+      |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |
+    #C.3.30.1700.0200. User with dashboard rights cannot access View Allocation Table. 
+    And I should NOT see a table with header "View"
     And I logout
 
- Scenario:#C.3.30.1700.0200. User with dashboard rights cannot access View Allocation Table.
-    #SETUP to modify user rights for test
-    Given I login to REDCap with the user "Test_User1"
-    And I click on the link labeled "My Projects"
-    And I click on the link labeled "C.3.30.1700."
-    And I click on the link labeled "User Rights"
-    And I click on the link labeled "Test User2"
-    And I click on the button labeled "Edit user privileges"
-    And I check the checkbox labeled "Dashboard"
-    And I uncheck the checkbox labeled "Randomize"
-    And I click on the button labeled "Save Changes"
-    Then I should see 'User "test_user2" was successfully edited' 
-    And I logout
-
-    When I login to REDCap with the user "Test_User2"
-    And I click on the link labeled "My Projects"
-    And I click on the link labeled "C.3.30.1700."
-    And I click on the link labeled "Setup"
-    And I click on the button labeled "Set up randomization"
-    #VERIFY Test User with dashboard permissions cannot see Allocation Table
-    Then I should NOT see the button labeled "Setup"
-
+  Scenario: #C.3.30.1700.0100. Admin accesses View Allocation Table page.
+    Given I login to REDCap with the user "Test_Admin"
+    When  I click on the link labeled "Randomization"
+    And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
+    Then I should see a table header and rows containing the following values in a table:
+      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group| View |
+      |       | 0       |     1    |                   | No (0)           | Drug B (2)        |      |
+      |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |      |
+    When I click on the icon in the column labeled "View" and the row labeled "Drug B"
+    Then I should see "View Allocation Table"
 #End
