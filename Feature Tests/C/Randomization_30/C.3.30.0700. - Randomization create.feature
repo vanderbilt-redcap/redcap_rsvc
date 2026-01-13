@@ -198,7 +198,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I click on the button labeled "Set up randomization"
         And I click on the button labeled "Add new randomization model"
         And I check the checkbox labeled "B) Randomize by group/site"
-        And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+        And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
         And I click on the button labeled "Save randomization model"
         Then I should see an alert box with the following text: "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
 
@@ -216,7 +216,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I click on the button labeled "Add new randomization model"
         And I check the checkbox labeled "B) Randomize by group/site"
         And I click on the radio labeled "Use Data Access Groups"
-        And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
+        And I select "rand_group_2 (Randomization group 2)" on the dropdown field labeled "Choose your randomization field"
         And I click on the button labeled "Save randomization model"
         Then I should see "Success! The randomization model has been saved!"
 
@@ -240,7 +240,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I check the checkbox labeled "B) Randomize by group/site"
         And I click on the radio labeled "Use an existing field to designate each group/site"
         And I select "gender" on the first dropdown field labeled "- select a field -"
-        And I select "rand_group_3 (Randomization group 3)" on the second dropdown field labeled "- select a field -"
+        And I select "rand_group_3 (Randomization group 3)" on the dropdown field labeled "Choose your randomization field"
         And I click on the button labeled "Save randomization model"
         Then I should see "Success! The randomization model has been saved!"
 
