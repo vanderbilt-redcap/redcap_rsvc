@@ -39,6 +39,7 @@ Feature: C.3.30.0900.	User Interface: The system shall ensure users with Randomi
         And I should see the button labeled "Erase randomization model" that is disabled
 
         #Verify unable to modify Stratification
+        And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
         And I should see a checkbox labeled "A) Use stratified randomization?" that is disabled
 
         #Verify unable to change randomize by group/site
@@ -72,6 +73,7 @@ Feature: C.3.30.0900.	User Interface: The system shall ensure users with Randomi
         And I should see the button labeled "Erase randomization model" that is disabled
 
         #Verify unable to modify Stratification
+        And I should see a checkbox labeled "A) Use stratified randomization?" that is checked
         And I should see a checkbox labeled "A) Use stratified randomization?" that is disabled
 
         #Verify unable to change randomize by group/site
