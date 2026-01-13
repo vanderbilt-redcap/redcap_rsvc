@@ -78,12 +78,39 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 Then I should see "Already randomized"
                 And I should see "01" in the data entry form field "Blinded randomization"
 
+                #Verify the user can only see a concealed allocation code in reports with no visible group assignment.  
+                When I click on the link labeled "Data Exports, Reports, and Stats"
+                And I click on the button labeled "View Report"
+                Then I should see a table header and rows containing the following values in the report data table:
+                        | Record ID | Blinded randomization |
+                        | 1         |                       |
+                        | 2         | 01                    |
+                        | 3         |                       |
+                        | 4         |                       |
+                        | 5         |                       |
+
         Scenario: #C.3.30.1500.0200. For an open model, users without setup rights can view the assigned group allocation directly in the record and reports.
+                Given I click on the link labeled "Add / Edit Records"
+                And I select "2" on the dropdown field labeled "Choose an existing Record ID"
+                And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
+
                 #Verify the user can see the assigned group allocation code directly in the record
                 And I should see the radio labeled "Randomization group 1" with option "Drug A" selected
+                Then I should see "Already randomized"
                 And I should see a radio labeled "Drug A" in the row labeled "Randomization group 1" that is disabled
                 And I should see a radio labeled "Drug B" in the row labeled "Randomization group 1" that is disabled
                 And I should see a radio labeled "Placebo" in the row labeled "Randomization group 1" that is disabled
+
+                #Verify the user can see the assigned group allocation code directly in reports
+                When I click on the link labeled "Data Exports, Reports, and Stats"
+                And I click on the button labeled "View Report"
+                Then I should see a table header and rows containing the following values in the report data table:
+                        | Record ID | Stratification 1 |
+                        | 1         |                       |
+                        | 2         | Yes (1)               |
+                        | 3         |                       |
+                        | 4         |                       |
+                        | 5         |                       |
 
         Scenario: #C.3.30.1500.0300. All users with export rights can export randomized records, seeing the allocation assigned to each record as displayed in the record view.
                 Given I click on the link labeled "Data Exports, Reports, and Stats"
@@ -107,7 +134,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 Given I login to REDCap with the user "Test_User1"
                 And I click on the link labeled "Setup"
                 And I click on the button labeled "Set up randomization"
-                And I click on the icon in the column labeled "Setup" and the row labeled "strat_1"
+                And I click on the icon in the column labeled "Setup" and the row labeled "rand_group"
                 Then I should see "STEP 3: Upload your allocation table (CSV file)"
                 When I click on the button labeled "Download table"
                 Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"
@@ -138,7 +165,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 Given I login to REDCap with the user "Test_Admin"
                 And I click on the link labeled "Setup"
                 And I click on the button labeled "Set up randomization"
-                And I click on the icon in the column labeled "Setup" and the row labeled "strat_1"
+                And I click on the icon in the column labeled "Setup" and the row labeled "rand_group"
                 Then I should see "STEP 3: Upload your allocation table (CSV file)"
                 When I click on the button labeled "Download table"
                 Then I should see a downloaded file named "RandomizationAllocationTable_Dev.csv"

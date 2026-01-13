@@ -61,6 +61,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
 
   Scenario: #FUNCTIONAL_REQUIREMENT C.3.30.0600.0100. Users within a DAG can randomize records only within their assigned DAG, ensuring they cannot view or randomize records outside their group.
+    # Testing DAG 1 works as expected
     Given I logout
     And I login to REDCap with the user "Test_User2"
     When I click on the link labeled "My Projects"
@@ -154,8 +155,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
       | mm/dd/yyyy hh:mm  | test_user1 | Update record 6     | Assign record to Data Access Group (redcap_data_access_group = 'dag_1') |
       | mm/dd/yyyy hh:mm  | test_user1 | Create record 6     | record_id = '6', rand_group_2 = '2', randomization_complete = '0' |
 
-
-  Scenario: FUNCTIONAL_REQUIREMENT C.3.30.0600.0200: The randomization model shall support stratification by DAG, allowing independent randomization assignments within each DAG.
+    # Testing DAG 2 works as expected
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"

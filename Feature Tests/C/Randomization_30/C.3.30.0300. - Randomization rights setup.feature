@@ -4,7 +4,7 @@ Feature: C.3.30.0300 	User Interface: The system shall allow user rights configu
 
   Scenario: #SETUP project with randomization enabled - "Project 3.30 randAM.xml"
     Given I login to REDCap with the user "Test_User1"
-    And I create a new project named "C.3.30.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 baserand.REDCap.xml", and clicking the "Create Project" button
+    And I create a new project named "C.3.30.0300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 baserand.REDCap.xml", and clicking the "Create Project" button
 
   Scenario: #SETUP Randomization User Rights (Give User all Rand Rights)
     When I click on the link labeled "User Rights"

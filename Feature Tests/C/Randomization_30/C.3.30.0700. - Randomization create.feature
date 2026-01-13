@@ -445,22 +445,5 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported            |
             | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Delete randomization allocation table (production) |
 
-        #Check if below xan be deleted as additional allocation is verified in 900. All beow steps are for that???
-        #Removing randomization models
-        Given I click on the link labeled "Setup"
-        And I click on the button labeled "Set up randomization"
-        And I click on the icon in the column labeled "Setup" and the row labeled "rand_group_6"
-        And I wait for 1 second
-        And I click on the button labeled "Erase randomization model"
-        And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
-        Then I should see "Add new randomization model"
-        Then I should NOT see "rand_group_6"
-
-        #VERIFY_log Randomization model deleted in logging table
-        When I click on the link labeled "Logging"
-        Then I should see a table header and rows containing the following values in the logging table:
-            | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported           |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Erase randomization model and allocations (rid=9) |
-
-    #Scenario: C.3.30.0700.1900 - Verified in CC.3.30.0900.0600. Admin can upload additional allocations to existing table in production.
+    #Scenario: C.3.30.0700.1900 - Verified in C.3.30.0900.0600. Admin can upload additional allocations to existing table in production.
 #End
