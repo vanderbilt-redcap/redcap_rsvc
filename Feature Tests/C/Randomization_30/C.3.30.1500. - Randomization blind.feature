@@ -105,12 +105,12 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 When I click on the link labeled "Data Exports, Reports, and Stats"
                 And I click on the button labeled "View Report"
                 Then I should see a table header and rows containing the following values in the report data table:
-                        | Record ID | Stratification 1 |
-                        | 1         |                       |
-                        | 2         | Yes (1)               |
-                        | 3         |                       |
-                        | 4         |                       |
-                        | 5         |                       |
+                        | Record ID | Stratification 1 | Randomization group 1 |
+                        | 1         |                  |                       |
+                        | 2         | Yes (1)          | Drug A (1)            |
+                        | 3         |                  |                       |
+                        | 4         |                  |                       |
+                        | 5         |                  |                       |
 
         Scenario: #C.3.30.1500.0300. All users with export rights can export randomized records, seeing the allocation assigned to each record as displayed in the record view.
                 Given I click on the link labeled "Data Exports, Reports, and Stats"
