@@ -133,6 +133,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I click on the button labeled "Erase randomization model"
         And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
         Then I should see "Add new randomization model"
+        And I should NOT see "rand_group"
 
         #VERIFY Randomization model was deleted from the randomization summary.
         When I click on the link labeled "Summary"
