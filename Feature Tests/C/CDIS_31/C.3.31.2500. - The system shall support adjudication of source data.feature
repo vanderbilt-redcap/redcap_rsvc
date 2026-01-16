@@ -68,6 +68,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         And I click on the button labeled "Save record and fetch data"
         Then I should see "New items: 3"
         And I click on the button labeled "Save"
+        And I wait for 2 seconds
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
     # #Verify logging
@@ -80,33 +81,27 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-        And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I enter "293ee354-f8ad-4345-b10c-759fdfdcc082" into the input field labeled "Medical record number"
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"
         And I should see "birthDate:"
         And I click on the button labeled "Save record and fetch data"
         Then I should see "New items: 3"
-        And I click on the button labeled "Save"
-        And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 2 successfully edited."
-        And I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
-        And I enter "2017-07-14" into the input field labeled "Visit date" 
-        Then I should see "Adjudicate data from External System"
         And I click on the button labeled "Cancel"
-        And I wait for 1 second
+        And I wait for 2 seconds
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 2 successfully edited."
-        And I should see "2 new items from source system"
-
         When I click on the button labeled "View"
         Then I should see "Adjudicate data from External System"
-        When I click on the button labeled "Adjudicate All"
-        And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 2 successfully edited."
+        When I click on the button labeled "Save"
+        Then I should see "Saving adjudicated data..."
+        When I wait for background processes to finish
+        Then I should NOT see "new items from source system"
+
     #Verify logging
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported                                        |
-        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1 | visit_date = '2017-07-14', labs_vital_signs_complete = '0'             |
+        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 2 | first_name = 'Danae', last_name = 'Kshlerin', dob = '1964-05-13'       |
 #END

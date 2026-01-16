@@ -62,17 +62,22 @@ Feature: C.3.31.2600. User Interface: The system shall support displaying a coun
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-        And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-        And I click on the button labeled "Save"
-        And I click on the button labeled "Save & Exit Form"
-        Then I should see "Study ID 1 successfully added."
-        When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
-        And I wait for 1 hour
-        And I enter "2017-07-14" into the input field labeled "Visit date" 
-        Then I should see "Adjudicate data from External System"
+        And I enter "293ee354-f8ad-4345-b10c-759fdfdcc082" into the input field labeled "Medical record number"
+        Then I should see "Are the values below correct for"
+        And I should see "name-given:"
+        And I should see "name-family:"
+        And I should see "birthDate:"
+        And I click on the button labeled "Save record and fetch data"
+        Then I should see "New items: 3"
         And I click on the button labeled "Cancel"
-    #Validation of count of new unadjudicated values
-        Then I should see "5 new items from source system"
-
-        
+        And I wait for 2 seconds
+    #Validation of count of new unadjudicated values while in the record
+        Then I should see "3 new items from source system"
+    #Validation of count of new unadjudicated values while on the record home page
+        When I click on the button labeled "Save & Exit Form"
+        Then I should see "3 new items from source system"
+    #Validation of count of new unadjudicated values while on the record status dashboard
+        When I click on the link labeled "Record Status Dashboard"
+        Then I should see "3" in the column labeled "New items from EHR" and the row labeled "1"
+            
 #END
