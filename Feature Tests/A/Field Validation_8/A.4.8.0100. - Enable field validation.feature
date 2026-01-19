@@ -10,8 +10,8 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
@@ -66,7 +66,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     # - Number
     # - Number (1 decimal place - comma as decimal)
     # - Time (HH:MM)
-    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:" in the dialog box
+    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
     Then I should see the dropdown field labeled "Validation?" with the options below
       | ---- None ----                    |
       | Date (M-D-Y)                      |
@@ -78,7 +78,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Phone (North America)             |
       | Time (HH:MM:SS)                   |
       | Zipcode (U.S.)                    |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 
     #SETUP
     Given I click on the link labeled "Control Center"
@@ -119,7 +119,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the link labeled "Data Types"
     And I click on the first button labeled "Add Field"
 
-    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:" in the dialog box
+    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
     Then I should see the dropdown field labeled "Validation?" with the options below
       | ---- None ----                              |
       | Date (D-M-Y)                                |
@@ -139,5 +139,5 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Time (HH:MM:SS)                             |
       | Time (HH:MM)                                |
       | Zipcode (U.S.)                              |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 #End

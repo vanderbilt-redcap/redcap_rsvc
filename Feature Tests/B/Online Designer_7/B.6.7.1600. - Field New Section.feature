@@ -17,8 +17,8 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
 
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         When I click on the link labeled "Designer"
@@ -31,11 +31,11 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "Begin New Section (with optional text)" from the Field Type dropdown of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
         Then I should see an alert box with the following text: "Sorry, but Section Headers cannot be the last field on a data entry form"
         # Manual ONLY: (alerts are automatically accepted in automated testing)
         # And I click the OK button in the alert box
-        And I should NOT see the field labeled "Section Break"
+        And I should NOT see "Section Break"
 
         When I click on the Add Field input button below the field named "Record ID"
         When I select "Notes Box (Paragraph Text)" from the Field Type dropdown of the open "Add New Field" dialog box
@@ -44,7 +44,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         And I click on the button labeled "Save"
 
         #VERIFY
-        Then I should see the field labeled "Notes Box"
+        Then I should see the textarea labeled "Notes Box"
 
         When I click on the Add Field input button below the field named "Record ID"
         When I select "Begin New Section (with optional text)" from the Field Type dropdown of the open "Add New Field" dialog box
@@ -54,15 +54,15 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
 
         ##SETUP_PRODUCTION
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Changes Were Made Automatically"
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
 
         ##VERIFY: section break
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         Then I should see "Form 1"
-        Then I should see a section break labeled "Section Break"
+        Then I should see "Section Break"
 
     Scenario: B.6.7.1600.200 Creation of section through Data Dictionary upload
 
@@ -91,5 +91,5 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         And I click on the button labeled "Add new record"
         And I click the bubble to add a record for the "Data Types" instrument on the column labeled "Status"
         Then I should see "Data Types"
-        And I should see a section break labeled "Date"
+        And I should see "Date Section Header"
 #END

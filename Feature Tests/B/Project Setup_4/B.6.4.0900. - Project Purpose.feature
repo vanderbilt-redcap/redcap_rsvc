@@ -12,7 +12,7 @@ Feature: User Interface: General: The system shall support the designation of th
         ##ACTION: Change project purpose designation
         And I click on the button labeled "Modify project title, purpose, etc."
         And I select "Operational Support" on the dropdown field labeled "Project's purpose:"
-        And I click on the button labeled "Save" in the dialog box
+        And I click on the button labeled "Save"
 
         ##VERIFY
         Then I should see "Success! Your changes have been saved."

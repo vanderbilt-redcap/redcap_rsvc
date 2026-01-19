@@ -12,7 +12,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -21,8 +21,8 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
     #SETUP: DESIGNER
@@ -72,7 +72,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
     When I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
@@ -87,9 +87,9 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     When I click on the link labeled "Designer"
     And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
-    And I click on the button labeled "Delete Survey Settings" in the dialog box
+    And I click on the button labeled "Delete Survey Settings"
     Then I should see "Survey successfully deleted!"
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
 
     ##VERIFY_DE: confirm

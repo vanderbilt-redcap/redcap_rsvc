@@ -10,8 +10,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
       #FUNCTIONAL_REQUIREMENT
@@ -22,12 +22,14 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
             | e-Consent active? | Survey                |
             | [x]               | Participant Consent   |
             | [x]               | Coordinator Signature |
+      And I should see a table with 2 rows
 
       Given I should see '"Coordinator Signature" (coordinator_signature)'
       When I enter "Participant Consent" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [x]               | Participant Consent |
+      And I should see a table with 1 row
       And I should NOT see '"Coordinator Signature" (coordinator_signature)'
 
       ##ACTION: clear search
@@ -36,4 +38,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
             | e-Consent active? | Survey              |
             | [x]               | Participant Consent |
             | [x]               | Coordinator Signature |
+      And I should see a table with 2 rows
 #END

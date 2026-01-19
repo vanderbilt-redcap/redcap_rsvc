@@ -10,8 +10,8 @@ Feature: User Interface: The system shall support the customization of the file 
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
       When I click on the link labeled "Designer"
@@ -21,11 +21,11 @@ Feature: User Interface: The system shall support the customization of the file 
       ##ACTION: New PDF Trigger
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 1 second
-      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-      And I click on the button labeled "Update & Close Editor" in the dialog box
+      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
+      And I click on the button labeled "Update & Close Editor"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support the customization of the file 
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I select "Complete" on the dropdown field labeled "Complete?"
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the customization of the file 
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
-         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                               |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                            |
+         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                                     |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1" |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1"                                              |
 #END

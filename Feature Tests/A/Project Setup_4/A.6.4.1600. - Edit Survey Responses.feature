@@ -28,7 +28,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
             | Data Viewing Rights |           |             |        |
             | No Access           | Read Only | View & Edit | Delete |
 
-        And I click on the button labeled "Cancel" in the dialog box
+        And I click on the button labeled "Cancel"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Admin Enable edit survey response function in control center

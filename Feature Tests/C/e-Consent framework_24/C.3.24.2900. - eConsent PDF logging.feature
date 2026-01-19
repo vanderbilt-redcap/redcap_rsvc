@@ -10,8 +10,8 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
       Then I should see "Project status:  Production"
 
    Scenario: #SETUP_eConsent for participant consent process
@@ -19,7 +19,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I click on the button labeled "Enable the e-Consent Framework for a survey"
-      And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+      And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
       Then I should see "Enable e-Consent"
       And I should see "Primary settings"
 
@@ -50,11 +50,11 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 1 second
-      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-      And I click on the button labeled "Update & Close Editor" in the dialog box
+      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
+      And I click on the button labeled "Update & Close Editor"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
@@ -87,7 +87,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       And I select "Complete" on the dropdown field labeled "Complete?"
@@ -104,7 +104,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Then I should see "Adding new Record ID 2."
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-      And I click on the button labeled "Okay" in the dialog box
+      And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
@@ -118,7 +118,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Given I click on the link labeled "Add signature"
       And I see a dialog containing the following text: "Add signature"
       And I draw a signature in the signature field area
-      When I click on the button labeled "Save signature" in the dialog box
+      When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
@@ -142,10 +142,10 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         |
-         | Snapshot |                                  | 2      |                                              |                                |
-         | eConsent |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
-         | Snapshot | -                                | 1      |                                              |                                |
+         | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Type                  |
+         | Snapshot |                                  | 2      |                                              |                                |                       |
+         | eConsent |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | e-Consent Participant |
+         | Snapshot | -                                | 1      |                                              |                                |                       |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used

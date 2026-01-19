@@ -21,10 +21,10 @@ Feature: C.3.31.0100. Control Center- The system shall support enabling and disa
      #SET UP SMARTHEALTH IT IN CONTROL CENTER 
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
-        When I click on the button labeled exactly "Add"
+        When I click on the button labeled "Add"
+        And I should see a button labeled "Cancel"
         And I enter "Test" into the input field labeled "Client ID:"
         And I enter "any_secret" into the input field labeled "Client Secret:"
-        And I enter "Test" into the input field labeled "Client ID:"
         And I enter "EHR" into the input field labeled "Custom name for the EHR system"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/fhir" into the input field labeled "FHIR Base URL"
         And I enter "https://launch.smarthealthit.org/v/r4/sim/WzIsIiIsIiIsIkFVVE8iLDAsMCwwLCIiLCIiLCIiLCIiLCIiLCIiLCIiLDAsMF0/auth/token" into the input field labeled "FHIR Token URL"
@@ -38,8 +38,8 @@ Feature: C.3.31.0100. Control Center- The system shall support enabling and disa
 
      #SET UP NEW PROJECT
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "D.3.31.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
-        Then I should see "D.3.31.0100"
+        And I create a new project named "C.3.31.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
+        Then I should see "C.3.31.0100"
         And I should NOT see "Setup Clinical Data Pull from EHR"
         And I should NOT see "Clinical Data Pull from EHR"
 
@@ -53,7 +53,7 @@ Feature: C.3.31.0100. Control Center- The system shall support enabling and disa
 
      #SET UP CDP
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "D.3.31.0100"
+        And I click on the link labeled "C.3.31.0100"
         And I click on the link labeled "Project Setup"
         Then I should see a "Clinical Data Pull from EHR"
         When I click on the button labeled "Enable" in the row labeled "Clinical Data Pull from EHR" 

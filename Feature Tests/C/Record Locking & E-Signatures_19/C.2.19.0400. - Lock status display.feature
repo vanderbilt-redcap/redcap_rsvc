@@ -11,8 +11,8 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
         Then I should see "Project status:  Production"
 
         #USER_RIGHTS
@@ -49,7 +49,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         Then I should see "Text Validation"
         #FUNCTIONAL REQUIREMENT C.2.19.200.100 Display forms that are designated
         And I should see a checkbox labeled "Lock this instrument?" that is unchecked
-        When I click on the checkbox for the field labeled "Lock this instrument?"
+        When I click on the checkbox labeled "Lock this instrument?"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record Home Page"
         And I should see "Record ID 3 successfully edited."
@@ -69,7 +69,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         ##VERIFY_LOCK_ESIG: Record instrument lock on Locking Management
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Event Name | Form Name       | Repeat Instance | Locked?     |
@@ -83,7 +83,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         When I click on the span element labeled "Choose action for record"
         And I click on the link labeled "Lock entire record"
-        And I click on the button labeled "Lock entire record" in the dialog box
+        And I click on the button labeled "Lock entire record"
         Then I should see 'Record "3" is now LOCKED'
         # The previous step should likely wait for the page to refresh to prevent interference with the link click below.  For now, we wait:
         And I wait for 10 seconds
@@ -98,7 +98,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         ##VERIFY_LOCK_ESIG: record locked
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
             | Record           | Event Name | Form Name | Repeat Instance | Locked?     |
@@ -112,7 +112,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         When I click on the span element labeled "Choose action for record"
         And I click on the link labeled "Unlock entire record"
-        And I click on the button labeled "Unlock entire record" in the dialog box
+        And I click on the button labeled "Unlock entire record"
         Then I should see 'Record "3" is now UNLOCKED'
         # The previous step should likely wait for the page to refresh to prevent interference with the link click below.  For now, we wait:
         And I wait for 10 seconds
@@ -126,7 +126,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         ##VERIFY_LOCK_ESIG: record locked
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should NOT see "3 (Arm 1: Arm 1) (entire record)"
 
@@ -137,10 +137,10 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         And I should see a button labeled "Unlock form"
 
         When I click on the button labeled "Unlock form"
-        And I click on the button labeled "Unlock" in the dialog box
+        And I click on the button labeled "Unlock"
         Then I should see "UNLOCK SUCCESSFUL!"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see "Text Validation"
         And I should see a checkbox labeled "Lock this instrument?" that is unchecked
 
@@ -158,7 +158,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
 
         ##VERIFY_LOCK_ESIG: verify that there isn't a lock in that view
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
-        And I click on the button labeled "I understand. Let me make changes" in the dialog box
+        And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Event Name | Form Name       | Repeat Instance | Locked? |

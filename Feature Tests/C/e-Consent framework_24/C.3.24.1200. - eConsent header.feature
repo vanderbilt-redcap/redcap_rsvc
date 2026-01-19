@@ -9,8 +9,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
     Then I should see "Project status:  Production"
 
   Scenario: #SETUP_eConsent for custom header
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     And I click on the button labeled "Enable the e-Consent Framework for a survey"
-    And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+    And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
     Then I should see "Enable e-Consent"
     And I should see "Primary settings"
     And I select "first_name" on the dropdown field labeled "First name field"
@@ -41,7 +41,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -57,7 +57,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
   Scenario:
