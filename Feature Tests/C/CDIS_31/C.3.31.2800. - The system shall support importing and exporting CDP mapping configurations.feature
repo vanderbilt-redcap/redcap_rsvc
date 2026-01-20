@@ -58,6 +58,7 @@ Feature: C.3.31.2800. User Interface: The system shall support importing and exp
             | id,1,mrn,,,event_1_arm_1 |
             | 2947-0,,na,visit_date,NEAR,event_1_arm_1 |
         Then I click on the button labeled "Close"
+        And I wait for 1 second
         
         #Importing
         And I upload a "csv" format file located at "import_files/CDIS_Setting_Import.csv", by clicking the button near "Import" to browse for the file, and clicking the button labeled "Open" to upload the file
