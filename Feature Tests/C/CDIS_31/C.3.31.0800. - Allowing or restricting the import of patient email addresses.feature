@@ -1,6 +1,6 @@
 Feature: C.3.31.0800. Control Center: The system shall support allowing or restricting the import of patient email addresses from the EHR across CDIS services.
     As a REDCap end user
-    I want to see that the email restriction in the control center changes manages the ability to pull email address from the EHR.
+    I want to see that the email restriction in the control center manages the ability to pull email address from the EHR.
         
     Scenario: C.3.31.0800. Control Center: The system shall support allowing or restricting the import of patient email addresses from the EHR across CDIS services.
     #Activate CDIS Settings (No, do not display email option)
@@ -30,7 +30,7 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         And I click on the link labeled "Home"
         And I logout
 
-     #SET UP NEW PROJECT
+    #SET UP NEW PROJECT
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "C.3.31.0800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
         Then I should see "C.3.31.0800"
@@ -45,15 +45,14 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        And I click on the button labeled "Find more source fields to map"
-        Then I should see "nothing selected"
-        When I click on the first button labeled "nothing selected"
+        And I should see "Preview Fields (optional)"
+        And I click on "Demography"
+        Then I should see "Active event (Event 1)"
+        When I click on the button labeled "First name"
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see "fetching has been disabled at system level."
-        # The followins step is simply to cause the selection dialog to disappear
-        And I click on the first button labeled "nothing selected"
-        Then I should NOT see 'email address'
+                
         
     #VERIFY LOG
         When I click on the link labeled "Logging"
@@ -78,16 +77,18 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        And I click on the button labeled "Find more source fields to map"
-        Then I should see "nothing selected"
-        When I click on the button labeled "nothing selected"
+        And I should see "Preview Fields (optional)"
+        And I click on "Demography"
+        Then I should see "Active event (Event 1)"
+        When I click on the button labeled "First name"
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see 'email'
         And I should see 'email-2' 
-        And I should see 'email-3'        
-    
-#Activate CDIS Settings (Allow individual projects to decide)
+        And I should see 'email-3' 
+        And I should NOT see "fetching has been disabled at system level."
+           
+    #Activate CDIS Settings (Allow individual projects to decide)
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Clinical Data Interoperability Services"
         Then I should see "Clinical Data Interoperability Services"
@@ -106,14 +107,16 @@ Feature: C.3.31.0800. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.0800"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        And I click on the button labeled "Find more source fields to map"
-        Then I should see "nothing selected"
-        When I click on the button labeled "nothing selected"
+        And I should see "Preview Fields (optional)"
+        And I click on "Demography"
+        Then I should see "Active event (Event 1)"
+        When I click on the button labeled "First name"
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see 'email'
         And I should see 'email-2' 
-        And I should see 'email-3'        
+        And I should see 'email-3' 
+        And I should NOT see "fetching has been disabled at system level."     
 
     
 #END

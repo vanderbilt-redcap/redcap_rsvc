@@ -39,16 +39,13 @@ Feature: C.3.31.1200. Control Center: The system shall support allowing or restr
         Then I should see "Set up Clinical Data Pull from EHR"
 
         When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        And I click on the button labeled "Find more source fields to map"
-        Then I should see "nothing selected"
-        When I click on the first button labeled "nothing selected"
+        And I should see "Preview Fields (optional)"
+        And I click on "Demography"
+        Then I should see "Active event (Event 1)"
+        When I click on the button labeled "First name"
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see "fetching has been disabled at system level."
-        # The followins step is simply to cause the selection dialog to disappear
-        And I click on the first button labeled "nothing selected"
-        Then I should NOT see 'email address'
-
         
     #VERIFY LOG
         When I click on the link labeled "Logging"
@@ -68,13 +65,15 @@ Feature: C.3.31.1200. Control Center: The system shall support allowing or restr
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1200"
         And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
-        And I click on the button labeled "Find more source fields to map"
-        Then I should see "nothing selected"
-        When I click on the first button labeled "nothing selected"
+        And I should see "Preview Fields (optional)"
+        And I click on "Demography"
+        Then I should see "Active event (Event 1)"
+        When I click on the button labeled "First name"
         And I enter "email" into the input field labeled "Filter..."
         And I click on "Demographics"
         Then I should see 'email'
         And I should see 'email-2' 
-        And I should see 'email-3'        
+        And I should see 'email-3' 
+        And I should NOT see "fetching has been disabled at system level."    
 
 #END
