@@ -67,6 +67,7 @@ Feature: C.3.31.1700. User Interface: The system shall support mapping REDCap fi
       When I click on the link labeled "Setup"
       And I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
       Then I should see "Clinical Data Pull from EHR"
+      And I should see "Preview Fields (optional)"
       When I click on "Labs Vital Signs"
       And I wait for 2 seconds
       And I click on the button labeled "Add another mapping for this field" in the row labeled "Systolic blood pressure"
