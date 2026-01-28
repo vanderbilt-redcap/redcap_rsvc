@@ -1,131 +1,190 @@
-Feature: User Interface: The e-Consent framework will enable surveys to be considered as complete (submit button appears) once the certification step has been successfully completed.
+Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Framework to mark surveys as complete (with the submit button appearing) once the certification step is successfully completed. This includes functionality for single forms, repeatable forms, multi-signature forms, surveys with conditional logic, and surveys across multiple arms in both classic and longitudinal projects.
 
     As a REDCap end user
     I want to see that eConsent is functioning as expected
 
-    Scenario: C.3.24.300.100 Certification required to submit completed survey
+    Scenario: C.3.24.0305.100 Certification required to submit completed survey
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named " C.3.24.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Consent.xml", and clicking the "Create Project" button
+        And I create a new project named "C.3.24.0305.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the button labeled "Project Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see "Project Status: Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
-        #SETUP: Project Setup:modify repeating instruments
-        When I click on the button labeled "Modify" for the field labeled "Repeating instruments and events"
-        And I click on the button labeled "Close" in the dialog box
-        And I select the dropdown option labeled "Repeat Instruments (repeat independently of each other" for event "Event 1 (Arm 1: Arm 1)"
-        And I check the checkbox labeled "Consent"
-        And I click on the button labeled "Save"
-        Then I should see "Successfully saved!"
 
-        #SETUP_eConsent
-        When I click on the button labeled "Designer"
-        And I click on the button labeled "Survey settings" for the instrument labeled "Consent"
-        And I click on the radio labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
-        And I click on the button labeled "Save Changes"
-        Then I should see "Your survey settings were successfully saved!"
+    Scenario: #SETUP_eConsent to allow for edit by users
+        ##SETUP Allow e-Consent responses to be edited by users?
+        When I click on the link labeled "Designer"
+        And I click on the button labeled "e-Consent"
+        And I click on the button labeled "Enable the e-Consent Framework for a survey"
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey"
+        Then I should see "Enable e-Consent"
+        And I should see "Primary settings"
 
-        ##ACTION: add record
-        When I click on the link labeled "Add/Edit Records"
+        When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
+        And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
+        And I check the checkbox labeled "Save to specified field"
+        And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
+        And I click on the button labeled "Save settings"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+
+        ##ACTION: add record with consent framework
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
-        And I click on the bubble labeled "Consent" for event "Event 1"
+        And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
-        And I click on the button labeled "Okay" in the dialog box
-        And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-        Then I should see "Consent"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the button labeled "Okay"
+        And I click on the button labeled "Survey options"
+        And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
 
-        When I enter a signature in the field labeled "5) Signature"
-        And I enter a signature in the field labeled "8) Signature"
-        And I click on the button labeled "Next Page"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+        And I enter "MyName" into the input field labeled "Participant's Name Typed"
+        
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature"
+        Then I should see a link labeled "Remove signature"
+
+        When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
-        ##VERIFY: cannot submit without attestation
-        And I verify I CANNOT click on the button labeled "Submit"
+        And I should see the button labeled "Submit" that is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-        ##VERIFY: can submit once attestation complete
         And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        ##VERIFY_RSD
-        Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
-        When I click the "+" for the Data Collection Instrument labeled "Consent" for event "Event 1"
-        And I click on the button labeled "Save & Stay"
-        And I click on the button labeled "Okay" in the dialog box
-        And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-        Then I should see "Consent"
+    Scenario: Test previous page erase signature
+        ##ACTION: Test previous page button on certification page with signature erase
+        When I click on the link labeled "Add / Edit Records"
+        And I click on the button labeled "Add new record for the arm selected above"
+        And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+        Then I should see "Adding new Record ID 2."
 
-        When I enter a signature in the field labeled "5) Signature"
-        And I enter a signature in the field labeled "8) Signature"
-        And I click on the button labeled "Next Page"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the button labeled "Okay"
+        And I click on the button labeled "Survey options"
+        And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+        And I enter "MyName" into the input field labeled "Participant's Name Typed"
+        
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature"
+        Then I should see a link labeled "Remove signature"
+
+        When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a button labeled "Previous Page"
+        And I should see the button labeled "Submit" that is disabled
 
-        #FUNCTIONAL_REQUIREMENT
-        ##ACTION: click on previous page and cancel
-        When I click on the button labeled "Previous Page"
+        And I click on the button labeled "Previous Page"
         Then I should see "Erase your signature(s) in this survey?"
 
-        When I click on the button labeled "Cancel" in the dialog box
+        When I click on the button labeled "Cancel"
         Then I should see "Displayed below is a read-only copy of your survey responses."
+        And I should see the button labeled "Submit" that is disabled
 
-        #FUNCTIONAL_REQUIREMENT
-        ##ACTION: click on previous page and accept
-        When I click on the button labeled "Previous Page"
+        When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+        And I click on the button labeled "Previous Page"
         Then I should see "Erase your signature(s) in this survey?"
-        And I click on the button labeled "Erase my signature(s) and go to earlier page" in the dialog box
-        Then I should see "Consent"
-        And I should NOT see a signature in the field labeled "5) Signature"
-        And I should NOT see "signature_consent_2" in the field labeled "6) Signature"
-        And I should NOT see "signature_consent_3" in the field labeled "7) Signature"
-        And I should NOT see a signature in the field labeled "8) Signature"
-        And I should NOT see "signature_consent_5" in the field labeled "9) Signature"
-        #M: Close browser page
 
-        When I click on the button labeled "Leave without saving changes" in the dialog box
-        And I click the bubble for the Data Collection Instrument labeled "Consent" for instance "2" for event "Event 1"
-        And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-        Then I should see "Consent"
-        ##VERIFY: partial survey completion not accepted
-        And I should see "You have partially completed this survey."
+        When I click on the button labeled "Erase my signature(s) and go to earlier page"
+        Then I should NOT see "Remove signature"
 
-        When I click on the button labeled "Start Over"
-        And I click on the button labeled "OK" in the pop-up box
-        Then I should see "Consent"
-        And I verify I see "Name" in the field labeled "1) Name"
-        And I verify I see "Name" in the field labeled "2) Name"
-        And I verify I see "email@test.edu" in the field labeled "3) Email"
-        And I verify I see "2023-09-04" in the field labeled "4) DOB"
-        And I enter a signature in the field labeled "5) Signature"
-        And I verify I see "signature_consent_2" in the field labeled "6) Signature"
-        And I verify I see "signature_consent_3" in the field labeled "7) Signature"
-        And I enter a signature in the field labeled "8) Signature"
-        And I verify I see "signature_consent_5" in the field labeled "9) Signature"
-        #M: Close browser page
+        When I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Partial Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
-        When I click on the button labeled "Leave without saving changes" in the dialog box
-        ##VERIFY_RSD
-        Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for instance "1" for event "Event 1"
-        And I should see a Partial Survey Response icon for the Data Collection Instrument labeled "Consent" for instance "2" for event "Event 1"
+    Scenario: Test reopen partially completed this survey and start over
+        ##ACTION: Test reopen partially completed this survey and start over
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "2" and click on the bubble
+        Then I should see "Survey response is editable"
+        And I should NOT see "signature_"
+        And I click on the button labeled "Survey options"
+        And I click on the survey option label containing "Open survey" label
+        Then I should see "You have partially completed this survey"
+        And I click on the button labeled "Start Over"
 
+        Then I should see "Participant Consent"
+
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+        And I enter "MyName" into the input field labeled "Participant's Name Typed"
+        
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature"
+        Then I should see a link labeled "Remove signature"
+
+        When I click on the button labeled "Next Page"
+        Then I should see "Displayed below is a read-only copy of your survey responses."
+        And I should see the button labeled "Submit" that is disabled
+
+        When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+        And I click on the button labeled "Submit"
+        Then I should see "Thank you for taking the survey."
+
+        When I click on the button labeled "Close survey"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
+
+    Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
         When I click on the link labeled "File Repository"
-        Then I should see "1 File" for the field labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
+        Then I should see a table header and rows containing the following values in a table:
+            | Name                              | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type      |
+            | pid13_formParticipantConsent_id2_ |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
+            | pid13_formParticipantConsent_id1_ |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
 
-        When I click on the link labeled "PDF Survey Archive"
-        And I click on the link on the PDF link for record "1"
-        Then I should have a pdf file with the following values in the footer: "Name Name, 2023-09-04, Version: version test, Type: type test"
-#Manual: Close document
+
+        Given I click on the link labeled "_formParticipantConsent_id1_"
+        And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "1" and survey "Participant Consent"
+
+        Given I click on the link labeled "_formParticipantConsent_id2_"
+        And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "2" and survey "Participant Consent"
+        #Manual: Close document
+
+
+        ##VERIFY_Logging
+        ##e-Consent Framework not used, and PDF Snapshot is used
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+            | Username            | Action                    | List of Data Changes OR Fields Exported                                                           |
+            | [survey respondent] | e-Consent Certification 2 | e-Consent Certification            |
+            |                     |                           | record = "2"                       |
+            |                     |                           | event = "event_1_arm_1"            |
+            |                     |                           | instrument = "participant_consent" |
+            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification            |
+            |                     |                           | record = "1"                       |
+            |                     |                           | event = "event_1_arm_1"            |
+            |                     |                           | instrument = "participant_consent" |
 #END

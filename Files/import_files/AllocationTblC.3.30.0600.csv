@@ -1,0 +1,19 @@
+redcap_randomization_number,redcap_randomization_group,redcap_data_access_group,,,,
+,1,1,,,,
+,1,1,,,NOTES:,
+,1,1,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file.",
+,1,1,,, - Remember that this file is ONLY a template and should NOT be used as-is as your allocation table.,
+,,,,, - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored).,
+,,,,, - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups.,
+,,,,,,
+,,,,,"Randomization Field: ""rand_group_2"" (Randomization group 2)",
+,,,,,Your randomization field is a single-select field (for open allocation):,
+,,,,, - Values in the redcap_randomization_number column are optional,
+,,,,, - Values in the redcap_randomization_group column are REQUIRED and must match the values for your randomization field,
+,,,,,"Values/labels for ""randomization_group"" (""rand_group_2""):",
+,,,,,1,Drug A
+,,,,,2,Drug B
+,,,,,3,Placebo
+,,,,,,
+,,,,,"Values/labels for ""redcap_data_access_group"" (Data Access Group):",
+,,,,,1,Dag 1

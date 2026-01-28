@@ -1,0 +1,12 @@
+redcap_randomization_number,redcap_randomization_group,,,
+1,Group A,,,
+2,Group B,,,NOTES:
+3,Placebo,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file."
+4,Group A,,, - Remember that this file is ONLY a template and should NOT be used as-is as your allocation table.
+5,Group B,,, - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored).
+,,,, - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups.
+,,,,
+,,,,"Randomization Field: ""rand_blind"" (Blinded randomization)"
+,,,,Your randomization field is a text field (for concealed allocation):
+,,,, - Values in the redcap_randomization_number column are REQUIRED
+,,,, - Values in the redcap_randomization_group column are optional

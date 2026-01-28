@@ -1,0 +1,7 @@
+external_source_field_name,is_record_identifier,field_name,temporal_field,preselect,event_name
+2947-0,,na,visit_date,NEAR,event_1_arm_1
+birthDate,,dob,,,event_1_arm_1
+name-family,,last_name,,,event_1_arm_1
+name-given,,first_name,,,event_1_arm_1
+active-problem-list,,problem_list,,,event_1_arm_1
+id,1,mrn,,,event_1_arm_1

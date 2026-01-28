@@ -1,0 +1,22 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: REDCap Regulatory & Software Validation Committee Feature Tests
+message: >-
+  If you reference this software in scholarly
+  articles, please cite it as below.
+type: software
+authors:
+  - given-names: Adam
+    family-names: De Fouw
+    email: adefouw@wisc.edu
+    affiliation: University of Wisconsin-Madison
+repository-code: >-
+  https://github.com/vanderbilt-redcap/redcap_rsvc/tree/staging
+keywords:
+  - REDCap
+  - Cypress
+  - Test Framework
+  - Automated Testing
+license: MIT

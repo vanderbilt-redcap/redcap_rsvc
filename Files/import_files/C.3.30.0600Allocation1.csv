@@ -1,0 +1,20 @@
+redcap_randomization_number,redcap_randomization_group,redcap_data_access_group,,,,
+,1,1668,,,,
+,2,1668,,,NOTES:,
+,3,1668,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file.",
+,3,1669,,, - Remember that this file is ONLY a template and should NOT be used as-is as your allocation table.,
+,2,1669,,, - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored).,
+,1,1669,,, - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups.,
+,,,,,,
+,,,,,"Randomization Field: ""dag_rand"" (Stratified by DAG Randomization)",
+,,,,,Your randomization field is a single-select field (for open allocation):,
+,,,,, - Values in the redcap_randomization_number column are optional,
+,,,,, - Values in the redcap_randomization_group column are REQUIRED and must match the values for your randomization field,
+,,,,,"Values/labels for ""randomization_group"" (""dag_rand""):",
+,,,,,1,Group 1
+,,,,,2,Group 2
+,,,,,3,Group 3
+,,,,,,
+,,,,,"Values/labels for ""redcap_data_access_group"" (Data Access Group):",
+,,,,,1668,DAG 1
+,,,,,1669,DAG 2

@@ -7,142 +7,164 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named " C.3.24.105.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
+        And I create a new project named "C.3.24.0105.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the button labeled "Project Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see "Project Status: Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
     #FUNCTIONAL_REQUIREMENT
     Scenario: ##ACTION: e-consent survey settings - disabled
-        When I click on the button labeled "Designer"
-        And I click on the button labeled "e-Consent and PDF Snapshots"
-        Then I should see “Hide inactive” is “Enabled”
-        And I should see the e-consent framework for survey labeled “Participant Consent” is “Active”
+        When I click on the link labeled "Designer"
+        And I click on the button labeled "e-Consent"
+        Then I should see a checkbox labeled "Hide inactive" that is checked
 
-        When I “Disable” the “Hide inactive”
-        And I “Inactive” the e-consent framework for survey labeled “Participant Consent”
-        And I click on the button labeled “Set as inactive”
-        Then I should see the e-consent framework for survey labeled “Participant Consent” is “Inactive”
+        Given I check the checkbox labeled "Participant Consent"
+        And I should see a checkbox labeled "Participant Consent" that is checked
 
-        When I “Enable” the “Hide inactive”
-        Then I should NOT see the e-consent framework for survey labeled “Participant Consent” is “Inactive”
+        When I uncheck the checkbox labeled "Hide inactive"
+        And I wait for 5 seconds
+        And I uncheck the checkbox labeled "Participant Consent"
+        Then I should see a dialog containing the following text: "Set as inactive"
 
-    ##ACTION: add record to get participant signature
-    Scenario: Add record to get participant signature
-        When I click on the link labeled "Add/Edit Records"
+        Given I click on the button labeled "Set as inactive"
+        Then I should see 'e-Consent has been successfully disabled for survey "participant_consent"'
+        And I should see a checkbox labeled "Participant Consent" that is unchecked
+
+        When I check the checkbox labeled "Hide inactive"
+        Then I should NOT see a checkbox labeled "Participant Consent"
+
+
+        ##ACTION: add record to get participant signature
+      Scenario: Add record to get participant signature
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
-        And I click on the bubble labeled "Participant Consent" for event "Event 1"
+        And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1"
 
-        When I click on the button labeled "Save & Stay"
-        And I click on the button labeled "Okay" in the dialog box
-        And I select the dropdown option labeled "Open survey" from the dropdown button "Survey options"
-        And I enter “FirstName" in the field labeled "First Name"
-        And I enter “LastName" in the field labeled "Last Name"
-        And I enter “email@test.edu" in the field labeled "Email"
-        And I enter “01-01-2000” in the field labeled "DOB"
-        And I enter “MyName” in the field labeled "Participant's Name Typed"
-        And I enter a signature in the field labeled "Participant signature field"
-        And I click "Submit"
-        Then I should see “Close survey"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the button labeled "Okay"
+        And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
+        And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
 
-        When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        ##VERIFY_RSD
-        Then I should see “Record Home Page”
-        And I should see “Completed Survey Response” icon for the bubble labeled “Participant Consent” for event “Event 1”
+        And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
+        And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
+        And I clear field and enter "2000-01-01" into the data entry form field labeled "Date of Birth"
+        And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
 
-        ##VERIFY_PDF Snapshot Specific File Location
-        When I click on the bubble labeled “Pdfs And Combined Signatures Pdf” for event “Event 1”
-        Then I should see “.pdf” in the field labeled "Participant Consent file"
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature"
+        Then I should see a link labeled "Remove signature"
 
-        ##VERIFY_FiRe
-        ##e-Consent Framework not used, and PDF Snapshot is used
-        When I click on the link labeled "File Repository"
-        Then I should see a table header and rows including the following values in the file repository table:
-            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             |
-            | .pdf | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
+        When I click on the button labeled "Submit"
+        Then I should see a button labeled "Close survey"
 
-        ##VERIFY_Logging
-        ##e-Consent Framework not used, and PDF Snapshot is used
-        When I click on the link labeled "Logging"
-        Then I should see a table header and rows including the following values in the logging table:
-            | Username            | Action                                     | List of Data Changes OR Fields Exported                                           |
-            | [survey respondent] | Save PDF Snapshot 1                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | participant_file =                                                                |
-            | [survey respondent] | Save PDF Snapshot 1                        | Save PDF Snapshot to File Repository record = "1"                                 |
+
+          ##VERIFY_RSD
+        Given I click on the button labeled "Close survey"
+        And I return to the REDCap page I opened the survey from
+        When I click on the link labeled "Record Status Dashboard"
+
+        ##VERIFY - Completed survey response in "Participant Consent" but no data saved within Pdfs And Combined Signatures Pdf
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
+        And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record "1"
 
     ##ACTION: e-consent survey settings - enable
     Scenario: Enable e-Consent
-        When I click on the button labeled "Designer"
-        And I click on the button labeled "e-Consent and PDF Snapshots"
-        When I “Enable” the “Hide inactive”
-        And I “Active” the e-consent framework for survey labeled “Participant Consent”
-        Then I should see the e-consent framework for survey labeled “Participant Consent” is “Active”
-
+        Then I should see a link labeled "Designer"
+        When I click on the link labeled "Designer"
+        And I click on the button labeled "e-Consent"
+        When I uncheck the checkbox labeled "Hide inactive"
+        And I check the checkbox labeled "Participant Consent"
+        And I should see a checkbox labeled "Participant Consent" that is checked
 
     ##ACTION: add record to get participant signature
     Scenario: Add record to get participant signature
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
-        And I click on the bubble labeled "Participant Consent" for event "Event 1"
+        And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 2"
-        And I should see “Consent File”
+        And I should see "Consent file"
 
-        When I click on the button labeled "Save & Stay"
-        And I click on the button labeled "Okay" in the dialog box
-        And I select the dropdown option labeled "Open survey" from the dropdown button "Survey options"
-        And I enter “FirstName" in the field labeled "First Name"
-        And I enter “LastName" in the field labeled "Last Name"
-        And I enter “email@test.edu" in the field labeled "Email"
-        And I enter “01-01-2000” in the field labeled "DOB"
-        And I enter “MyName” in the field labeled "Participant's Name Typed"
-        And I enter a signature in the field labeled "Participant signature field"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the button labeled "Okay"
+        And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
+        And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
+        And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
+        And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
+        And I clear field and enter "2000-01-01" into the data entry form field labeled "Date of Birth"
+        And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
+
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature"
+        Then I should see a link labeled "Remove signature"
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a inline PDF of “Participant Consent”
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
+        And I should see the consent pdf has loaded in the iframe
 
-        When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+        When I check the checkbox labeled "I certify that all of my information in the document above is correct"
         And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
+        And I click on the button labeled "Close survey"
 
-        When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
         ##VERIFY_RSD
-        Then I should see “Record Home Page”
-        And I should see “Completed Survey Response” icon for the bubble labeled “Participant Consent” for event “Event 1”
+        Given I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "2"
 
         ##VERIFY_PDF Snapshot Specific File Location
-        When I click on the bubble labeled “Pdfs And Combined Signatures Pdf” for event “Event 1”
-        Then I should see “.pdf” in the field labeled "Participant Consent file"
+        And I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+        Then I should see a link labeled ".pdf"
 
         ##VERIFY_FiRe
         ##e-Consent Framework not used, and PDF Snapshot is used
         When I click on the link labeled "File Repository"
-        Then I should see a table header and rows including the following values in the file repository table:
-            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             |
-            | .pdf | icon                             | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
-            | .pdf | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
 
-        When I click on the link labeled "PDF Survey Archive"
-        And I click on the link on the PDF link for record "2"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Participant"
-    #Manual: Close document
+        ##VERIFY file uploaded in folder
+        Then I should see a table header and rows containing the following values in the file repository table:
+          | Name                           | Size    |
+          | Data Export Files              | 0 Files |
+          | PDF Snapshot Archive           | 1 File  |
+          | Miscellaneous File Attachments | 0 Files |
+          | Recycle Bin                    | 0 Files |
 
-    ##VERIFY_Logging
-    Scenario: e-Consent Framework used, and PDF Snapshot is used
-        ##e-Consent Framework used, and PDF Snapshot is used
+        Then I should see a link labeled "PDF Snapshot Archive"
+        Given I click on the link labeled "PDF Snapshot Archive"
+        Then I should see "PDF Snapshot Archive"
+
+        #Manual: Note that the PID prefix will not likely be 13 in any environments except automated
+        Then I should see a table header and rows containing the following values in a table:
+          | Name                             | Record | Survey Completed                             |
+          | pid13_formParticipantConsent_id2 | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
+
+        Given I click on the link labeled "_formParticipantConsent_id2_"
+        Then I should see the following values in the last file downloaded
+          | PID 13 - LastName   |
+          | Participant Consent |
+
+        #Manual: Close PDF document
+
+      ##VERIFY_Logging
+      Scenario: e-Consent Framework used, and PDF Snapshot is used
+      ##e-Consent Framework used, and PDF Snapshot is used
         When I click on the link labeled "Logging"
-        Then I should see a table header and rows including the following values in the logging table:
-            | Username            | Action                                     | List of Data Changes OR Fields Exported                                           |
-            | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" |
-            | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | participant_file =                                                                |
-            | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Repository record = "2"                                 |
+        Then I should see a table header and rows containing the following values in the logging table:
+          | Username            | Action                                     | List of Data Changes OR Fields Exported    |
+          | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field     |
+          | [survey respondent] | Save PDF Snapshot 2                        | record = "2"                               |
+          | [survey respondent] | Save PDF Snapshot 2                        | field = "participant_file (event_1_arm_1)" |
+          | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | participant_file = '                       |
+
 #END
