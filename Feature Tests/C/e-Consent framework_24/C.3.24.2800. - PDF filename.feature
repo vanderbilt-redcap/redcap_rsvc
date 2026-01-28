@@ -4,83 +4,87 @@ Feature: User Interface: The system shall support the customization of the file 
    I want to see that eConsent is functioning as expected
 
    Scenario:  C.3.24.2800.100 PDF snapshots custom file name
-         #SETUP
+      #SETUP
       Given I login to REDCap with the user "Test_Admin"
       And I create a new project named "C.3.24.2800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
       And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
-      Then I should see "Project Status: Production"
+      And I click on the radio labeled "Keep ALL data saved so far"
+      And I click on the button labeled "YES, Move to Production Status"
+      Then I should see "Project status:  Production"
 
-      When I click on the button lanbeled "Designer"
-      And I click on the button labeled "e-Consent and PDF Snapshot"
+      When I click on the link labeled "Designer"
+      And I click on the button labeled "PDF Snapshot"
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
-      When I click on the button labeled "PDF Snapshots of Record"
-      And I click the button "+Add new trigger"
-      And I enter "Snapshot" in the box labeled "Name of trigger"
-      And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "[participant_consent_complete]='2'" in the box labeled "When the following logic becomes true"
-
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Check" the box labeled "Save to specified field:"
-      And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
-      And I enter "Custom" in the field labeled "File name:"
-      And I click "Save"
+      And I click on the button labeled "Add new trigger"
+      And I enter "Snapshot" into the input field labeled "Name of trigger"
+      And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
+      And I click on "" in the textarea field labeled "When the following logic becomes true"
+      And I wait for 1 second
+      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
+      And I click on the button labeled "Update & Close Editor"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I check the checkbox labeled "Save to specified field:"
+      And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
+      And I enter "Custom" into the input field labeled "File name:"
+      And I click on the button labeled "Save"
       Then I should see "Saved!"
-      Then I should see a table header and rows including the following values in the PDF snapshot table:
-         | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | Active | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
+      Then I should see a table header and rows containing the following values in a table:
+         | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
+         | [x]    |               | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
 
    Scenario: Add record
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
-      And I click on the bubble labeled "Participant Consent" for event "Event 1"
+      And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
 
-      When I enter "FirstName" in the field labeled "First Name"
-      And I enter "LastName" in the field labeled "Last Name"
-      And I enter "email@test.edu" in the field labeled "Email"
-      And I enter "2000-01-01" in the field labeled "DOB"
-      And I enter the "MyName" in the field labeled "Participant’s Name Typed"
-      And I enter a signature in the field labeled "Participant signature field"
-      And I click "Save signature"
-      And I select "Complete" from the field labeled "Complete?"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+      And I enter "MyName" into the input field labeled "Participant's Name Typed"
+      
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature"
+      Then I should see a link labeled "Remove signature"
+
+      And I select "Complete" on the dropdown field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
-      Then I Should see "Record Home Page"
-      And I should see "Complete" status for "Event 1" insturment "Participant Consent"
-      And I Should see "Incomplete (no data saved)" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      Then I should see "Record Home Page"
+      And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
-      When I click on the bubble labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
-      Then I should see "custom" in the field labeled "Participant Consent file"
-
-      When I click on the file link the field labeled "Participant Consent file"
-      Then I should have a pdf file with the following values "Participant Consent"
-      #M: Close document
+      When I click the bubble to select a record for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1"
+      When I click on the link labeled "Custom_" in the row labeled "Participant Consent file"
+      Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
+      #Manual: Close document
 
       ##VERIFY_FiRe
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
-      Then I should see a table header and rows including the following values in the PDF Snapshot Archive table:
-         | Name | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
-         | custom | -                                | 1      | (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+      Then I should see a table header and rows containing the following values in a table:
+         | Name    | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
+         | Custom_ | -                                | 1      |                          |                        |         |      |
 
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
-      Then I should see a table header and rows including the following values in the logging table:
-         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                               |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
-         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                            |
+      Then I should see a table header and rows containing the following values in the logging table:
+         | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                                     |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1" |
+         | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1"                                              |
 #END

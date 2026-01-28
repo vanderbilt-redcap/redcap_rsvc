@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="Simple CDP TEST Project" AsOfDateTime="2025-10-01T13:28:18" CreationDateTime="2025-10-01T13:28:18" SourceSystem="REDCap" SourceSystemVersion="15.4.3">
+<Study OID="Project.SimpleCDPTESTProject">
+<GlobalVariables>
+	<StudyName>Simple CDP TEST Project</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "Simple CDP TEST Project".</StudyDescription>
+	<ProtocolName>Simple CDP TEST Project</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
+	<redcap:SecondaryUniqueFieldDisplayValue>1</redcap:SecondaryUniqueFieldDisplayValue>
+	<redcap:SecondaryUniqueFieldDisplayLabel>1</redcap:SecondaryUniqueFieldDisplayLabel>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:SurveysEnabled>0</redcap:SurveysEnabled>
+	<redcap:SurveyInvitationEmailField></redcap:SurveyInvitationEmailField>
+	<redcap:RandomizationEnabled>0</redcap:RandomizationEnabled>
+	<redcap:DisplayTodayNowButton>1</redcap:DisplayTodayNowButton>
+	<redcap:PreventBranchingEraseValues>0</redcap:PreventBranchingEraseValues>
+	<redcap:RequireChangeReason>0</redcap:RequireChangeReason>
+	<redcap:DataHistoryPopup>1</redcap:DataHistoryPopup>
+	<redcap:OrderRecordsByField></redcap:OrderRecordsByField>
+	<redcap:taskCompleteStatus>0</redcap:taskCompleteStatus>
+	<redcap:DataResolutionWorkflowEnabled>1</redcap:DataResolutionWorkflowEnabled>
+	<redcap:FieldCommentLogOptionEditDelete>1</redcap:FieldCommentLogOptionEditDelete>
+	<redcap:DataResolutionWorkflowHideClosedQueries>1</redcap:DataResolutionWorkflowHideClosedQueries>
+	<redcap:MyCapEnabled>0</redcap:MyCapEnabled>
+	<redcap:Purpose>0</redcap:Purpose>
+	<redcap:PurposeOther></redcap:PurposeOther>
+	<redcap:ProjectNotes></redcap:ProjectNotes>
+	<redcap:DdpType>FHIR</redcap:DdpType>
+	<redcap:DdpOffsetDays>7</redcap:DdpOffsetDays>
+	<redcap:DdpOffsetPlusMinus>+-</redcap:DdpOffsetPlusMinus>
+	<redcap:MissingDataCodes></redcap:MissingDataCodes>
+	<redcap:ProtectedEmailMode>0</redcap:ProtectedEmailMode>
+	<redcap:ProtectedEmailModeCustomText></redcap:ProtectedEmailModeCustomText>
+	<redcap:ProtectedEmailModeTrigger>ALL</redcap:ProtectedEmailModeTrigger>
+	<redcap:ProtectedEmailModeLogo></redcap:ProtectedEmailModeLogo>
+	<redcap:DdpMappingGroup>
+		<redcap:DdpMapping is_record_identifier="1" temporal_field="" preselect="" external_source_field_name="id" event_id="event_1_arm_1" field_name="mrn"/>
+		<redcap:DdpMapping is_record_identifier="" temporal_field="visit_date" preselect="MAX" external_source_field_name="29463-7" event_id="event_1_arm_1" field_name="body_weight"/>
+		<redcap:DdpMapping is_record_identifier="" temporal_field="visit_date" preselect="NEAR" external_source_field_name="2947-0" event_id="event_1_arm_1" field_name="na"/>
+		<redcap:DdpMapping is_record_identifier="" temporal_field="" preselect="" external_source_field_name="birthDate" event_id="event_1_arm_1" field_name="dob"/>
+		<redcap:DdpMapping is_record_identifier="" temporal_field="" preselect="" external_source_field_name="name-family" event_id="event_1_arm_1" field_name="last_name"/>
+		<redcap:DdpMapping is_record_identifier="" temporal_field="" preselect="" external_source_field_name="name-given" event_id="event_1_arm_1" field_name="first_name"/>
+	</redcap:DdpMappingGroup>
+	<redcap:DdpPreviewFieldsGroup>
+		<redcap:DdpPreviewFields field1="name-given" field2="name-family" field3="birthDate" field4="" field5=""/>
+	</redcap:DdpPreviewFieldsGroup>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.SimpleCDPTESTProject_2025-10-01_1328" Name="Simple CDP TEST Project" redcap:RecordIdField="record_id">
+	<FormDef OID="Form.demography" Name="Demography" Repeating="No" redcap:FormName="demography">
+		<ItemGroupRef ItemGroupOID="demography.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="demography.demography_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.labs_vital_signs" Name="Labs Vital Signs" Repeating="No" redcap:FormName="labs_vital_signs">
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.visit_date" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.body_weight" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.body_height" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.creat" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.k" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="labs_vital_signs.labs_vital_signs_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="demography.record_id" Name="Demography" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+		<ItemRef ItemOID="mrn" Mandatory="Yes" redcap:Variable="mrn"/>
+		<ItemRef ItemOID="first_name" Mandatory="No" redcap:Variable="first_name"/>
+		<ItemRef ItemOID="last_name" Mandatory="No" redcap:Variable="last_name"/>
+		<ItemRef ItemOID="sex" Mandatory="No" redcap:Variable="sex"/>
+		<ItemRef ItemOID="ethnicity" Mandatory="No" redcap:Variable="ethnicity"/>
+		<ItemRef ItemOID="race" Mandatory="No" redcap:Variable="race"/>
+		<ItemRef ItemOID="dob" Mandatory="No" redcap:Variable="dob"/>
+		<ItemRef ItemOID="age" Mandatory="No" redcap:Variable="age"/>
+		<ItemRef ItemOID="address_street" Mandatory="No" redcap:Variable="address_street"/>
+		<ItemRef ItemOID="address_city" Mandatory="No" redcap:Variable="address_city"/>
+		<ItemRef ItemOID="address_state" Mandatory="No" redcap:Variable="address_state"/>
+		<ItemRef ItemOID="address_postal_code" Mandatory="No" redcap:Variable="address_postal_code"/>
+		<ItemRef ItemOID="address_country" Mandatory="No" redcap:Variable="address_country"/>
+		<ItemRef ItemOID="phone_number_home" Mandatory="No" redcap:Variable="phone_number_home"/>
+		<ItemRef ItemOID="phone_number_mobile" Mandatory="No" redcap:Variable="phone_number_mobile"/>
+		<ItemRef ItemOID="problem_list" Mandatory="No" redcap:Variable="problem_list"/>
+		<ItemRef ItemOID="active_medications_list" Mandatory="No" redcap:Variable="active_medications_list"/>
+		<ItemRef ItemOID="allergy_list" Mandatory="No" redcap:Variable="allergy_list"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="demography.demography_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="demography_complete" Mandatory="No" redcap:Variable="demography_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.visit_date" Name="Labs Vital Signs" Repeating="No">
+		<ItemRef ItemOID="visit_date" Mandatory="Yes" redcap:Variable="visit_date"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.body_weight" Name="Vital Signs" Repeating="No">
+		<ItemRef ItemOID="body_weight" Mandatory="No" redcap:Variable="body_weight"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.body_height" Name="Labs Vital Signs" Repeating="No">
+		<ItemRef ItemOID="body_height" Mandatory="No" redcap:Variable="body_height"/>
+		<ItemRef ItemOID="bmi" Mandatory="No" redcap:Variable="bmi"/>
+		<ItemRef ItemOID="oral_temp" Mandatory="No" redcap:Variable="oral_temp"/>
+		<ItemRef ItemOID="diastolic_bp" Mandatory="No" redcap:Variable="diastolic_bp"/>
+		<ItemRef ItemOID="systolic_bp" Mandatory="No" redcap:Variable="systolic_bp"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.creat" Name="Labs" Repeating="No">
+		<ItemRef ItemOID="creat" Mandatory="No" redcap:Variable="creat"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.k" Name="Labs Vital Signs" Repeating="No">
+		<ItemRef ItemOID="k" Mandatory="No" redcap:Variable="k"/>
+		<ItemRef ItemOID="urea_nitrogen" Mandatory="No" redcap:Variable="urea_nitrogen"/>
+		<ItemRef ItemOID="carbon_dioxide" Mandatory="No" redcap:Variable="carbon_dioxide"/>
+		<ItemRef ItemOID="na" Mandatory="No" redcap:Variable="na"/>
+		<ItemRef ItemOID="cl" Mandatory="No" redcap:Variable="cl"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="labs_vital_signs.labs_vital_signs_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="labs_vital_signs_complete" Mandatory="No" redcap:Variable="labs_vital_signs_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
+		<Question><TranslatedText>Study ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrn" Name="mrn" DataType="text" Length="999" redcap:Variable="mrn" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>Medical record number</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="first_name" Name="first_name" DataType="text" Length="999" redcap:Variable="first_name" redcap:FieldType="text" redcap:Identifier="y">
+		<Question><TranslatedText>First Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="last_name" Name="last_name" DataType="text" Length="999" redcap:Variable="last_name" redcap:FieldType="text" redcap:Identifier="y">
+		<Question><TranslatedText>Last Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="sex" Name="sex" DataType="text" Length="3" redcap:Variable="sex" redcap:FieldType="select">
+		<Question><TranslatedText>Gender</TranslatedText></Question>
+		<CodeListRef CodeListOID="sex.choices"/>
+	</ItemDef>
+	<ItemDef OID="ethnicity" Name="ethnicity" DataType="text" Length="6" redcap:Variable="ethnicity" redcap:FieldType="select">
+		<Question><TranslatedText>Ethnicity</TranslatedText></Question>
+		<CodeListRef CodeListOID="ethnicity.choices"/>
+	</ItemDef>
+	<ItemDef OID="race" Name="race" DataType="text" Length="6" redcap:Variable="race" redcap:FieldType="select">
+		<Question><TranslatedText>Race</TranslatedText></Question>
+		<CodeListRef CodeListOID="race.choices"/>
+	</ItemDef>
+	<ItemDef OID="dob" Name="dob" DataType="date" Length="999" redcap:Variable="dob" redcap:FieldType="text" redcap:TextValidationType="date_ymd" redcap:Identifier="y">
+		<Question><TranslatedText>Date of birth</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="age" Name="age" DataType="float" Length="999" redcap:Variable="age" redcap:FieldType="calc" redcap:Calculation="rounddown(datediff([dob],&#039;today&#039;,&#039;y&#039;))">
+		<Question><TranslatedText>Age (years)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="address_street" Name="address_street" DataType="text" Length="999" redcap:Variable="address_street" redcap:FieldType="text">
+		<Question><TranslatedText>Address (street)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="address_city" Name="address_city" DataType="text" Length="999" redcap:Variable="address_city" redcap:FieldType="text">
+		<Question><TranslatedText>Address (city)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="address_state" Name="address_state" DataType="text" Length="999" redcap:Variable="address_state" redcap:FieldType="text">
+		<Question><TranslatedText>Address (state)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="address_postal_code" Name="address_postal_code" DataType="text" Length="999" redcap:Variable="address_postal_code" redcap:FieldType="text">
+		<Question><TranslatedText>Address (postal code)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="address_country" Name="address_country" DataType="text" Length="999" redcap:Variable="address_country" redcap:FieldType="text">
+		<Question><TranslatedText>Address (country)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="phone_number_home" Name="phone_number_home" DataType="text" Length="999" redcap:Variable="phone_number_home" redcap:FieldType="text">
+		<Question><TranslatedText>Phone number (home)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="phone_number_mobile" Name="phone_number_mobile" DataType="text" Length="999" redcap:Variable="phone_number_mobile" redcap:FieldType="text">
+		<Question><TranslatedText>Phone number (mobile)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="problem_list" Name="problem_list" DataType="text" Length="999" redcap:Variable="problem_list" redcap:FieldType="textarea" redcap:CustomAlignment="LV">
+		<Question><TranslatedText>Problem list</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="active_medications_list" Name="active_medications_list" DataType="text" Length="999" redcap:Variable="active_medications_list" redcap:FieldType="textarea" redcap:CustomAlignment="LV">
+		<Question><TranslatedText>Active medications list</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="allergy_list" Name="allergy_list" DataType="text" Length="999" redcap:Variable="allergy_list" redcap:FieldType="textarea" redcap:CustomAlignment="LV">
+		<Question><TranslatedText>Allergy list</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="demography_complete" Name="demography_complete" DataType="text" Length="1" redcap:Variable="demography_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="demography_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="visit_date" Name="visit_date" DataType="date" Length="999" redcap:Variable="visit_date" redcap:FieldType="text" redcap:TextValidationType="date_ymd" redcap:RequiredField="y">
+		<Question><TranslatedText>Visit date</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="body_weight" Name="body_weight" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="body_weight" redcap:FieldType="text" redcap:TextValidationType="float" redcap:SectionHeader="Vital Signs">
+		<Question><TranslatedText>Body weight</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="body_height" Name="body_height" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="body_height" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Body height</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="bmi" Name="bmi" DataType="text" Length="999" redcap:Variable="bmi" redcap:FieldType="text">
+		<Question><TranslatedText>BMI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="oral_temp" Name="oral_temp" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="oral_temp" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Oral temperature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diastolic_bp" Name="diastolic_bp" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="diastolic_bp" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Diastolic blood pressure</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="systolic_bp" Name="systolic_bp" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="systolic_bp" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Systolic blood pressure</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="creat" Name="creat" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="creat" redcap:FieldType="text" redcap:TextValidationType="float" redcap:SectionHeader="Labs">
+		<Question><TranslatedText>Creatinine</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="k" Name="k" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="k" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Potassium blood (K)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="urea_nitrogen" Name="urea_nitrogen" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="urea_nitrogen" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Urea nitrogen</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="carbon_dioxide" Name="carbon_dioxide" DataType="text" Length="999" redcap:Variable="carbon_dioxide" redcap:FieldType="text">
+		<Question><TranslatedText>Carbon Dioxide</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="na" Name="na" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="na" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Sodium (Na)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="cl" Name="cl" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="cl" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>Chloride (Cl)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="labs_vital_signs_complete" Name="labs_vital_signs_complete" DataType="text" Length="1" redcap:Variable="labs_vital_signs_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="labs_vital_signs_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="sex.choices" Name="sex" DataType="text" redcap:Variable="sex">
+		<CodeListItem CodedValue="F"><Decode><TranslatedText>Female</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="M"><Decode><TranslatedText>Male</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="UNK"><Decode><TranslatedText>Unknown</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="ethnicity.choices" Name="ethnicity" DataType="text" redcap:Variable="ethnicity">
+		<CodeListItem CodedValue="2135-2"><Decode><TranslatedText>Hispanic or Latino</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2186-5"><Decode><TranslatedText>Not Hispanic or Latino</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2137-8"><Decode><TranslatedText>Spaniard</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2148-5"><Decode><TranslatedText>Mexican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2155-0"><Decode><TranslatedText>Central American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2165-9"><Decode><TranslatedText>South American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2178-2"><Decode><TranslatedText>Latin American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2180-8"><Decode><TranslatedText>Puerto Rican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2182-4"><Decode><TranslatedText>Cuban</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2184-0"><Decode><TranslatedText>Dominican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2138-6"><Decode><TranslatedText>Andalusian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2139-4"><Decode><TranslatedText>Asturian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2140-2"><Decode><TranslatedText>Castillian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2141-0"><Decode><TranslatedText>Catalonian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2142-8"><Decode><TranslatedText>Belearic Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2143-6"><Decode><TranslatedText>Gallego</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2144-4"><Decode><TranslatedText>Valencian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2145-1"><Decode><TranslatedText>Canarian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2146-9"><Decode><TranslatedText>Spanish Basque</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2149-3"><Decode><TranslatedText>Mexican American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2150-1"><Decode><TranslatedText>Mexicano</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2151-9"><Decode><TranslatedText>Chicano</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2152-7"><Decode><TranslatedText>La Raza</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2153-5"><Decode><TranslatedText>Mexican American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2156-8"><Decode><TranslatedText>Costa Rican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2157-6"><Decode><TranslatedText>Guatemalan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2158-4"><Decode><TranslatedText>Honduran</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2159-2"><Decode><TranslatedText>Nicaraguan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2160-0"><Decode><TranslatedText>Panamanian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2161-8"><Decode><TranslatedText>Salvadoran</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2162-6"><Decode><TranslatedText>Central American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2163-4"><Decode><TranslatedText>Canal Zone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2166-7"><Decode><TranslatedText>Argentinean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2167-5"><Decode><TranslatedText>Bolivian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2168-3"><Decode><TranslatedText>Chilean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2169-1"><Decode><TranslatedText>Colombian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2170-9"><Decode><TranslatedText>Ecuadorian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2171-7"><Decode><TranslatedText>Paraguayan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2172-5"><Decode><TranslatedText>Peruvian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2173-3"><Decode><TranslatedText>Uruguayan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2174-1"><Decode><TranslatedText>Venezuelan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2175-8"><Decode><TranslatedText>South American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2176-6"><Decode><TranslatedText>Criollo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="UNK"><Decode><TranslatedText>Unknown</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="race.choices" Name="race" DataType="text" redcap:Variable="race">
+		<CodeListItem CodedValue="1002-5"><Decode><TranslatedText>American Indian/Alaska Native</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2028-9"><Decode><TranslatedText>Asian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2076-8"><Decode><TranslatedText>Native Hawaiian or Other Pacific Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2054-5"><Decode><TranslatedText>Black or African American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2106-3"><Decode><TranslatedText>White</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1004-1"><Decode><TranslatedText>American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1735-0"><Decode><TranslatedText>Alaska Native</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1006-6"><Decode><TranslatedText>Abenaki</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1008-2"><Decode><TranslatedText>Algonquian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1010-8"><Decode><TranslatedText>Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1021-5"><Decode><TranslatedText>Arapaho</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1026-4"><Decode><TranslatedText>Arikara</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1028-0"><Decode><TranslatedText>Assiniboine</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1030-6"><Decode><TranslatedText>Assiniboine Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1033-0"><Decode><TranslatedText>Bannock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1035-5"><Decode><TranslatedText>Blackfeet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1037-1"><Decode><TranslatedText>Brotherton</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1039-7"><Decode><TranslatedText>Burt Lake Band</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1041-3"><Decode><TranslatedText>Caddo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1044-7"><Decode><TranslatedText>Cahuilla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1053-8"><Decode><TranslatedText>California Tribes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1068-6"><Decode><TranslatedText>Canadian and Latin American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1076-9"><Decode><TranslatedText>Catawba</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1078-5"><Decode><TranslatedText>Cayuse</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1080-1"><Decode><TranslatedText>Chehalis</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1082-7"><Decode><TranslatedText>Chemakuan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1086-8"><Decode><TranslatedText>Chemehuevi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1088-4"><Decode><TranslatedText>Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1100-7"><Decode><TranslatedText>Cherokee Shawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1102-3"><Decode><TranslatedText>Cheyenne</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1106-4"><Decode><TranslatedText>Cheyenne-Arapaho</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1108-0"><Decode><TranslatedText>Chickahominy</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1112-2"><Decode><TranslatedText>Chickasaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1114-8"><Decode><TranslatedText>Chinook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1123-9"><Decode><TranslatedText>Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1150-2"><Decode><TranslatedText>Chippewa Cree</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1153-6"><Decode><TranslatedText>Chitimacha</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1155-1"><Decode><TranslatedText>Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1162-7"><Decode><TranslatedText>Chumash</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1165-0"><Decode><TranslatedText>Clear Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1167-6"><Decode><TranslatedText>Coeur D&#039;Alene</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1169-2"><Decode><TranslatedText>Coharie</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1171-8"><Decode><TranslatedText>Colorado River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1173-4"><Decode><TranslatedText>Colville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1175-9"><Decode><TranslatedText>Comanche</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1178-3"><Decode><TranslatedText>Coos, Lower Umpqua, Siuslaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1180-9"><Decode><TranslatedText>Coos</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1182-5"><Decode><TranslatedText>Coquilles</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1184-1"><Decode><TranslatedText>Costanoan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1186-6"><Decode><TranslatedText>Coushatta</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1189-0"><Decode><TranslatedText>Cowlitz</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1191-6"><Decode><TranslatedText>Cree</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1193-2"><Decode><TranslatedText>Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1207-0"><Decode><TranslatedText>Croatan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1209-6"><Decode><TranslatedText>Crow</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1211-2"><Decode><TranslatedText>Cupeno</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1214-6"><Decode><TranslatedText>Delaware</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1222-9"><Decode><TranslatedText>Diegueno</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1233-6"><Decode><TranslatedText>Eastern Tribes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1250-0"><Decode><TranslatedText>Esselen</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1252-6"><Decode><TranslatedText>Fort Belknap</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1254-2"><Decode><TranslatedText>Fort Berthold</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1256-7"><Decode><TranslatedText>Fort Mcdowell</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1258-3"><Decode><TranslatedText>Fort Hall</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1260-9"><Decode><TranslatedText>Gabrieleno</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1262-5"><Decode><TranslatedText>Grand Ronde</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1264-1"><Decode><TranslatedText>Gros Ventres</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1267-4"><Decode><TranslatedText>Haliwa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1269-0"><Decode><TranslatedText>Hidatsa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2135-2"><Decode><TranslatedText>Hispanic or Latino</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1271-6"><Decode><TranslatedText>Hoopa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1275-7"><Decode><TranslatedText>Hoopa Extension</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1277-3"><Decode><TranslatedText>Houma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1279-9"><Decode><TranslatedText>Inaja-Cosmit</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1281-5"><Decode><TranslatedText>Iowa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1285-6"><Decode><TranslatedText>Iroquois</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1297-1"><Decode><TranslatedText>Juaneno</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1299-7"><Decode><TranslatedText>Kalispel</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1301-1"><Decode><TranslatedText>Karuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1303-7"><Decode><TranslatedText>Kaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1305-2"><Decode><TranslatedText>Kickapoo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1309-4"><Decode><TranslatedText>Kiowa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1312-8"><Decode><TranslatedText>Klallam</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1317-7"><Decode><TranslatedText>Klamath</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1319-3"><Decode><TranslatedText>Konkow</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1321-9"><Decode><TranslatedText>Kootenai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1323-5"><Decode><TranslatedText>Lassik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1325-0"><Decode><TranslatedText>Long Island</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1331-8"><Decode><TranslatedText>Luiseno</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1340-9"><Decode><TranslatedText>Lumbee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1342-5"><Decode><TranslatedText>Lummi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1344-1"><Decode><TranslatedText>Maidu</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1348-2"><Decode><TranslatedText>Makah</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1350-8"><Decode><TranslatedText>Maliseet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1352-4"><Decode><TranslatedText>Mandan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1354-0"><Decode><TranslatedText>Mattaponi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1356-5"><Decode><TranslatedText>Menominee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1358-1"><Decode><TranslatedText>Miami</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1363-1"><Decode><TranslatedText>Miccosukee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1365-6"><Decode><TranslatedText>Micmac</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1368-0"><Decode><TranslatedText>Mission Indians</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1370-6"><Decode><TranslatedText>Miwok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1372-2"><Decode><TranslatedText>Modoc</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1374-8"><Decode><TranslatedText>Mohegan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1376-3"><Decode><TranslatedText>Mono</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1378-9"><Decode><TranslatedText>Nanticoke</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1380-5"><Decode><TranslatedText>Narragansett</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1382-1"><Decode><TranslatedText>Navajo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1387-0"><Decode><TranslatedText>Nez Perce</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1389-6"><Decode><TranslatedText>Nomalaki</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1391-2"><Decode><TranslatedText>Northwest Tribes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1403-5"><Decode><TranslatedText>Omaha</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1405-0"><Decode><TranslatedText>Oregon Athabaskan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1407-6"><Decode><TranslatedText>Osage</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1409-2"><Decode><TranslatedText>Otoe-Missouria</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1411-8"><Decode><TranslatedText>Ottawa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1416-7"><Decode><TranslatedText>Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1439-9"><Decode><TranslatedText>Pamunkey</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1441-5"><Decode><TranslatedText>Passamaquoddy</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1445-6"><Decode><TranslatedText>Pawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1448-0"><Decode><TranslatedText>Penobscot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1450-6"><Decode><TranslatedText>Peoria</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1453-0"><Decode><TranslatedText>Pequot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1456-3"><Decode><TranslatedText>Pima</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1460-5"><Decode><TranslatedText>Piscataway</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1462-1"><Decode><TranslatedText>Pit River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1464-7"><Decode><TranslatedText>Pomo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1474-6"><Decode><TranslatedText>Ponca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1478-7"><Decode><TranslatedText>Potawatomi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1487-8"><Decode><TranslatedText>Powhatan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1489-4"><Decode><TranslatedText>Pueblo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1518-0"><Decode><TranslatedText>Puget Sound Salish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1541-2"><Decode><TranslatedText>Quapaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1543-8"><Decode><TranslatedText>Quinault</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1545-3"><Decode><TranslatedText>Rappahannock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1547-9"><Decode><TranslatedText>Reno-Sparks</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1549-5"><Decode><TranslatedText>Round Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1551-1"><Decode><TranslatedText>Sac and Fox</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1556-0"><Decode><TranslatedText>Salinan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1558-6"><Decode><TranslatedText>Salish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1560-2"><Decode><TranslatedText>Salish and Kootenai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1562-8"><Decode><TranslatedText>Schaghticoke</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1564-4"><Decode><TranslatedText>Scott Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1566-9"><Decode><TranslatedText>Seminole</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1573-5"><Decode><TranslatedText>Serrano</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1576-8"><Decode><TranslatedText>Shasta</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1578-4"><Decode><TranslatedText>Shawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1582-6"><Decode><TranslatedText>Shinnecock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1584-2"><Decode><TranslatedText>Shoalwater Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1586-7"><Decode><TranslatedText>Shoshone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1602-2"><Decode><TranslatedText>Shoshone Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1607-1"><Decode><TranslatedText>Siletz</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1609-7"><Decode><TranslatedText>Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1643-6"><Decode><TranslatedText>Siuslaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1645-1"><Decode><TranslatedText>Spokane</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1647-7"><Decode><TranslatedText>Stewart</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1649-3"><Decode><TranslatedText>Stockbridge</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1651-9"><Decode><TranslatedText>Susanville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1653-5"><Decode><TranslatedText>Tohono O&#039;Odham</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1659-2"><Decode><TranslatedText>Tolowa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1661-8"><Decode><TranslatedText>Tonkawa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1663-4"><Decode><TranslatedText>Tygh</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1665-9"><Decode><TranslatedText>Umatilla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1667-5"><Decode><TranslatedText>Umpqua</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1670-9"><Decode><TranslatedText>Ute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1675-8"><Decode><TranslatedText>Wailaki</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1677-4"><Decode><TranslatedText>Walla-Walla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1679-0"><Decode><TranslatedText>Wampanoag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1683-2"><Decode><TranslatedText>Warm Springs</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1685-7"><Decode><TranslatedText>Wascopum</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1687-3"><Decode><TranslatedText>Washoe</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1692-3"><Decode><TranslatedText>Wichita</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1694-9"><Decode><TranslatedText>Wind River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1696-4"><Decode><TranslatedText>Winnebago</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1700-4"><Decode><TranslatedText>Winnemucca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1702-0"><Decode><TranslatedText>Wintun</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1704-6"><Decode><TranslatedText>Wiyot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1707-9"><Decode><TranslatedText>Yakama</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1709-5"><Decode><TranslatedText>Yakama Cowlitz</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1711-1"><Decode><TranslatedText>Yaqui</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1715-2"><Decode><TranslatedText>Yavapai Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1717-8"><Decode><TranslatedText>Yokuts</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1722-8"><Decode><TranslatedText>Yuchi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1724-4"><Decode><TranslatedText>Yuman</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1732-7"><Decode><TranslatedText>Yurok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1011-6"><Decode><TranslatedText>Chiricahua</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1012-4"><Decode><TranslatedText>Fort Sill Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1013-2"><Decode><TranslatedText>Jicarilla Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1014-0"><Decode><TranslatedText>Lipan Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1015-7"><Decode><TranslatedText>Mescalero Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1016-5"><Decode><TranslatedText>Oklahoma Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1017-3"><Decode><TranslatedText>Payson Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1018-1"><Decode><TranslatedText>San Carlos Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1019-9"><Decode><TranslatedText>White Mountain Apache</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1022-3"><Decode><TranslatedText>Northern Arapaho</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1023-1"><Decode><TranslatedText>Southern Arapaho</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1024-9"><Decode><TranslatedText>Wind River Arapaho</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1031-4"><Decode><TranslatedText>Fort Peck Assiniboine Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1042-1"><Decode><TranslatedText>Oklahoma Cado</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1045-4"><Decode><TranslatedText>Agua Caliente Cahuilla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1046-2"><Decode><TranslatedText>Augustine</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1047-0"><Decode><TranslatedText>Cabazon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1048-8"><Decode><TranslatedText>Los Coyotes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1049-6"><Decode><TranslatedText>Morongo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1050-4"><Decode><TranslatedText>Santa Rosa Cahuilla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1051-2"><Decode><TranslatedText>Torres-Martinez</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1054-6"><Decode><TranslatedText>Cahto</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1055-3"><Decode><TranslatedText>Chimariko</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1056-1"><Decode><TranslatedText>Coast Miwok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1057-9"><Decode><TranslatedText>Digger</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1058-7"><Decode><TranslatedText>Kawaiisu</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1059-5"><Decode><TranslatedText>Kern River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1060-3"><Decode><TranslatedText>Mattole</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1061-1"><Decode><TranslatedText>Red Wood</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1062-9"><Decode><TranslatedText>Santa Rosa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1063-7"><Decode><TranslatedText>Takelma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1064-5"><Decode><TranslatedText>Wappo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1065-2"><Decode><TranslatedText>Yana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1066-0"><Decode><TranslatedText>Yuki</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1069-4"><Decode><TranslatedText>Canadian Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1070-2"><Decode><TranslatedText>Central American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1071-0"><Decode><TranslatedText>French American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1072-8"><Decode><TranslatedText>Mexican American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1073-6"><Decode><TranslatedText>South American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1074-4"><Decode><TranslatedText>Spanish American Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1083-5"><Decode><TranslatedText>Hoh</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1084-3"><Decode><TranslatedText>Quileute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1089-2"><Decode><TranslatedText>Cherokee Alabama</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1090-0"><Decode><TranslatedText>Cherokees of Northeast Alabama</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1091-8"><Decode><TranslatedText>Cherokees of Southeast Alabama</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1092-6"><Decode><TranslatedText>Eastern Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1093-4"><Decode><TranslatedText>Echota Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1094-2"><Decode><TranslatedText>Etowah Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1095-9"><Decode><TranslatedText>Northern Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1096-7"><Decode><TranslatedText>Tuscola</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1097-5"><Decode><TranslatedText>United Keetowah Band of Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1098-3"><Decode><TranslatedText>Western Cherokee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1103-1"><Decode><TranslatedText>Northern Cheyenne</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1104-9"><Decode><TranslatedText>Southern Cheyenne</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1109-8"><Decode><TranslatedText>Eastern Chickahominy</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1110-6"><Decode><TranslatedText>Western Chickahominy</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1115-5"><Decode><TranslatedText>Clatsop</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1116-3"><Decode><TranslatedText>Columbia River Chinook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1117-1"><Decode><TranslatedText>Kathlamet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1118-9"><Decode><TranslatedText>Upper Chinook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1119-7"><Decode><TranslatedText>Wakiakum Chinook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1120-5"><Decode><TranslatedText>Willapa Chinook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1121-3"><Decode><TranslatedText>Wishram</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1124-7"><Decode><TranslatedText>Bad River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1125-4"><Decode><TranslatedText>Bay Mills Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1126-2"><Decode><TranslatedText>Bois Forte</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1127-0"><Decode><TranslatedText>Burt Lake Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1128-8"><Decode><TranslatedText>Fond du Lac</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1129-6"><Decode><TranslatedText>Grand Portage</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1130-4"><Decode><TranslatedText>Grand Traverse Band of Ottawa/Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1131-2"><Decode><TranslatedText>Keweenaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1132-0"><Decode><TranslatedText>Lac Courte Oreilles</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1133-8"><Decode><TranslatedText>Lac du Flambeau</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1134-6"><Decode><TranslatedText>Lac Vieux Desert Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1135-3"><Decode><TranslatedText>Lake Superior</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1136-1"><Decode><TranslatedText>Leech Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1137-9"><Decode><TranslatedText>Little Shell Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1138-7"><Decode><TranslatedText>Mille Lacs</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1139-5"><Decode><TranslatedText>Minnesota Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1140-3"><Decode><TranslatedText>Ontonagon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1141-1"><Decode><TranslatedText>Red Cliff Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1142-9"><Decode><TranslatedText>Red Lake Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1143-7"><Decode><TranslatedText>Saginaw Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1144-5"><Decode><TranslatedText>St. Croix Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1145-2"><Decode><TranslatedText>Sault Ste. Marie Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1146-0"><Decode><TranslatedText>Sokoagon Chippewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1147-8"><Decode><TranslatedText>Turtle Mountain</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1148-6"><Decode><TranslatedText>White Earth</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1151-0"><Decode><TranslatedText>Rocky Boy&#039;s Chippewa Cree</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1156-9"><Decode><TranslatedText>Clifton Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1157-7"><Decode><TranslatedText>Jena Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1158-5"><Decode><TranslatedText>Mississippi Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1159-3"><Decode><TranslatedText>Mowa Band of Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1160-1"><Decode><TranslatedText>Oklahoma Choctaw</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1163-5"><Decode><TranslatedText>Santa Ynez</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1176-7"><Decode><TranslatedText>Oklahoma Comanche</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1187-4"><Decode><TranslatedText>Alabama Coushatta</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1194-0"><Decode><TranslatedText>Alabama Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1195-7"><Decode><TranslatedText>Alabama Quassarte</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1196-5"><Decode><TranslatedText>Eastern Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1197-3"><Decode><TranslatedText>Eastern Muscogee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1198-1"><Decode><TranslatedText>Kialegee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1199-9"><Decode><TranslatedText>Lower Muscogee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1200-5"><Decode><TranslatedText>Machis Lower Creek Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1201-3"><Decode><TranslatedText>Poarch Band</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1202-1"><Decode><TranslatedText>Principal Creek Indian Nation</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1203-9"><Decode><TranslatedText>Star Clan of Muscogee Creeks</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1204-7"><Decode><TranslatedText>Thlopthlocco</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1205-4"><Decode><TranslatedText>Tuckabachee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1212-0"><Decode><TranslatedText>Agua Caliente</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1215-3"><Decode><TranslatedText>Eastern Delaware</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1216-1"><Decode><TranslatedText>Lenni-Lenape</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1217-9"><Decode><TranslatedText>Munsee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1218-7"><Decode><TranslatedText>Oklahoma Delaware</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1219-5"><Decode><TranslatedText>Rampough Mountain</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1220-3"><Decode><TranslatedText>Sand Hill</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1223-7"><Decode><TranslatedText>Campo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1224-5"><Decode><TranslatedText>Capitan Grande</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1225-2"><Decode><TranslatedText>Cuyapaipe</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1226-0"><Decode><TranslatedText>La Posta</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1227-8"><Decode><TranslatedText>Manzanita</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1228-6"><Decode><TranslatedText>Mesa Grande</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1229-4"><Decode><TranslatedText>San Pasqual</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1230-2"><Decode><TranslatedText>Santa Ysabel</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1231-0"><Decode><TranslatedText>Sycuan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1234-4"><Decode><TranslatedText>Attacapa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1235-1"><Decode><TranslatedText>Biloxi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1236-9"><Decode><TranslatedText>Georgetown (Eastern Tribes)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1237-7"><Decode><TranslatedText>Moor</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1238-5"><Decode><TranslatedText>Nansemond</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1239-3"><Decode><TranslatedText>Natchez</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1240-1"><Decode><TranslatedText>Nausu Waiwash</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1241-9"><Decode><TranslatedText>Nipmuc</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1242-7"><Decode><TranslatedText>Paugussett</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1243-5"><Decode><TranslatedText>Pocomoke Acohonock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1244-3"><Decode><TranslatedText>Southeastern Indians</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1245-0"><Decode><TranslatedText>Susquehanock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1246-8"><Decode><TranslatedText>Tunica Biloxi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1247-6"><Decode><TranslatedText>Waccamaw-Siousan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1248-4"><Decode><TranslatedText>Wicomico</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1265-8"><Decode><TranslatedText>Atsina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1272-4"><Decode><TranslatedText>Trinity</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1273-2"><Decode><TranslatedText>Whilkut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1282-3"><Decode><TranslatedText>Iowa of Kansas-Nebraska</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1283-1"><Decode><TranslatedText>Iowa of Oklahoma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1286-4"><Decode><TranslatedText>Cayuga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1287-2"><Decode><TranslatedText>Mohawk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1288-0"><Decode><TranslatedText>Oneida</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1289-8"><Decode><TranslatedText>Onondaga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1290-6"><Decode><TranslatedText>Seneca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1291-4"><Decode><TranslatedText>Seneca Nation</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1292-2"><Decode><TranslatedText>Seneca-Cayuga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1293-0"><Decode><TranslatedText>Tonawanda Seneca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1294-8"><Decode><TranslatedText>Tuscarora</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1295-5"><Decode><TranslatedText>Wyandotte</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1306-0"><Decode><TranslatedText>Oklahoma Kickapoo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1307-8"><Decode><TranslatedText>Texas Kickapoo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1310-2"><Decode><TranslatedText>Oklahoma Kiowa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1313-6"><Decode><TranslatedText>Jamestown</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1314-4"><Decode><TranslatedText>Lower Elwha</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1315-1"><Decode><TranslatedText>Port Gamble Klallam</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1326-8"><Decode><TranslatedText>Matinecock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1327-6"><Decode><TranslatedText>Montauk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1328-4"><Decode><TranslatedText>Poospatuck</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1329-2"><Decode><TranslatedText>Setauket</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1332-6"><Decode><TranslatedText>La Jolla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1333-4"><Decode><TranslatedText>Pala</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1334-2"><Decode><TranslatedText>Pauma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1335-9"><Decode><TranslatedText>Pechanga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1336-7"><Decode><TranslatedText>Soboba</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1337-5"><Decode><TranslatedText>Twenty-Nine Palms</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1338-3"><Decode><TranslatedText>Temecula</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1345-8"><Decode><TranslatedText>Mountain Maidu</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1346-6"><Decode><TranslatedText>Nishinam</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1359-9"><Decode><TranslatedText>Illinois Miami</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1360-7"><Decode><TranslatedText>Indiana Miami</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1361-5"><Decode><TranslatedText>Oklahoma Miami</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1366-4"><Decode><TranslatedText>Aroostook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1383-9"><Decode><TranslatedText>Alamo Navajo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1384-7"><Decode><TranslatedText>Canoncito Navajo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1385-4"><Decode><TranslatedText>Ramah Navajo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1392-0"><Decode><TranslatedText>Alsea</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1393-8"><Decode><TranslatedText>Celilo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1394-6"><Decode><TranslatedText>Columbia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1395-3"><Decode><TranslatedText>Kalapuya</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1396-1"><Decode><TranslatedText>Molala</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1397-9"><Decode><TranslatedText>Talakamish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1398-7"><Decode><TranslatedText>Tenino</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1399-5"><Decode><TranslatedText>Tillamook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1400-1"><Decode><TranslatedText>Wenatchee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1401-9"><Decode><TranslatedText>Yahooskin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1412-6"><Decode><TranslatedText>Burt Lake Ottawa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1413-4"><Decode><TranslatedText>Michigan Ottawa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1414-2"><Decode><TranslatedText>Oklahoma Ottawa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1417-5"><Decode><TranslatedText>Bishop</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1418-3"><Decode><TranslatedText>Bridgeport</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1419-1"><Decode><TranslatedText>Burns Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1420-9"><Decode><TranslatedText>Cedarville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1421-7"><Decode><TranslatedText>Fort Bidwell</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1422-5"><Decode><TranslatedText>Fort Independence</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1423-3"><Decode><TranslatedText>Kaibab</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1424-1"><Decode><TranslatedText>Las Vegas</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1425-8"><Decode><TranslatedText>Lone Pine</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1426-6"><Decode><TranslatedText>Lovelock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1427-4"><Decode><TranslatedText>Malheur Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1428-2"><Decode><TranslatedText>Moapa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1429-0"><Decode><TranslatedText>Northern Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1430-8"><Decode><TranslatedText>Owens Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1431-6"><Decode><TranslatedText>Pyramid Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1432-4"><Decode><TranslatedText>San Juan Southern Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1433-2"><Decode><TranslatedText>Southern Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1434-0"><Decode><TranslatedText>Summit Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1435-7"><Decode><TranslatedText>Utu Utu Gwaitu Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1436-5"><Decode><TranslatedText>Walker River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1437-3"><Decode><TranslatedText>Yerington Paiute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1442-3"><Decode><TranslatedText>Indian Township</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1443-1"><Decode><TranslatedText>Pleasant Point Passamaquoddy</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1446-4"><Decode><TranslatedText>Oklahoma Pawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1451-4"><Decode><TranslatedText>Oklahoma Peoria</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1454-8"><Decode><TranslatedText>Marshantucket Pequot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1457-1"><Decode><TranslatedText>Gila River Pima-Maricopa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1458-9"><Decode><TranslatedText>Salt River Pima-Maricopa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1465-4"><Decode><TranslatedText>Central Pomo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1466-2"><Decode><TranslatedText>Dry Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1467-0"><Decode><TranslatedText>Eastern Pomo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1468-8"><Decode><TranslatedText>Kashia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1469-6"><Decode><TranslatedText>Northern Pomo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1470-4"><Decode><TranslatedText>Scotts Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1471-2"><Decode><TranslatedText>Stonyford</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1472-0"><Decode><TranslatedText>Sulphur Bank</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1475-3"><Decode><TranslatedText>Nebraska Ponca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1476-1"><Decode><TranslatedText>Oklahoma Ponca</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1479-5"><Decode><TranslatedText>Citizen Band Potawatomi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1480-3"><Decode><TranslatedText>Forest County</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1481-1"><Decode><TranslatedText>Hannahville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1482-9"><Decode><TranslatedText>Huron Potawatomi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1483-7"><Decode><TranslatedText>Pokagon Potawatomi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1484-5"><Decode><TranslatedText>Prairie Band</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1485-2"><Decode><TranslatedText>Wisconsin Potawatomi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1490-2"><Decode><TranslatedText>Acoma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1491-0"><Decode><TranslatedText>Arizona Tewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1492-8"><Decode><TranslatedText>Cochiti</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1493-6"><Decode><TranslatedText>Hopi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1494-4"><Decode><TranslatedText>Isleta</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1495-1"><Decode><TranslatedText>Jemez</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1496-9"><Decode><TranslatedText>Keres</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1497-7"><Decode><TranslatedText>Laguna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1498-5"><Decode><TranslatedText>Nambe</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1499-3"><Decode><TranslatedText>Picuris</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1500-8"><Decode><TranslatedText>Piro</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1501-6"><Decode><TranslatedText>Pojoaque</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1502-4"><Decode><TranslatedText>San Felipe</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1503-2"><Decode><TranslatedText>San Ildefonso</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1504-0"><Decode><TranslatedText>San Juan Pueblo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1505-7"><Decode><TranslatedText>San Juan De</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1506-5"><Decode><TranslatedText>San Juan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1507-3"><Decode><TranslatedText>Sandia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1508-1"><Decode><TranslatedText>Santa Ana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1509-9"><Decode><TranslatedText>Santa Clara</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1510-7"><Decode><TranslatedText>Santo Domingo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1511-5"><Decode><TranslatedText>Taos</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1512-3"><Decode><TranslatedText>Tesuque</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1513-1"><Decode><TranslatedText>Tewa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1514-9"><Decode><TranslatedText>Tigua</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1515-6"><Decode><TranslatedText>Zia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1516-4"><Decode><TranslatedText>Zuni</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1519-8"><Decode><TranslatedText>Duwamish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1520-6"><Decode><TranslatedText>Kikiallus</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1521-4"><Decode><TranslatedText>Lower Skagit</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1522-2"><Decode><TranslatedText>Muckleshoot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1523-0"><Decode><TranslatedText>Nisqually</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1524-8"><Decode><TranslatedText>Nooksack</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1525-5"><Decode><TranslatedText>Port Madison</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1526-3"><Decode><TranslatedText>Puyallup</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1527-1"><Decode><TranslatedText>Samish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1528-9"><Decode><TranslatedText>Sauk-Suiattle</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1529-7"><Decode><TranslatedText>Skokomish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1530-5"><Decode><TranslatedText>Skykomish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1531-3"><Decode><TranslatedText>Snohomish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1532-1"><Decode><TranslatedText>Snoqualmie</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1533-9"><Decode><TranslatedText>Squaxin Island</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1534-7"><Decode><TranslatedText>Steilacoom</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1535-4"><Decode><TranslatedText>Stillaguamish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1536-2"><Decode><TranslatedText>Suquamish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1537-0"><Decode><TranslatedText>Swinomish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1538-8"><Decode><TranslatedText>Tulalip</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1539-6"><Decode><TranslatedText>Upper Skagit</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1552-9"><Decode><TranslatedText>Iowa Sac and Fox</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1553-7"><Decode><TranslatedText>Missouri Sac and Fox</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1554-5"><Decode><TranslatedText>Oklahoma Sac and Fox</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1567-7"><Decode><TranslatedText>Big Cypress</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1568-5"><Decode><TranslatedText>Brighton</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1569-3"><Decode><TranslatedText>Florida Seminole</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1570-1"><Decode><TranslatedText>Hollywood Seminole</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1571-9"><Decode><TranslatedText>Oklahoma Seminole</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1574-3"><Decode><TranslatedText>San Manual</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1579-2"><Decode><TranslatedText>Absentee Shawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1580-0"><Decode><TranslatedText>Eastern Shawnee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1587-5"><Decode><TranslatedText>Battle Mountain</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1588-3"><Decode><TranslatedText>Duckwater</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1589-1"><Decode><TranslatedText>Elko</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1590-9"><Decode><TranslatedText>Ely</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1591-7"><Decode><TranslatedText>Goshute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1592-5"><Decode><TranslatedText>Panamint</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1593-3"><Decode><TranslatedText>Ruby Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1594-1"><Decode><TranslatedText>Skull Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1595-8"><Decode><TranslatedText>South Fork Shoshone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1596-6"><Decode><TranslatedText>Te-Moak Western Shoshone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1597-4"><Decode><TranslatedText>Timbi-Sha Shoshone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1598-2"><Decode><TranslatedText>Washakie</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1599-0"><Decode><TranslatedText>Wind River Shoshone</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1600-6"><Decode><TranslatedText>Yomba</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1603-0"><Decode><TranslatedText>Duck Valley</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1604-8"><Decode><TranslatedText>Fallon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1605-5"><Decode><TranslatedText>Fort McDermitt</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1610-5"><Decode><TranslatedText>Blackfoot Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1611-3"><Decode><TranslatedText>Brule Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1612-1"><Decode><TranslatedText>Cheyenne River Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1613-9"><Decode><TranslatedText>Crow Creek Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1614-7"><Decode><TranslatedText>Dakota Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1615-4"><Decode><TranslatedText>Flandreau Santee</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1616-2"><Decode><TranslatedText>Fort Peck</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1617-0"><Decode><TranslatedText>Lake Traverse Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1618-8"><Decode><TranslatedText>Lower Brule Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1619-6"><Decode><TranslatedText>Lower Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1620-4"><Decode><TranslatedText>Mdewakanton Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1621-2"><Decode><TranslatedText>Miniconjou</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1622-0"><Decode><TranslatedText>Oglala Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1623-8"><Decode><TranslatedText>Pine Ridge Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1624-6"><Decode><TranslatedText>Pipestone Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1625-3"><Decode><TranslatedText>Prairie Island Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1626-1"><Decode><TranslatedText>Prior Lake Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1627-9"><Decode><TranslatedText>Rosebud Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1628-7"><Decode><TranslatedText>Sans Arc Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1629-5"><Decode><TranslatedText>Santee Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1630-3"><Decode><TranslatedText>Sisseton-Wahpeton</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1631-1"><Decode><TranslatedText>Sisseton Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1632-9"><Decode><TranslatedText>Spirit Lake Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1633-7"><Decode><TranslatedText>Standing Rock Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1634-5"><Decode><TranslatedText>Teton Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1635-2"><Decode><TranslatedText>Two Kettle Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1636-0"><Decode><TranslatedText>Upper Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1637-8"><Decode><TranslatedText>Wahpekute Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1638-6"><Decode><TranslatedText>Wahpeton Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1639-4"><Decode><TranslatedText>Wazhaza Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1640-2"><Decode><TranslatedText>Yankton Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1641-0"><Decode><TranslatedText>Yanktonai Sioux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1654-3"><Decode><TranslatedText>Ak-Chin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1655-0"><Decode><TranslatedText>Gila Bend</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1656-8"><Decode><TranslatedText>San Xavier</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1657-6"><Decode><TranslatedText>Sells</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1668-3"><Decode><TranslatedText>Cow Creek Umpqua</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1671-7"><Decode><TranslatedText>Allen Canyon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1672-5"><Decode><TranslatedText>Uintah Ute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1673-3"><Decode><TranslatedText>Ute Mountain Ute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1680-8"><Decode><TranslatedText>Gay Head Wampanoag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1681-6"><Decode><TranslatedText>Mashpee Wampanoag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1688-1"><Decode><TranslatedText>Alpine</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1689-9"><Decode><TranslatedText>Carson</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1690-7"><Decode><TranslatedText>Dresslerville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1697-2"><Decode><TranslatedText>Ho-chunk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1698-0"><Decode><TranslatedText>Nebraska Winnebago</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1705-3"><Decode><TranslatedText>Table Bluff</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1712-9"><Decode><TranslatedText>Barrio Libre</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1713-7"><Decode><TranslatedText>Pascua Yaqui</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1718-6"><Decode><TranslatedText>Chukchansi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1719-4"><Decode><TranslatedText>Tachi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1720-2"><Decode><TranslatedText>Tule River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1725-1"><Decode><TranslatedText>Cocopah</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1726-9"><Decode><TranslatedText>Havasupai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1727-7"><Decode><TranslatedText>Hualapai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1728-5"><Decode><TranslatedText>Maricopa</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1729-3"><Decode><TranslatedText>Mohave</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1730-1"><Decode><TranslatedText>Quechan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1731-9"><Decode><TranslatedText>Yavapai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1733-5"><Decode><TranslatedText>Coast Yurok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1737-6"><Decode><TranslatedText>Alaska Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1840-8"><Decode><TranslatedText>Eskimo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1966-1"><Decode><TranslatedText>Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1739-2"><Decode><TranslatedText>Alaskan Athabascan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1811-9"><Decode><TranslatedText>Southeast Alaska</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1740-0"><Decode><TranslatedText>Ahtna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1741-8"><Decode><TranslatedText>Alatna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1742-6"><Decode><TranslatedText>Alexander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1743-4"><Decode><TranslatedText>Allakaket</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1744-2"><Decode><TranslatedText>Alanvik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1745-9"><Decode><TranslatedText>Anvik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1746-7"><Decode><TranslatedText>Arctic</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1747-5"><Decode><TranslatedText>Beaver</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1748-3"><Decode><TranslatedText>Birch Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1749-1"><Decode><TranslatedText>Cantwell</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1750-9"><Decode><TranslatedText>Chalkyitsik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1751-7"><Decode><TranslatedText>Chickaloon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1752-5"><Decode><TranslatedText>Chistochina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1753-3"><Decode><TranslatedText>Chitina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1754-1"><Decode><TranslatedText>Circle</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1755-8"><Decode><TranslatedText>Cook Inlet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1756-6"><Decode><TranslatedText>Copper Center</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1757-4"><Decode><TranslatedText>Copper River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1758-2"><Decode><TranslatedText>Dot Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1759-0"><Decode><TranslatedText>Doyon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1760-8"><Decode><TranslatedText>Eagle</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1761-6"><Decode><TranslatedText>Eklutna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1762-4"><Decode><TranslatedText>Evansville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1763-2"><Decode><TranslatedText>Fort Yukon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1764-0"><Decode><TranslatedText>Gakona</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1765-7"><Decode><TranslatedText>Galena</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1766-5"><Decode><TranslatedText>Grayling</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1767-3"><Decode><TranslatedText>Gulkana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1768-1"><Decode><TranslatedText>Healy Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1769-9"><Decode><TranslatedText>Holy Cross</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1770-7"><Decode><TranslatedText>Hughes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1771-5"><Decode><TranslatedText>Huslia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1772-3"><Decode><TranslatedText>Iliamna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1773-1"><Decode><TranslatedText>Kaltag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1774-9"><Decode><TranslatedText>Kluti Kaah</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1775-6"><Decode><TranslatedText>Knik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1776-4"><Decode><TranslatedText>Koyukuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1777-2"><Decode><TranslatedText>Lake Minchumina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1778-0"><Decode><TranslatedText>Lime</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1779-8"><Decode><TranslatedText>Mcgrath</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1780-6"><Decode><TranslatedText>Manley Hot Springs</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1781-4"><Decode><TranslatedText>Mentasta Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1782-2"><Decode><TranslatedText>Minto</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1783-0"><Decode><TranslatedText>Nenana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1784-8"><Decode><TranslatedText>Nikolai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1785-5"><Decode><TranslatedText>Ninilchik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1786-3"><Decode><TranslatedText>Nondalton</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1787-1"><Decode><TranslatedText>Northway</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1788-9"><Decode><TranslatedText>Nulato</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1789-7"><Decode><TranslatedText>Pedro Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1790-5"><Decode><TranslatedText>Rampart</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1791-3"><Decode><TranslatedText>Ruby</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1792-1"><Decode><TranslatedText>Salamatof</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1793-9"><Decode><TranslatedText>Seldovia</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1794-7"><Decode><TranslatedText>Slana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1795-4"><Decode><TranslatedText>Shageluk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1796-2"><Decode><TranslatedText>Stevens</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1797-0"><Decode><TranslatedText>Stony River</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1798-8"><Decode><TranslatedText>Takotna</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1799-6"><Decode><TranslatedText>Tanacross</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1800-2"><Decode><TranslatedText>Tanaina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1801-0"><Decode><TranslatedText>Tanana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1802-8"><Decode><TranslatedText>Tanana Chiefs</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1803-6"><Decode><TranslatedText>Tazlina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1804-4"><Decode><TranslatedText>Telida</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1805-1"><Decode><TranslatedText>Tetlin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1806-9"><Decode><TranslatedText>Tok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1807-7"><Decode><TranslatedText>Tyonek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1808-5"><Decode><TranslatedText>Venetie</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1809-3"><Decode><TranslatedText>Wiseman</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1813-5"><Decode><TranslatedText>Tlingit-Haida</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1837-4"><Decode><TranslatedText>Tsimshian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1814-3"><Decode><TranslatedText>Angoon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1815-0"><Decode><TranslatedText>Central Council of Tlingit and Haida Tribes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1816-8"><Decode><TranslatedText>Chilkat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1817-6"><Decode><TranslatedText>Chilkoot</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1818-4"><Decode><TranslatedText>Craig</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1819-2"><Decode><TranslatedText>Douglas</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1820-0"><Decode><TranslatedText>Haida</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1821-8"><Decode><TranslatedText>Hoonah</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1822-6"><Decode><TranslatedText>Hydaburg</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1823-4"><Decode><TranslatedText>Kake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1824-2"><Decode><TranslatedText>Kasaan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1825-9"><Decode><TranslatedText>Kenaitze</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1826-7"><Decode><TranslatedText>Ketchikan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1827-5"><Decode><TranslatedText>Klawock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1828-3"><Decode><TranslatedText>Pelican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1829-1"><Decode><TranslatedText>Petersburg</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1830-9"><Decode><TranslatedText>Saxman</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1831-7"><Decode><TranslatedText>Sitka</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1832-5"><Decode><TranslatedText>Tenakee Springs</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1833-3"><Decode><TranslatedText>Tlingit</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1834-1"><Decode><TranslatedText>Wrangell</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1835-8"><Decode><TranslatedText>Yakutat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1838-2"><Decode><TranslatedText>Metlakatla</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1842-4"><Decode><TranslatedText>Greenland Eskimo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1844-0"><Decode><TranslatedText>Inupiat Eskimo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1891-1"><Decode><TranslatedText>Siberian Eskimo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1896-0"><Decode><TranslatedText>Yupik Eskimo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1845-7"><Decode><TranslatedText>Ambler</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1846-5"><Decode><TranslatedText>Anaktuvuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1847-3"><Decode><TranslatedText>Anaktuvuk Pass</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1848-1"><Decode><TranslatedText>Arctic Slope Inupiat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1849-9"><Decode><TranslatedText>Arctic Slope Corporation</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1850-7"><Decode><TranslatedText>Atqasuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1851-5"><Decode><TranslatedText>Barrow</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1852-3"><Decode><TranslatedText>Bering Straits Inupiat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1853-1"><Decode><TranslatedText>Brevig Mission</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1854-9"><Decode><TranslatedText>Buckland</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1855-6"><Decode><TranslatedText>Chinik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1856-4"><Decode><TranslatedText>Council</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1857-2"><Decode><TranslatedText>Deering</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1858-0"><Decode><TranslatedText>Elim</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1859-8"><Decode><TranslatedText>Golovin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1860-6"><Decode><TranslatedText>Inalik Diomede</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1861-4"><Decode><TranslatedText>Inupiaq</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1862-2"><Decode><TranslatedText>Kaktovik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1863-0"><Decode><TranslatedText>Kawerak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1864-8"><Decode><TranslatedText>Kiana</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1865-5"><Decode><TranslatedText>Kivalina</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1866-3"><Decode><TranslatedText>Kobuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1867-1"><Decode><TranslatedText>Kotzebue</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1868-9"><Decode><TranslatedText>Koyuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1869-7"><Decode><TranslatedText>Kwiguk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1870-5"><Decode><TranslatedText>Mauneluk Inupiat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1871-3"><Decode><TranslatedText>Nana Inupiat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1872-1"><Decode><TranslatedText>Noatak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1873-9"><Decode><TranslatedText>Nome</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1874-7"><Decode><TranslatedText>Noorvik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1875-4"><Decode><TranslatedText>Nuiqsut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1876-2"><Decode><TranslatedText>Point Hope</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1877-0"><Decode><TranslatedText>Point Lay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1878-8"><Decode><TranslatedText>Selawik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1879-6"><Decode><TranslatedText>Shaktoolik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1880-4"><Decode><TranslatedText>Shishmaref</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1881-2"><Decode><TranslatedText>Shungnak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1882-0"><Decode><TranslatedText>Solomon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1883-8"><Decode><TranslatedText>Teller</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1884-6"><Decode><TranslatedText>Unalakleet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1885-3"><Decode><TranslatedText>Wainwright</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1886-1"><Decode><TranslatedText>Wales</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1887-9"><Decode><TranslatedText>White Mountain</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1888-7"><Decode><TranslatedText>White Mountain Inupiat</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1889-5"><Decode><TranslatedText>Mary&#039;s Igloo</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1892-9"><Decode><TranslatedText>Gambell</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1893-7"><Decode><TranslatedText>Savoonga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1894-5"><Decode><TranslatedText>Siberian Yupik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1897-8"><Decode><TranslatedText>Akiachak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1898-6"><Decode><TranslatedText>Akiak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1899-4"><Decode><TranslatedText>Alakanuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1900-0"><Decode><TranslatedText>Aleknagik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1901-8"><Decode><TranslatedText>Andreafsky</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1902-6"><Decode><TranslatedText>Aniak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1903-4"><Decode><TranslatedText>Atmautluak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1904-2"><Decode><TranslatedText>Bethel</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1905-9"><Decode><TranslatedText>Bill Moore&#039;s Slough</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1906-7"><Decode><TranslatedText>Bristol Bay Yupik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1907-5"><Decode><TranslatedText>Calista Yupik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1908-3"><Decode><TranslatedText>Chefornak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1909-1"><Decode><TranslatedText>Chevak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1910-9"><Decode><TranslatedText>Chuathbaluk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1911-7"><Decode><TranslatedText>Clark&#039;s Point</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1912-5"><Decode><TranslatedText>Crooked Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1913-3"><Decode><TranslatedText>Dillingham</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1914-1"><Decode><TranslatedText>Eek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1915-8"><Decode><TranslatedText>Ekuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1916-6"><Decode><TranslatedText>Ekwok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1917-4"><Decode><TranslatedText>Emmonak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1918-2"><Decode><TranslatedText>Goodnews Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1919-0"><Decode><TranslatedText>Hooper Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1920-8"><Decode><TranslatedText>Iqurmuit (Russian Mission)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1921-6"><Decode><TranslatedText>Kalskag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1922-4"><Decode><TranslatedText>Kasigluk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1923-2"><Decode><TranslatedText>Kipnuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1924-0"><Decode><TranslatedText>Koliganek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1925-7"><Decode><TranslatedText>Kongiganak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1926-5"><Decode><TranslatedText>Kotlik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1927-3"><Decode><TranslatedText>Kwethluk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1928-1"><Decode><TranslatedText>Kwigillingok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1929-9"><Decode><TranslatedText>Levelock</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1930-7"><Decode><TranslatedText>Lower Kalskag</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1931-5"><Decode><TranslatedText>Manokotak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1932-3"><Decode><TranslatedText>Marshall</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1933-1"><Decode><TranslatedText>Mekoryuk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1934-9"><Decode><TranslatedText>Mountain Village</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1935-6"><Decode><TranslatedText>Naknek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1936-4"><Decode><TranslatedText>Napaumute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1937-2"><Decode><TranslatedText>Napakiak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1938-0"><Decode><TranslatedText>Napaskiak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1939-8"><Decode><TranslatedText>Newhalen</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1940-6"><Decode><TranslatedText>New Stuyahok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1941-4"><Decode><TranslatedText>Newtok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1942-2"><Decode><TranslatedText>Nightmute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1943-0"><Decode><TranslatedText>Nunapitchukv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1944-8"><Decode><TranslatedText>Oscarville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1945-5"><Decode><TranslatedText>Pilot Station</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1946-3"><Decode><TranslatedText>Pitkas Point</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1947-1"><Decode><TranslatedText>Platinum</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1948-9"><Decode><TranslatedText>Portage Creek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1949-7"><Decode><TranslatedText>Quinhagak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1950-5"><Decode><TranslatedText>Red Devil</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1951-3"><Decode><TranslatedText>St. Michael</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1952-1"><Decode><TranslatedText>Scammon Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1953-9"><Decode><TranslatedText>Sheldon&#039;s Point</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1954-7"><Decode><TranslatedText>Sleetmute</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1955-4"><Decode><TranslatedText>Stebbins</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1956-2"><Decode><TranslatedText>Togiak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1957-0"><Decode><TranslatedText>Toksook</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1958-8"><Decode><TranslatedText>Tulukskak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1959-6"><Decode><TranslatedText>Tuntutuliak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1960-4"><Decode><TranslatedText>Tununak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1961-2"><Decode><TranslatedText>Twin Hills</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1962-0"><Decode><TranslatedText>Georgetown (Yupik-Eskimo)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1963-8"><Decode><TranslatedText>St. Mary&#039;s</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1964-6"><Decode><TranslatedText>Umkumiate</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1968-7"><Decode><TranslatedText>Alutiiq Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1972-9"><Decode><TranslatedText>Bristol Bay Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1984-4"><Decode><TranslatedText>Chugach Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1990-1"><Decode><TranslatedText>Eyak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1992-7"><Decode><TranslatedText>Koniag Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2002-4"><Decode><TranslatedText>Sugpiaq</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2004-0"><Decode><TranslatedText>Suqpigaq</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2006-5"><Decode><TranslatedText>Unangan Aleut</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1969-5"><Decode><TranslatedText>Tatitlek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1970-3"><Decode><TranslatedText>Ugashik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1973-7"><Decode><TranslatedText>Chignik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1974-5"><Decode><TranslatedText>Chignik Lake</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1975-2"><Decode><TranslatedText>Egegik</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1976-0"><Decode><TranslatedText>Igiugig</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1977-8"><Decode><TranslatedText>Ivanof Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1978-6"><Decode><TranslatedText>King Salmon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1979-4"><Decode><TranslatedText>Kokhanok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1980-2"><Decode><TranslatedText>Perryville</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1981-0"><Decode><TranslatedText>Pilot Point</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1982-8"><Decode><TranslatedText>Port Heiden</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1985-1"><Decode><TranslatedText>Chenega</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1986-9"><Decode><TranslatedText>Chugach Corporation</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1987-7"><Decode><TranslatedText>English Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1988-5"><Decode><TranslatedText>Port Graham</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1993-5"><Decode><TranslatedText>Akhiok</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1994-3"><Decode><TranslatedText>Agdaagux</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1995-0"><Decode><TranslatedText>Karluk</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1996-8"><Decode><TranslatedText>Kodiak</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1997-6"><Decode><TranslatedText>Larsen Bay</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1998-4"><Decode><TranslatedText>Old Harbor</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1999-2"><Decode><TranslatedText>Ouzinkie</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2000-8"><Decode><TranslatedText>Port Lions</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2007-3"><Decode><TranslatedText>Akutan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2008-1"><Decode><TranslatedText>Aleut Corporation</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2009-9"><Decode><TranslatedText>Aleutian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2010-7"><Decode><TranslatedText>Aleutian Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2011-5"><Decode><TranslatedText>Atka</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2012-3"><Decode><TranslatedText>Belkofski</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2013-1"><Decode><TranslatedText>Chignik Lagoon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2014-9"><Decode><TranslatedText>King Cove</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2015-6"><Decode><TranslatedText>False Pass</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2016-4"><Decode><TranslatedText>Nelson Lagoon</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2017-2"><Decode><TranslatedText>Nikolski</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2018-0"><Decode><TranslatedText>Pauloff Harbor</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2019-8"><Decode><TranslatedText>Qagan Toyagungin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2020-6"><Decode><TranslatedText>Qawalangin</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2021-4"><Decode><TranslatedText>St. George</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2022-2"><Decode><TranslatedText>St. Paul</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2023-0"><Decode><TranslatedText>Sand Point</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2024-8"><Decode><TranslatedText>South Naknek</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2025-5"><Decode><TranslatedText>Unalaska</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2026-3"><Decode><TranslatedText>Unga</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2029-7"><Decode><TranslatedText>Asian Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2030-5"><Decode><TranslatedText>Bangladeshi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2031-3"><Decode><TranslatedText>Bhutanese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2032-1"><Decode><TranslatedText>Burmese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2033-9"><Decode><TranslatedText>Cambodian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2034-7"><Decode><TranslatedText>Chinese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2035-4"><Decode><TranslatedText>Taiwanese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2036-2"><Decode><TranslatedText>Filipino</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2037-0"><Decode><TranslatedText>Hmong</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2038-8"><Decode><TranslatedText>Indonesian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2039-6"><Decode><TranslatedText>Japanese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2040-4"><Decode><TranslatedText>Korean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2041-2"><Decode><TranslatedText>Laotian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2042-0"><Decode><TranslatedText>Malaysian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2043-8"><Decode><TranslatedText>Okinawan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2044-6"><Decode><TranslatedText>Pakistani</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2045-3"><Decode><TranslatedText>Sri Lankan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2046-1"><Decode><TranslatedText>Thai</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2047-9"><Decode><TranslatedText>Vietnamese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2048-7"><Decode><TranslatedText>Iwo Jiman</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2049-5"><Decode><TranslatedText>Maldivian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2050-3"><Decode><TranslatedText>Nepalese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2051-1"><Decode><TranslatedText>Singaporean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2052-9"><Decode><TranslatedText>Madagascar</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2056-0"><Decode><TranslatedText>Black</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2058-6"><Decode><TranslatedText>African American</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2060-2"><Decode><TranslatedText>African</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2067-7"><Decode><TranslatedText>Bahamian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2068-5"><Decode><TranslatedText>Barbadian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2069-3"><Decode><TranslatedText>Dominican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2070-1"><Decode><TranslatedText>Dominica Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2071-9"><Decode><TranslatedText>Haitian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2072-7"><Decode><TranslatedText>Jamaican</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2073-5"><Decode><TranslatedText>Tobagoan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2074-3"><Decode><TranslatedText>Trinidadian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2075-0"><Decode><TranslatedText>West Indian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2061-0"><Decode><TranslatedText>Botswanan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2062-8"><Decode><TranslatedText>Ethiopian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2063-6"><Decode><TranslatedText>Liberian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2064-4"><Decode><TranslatedText>Namibian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2065-1"><Decode><TranslatedText>Nigerian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2066-9"><Decode><TranslatedText>Zairean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2078-4"><Decode><TranslatedText>Polynesian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2085-9"><Decode><TranslatedText>Micronesian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2100-6"><Decode><TranslatedText>Melanesian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2500-7"><Decode><TranslatedText>Other Pacific Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2079-2"><Decode><TranslatedText>Native Hawaiian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2080-0"><Decode><TranslatedText>Samoan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2081-8"><Decode><TranslatedText>Tahitian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2082-6"><Decode><TranslatedText>Tongan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2083-4"><Decode><TranslatedText>Tokelauan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2086-7"><Decode><TranslatedText>Guamanian or Chamorro</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2087-5"><Decode><TranslatedText>Guamanian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2088-3"><Decode><TranslatedText>Chamorro</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2089-1"><Decode><TranslatedText>Mariana Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2090-9"><Decode><TranslatedText>Marshallese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2091-7"><Decode><TranslatedText>Palauan</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2092-5"><Decode><TranslatedText>Carolinian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2093-3"><Decode><TranslatedText>Kosraean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2094-1"><Decode><TranslatedText>Pohnpeian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2095-8"><Decode><TranslatedText>Saipanese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2096-6"><Decode><TranslatedText>Kiribati</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2097-4"><Decode><TranslatedText>Chuukese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2098-2"><Decode><TranslatedText>Yapese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2101-4"><Decode><TranslatedText>Fijian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2102-2"><Decode><TranslatedText>Papua New Guinean</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2103-0"><Decode><TranslatedText>Solomon Islander</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2104-8"><Decode><TranslatedText>New Hebrides</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2108-9"><Decode><TranslatedText>European</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2118-8"><Decode><TranslatedText>Middle Eastern or North African</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2129-5"><Decode><TranslatedText>Arab</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2109-7"><Decode><TranslatedText>Armenian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2110-5"><Decode><TranslatedText>English</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2111-3"><Decode><TranslatedText>French</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2112-1"><Decode><TranslatedText>German</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2113-9"><Decode><TranslatedText>Irish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2114-7"><Decode><TranslatedText>Italian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2115-4"><Decode><TranslatedText>Polish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2116-2"><Decode><TranslatedText>Scottish</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2119-6"><Decode><TranslatedText>Assyrian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2120-4"><Decode><TranslatedText>Egyptian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2121-2"><Decode><TranslatedText>Iranian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2122-0"><Decode><TranslatedText>Iraqi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2123-8"><Decode><TranslatedText>Lebanese</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2124-6"><Decode><TranslatedText>Palestinian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2125-3"><Decode><TranslatedText>Syrian</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2126-1"><Decode><TranslatedText>Afghanistani</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2127-9"><Decode><TranslatedText>Israeili</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2131-1"><Decode><TranslatedText>Other Race</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="UNK"><Decode><TranslatedText>Unknown</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="demography_complete.choices" Name="demography_complete" DataType="text" redcap:Variable="demography_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="labs_vital_signs_complete.choices" Name="labs_vital_signs_complete" DataType="text" redcap:Variable="labs_vital_signs_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+</ODM>

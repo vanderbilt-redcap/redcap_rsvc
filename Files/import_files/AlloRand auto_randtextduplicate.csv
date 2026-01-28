@@ -1,0 +1,21 @@
+redcap_randomization_number,redcap_randomization_group,gender
+,A,0
+,B,0,,,"NOTES:"
+,C,0,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file."
+,A,1,,," - Remember that this file is ONLY a template and should NOT be used as-is as your allocation table."
+,B,1,,," - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored)."
+,C,1,,," - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups."
+,A,2
+,B,2,,,"Randomization Field: ""auto_rand"" (Automatic Randomization)"
+,C,2,,,"Your randomization field is a single-select field (for open allocation):"
+,,,,," - Values in the redcap_randomization_number column are optional"
+,,,,," - Values in the redcap_randomization_group column are REQUIRED and must match the values for your randomization field"
+,,,,,"Values/labels for ""randomization_group"" (""auto_rand""):"
+,,,,,"A","Group 1"
+,,,,,"B","Group 2"
+,,,,,"C","Group 3"
+,,,,,""
+,,,,,"Values/labels for ""gender"" (Do you describe yourself as...other way?):"
+,,,,,"0","Man"
+,,,,,"1","Woman"
+,,,,,"2","Other"

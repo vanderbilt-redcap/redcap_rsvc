@@ -1,0 +1,91 @@
+redcap_randomization_number,redcap_randomization_group,redcap_data_access_group,gender
+,1,11060,0
+,2,11060,0,,,"NOTES:"
+,3,11060,0,,," - Do NOT modify the first row, although you may modify, add, or delete any other row in this file."
+,1,11060,0,,," - Remember that this file is ONLY a template and should NOT be used as-is as your allocation table."
+,2,11060,0,,," - You do not have to delete this 'notes' column when uploading your allocation table (it will be ignored)."
+,3,11060,0,,," - Below is a list of all raw coded values and their corresponding option labels for each strata field and/or Data Access Groups."
+,1,11060,0
+,2,11060,0,,,"Randomization Field: ""allo_rand"" (Allocation Randomization Group)"
+,3,11060,0,,,"Your randomization field is a single-select field (for open allocation):"
+,1,11060,0,,," - Values in the redcap_randomization_number column are optional"
+,2,11060,0,,," - Values in the redcap_randomization_group column are REQUIRED and must match the values for your randomization field"
+,3,11060,0,,,"Values/labels for ""randomization_group"" (""allo_rand""):"
+,1,11060,0,,,"1","Drug A"
+,2,11060,0,,,"2","Drug B"
+,3,11060,0,,,"3","Placebo"
+,1,11060,1
+,2,11060,1,,,"Values/labels for ""gender"" (Do you describe yourself as...other way?):"
+,3,11060,1,,,"0","Man"
+,1,11060,1,,,"1","Woman"
+,2,11060,1,,,"2","Other"
+,3,11060,1
+,1,11060,1,,,"Values/labels for ""redcap_data_access_group"" (Data Access Group):"
+,2,11060,1,,,"11060","DAG 1"
+,3,11060,1,,,"11061","DAG 2"
+,1,11060,1
+,2,11060,1
+,3,11060,1
+,1,11060,1
+,2,11060,1
+,3,11060,1
+,1,11060,2
+,2,11060,2
+,3,11060,2
+,1,11060,2
+,2,11060,2
+,3,11060,2
+,1,11060,2
+,2,11060,2
+,3,11060,2
+,1,11060,2
+,2,11060,2
+,3,11060,2
+,1,11060,2
+,2,11060,2
+,3,11060,2
+,1,11061,0
+,2,11061,0
+,3,11061,0
+,1,11061,0
+,2,11061,0
+,3,11061,0
+,1,11061,0
+,2,11061,0
+,3,11061,0
+,1,11061,0
+,2,11061,0
+,3,11061,0
+,1,11061,0
+,2,11061,0
+,3,11061,0
+,1,11061,1
+,2,11061,1
+,3,11061,1
+,1,11061,1
+,2,11061,1
+,3,11061,1
+,1,11061,1
+,2,11061,1
+,3,11061,1
+,1,11061,1
+,2,11061,1
+,3,11061,1
+,1,11061,1
+,2,11061,1
+,3,11061,1
+,1,11061,2
+,2,11061,2
+,3,11061,2
+,1,11061,2
+,2,11061,2
+,3,11061,2
+,1,11061,2
+,2,11061,2
+,3,11061,2
+,1,11061,2
+,2,11061,2
+,3,11061,2
+,1,11061,2
+,2,11061,2
+,3,11061,2

@@ -1,255 +1,265 @@
 Feature: User Interface: The system shall support the e-Consent Framework to limit user view access (i.e., DAG).
-
    As a REDCap end user
    I want to see that eConsent is functioning as expected
 
-   Scenario: C.3.24.1700.100 Limit user view access by DAG
+  Scenario: C.3.24.1700.100 Limit user view access by DAG
       #SETUP
-      Given I login to REDCap with the user "Test_Admin"
-      And I create a new project named "C.3.24.1700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
+    Given I login to REDCap with the user "Test_Admin"
+    And I create a new project named "C.3.24.1700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
-      #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
-      And I click on the button labeled "Move project to production"
-      And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-      And I click on the button labeled "YES, Move to Production Status" in the dialog box
-      Then I should see "Project Status: Production"
+  Scenario: #SETUP_PRODUCTION
+    And I click on the button labeled "Move project to production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
-   Scenario: Cancel an add consent form version
+  Scenario: Cancel an add consent form version
       #SETUP_eConsent
-      When I click on the button labeled "Designer"
-      And I click on the button labeled "e-Consent and PDF Snapshots"
-      Then I should see "Participant Consent"
+    When I click on the link labeled "Designer"
+    And I click on the button labeled "e-Consent"
+    Then I should see "Participant Consent"
 
-      #Add consent with no DAG
-      When I click on the button labeled "+Add consent from" for the survey labeled "Participant Consent"
-      And I enter "No DAG" in the field labeled "Consent form version:" in the dialog box
-      And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-      And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
-      And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
-      And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
-      And I enter "This is my NO DAG consent form" in the field labeled "Consent Form (Rich Text)" in the dialog box
-      And I click on the button labeled "Add new consent form" in the dialog box
-      Then I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+  Scenario: #Add consent with no DAG
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+    And I enter "NO DAG" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I enter "This is my NO DAG consent form" into the textarea field labeled "Consent Form (Rich Text)"
+    And I click on the button labeled "Add new consent form"
+    And I wait for 1 second
+    Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
-   #VERIFY: view all versions for Test 1
-      When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
-      Then I should see a table header and rows including the following values in the version table:
-         | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
-         | check icon | NO DAG  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 0                           |                   |              | " This is my NO DAG consent form "      | "Set as inactive" button     |
+  Scenario: #VERIFY: view all versions for NO DAG
+    When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
+    Then I should see a table header and rows containing the following values in a table:
+      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      |            | NO DAG  |                    | Test_Admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
+    When I click on the button labeled "Close"
+    Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
-      When I click on the button labeled "Close" in the dialog box
-      Then I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+  Scenario: #Add consent with DAG TestGroup1
+      #Add consent with DAG TestGroup1
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+    And I enter "DAG 1" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I click on the button labeled "Consent Form (Inline PDF)"
+    And I upload a "pdf" format file located at "import_files/DAG1.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+    And I wait for 1 second
+    Then I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
+  Scenario: #Add consent with DAG TestGroup2
+      #Add consent with DAG TestGroup2
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+    And I enter "DAG 2" into the input field labeled "Consent form version:"
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
+    And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG"
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
+    And I click on the button labeled "Consent Form (Inline PDF)"
+    And I upload a "pdf" format file located at "import_files/DAG2.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+    And I wait for 1 second
+    Then I should see "vDAG 2" in the row labeled "Participant Consent"
+    And I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
-   Scenario: #Add consent with DAG TestGroup1
-   #Add consent with DAG TestGroup1
-      When I click on the button labeled "+Add consent from" for the survey labeled "Participant Consent"
-      And I enter "DAG 1" in the field labeled "Consent form version:" in the dialog box
-      And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-      And I select "TestGroup1" from the dropdown field labeled "Display for specific DAG" in the dialog box
-      And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
-      And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
-      And I click on the button labeled "Choose File" in the dialog box
-      And I select the file labeled "DAG1.pdf" in the dialog box
-      And I click on the button labeled "Upload File" in the dialog box
-      And I click on the button labeled "Add new consent form" in the dialog box
-      Then I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-      And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+  Scenario: #VERIFY: view all versions
+      #VERIFY: view all versions
+    When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
+    Then I should see a table header and rows containing the following values in a table:
+      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      |            | NO DAG  |                    | Test_Admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+      |            | DAG 1   |                    | Test_Admin (Admin User) |                           0 |                   |              | DAG1.pdf                                |                              |
+      |            | DAG 2   |                    | Test_Admin (Admin User) |                           0 |                   |              | DAG2.pdf                                |                              |
+    And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "DAG 1"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "DAG 2"
+    When I click on the button labeled "Close"
+    Then I should see "vDAG 2" in the row labeled "Participant Consent"
+    And I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
-   Scenario: #Add consent with DAG TestGroup2
-   #Add consent with DAG TestGroup2
-      When I click on the button labeled "+Add consent from" for the survey labeled "Participant Consent"
-      And I enter "DAG 2" in the field labeled "Consent form version:" in the dialog box
-      And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-      And I select "TestGroup2" from the dropdown field labeled "Display for specific DAG" in the dialog box
-      And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
-      And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
-      And I click on the button labeled "Choose File" in the dialog box
-      And I select the file labeled "DAG1.pdf" in the dialog box
-      And I click on the button labeled "Upload File" in the dialog box
-      And I click on the button labeled "Add new consent form" in the dialog box
-      Then I should see "Consent form vDAG 2" for the survey labeled "Participant Consent"
-      And I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-      And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+  Scenario: ##VERIFY_Logging
+      ##VERIFY_Logging
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+      | Username   | Action        | List of Data Changes OR Fields Exported                                      |
+      | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
+      | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
+      | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
 
-   Scenario: #VERIFY: view all versions
-   #VERIFY: view all versions
-      When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
-      Then I should see a table header and rows including the following values in the version table:
-         | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
-         | check icon | NO DAG  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 0                           |                   |              | " This is my NO DAG consent form "      | "Set as inactive" button     |
-         | check icon | DAG 1   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 0                           |                   |              | DAG1.pdf                                | "Set as inactive" button     |
-         | check icon | DAG 2   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 0                           |                   |              | DAG2.pdf                                | "Set as inactive" button     |
+  Scenario: ##ACTION: add NO DAG record
+      ##ACTION: add NO DAG record
+    When I click on the link labeled "Add / Edit Records"
+    And I click on the button labeled "Add new record for the arm selected above"
+    And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    Then I should see "Adding new Record ID 1."
+    And I should see "This is my NO DAG consent form"
 
-      When I click on the button labeled "Close" in the dialog box
-      Then I should see "Consent form vDAG 2" for the survey labeled "Participant Consent"
-      And I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-      And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+  Scenario:
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Okay"
+    And I click on the button labeled "Survey options"
+    And I click on the survey option label containing "Open survey" label
+    Then I should see "Please complete the survey"
+    And I should see "This is my NO DAG consent form"
 
-   Scenario:  ##VERIFY_Logging
-   ##VERIFY_Logging
-      When I click on the link labeled "Logging"
-      Then I should see a table header and rows including the following values in the logging table:
-         | Username   | Action        | List of Data Changes OR Fields Exported                                      |
-         | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
-         | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
-         | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
+  Scenario:
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature"
+    Then I should see a link labeled "Remove signature"
 
-   Scenario: ##ACTION: add NO DAG record
-   ##ACTION: add NO DAG record
-      When I click on the link labeled "Add/Edit Records"
-      And I click on the button labeled "Add new record for the arm selected above"
-      And I click on the bubble labeled "Participant Consent" for event "Event 1"
-      Then I should see "Adding new Record ID 1."
-      And I should see "This is my NO DAG consent form"
+  Scenario:
+    When I click on the button labeled "Next Page"
+    Then I should see "Displayed below is a read-only copy of your survey responses."
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
+    Then I should see "Thank you for taking the survey."
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
-      When I click on the button labeled "Save & Stay"
-      And I click on the button labeled "Okay" in the dialog box
-      And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-      Then I should see "Participant Consent"
-      And I should see "This is my NO DAG consent form"
+  Scenario: ##ACTION: add DAG1 record
+      ##ACTION: add DAG1 record
+    When I click on the link labeled "Add / Edit Records"
+    And I click on the button labeled "Add new record for the arm selected above"
+    And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    Then I should see "Adding new Record ID 2."
+      #Assign record to DAG
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Okay"
+    And I click on the link labeled "Record ID 2"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+    And I select "TestGroup1" on the dropdown field labeled "[No Assignment]"
+    And I click on the button labeled "Assign to Data Access Group"
 
-      When I enter "FirstName" in the field labeled "First Name"
-      And I enter "LastName" in the field labeled "Last Name"
-      And I enter "email@test.edu" in the field labeled "Email"
-      And I enter "2000-01-01" in the field labeled "DOB"
-      And I enter a signature in the field labeled "Participant signature field"
-      And I click "Save signature"
+  Scenario: ##VERIFY
+      ##VERIFY
+    Then I should see "Record ID 2 was successfully assigned to a Data Access Group!"
+    And I should see "Arm 1: Arm 1 — TestGroup1"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    Then I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT DAG 1" in the PDF content displayed within the page
+    And I should NOT see "This is my NO DAG consent form"
 
-      When I click on the button labeled "Next Page"
-      Then I should see "Displayed below is a read-only copy of your survey responses."
-      And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
+  Scenario:
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Okay"
+    And I click on the button labeled "Survey options"
+    And I click on the survey option label containing "Open survey" label
+    Then I should see "Please complete the survey"
+    And I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT DAG 1" in the PDF content displayed within the page
+    And I should NOT see "This is my NO DAG consent form"
 
-      When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-      And I click on the button labeled "Submit"
-      Then I should see "Thank you for taking the survey."
+  Scenario:
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature"
+    Then I should see a link labeled "Remove signature"
 
-      When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
+  Scenario:
+    When I click on the button labeled "Next Page"
+    Then I should see "Displayed below is a read-only copy of your survey responses."
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
+    Then I should see "Thank you for taking the survey."
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
-   Scenario: ##ACTION: add DAG1 record
-   ##ACTION: add DAG1 record
-      When I click on the link labeled "Add/Edit Records"
-      And I click on the button labeled "Add new record for the arm selected above"
-      And I click on the bubble labeled "Participant Consent" for event "Event 1"
-      Then I should see "Adding new Record ID 2."
+  Scenario: ##ACTION: add DAG2 record
+      ##ACTION: add DAG2 record
+    When I click on the link labeled "Add / Edit Records"
+    And I click on the button labeled "Add new record for the arm selected above"
+    And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    Then I should see "Adding new Record ID 3."
 
-   #Assign record to DAG
-      When I click on the button labeled "Save & Stay"
-      And I click on the button labeled "Okay" in the dialog box
-      And I click on the button labeled "Record ID 2"
-      And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown "Choose action for record"
-      And I select the dropdown option labeled "TestGroup1" from the dropdown with the placeholder text of "[No Assignement]" in the dialog box
-      And I click on the button labeled "Assign to Data Access Group" in the dialog box
+  Scenario: #Assign record to DAG
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Okay"
+    And I click on the link labeled "Record ID 3"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+    And I select "TestGroup2" on the dropdown field labeled "[No Assignment]"
+    And I click on the button labeled "Assign to Data Access Group"
 
-   Scenario: ##VERIFY
-   ##VERIFY
-      Then I should see "Record ID 2 was successfully assigned to a Data Access Group!"
-      And I should see "Arm 1: Arm 1 - TestGroup1"
+  Scenario: ##VERIFY
+    Then I should see "Record ID 3 was successfully assigned to a Data Access Group!"
+    And I should see "Arm 1: Arm 1 — TestGroup2"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    Then I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
+    And I should NOT see "This is my NO DAG consent form"
 
-      When I click on the bubble labeled "Participant Consent" for event "Event 1"
-      Then I should see "DAG1.pdf"
-      And I should NOT see "This is my NO DAG consent form"
+  Scenario:
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Okay"
+    And I click on the button labeled "Survey options"
+    And I click on the survey option label containing "Open survey" label
+    Then I should see "Please complete the survey"
+    And I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
+    And I should NOT see "This is my NO DAG consent form"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature"
+    Then I should see a link labeled "Remove signature"
 
-      When I click on the button labeled "Save & Stay"
-      And I click on the button labeled "Okay" in the dialog box
-      And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-      Then I should see "Participant Consent"
-      And I should see "DAG1.pdf"
-      And I should NOT see "This is my NO DAG consent form"
+  Scenario:
+    When I click on the button labeled "Next Page"
+    Then I should see "Displayed below is a read-only copy of your survey responses."
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
+    Then I should see "Thank you for taking the survey."
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "3"
 
-      When I enter "FirstName" in the field labeled "First Name"
-      And I enter "LastName" in the field labeled "Last Name"
-      And I enter "email@test.edu" in the field labeled "Email"
-      And I enter "2000-01-01" in the field labeled "DOB"
-      And I enter a signature in the field labeled "Participant signature field"
-      And I click "Save signature"
+  Scenario: # Verification e-Consent saved and logged correctly
+      #Verification e-Consent saved and logged correctly
+      ##VERIFY_FiRe
+    When I click on the link labeled "File Repository"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see a table header and rows containing the following values in a table:
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
+      | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 2   | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 1   | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | NO DAG  | e-Consent Participant |
 
-      When I click on the button labeled "Next Page"
-      Then I should see "Displayed below is a read-only copy of your survey responses."
-      And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
-
-      When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-      And I click on the button labeled "Submit"
-      Then I should see "Thank you for taking the survey."
-
-      When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
-
-
-   Scenario:  ##ACTION: add DAG2 record
-   ##ACTION: add DAG2 record
-      When I click on the link labeled "Add/Edit Records"
-      And I click on the button labeled "Add new record for the arm selected above"
-      And I click on the bubble labeled "Participant Consent" for event "Event 1"
-      Then I should see "Adding new Record ID 3."
-
-   #Assign record to DAG
-      When I click on the button labeled "Save & Stay"
-      And I click on the button labeled "Okay" in the dialog box
-      And I click on the button labeled "Record ID 3"
-      And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown "Choose action for record"
-      And I select the dropdown option labeled "TestGroup2" from the dropdown with the placeholder text of "[No Assignement]" in the dialog box
-      And I click on the button labeled "Assign to Data Access Group" in the dialog box
-
-   ##VERIFY
-      Then I should see "Record ID 3 was successfully assigned to a Data Access Group!"
-      And I should see "Arm 1: Arm 1 - TestGroup1"
-
-      When I click on the bubble labeled "Participant Consent" for event "Event 1"
-      Then I should see "DAG2.pdf"
-      And I should NOT see "This is my NO DAG consent form"
-
-      When I click on the button labeled "Save & Stay"
-      And I click on the button labeled "Okay" in the dialog box
-      And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
-      Then I should see "Participant Consent"
-      And I should see "DAG2.pdf"
-      And I should NOT see "This is my NO DAG consent form"
-
-      When I enter "FirstName" in the field labeled "First Name"
-      And I enter "LastName" in the field labeled "Last Name"
-      And I enter "email@test.edu" in the field labeled "Email"
-      And I enter "2000-01-01" in the field labeled "DOB"
-      And I enter a signature in the field labeled "Participant signature field"
-      And I click "Save signature"
-
-      When I click on the button labeled "Next Page"
-      Then I should see "Displayed below is a read-only copy of your survey responses."
-      And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
-
-      When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-      And I click on the button labeled "Submit"
-      Then I should see "Thank you for taking the survey."
-
-      When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
-
-   Scenario:  # Verification e-Consent saved and logged correctly
-   #Verification e-Consent saved and logged correctly
-   ##VERIFY_FiRe
-      When I click on the link labeled "File Repository"
-      And I click on the link labeled "PDF Snapshot Archive"
-      Then I should see a table header and rows including the following values in the PDF Snapshot Archive table:
-         | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type   |
-         | .pdf | YES                              | 3      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | DAG 2  | e-Consent Participant |
-         | .pdf | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | DAG 1  | e-Consent Participant |
-         | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | No DAG | e-Consent Participant |
-
-   ##VERIFY_Logging
-      When I click on the link labeled "Logging"
-      Then I should see a table header and rows including the following values in the logging table:
-         | Username   | Action        | List of Data Changes OR Fields Exported                                      |
-         | [survey respondent] | e-Consent Certification
-1 | e-Consent Certification record = "3" identifier = "email@test.edu" consent_form_version = "DAG 2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
-         | [survey respondent] | e-Consent Certification
-1 | e-Consent Certification record = "2" identifier = "email@test.edu" consent_form_version = "DAG 1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
-         | [survey respondent] | e-Consent Certification
-1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "No DAG" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
+  Scenario: ##VERIFY_Logging
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+      | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                                                   |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "3" identifier = "email@test.edu" consent_form_version = "DAG 2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "2" identifier = "email@test.edu" consent_form_version = "DAG 1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "NO DAG" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
 #END
