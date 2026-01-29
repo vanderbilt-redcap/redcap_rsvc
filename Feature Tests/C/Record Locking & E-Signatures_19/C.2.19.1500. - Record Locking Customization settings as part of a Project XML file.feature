@@ -25,8 +25,12 @@ Feature: C.2.19.1500. User Interface: The system shall support exporting and imp
     Scenario: #Create a project using downloaded XML
         Given I click on the link labeled "REDCap"
         And I click on the link labeled "New Project"
-        And I create a new project named "C.2.19.1500.2" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C2191500_yyyy-mm-dd_hhmm.REDCap.xml", and clicking the "Create Project" button
-        Then I should see 'Project "C.2.19.1500.2" was successfully created.'
+        And I enter "C.2.19.1500.2" into the input field labeled "Project title"
+        And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
+        And I click on the radio labeled "Upload a REDCap project XML file"
+        And I select the last file downloaded for the file upload field labeled "Select XML file"
+        And I click on the button labeled "Create Project"
+        Then I should see "Your new REDCap project has been created and is ready to be accessed."
         #VERIFY settings imported correctly
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I check the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Text Validation"
