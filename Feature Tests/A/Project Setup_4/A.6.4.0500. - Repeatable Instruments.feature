@@ -74,8 +74,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
 
             And I enter "MyName" into the data entry form field labeled "Name"
-            Given I click on the icon labeled "More save options"
-            And I click on the link labeled "Save & Add New Instance"
+            Given I select the submit option labeled "Save & Add New Instance" on the Data Collection Instrument
             And I enter "MyOtherName" into the data entry form field labeled "Name"
             Given I click on the icon labeled "More save options"
             And I click on the link labeled "Save & Exit Form"
