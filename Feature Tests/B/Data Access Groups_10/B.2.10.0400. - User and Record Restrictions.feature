@@ -160,8 +160,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Add record while in a DAG
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey
@@ -246,8 +245,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Add record while in a DAG
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey

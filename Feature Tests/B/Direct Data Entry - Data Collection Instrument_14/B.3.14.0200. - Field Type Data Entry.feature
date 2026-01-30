@@ -52,8 +52,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Given I select the radio option "True" for the field labeled "True/False"
     And I select the radio option "No" for the field labeled "Yes/No"
     And I move the slider field labeled "Slider" to the position of 65
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 7 successfully added."
 
     ###VERIFY_LOG

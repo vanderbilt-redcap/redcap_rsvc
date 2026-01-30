@@ -64,8 +64,7 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
         And I should NOT see "Sodium (Na)"
         And I click on the button labeled "Save"
         Then I should see "Saving adjudicated data..."
-        Given I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        Given I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Study ID 1 successfully edited."
 
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
@@ -77,8 +76,7 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
         And I should see "143.57605784691"
         And I click on the button labeled "Save"
         And I wait for 1 second
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Study ID 1 successfully edited."
    
         When I click on the link labeled "Logging"

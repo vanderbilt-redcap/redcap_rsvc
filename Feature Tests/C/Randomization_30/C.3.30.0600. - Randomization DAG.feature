@@ -71,8 +71,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Add new record"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1-1 successfully added." 
     #M This number may be diferent with manual testing.
 
@@ -82,8 +81,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for the field"
     And I click on the button labeled "Close"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1-1 successfully edited."
     #M This number may be diferent with manual testing.
 
@@ -145,8 +143,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Close"
     And I should see "Already randomized"
     And I should see the radio labeled "Randomization group 2" with option "Drug B" selected
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 6 successfully edited."
 
     #VERIFY Logging
@@ -170,8 +167,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Close"
     And I should see "Already randomized"
     And I should see the radio labeled "Randomization group 2" with option "Drug A" selected
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 7 successfully edited."
 
     #VERIFY Logging

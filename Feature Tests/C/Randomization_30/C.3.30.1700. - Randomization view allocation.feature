@@ -33,8 +33,7 @@ Feature: Project Interface Administrator Access: The system shall support admini
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."
 
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
@@ -43,8 +42,7 @@ Feature: Project Interface Administrator Access: The system shall support admini
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
     And I click on the button labeled "Close"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 1 successfully edited."
 
     When  I click on the link labeled "Randomization"
