@@ -47,7 +47,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         #FUNCTIONAL_REQUIREMENT:
         ##ACTION: SAVE & GO TO NEXT FORM       
         When I enter "SAVE & GO TO NEXT FORM" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Go To Next Form" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Go To Next Form"
         
         ##VERIFY
         And I should see "Data Types"
@@ -98,7 +99,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         #FUNCTIONAL_REQUIREMENT:
         ##ACTION Save & EXIT RECORD
         When I enter "SAVE & EXIT RECORD" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Exit Record" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Exit Record"
         
         ##VERIFY
         Then I should see "Record ID 11 successfully edited"
@@ -112,7 +114,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         
         ##VERIFY
         Then I should see "Adding new Record ID 12"
-        And I select the submit option labeled "Save & Exit Record" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Exit Record"
         
         ##VERIFY
         Then I should see "Record ID 12 successfully edited"
@@ -120,7 +123,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         Given I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "11" and click on the bubble
         When I clear field and enter "SAVE & GO TO NEXT RECORD" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Go To Next Record" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Go To Next Record"
         
         ##VERIFY
         Then I should see "Record ID 11 successfully edited."
