@@ -133,7 +133,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see "now editing"
 
     When I clear field and enter "Edited Name" into the data entry form field labeled "Name"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the icon labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     Then I should see "successfully edited"
 
     Given I click on the link labeled "User Rights"

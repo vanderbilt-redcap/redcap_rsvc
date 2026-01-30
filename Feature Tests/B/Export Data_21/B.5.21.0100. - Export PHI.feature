@@ -138,7 +138,8 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I click on the button labeled "Add new record"
     Then I should see "Adding new Record ID 5"
 
-    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    When I click on the icon labeled "More save options"
+    And I click on the link labeled "Save & Stay"
 
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project

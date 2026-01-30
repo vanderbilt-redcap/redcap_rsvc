@@ -76,7 +76,8 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     When I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Text Validation" instrument on event "Event 2" for record ID "2" and click on the bubble
     #VERIFY
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the icon labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     Then I should see "Record ID 2 successfully edited"
 
     Given I click on the button labeled "Survey options"

@@ -32,7 +32,8 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         Then I should see "Adding new Record ID 7"
 
         When I select the radio option "Choice99" for the field labeled "radio"
-        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Stay"
         Then I should see "Record ID 7 successfully edited"
 
         When I click on the link labeled "reset" in the row labeled "radio"
