@@ -64,7 +64,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         ##ACTION  SAVE & MARK AS COMPLETE
         When I enter "SAVE & MARK AS COMPLETE" into the data entry form field labeled "Name"
         And I select "Complete" on the dropdown field labeled "Complete?"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Exit Form"
         
         ##VERIFY
         Then I should see "Record ID 9 successfully added."
@@ -79,7 +80,8 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         #FUNCTIONAL_REQUIREMENT:
         ##ACTION  SAVE & EXIT FORM
         When I enter "SAVE & EXIT FORM" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Exit Form"
 
         ##VERIFY
         Then I should see "Record ID 10 successfully added."

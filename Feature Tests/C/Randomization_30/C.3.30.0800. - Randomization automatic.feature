@@ -230,7 +230,8 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     When I click on the link labeled "Demographics"
     And I wait for 2 seconds
     And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the icon labeled "More save options"
+    And I click on the link labeled "Save & Exit Form"
     And I should see "The grid below displays the form-by-form progress"
     And I click the bubble for the row labeled "Survey" on the column labeled "Status"
     Then I should see "Not yet randomized" in the row labeled "Go to"
@@ -251,7 +252,8 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I click on the button labeled "Randomize"
     And I click on the button labeled "Close"
     And I should see the radio labeled "Go to" with option "Survey C" selected
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the icon labeled "More save options"
+    And I click on the link labeled "Save & Exit Form"
 
     #VERIFY - Logging
     When I click on the link labeled "Logging"
