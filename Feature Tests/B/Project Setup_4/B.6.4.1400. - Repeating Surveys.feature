@@ -76,8 +76,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     ##ACTION - Create repeatable survey in record
     When I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Survey" instrument on event "Event Three" for record ID "4" and click on the bubble
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     Then I should see "Record ID 4 successfully edited"
 
     Given I click on the button labeled "Survey options"

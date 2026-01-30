@@ -59,16 +59,14 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the button labeled "Add new record for the arm selected above"
     And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 5"
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     
     And I click on the link labeled "Upload file" in the row labeled "File Upload"
     And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
     And I enter "Testing123" into the input field labeled "Password:"
     And I click on the button labeled "Confirm"
     Then I should see "consent.pdf" in the row labeled "File Upload"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I enter "lock form" into the textarea field labeled "Reason for changes"
     And I click on the button labeled "Save Changes"
 #VERIFY LOGGING 
@@ -87,15 +85,13 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the button labeled "Add new record for the arm selected above"
     And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 6"
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the link labeled "Upload file" in the row labeled "File Upload"
     And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
     And I enter "Testing123" into the input field labeled "Password:"
     And I click on the button labeled "Confirm"
     Then I should see "consent.pdf" in the row labeled "File Upload"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I enter "lock form" into the textarea field labeled "Reason for changes"
     And I click on the button labeled "Save Changes"
 #VERIFY LOGGING 
@@ -125,8 +121,7 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the button labeled "Add new record for the arm selected above"
     And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     Then I should see "Adding new Record ID 7"
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the link labeled "Upload file" in the row labeled "File Upload"
     And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Select a file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
     And I enter "something invalid" into the input field labeled "Password"

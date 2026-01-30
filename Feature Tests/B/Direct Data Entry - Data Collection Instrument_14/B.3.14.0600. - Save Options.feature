@@ -32,8 +32,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         Then I should see "Adding new Record ID 7"
 
         When I enter "SAVE & STAY" into the data entry form field labeled "Name"
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Stay"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         ##VERIFY
         Then I should see "Record ID 7 successfully edited."
         

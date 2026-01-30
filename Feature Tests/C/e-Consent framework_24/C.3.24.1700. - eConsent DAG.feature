@@ -103,8 +103,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should see "This is my NO DAG consent form"
 
   Scenario:
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -140,8 +139,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
       #Assign record to DAG
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay"
     And I click on the link labeled "Record ID 2"
     And I click on the button labeled "Choose action for record"
@@ -160,8 +158,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should NOT see "This is my NO DAG consent form"
 
   Scenario:
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -200,8 +197,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     Then I should see "Adding new Record ID 3."
 
   Scenario: #Assign record to DAG
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay"
     And I click on the link labeled "Record ID 3"
     And I click on the button labeled "Choose action for record"
@@ -219,8 +215,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should NOT see "This is my NO DAG consent form"
 
   Scenario:
-    When I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label

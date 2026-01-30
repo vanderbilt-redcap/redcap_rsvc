@@ -133,8 +133,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
 
     And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 
     #VERIFY Trigger logic, for all users based on form
     Then I should see "Already randomized"
@@ -150,8 +149,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I should see a radio labeled "Survey C" in the row labeled "Not yet randomized" that is disabled
     And I should see a radio labeled "Survey D" in the row labeled "Not yet randomized" that is disabled
     And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
-    And I click on the icon labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Log out+ Open survey" label
     And I click on the button labeled "Submit"

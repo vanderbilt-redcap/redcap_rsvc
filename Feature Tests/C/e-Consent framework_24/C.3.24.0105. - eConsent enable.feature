@@ -44,8 +44,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1"
 
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Stay"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay"
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
@@ -93,8 +92,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         Then I should see "Adding new Record ID 2"
         And I should see "Consent file"
 
-        And I click on the icon labeled "More save options"
-        And I click on the link labeled "Save & Stay"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay"
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
