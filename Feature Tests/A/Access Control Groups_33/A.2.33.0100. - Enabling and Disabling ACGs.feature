@@ -24,4 +24,6 @@ Feature: A.2.33.0100.: The system shall allow enabling and disabling Access Cont
 
         When I click on the button labeled "Disable"
         Then I should see "Enable Access Control Groups"
+
+        And whatever
 #End
