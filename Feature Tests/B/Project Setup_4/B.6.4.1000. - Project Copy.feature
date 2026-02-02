@@ -36,11 +36,11 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.6.4.1000.100"
     And I click on the link labeled "Other Functionality"
-    Then I should see a button labeled "Copy the Project"
+    Then I should see a button labeled "Copy the project"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in development mode
-    When I click on the button labeled "Copy the Project"
+    When I click on the button labeled "Copy the project"
     And I enter "B.6.4.1000.100.DEV" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
@@ -86,9 +86,9 @@ Feature: User Interface: General: The system shall support the ability to copy t
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in production mode
     When I click on the link labeled "Other Functionality"
-    Then I should see a button labeled "Copy the Project"
+    Then I should see a button labeled "Copy the project"
 
-    When I click on the button labeled "Copy the Project"
+    When I click on the button labeled "Copy the project"
     And I enter "B.6.4.1000.100.PROD" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
@@ -133,7 +133,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Copy original in analysis mode
-    Given I click on the button labeled "Copy the Project"
+    Given I click on the button labeled "Copy the project"
     And I enter "B.6.4.1000.100.ANALYSIS" into the input field labeled "Project title:"
     And I click on the link labeled "Select All"
     And I click on the button labeled "Copy project"
