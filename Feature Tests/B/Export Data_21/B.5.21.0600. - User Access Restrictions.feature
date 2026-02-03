@@ -16,7 +16,6 @@ Feature: User Interface: The system shall support the ability to restrict users 
 
         #VERIFY: can export
         Given I click on the button labeled "Export Data"
-        #Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
         And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
         Then I should see a dialog containing the following text: "Data export was successful!"
