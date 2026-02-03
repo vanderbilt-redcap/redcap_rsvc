@@ -63,6 +63,7 @@ Feature: C.3.31.2800. User Interface: The system shall support importing and exp
         #Importing
         And I upload a "csv" format file located at "import_files/CDIS_Setting_Import.csv", by clicking the button near "Import" to browse for the file, and clicking the button labeled "Open" to upload the file
         Then I should see "Total imported mappings: 6"
+        And I click on "demography"
         And I should see "Problem list"
 
      #VERIFY_LOG
