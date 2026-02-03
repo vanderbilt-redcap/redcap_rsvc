@@ -30,4 +30,6 @@ Feature: A.2.33.0400.: The system shall allow creating new ACGs.---Control Cente
             |ACG Name|
             |No Rights|
             |New_ACG_1|
+
+        And whatever
 #END
