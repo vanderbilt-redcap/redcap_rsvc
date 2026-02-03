@@ -33,7 +33,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 And I click on the button labeled "Save randomization model"
                 Then I should see "Success! The randomization model has been saved!"
                 When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-                Then I should see "Already uploaded"
+                Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
                 When I click on the link labeled "Setup"
                 And I click on the button labeled "Set up randomization"
@@ -42,7 +42,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 And I click on the button labeled "Save randomization model"
                 Then I should see "Success! The randomization model has been saved!"
                 When I upload a "csv" format file located at "import_files/C3.30BlindAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-                Then I should see "Already uploaded"
+                Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
                 #SETUP -  Create a record and randomize with both Open and Blinded Randomization fields.
                 When I click on the link labeled "Add / Edit Records"

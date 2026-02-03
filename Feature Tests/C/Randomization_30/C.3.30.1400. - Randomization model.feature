@@ -24,6 +24,7 @@ Feature: C.3.30.1400 – User Interface: The system shall support single randomi
         And I click on the button labeled "Save randomization model"
         Then I should see "Success! The randomization model has been saved!"
         When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
         Then I should see "Success! The randomization allocation table was created!"
 
         #SETUP- Randomization model 2 setup
@@ -34,6 +35,7 @@ Feature: C.3.30.1400 – User Interface: The system shall support single randomi
         And I click on the button labeled "Save randomization model"
         Then I should see "Success! The randomization model has been saved!"
         When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_1basic.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
         Then I should see "Success! The randomization allocation table was created!"
 
     Scenario:#C.3.30.1400.0100. A record can be randomized across distinct models (e.g., Model A, Model B).

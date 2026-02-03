@@ -21,6 +21,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on the button labeled "Set up randomization"
         And I click on the icon in the column labeled "Setup" and the row labeled "auto_rand"
         And I upload a "csv" format file located at "import_files/AlloRand malformed.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
         #Verify: The system rejects allocation tables missing required structural elements.
         Then I should see "ERROR: The following errors occurred. Please address them and try again."
@@ -41,7 +42,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on the button labeled "Set up randomization"
         And I click on the icon in the column labeled "Setup" and the row labeled "1"
         And I upload a "csv" format file located at "import_files/AlloRand rand_groupshuffle.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        Then I should see "Success"
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
         ##Verify records randomized from same gender (stratification group) are assigned to the expected allocation - the first man should be in Placebo and the second man should be Drug A
         When I click on the link labeled "Add / Edit Records"
@@ -82,7 +83,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on the button labeled "Set up randomization"
         And I click on the icon in the column labeled "Setup" and the row labeled "auto_rand"
         And I upload a "csv" format file located at "import_files/AlloRand auto_randtextduplicate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        Then I should see "Success"
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
         #Verify records randomized from same gender (stratification group) are assigned to the expected allocation (next sequential allocation for that strat group) - the first man should be in Group 1 (A) and the second man should also be in Group 2 (B)
         When I click on the link labeled "Add / Edit Records"

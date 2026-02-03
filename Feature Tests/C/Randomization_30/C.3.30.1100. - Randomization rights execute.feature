@@ -33,7 +33,7 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     Then I should see "Success! The randomization model has been saved!"
     #Adding valid allocation table
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see "Already uploaded"
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
   Scenario: #C.3.30.1100.0100. User without randomize rights cannot randomize record.
     Given I logout

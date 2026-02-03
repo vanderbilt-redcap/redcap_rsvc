@@ -26,7 +26,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
 
     #Adding valid allocation table
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see "Already uploaded"
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
     #Adding record with randomization
     And I click on the link labeled "Add / Edit Records"
