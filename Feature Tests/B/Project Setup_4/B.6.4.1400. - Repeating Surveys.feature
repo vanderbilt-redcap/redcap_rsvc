@@ -59,7 +59,8 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     And I check the checkbox labeled "Survey" in the row labeled "Event Three (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
     Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
-    And I click on the button labeled "Close"
+    # Wait for the page to reload automatically.  We used to click the close button, but that caused intermittent failures due to page reload timing.
+    Then I should NOT see "Your settings for repeating instruments and/or events have been successfully saved."
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
     #Then I should see "Successfully saved"
