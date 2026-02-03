@@ -83,11 +83,10 @@ Scenario: Setup
         And I should see "date range is applied"
         And I click on the button labeled "Fetch data"
         And I click on "Confirm"
-        And I wait for 10 seconds
-        Then I should see "Demographics"
-        And I should see "16"
-        And I should see "Vital Signs"
-        And I should see "6"
+        Then I should see a table header and rows containing the following values in a table:
+        | Category     | New | Updated | Total |
+        | Demographics | 0   | 16      | 16    |
+        | Vital Signs  | 6   | 0       | 0     |
         And I click on "Close"
 
     #VERIFY_LOG
