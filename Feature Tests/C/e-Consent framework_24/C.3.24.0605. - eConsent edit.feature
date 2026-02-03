@@ -150,6 +150,8 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Edit response"
         Then I should see "(now editing)"
+        # If we don't wait, there is an odd intermittent where the focus jumps down to the lower part of the page interrupting typing into the following field
+        And I wait for 2 seconds
 
         When I clear field and enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
