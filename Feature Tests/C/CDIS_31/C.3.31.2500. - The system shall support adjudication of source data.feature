@@ -94,6 +94,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         Then I should see "Study ID 2 successfully edited."
         When I click on the button labeled "View"
         Then I should see "Adjudicate data from External System"
+        Then I should see "New items: 3"
         When I click on the button labeled "Save"
         Then I should see "Data saved successfully!"
         When I wait for background processes to finish
