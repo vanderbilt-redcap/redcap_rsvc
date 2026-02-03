@@ -95,7 +95,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         When I click on the button labeled "View"
         Then I should see "Adjudicate data from External System"
         When I click on the button labeled "Save"
-        Then I should see "Saving adjudicated data..."
+        Then I should see "Data saved successfully!"
         When I wait for background processes to finish
         Then I should NOT see "new items from source system"
 
