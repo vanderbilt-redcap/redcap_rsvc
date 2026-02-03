@@ -31,6 +31,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I select "rand_group (Randomization group 1)" on the first dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     When I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    And I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
     When I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     And I should see the dropdown field labeled "Trigger option" with the option "Manual only, using Randomize button (default)" selected
 
