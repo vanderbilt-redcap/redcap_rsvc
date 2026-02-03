@@ -30,4 +30,7 @@ Feature: A.2.33.0400.: The system shall allow creating new ACGs.---Control Cente
             |ACG Name|
             |No Rights|
             |New_ACG_1|
+
+        When I click on the button labeled "Some Button"
+        Then I should see "some text on the screen"
 #END
