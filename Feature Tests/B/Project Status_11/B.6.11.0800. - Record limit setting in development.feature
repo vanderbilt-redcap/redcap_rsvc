@@ -42,8 +42,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "You are currently using 4 of 5 test records allowed while in Development status"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added"
 
         ##VERIFY_LOG:
@@ -134,8 +133,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "You are currently using 1 of 2 test records allowed while in Development status"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 2 successfully added"
 
         ##VERIFY_LOG:

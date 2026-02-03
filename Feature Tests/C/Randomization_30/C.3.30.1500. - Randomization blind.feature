@@ -49,8 +49,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 And I select "2" on the dropdown field labeled "Choose an existing Record ID"
                 And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
                 And I select the radio option "Yes" for the field labeled "Stratification 1"
-                And I click on the button labeled "More save options"
-                And I click on the link labeled "Save & Exit Form"
+                And I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
                 When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
                 And I click on the first button labeled "Randomize"
@@ -65,8 +64,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 Then I should see "was randomized for"
                 And I click on the button labeled "Close"
 
-                When I click on the button labeled "More save options"
-                And I click on the link labeled "Save & Exit Form"
+                When I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
 
         Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights will see only a concealed allocation code in the record and reports, with no visible group assignment.

@@ -33,8 +33,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I select "2" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize"
@@ -42,8 +41,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
     And I click on the button labeled "Close"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
 
     #Adding record with randomization
@@ -51,8 +49,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I select "3" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "No" for the field labeled "Stratification 1"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 3 successfully edited."
 
   Scenario:#C.3.30.1800.0100. Admin can edit target field with reason.
@@ -260,8 +257,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     Then I should see "RANDOMIZATION ERROR"
     And I should see "cannot be randomized because there are no allocations available for assignment based upon the values you just submitted. If this is a problem, please speak to the person(s) in charge of randomization for this project (e.g., your project manager, data analyst, statistician) in order to resolve this."
     And I click on the button labeled "Close"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
 
   Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
@@ -303,8 +299,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
     And I click on the button labeled "Close"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Exit Form"
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
 
     Given I logout

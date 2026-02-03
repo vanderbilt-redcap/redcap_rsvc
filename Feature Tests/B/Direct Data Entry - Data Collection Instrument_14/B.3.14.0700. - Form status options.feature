@@ -39,8 +39,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Incomplete (W/ data)
         And I clear field and enter "Incomplete with data" into the data entry form field labeled "Name"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 
         #VERIFY_RECORD_HOMEPAGE: Incomplete - save and stay (W/ data)
@@ -50,8 +49,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Unverified
         And I select "Unverified" on the dropdown field labeled "Complete?"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 
         #VERIFY_RECORD_HOMEPAGE: Unverified
@@ -61,8 +59,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Complete
         And I select "Complete" on the dropdown field labeled "Complete?"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 
         #VERIFY_RECORD_HOMEPAGE: Complete

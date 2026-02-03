@@ -43,8 +43,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         And I should see "Password"
         When I enter "Testing123" into the input field labeled "Password:"
         And I click on the button labeled "Confirm" 
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1 successfully edited."
 
     Scenario: A.2.19.1000.0200. Enable Security & Authentication Configuration – PIN instead of password
@@ -75,8 +74,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         And I click on the button labeled "Obtain PIN via email"
         And I enter the code that was emailed to the current user into the input field labeled "Password or 6-digit PIN:"
         And I click on the button labeled "Confirm" 
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added"
         
 #END

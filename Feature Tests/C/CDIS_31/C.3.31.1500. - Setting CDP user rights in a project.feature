@@ -134,8 +134,7 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         Then I should see "Adjudicate data from External System"
         When I click on the button labeled "Save"
         Then I should see "Saving adjudicated data..."
-        When I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout
 

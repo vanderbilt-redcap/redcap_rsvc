@@ -124,8 +124,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I enter "3" into the data entry form field labeled "Number"
         And I enter "1.5" into the data entry form field labeled "Number Decimal"
         And I enter "1,5" into the data entry form field labeled "Number Comma"
-        And I click on the button labeled "More save options"
-And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added."
 
         ##VERIFY_LOG
@@ -167,8 +166,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 6 successfully added"
 
         ##VERIFY_LOG
@@ -197,8 +195,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 
         ##VERIFY_LOG
@@ -226,8 +223,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 8 successfully added."
 
         ##VERIFY_LOG
@@ -255,8 +251,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 9 successfully added."
 
         ##VERIFY_LOG
@@ -284,8 +279,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 10 successfully added."
 
         ##VERIFY_LOG
@@ -313,8 +307,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 11 successfully added."
 
         ##VERIFY_LOG
@@ -342,8 +335,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 12 successfully added."
 
         ##VERIFY_LOG
@@ -371,8 +363,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 13 successfully added."
 
         ##VERIFY_LOG
@@ -400,8 +391,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 14 successfully added."
 
         ##VERIFY_LOG
@@ -429,8 +419,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 15 successfully added."
 
         ##VERIFY_LOG
@@ -457,8 +446,7 @@ And I click on the link labeled "Save & Exit Form"
         And I enter "2024-08-02" into the data entry form field labeled "date YMD"
         Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 16 successfully added."
 
         ##VERIFY_LOG
@@ -486,8 +474,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 17 successfully added."
 
         ##VERIFY_LOG
@@ -515,8 +502,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 18 successfully added."
 
         ##VERIFY_LOG
@@ -544,8 +530,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 19 successfully added."
 
         ##VERIFY_LOG
@@ -573,8 +558,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 20 successfully added."
 
         ##VERIFY_LOG
@@ -602,8 +586,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 21 successfully added."
 
         ##VERIFY_LOG
@@ -631,8 +614,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 22 successfully added."
 
         ##VERIFY_LOG
@@ -660,8 +642,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 23 successfully added."
 
         ##VERIFY_LOG
@@ -689,8 +670,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 24 successfully added"
 
         ##VERIFY_LOG
@@ -718,8 +698,7 @@ And I click on the link labeled "Save & Exit Form"
         Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Form"
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 25 successfully added."
 
         ##VERIFY_LOG
