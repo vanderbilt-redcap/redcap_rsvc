@@ -206,8 +206,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "Coordinator Signature"
       Then I should see "Coordinator's Name Typed"
 
-      When I click on the button labeled "More save options"
-      And I click on the link labeled "Save & Stay"
+      When I click on the button labeled "Save & Stay"
       And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label

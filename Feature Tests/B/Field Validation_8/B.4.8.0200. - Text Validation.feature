@@ -55,8 +55,7 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see "Editing existing Record ID 5"
 
         When I clear field and enter "email@test.edu" into the data entry form field labeled "Email"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Stay"
+        And I click on the button labeled "Save & Stay"
         Then I should see "Record ID 5 successfully edited."
 
         ##VERIFY_LOG
@@ -229,8 +228,7 @@ Feature: User Interface: The system shall support text validation for text field
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Stay"
+        And I click on the button labeled "Save & Stay"
 
         When I click on the link labeled "Text Validation"
         And I enter "TEST" into the data entry form field labeled "Email"

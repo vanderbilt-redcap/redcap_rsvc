@@ -150,8 +150,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I should see a radio labeled "Survey C" in the row labeled "Not yet randomized" that is disabled
     And I should see a radio labeled "Survey D" in the row labeled "Not yet randomized" that is disabled
     And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
-    And I click on the button labeled "More save options"
-    And I click on the link labeled "Save & Stay"
+    And I click on the button labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Log out+ Open survey" label
     And I click on the button labeled "Submit"
