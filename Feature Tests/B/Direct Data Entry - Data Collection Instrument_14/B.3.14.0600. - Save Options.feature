@@ -112,8 +112,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         
         ##VERIFY
         Then I should see "Adding new Record ID 12"
-        And I click on the button labeled "More save options"
-        And I click on the link labeled "Save & Exit Record"
+        And I click on the button labeled "Save & Exit Record"
         
         ##VERIFY
         Then I should see "Record ID 12 successfully edited"
