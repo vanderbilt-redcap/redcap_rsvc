@@ -47,14 +47,16 @@ Feature: User Interface: The system shall support text validation for text field
         And I enter "08:10" into the data entry form field labeled "Time HH:MM"
         And I enter "02:05" into the data entry form field labeled "Time MM:SS"
         And I enter "08:59:59" into the data entry form field labeled "Time HH:MM:SS"
-        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Stay"
         Then I should see "Record ID 5 successfully edited."
 
         When I click on the link labeled "Text Validation"
         Then I should see "Editing existing Record ID 5"
 
         When I clear field and enter "email@test.edu" into the data entry form field labeled "Email"
-        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Stay"
         Then I should see "Record ID 5 successfully edited."
 
         ##VERIFY_LOG
@@ -227,7 +229,8 @@ Feature: User Interface: The system shall support text validation for text field
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
-        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the icon labeled "More save options"
+        And I click on the link labeled "Save & Stay"
 
         When I click on the link labeled "Text Validation"
         And I enter "TEST" into the data entry form field labeled "Email"
