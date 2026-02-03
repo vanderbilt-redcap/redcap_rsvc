@@ -45,6 +45,7 @@ Scenario: Setup
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.3300.100" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
+        And I should see "If pulling time-based data, select the range of time"
         And I enter "2017-07-01" into the input field labeled "from"
         And I enter "2017-07-31" into the input field labeled "to"
         And I click on the button labeled "select all" in the row labeled "Demographics"
