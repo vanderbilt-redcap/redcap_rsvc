@@ -74,10 +74,10 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
 
             And I enter "MyName" into the data entry form field labeled "Name"
-            Given I click on the icon labeled "More save options"
+            Given I click on the button labeled "More save options"
             And I click on the link labeled "Save & Add New Instance"
             And I enter "MyOtherName" into the data entry form field labeled "Name"
-            Given I click on the icon labeled "More save options"
+            Given I click on the button labeled "More save options"
             And I click on the link labeled "Save & Exit Form"
 
             And I click on the icon in the row labeled "Instance #1"
@@ -161,7 +161,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see "Editing existing Record ID 1"
 
             When I clear field and enter "My repeat event name" into the data entry form field labeled "Name"
-            And I click on the icon labeled "More save options"
+            And I click on the button labeled "More save options"
             And I click on the link labeled "Save & Exit Form"
             Then I should see "(#3)"
 

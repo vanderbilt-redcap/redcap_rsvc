@@ -133,7 +133,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
 
     And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
 
     #VERIFY Trigger logic, for all users based on form
@@ -150,7 +150,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I should see a radio labeled "Survey C" in the row labeled "Not yet randomized" that is disabled
     And I should see a radio labeled "Survey D" in the row labeled "Not yet randomized" that is disabled
     And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Log out+ Open survey" label
@@ -230,7 +230,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     When I click on the link labeled "Demographics"
     And I wait for 2 seconds
     And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     And I should see "The grid below displays the form-by-form progress"
     And I click the bubble for the row labeled "Survey" on the column labeled "Status"
@@ -252,7 +252,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I click on the button labeled "Randomize"
     And I click on the button labeled "Close"
     And I should see the radio labeled "Go to" with option "Survey C" selected
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
 
     #VERIFY - Logging

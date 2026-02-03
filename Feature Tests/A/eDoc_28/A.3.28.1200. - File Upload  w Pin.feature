@@ -77,7 +77,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
     And I check the checkbox labeled "Lock"
     And I check the checkbox labeled "E-signature"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I enter "lock form" into the textarea field labeled "Reason for changes"
     And I click on the button labeled "Save Changes"
@@ -132,7 +132,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "2" and click on the bubble
     And I check the checkbox labeled "Lock"
     And I check the checkbox labeled "E-signature"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I enter "lock form" into the textarea field labeled "Reason for changes"
     And I click on the button labeled "Save Changes"

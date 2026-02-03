@@ -56,7 +56,7 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         Then I should see "Saving adjudicated data..."
         And I verify "Morris" is within the input field labeled "First Name"
         And I verify "Lockman" is within the input field labeled "Last Name"
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout

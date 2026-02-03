@@ -18,7 +18,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project
@@ -42,7 +42,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project
@@ -54,7 +54,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     And I return to the REDCap page I opened the survey from
     When I click on the button labeled "Stay on page"
     And I clear field and enter "Overwrite Name" into the data entry form field labeled "Name"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully edited."
 

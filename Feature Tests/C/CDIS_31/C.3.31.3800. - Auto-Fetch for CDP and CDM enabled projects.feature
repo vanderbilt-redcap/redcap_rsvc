@@ -110,7 +110,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         And I should see "Morris"
         And I should see "Lockman"
         And I click on the button labeled "Cancel"
-        And I click on the icon labeled "More save options"
+        And I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 

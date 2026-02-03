@@ -60,7 +60,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I should see "Lockman"
         And I click on the button labeled "Save"
         Then I should see "Saving adjudicated data..."
-        Given I click on the icon labeled "More save options"
+        Given I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
@@ -72,7 +72,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I wait for 2 seconds
         And I click on the button labeled "Save"
         Then I should see "95.902896432667" in the data entry form field "Body weight" 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 

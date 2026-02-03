@@ -273,7 +273,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 5."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added."
 
@@ -282,7 +282,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 6."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 6 successfully added."     
 
@@ -291,7 +291,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 7."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 
@@ -300,7 +300,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 8."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 8 successfully added."  
 
@@ -309,7 +309,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 9."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 9 successfully added." 
 
@@ -318,7 +318,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 10."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 10 successfully added."
 
@@ -327,7 +327,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 11."
 
-        When I click on the icon labeled "More save options"
+        When I click on the button labeled "More save options"
         And I click on the link labeled "Save & Exit Form"
         Then I should see "Record ID 11 successfully added."    
     ##FUNCTIONAL_REQUIREMENT

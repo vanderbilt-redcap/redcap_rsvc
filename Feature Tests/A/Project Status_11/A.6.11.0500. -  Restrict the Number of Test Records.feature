@@ -20,7 +20,7 @@ Scenario: A.6.11.0500.0100. - Given no record limit is set in the Control Center
     Then I should NOT see "You are currently using 4 of 5 test records allowed while in Development status"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
 
@@ -63,7 +63,7 @@ Scenario: A.6.11.0500.0300. - Given a project already exceeds the system limit, 
     Then I should NOT see "You are currently using 5 of 5 test records allowed while in Development status"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully added"
     #Set limit in control center to 5

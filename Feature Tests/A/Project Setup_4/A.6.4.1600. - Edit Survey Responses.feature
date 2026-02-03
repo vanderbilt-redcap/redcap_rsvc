@@ -83,7 +83,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
         Then I should see "(now editing)"
 
         Given I clear field and enter "EDITED SURVEY RESPONSE" into the data entry form field labeled "Name"
-        And I click on the icon labeled "More save options"
+        And I click on the button labeled "More save options"
         And I click on the link labeled "Save & Stay"
         Then I should see "Record ID 1 successfully edited."
 

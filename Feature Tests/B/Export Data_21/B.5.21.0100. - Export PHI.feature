@@ -138,7 +138,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I click on the button labeled "Add new record"
     Then I should see "Adding new Record ID 5"
 
-    When I click on the icon labeled "More save options"
+    When I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
 
     And I click on the button labeled "Survey options"

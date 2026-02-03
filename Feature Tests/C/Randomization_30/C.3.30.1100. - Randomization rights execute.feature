@@ -45,7 +45,7 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 1 successfully edited."
     #Ensure randomization button isn't available
@@ -62,7 +62,7 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I select "2" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
@@ -74,7 +74,7 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I click on the button labeled "Close"
     Then I should see "Already randomized"
     And I should see the radio labeled "Randomization group 1" with option "Drug A" selected
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 2 successfully edited."
 

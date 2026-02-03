@@ -30,14 +30,14 @@ Scenario: #SETUP
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
     #Adding record 6
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully added"
 
@@ -107,7 +107,7 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
 

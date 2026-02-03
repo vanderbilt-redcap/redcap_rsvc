@@ -103,7 +103,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 2."
 
-      When I click on the icon labeled "More save options"
+      When I click on the button labeled "More save options"
       And I click on the link labeled "Save & Stay"
       And I click on the button labeled "Okay"
       And I click on the button labeled "Survey options"

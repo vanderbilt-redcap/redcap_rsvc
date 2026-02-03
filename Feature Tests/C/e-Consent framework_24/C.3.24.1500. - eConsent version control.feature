@@ -73,7 +73,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "This is my test 1 consent form"
 
   Scenario:
-    When I click on the icon labeled "More save options"
+    When I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
@@ -192,7 +192,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
-    When I click on the icon labeled "More save options"
+    When I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
@@ -314,7 +314,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "consent.pdf"
 
   Scenario:
-    When I click on the icon labeled "More save options"
+    When I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"

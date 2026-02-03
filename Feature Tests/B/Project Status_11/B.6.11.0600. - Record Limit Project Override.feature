@@ -28,7 +28,7 @@ Scenario: B.6.11.0600.0100. - Given a project-level override is set to 5 records
     Then I should see "You are currently using 4 of 5 test records allowed while in Development status"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
 
@@ -69,7 +69,7 @@ Scenario: B.6.11.0600.0200. - Given the override is set to zero (inherit), then 
     Then I should see "You are currently using 5 of 6 test records allowed while in Development status"
     When I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully added"
 
@@ -96,7 +96,7 @@ Scenario: B.6.11.0600.0200. - Given the override is set to zero (inherit), then 
     Then I should see "You are currently using 6 of 7 test records allowed while in Development status"
     When I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I click on the icon labeled "More save options"
+    And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Exit Form"
     Then I should see "Record ID 7 successfully added"
 

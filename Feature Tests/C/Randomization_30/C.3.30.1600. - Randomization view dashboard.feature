@@ -46,7 +46,7 @@ Feature: C.3.30.1600.	User Interface: The system shall ensure users with randomi
                 And I select "2" on the dropdown field labeled "Choose an existing Record ID"
                 And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
                 And I select the radio option "Yes" for the field labeled "Stratification 1"
-                And I click on the icon labeled "More save options"
+                And I click on the button labeled "More save options"
                 And I click on the link labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
                 And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
@@ -55,7 +55,7 @@ Feature: C.3.30.1600.	User Interface: The system shall ensure users with randomi
                 And I click on the button labeled "Randomize"
                 Then I should see "was randomized for"
                 And I click on the button labeled "Close"
-                And I click on the icon labeled "More save options"
+                And I click on the button labeled "More save options"
                 And I click on the link labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
 
