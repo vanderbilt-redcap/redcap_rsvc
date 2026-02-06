@@ -9,7 +9,6 @@ Feature: A.2.33.0100.: The system shall allow enabling and disabling Access Cont
         And I click on the button labeled "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
-        And I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:
             |Username       |Full Name       |Email                         |Access Control Group  |   
             |site_admin     |Joe User        |joe.user@projectredcap.org    | No Rights          | 

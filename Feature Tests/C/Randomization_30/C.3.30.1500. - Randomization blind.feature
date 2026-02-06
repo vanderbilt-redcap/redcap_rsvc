@@ -33,7 +33,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 And I click on the button labeled "Save randomization model"
                 Then I should see "Success! The randomization model has been saved!"
                 When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-                Then I should see "Already uploaded"
+                Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
                 When I click on the link labeled "Setup"
                 And I click on the button labeled "Set up randomization"
@@ -42,14 +42,14 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 And I click on the button labeled "Save randomization model"
                 Then I should see "Success! The randomization model has been saved!"
                 When I upload a "csv" format file located at "import_files/C3.30BlindAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-                Then I should see "Already uploaded"
+                Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
                 #SETUP -  Create a record and randomize with both Open and Blinded Randomization fields.
                 When I click on the link labeled "Add / Edit Records"
                 And I select "2" on the dropdown field labeled "Choose an existing Record ID"
                 And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
                 And I select the radio option "Yes" for the field labeled "Stratification 1"
-                And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+                And I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
                 When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
                 And I click on the first button labeled "Randomize"
@@ -64,7 +64,7 @@ Feature: C.3.30.1500.	User Interface: The system shall support blinded and open 
                 Then I should see "was randomized for"
                 And I click on the button labeled "Close"
 
-                When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+                When I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
 
         Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights will see only a concealed allocation code in the record and reports, with no visible group assignment.

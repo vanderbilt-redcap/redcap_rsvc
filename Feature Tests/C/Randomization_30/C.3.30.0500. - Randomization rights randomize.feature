@@ -25,6 +25,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     When I click on the button labeled "Example #1 (basic)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
     And I upload a "csv" format file located at "import_files/C.3.30.0500_RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
     Then I should see "Success! The randomization allocation table was created!"
 
   Scenario: C.3.30.0500.0100. User with Randomization Randomize rights can Randomize.
@@ -33,7 +34,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I click on a button labeled "Add new record"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Man" for the field labeled "Do you describe yourself as a man, a woman, or in some other way?"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see " Record ID 6 successfully added."
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
     Then I should see "Randomization group 1"

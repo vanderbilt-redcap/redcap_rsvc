@@ -40,7 +40,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     Then I should see "Adding new Record ID 1."
 
   Scenario:
-    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    When I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label

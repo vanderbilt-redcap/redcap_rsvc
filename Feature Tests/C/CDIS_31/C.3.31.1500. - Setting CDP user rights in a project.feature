@@ -133,8 +133,8 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         When I click on the button labeled "Save record and fetch data"
         Then I should see "Adjudicate data from External System"
         When I click on the button labeled "Save"
-        Then I should see "Saving adjudicated data..."
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        Then I should see "Data saved successfully!"
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout
 

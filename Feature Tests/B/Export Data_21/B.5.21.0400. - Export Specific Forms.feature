@@ -14,10 +14,10 @@ Feature: User Interface: The system shall support the ability to select specific
     Then I should see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
 
-    When I click on the "Make custom selections" button for the "Selected instruments" report in the My Reports & Exports table
+    When I click on the button labeled "Make custom selections" in the row labeled "Selected instruments"
     And I select "Text Validation" on the multiselect field labeled "Instruments"
     And I select "Event 1 (Arm 1: Arm 1)" on the multiselect field labeled "Events"
-    And I click on the "Export Data" button for the "Selected instruments" report in the My Reports & Exports table
+    And I click on the button labeled "Export Data" in the row labeled "Selected instruments"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"

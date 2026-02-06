@@ -66,7 +66,7 @@ Feature: User Interface: The system shall support the ability to identify data a
       | A | All data (all records and fields) |
 
     ##ACTION: export all
-    Given I click on the "Export Data" button for the "All data (all records and fields)" report in the My Reports & Exports table
+    Given I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
     Then I should see a dialog containing the following text: "Data export was successful!"
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the ability to identify data a
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: remove identifiers from export
-    Given I click on the "Export Data" button for the "All data (all records and fields)" report in the My Reports & Exports table
+    Given I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
     Then I should see "Known Identifiers"
 
     When I check the checkbox labeled "Remove All Identifier Fields"
@@ -100,7 +100,7 @@ Feature: User Interface: The system shall support the ability to identify data a
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: add identifiers back and remove unvalidated texts fields and notesbox fields
-    Given I click on the "Export Data" button for the "All data (all records and fields)" report in the My Reports & Exports table
+    Given I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
     When I uncheck the checkbox labeled "Remove All Identifier Fields"
     And I uncheck the checkbox labeled "Hash the Record ID field"
     And I check the checkbox labeled "Remove unvalidated Text fields"
@@ -118,7 +118,7 @@ Feature: User Interface: The system shall support the ability to identify data a
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: remove date, datetime fields
-    Given I click on the "Export Data" button for the "All data (all records and fields)" report in the My Reports & Exports table
+    Given I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
     When I uncheck the checkbox labeled "Remove unvalidated Text fields"
     And I uncheck the checkbox labeled "Remove Notes/Essay box fields"
     And I check the checkbox labeled "Remove all date and datetime fields"
@@ -138,7 +138,8 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I click on the button labeled "Add new record"
     Then I should see "Adding new Record ID 5"
 
-    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    When I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
 
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project

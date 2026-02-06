@@ -39,14 +39,14 @@ Feature: C.3.30.1600.	User Interface: The system shall ensure users with randomi
 
                 #Adding valid allocation table
                 When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-                Then I should see "Already uploaded"
+                Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
                 #Adding record with randomization
                 And I click on the link labeled "Add / Edit Records"
                 And I select "2" on the dropdown field labeled "Choose an existing Record ID"
                 And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
                 And I select the radio option "Yes" for the field labeled "Stratification 1"
-                And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+                And I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
                 And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
                 And I click on the button labeled "Randomize"
@@ -54,7 +54,7 @@ Feature: C.3.30.1600.	User Interface: The system shall ensure users with randomi
                 And I click on the button labeled "Randomize"
                 Then I should see "was randomized for"
                 And I click on the button labeled "Close"
-                And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+                And I click on the button labeled "Save & Exit Form"
                 Then I should see "Record ID 2 successfully edited."
 
         Scenario: #C.3.30.1600.0200 ensures that access is granted when the user has the correct dashboard rights.

@@ -76,7 +76,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         #Adding valid allocation table
         When I click on the button labeled "Return to previous page"
         When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see "Already uploaded"
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
     Scenario: C.3.30.0700.2000. Modify an existing randomization model
         Then I should see "If you wish to modify the randomization setup below, you will need to click the Erase Randomization Model button below."
@@ -86,7 +86,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I select "1" on the dropdown field labeled "Choose an existing Record ID"
         And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
         And I select the radio option "Yes" for the field labeled "Stratification 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1 successfully edited."
 
         When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
@@ -95,7 +95,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         And I click on the button labeled "Randomize"
         Then I should see "was randomized for"
         And I click on the button labeled "Close"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1 successfully edited."
 
         #VERIFY Randomization model was added to the randomization summary.
@@ -360,7 +360,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
         When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see "Already uploaded"
+        Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
         #VERIFY_log Randomization saved in logging table
         When I click on the link labeled "Logging"
@@ -394,7 +394,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
 
         #Different Upload File
         When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see "Already uploaded"
+        Then I should see "Already uploaded" in the row labeled "for use in PRODUCTION status"
 
         #VERIFY_log Randomization saved in logging table
         When I click on the link labeled "Logging"

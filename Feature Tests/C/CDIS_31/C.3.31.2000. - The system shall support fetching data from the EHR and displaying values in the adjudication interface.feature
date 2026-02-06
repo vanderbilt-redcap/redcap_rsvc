@@ -53,10 +53,10 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         And I should see "Morris"
         And I should see "Lockman"
         When I click on the button labeled "Save"
-        Then I should see "Saving adjudicated data..."
+        Then I should see "Data saved successfully!"
         And I verify "Morris" is within the input field labeled "First Name"
         And I verify "Lockman" is within the input field labeled "Last Name"
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout
 

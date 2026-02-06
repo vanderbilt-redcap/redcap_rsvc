@@ -26,14 +26,14 @@ Feature: Project Interface Administrator Access: The system shall support admini
     
     #Adding valid allocation table
     When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see "Already uploaded"
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
 
     #Create Record for one stratum
     When I click on the link labeled "Add / Edit Records"
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Yes" for the field labeled "Stratification 1"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 1 successfully edited."
 
     When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
@@ -42,7 +42,7 @@ Feature: Project Interface Administrator Access: The system shall support admini
     And I click on the button labeled "Randomize"
     Then I should see "was randomized for"
     And I click on the button labeled "Close"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 1 successfully edited."
 
     When  I click on the link labeled "Randomization"

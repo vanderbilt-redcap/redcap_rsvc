@@ -50,6 +50,7 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     And I click on the link labeled "Designer"
     And I click on the link labeled "Data Types"
     And I click on the Edit image for the field named "Descriptive Text with File"
+    And I should see "Attach an image, file, or embedded audio"
     And I click on the link labeled "Upload file"
     And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
     And I click on the button labeled "Upload file"

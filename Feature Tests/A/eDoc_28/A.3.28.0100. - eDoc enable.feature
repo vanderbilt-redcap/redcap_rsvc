@@ -27,6 +27,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameLocal" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -77,6 +79,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameAzure" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -128,6 +132,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameS3" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -177,6 +183,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0400" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameGCS" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -224,6 +232,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameWebDAV" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"

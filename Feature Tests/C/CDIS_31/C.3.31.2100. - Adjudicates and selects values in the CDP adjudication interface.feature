@@ -59,8 +59,8 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I should see "Morris"
         And I should see "Lockman"
         And I click on the button labeled "Save"
-        Then I should see "Saving adjudicated data..."
-        Given I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        Then I should see "Data saved successfully!"
+        Given I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
 
@@ -71,7 +71,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I wait for 2 seconds
         And I click on the button labeled "Save"
         Then I should see "95.902896432667" in the data entry form field "Body weight" 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
     #VERIFY LOG

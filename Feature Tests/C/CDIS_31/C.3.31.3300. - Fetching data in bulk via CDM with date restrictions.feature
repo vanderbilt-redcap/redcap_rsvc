@@ -45,6 +45,7 @@ Scenario: Setup
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.3300.100" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
+        And I should see "If pulling time-based data, select the range of time"
         And I enter "2017-07-01" into the input field labeled "from"
         And I enter "2017-07-31" into the input field labeled "to"
         And I click on the button labeled "select all" in the row labeled "Demographics"
@@ -82,11 +83,10 @@ Scenario: Setup
         And I should see "date range is applied"
         And I click on the button labeled "Fetch data"
         And I click on "Confirm"
-        And I wait for 10 seconds
-        Then I should see "Demographics"
-        And I should see "16"
-        And I should see "Vital Signs"
-        And I should see "6"
+        Then I should see a table header and rows containing the following values in a table:
+        | Category     | New | Updated | Total |
+        | Demographics | 0   | 16      | 16    |
+        | Vital Signs  | 6   | 0       | 0     |
         And I click on "Close"
 
     #VERIFY_LOG
