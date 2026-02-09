@@ -31,8 +31,8 @@ Feature: C.3.31.1800. User Interface: The system shall support defining day offs
 
     #SET UP NEW PROJECT
       Given I login to REDCap with the user "Test_Admin"
-      And I create a new project named "C.3.31.1700" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
-      Then I should see "C.3.31.1700"
+      And I create a new project named "C.3.31.1800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
+      Then I should see "C.3.31.1800"
       And I should NOT see "Setup Clinical Data Pull from EHR"
       And I should see "Clinical Data Pull from EHR"
       When I click on the button labeled "Enable" in the row labeled "Clinical Data Pull from EHR" 
