@@ -49,6 +49,7 @@ DATA=$(cat << EOF
 [
   {
     "record_id": "$ID",
+    "testing_method": "automated",
     "result_feature": 1,
     "feature_test_outcome": 1,
     "time_test": "$DURATION_MINUTES:$DURATION_SECONDS",
