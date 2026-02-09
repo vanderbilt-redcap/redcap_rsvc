@@ -16,6 +16,7 @@ When I select "Enabled" on the dropdown field labeled "Clinical Data Mart"
 And I click on the button labeled "Save Changes"
 
 #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+#M Only one FHIR system setup is needed to test the functionality. You can skip these steps if you have already done this on another CDIS test. These FHIR settings will allow for validation against smart health IT and ensure REDCap can pull data via FHIR. If you want to validate against your local EHR vendor modification to these steps will be required. 
 When I click on the link labeled "FHIR Systems"
 Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
 When I click on the button labeled "Add"
