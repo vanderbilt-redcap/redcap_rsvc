@@ -14,7 +14,7 @@ Feature: C.3.31.2600. User Interface: The system shall support displaying a coun
         And I select "Disable" on the dropdown field labeled "Break-the-Glass"
         And I select "SystemLogin" on the dropdown field labeled "EHR User type"
         And I select "No, hide all information about CDP" on the dropdown field labeled "Display information about CDP on Project Setup page in a project?"
-        And I enter "1" into the input field labeled "Time interval that REDCap will check the source system for new data for individual records"
+        And I enter "1" into the input field labeled "Time of inactivity after which REDCap will stop checking for new data from the source system"
         And I click on the button labeled "Save Changes"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER

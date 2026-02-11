@@ -71,7 +71,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I click on the radio labeled "body_weight"
         And I wait for 2 seconds
         And I click on the button labeled "Save"
-        Then I should see "95.902896432667" in the data entry form field "Body weight" 
+        Then I should see "96.904762289757" in the data entry form field "Body weight" 
         When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
