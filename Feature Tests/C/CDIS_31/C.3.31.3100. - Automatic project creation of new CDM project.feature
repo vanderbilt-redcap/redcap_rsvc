@@ -45,7 +45,7 @@ As a REDCap end user I want to see that when a user creates a CDM project the pr
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.3100" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-        And I click on the button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 

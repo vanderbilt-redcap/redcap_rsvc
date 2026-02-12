@@ -43,11 +43,9 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
     #Create New Project
         Given I click on the link labeled "New Project"
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
-        And I enter "C.3.31.3200" into the input field labeled "Project title:"
+        And I enter "C.3.31.3500" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-        And I click on the button labeled "select all"
-        And I click on the second button labeled "select all"
-        And I click on the tenth button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 

@@ -11,6 +11,7 @@ Scenario: Setup
         When I select "Enable" on the dropdown field labeled "Clinical Data Pull"
         And I select "Enable" on the dropdown field labeled "Clinical Data Mart"
         And I select "No, do not display 'email address' option in EHR source field list" on the dropdown field labeled "Allow the patient's email address to be imported from the EHR?"
+        And I select "Enable" on the dropdown field labeled "Enable Instant Adjudication for all CDP projects?"
         And I enter "1" into the input field labeled "Every"
         And I click on the button labeled "Save Changes"
 
@@ -31,50 +32,6 @@ Scenario: Setup
         And I click on the button labeled "Save"
         Then I should see "New FHIR system created"
         
-#     #Setup: Add CDM rights for test_admin account
-#         When I click on the link labeled "Browse Users"
-#         And I enter "test_admin" into the input field labeled "User Search:"
-#         And I click on "Search"
-#         And I click on "Edit user info" 
-#         And I click on the checkbox labeled "Can create project and pull medical records using Clinical Data Mart?"
-#         And I click on the button labeled "Save"
-#         Then I should see "User has been successfully saved."   
-
-#     #Create New Project
-#         Given I click on the link labeled "New Project"
-#         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
-#         And I enter "C.3.31.3700" into the input field labeled "Project title:"
-#         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-#         And I click on the "select all" in the row labeled "Vital Signs"
-#         And I click on the "select all" in the row labeled "Demographics"
-#         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the textarea field labeled "Enter medical record numbers of patients to import from the EHR (one per line, optional)"
-#         And I click on the button labeled "Create Project"
-#         Then I should see "Your new REDCap project has been created and is ready to be accessed."
-        
-#     #Requesting access token from EHR system
-#         When I click on the button labeled "Enable" in the row labeled "Auto-fetch all clinical data once a day (based on Data Mart configuration)" 
-#         And I click on the link labeled "Standalone Launch"
-#         And I wait for 2 seconds
-#         And I click on the button labeled "Login"
-#         And I click on the button labeled "Approve"
-
-#     # Add two records
-#         When I click on the link labeled "Add / Edit Records"
-#         And I click on the button labeled "Add new record"
-#         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-#         And I enter "869722aa-6d3a-4afd-9acd-b4283bc7d47f" into the input field labeled "Medical record number"
-#         And I click on the button labeled "Save & Exit Form"
-#         Then I should see "Study ID 2 successfully added."
-
-# Scenario: C.3.31.3800.100 User Interface: The Auto-Fetch feature in CDM will automaticly pull data an place it in REDCap project.
-#             And I wait for background processes to finish
-
-#     #VERIFY_LOG the background process should have created multiple entries per record in the logging table
-#         When I click on the link labeled "Logging"
-#         Then I should see a table header and rows containing the following values in the logging table:
-#         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
-#         | mm/dd/yyyy hh:mm | SYSTEM | Update record 1 | [instance = 31], vitals_time = '2017-07-14 01:17', vital_signs_complete = '2'|
-#         | mm/dd/yyyy hh:mm | SYSTEM | Update record 2 | [instance = 21], vitals_time = '2019-08-09 06:49', vital_signs_complete = '2'|
 
 Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and add data to records in the project.
      #Turn on CDP at the project level
@@ -113,7 +70,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         And I click on the button labeled "Cancel"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
-
+       #Manual if doing this manually you will need to wait for 2 minutes and then refresh the page to see the updated data. The background process that pulls in the data runs every minute and can take up to a couple minute to pull in the data. 
         And I wait for background processes to finish
 
     #VERIFY_LOG the background process should have created multiple entries per record in the logging table
