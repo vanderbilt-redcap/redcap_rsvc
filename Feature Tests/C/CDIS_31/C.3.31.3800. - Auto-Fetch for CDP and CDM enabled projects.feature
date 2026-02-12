@@ -11,6 +11,7 @@ Scenario: Setup
         When I select "Enable" on the dropdown field labeled "Clinical Data Pull"
         And I select "Enable" on the dropdown field labeled "Clinical Data Mart"
         And I select "No, do not display 'email address' option in EHR source field list" on the dropdown field labeled "Allow the patient's email address to be imported from the EHR?"
+        And I select "Enable" on the dropdown field labeled "Enable Instant Adjudication for all CDP projects?"
         And I enter "1" into the input field labeled "Every"
         And I click on the button labeled "Save Changes"
 
@@ -115,6 +116,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         Then I should see "Study ID 1 successfully edited."
 
         And I wait for background processes to finish
+       ####If doing this manually you can check the status of the background process in the control center under "Manage Background Processes" and wait until the "Clinical Data Pull Auto-Fetch" process has completed before moving on to the next steps.
 
     #VERIFY_LOG the background process should have created multiple entries per record in the logging table
         When I click on the link labeled "Logging"
