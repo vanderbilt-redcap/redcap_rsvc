@@ -70,7 +70,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         And I click on the button labeled "Cancel"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
-       #Manual if doing this manually you will need to wait for 2 minutes and then refresh the page to see the updated data. The background process that pulls in the data runs every minute and can take up to a couple minute to pull in the data. 
+       #Manual: If doing this manually you will need to wait anywhere from 2 minutes to 12 hours depending on how busy your cron server is. 
         And I wait for background processes to finish
 
     #VERIFY_LOG the background process should have created multiple entries per record in the logging table
