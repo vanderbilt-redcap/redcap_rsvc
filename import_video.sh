@@ -8,7 +8,7 @@ FOLDER_ID=$3
 
 # Load environment variables from .env file
 if [ -f .env ]; then
-  source .env
+  source ./.env
 fi
 
 if [ -z "$REDCAP_API_TOKEN" ]; then
