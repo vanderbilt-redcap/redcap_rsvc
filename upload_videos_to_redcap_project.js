@@ -128,9 +128,11 @@ class UploadVideosToREDCapProject {
                                 console.log(`NEW UPLOAD: ${filename}`)
                                 console.log(`FILE PATH: ${feature}`)
 
+                                const feature_content = fs.readFileSync('../' + passed_feature.feature_path, 'utf8')
                                 dataToSave.push({
                                     record_id: filename.split(' ')[0],
-                                    feature_test_script: fs.readFileSync('../' + passed_feature.feature_path, 'utf8'),
+                                    feature_test_script: feature_content,
+                                    projects_feature: this.get_referenced_files(feature_content)
                                 })
 
                                 fs.access(file_path, fs.constants.F_OK, (err) => {
@@ -154,6 +156,7 @@ class UploadVideosToREDCapProject {
                             action: 'import',
                             format: 'json',
                             returnFormat: 'json',
+                            overwriteBehavior: 'overwrite',
                             data: JSON.stringify(dataToSave, null, 2),
                         })) .then(json => {
                             if(json.count !== dataToSave.length){
@@ -189,6 +192,66 @@ class UploadVideosToREDCapProject {
         }).then(response => response.json())  // Parse the JSON response
     }
 
+    // This function was copied from the redcap-functional-requirements External Module
+    get_referenced_files(featureContent) {
+        const ignoredPhrases = [
+            'Scenario:',
+            'should see',
+            'should NOT see',
+            'into the input field',
+            'the downloaded CSV with filename',
+            'icon for the File Repository file named',
+            'I download a file',
+            'I check the checkbox',
+            'I click on the link labeled "consent.pdf"',
+        ]
+
+        const lines = featureContent.split("\n")
+        let referencedFiles = {} // Use an object to automatically collapse duplicates
+        forEachLine: for (let lineIndex in lines){
+            let line = lines[lineIndex].trim()
+
+            for (const phrase of ignoredPhrases){
+                if(line.includes(phrase)){
+                    continue forEachLine
+                }
+            }
+
+            if(line.includes('upload the following file')){
+                while(true){
+                    lineIndex++
+                    const matches = [...lines[lineIndex].matchAll(/\|(.*)\|/g)]
+                    if(matches.length === 0){
+                        continue forEachLine
+                    }
+
+                    for (const match of matches) {
+                        const filename = match[1].trim()
+                        referencedFiles[filename] = true
+                    }
+                }
+            }
+
+            const matches = line.matchAll(/["']([^"'@]*\.[A-z][A-z][A-z][A-z]?)["']/g)
+            for (const match of matches) {
+                const filename = match[1]
+                const extension = filename.split('.').pop()
+
+                if([
+                    'DEV',
+                    'PROD',
+                    'copy',
+                    'php',
+                ].includes(extension)){
+                    continue
+                }
+
+                referencedFiles[filename] = true
+            }
+        }
+
+        return Object.keys(referencedFiles).join("\n")
+    }
 }
 
 new UploadVideosToREDCapProject()
