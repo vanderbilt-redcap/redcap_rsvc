@@ -27,6 +27,11 @@ class UploadVideosToREDCapProject {
             return
         }
 
+        if(this.redcap_api_url.includes('redcap.loc')){
+            // This is local environment.  Do not check the cert.
+            process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+        }
+
         this.cypress_cloud_query(
             {
                 variables: {
