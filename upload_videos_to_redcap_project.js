@@ -162,7 +162,6 @@ class UploadVideosToREDCapProject {
             headers: headers,
             body: payload
         }).then(response => response.json())  // Parse the JSON response
-            .catch(error => console.error('Error:', error));  // Handle errors
     }
 
 }
