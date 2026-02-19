@@ -62,6 +62,7 @@ EOF
 )
 
 #Set a few fields in the REDCap project
+#This could and perhaps should be moved to the redcap_project_query() call that sets feature_test_script
 $CURL -X POST \
       -F "token=$REDCAP_API_TOKEN" \
       -F "content=record" \

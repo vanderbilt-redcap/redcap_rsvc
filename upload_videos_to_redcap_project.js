@@ -75,7 +75,10 @@ class UploadVideosToREDCapProject {
 
                     //If feature passed, upload to REDCap VUMC
                     if(feature.status === "PASSED"){
-                        passed_features.push(`${feature.spec.path.replace(/redcap_rsvc\/Feature Tests/g, '/home/circleci/project/coverage/cypress/videos')}.mp4`)
+                        passed_features.push({
+                            feature_path: feature.spec.path,
+                            video_path: `${feature.spec.path.replace(/redcap_rsvc\/Feature Tests/g, '/home/circleci/project/coverage/cypress/videos')}.mp4`,
+                        })
                     }
                 })
 
@@ -99,6 +102,7 @@ class UploadVideosToREDCapProject {
                     })
 
                 }).then((folder_id) => {
+                    let dataToSave = []
 
                     this.redcap_project_query(new URLSearchParams({
                         token: redcap_api_token, // Replace with actual token if not using environment variables
@@ -110,7 +114,8 @@ class UploadVideosToREDCapProject {
                     })).then((uploaded_feature_videos) =>{
 
                         //For each passed feature, let's upload if there isn't already a file
-                        for(const feature of passed_features){
+                        for(const passed_feature of passed_features){
+                            const feature = passed_feature.video_path
                             const path = feature.split('/')
                             const filename = path[path.length - 1]
                             const file_path = feature
@@ -122,6 +127,11 @@ class UploadVideosToREDCapProject {
                             } else {
                                 console.log(`NEW UPLOAD: ${filename}`)
                                 console.log(`FILE PATH: ${feature}`)
+
+                                dataToSave.push({
+                                    record_id: filename.split(' ')[0],
+                                    feature_test_script: fs.readFileSync('../' + passed_feature.feature_path, 'utf8'),
+                                })
 
                                 fs.access(file_path, fs.constants.F_OK, (err) => {
                                     if (err) {
@@ -137,6 +147,21 @@ class UploadVideosToREDCapProject {
                             }
 
                         }
+                    }).then(() => {
+                        this.redcap_project_query(new URLSearchParams({
+                            token: redcap_api_token, // Replace with actual token if not using environment variables
+                            content: 'record',
+                            action: 'import',
+                            format: 'json',
+                            returnFormat: 'json',
+                            data: JSON.stringify(dataToSave, null, 2),
+                        })) .then(json => {
+                            if(json.count !== dataToSave.length){
+                                throw `Expected to save ${dataToSave.length} records but received a count of ${json.count} instead`
+                            }
+
+                            console.log(`Updated ${json.count} REDCap records`)
+                        })
                     })
                 })
             })
