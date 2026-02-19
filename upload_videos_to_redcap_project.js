@@ -190,6 +190,13 @@ class UploadVideosToREDCapProject {
             headers: headers,
             body: payload
         }).then(response => response.json())  // Parse the JSON response
+        .then(json => {
+            if(json.error){
+                throw 'An error occured during the REDCap API call: ' + json.error
+            }
+
+            return json
+        })
     }
 
     // This function was copied from the redcap-functional-requirements External Module
