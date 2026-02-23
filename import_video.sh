@@ -8,7 +8,7 @@ FOLDER_ID=$3
 
 # Load environment variables from .env file
 if [ -f .env ]; then
-  source .env
+  source ./.env
 fi
 
 if [ -z "$REDCAP_API_TOKEN" ]; then
@@ -62,6 +62,7 @@ EOF
 )
 
 #Set a few fields in the REDCap project
+#This could and perhaps should be moved to the redcap_project_query() call that sets feature_test_script
 $CURL -X POST \
       -F "token=$REDCAP_API_TOKEN" \
       -F "content=record" \
