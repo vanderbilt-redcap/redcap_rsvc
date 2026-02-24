@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const { execSync } = require('child_process')
+const { promisify } = require('util')
+const path = require('path')
+const readdir = promisify(fs.readdir)
+const stat = promisify(fs.stat)
 
 /**
  * This tool fetches the results of the latest cloud run
@@ -101,8 +105,8 @@ class UploadVideosToREDCapProject {
                         }
                     })
 
-                }).then((folder_id) => {
-                    let dataToSave = []
+                }).then(async (folder_id) => {
+                    let dataToSave = await this.get_redundant_feature_data()
 
                     this.redcap_project_query(new URLSearchParams({
                         token: redcap_api_token, // Replace with actual token if not using environment variables
@@ -258,6 +262,44 @@ class UploadVideosToREDCapProject {
         }
 
         return Object.keys(referencedFiles).join("\n")
+    }
+
+    get_redundant_feature_data() {
+        return this.get_filenames_recursively(__dirname + '/Feature Tests/').then(a => {
+            const result = []
+            a.forEach(path => {
+                if(path.includes('REDUNDANT')){
+                    const parts = path.split('/')
+                    const filename = parts[parts.length - 1]
+                    const feature_content = fs.readFileSync(path, 'utf8')
+                    
+                    const record_data = {
+                        record_id: filename.split(' ')[0],
+                        feature_test_script: feature_content,
+                        testing_method: 'redundant',
+                    }
+                    
+                    const redundant_location_parts = feature_content.split('This feature test is REDUNDANT and can be viewed in ')
+                    if(redundant_location_parts.length === 2){
+                        record_data.test_header_redundant_loc = redundant_location_parts[1].trim().split(/\s+/)[0]
+                    }
+                    
+                    result.push(record_data)
+                }
+            })
+
+            return result
+        })
+    }
+
+    async get_filenames_recursively(dir) {
+        const subdirs = await readdir(dir)
+        const files = await Promise.all(subdirs.map(async (subdir) => {
+            const res = path.resolve(dir, subdir)
+            return (await stat(res)).isDirectory() ? this.get_filenames_recursively(res) : res.replaceAll('\\', '/')
+        }))
+
+        return files.reduce((a, f) => a.concat(f), [])
     }
 }
 
