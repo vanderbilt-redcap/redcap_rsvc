@@ -10,6 +10,7 @@ Feature: A.2.33.0800.: The system shall allow defining a custom HTML-enabled ACG
         And I click on the button labeled "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
+        Then I should see "ACG enabled"
        
         When I click on the third link labeled "Access Control Groups"
         And I click on the button labeled "Set custom ACG error message"
