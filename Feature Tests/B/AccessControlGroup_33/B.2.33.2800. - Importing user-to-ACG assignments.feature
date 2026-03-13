@@ -29,18 +29,22 @@ Feature: The system shall allow importing user-to-ACG assignments via CSV.---Use
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
         When I click on the third link labeled "Access Control Groups"
-        And I enter "New_ACG_1" into the input field labeled "Create new Access Control Group"
-        And I click on "Create ACG"
-        And I click on the checkbox labeled "Project Design and Setup"
-        Then I should see "Creating New Access Control Group New_ACG_1"
-
-        When I click on the button labeled "Save Group"
+        And I wait for 1 second
+        And I click on the button labeled "Upload or download ACGs"
+        And I upload a "csv" format file located at "import_files/ACG_DownloadedGroups.csv", by clicking the button near "Upload ACGs (CSV)" to browse for the file
+        And I click on the button labeled "Confirm Import"
+        And I should see "Access Control Groups imported successfully"
+        And I wait for 1 second
+        And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             |ACG Name|
             |No Rights|
             |New_ACG_1|
             
     Scenario: B.2.33.2800. The system shall allow importing user-to-ACG assignments via CSV.---User Assignments → Upload
+        # The following line is only necessary for automated testing due to quirk of the way the upload file feature works on this page.
+        And I click on the first link labeled "Access Control Groups"
+        And I wait for 1 second
         When I click on the link labeled "User Assignments"
         Then I should see a table header and rows containing the following values in a table:
         |Username       |Full Name       |Email                         |Access Control Group  |
@@ -53,20 +57,17 @@ Feature: The system shall allow importing user-to-ACG assignments via CSV.---Use
         When I click on the button labeled "Upload or download user assignments"
         Then I should see the dropdown field labeled "Upload or download user assignments" with the options below
         | Upload user assignments (CSV)|
-        #When I click on the link labeled "Upload user assignments (CSV)"
-        When I upload a "csv" format file located at "import_files/ACG_NewRights.csv", by clicking the button labeled "Upload user assignments (CSV)" to browse for the file, and clicking the button labeled "Open" to upload the file  
+        When I upload a "csv" format file located at "import_files/ACG_NewRights.csv", by clicking the button near "Upload user assignments (CSV)" to browse for the file
         Then I should see a table header and rows containing the following values in a table:
         |Username       |ACG ID	        | Group Name (For Reference Only)      |
-        |Test_Admin     |Proposed:G-3C93B88E4D202| Proposed: New_ACG_1      |
-        |Test_User1     |Proposed:G-3C93B88E4D202| Proposed: New_ACG_1      |
-        |Test_User2     |Proposed:G-3C93B88E4D202| Proposed: New_ACG_1      |
-        |Test_User3     |Proposed:G-3C93B88E4D202| Proposed: New_ACG_1      |
-        |Test_User4     |Proposed:G-3C93B88E4D202| Proposed: New_ACG_1      |
+        |Test_Admin     |Proposed: G-3C93B88E4D202| Proposed: New_ACG_1      |
+        |Test_User1     |Proposed: G-3C93B88E4D202| Proposed: New_ACG_1      |
+        |Test_User2     |Proposed: G-3C93B88E4D202| Proposed: New_ACG_1      |
+        |Test_User3     |Proposed: G-3C93B88E4D202| Proposed: New_ACG_1      |
+        |Test_User4     |Proposed: G-3C93B88E4D202| Proposed: New_ACG_1      |
         When I click on the button labeled "Confirm Import"
         Then I should see "Access Control Groups User Assignments Successfully Completed"
         When I click on the button labeled "Close"
-        And I click on the button labeled "Access Control Groups"
-        And I click on the buttonlabeled "User Assignments"
     #Validate that the user-to-ACG assignments were updated as expected in the table
         Then I should see a table header and rows containing the following values in a table:
         |Username       |Full Name       |Email                         |Access Control Group  |
