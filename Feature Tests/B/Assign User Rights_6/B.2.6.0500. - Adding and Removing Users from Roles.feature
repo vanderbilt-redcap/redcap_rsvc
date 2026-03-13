@@ -17,7 +17,7 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
     Then I should see a dialog containing the following text: "Upload users (CSV)"
 
     Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+    Then I should see "Displayed below is a preview of all the changes you are about to commit."
     And I should see a table header and rows containing the following values in a table in the dialog box:
       | username   |
       | test_user1 |
