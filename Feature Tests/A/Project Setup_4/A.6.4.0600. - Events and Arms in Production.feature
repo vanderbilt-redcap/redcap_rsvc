@@ -277,7 +277,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Upload instrument-event mappings (CSV)"
         And I upload a "csv" format file located at "import_files/instrument_designation.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
-        Then I should see a dialog containing the following text: "ERROR"
+        Then I should see "Since the project is in production, you are not permitted to un-designate an instrument"
         And I click on the button labeled "Close"
 
         Given I click on the link labeled "Arm 1"
