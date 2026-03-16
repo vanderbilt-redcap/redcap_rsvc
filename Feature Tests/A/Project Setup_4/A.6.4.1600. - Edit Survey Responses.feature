@@ -28,6 +28,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
             | Data Viewing Rights |           |             |        |
             | No Access           | Read Only | View & Edit | Delete |
 
+        And I should NOT see "Edit Survey Responses"
         And I click on the button labeled "Cancel"
 
         #FUNCTIONAL REQUIREMENT

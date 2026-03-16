@@ -12,6 +12,7 @@ Feature: C.3.31.1800. User Interface: The system shall support defining day offs
       Then I should see "Loading"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+    #M Only one FHIR system setup is needed to test the functionality. You can skip these steps if you have already done this on another CDIS test. These FHIR settings will allow for validation against smart health IT and ensure REDCap can pull data via FHIR. If you want to validate against your local EHR vendor modification to these steps will be required. 
       When I click on the link labeled "FHIR Systems"
       Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
       When I click on the button labeled "Add"
@@ -31,8 +32,8 @@ Feature: C.3.31.1800. User Interface: The system shall support defining day offs
 
     #SET UP NEW PROJECT
       Given I login to REDCap with the user "Test_Admin"
-      And I create a new project named "C.3.31.1700" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
-      Then I should see "C.3.31.1700"
+      And I create a new project named "C.3.31.1800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "CDPTESTProject.xml", and clicking the "Create Project" button
+      Then I should see "C.3.31.1800"
       And I should NOT see "Setup Clinical Data Pull from EHR"
       And I should see "Clinical Data Pull from EHR"
       When I click on the button labeled "Enable" in the row labeled "Clinical Data Pull from EHR" 

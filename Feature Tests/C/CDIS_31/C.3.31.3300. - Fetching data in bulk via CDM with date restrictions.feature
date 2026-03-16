@@ -13,7 +13,8 @@ Scenario: Setup
         And I select "No, do not display 'email address' option in EHR source field list" on the dropdown field labeled "Allow the patient's email address to be imported from the EHR?"
         And I click on the button labeled "Save Changes"
 
-    #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+    #SET UP SMARTHEALTH IT IN CONTROL CENTER
+    #M Only one FHIR system setup is needed to test the functionality. You can skip these steps if you have already done this on another CDIS test. These FHIR settings will allow for validation against smart health IT and ensure REDCap can pull data via FHIR. If you want to validate against your local EHR vendor modification to these steps will be required. 
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
@@ -64,21 +65,6 @@ Scenario: Setup
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
 
-    # # Add two records
-    #     When I click on the link labeled "Add / Edit Records"
-    #     And I click on the button labeled "Add new record"
-    #     And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-    #     And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
-    #     And I click on the button labeled "Save & Exit Form"
-    #     Then I should see "Study ID 1 successfully added."
-
-    #     When I click on the link labeled "Add / Edit Records"
-    #     And I click on the button labeled "Add new record"
-    #     And I click the bubble for the row labeled "Demography" on the column labeled "Status"
-    #     And I enter "869722aa-6d3a-4afd-9acd-b4283bc7d47f" into the input field labeled "Medical record number"
-    #     And I click on the button labeled "Save & Exit Form"
-    #     Then I should see "Study ID 2 successfully added."
-
         When I click on the link labeled "Clinical Data Mart"
         And I should see "date range is applied"
         And I click on the button labeled "Fetch data"
@@ -100,7 +86,7 @@ Scenario: Setup
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
         | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
-        And I should NOT see "[instance = 7],\nrecord_id = '1'"
+        And I should NOT see "[instance = 7],[record_id] = '1'"
     
 Scenario: C.3.31.3300.200 User Interface: The system shall support restricting bulk EHR data pulls for all records when a global CDM date or datetime filter is added to the fetch request.
     #Create New Project with CDM Date limits
@@ -109,10 +95,8 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.3300.200" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-        And I click on the button labeled "select all"
-        And I click on the second button labeled "select all"
-        And I click on the tenth button labeled "select all"
-        And I click on the nineteenth button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
+        And I click on the button labeled "select all" in the row labeled "Vital Signs"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 
@@ -172,10 +156,8 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.3300.300" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-        And I click on the button labeled "select all"
-        And I click on the second button labeled "select all"
-        And I click on the tenth button labeled "select all"
-        And I click on the nineteenth button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
+        And I click on the button labeled "select all" in the row labeled "Vital Signs"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 

@@ -14,6 +14,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I click on the button labeled "Save Changes"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+    #M Only one FHIR system setup is needed to test the functionality. You can skip these steps if you have already done this on another CDIS test. These FHIR settings will allow for validation against smart health IT and ensure REDCap can pull data via FHIR. If you want to validate against your local EHR vendor modification to these steps will be required. 
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
@@ -44,7 +45,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I select "Practice / Just for fun" on the dropdown field labeled "---- Select One ----"
         And I enter "C.3.31.1400" into the input field labeled "Project title:"
         And I select the radio option "Clinical Data Mart: Create a project and pull multiple medical records from EHR" for the field labeled "Project creation option:"
-        And I click on the button labeled "select all"
+        And I click on the button labeled "select all" in the row labeled "Demographics"
         And I click on the button labeled "Create Project"
         Then I should see "Your new REDCap project has been created and is ready to be accessed."
 

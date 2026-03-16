@@ -504,11 +504,63 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                                                                                                                                                |
+            | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported |
             | mm/dd/yyyy hh:mm | test_user1 | Update record 10 | checkbox(1) = unchecked, checkbox(2) = unchecked, checkbox(3) = unchecked, required = '', calc_test = '', data_types_complete = ''|
             | mm/dd/yyyy hh:mm | test_user1 | Update record 9  | checkbox(1) = unchecked, checkbox(2) = unchecked, checkbox(3) = unchecked, required = '', calc_test = '', data_types_complete = ''|          
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 8  | record_id = '8'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 6  | record_id = '6'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 7  | record_id = '7'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 5  | record_id = '5'                                                                                                                                                                        |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 8  | record_id = '8' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 6  | record_id = '6' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 7  | record_id = '7' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 5  | record_id = '5' |        
+            
+    Scenario: B.3.32.0200.0900: Bulk Delete with Mixed Delete Privileges
+        #No delete record rights
+        When I click on the link labeled "User Rights"
+        And I click on the link labeled "test_user1"
+        And I click on the button labeled "Edit user privileges"
+        Then I should see a dialog containing the following text: "Editing existing user"
+        When I uncheck the User Right named "Delete Records"
+        And I should see "The Delete right has been cleared for all forms"
+        When I click on the button labeled "Close"
+        And I click on the button labeled "Save Changes"
+        And I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+        Then I should NOT see "Bulk Record Delete"
+
+        #Instrument level delete only rights
+        When I click on the link labeled "User Rights"
+        And I click on the link labeled "test_user1"
+        And I click on the button labeled "Edit user privileges"
+        Then I should see a dialog containing the following text: "Editing existing user"
+        When I check the checkbox in the column labeled "Delete" and the row labeled "Consent"
+        And I click on the button labeled "Save Changes"
+        And I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+        Then I should see "Bulk Record Delete"
+        When I click on the button labeled "Bulk Record Delete"
+        Then I should see "Bulk Record Delete"
+        And I should NOT see "Delete entire records"
+        And I should see "Consent"
+        And I should NOT see "Text Validation"
+        And I should NOT see "Data Types"
+        And I should NOT see "Data Dictionary Form"
+        And I should NOT see "Text Validation 2"
+
+        When I click on the radio labeled "Enter a custom list of records"
+        And I wait for 2 seconds
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
+        And I click on the checkbox labeled "Consent" in the row labeled "Event 1"
+        And I enter "1" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
+        Then I should see "Valid list entered"
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
+        Then I should see "Deleted forms"
+        And I should see "[event_1_arm_1] consent"
+        And I should see "for 1 record(s)"
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+            | Time / Date      | Username   | Action          | List of Data Changes OR Fields Exported   |
+            | mm/dd/yyyy hh:mm | test_user1 | Update record 1 | name_consent = '', email_consent = '', dob = '', consent_complete = ''|
 #END

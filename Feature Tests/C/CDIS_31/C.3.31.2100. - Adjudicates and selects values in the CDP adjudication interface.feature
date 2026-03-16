@@ -12,6 +12,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I click on the button labeled "Save Changes"
 
     #SET UP SMARTHEALTH IT IN CONTROL CENTER 
+    #M Only one FHIR system setup is needed to test the functionality. You can skip these steps if you have already done this on another CDIS test. These FHIR settings will allow for validation against smart health IT and ensure REDCap can pull data via FHIR. If you want to validate against your local EHR vendor modification to these steps will be required. 
         When I click on the link labeled "FHIR Systems"
         Then I should see "This interface enables the connection of REDCap with multiple FHIR (Fast Healthcare Interoperability Resources) systems. FHIR is a standard for electronic healthcare information exchange, while SMART on FHIR provides specifications for integrating apps with Electronic Health Records using FHIR standards and OAuth2 security."
         When I click on the button labeled "Add"
@@ -70,7 +71,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I click on the radio labeled "body_weight"
         And I wait for 2 seconds
         And I click on the button labeled "Save"
-        Then I should see "95.902896432667" in the data entry form field "Body weight" 
+        Then I should see "96.904762289757" in the data entry form field "Body weight" 
         When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
