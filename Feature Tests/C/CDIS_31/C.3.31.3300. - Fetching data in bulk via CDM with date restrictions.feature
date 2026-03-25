@@ -68,7 +68,8 @@ Scenario: Setup
         When I click on the link labeled "Clinical Data Mart"
         And I should see "date range is applied"
         And I click on the button labeled "Fetch data"
-        And I click on "Confirm"
+        And I click on "Fetch all"
+        And I click on the button labeled "Run fetch"
         Then I should see a table header and rows containing the following values in a table:
         | Category     | New | Updated | Total |
         | Demographics | 0   | 16      | 16    |
@@ -129,7 +130,8 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         And I click on "Submit"
         Then I should see "date range is applied"
         When I click on the button labeled "Fetch data"
-        And I click on "Confirm"
+        And I click on "Fetch all"
+        And I click on the button labeled "Run fetch"
         And I wait for 10 seconds
         Then I should see "Demographics"
         And I should see "32"
@@ -200,7 +202,8 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         And I click on "Submit"
         Then I should see "date range is applied"
         When I click on the button labeled "Fetch data"
-        And I click on "Confirm"
+        And I click on "Fetch all"
+        And I click on the button labeled "Run fetch"
         And I wait for 10 seconds
         Then I should see "Demographics"
         And I should see "32"
