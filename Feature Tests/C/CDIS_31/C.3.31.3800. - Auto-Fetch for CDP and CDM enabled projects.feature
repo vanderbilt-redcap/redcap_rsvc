@@ -72,6 +72,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         Then I should see "Study ID 1 successfully edited."
        #Manual: If doing this manually you will need to wait anywhere from 2 minutes to 12 hours depending on how busy your cron server is. 
         And I wait for background processes to finish
+        And I wait for background processes to finish
 
     #VERIFY_LOG the background process should have created multiple entries per record in the logging table
         When I click on the link labeled "Logging"
