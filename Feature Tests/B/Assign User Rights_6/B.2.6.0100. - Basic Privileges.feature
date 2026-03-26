@@ -224,7 +224,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the link labeled "B.2.6.0100.100"
         Then I should see "ACCESS DENIED!"
         And I should see "Your access to this particular REDCap project has expired"
-        When I click on the link labeled "Return to My Projects page"
+        When I click on the link labeled "Return to the My Projects page"
         And I logout
 
         ##ACTION: Remove expiration for User
