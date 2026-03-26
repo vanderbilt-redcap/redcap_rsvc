@@ -11,7 +11,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -23,9 +23,9 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     And I click on the link labeled "B.3.14.0200.100"
     And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #SETUP
     Given I click on the link labeled "Add / Edit Records"
@@ -43,7 +43,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
 
     Given I click on the link labeled "Upload file"
@@ -52,7 +52,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     Given I select the radio option "True" for the field labeled "True/False"
     And I select the radio option "No" for the field labeled "Yes/No"
     And I move the slider field labeled "Slider" to the position of 65
-    When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    When I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 7 successfully added."
 
     ###VERIFY_LOG
@@ -76,7 +76,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
       | A | All data (all records and fields) |
 
     When I click on the button labeled "View Report"
-    Then I should see a table header and rows containing the following values in the report data table:
-      | Record ID | Event name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email | Complete? | radio           | Multiple Choice Dropdown Manual | Notes box 2 | Checkbox1   | Checkbox2   | Checkbox3     | Signature | File Upload | True/False | Yes/No | Slider |
+    Then I should see a table header and rows containing the following values in the a table:
+      | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email | Complete? | radio           | Multiple Choice Dropdown Manual | Notes box 2 | Checkbox    |             |               | Signature | File Upload | True/False | Yes/No | Slider |
       | 7         | Event 1 (Arm 1: Arm 1) | Data Types        | 1               |                   |                   |      |       |           | Choice99 (9..9) | DDChoice6 (6)                   | Notes box   | Checked (1) | Checked (1) | Unchecked (0) | [button]  | [button]    | True (1)   | No (0) | 65     |
 #END

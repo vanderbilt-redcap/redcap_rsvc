@@ -11,9 +11,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #SET UP_USER_RIGHTS
         When I click on the link labeled "User Rights"
@@ -23,7 +23,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+        Then I should see "Displayed below is a preview of all the changes you are about to commit."
         And I should see a table header and rows containing the following values in a table in the dialog box:
             | username   |
             | test_admin |
@@ -32,9 +32,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -52,13 +52,15 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         When I check the User Right named "Delete Records"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         When I click on the link labeled "test_user2"
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         When I uncheck the User Right named "Delete Records"
-        And I save changes within the context of User Rights
+        And I should see "The Delete right has been cleared for all forms"
+        And I click on the button labeled "Close"
+        And I click on the button labeled "Save Changes"
 
         ##ACTION Verify record exist ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
@@ -90,22 +92,21 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
 
-        And I wait for 2 seconds
-        When I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Delete entire records"
-        And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Enter a custom list of records"
+        And I click on the radio labeled "Delete entire records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "3,5" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
-        When I click on the radio labeled exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
         ##ACTION Verify records deleted
@@ -134,19 +135,19 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         And I wait for 2 seconds
-        When I click on the radio labeled exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 1: Arm 1" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Select records from a list"
+        And I click on the radio labeled "Select records from a list"
         Then I should see "Step 3: Select records to delete"
         And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
-        Given I click on the checkbox labeled exactly " 2"
-        And I click on the checkbox labeled exactly " 6"
-        And I click on the button labeled exactly " Delete "
+        Given I click on the checkbox labeled " 2"
+        And I click on the checkbox labeled " 6"
+        And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
 
@@ -176,20 +177,20 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
-        Then I should see "Arm 1: Arm 1"
 
-        Given the Event Name "Event 1", I click on the checkbox labeled "Data Types"
-        When I click on the radio labeled exactly "Enter a custom list of records"
+        Given I click on the checkbox labeled "Data Types" in the row labeled "Event 1"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "1" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] data_types"
         And I should see "for 1 record(s)"
@@ -220,22 +221,22 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
-        Then I should see "Arm 1: Arm 1"
 
-        Given the Event Name "Event 1", I click on the checkbox labeled "Text Validation"
-        And the Event Name "Event 1", I click on the checkbox labeled "Data Types"
-        And the Event Name "Event 1", I click on the checkbox labeled "Consent"
-        When I click on the radio labeled exactly "Enter a custom list of records"
+        Given I click on the checkbox labeled "Text Validation" in the row labeled "Event 1"
+        And I click on the checkbox labeled "Data Types" in the row labeled "Event 1"
+        And I click on the checkbox labeled "Consent" in the row labeled "Event 1"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I enter "4" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_1] text_validation"
         And I should see "[event_1_arm_1] data_types"
@@ -272,7 +273,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 5."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added."
 
         When I click on the link labeled "Add / Edit Records"
@@ -280,7 +281,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 6."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 6 successfully added."     
 
         When I click on the link labeled "Add / Edit Records"
@@ -288,7 +289,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 7."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 
         When I click on the link labeled "Add / Edit Records"
@@ -296,7 +297,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 8."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 8 successfully added."  
 
         When I click on the link labeled "Add / Edit Records"
@@ -304,7 +305,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 9."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 9 successfully added." 
 
         When I click on the link labeled "Add / Edit Records"
@@ -312,7 +313,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 10."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 10 successfully added."
 
         When I click on the link labeled "Add / Edit Records"
@@ -320,7 +321,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 11."
 
-        When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 11 successfully added."    
     ##FUNCTIONAL_REQUIREMENT
     Scenario: B.3.32.0200.500: Bulk Delete Records Using Custom List for arm 2
@@ -332,23 +333,22 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
 
-        And I wait for 2 seconds
-        When I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Delete entire records"
-        And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Enter a custom list of records"
+        And I click on the radio labeled "Delete entire records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I enter "5,7" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again ..
-        When I click on the radio labeled exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the button labeled exactly " Delete "
+        And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
         ##ACTION Verify records deleted
@@ -380,20 +380,20 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         And I wait for 2 seconds
-        When I click on the radio labeled exactly "Delete entire records"
+        When I click on the radio labeled "Delete entire records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the radio labeled exactly "Select records from a list"
+        And I click on the radio labeled "Select records from a list"
         Then I should see "Step 3: Select records to delete"
         And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
         When I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the checkbox labeled exactly " 6"
-        And I click on the checkbox labeled exactly " 8"
-        And I click on the button labeled exactly " Delete "
+        And I click on the checkbox labeled " 6"
+        And I click on the checkbox labeled " 8"
+        And I click on the button labeled "Delete"
 
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted 2 record(s)"
 
 
@@ -425,18 +425,20 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the radio labeled exactly "Enter a custom list of records"
+        And I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         And I click on the checkbox labeled "Data Types"
         And I enter "9" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I click on the button labeled exactly " Delete "
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"
         And I should see "for 1 record(s)"
@@ -469,22 +471,22 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see "Bulk Record Delete"
 
         When I click on the radio labeled "Partial delete (instrument-level data only)"
-        And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
-        Then I should see "Arm 2: Arm Two"
 
-        When I click on the radio labeled exactly "Enter a custom list of records"
+        When I click on the radio labeled "Enter a custom list of records"
         And I wait for 2 seconds
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."        
         And I click on the checkbox labeled "Data Types"
         And I enter "10" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         Then I should see "Valid list entered"
 
         #Automated: JavaScript does not fire for the alert box unless clicked again .
         When I click on the radio labeled "Partial delete (instrument-level data only)"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."      
-        And I click on the button labeled exactly " Delete "
-        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
-        And I click on the button labeled "Delete" in the dialog box
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
         Then I should see "Deleted forms"
         And I should see "[event_1_arm_2] data_types"
         And I should see "for 1 record(s)"
@@ -502,11 +504,63 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                                                                                                                                                |
+            | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported |
             | mm/dd/yyyy hh:mm | test_user1 | Update record 10 | checkbox(1) = unchecked, checkbox(2) = unchecked, checkbox(3) = unchecked, required = '', calc_test = '', data_types_complete = ''|
             | mm/dd/yyyy hh:mm | test_user1 | Update record 9  | checkbox(1) = unchecked, checkbox(2) = unchecked, checkbox(3) = unchecked, required = '', calc_test = '', data_types_complete = ''|          
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 8  | record_id = '8'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 6  | record_id = '6'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 7  | record_id = '7'                                                                                                                                                                        |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record 5  | record_id = '5'                                                                                                                                                                        |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 8  | record_id = '8' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 6  | record_id = '6' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 7  | record_id = '7' |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 5  | record_id = '5' |        
+            
+    Scenario: B.3.32.0200.0900: Bulk Delete with Mixed Delete Privileges
+        #No delete record rights
+        When I click on the link labeled "User Rights"
+        And I click on the link labeled "test_user1"
+        And I click on the button labeled "Edit user privileges"
+        Then I should see a dialog containing the following text: "Editing existing user"
+        When I uncheck the User Right named "Delete Records"
+        And I should see "The Delete right has been cleared for all forms"
+        When I click on the button labeled "Close"
+        And I click on the button labeled "Save Changes"
+        And I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+        Then I should NOT see "Bulk Record Delete"
+
+        #Instrument level delete only rights
+        When I click on the link labeled "User Rights"
+        And I click on the link labeled "test_user1"
+        And I click on the button labeled "Edit user privileges"
+        Then I should see a dialog containing the following text: "Editing existing user"
+        When I check the checkbox in the column labeled "Delete" and the row labeled "Consent"
+        And I click on the button labeled "Save Changes"
+        And I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+        Then I should see "Bulk Record Delete"
+        When I click on the button labeled "Bulk Record Delete"
+        Then I should see "Bulk Record Delete"
+        And I should NOT see "Delete entire records"
+        And I should see "Consent"
+        And I should NOT see "Text Validation"
+        And I should NOT see "Data Types"
+        And I should NOT see "Data Dictionary Form"
+        And I should NOT see "Text Validation 2"
+
+        When I click on the radio labeled "Enter a custom list of records"
+        And I wait for 2 seconds
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
+        And I click on the checkbox labeled "Consent" in the row labeled "Event 1"
+        And I enter "1" into the textarea field labeled "Step 3: Enter records to delete"
+        # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
+        Then I should see "Valid list entered"
+        And I click on the button labeled "Delete"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
+        Then I should see "Deleted forms"
+        And I should see "[event_1_arm_1] consent"
+        And I should see "for 1 record(s)"
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+            | Time / Date      | Username   | Action          | List of Data Changes OR Fields Exported   |
+            | mm/dd/yyyy hh:mm | test_user1 | Update record 1 | name_consent = '', email_consent = '', dob = '', consent_complete = ''|
 #END

@@ -11,9 +11,9 @@ Feature: User Interface: The system shall ignore survey identifier and timestamp
 
         #SETUP_PRODUCTION
         When I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Data Import Tool"
 

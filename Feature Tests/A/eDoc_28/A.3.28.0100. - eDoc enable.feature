@@ -27,6 +27,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameLocal" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -35,7 +37,7 @@ As a REDCap administrator
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -51,17 +53,16 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid13_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 13 - LastNameLocal |
-      | Type: Participant     |
+      | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in local server directory 
  # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    # Assuming Baker likes this "latest file" language, we should be good.  If we switch to something different, we should consider whether we need to clear the edocs folder between test runs
     Then I should see the following values in the most recent file in the local storage path
       | PID 13 - LastNameLocal |
-      | Type: Participant      |
+      | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant      |
 
   Scenario: A.3.28.0100.0200 – Configure Microsoft Azure Blob Storage
 # Requires Azure storage account name, key, container, and environment. Site must confirm that uploaded files are routed to the Azure container. 
@@ -78,6 +79,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameAzure" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -86,7 +89,7 @@ As a REDCap administrator
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -102,17 +105,17 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid14_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 14 - LastNameAzure |
-      | Type: Participant     |
+      | FirstName LastNameAzure, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
  #VERIFY Confirm file exists in Azure Blob Storage 
  # Site must verify that the PDF file was saved in the configured Microsoft Azure Blob Storage container 
    # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Azure Blob Storage container
       | PID 14 - LastNameAzure   |
-      | Type: Participant |
+      | FirstName LastNameAzure, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0300 – Configure Amazon S3 Storage
 # Requires AWS access key, secret key, bucket name, and region. # Site must verify file appearance in the configured S3 bucket. 
@@ -129,6 +132,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameS3" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -137,7 +142,7 @@ As a REDCap administrator
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -153,16 +158,16 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid15_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 15 - LastNameS3 |
-      | Type: Participant     |
+      | FirstName LastNameS3, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Amazon S3 Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Amazon S3 bucket
       | PID 15 - LastNameS3   |
-      | Type: Participant |
+      | FirstName LastNameS3, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0400 – Configure Google Cloud Storage
 # Supports GCS via API or App Engine configuration. Site must confirm file appears in the correct Google Cloud bucket. 
@@ -178,6 +183,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0400" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameGCS" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -186,7 +193,7 @@ As a REDCap administrator
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -202,16 +209,16 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid16_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 16 - LastNameGCS |
-      | Type: Participant     |
+      | FirstName LastNameGCS, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Google Cloud Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Google Cloud Storage bucket
       | PID 16 - LastNameGCS   |
-      | Type: Participant |
+      | FirstName LastNameGCS, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0500 – Configure WebDAV Storage
 # Uses a WebDAV-accessible path preconfigured on the REDCap server. Site must verify storage access and permissions. 
@@ -225,6 +232,8 @@ As a REDCap administrator
     When I create a new project named "A.3.28.0100.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
+    # Wait for the rendered PDF to load before we start typing, or the field we're typing into may lose focus
+    And I wait for 3 seconds
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameWebDAV" into the input field labeled "Last Name"
     And I enter "email@test.edu" into the input field labeled "email"
@@ -233,7 +242,7 @@ As a REDCap administrator
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     And I click on the button labeled "Next Page"
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -249,16 +258,16 @@ As a REDCap administrator
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid17_formParticipantConsent_id1_"
-    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Given I click on the link labeled "_formParticipantConsent_id1_"
     Then I should see the following values in the last file downloaded
       | PID 17 - LastNameWebDAV |
-      | Type: Participant     |
+      | FirstName LastNameWebDAV, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in WebDAV storage location 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the WebDAV server
       | PID 17 - LastNameWebDAV |
-      | Type: Participant |
+      | FirstName LastNameWebDAV, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: Stop external storage services
     Then if running via automation, stop external storage services

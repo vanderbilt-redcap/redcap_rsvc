@@ -11,7 +11,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     Then I should see "System-level User Settings"
     Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
     When I click on the button labeled "Save Changes"
-    And I see "Your system configuration values have now been changed!"
+    And I should see "Your system configuration values have now been changed!"
     Then I logout
 
     #SETUP
@@ -20,16 +20,17 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Open survey
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey below."
@@ -39,7 +40,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     And I click on the button labeled "Close survey"
 
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    #And I click on the button labeled "Leave without saving changes"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Log out + Open survey
@@ -47,7 +48,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Log out+ Open survey" label
     Then I should see "Please complete the survey below"

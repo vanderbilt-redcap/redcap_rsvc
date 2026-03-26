@@ -13,14 +13,14 @@ Feature: A.2.12.0100. Security Settings- The system shall support changing the s
     And I should see the dropdown field labeled "System Status" with the option "SYSTEM ONLINE" selected
 
     Given I select "SYSTEM OFFLINE" on the dropdown field labeled "System Status"
-    And I enter "This is a test.  The Vanderbilt REDCap System is offline and will be back online shortly." into the textarea field labeled "Custom message to display to users when system is offline"
+    And I enter "This is a test. The Vanderbilt REDCap System is offline and will be back online shortly." into the textarea field labeled "Custom message to display to users when system is offline"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
     When I logout
 
     #Test REDCap offline for Standard User
     Given I login to REDCap with the user "Test_User1"
-    Then I should see "This is a test.  The Vanderbilt REDCap System is offline and will be back online shortly."
+    Then I should see "This is a test. The Vanderbilt REDCap System is offline and will be back online shortly."
     And I logout
 
     #Test REDCap offline for Admin User

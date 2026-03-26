@@ -10,7 +10,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -19,9 +19,9 @@ Feature: Saving Data: The system shall support the following statuses for data i
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #FUNCTIONAL_REQUIREMENT
         Given I click on the link labeled "Add / Edit Records"
@@ -39,7 +39,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Incomplete (W/ data)
         And I clear field and enter "Incomplete with data" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 
         #VERIFY_RECORD_HOMEPAGE: Incomplete - save and stay (W/ data)
@@ -49,7 +49,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Unverified
         And I select "Unverified" on the dropdown field labeled "Complete?"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 
         #VERIFY_RECORD_HOMEPAGE: Unverified
@@ -59,7 +59,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Complete
         And I select "Complete" on the dropdown field labeled "Complete?"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 
         #VERIFY_RECORD_HOMEPAGE: Complete

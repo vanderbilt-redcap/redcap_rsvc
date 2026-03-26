@@ -11,9 +11,9 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
         And I create a new project named "B.2.6.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Add User with Basic custom rights
@@ -24,7 +24,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a dialog containing the following text: "Adding new user"
 
         When I uncheck the User Right named "Project Setup & Design"
-        And I check the radio labeled "No Access" in the dialog box
+        And I check the radio labeled "No Access"
         And I uncheck the User Right named "Data Access Groups"
         And I uncheck the User Right named "Survey Distribution Tools"
         And I uncheck the User Right named "Alerts & Notifications"
@@ -101,8 +101,8 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
 
-        And I check the radio labeled "Read Only" in the dialog box
-        And I save changes within the context of User Rights
+        And I check the radio labeled "Read Only"
+        And I click on the button labeled "Save Changes"
 
         ##VERIFY_LOG: Verify Update user rights
         And I click on the link labeled "Logging"
@@ -135,7 +135,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a dialog containing the following text: "Editing existing user"
 
         When I check the User Right named "Project Setup & Design"
-        And I check the radio labeled "Full Access" in the dialog box
+        And I check the radio labeled "Full Access"
         And I check the User Right named "Data Access Groups"
         And I check the User Right named "Survey Distribution Tools"
         And I check the User Right named "Alerts & Notifications"
@@ -161,7 +161,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
         And I check the User Right named "Lock/Unlock *Entire* Records (record level)"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         ##VERIFY_LOG: Verify Update user rights
         And I click on the link labeled "Logging"
@@ -261,7 +261,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         When I click on a button labeled "Remove user"
         Then I should see a dialog containing the following text: "Remove user?"
-        And I click on the button labeled "Remove user" in the dialog box
+        And I click on the button labeled "Remove user"
 
         ##VERIFY_LOG: Verify Logging of Delete user
         When I click on the link labeled "Logging"

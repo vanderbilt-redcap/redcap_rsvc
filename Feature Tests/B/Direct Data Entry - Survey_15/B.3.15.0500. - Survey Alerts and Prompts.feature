@@ -10,15 +10,16 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #SETUP_RECORD
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project
     Then I should see "Please complete the survey below."
@@ -28,7 +29,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
     Then I should see a dialog containing the following text: "Recommended: Leave this page while survey is in session"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I click on the button labeled "Leave without saving changes"
 
     ##VERIFY_LOG:
     Given I click on the link labeled "Logging"
@@ -41,7 +42,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     Given I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Survey" longitudinal instrument on event "Event Three"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "Save & Stay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label and will leave the tab open when I return to the REDCap project
     Then I should see "Please complete the survey below."
@@ -50,9 +51,9 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     ##ACTION Verify stay on page and edit survey
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
-    When I click on the button labeled "Stay on page" in the dialog box
+    When I click on the button labeled "Stay on page"
     And I clear field and enter "Overwrite Name" into the data entry form field labeled "Name"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully edited."
 
     ##VERIFY_LOG:

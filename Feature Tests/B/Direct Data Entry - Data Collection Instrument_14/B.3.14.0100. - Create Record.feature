@@ -9,9 +9,9 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I create a new project named "B.3.14.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         ##SETUP_USER_RIGHTS
         # User with create access
@@ -41,7 +41,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
 
         ##VERIFY
         Then I should see "Record ID 7 successfully added"
@@ -54,7 +54,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
         #VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "7"
+        And I click on the link labeled "7"
         Then I should see "Record ID 7"
 
         ##VERIFY_DE
@@ -72,7 +72,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I select record ID "1" from arm name "Arm 1: Arm 1" on the View / Edit record page
         And I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         And I clear field and enter "EDIT1" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1 successfully edited"
         And I logout
 
@@ -88,7 +88,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I select record ID "1" from arm name "Arm 1: Arm 1" on the View / Edit record page
         And I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         And I clear field and enter "EDIT2" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1 successfully edited"
 
         ##VERIFY_LOG: Existing record updated

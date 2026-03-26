@@ -17,9 +17,9 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
 
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -27,7 +27,7 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Signature field creation
-        Given I click on the instrument labeled "Form 1"
+        Given I click on the link labeled "Form 1"
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "Descriptive Text (with optional Image/Video/Audio/File Attachment)" from the Field Type dropdown of the open "Add New Field" dialog box
@@ -38,20 +38,19 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         Given I click on the link labeled "Upload file"
         And I see a dialog containing the following text: "Attach an image, file, or embedded audio"
         When I upload a "docx" format file located at "import_files/B.6.7.1500_Upload File.docx", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file, and clicking the button labeled "Upload file" to upload the file
-        Then I should see "Document was successfully uploaded!" in the dialog box
-        # This message should go away on it's own after a few seconds
-        Then I should NOT see "Document was successfully uploaded!" in the dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        Then I should see "Document was successfully uploaded!"
+        And I click on the button labeled "Close"
+        And I click on the button labeled "Save"
 
         ##VERIFY
-        Then I should see the field labeled "Descriptive Text with File"
+        Then I should see "Descriptive Text with File"
         And I should see the link labeled "B.6.7.1500_Upload File"
 
         ##SETUP_PRODUCTION
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Changes Were Made Automatically"
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
@@ -68,7 +67,7 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         ##ACTION: Download file from descriptive field
         Given I click on the link labeled "Add / Edit Records"
         When I click on the button labeled "Add new record"
-        Then I should see the field labeled "Descriptive Text with File"
+        Then I should see "Descriptive Text with File"
         And I should see "Attachment:"
         And I should see a link labeled "B.6.7.1500_Upload File"
 

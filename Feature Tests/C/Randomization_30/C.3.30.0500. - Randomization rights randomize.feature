@@ -21,33 +21,34 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I click on the button labeled "Set up randomization"
     Then I should see "Randomization"
 
-    When I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     When I click on the button labeled "Example #1 (basic)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
     And I upload a "csv" format file located at "import_files/C.3.30.0500_RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
     Then I should see "Success! The randomization allocation table was created!"
 
   Scenario: C.3.30.0500.0100. User with Randomization Randomize rights can Randomize.
-#FUNCTIONAL_REQUIREMENT C.3.30.0500.100: User with Randomization Randomize rights can Randomize.
+    #FUNCTIONAL_REQUIREMENT C.3.30.0500.100: User with Randomization Randomize rights can Randomize.
     When I click on the link labeled "Add / Edit Records"
     And I click on a button labeled "Add new record"
     And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
     And I select the radio option "Man" for the field labeled "Do you describe yourself as a man, a woman, or in some other way?"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see " Record ID 6 successfully added."
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
-    Then I should see "Randomization group"
+    Then I should see "Randomization group 1"
     And I should see "Blinded randomization"
     And I should see "Automatic Randomization"
     And I should see "Randomize"
-##VERIFY User with Randomization Randomize rights can Randomize.
+    ##VERIFY User with Randomization Randomize rights can Randomize.
     When I click on a button labeled "Randomize"
     Then I should see the radio labeled "Do you describe yourself as a man, a woman, or in some other way?" with option "Man" selected
     And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).' 
+    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
     When I click on the button labeled "Close"
-    Then I should see the radio labeled "Randomization group" with option "Drug A" selected
+    Then I should see the radio labeled "Randomization group 1" with option "Drug A" selected
+    And I should see "Already randomized"
 
   Scenario: #SETUP User Rights (Takeaway User Rand - Setup Rights)
     When I click on the link labeled "User Rights"
@@ -58,13 +59,12 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     Then I should see 'User "test_user1" was successfully edited'
 
   Scenario: C.3.30.0500.0200. User without Randomization Randomize rights cannot Randomize.
-#FUNCTIONAL_REQUIREMENT C.3.30.0500.200: User without Randomization Randomize rights cannot Randomize.
+    #FUNCTIONAL_REQUIREMENT C.3.30.0500.200: User without Randomization Randomize rights cannot Randomize.
     When I click on the link labeled "Add / Edit Records"
     And I click on a button labeled "Add new record"
     And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
 
-  ##VERIFY User without Randomization Randomize rights cannot Randomize.
-    Then I should see "Randomization group"
+    ##VERIFY User without Randomization Randomize rights cannot Randomize.
+    Then I should see "Randomization group 1"
     And I should NOT see a button labeled "Randomize"
-
 #END

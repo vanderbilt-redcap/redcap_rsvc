@@ -17,7 +17,7 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
     Then I should see a dialog containing the following text: "Upload users (CSV)"
 
     Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+    Then I should see "Displayed below is a preview of all the changes you are about to commit."
     And I should see a table header and rows containing the following values in a table in the dialog box:
       | username   |
       | test_user1 |
@@ -25,10 +25,10 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
       | test_user3 |
       | test_user4 |
 
-    Given I click on the button labeled "Upload" in the dialog box
+    Given I click on the button labeled "Upload"
     Then I should see a dialog containing the following text: "SUCCESS!"
 
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
       | —                       | test_admin          |
@@ -45,7 +45,7 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Cancel assign to role
     When I click on the link labeled "Test User1"
-    And I click on the button labeled "Assign to role" on the tooltip
+    And I click on the button labeled "Assign to role"
     And I select "TestRole" on the dropdown field labeled "Select Role"
     And I click on the link labeled "Cancel"
 
@@ -65,10 +65,10 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
 
     ##ACTION: Assign to role
     When I click on the link labeled "Test User1"
-    And I click on the button labeled "Assign to role" on the tooltip
+    And I click on the button labeled "Assign to role"
     # I have to select this twice. Not sure why
     And I select "TestRole" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
 
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -85,10 +85,10 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
 
     ##ACTION: Re-assign to role
     When I click on the link labeled "Test User1"
-    And I click on the button labeled "Re-assign to role" on the tooltip
+    And I click on the button labeled "Re-assign to role"
     # I have to select this twice. Not sure why
     And I select "1_FullRights" on the dropdown field labeled "Select Role"
-    And I click on the button labeled exactly "Assign"
+    And I click on the button labeled "Assign"
 
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -122,5 +122,5 @@ Feature: B.2.6.0500. Project Level:  The system shall support adding and removin
       | TestRole                | [No users assigned] |
 
     And I should see a dialog containing the following text: "User's privileges will remain the same"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 #End

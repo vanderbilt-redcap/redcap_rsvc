@@ -10,9 +10,9 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
 
     #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Verify field validation Disable
@@ -21,29 +21,29 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     Then I should see "Validation Types Currently Available for Use in All Projects"
 
     When I click on the button labeled "Disable" in the row labeled "Date (D-M-Y)"
-    Then I should see the "disabled icon" in the validation row labeled "Date (D-M-Y)"
+    Then I should see a button labeled "Enable" in the row labeled "Date (D-M-Y)"
 
     When I click on the button labeled "Disable" in the row labeled "Datetime (M-D-Y H:M)"
-    Then I should see the "disabled icon" in the validation row labeled "Datetime (M-D-Y H:M)"
+    Then I should see a button labeled "Enable" in the row labeled "Datetime (M-D-Y H:M)"
 
     When I click on the button labeled "Disable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
-    Then I should see the "disabled icon" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
+    Then I should see a button labeled "Enable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
 
     When I click on the button labeled "Disable" in the row labeled "Email"
-    Then I should see the "disabled icon" in the validation row labeled "Email"
+    Then I should see a button labeled "Enable" in the row labeled "Email"
 
     When I click on the button labeled "Disable" in the row labeled "Integer"
-    Then I should see the "disabled icon" in the validation row labeled "Integer"
+    Then I should see a button labeled "Enable" in the row labeled "Integer"
 
     When I click on the button labeled "Disable" in the row labeled "Number"
-    Then I should see the "disabled icon" in the validation row labeled "Number"
+    Then I should see a button labeled "Enable" in the row labeled "Number"
 
     # ATS : Step below skipped because already disabled by the default install of REDCap ...
     #And I click on the button labeled "Disable" in the row labeled "Number (1 decimal place - comma as decimal)"
-    And I should see the "disabled icon" in the validation row labeled "Number (1 decimal place - comma as decimal)"
+    And I should see a button labeled "Enable" in the row labeled "Number (1 decimal place - comma as decimal)"
 
     When I click on the button labeled "Disable" in the row labeled "Time (HH:MM)"
-    Then I should see the "disabled icon" in the validation row labeled "Time (HH:MM)"
+    Then I should see a button labeled "Enable" in the row labeled "Time (HH:MM)"
 
 
     ##VERIFY: options not available on validation dropdown field
@@ -53,7 +53,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the button labeled "Enter Draft Mode"
     And I click on the button labeled "Dismiss"
     Then I should see "The project is now in Draft Mode."
-    When I click on the instrument labeled "Data Types"
+    When I click on the link labeled "Data Types"
     And I click on the button labeled "Dismiss"
     And I click on the first button labeled "Add Field"
 
@@ -66,7 +66,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     # - Number
     # - Number (1 decimal place - comma as decimal)
     # - Time (HH:MM)
-    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:" in the dialog box
+    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
     Then I should see the dropdown field labeled "Validation?" with the options below
       | ---- None ----                    |
       | Date (M-D-Y)                      |
@@ -78,7 +78,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Phone (North America)             |
       | Time (HH:MM:SS)                   |
       | Zipcode (U.S.)                    |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 
     #SETUP
     Given I click on the link labeled "Control Center"
@@ -86,28 +86,28 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     Then I should see "Validation Types Currently Available for Use in All Projects"
 
     When I click on the button labeled "Enable" in the row labeled "Date (D-M-Y)"
-    Then I should see the "checkmark icon" in the validation row labeled "Date (D-M-Y)"
+    Then I should see a button labeled "Disable" in the row labeled "Date (D-M-Y)"
 
     When I click on the button labeled "Enable" in the row labeled "Datetime (M-D-Y H:M)"
-    Then I should see the "checkmark icon" in the validation row labeled "Datetime (M-D-Y H:M)"
+    Then I should see a button labeled "Disable" in the row labeled "Datetime (M-D-Y H:M)"
 
     When I click on the button labeled "Enable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
-    Then I should see the "checkmark icon" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
+    Then I should see a button labeled "Disable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
 
     When I click on the button labeled "Enable" in the row labeled "Email"
-    Then I should see the "checkmark icon" in the validation row labeled "Email"
+    Then I should see a button labeled "Disable" in the row labeled "Email"
 
     When I click on the button labeled "Enable" in the row labeled "Integer"
-    Then I should see the "checkmark icon" in the validation row labeled "Integer"
+    Then I should see a button labeled "Disable" in the row labeled "Integer"
 
     When I click on the button labeled "Enable" in the row labeled "Number"
-    Then I should see the "checkmark icon" in the validation row labeled "Number"
+    Then I should see a button labeled "Disable" in the row labeled "Number"
 
     When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place - comma as decimal)"
-    Then I should see the "checkmark icon" in the validation row labeled "Number (1 decimal place - comma as decimal)"
+    Then I should see a button labeled "Disable" in the row labeled "Number (1 decimal place - comma as decimal)"
 
     When I click on the button labeled "Enable" in the row labeled "Time (HH:MM)"
-    Then I should see the "checkmark icon" in the validation row labeled "Time (HH:MM)"
+    Then I should see a button labeled "Disable" in the row labeled "Time (HH:MM)"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Verify field validation Enable
@@ -116,10 +116,10 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.4.8.0100.100"
     And I click on the link labeled "Designer"
-    And I click on the instrument labeled "Data Types"
+    And I click on the link labeled "Data Types"
     And I click on the first button labeled "Add Field"
 
-    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:" in the dialog box
+    When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
     Then I should see the dropdown field labeled "Validation?" with the options below
       | ---- None ----                              |
       | Date (D-M-Y)                                |
@@ -139,5 +139,5 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
       | Time (HH:MM:SS)                             |
       | Time (HH:MM)                                |
       | Zipcode (U.S.)                              |
-    And I click on the button labeled "Cancel" on the dialog box
+    And I click on the button labeled "Cancel"
 #End

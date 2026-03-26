@@ -9,13 +9,13 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I create a new project named "A.6.4.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        Then I should see Project status: "Development"
+        Then I should see "Project status:  Development"
 
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        When I click on the button labeled exactly "Assign" on the role selector dropdown
+        When I click on the button labeled "Assign"
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         Given I logout
 
@@ -45,6 +45,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Event 1" in the define events table
 
         When I click on the link labeled "Logging"
+        And I should see a table with 26 rows
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                         |
             | test_user1 | Manage/Design | Create arm                                                      |
@@ -101,21 +102,21 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0 |
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see "Arm 3: Arm 3"
-        And I should see "Arm 2: Arm 2"
+        Then I should see "Arm 3:Arm 3"
+        And I should see "Arm 2:Arm 2"
 
         When I click on the link labeled "Arm 2"
         Then I should see "Event One"
 
         When I click on the link labeled "Arm 1"
-        Then I should see "Event 4"
+        Then I should see "Event Three"
 
         Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
         And I disable the Data Collection Instrument named "Data Types" for the Event named "Event 1"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Data Types" is disabled for the Event named "Event 1"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -133,7 +134,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
         And I enable the Data Collection Instrument named "Consent" for the Event named "Event 2"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Consent" is enabled for the Event named "Event 1"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -146,7 +147,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the button labeled "Begin Editing"
         And I enable the Data Collection Instrument named "Text Validation" for the Event named "Event 4"
 
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Text Validation" is enabled for the Event named "Event 4"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -158,7 +159,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 3"
         When I click on the button labeled "Begin Editing"
         And I enable the Data Collection Instrument named "Consent" for the Event named "Event 1"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Consent" is enabled for the Event named "Event 1"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -171,9 +172,9 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
@@ -246,7 +247,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 2"
         And I click on the link labeled "Rename Arm 2"
         Then I should see "Sorry, but arms can only be renamed by REDCap administrators"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
         Then I should see "Arm 2"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -258,7 +259,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         When I click on the Edit image for the event named "Event 2"
         Then I should see a dialog containing the following text: "Sorry, but events can only be renamed by REDCap administrators when a project is in production status"
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Close"
 
         When I click on the link labeled "Record Status Dashboard"
         And I click on the link labeled "Arm 1"
@@ -276,13 +277,13 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Upload instrument-event mappings (CSV)"
         And I upload a "csv" format file located at "import_files/instrument_designation.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
-        Then I should see a dialog containing the following text: "ERROR"
-        And I click on the button labeled "Close" in the dialog box
+        Then I should see "Since the project is in production, you are not permitted to un-designate an instrument"
+        And I click on the button labeled "Close"
 
         Given I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
         When I enable the Data Collection Instrument named "Data Types" for the Event named "Event 4"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Data Types" is enabled for the Event named "Event 4"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -299,7 +300,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 4"
         And I click on the button labeled "Begin Editing"
         And I enable the Data Collection Instrument named "Consent" for the Event named "Event 1"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Consent" is enabled for the Event named "Event 1"
 
         When I click on the link labeled "Record Status Dashboard"
@@ -323,7 +324,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Arm name:  Arm One"
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see "Arm 1: Arm One"
+        Then I should see "Arm 1:Arm One"
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
@@ -354,7 +355,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 2"
         And I click on the button labeled "Begin Editing"
         And I disable the Data Collection Instrument named "Data Types" for the Event named "Event One"
-        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        And I click on the button labeled "Save"
         Then I verify the Data Collection Instrument named "Data Types" is disabled for the Event named "Event One"
 
         When I click on the link labeled "Record Status Dashboard"

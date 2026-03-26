@@ -10,9 +10,9 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     And I create a new project named "B.2.6.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
     When I click on the link labeled "User Rights"
     And I click on the button labeled "Upload or download users, roles, and assignments"
@@ -22,7 +22,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Upload users (CSV)"
 
     Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+    Then I should see "Displayed below is a preview of all the changes you are about to commit."
     And I should see a table header and rows containing the following values in a table in the dialog box:
       | username   |
       | test_user1 |
@@ -30,9 +30,9 @@ Feature: Project Level:  The system shall allow data entry form user access to b
       | test_user3 |
       | test_user4 |
 
-    Given I click on the button labeled "Upload" in the dialog box
+    Given I click on the button labeled "Upload"
     Then I should see a dialog containing the following text: "SUCCESS!"
-    And I click on the button labeled "Close" in the dialog box
+    And I click on the button labeled "Close"
 
     And I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
@@ -53,8 +53,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Set user access to No Access
 
-    When I set Data Viewing Rights to No Access for the instrument "Text Validation"
-    And I save changes within the context of User Rights
+    When I click on the radio in the column labeled "No Access" and the row labeled "Text Validation"
+    And I click on the button labeled "Save Changes"
 
     ##VERIFY_LOG: Verify Update user rights
     And I click on the link labeled "Logging"
@@ -84,8 +84,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Set user access to Read Only
-    When I set Data Viewing Rights to Read Only for the instrument "Text Validation"
-    And I save changes within the context of User Rights
+    When I click on the radio in the column labeled "Read Only" and the row labeled "Text Validation"
+    And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -102,8 +102,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Set user access to View & Edit + Edit survey responses
-    When I set Data Viewing Rights to View & Edit with Edit survey responses checked for the instrument "Survey"
-    And I save changes within the context of User Rights
+    When I check the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
+    And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -133,7 +133,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see "now editing"
 
     When I clear field and enter "Edited Name" into the data entry form field labeled "Name"
-    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+    And I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
     Then I should see "successfully edited"
 
     Given I click on the link labeled "User Rights"
@@ -142,8 +143,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Remove user access to Edit survey responses
-    When I set Data Viewing Rights to View & Edit with Edit survey responses unchecked for the instrument "Survey"
-    And I save changes within the context of User Rights
+    When I uncheck the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
+    And I click on the button labeled "Save Changes"
 
     ##VERIFY: Not able to edit survey responses for the instrument
     Given I click on the link labeled "Add / Edit Records"

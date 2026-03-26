@@ -25,10 +25,11 @@ Feature: Control Center: The system shall allow users to edit survey responses t
 
         # MANUAL NOTE: We should NOT see a column labeled "Edit survey responses" in the "Data Viewing Rights" table
         Then I should see table rows containing the following values in a table in the dialog box:
-            | Data Viewing Rights |           |             |
-            | No Access           | Read Only | View & Edit |
+            | Data Viewing Rights |           |             |        |
+            | No Access           | Read Only | View & Edit | Delete |
 
-        And I click on the button labeled "Cancel" in the dialog box
+        And I should NOT see "Edit Survey Responses"
+        And I click on the button labeled "Cancel"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Admin Enable edit survey response function in control center
@@ -47,13 +48,13 @@ Feature: Control Center: The system shall allow users to edit survey responses t
 
         # MANUAL NOTE: We should now see a column labeled "Edit survey responses" in the "Data Viewing Rights" table
         Then I should see table rows containing the following values in a table in the dialog box:
-            | Data Viewing Rights |           |             |                       |
-            | No Access           | Read Only | View & Edit | Edit survey responses |
+            | Data Viewing Rights |           |             |        |                       |
+            | No Access           | Read Only | View & Edit | Delete | Edit Survey Responses |
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Enable editing survey responses for survey instrument
-        When I check the checkbox in the column labeled "Edit survey responses" and the row labeled "Survey"
-        And I save changes within the context of User Rights
+        When I check the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
+        And I click on the button labeled "Save Changes"
         Then I should see 'User "test_admin" was successfully edited'
 
         #SETUP Check edit survey function in a  record
@@ -83,7 +84,8 @@ Feature: Control Center: The system shall allow users to edit survey responses t
         Then I should see "(now editing)"
 
         Given I clear field and enter "EDITED SURVEY RESPONSE" into the data entry form field labeled "Name"
-        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        And I click on the button labeled "More save options"
+        And I click on the link labeled "Save & Stay"
         Then I should see "Record ID 1 successfully edited."
 
         ##VERIFY_LOG

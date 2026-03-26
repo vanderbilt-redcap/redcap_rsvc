@@ -14,7 +14,7 @@ Feature: A.6.4.0700. Manage project creation, deletion, and settings. User Inter
         # #############################################################################################################
         # ATS Note: Below steps do not appear unless custom message is configured in Control Center so leaving them out
         # Then I should see "You are now creating a test project"
-        # And I click on the button labeled "I Agree" in the dialog box
+        # And I click on the button labeled "I Agree"
         # #############################################################################################################
         Then I should see "A.6.4.0700.100"
         And I should see "Project Home"

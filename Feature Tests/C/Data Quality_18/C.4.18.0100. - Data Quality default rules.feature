@@ -10,16 +10,16 @@ Feature: User Interface: The system shall provide default rules after installati
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
         When I click on the link labeled "Data Quality"
         Then I should see "Data Quality Rules"
         And I should see a table header and rows containing the following values in a table:
-            | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy  only if...) |
+            | Rule # | Rule Name                                                                 | Rule Logic  (Show discrepancy only if...) |
             | A      | Blank values*                                                             | -                                         |
             | B      | Blank values* (required fields only)                                      | -                                         |
             | C      | Field validation errors (incorrect data type)                             | -                                         |

@@ -16,9 +16,9 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
 
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -26,21 +26,21 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Signature field creation
-        Given I click on the instrument labeled "Form 1"
+        Given I click on the link labeled "Form 1"
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "Signature (draw signature with mouse or finger)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Signature" into the Field Label of the open "Add New Field" dialog box
         And I enter "signature" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see the field labeled "Signature"
         And I should see the link labeled "Add signature"
 
         ##SETUP_PRODUCTION
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
         Then I should see "Changes Were Made Automatically"
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"

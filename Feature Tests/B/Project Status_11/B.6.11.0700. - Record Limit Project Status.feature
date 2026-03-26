@@ -23,27 +23,27 @@ Scenario: #SETUP
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.6.11.0700"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
     #Adding record 5
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
     #Adding record 6
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully added"
 
 Scenario: B.6.11.0700.0100. - A project that had a record limit, when moved from production back to development, should retain the prior setting
     Given I click on the link labeled "Setup"
     And  I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Validation ensure new records can't be added
     When I click on the link labeled "Add / Edit Records"
     Then I should see "You are currently using 6 of 5 test records allowed while in Development status"
@@ -56,9 +56,9 @@ Scenario: B.6.11.0700.0200. - A project with no prior limit, when moved from pro
     And I create a new project named "B.6.11.0700.0200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button 
     Then I should see "Your new REDCap project has been created"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
     #Set global limit in control center to 3
     When I click on the link labeled "Control Center"
     And I click on the link labeled "General Configuration"
@@ -72,7 +72,7 @@ Scenario: B.6.11.0700.0200. - A project with no prior limit, when moved from pro
     And I click on the link labeled "Setup"
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Action try entering a record when project is already over limit.
     When I click on the link labeled "Add / Edit Records"
     Then I should see "You are currently using 4 of 3 test records allowed while in Development status"
@@ -84,9 +84,9 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     When I click on the link labeled "REDCap"
     And I click on the link labeled "B.6.11.0700.0200"
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
     #Action remove global record limit
     When I click on the link labeled "Control Center"
     And I click on the link labeled "General Configuration"
@@ -100,12 +100,12 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     And I click on the link labeled "Setup"
     And I click on the link labeled "Other Functionality"
     And I click on the button labeled "Move back to Development status"
-    Then I should see Project status: "Development"
+    Then I should see "Project status:  Development"
     #Action add record
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully added"
 
     ##VERIFY_LOG:

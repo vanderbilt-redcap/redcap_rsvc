@@ -26,7 +26,7 @@ Scenario:B.6.11.1000.0100. Allow admin to copy project that exceeds record limit
     And I should NOT see the button labeled "Add new record for the arm selected above"
     When I click on the link labeled "Setup"  
     And I click on the link labeled "Other Functionality"
-    And I click on the button labeled "Copy the Project"
+    And I click on the button labeled "Copy the project"
     And I click on the link labeled "Select All"
     And I enter "B.6.11.1000.copy" into the input field labeled "Project title:"
     And I click on the button labeled "Copy project"
@@ -36,7 +36,7 @@ Scenario:B.6.11.1000.0100. Allow admin to copy project that exceeds record limit
     And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    When I click on the button labeled "Assign"
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     #Verify limit is still set to 3 on new project
     When I click on the link labeled "My Projects"
@@ -56,8 +56,9 @@ Scenario:B.6.11.1000.0100. Allow admin to copy project that exceeds record limit
     And I should NOT see the button labeled "Add new record for the arm selected above"
     When I click on the link labeled "Setup"  
     And I click on the link labeled "Other Functionality"
-    And I click on the button labeled "Copy the Project"
-    Then I should see a checkbox labeled "All records (4 records total)" that is in the disabled state
+    And I click on the button labeled "Copy the project"
+    Then I should see a checkbox labeled "All records" that is disabled
+    And I should see "All records (4 records total)"
     And I should see "Note: The records cannot be copied to the new project because the amount exceeds the max number of records that a development project may have."
     When I enter "B.6.11.1000.copy2" into the input field labeled "Project title:"
     And I click on the button labeled "Copy project"

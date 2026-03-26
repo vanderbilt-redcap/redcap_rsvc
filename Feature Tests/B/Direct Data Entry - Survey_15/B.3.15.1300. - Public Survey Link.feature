@@ -12,7 +12,7 @@ Feature: User Interface: Survey distribution: The system shall allow creation of
     ##ACTION - 1st instrument is not set-up as survey
     When I click on the link labeled "Survey Distribution Tools"
     Then I should see "Survey Response Status"
-    When I click on the tab labeled "Public Survey Link"
+    When I click on the link labeled "Public Survey Link"
     #VERIFY
     Then I should see "Public Survey not set up yet"
 

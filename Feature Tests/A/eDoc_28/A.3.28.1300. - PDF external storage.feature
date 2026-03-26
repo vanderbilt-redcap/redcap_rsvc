@@ -4,27 +4,34 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
 #M This is being tested as a full part 11 test so that REDCap Admins learn how to use part 11 features 
 #M The test requires several things to be setup. First in Security and Authentication ensure that you enable "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password." Also, The regular File Upload Storage is configure (eDocs) Then finally Configure the File Vault for Record Level Locking Enhancement in the Modules/Services Configuration. User will need access to lock records and E-Sign. 
 #Later in the test, we enable When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.) 
-#FUNCTIONAL_REQUIREMENT A.3.28.1300._NewManual 
+#FUNCTIONAL_REQUIREMENT A.3.28.1300. 
+
+  Scenario: Start external storage services
+    # Start these right away to give them plenty of time to spin up before we need them
+    Then if running via automation, start external storage services
 
   Scenario: ###ACTION: Setup in control center - admin only
+    Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
     And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
     And I click on the button labeled "Save Changes"
-    Then I should see " Your system configuration values have now been changed!"
-#FUNCTIONAL_REQUIREMENT A.3.28.1100._NewManual 
+    Then I should see "Your system configuration values have now been changed!"
+#FUNCTIONAL_REQUIREMENT A.3.28.1100. 
 #M this script assumes File Storage Methods is configured (File storage is needed for base REDCap file Storage) 
 
   Scenario: ##ACTION: Configure the External File Storage
     When I click on the link labeled "Control Center"
-    And I click on the link labeled "File Upload Settings "
+    And I click on the link labeled "File Upload Settings"
     Then I should see "Microsoft Azure Blob Storage"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
-    When I enter "staeusp11prod01" in the box labeled "Azure storage account name:"
-    And I enter "xxx" in the box labeled "Azure storage account key"
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    When I enter "devstoreaccount1" into the input field labeled "Azure storage account name:"
+    And I enter "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==" into the input field labeled "Azure storage account key"
+    And I enter "mycontainer" into the input field labeled "Azure storage blob container"
     And I click on the button labeled "Save Changes"
-    And I should see "Your configuration values have now been changed"
+    And I should see "Your system configuration values have now been changed"
 #FUNCTIONAL_REQUIREMENT   
 #File Vault Storage is required for Part 11 Compliance 
 
@@ -32,15 +39,15 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "e-Consent Framework: PDF External Storage Settings (for all projects)"
-    And I enable Microsoft Azure Blob Storage for the section labeled " Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
         #SETUP 
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "A.3.28.1300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION 
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
   Scenario: Verify eConsent Framework and PDF Snapshot setup
         #SETUP eConsent Framework and PDF Snapshot setup 
@@ -62,8 +69,9 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
-    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-    And I click on the button labeled "Okay" in the dialog box
+    When I click on the button labeled "More save options"
+    And I click on the link labeled "Save & Stay"
+    And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
@@ -75,11 +83,11 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
-    When I click on the button labeled "Save signature" in the dialog box
+    When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see the button labeled "Submit" is disabled
+    And I should see the button labeled "Submit" that is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
@@ -106,5 +114,10 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                          |
       | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" |
-    And I confirm with System Admin that the file is on the External Storage
+    And I should see the following values in the most recent file in the Azure Blob Storage container
+      | PID 13 - LastName   |
+      | Participant Consent |
+
+  Scenario: Stop external storage services
+    Then if running via automation, stop external storage services
 #END 

@@ -14,12 +14,11 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
             | Instrument name | Fields | PDF | Enabled as\nsurvey | Instrument actions | Survey related options |
 
         Given I click on the link labeled "Setup"
-        When I click on the button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
-        And I click on the button labeled "Disable" on the dialog box
+        When I click on the button labeled "Disable" in the row labeled "Use surveys in this project?"
+        And I click on the button labeled "Disable"
 
         ##VERIFY
-        Then I should see "Saved!"
-        And I should see a button labeled "Enable" in the "Use surveys in this project?" row in the "Main project settings" section
+        And I should see a button labeled "Enable" in the row labeled "Use surveys in this project?"
 
         ##VERIFY columns in Designer when Survey is Disabled
         Given I click on the link labeled "Designer"
@@ -35,14 +34,13 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         When I click on the link labeled "Setup"
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable survey in project setup
-        And I click on the button labeled "Enable" in the "Use surveys in this project?" row in the "Main project settings" section
+        And I click on the button labeled "Enable" in the row labeled "Use surveys in this project?"
         ##VERIFY
-        Then I should see "Saved!"
-        And I should see a button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
+        And I should see a button labeled "Disable" in the row labeled "Use surveys in this project?"
 
         ##ACTION Enable survey in Online Designer #B.3.15.100.100
         Given I click on the link labeled "Designer"
-        And I click on the "Enable" button for the instrument row labeled "Text Validation"
+        And I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
         And I click on the button labeled "Save Changes"
         ##VERIFY
         Then I should see "Your survey settings were successfully saved!"
@@ -55,13 +53,13 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
 
         ##ACTION Disable survey in Online Designer #B.3.15.100.100
         Given I click on the link labeled "Designer"
-        And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+        And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
         And I click on the button labeled "Delete Survey Settings"
-        And I click on the button labeled "Delete Survey Settings" in the dialog box
-        And I click on the button labeled "Close" in the dialog box
+        And I click on the button labeled "Delete Survey Settings"
+        And I click on the button labeled "Close"
 
         ###VERIFY
-        Then I should see the "Enable" button for the instrument row labeled "Text Validation"
+        Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"

@@ -16,7 +16,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     Then I should see a dialog containing the following text: "Upload users (CSV)"
 
     Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-    Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+    Then I should see "Displayed below is a preview of all the changes you are about to commit."
     And I should see a table header and rows containing the following values in a table in the dialog box:
       | username   |
       | test_user1 |
@@ -24,10 +24,10 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
       | test_user3 |
       | test_user4 |
 
-    Given I click on the button labeled "Upload" in the dialog box
+    Given I click on the button labeled "Upload"
     Then I should see a dialog containing the following text: "SUCCESS!"
 
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
       | —                       | test_admin          |
@@ -51,7 +51,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     And I click on the button labeled "Assign"
 
     ##VERIFY: DAG assignment
-    Then I should see a table header and rows containing the following values in data access groups table:
+    Then I should see a table header and rows containing the following values in a table:
       | Data Access Groups | Users in group |
       | TestGroup1         | test_user1     |
 
@@ -96,7 +96,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     And I click on the button labeled "Assign"
 
     ##VERIFY
-    Then I should see a table header and rows containing the following values in data access groups table:
+    Then I should see a table header and rows containing the following values in a table:
       | Data Access Groups        | Users in group          |
       | [Not assigned to a group] | test_user1 (Test User1) |
     And I logout

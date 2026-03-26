@@ -44,6 +44,8 @@ Feature: A.2.2.0100. Add/Manage users Control Center - Users: The system shall s
         Then I should see "User Management for Table-based Authentication"
 
         When I click on the link labeled "Create users (bulk upload)"
+        # This wait was added per https://redcap.vumc.org/community/post.php?id=262266
+        And I wait for 1 second
         And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Upload CSV file of new users" to browse for the file, and clicking the button labeled "Upload File" to upload the file
         Then I should see "User was successfully added, and an email with login info was sent to user"
         And I should see "Test_User2"

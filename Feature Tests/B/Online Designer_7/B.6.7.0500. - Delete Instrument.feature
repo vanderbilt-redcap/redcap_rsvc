@@ -22,9 +22,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         ##SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far."
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         When I click on the button labeled "Online Designer"
         And I click on the button labeled "Enter Draft Mode"
@@ -42,19 +42,19 @@ Feature: Design forms Using Data Dictionary and Online Designer
         ##ACTION
         #And I want to export a snapshot of this feature here
         Given I click on the first button labeled "Choose action"
-        And I click on the link labeled "Delete" in the action popup
+        And I click on the link labeled "Delete"
         Then I should see a dialog containing the following text: "Delete the selected form?"
-        And I click on the button labeled "Yes, delete it" in the dialog box
+        And I click on the button labeled "Yes, delete it"
         Then I should see "The data collection instrument and all its fields have been successfully deleted"
 
         When I click on the button labeled "Submit Changes for Review"
-        And I click on the button labeled "Submit" in the dialog box
+        And I click on the button labeled "Submit"
 
         Given I should see "As an Administrator, you may review and approve changes made to the project. To do so, navigate to the Project Modification Module."
         And I click on the button labeled "Project Modification Module"
         And I click on the button labeled "COMMIT CHANGES"
         Then I should see a dialog containing the following text: "COMMIT CHANGES TO PROJECT?"
-        And I click on the button labeled "COMMIT CHANGES" in the dialog box
+        And I click on the button labeled "COMMIT CHANGES"
 
         #This establishes what instruments are here now
         When I click on the link labeled "Designer"

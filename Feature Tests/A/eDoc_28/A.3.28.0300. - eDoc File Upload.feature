@@ -59,6 +59,6 @@ Feature: Control Center: The system shall allow administrators to configure the 
     #VERIFY: Small file upload succeeds
     Given I click on the link labeled "Upload file" in the row labeled "File Upload"
     When I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Upload file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
-    Then I should see "File was successfully uploaded" in the dialog box
+    Then I should see "File was successfully uploaded"
     #Manual: Wait for the dialog to close on its own after a few seconds
     Then I should see "testusers_bulkupload.csv" in the row labeled "File Upload"

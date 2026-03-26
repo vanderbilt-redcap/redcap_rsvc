@@ -11,7 +11,7 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
         Then I should see "System-level User Settings"
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
-        And I see "Your system configuration values have now been changed!"
+        And I should see "Your system configuration values have now been changed!"
         Then I logout
 
         #SETUP
@@ -20,26 +20,26 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
 
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
-        And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        And I click on the radio labeled "Keep ALL data saved so far"
+        And I click on the button labeled "YES, Move to Production Status"
+        Then I should see "Project status:  Production"
 
         ##ACTION: Draft Mode
         When I click on the link labeled "Designer"
         And I click on the button labeled "Enter Draft Mode"
         Then I should see "The project is now in Draft Mode"
 
-        When I click on the instrument labeled "Data Types"
+        When I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
         And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
-        And I click on the button labeled "Save" in the "Edit Field" dialog box
+        And I click on the button labeled "Save"
         And I click on the Add Field input button below the field named "Radio Button Manual"
 
         Given I select "Notes Box (Paragraph Text)" on the dropdown field labeled "Field Type:"
         And I enter "Notes Box" into the Field Label of the open "Add New Field" dialog box
         And I enter "notesbox4" into the Variable Name of the open "Add New Field" dialog box
         And I click on the button labeled "Save"
-        Then I should see the field labeled "Notes Box"
+        Then I should see the textarea labeled "Notes Box"
 
         #FUNCTIONAL_REQUIREMENT
         When I click on the link labeled "View detailed summary of all drafted changes"

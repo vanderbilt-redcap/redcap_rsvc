@@ -10,9 +10,9 @@ Feature: User Interface: The system shall support the ability to assign the User
 
   Scenario: #SETUP_PRODUCTION
     And I click on the button labeled "Move project to production"
-    And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-    And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    And I click on the radio labeled "Keep ALL data saved so far"
+    And I click on the button labeled "YES, Move to Production Status"
+    Then I should see "Project status:  Production"
 
   Scenario: #USER_RIGHTS User 1 Dag 1
     When I click on the link labeled "User Rights"
@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            | Data Access Group |
       | —                       | test_admin          |                   |
@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Assign to role"
     And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
-    And I click on the button labeled exactly "Assign" on the role selector dropdown
+    And I click on the button labeled "Assign"
     And I should see a table header and rows containing the following values in a table:
       | Role name               | Username            | Data Access Group |
       | —                       | test_admin          |                   |
@@ -62,20 +62,20 @@ Feature: User Interface: The system shall support the ability to assign the User
 
   Scenario: Assign record 1 to DAG1
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "1"
+        And I click on the link labeled "1"
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 1 was successfully assigned to a Data Access Group"
 
   Scenario: Assign record 2 to DAG2
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "2"
+        And I click on the link labeled "2"
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
 
   Scenario: #SETUP: Create report
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
     #FUNCTIONAL_REQUIREMENT
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     When I click on the button labeled "Return to My Reports & Exports"
     And I logout
 
@@ -97,7 +97,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I should see a button labeled "Edit" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
     And I should see a button labeled "Copy" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
     And I should see a button labeled "Delete" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
-    When I click on the "View Report" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table
+    When I click on the button labeled "View Report" in the row labeled "C.5.22.100.100 REPORT"
     Then I should see the report with 4 rows
     Then I should see a table header and rows containing the following values in a table:
       | Record ID     | Event Name                 | Repeat Instance |
@@ -125,7 +125,7 @@ Feature: User Interface: The system shall support the ability to assign the User
       | 2  TestGroup2 | Event 1 (Arm 1: Arm 1) |                 |
     ##VERIFY: Edit Report button
     When I click on the link labeled "Data Exports, Reports, and Stats"
-    And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table
+    And I click on the button labeled "Edit" in the row labeled "C.5.22.100.100 REPORT"
     Then I should see "Edit Existing Report:"
     And I should see "C.5.22.100.100 REPORT"
     And I logout
@@ -167,7 +167,7 @@ Feature: User Interface: The system shall support the ability to assign the User
   Scenario: #SETUP
     Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Data Exports, Reports, and Stats"
-    And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table
+    And I click on the button labeled "Edit" in the row labeled "C.5.22.100.100 REPORT"
 
   Scenario: #FUNCTIONAL_REQUIREMENT
     When I select the radio option "Custom user access" for the field labeled "View Access"
@@ -176,7 +176,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I select the radio option "Custom user access" for the field labeled "Edit Access"
     And I select "test_user1 (Test User1)" on the multiselect field labeled "Selected users" in the Edit Access section of User Access
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     And I click on the button labeled "Return to My Reports & Exports"
     And I logout
 
@@ -221,9 +221,9 @@ Feature: User Interface: The system shall support the ability to assign the User
       |         1 | Event Three (Arm 1: Arm 1) |                 |
       |         1 | Event 2 (Arm 1: Arm 1)     |               1 |
       |         1 | Event 2 (Arm 1: Arm 1)     |               2 |
-    And I should NOT see a link labeled exactly "2"
-    And I should NOT see a link labeled exactly "3"
-    And I should NOT see a link labeled exactly "4"
+    And I should NOT see a link labeled "2"
+    And I should NOT see a link labeled "3"
+    And I should NOT see a link labeled "4"
     ##VERIFY: Edit Report button
     And I should see a button labeled "Edit Report"
     And I logout

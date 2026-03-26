@@ -17,7 +17,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+        Then I should see "Displayed below is a preview of all the changes you are about to commit."
         And I should see a table header and rows containing the following values in a table in the dialog box:
             | username   |
             | test_user1 |
@@ -27,10 +27,10 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
 
         # We wait for a second because the "Upload" button sometimes doesn't work if clicked immediately during automation
         Then I wait for 1 second
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
@@ -54,7 +54,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user1     |
             | TestGroup2         |                |
@@ -65,7 +65,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         |                |
             | TestGroup2         | test_user1     |
@@ -86,7 +86,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 3 was successfully assigned to a Data Access Group"
 
         # -- Record ID 4 - TestGroup2 --
@@ -99,7 +99,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 4 was successfully assigned to a Data Access Group"
 
 
@@ -117,14 +117,14 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a dialog containing the following text: "Switch Data Access Group"
 
         When I select "TestGroup1" on the dropdown field labeled "Select the Data Access Group" on the dialog box
-        Then I click on the button labeled "Switch" in the dialog box
+        Then I click on the button labeled "Switch"
         And I should see a dialog containing the following text: "Successfully switched"
 
         #This is problematic for ATS because this button AUTOMATICALLY disappears ...
-        #And I click on the button labeled "OK" in the dialog box
+        #And I click on the button labeled "OK"
 
         ##VERIFY
-        Then I should see "Data Collection—TestGroup1"
+        Then I should see "Current Data Access Group:TestGroup1"
 
         ##VERIFY_RSD:
         Then I should see a table header and rows containing the following values in the record status dashboard table:
@@ -136,13 +136,13 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a dialog containing the following text: "Switch Data Access Group"
 
         When I select "TestGroup2" on the dropdown field labeled "Select the Data Access Group" on the dialog box
-        Then I click on the button labeled "Switch" in the dialog box
+        Then I click on the button labeled "Switch"
         And I should see a dialog containing the following text: "Successfully switched"
 
         #This is problematic for ATS because this button AUTOMATICALLY disappears ...
-        #And I click on the button labeled "OK" in the dialog box
+        #And I click on the button labeled "OK"
 
-        Then I should see "Data Collection—TestGroup2"
+        Then I should see "Current Data Access Group:TestGroup2"
 
         ##VERIFY_RSD:
         Then I should see a table header and rows containing the following values in the record status dashboard table:

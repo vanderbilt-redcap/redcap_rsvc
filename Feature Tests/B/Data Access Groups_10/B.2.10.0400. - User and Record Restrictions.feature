@@ -17,7 +17,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+        Then I should see "Displayed below is a preview of all the changes you are about to commit."
         And I should see a table header and rows containing the following values in a table in the dialog box:
             | username   |
             | test_admin |
@@ -28,10 +28,10 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         # We wait for a second because the "Upload" button sometimes doesn't work if clicked immediately during automation
         Then I wait for 1 second
-        Given I click on the button labeled "Upload" in the dialog box
+        Given I click on the button labeled "Upload"
         Then I should see a dialog containing the following text: "SUCCESS!"
 
-        When I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
@@ -52,9 +52,9 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Editing existing user"
 
         ##ACTION: Set user access to View & Edit + Edit survey responses
-        When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
-        And I set Data Viewing Rights to View & Edit for the instrument "Consent"
-        And I save changes within the context of User Rights
+        When I click on the radio in the column labeled "View & Edit" and the row labeled "Text Validation"
+        And I click on the radio in the column labeled "View & Edit" and the row labeled "Consent"
+        And I click on the button labeled "Save Changes"
 
         #This will give Test_User4 elevated privileges for this test
         And I click on the link labeled "Test User4"
@@ -62,9 +62,9 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Editing existing user"
 
         ##ACTION: Set user access to View & Edit + Edit survey responses
-        When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
-        And I set Data Viewing Rights to View & Edit for the instrument "Consent"
-        And I save changes within the context of User Rights
+        When I click on the radio in the column labeled "View & Edit" and the row labeled "Text Validation"
+        And I click on the radio in the column labeled "View & Edit" and the row labeled "Consent"
+        And I click on the button labeled "Save Changes"
 
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
@@ -77,7 +77,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 3 was successfully assigned to a Data Access Group"
 
         # -- Record ID 4 - TestGroup2 --
@@ -90,7 +90,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
 
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
-        And I click on the button labeled "Assign to Data Access Group" in the dialog box
+        And I click on the button labeled "Assign to Data Access Group"
         Then I should see "Record ID 4 was successfully assigned to a Data Access Group"
 
         When I click on the link labeled "DAGs"
@@ -103,7 +103,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
 
@@ -112,7 +112,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user1     |
             | TestGroup1         | test_user3     |
@@ -123,7 +123,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the button labeled "Assign"
 
         ##VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
@@ -133,7 +133,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I select "TestGroup2" on the dropdown field labeled "to"
         And I click on the button labeled "Assign"
 
-        Then I should see a table header and rows containing the following values in data access groups table:
+        Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
@@ -160,7 +160,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Add record while in a DAG
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey
@@ -182,7 +182,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         Given I return to the REDCap page I opened the survey from
         #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
-        #And I click on the button labeled "Leave without saving changes" in the dialog box
+        #And I click on the button labeled "Leave without saving changes"
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"
         Then I should see "Time / Date"
@@ -245,7 +245,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Add record while in a DAG
         Given I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey

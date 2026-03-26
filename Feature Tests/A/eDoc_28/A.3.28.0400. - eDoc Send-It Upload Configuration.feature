@@ -37,6 +37,7 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     And I enter "test@user.com" into the input field labeled "To:"
     And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Select a file" to browse for the file
     And I should see "The file you are attempting to upload is too large"
+    And I click on the button labeled "Close"
 
   Scenario: A.3.28.0400.400 Allow Send-It upload below size limit
     Given I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file" to browse for the file

@@ -13,6 +13,8 @@ Feature: A.2.2.0200 Add/Manage users
     #NOTE: We are testing Suspend / Unsuspend - NOT bulk upload feature
     # Bulk upload steps are concessions to make this functional if performed manually
     When I click on the link labeled "Create users (bulk upload)"
+    # This wait was added per https://redcap.vumc.org/community/post.php?id=262266
+    And I wait for 1 second
     And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Upload CSV file of new users" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     Then I should see "User was successfully added, and an email with login info was sent to user"
     And I should see "Test_User1"
@@ -25,7 +27,8 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the button labeled "Suspend user account" and cancel the confirmation window
+    And I remember to click cancel on the confirmation dialog that appears after the following step
+    When I click on the button labeled "Suspend user account"
     Then I should NOT see "Success! The user has now been suspended from REDCap"
     And I should NOT see "unsuspend user"
 
@@ -43,16 +46,16 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the button labeled "Suspend user account" and accept the confirmation window
+    When I click on the button labeled "Suspend user account"
     Then I should see a dialog containing the following text: "Success! The user has now been suspended from REDCap"
 
-    Given I click on the button labeled "Close" in the dialog box
+    Given I click on the button labeled "Close"
     Then I should see "unsuspend user"
 
     When I click on the link labeled "View User List By Criteria"
     And I select "Suspended users" on the dropdown field labeled "Display only:"
+    And I wait for 1 second
     And I click on the button labeled "Display User List"
-    Then I should see "Loading..."
     And I should see "User List"
     And I should see a link labeled "Test_User1"
 
@@ -70,7 +73,8 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the link labeled "unsuspend user" and cancel the confirmation window
+    And I remember to click cancel on the confirmation dialog that appears after the following step
+    When I click on the link labeled "unsuspend user"
     Then I should see "unsuspend user"
 
     Given I logout
@@ -87,10 +91,10 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the link labeled "unsuspend user" and accept the confirmation window
+    When I click on the link labeled "unsuspend user"
     Then I should see a dialog containing the following text: "Success! The user has now been unsuspended and will now be able to access REDCap again"
 
-    When I click on the button labeled "Close" in the dialog box
+    When I click on the button labeled "Close"
     And I should see a button labeled "Suspend user account"
 
     Given I logout

@@ -42,7 +42,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "You are currently using 4 of 5 test records allowed while in Development status"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 5 successfully added"
 
         ##VERIFY_LOG:
@@ -79,7 +79,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "Listed below are the REDCap project"
         When I click on the link labeled "B.6.11.0800"
         And I click on the link labeled "Designer"
-        And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+        And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
         And I enter "1" into the input field labeled "Response Limit (optional)"
         And I click on the button labeled "Save Changes"
         Then I should see "Your survey settings were successfully saved!"
@@ -133,7 +133,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         Then I should see "You are currently using 1 of 2 test records allowed while in Development status"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
-        And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+        And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 2 successfully added"
 
         ##VERIFY_LOG:
