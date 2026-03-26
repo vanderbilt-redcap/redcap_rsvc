@@ -186,7 +186,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     ##VERIFY
     Then I should see a dialog containing the following text: "NOTICE: Project was marked as Completed"
-    And I click on the button labeled "Return to My Projects page"
+    And I click on the button labeled "Return to the My Projects page"
     And I logout
 
     ##ACTION: UNABLE to Copy original in complete mode as Admin
@@ -198,5 +198,5 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I click on the link labeled "B.6.4.1000.100"
     ##VERIFY
     Then I should see "NOTICE: Project was marked as Completed"
-    And I click on the button labeled "Return to My Projects page"
+    And I click on the button labeled "Return to the My Projects page"
 #END
