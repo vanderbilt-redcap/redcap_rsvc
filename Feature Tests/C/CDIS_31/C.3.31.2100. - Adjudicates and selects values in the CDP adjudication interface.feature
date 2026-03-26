@@ -68,8 +68,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
     Scenario: C.3.31.2100. User Interface: The system shall support importing EHR data into REDCap only after a user adjudicates and selects values in the CDP adjudication interface. 
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date"
-        And I click on the radio labeled "body_weight"
-        And I wait for 2 seconds
+        And I should see "Last fetch time: less than a minute ago"
         And I click on the button labeled "Save"
         Then I should see "96.904762289757" in the data entry form field "Body weight" 
         When I click on the button labeled "Save & Exit Form"
@@ -80,6 +79,6 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                        | List of Data Changes OR Fields Exported                              |
         | mm/dd/yyyy hh:mm | test_admin | Update record  1              | visit_date = '2017-07-14', labs_vital_signs_complete = '0'           |
-        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | body_weight = '95.902896432667'                                      |
+        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | body_weight = '96.904762289757'                                      |
 
 #END
