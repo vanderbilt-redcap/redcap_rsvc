@@ -151,7 +151,8 @@ END {
     if (upload == "true") {
 
       #Skip these files for upload
-      if( feature == "C.6.11.0400." || feature == "C.3.30.1000." || feature == "C.3.30.0800." || feature == "A.3.28.1200." || feature == "A.3.28.1300." || feature == "A.3.28.1100."){
+      # A.999.999.999 is just an example.  If we need to skip features going forward we should consider skipping those where NewManual records exist.
+      if( feature == "A.999.999.999"){
 
         #Do nothing here because these records do not exist within the VUMC REDCap project for one reason or another
         #NOTE: This skip block will probably change with each new version of LTS tested
