@@ -68,7 +68,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
     Scenario: C.3.31.2100. User Interface: The system shall support importing EHR data into REDCap only after a user adjudicates and selects values in the CDP adjudication interface. 
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date"
-        And I should see "Last fetch time: less than a minute ago"
+        And I should see "Last fetch time: just now"
         And I click on the button labeled "Save"
         Then I should see "96.904762289757" in the data entry form field "Body weight" 
         When I click on the button labeled "Save & Exit Form"
