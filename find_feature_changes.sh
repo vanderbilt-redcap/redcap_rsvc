@@ -276,3 +276,8 @@ else
   printf "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
 fi
 printf "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
+
+if [ "$upload" = false ]; then
+  echo 
+  echo "Add the '--upload' argument to upload these results."
+fi
