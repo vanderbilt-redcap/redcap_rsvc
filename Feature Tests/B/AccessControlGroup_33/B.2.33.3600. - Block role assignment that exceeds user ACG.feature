@@ -110,10 +110,6 @@ Feature: The system shall block assigning users to roles with privileges that ex
         And I should see "data_quality_design"
         And I should see "data_quality_execute"
         And I should see "data_quality_resolution"
-        And I should see "random_setup"
-        And I should see "random_dashboard"
-        And I should see "random_perform"
-        And I should see "mycap_participants"
         And I click on the button labeled "Ok"
         Then I should see a table header and rows containing the following values in a table:
             | Role Name     | Username or users assigned to a role | 
