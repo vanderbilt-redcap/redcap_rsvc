@@ -76,7 +76,8 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
     #Fetch 1  
         When I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Fetch data"
-        And I click on "Confirm"
+        And I click on "Fetch all"
+        And I click on the button labeled "Run fetch"
         And I wait for 10 seconds
         Then I should see "Demographics"
         And I should see "32"
@@ -99,7 +100,8 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
     #Fetch 2  
         When I click on the link labeled "Clinical Data Mart"
         And I click on the button labeled "Fetch data"
-        And I click on "Confirm"
+        And I click on "Fetch all"
+        And I click on the button labeled "Run fetch"
         And I wait for 10 seconds
         Then I should see "Demographics"
         And I should see "32"

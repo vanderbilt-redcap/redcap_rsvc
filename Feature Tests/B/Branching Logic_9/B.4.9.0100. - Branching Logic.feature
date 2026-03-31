@@ -38,7 +38,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I should see a checkbox labeled "Text box" that is checked
         And I should see a checkbox labeled "Text2" that is checked
         And I should see a checkbox labeled "Notes box" that is checked
-        And I click on the button labeled "Apply"
+        And I click on the button labeled "Erase"
 
         Then I should NOT see the field labeled "Name"
         And I should NOT see the field labeled "Text2"

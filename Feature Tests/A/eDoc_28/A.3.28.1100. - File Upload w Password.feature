@@ -6,7 +6,7 @@ I want to verify that the File Upload field enhancement requires a password or P
 ## This script demonstrates Azure Blob Storage; sites may adjust values for S3 or GCS.   
 ## REDCap does not verify file delivery to external storage — site admins must confirm externally (D).   
 #M This is being tested as a full part 11 test so that REDCap Admins learn how to use part 11 features 
-#M The test requires several things to be setup. First in Security and Authentication ensure that you enable "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password." Also, The regular File Upload Storage is configure (eDocs) Then finally Configure the File Vault for File Uploads in the Modules/Services Configuration 
+#M The test requires several things to be setup. First in Security and Authentication ensure that you enable "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN" Also, The regular File Upload Storage is configure (eDocs) Then finally Configure the File Vault for File Uploads in the Modules/Services Configuration 
 #Later in the test, we enable When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.) 
 
   Scenario: A.3.28.1100.0100 – One 6-digit PIN per session (trigger more than one File Upload event)
@@ -17,7 +17,7 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication"
 #A.2.19.1100.0200. Enable e-signing, allow users to provide their 6-digit PIN 
-    And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
+    And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 #FUNCTIONAL_REQUIREMENT  
@@ -111,7 +111,7 @@ I want to verify that the File Upload field enhancement requires a password or P
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
-    And I select "Disable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
+    And I select "Disable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 #SETUP 

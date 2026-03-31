@@ -18,7 +18,7 @@ Feature: A.2.19.1000 PIN usage instead of password
 
         When I click on the link labeled "Security & Authentication"
         Then I should see "Security & Authentication Configuration"
-        And I select "Disable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
+        And I select "Disable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN"
         And I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
         
@@ -52,7 +52,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         And I click on the link labeled "Security & Authentication"
         Then I should see "Security & Authentication Configuration"
         And I select "Enable" on the dropdown field labeled "Two-Factor Authentication"
-        When I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
+        When I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN"
         And I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
 

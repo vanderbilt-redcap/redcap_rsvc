@@ -54,7 +54,13 @@ Feature: The system shall allow exporting user-to-ACG assignments as CSV.---User
         Then I should see the dropdown field labeled "Upload or download user assignments" with the options below
         | Download user assignments (CSV)|
         When I click on the link labeled "Download user assignments"
-        #And I wait for 1 second
-        Then I should see a downloaded file named "AccessControlGroupsUserAssignments_Rawyyyy-mm-dd_hhmmss.csv"
+        Then I should see the following values in the last file downloaded
+            | Username   | ACG ID     | Group Name |
+            | site_admin | G-NORIGHTS | No Rights  |
+            | Test_User1 | G-NORIGHTS | No Rights  |
+            | Test_User2 | G-NORIGHTS | No Rights  |
+            | Test_User3 | G-NORIGHTS | No Rights  |
+            | Test_User4 | G-NORIGHTS | No Rights  |
+            | Test_Admin | G-NORIGHTS | No Rights  |
 
 #END    
