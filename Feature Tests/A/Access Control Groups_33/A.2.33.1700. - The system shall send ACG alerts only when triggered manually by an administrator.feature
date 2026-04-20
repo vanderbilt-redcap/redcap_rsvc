@@ -30,114 +30,130 @@ Feature: A.2.33.1700.: The system shall send ACG alerts only when triggered manu
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:
-            |Username       |Full Name       |Email                         |Access Control Group  |   
-            |site_admin     |Joe User        |joe.user@projectredcap.org    | No Rights          | 
-            |Test_Admin     |Admin User      |test_admin@test.edu           | No Rights          |            
-            |Test_User1     |Test User1      |Test_User1@test.edu           | No Rights          | 
-            |Test_User2     |Test User2      |Test_User2@test.edu           | No Rights          | 
-            |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
-            |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
+            | Username       | Full Name       | Email                         | Access Control Group  |   
+            | site_admin     | Joe User        | joe.user@projectredcap.org    | No Rights             | 
+            | Test_Admin     | Admin User      | test_admin@test.edu           | No Rights             |            
+            | Test_User1     | Test User1      | Test_User1@test.edu           | No Rights             | 
+            | Test_User2     | Test User2      | Test_User2@test.edu           | No Rights             | 
+            | Test_User3     | Test User3      | Test_User3@test.edu           | No Rights             | 
+            | Test_User4     | Test User4      | Test_User4@test.edu           | No Rights             |
        
         When I click on the link labeled "Reports"
         And I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
 
         #Users with Non-compliant Rights (non-expired) Report
         When I click on the link labeled "Users with Non-compliant Rights (non-expired)"
         Then I should see "Users with Non-compliant Rights (excluding expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |User           |Access Control Group   |Project Count |Projects granting Non-compliant Rights to this User|Non-compliant Rights |
-            |test_admin     |No Rights              |1             |PID 13                                             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute|
-            |test_user1     |No Rights              |1             |PID 13                                             |lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
-            |test_user2     |No Rights              |1             |PID 13                                             |lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | User           | Access Control Group   | Project Count | Projects granting Non-compliant Rights to this User | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                      |
+            | test_admin     | No Rights              | 1             | PID 13                                              | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute                                                                                                                     |
+            | test_user1     | No Rights              | 1             | PID 13                                              | lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
+            | test_user2     | No Rights              | 1             | PID 13                                              | lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants                                    |
        
         #Users with Non-compliant Rights (all) Report
         When I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
         When I click on the link labeled "Users with Non-compliant Rights (all)"
         Then I should see "Users with Non-compliant Rights (including expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |User           |Access Control Group   |Project Count |Projects granting Non-compliant Rights to this User|Non-compliant Rights |
-            |test_admin     |No Rights              |1             |PID 13                                             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute|
-            |test_user1     |No Rights              |1             |PID 13                                             |lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
-            |test_user2     |No Rights              |1             |PID 13                                             |lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | User           | Access Control Group   | Project Count | Projects granting Non-compliant Rights to this User | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                      |
+            | test_admin     | No Rights              | 1             | PID 13                                              | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute                                                                                                                     |
+            | test_user1     | No Rights              | 1             | PID 13                                              | lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
+            | test_user2     | No Rights              | 1             | PID 13                                              | lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants                                    |
 
         #Projects with Non-compliant Rights (non-expired) Report
         When I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
         When I click on the link labeled "Projects with Non-compliant Rights (non-expired)"
         Then I should see "Projects with Non-compliant Rights (excluding expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |Project        |User Count   |Non-compliant Users                        |Access Control Groups |Non-compliant Rights |
-            |PID 13         |3            |test_admin test_user1 test_user2           |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | Project       | User Count   | Non-compliant Users                  | Access Control Groups | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                                                          |
+            | PID 13        | 3            | test_admin test_user1 test_user2     | No Rights             | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
        
         #Projects with Non-compliant Rights (all) Report
         When I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
         When I click on the link labeled "Projects with Non-compliant Rights (all)"
         Then I should see "Projects with Non-compliant Rights (including expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |Project        |User Count   |Non-compliant Users                        |Access Control Groups |Non-compliant Rights |
-            |PID 13         |3            |test_admin test_user1 test_user2           |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | Project     | User Count   | Non-compliant Users                    | Access Control Groups | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                                                          |
+            | PID 13      | 3            | test_admin test_user1 test_user2       | No Rights             | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
 
         #Users and Projects with Non-compliant Rights (non-expired) Report
         When I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
 
         When I click on the link labeled "Users and Projects with Non-compliant Rights (non-expired)"
         Then I should see "Users and Projects with Non-compliant Rights (excluding expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |User           |Access Control Group   |Project granting Non-compliant Rights to this User |Non-compliant Rights |
-            |test_admin     |No Rights              |PID 13                                             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute|
-            |test_user1     |No Rights              |PID 13                                             |lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
-            |test_user2     |No Rights              |PID 13                                             |lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | User           | Access Control Group   | Project granting Non-compliant Rights to this User | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                      |
+            | test_admin     | No Rights              | PID 13                                             | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute                                                                                                                     |
+            | test_user1     | No Rights              | PID 13                                             | lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
+            | test_user2     | No Rights              | PID 13                                             | lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants                                    |
       
         #Users and Projects with Non-compliant Rights (all) Report
         When I click on the button labeled "Select report"
         Then I should see the dropdown field labeled "Select report" with the options below
-            |Users with Non-compliant Rights (non-expired)|
-            |Users with Non-compliant Rights (all)|
-            |Projects with Non-compliant Rights (non-expired)|
-            |Projects with Non-compliant Rights (all)|
-            |Users and Projects with Non-compliant Rights (non-expired)|
-            |Users and Projects with Non-compliant Rights (all)|
+            | Users with Non-compliant Rights (non-expired)              |
+            | Users with Non-compliant Rights (all)                      |
+            | Projects with Non-compliant Rights (non-expired)           |
+            | Projects with Non-compliant Rights (all)                   |
+            | Users and Projects with Non-compliant Rights (non-expired) |
+            | Users and Projects with Non-compliant Rights (all)         |
             
         When I click on the link labeled "Users and Projects with Non-compliant Rights (all)"
         Then I should see "Users and Projects with Non-compliant Rights (including expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |User           |Access Control Group   |Project granting Non-compliant Rights to this User |Non-compliant Rights |
-            |test_admin     |No Rights              |PID 13                                             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute|
-            |test_user1     |No Rights              |PID 13                                             |lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
-            |test_user2     |No Rights              |PID 13                                             |lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants|
+            | User           | Access Control Group   | Project granting Non-compliant Rights to this User | Non-compliant Rights                                                                                                                                                                                                                                                                                                                                                                                      |
+            | test_admin     | No Rights              | PID 13                                             | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute                                                                                                                     |
+            | test_user1     | No Rights              | PID 13                                             | lock_record_customize data_export_instruments data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants |
+            | test_user2     | No Rights              | PID 13                                             | lock_record_customize data_import_tool data_comparison_tool data_logging email_logging file_repository user_rights data_access_groups graphical reports design alerts calendar record_create record_rename record_delete participants data_quality_design data_quality_execute data_quality_resolution random_setup random_dashboard random_perform mycap_participants                                    |
+        
+        #Verify Project Compliance page
+        Given I click on the link labeled "My Projects"
+        And I click on the link labeled "A.2.33.1700"
+        And I click on the link labeled "ACGs"
+        Then I should see "NOTICE: Only REDCap administrators can access this page."
+        And I should see "Project Compliance"
+
+        And I click on the checkbox labeled "test_user1"
+        And I click on the button labeled "Email User(s)"
+        And I enter "Test" into the input field labeled "Subject:"
+        When I enter "My email body content" into the textarea field labeled "Email Body:"
+        And I click on the button labeled "Send Alerts"
+        And I click on the button labeled "Ok"
+        And I click on the link labeled "Compliance Alert Logs"
+       
 
 #END
