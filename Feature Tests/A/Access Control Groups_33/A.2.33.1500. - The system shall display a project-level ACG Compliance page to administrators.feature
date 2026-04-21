@@ -150,8 +150,8 @@ Feature: A.2.33.1500.: The system shall display a project-level ACG Compliance p
         And I should see a table header and rows containing the following values in a table:
         | Username   | Full Name   | Email                | Expiration           | Access Control Group   | Non-compliant Rights    | Project Role                       |
         | test_admin | Admin User  | test_admin@test.edu  | never                | No Rights (G-NORIGHTS) | 19 Non-compliant Rights | None                               |
-        | test_user1 | Test User1  | Test_User1@test.edu  | never                | No Rights (G-NORIGHTS) | 26 Non-compliant Rights | 1_FullRights (U-641DLAC49L)        |
-        | test_user2 | Test User2  | Test_User2@test.edu  | never                | No Rights (G-NORIGHTS) | 24 Non-compliant Rights | 4_NoAccess_Noexport (U-817YYNT9RM) |
+        | test_user1 | Test User1  | Test_User1@test.edu  | never                | No Rights (G-NORIGHTS) | 22 Non-compliant Rights | 1_FullRights (U-641DLAC49L)        |
+        | test_user2 | Test User2  | Test_User2@test.edu  | never                | No Rights (G-NORIGHTS) | 20 Non-compliant Rights | 4_NoAccess_Noexport (U-817YYNT9RM) |
 
        
 
