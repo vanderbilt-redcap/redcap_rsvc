@@ -2,6 +2,22 @@
 
 set -e
 
+echo Before using this script again, figure out how to auto unsubscribe after creating issues, maybe via the following command
+exit 
+
+gh api graphql -f query='
+mutation{
+    updateSubscription(input: {
+        state: UNSUBSCRIBED,
+        subscribableId: "<NODE_ID_OF_SUBSCRIBABLE>"
+    }) {
+    subscribable {
+            viewerSubscription
+        }
+    }
+}
+'
+
 # Check if the GitHub CLI is installed
 if ! command -v gh &> /dev/null; then
   echo "GitHub CLI (gh) is not installed. Please install it and try again."
