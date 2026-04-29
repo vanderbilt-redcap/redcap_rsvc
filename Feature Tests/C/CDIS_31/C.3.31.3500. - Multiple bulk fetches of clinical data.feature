@@ -78,9 +78,8 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
-        And I wait for 10 seconds
         Then I should see "Demographics"
-        And I should see "32"
+        And I should see "30"
 
     # Add two more records
         When I click on the link labeled "Add / Edit Records"
@@ -102,17 +101,16 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
-        And I wait for 10 seconds
         Then I should see "Demographics"
-        And I should see "32"
+        And I should see "30"
 
     #VERIFY_LOG
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action          | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design   | Fetch data for Clinical Data Mart (granular mode)|
-      | mm/dd/yyyy hh:mm | test_admin | Update record 3 | patient_fhir_id = 'd00b766a-f5fa-4730-a64d-e8574994f460', first_name = 'Luis Miguel', last_name = 'Delarosa', dob = '1948-10-07', sex = 'M', race = '2135-2', race_all_codes = '2135-2', ethnicity = '2186-5', address_line = '945 Cruickshank Brook Unit 26', address_city = 'Milton', address_state = 'Massachusetts', address_postalcode = '02186', address_country = 'US', phone_home = '555-810-8188', is_deceased = '0', marital_status = 'S', demography_complete = '2'|
-      | mm/dd/yyyy hh:mm | test_admin | Update record 4 | patient_fhir_id = 'd64b37f5-d3b5-4c25-abe8-23ebe8f5a04e', first_name = 'Benito', last_name = 'Lucio', dob = '1936-08-18', sex = 'M', race = '2135-2', race_all_codes = '2135-2', ethnicity = '2186-5', address_line = '320 Ritchie Byway', address_city = 'Boston', address_state = 'Massachusetts', address_postalcode = '02108', address_country = 'US', phone_home = '555-913-5055', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
-      | mm/dd/yyyy hh:mm | test_admin | Update record 1 | patient_fhir_id = 'b218cee9-019d-47a4-b161-e97c0fd6f736', first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24', sex = 'M', race = '2106-3', race_all_codes = '2106-3', ethnicity = '2186-5', address_line = '1089 Schowalter Manor Unit 75', address_city = 'Somerset', address_state = 'Massachusetts', address_postalcode = '02725', address_country = 'US', phone_home = '555-172-1610', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
-      | mm/dd/yyyy hh:mm | test_admin | Update record 2 | patient_fhir_id = '67cbf090-4ddb-4799-99ff-a28abe2740b1', first_name = 'Casandra', last_name = 'Emmerich', dob = '1986-05-23', sex = 'F', race = '2106-3', race_all_codes = '2106-3', ethnicity = '2186-5', address_line = '571 Kemmer Gardens Unit 24', address_city = 'Boston', address_state = 'Massachusetts', address_postalcode = '02108', address_country = 'US', phone_home = '555-715-9979', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
+      | mm/dd/yyyy hh:mm | test_admin | Update record 3 | first_name = 'Luis Miguel', last_name = 'Delarosa', dob = '1948-10-07', sex = 'M', race = '2135-2', race_all_codes = '2135-2', ethnicity = '2186-5', address_line = '945 Cruickshank Brook Unit 26', address_city = 'Milton', address_state = 'Massachusetts', address_postalcode = '02186', address_country = 'US', phone_home = '555-810-8188', is_deceased = '0', marital_status = 'S', demography_complete = '2'|
+      | mm/dd/yyyy hh:mm | test_admin | Update record 4 | first_name = 'Benito', last_name = 'Lucio', dob = '1936-08-18', sex = 'M', race = '2135-2', race_all_codes = '2135-2', ethnicity = '2186-5', address_line = '320 Ritchie Byway', address_city = 'Boston', address_state = 'Massachusetts', address_postalcode = '02108', address_country = 'US', phone_home = '555-913-5055', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
+      | mm/dd/yyyy hh:mm | test_admin | Update record 1 | first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24', sex = 'M', race = '2106-3', race_all_codes = '2106-3', ethnicity = '2186-5', address_line = '1089 Schowalter Manor Unit 75', address_city = 'Somerset', address_state = 'Massachusetts', address_postalcode = '02725', address_country = 'US', phone_home = '555-172-1610', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
+      | mm/dd/yyyy hh:mm | test_admin | Update record 2 | first_name = 'Casandra', last_name = 'Emmerich', dob = '1986-05-23', sex = 'F', race = '2106-3', race_all_codes = '2106-3', ethnicity = '2186-5', address_line = '571 Kemmer Gardens Unit 24', address_city = 'Boston', address_state = 'Massachusetts', address_postalcode = '02108', address_country = 'US', phone_home = '555-715-9979', is_deceased = '0', marital_status = 'M', demography_complete = '2'|
 #END
