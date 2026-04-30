@@ -93,7 +93,7 @@ Scenario: B.2.33.4500.: The system shall allow expiring users from the ACG Compl
         And I wait for 2 seconds
         Then I should see a table header and rows containing the following values in a table: 
         | Username   | Full Name   | Email                | Expiration                | Access Control Group   | Non-compliant Rights    | Project Role                       |
-        | test_admin | Admin User  | test_admin@test.edu  | yyyy-mm-dd                | ()                     | 19 Non-compliant Rights | None                               |
-        | test_user1 | Test User1  | Test_User1@test.edu  | yyyy-mm-dd                | ()                     | 8 Non-compliant Rights  | None                               |
+        | test_admin | Admin User  | test_admin@test.edu  | yyyy-mm-dd                | No Rights              | 19 Non-compliant Rights | None                               |
+        | test_user1 | Test User1  | Test_User1@test.edu  | yyyy-mm-dd                | New_ACG_2              | 8 Non-compliant Rights  | None                               |
 
 #END
