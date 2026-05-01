@@ -89,7 +89,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Save Changes"
     Then I enter "test_admin" into the input field labeled "Username:"
     And I click on the button labeled "Obtain PIN via email"
-# On manual, the following step should be interpreted as waiting until "Sending..." disappears
+    # On manual, the following step should be interpreted as waiting until "Sending..." disappears
     And I should NOT see "Sending..."
     And I enter the code that was emailed to the current user into the input field labeled "Password or 6-digit PIN:"
     And I click on the button labeled "Save"
