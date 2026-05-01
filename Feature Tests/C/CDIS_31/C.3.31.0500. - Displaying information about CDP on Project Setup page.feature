@@ -36,11 +36,6 @@ And I click on the link labeled "My Projects"
 And I click on the link labeled "C.3.31.0500"
 
 ##ACTION Enable CDP in Project
- When I click on the button labeled "Enable" in the row labeled "SendGrid Template email services for Alerts & Notifications"
-# And I click on the button labeled "Enable" in the "SendGrid Template email services for Alerts & Notifications" row in the "Enable optional modules and customizations" section
-# And I click on the button labeled "Enable" in the "SendGrid Template email services for Alerts & Notifications" row in the "Enable optional modules and customizations" section
-And I select "Enable" on the dropdown field labeled "SendGrid Template Email Services"
-And I click on the button labeled "Save"
 And I click on the button labeled "Enable" in the row labeled "Clinical Data Pull from EHR"
 
 # ##VERIFY
