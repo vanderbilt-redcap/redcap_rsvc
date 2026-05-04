@@ -17,7 +17,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
     And I select "Enable" on the dropdown field labeled "Two-Factor Authentication"
-    And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN"
+    And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN or Duo push notification in place of their password."
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 #FUNCTIONAL_REQUIREMENT A.3.28.1100. 
@@ -26,6 +26,8 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
   Scenario: ##ACTION: Configure the File Storage
     And I click on the link labeled "File Upload Settings"
     And I click on the radio labeled "Send an email containing your verification code"
+    # On manual, the following step should be interpreted as waiting until "Sending..." disappears
+    And I should NOT see "Sending..."
     And I enter the code that was emailed to the current user into the input field labeled "Enter the verification code"
     And I click on the button labeled "Submit"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
@@ -47,6 +49,9 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I should see "Your system configuration values have now been changed"
 #SETUP 
     Given I login to REDCap with the user "Test_Admin"
+    And I click on the radio labeled "Send an email containing your verification code"
+    And I enter the code that was emailed to the current user into the input field labeled "Enter the verification code"
+    And I click on the button labeled "Submit"
     And I create a new project named "A.3.28.1200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 #M Once the project is created, you must add User Rights, Locking with Signatures, and Additional Customizations 
 
@@ -75,6 +80,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
   Scenario: ##ACTION: Lock 1 form in a Record
     When I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
+    And I enter "New Name" into the input field labeled "Name"
     And I check the checkbox labeled "Lock"
     And I check the checkbox labeled "E-signature"
     And I click on the button labeled "More save options"
@@ -83,6 +89,8 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the button labeled "Save Changes"
     Then I enter "test_admin" into the input field labeled "Username:"
     And I click on the button labeled "Obtain PIN via email"
+    # On manual, the following step should be interpreted as waiting until "Sending..." disappears
+    And I should NOT see "Sending..."
     And I enter the code that was emailed to the current user into the input field labeled "Password or 6-digit PIN:"
     And I click on the button labeled "Save"
     Then I should see "Instrument locked by test_admin"
@@ -121,7 +129,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
-    And I select "Enable" on the dropdown field labeled "When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.)"
+    And I select "Enable" on the dropdown field labeled "When e-signing, allow users to provide their 6-digit PIN or perform a Duo push notification only once per session. (Requires the immediate setting above to be enabled.)"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
@@ -130,6 +138,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I click on the link labeled "A.3.28.1200"
     And I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "2" and click on the bubble
+    And I enter "New Name 2" into the input field labeled "Name"
     And I check the checkbox labeled "Lock"
     And I check the checkbox labeled "E-signature"
     And I click on the button labeled "Save & Stay"

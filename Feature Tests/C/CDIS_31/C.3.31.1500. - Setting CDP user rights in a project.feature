@@ -133,6 +133,8 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         And I should see "birthDate:"
         When I click on the button labeled "Save record and fetch data"
         Then I should see "Adjudicate data from External System"
+        And I should see "Morris"
+        And I should see "Lockman"
         When I click on the button labeled "Save"
         Then I should see "Data saved successfully!"
         When I click on the button labeled "Save & Exit Form"
