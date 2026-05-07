@@ -59,7 +59,11 @@ Feature: A.2.33.1900.: The system shall allow exporting ACG reports as CSV.---Co
        
        #FUNCTIONAL_REQUIREMENT
         When I click on the button labeled "Export (CSV)"
-        Then I should see a downloaded file named "UsersWithNoncompliantRights_nonexpired_yyyy-mm-dd_hhmmss.csv"
+        Then I should see the following values in the last file downloaded
+            | Username   | Name       | Email               | Non-compliant Rights | ACG ID     | ACG Name  |
+            | test_admin | Admin User | test_admin@test.edu |                      | G-NORIGHTS | No Rights |
+            | test_user1 | Test User1 | Test_User1@test.edu |                      | G-NORIGHTS | No Rights |
+            | test_user2 | Test User2 | Test_User2@test.edu |                      | G-NORIGHTS | No Rights |
        
     
 #END
