@@ -74,7 +74,7 @@ Feature: C.3.31.3700. User Interface: The system shall support the ability to re
     #Process CDM Request on To-Do List
         And I click on the link labeled "Control Center"
         And I click on the link labeled "To-Do List"
-        And I click on the icon labeled "process request"
+        And I click on the icon labeled "Comment" in the row labeled "Clinical Data Mart revision"
         And I click on the button labeled "Approve" 
         Then I should see "the revision was approved"        
         And I logout
