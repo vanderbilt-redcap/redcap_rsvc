@@ -106,9 +106,8 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     Then I should see "Pending Requests"
 
-    Given I click on the icon labeled "Actions" in the row labeled "Delete project"
-    Then I should see 'Project title: "B.6.4.1200.300.PROD"'
-    When I click on the icon labeled "Comment" in the row labeled "Delete project"
+    Given I should see the "Delete project" request created for the project named "B.6.4.1200.300.PROD" within the "Pending Requests" table
+    When I click on the "process request" icon for the "Delete project" request created for the project named "B.6.4.1200.300.PROD" within the "Pending Requests" table
     Then I should see "Permanently delete this project?"
 
     ##ACTION Delete project
@@ -119,8 +118,5 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     ##VERIFY
     And I close the iframe window
-    Given I click on the icon labeled "Actions" in the row labeled "Delete project"
-    Then I should see 'Project title: "B.6.4.1200.300.PROD"'
-    And I should see "Request Completed By: Test_Admin"        
-
+    Then I should see the "Delete project" request created for the project named "B.6.4.1200.300.PROD" within the "Completed & Archived Requests" table
     #END
