@@ -284,7 +284,7 @@ class UploadVideosToREDCapProject {
                         record_data.test_header_redundant_loc = redundant_location_parts[1].trim().split(/\s+/)[0]
                     }
                     else{
-                        console.error(`The following file does not contain the expect REDUNDANT feature language: ${filename}`)
+                        console.error(`The following file does not contain the expected REDUNDANT feature language: ${filename}`)
                     }
                     
                     result.push(record_data)
