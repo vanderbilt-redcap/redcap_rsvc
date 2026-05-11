@@ -19,7 +19,7 @@ Feature: User Interface: The system shall support the ability to show or hide ar
 
         When I click on the link labeled "B.6.13.0200.100"
         And I click on the button labeled "Restore Project"
-        Then I should see a dialog containing the following text: "PROJECT RESTORED"
+        Then I should see "PROJECT RESTORED"
 
         When I click on the button labeled "Close"
         Then I should see "Project status:  Development"

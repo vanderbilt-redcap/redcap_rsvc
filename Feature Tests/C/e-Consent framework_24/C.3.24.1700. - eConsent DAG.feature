@@ -117,7 +117,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -145,7 +145,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the link labeled "Record ID 2"
     And I click on the button labeled "Choose action for record"
     And I click on the link labeled "Assign to Data Access Group"
-    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+    Then I should see "Assign record to a Data Access Group?"
     And I select "TestGroup1" on the dropdown field labeled "[No Assignment]"
     And I click on the button labeled "Assign to Data Access Group"
 
@@ -174,7 +174,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the link labeled "Record ID 3"
     And I click on the button labeled "Choose action for record"
     And I click on the link labeled "Assign to Data Access Group"
-    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+    Then I should see "Assign record to a Data Access Group?"
     And I select "TestGroup2" on the dropdown field labeled "[No Assignment]"
     And I click on the button labeled "Assign to Data Access Group"
 
@@ -229,7 +229,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"

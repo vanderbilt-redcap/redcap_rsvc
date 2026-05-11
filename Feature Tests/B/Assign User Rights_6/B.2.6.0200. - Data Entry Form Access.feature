@@ -19,7 +19,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see "Upload users (CSV)"
 
     When I click on the link labeled "Upload users (CSV)"
-    Then I should see a dialog containing the following text: "Upload users (CSV)"
+    Then I should see "Upload users (CSV)"
 
     Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Displayed below is a preview of all the changes you are about to commit."
@@ -31,7 +31,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
       | test_user4 |
 
     Given I click on the button labeled "Upload"
-    Then I should see a dialog containing the following text: "SUCCESS!"
+    Then I should see "SUCCESS!"
     And I click on the button labeled "Close"
 
     And I should see a table header and rows containing the following values in a table:
@@ -48,7 +48,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
 
     When I click on the link labeled "Test User1"
     And I click on the button labeled "Edit user privileges"
-    Then I should see a dialog containing the following text: "Editing existing user"
+    Then I should see "Editing existing user"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Set user access to No Access
@@ -81,7 +81,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Given I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Edit user privileges"
-    Then I should see a dialog containing the following text: "Editing existing user"
+    Then I should see "Editing existing user"
 
     ##ACTION: Set user access to Read Only
     When I click on the radio in the column labeled "Read Only" and the row labeled "Text Validation"
@@ -99,7 +99,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Given I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Edit user privileges"
-    Then I should see a dialog containing the following text: "Editing existing user"
+    Then I should see "Editing existing user"
 
     ##ACTION: Set user access to View & Edit + Edit survey responses
     When I check the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
@@ -140,7 +140,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Given I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Edit user privileges"
-    Then I should see a dialog containing the following text: "Editing existing user"
+    Then I should see "Editing existing user"
 
     ##ACTION: Remove user access to Edit survey responses
     When I uncheck the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"

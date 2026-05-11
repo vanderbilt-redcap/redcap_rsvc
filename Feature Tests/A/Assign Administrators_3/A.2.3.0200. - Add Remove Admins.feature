@@ -16,7 +16,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
     ##TEST Add administrator account no privileges
     Given I enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
     And I click on the button labeled "Add"
-    Then I should see a dialog containing the following text: "check one or more"
+    Then I should see "check one or more"
     And I click on the button labeled "Close"
 
     Given I clear field and enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
@@ -94,7 +94,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
     When I click on the link labeled "Control Center"
     Given I click on the link labeled "Administrator Privileges"
     And I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
-    Then I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
+    Then I should see "Please be aware that you have unchecked ALL the administrator privileges for this user"
 
     Given I click on the button labeled "Close"
     When I click on the link labeled "Administrator Privileges"

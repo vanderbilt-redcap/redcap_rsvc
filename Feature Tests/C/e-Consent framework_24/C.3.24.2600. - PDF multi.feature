@@ -184,7 +184,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -198,7 +198,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -232,7 +232,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -247,7 +247,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I select "Data Mode" on the dropdown field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -279,7 +279,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -299,7 +299,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I select "Survey Mode" on the dropdown field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -331,7 +331,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -350,7 +350,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -386,7 +386,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -407,7 +407,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -441,7 +441,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -465,7 +465,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"

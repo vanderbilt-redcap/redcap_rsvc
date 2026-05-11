@@ -20,7 +20,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
 
         Given I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
-        Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+        Then I should see "Assign record to a Data Access Group?"
 
         When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group"
@@ -35,7 +35,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
 
         Given I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
-        Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
+        Then I should see "Assign record to a Data Access Group?"
 
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group"

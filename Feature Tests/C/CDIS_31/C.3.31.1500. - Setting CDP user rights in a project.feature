@@ -48,7 +48,7 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see a dialog containing the following text: "Adding new user"
+        Then I should see "Adding new user"
         When I click on the checkbox labeled "Project Design and Setup"
         And I click on the button labeled "Add user"
         Then I should see 'User "Test_User1" was successfully added'

@@ -60,7 +60,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         When I click on the checkbox labeled "Lock"
         And I click on the checkbox labeled "E-signature"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see a dialog containing the following text: "E-signature: Username/password verification"
+        Then I should see "E-signature: Username/password verification"
 
         Given I provide E-Signature credentials for the user "Test_User1"
         And I click on the button labeled "Save"

@@ -24,7 +24,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -65,7 +65,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"

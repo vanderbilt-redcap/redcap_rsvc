@@ -95,7 +95,7 @@ Feature: B.2.33.4200.: The system shall allow assigning Data Access Groups unles
         And I click on the button labeled "Upload or download DAGs/User-DAG assignments"
         Then I should see "Upload User-DAG assignments (CSV)"
         When I click on the link labeled "Upload User-DAG assignments (CSV)"
-        Then I should see a dialog containing the following text: "Upload User-DAG assignments (CSV)"
+        Then I should see "Upload User-DAG assignments (CSV)"
         Given I upload a "csv" format file located at "import_files/Dag_import_for_ACGs.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Upload User-DAG assignments (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table:

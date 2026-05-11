@@ -16,7 +16,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see a dialog containing the following text: "Adding new user"
+        Then I should see "Adding new user"
 
         And I check the User Right named "Data Import Tool"
         And I select "Test_Group1" in the dropdown field labeled "Assign To DAG"

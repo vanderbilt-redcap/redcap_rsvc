@@ -79,7 +79,7 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 4      | Integer   | [integer]<>'1999'                        |
         
     ##ACTION: edit existing rule for longitudinal projects
-    When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
+    When I click on "[event_1_arm_1][integer]='1999'"
     And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
@@ -89,7 +89,7 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
             
     ##ACTION: edit existing rule
-    When I click the element containing the following text: "[integer]<>'1999'"
+    When I click on "[integer]<>'1999'"
     And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save"

@@ -50,7 +50,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | test_user4 |
 
         Given I click on the button labeled "Upload"
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
 
         Then I should see a table header and rows containing the following values in a table:
@@ -528,13 +528,13 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I check the checkbox labeled "TestGroup1_Folder"
         And I click on the button labeled "Delete"
     ##VERIFY will not let you delete folder with file inside
-        Then I should see a dialog containing the following text: "Alert"
-        And I should see a dialog containing the following text: "Sorry, but folders can't be deleted this way. They must instead be deleted individually by clicking the X on the right-hand side of each folder."
+        Then I should see "Alert"
+        And I should see "Sorry, but folders can't be deleted this way. They must instead be deleted individually by clicking the X on the right-hand side of each folder."
         When I click on the button labeled "Close"
         Then I should see "TestGroup1_Folder"
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
-        Then I should see a dialog containing the following text: "Cannot delete folder!"
-        And I should see a dialog containing the following text: "Sorry, but the folder below cannot be deleted because it still has files in it."
+        Then I should see "Cannot delete folder!"
+        And I should see "Sorry, but the folder below cannot be deleted because it still has files in it."
         When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
@@ -554,7 +554,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
         And I check the checkbox labeled "testusers_bulk_upload.csv"
         And I click on the button labeled "Delete"
-        Then I should see a dialog containing the following text: "DELETE MULTIPLE FILES?"
+        Then I should see "DELETE MULTIPLE FILES?"
         And I click on the button labeled "Cancel"
     ##VERIFY file still in folder
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -564,10 +564,10 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##ACTION Delete/Remove files from folder
         When I check the checkbox labeled "testusers_bulk_upload.csv"
         And I click on the button labeled "Delete"
-        Then I should see a dialog containing the following text: "DELETE MULTIPLE FILES?"
+        Then I should see "DELETE MULTIPLE FILES?"
         And I click on the button labeled "Delete"
     ##VERIFY file deleted in folder
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
         Then I should see a table row containing the following values in the file repository table:
             | No files or subfolders exist in this folder |
@@ -577,7 +577,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
 
     ##VERIFY Cancel deletion
-        Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
+        Then I should see "Folder: TestGroup1_Folder"
         When I click on the button labeled "Cancel"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
@@ -591,7 +591,7 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##ACTION C.3.26.500.100 Delete folders
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
     ##VERIFY Folder deleted
-        Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
+        Then I should see "Folder: TestGroup1_Folder"
         When I click on the button labeled "Delete"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |

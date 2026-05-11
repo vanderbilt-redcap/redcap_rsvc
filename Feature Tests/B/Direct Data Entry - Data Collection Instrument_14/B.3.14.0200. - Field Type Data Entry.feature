@@ -41,7 +41,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     And I select the checkbox option "Checkbox2" for the field labeled "Checkbox"
 
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"

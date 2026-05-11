@@ -20,7 +20,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Upload or download users, roles, and assignments"
         Then I should see "Upload users (CSV)"
         When I click on the link labeled "Upload users (CSV)"
-        Then I should see a dialog containing the following text: "Upload users (CSV)"
+        Then I should see "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Displayed below is a preview of all the changes you are about to commit."
@@ -33,7 +33,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
             | test_user4 |
 
         Given I click on the button labeled "Upload"
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
 
         Then I should see a table header and rows containing the following values in a table:
@@ -50,13 +50,13 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "test_user1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         When I check the User Right named "Delete Records"
         And I click on the button labeled "Save Changes"
 
         When I click on the link labeled "test_user2"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         When I uncheck the User Right named "Delete Records"
         And I should see "The Delete right has been cleared for all forms"
         And I click on the button labeled "Close"
@@ -517,7 +517,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the link labeled "User Rights"
         And I click on the link labeled "test_user1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         When I uncheck the User Right named "Delete Records"
         And I should see "The Delete right has been cleared for all forms"
         When I click on the button labeled "Close"
@@ -530,7 +530,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the link labeled "User Rights"
         And I click on the link labeled "test_user1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         When I check the checkbox in the column labeled "Delete" and the row labeled "Consent"
         And I click on the button labeled "Save Changes"
         And I click on the link labeled "Setup"

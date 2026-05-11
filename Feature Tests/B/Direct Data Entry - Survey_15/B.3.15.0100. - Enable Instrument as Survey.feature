@@ -100,7 +100,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
     And I click on the button labeled "Delete Survey Settings"
-    Then I should see a dialog containing the following text: "Survey successfully deleted!"
+    Then I should see "Survey successfully deleted!"
     And I click on the button labeled "Close"
 
     ##VERIFY

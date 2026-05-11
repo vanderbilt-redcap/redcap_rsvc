@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
         And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
-        Then I should see a dialog containing the following text: "Data export was successful!"
+        Then I should see "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         Then I should have a "csv" file that contains the headings below
@@ -68,11 +68,11 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I wait for 1 second
         When I check the checkbox labeled "testusers_bulkupload.csv"
         And I click on the button labeled "Delete"
-        Then I should see a dialog containing the following text: "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."
+        Then I should see "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."
         And I click on the button labeled "Delete"
 
     ##VERIFY file deleted in folder
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                 | Time Uploaded | Size    |
@@ -89,7 +89,7 @@ Feature: User Interface: The system shall support the storage, organization, and
             | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
         When I click on the icon labeled "Restore deleted file" in the row labeled "testusers_bulkupload.csv"
-        Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
+        Then I should see "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel"
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -99,9 +99,9 @@ Feature: User Interface: The system shall support the storage, organization, and
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Restore deleted file
         When I click on the icon labeled "Restore deleted file" in the row labeled "testusers_bulkupload.csv"
-        Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
+        Then I should see "File: testusers_bulkupload.csv"
         When I click on the button labeled "Restore"
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
     ##VERIFY file in File Repository
         When I click on the link labeled "File Repository"
@@ -124,10 +124,10 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I wait for 1 second
         When I check the checkbox labeled "testusers_bulkupload.csv"
         And I click on the button labeled "Delete"
-        Then I should see a dialog containing the following text: "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."
+        Then I should see "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."
         And I click on the button labeled "Delete"
     ##VERIFY file deleted in folder
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -144,7 +144,7 @@ Feature: User Interface: The system shall support the storage, organization, and
             | Name                     | Time Uploaded    | Comments                |
             | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
         When I click on the icon labeled "Permanently delete file" in the row labeled "testusers_bulkupload.csv"
-        Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
+        Then I should see "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel"
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -154,10 +154,10 @@ Feature: User Interface: The system shall support the storage, organization, and
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Permanently deleted file
         When I click on the icon labeled "Permanently delete file" in the row labeled "testusers_bulkupload.csv"
-        Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
+        Then I should see "File: testusers_bulkupload.csv"
         When I click on the button labeled "Delete"
     ##VERIFY file deleted in recycle folder
-        Then I should see a dialog containing the following text: "File was successfully deleted!"
+        Then I should see "File was successfully deleted!"
         And I click on the button labeled "OK"
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:

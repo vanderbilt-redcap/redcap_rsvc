@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I check the second checkbox labeled "Participant Consent"
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 2: Arm Two)"
     And I click on the button labeled "Save"
-    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
     And I click on the button labeled "Close"
         #SETUP_PRODUCTION
 
@@ -80,7 +80,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -123,7 +123,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -158,7 +158,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -194,7 +194,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
 
   Scenario:
@@ -237,7 +237,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -278,7 +278,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"

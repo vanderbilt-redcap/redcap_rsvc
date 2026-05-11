@@ -15,7 +15,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
-    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
     And I click on the button labeled "Close"
 
     #SETUP_PRODUCTION
@@ -41,7 +41,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I check the checkbox labeled "Text Validation" in the row labeled "Event 1 (Arm 1: Arm 1)"
     And I check the checkbox labeled "Data Types" in the row labeled "Event 1 (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
-    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
     And I click on the button labeled "Close"
 
     #FUNCTIONAL REQUIREMENT

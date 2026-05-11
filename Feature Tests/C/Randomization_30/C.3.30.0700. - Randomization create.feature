@@ -91,7 +91,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
 
         When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
         And I click on the button labeled "Randomize" 
-        Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
+        Then I should see "Below you may perform randomization for Record ID"
         And I click on the button labeled "Randomize"
         Then I should see "was randomized for"
         And I click on the button labeled "Close"

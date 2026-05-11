@@ -31,7 +31,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         ##ACTION
         Given I click on the first button labeled "Choose action"
         And I click on the link labeled "Copy"
-        Then I should see a dialog containing the following text: "Copy instrument"
+        Then I should see "Copy instrument"
         And I click on the button labeled "Copy instrument"
 
         ##VERIFY

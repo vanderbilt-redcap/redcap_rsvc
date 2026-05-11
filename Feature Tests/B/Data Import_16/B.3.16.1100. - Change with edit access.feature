@@ -30,7 +30,7 @@ Feature: User Interface: The system shall allow data to be changed only by a use
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see a dialog containing the following text: "Adding new user"
+        Then I should see "Adding new user"
 
         When I uncheck the User Right named "Data Import Tool"
         And I uncheck the User Right named "Logging"

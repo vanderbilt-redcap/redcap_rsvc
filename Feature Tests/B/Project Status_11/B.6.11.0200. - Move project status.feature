@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the ability for a user to chan
         #FUNCTIONAL REQUIREMENT
         ##ACTION: move to analysis/cleanup
         When I click on the button labeled "Restore Project"
-        Then I should see a dialog containing the following text: "PROJECT RESTORED"
+        Then I should see "PROJECT RESTORED"
         And I click on the button labeled "Close"
         ##VERIFY
         Then I should see "Project status:  Analysis/Cleanup"
