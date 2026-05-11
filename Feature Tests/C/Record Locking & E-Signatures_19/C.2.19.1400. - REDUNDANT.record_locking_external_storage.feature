@@ -4,4 +4,5 @@ Feature: C.2.19.1400. User Interface: The system shall provide a project-level a
         So that REDCap correctly supports Part 11 compliance across sessions and file destinations
 
     Scenario: C.2.19.1400.0100. - Default state is OFF for new projects C.2.19.1400.0200. - Option is enabled and enhancement becomes available in the project
-        #REDUNDANT - verified in A.3.28.1200. 
+        #This feature test is REDUNDANT and can be viewed in A.3.28.1200.
+         

@@ -5,7 +5,7 @@ Feature: A.3.28.1000. The system shall store general file attachments (e.g., Des
   So that I can validate audit-readiness across all upload methods
 
   Scenario: A.3.28.1000.0100. Verify external storage for general file attachments
-    #Redundant tested in A.3.28.1200.
+    #This feature test is REDUNDANT and can be viewed in A.3.28.1200.
 
     #CONTEXT
     # This verification must be performed manually by the local site administrator.

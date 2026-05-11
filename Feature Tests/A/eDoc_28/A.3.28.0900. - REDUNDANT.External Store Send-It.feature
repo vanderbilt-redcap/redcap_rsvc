@@ -5,7 +5,7 @@ Feature: A.3.28.0900. The system shall store files uploaded via the Send-It modu
   So that I can verify secure storage for shared files
 
   Scenario: A.3.28.0900.0100. Verify the external storage location for Send-It file
-    #Redundant; verified in A.3.28.0400.
+   #This feature test is REDUNDANT and can be viewed in A.3.28.0400.
     
     #CONTEXT
     # This verification must be performed manually by the local site administrator.

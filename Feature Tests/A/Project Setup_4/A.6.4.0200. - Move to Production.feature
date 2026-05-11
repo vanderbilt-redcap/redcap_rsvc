@@ -49,14 +49,17 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         Then I should see "Pending Requests"
 
-        Given I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
-        When I click on the "process request" icon for the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
+        Given I click on the icon labeled "Actions" in the row labeled "Move to prod"
+        Then I should see 'Project title: "A.6.4.0200.100"'
+        When I click on the icon labeled "Approve request" in the row labeled "Move to prod"
         Then I should see "Move Project To Production Status"
 
         Given I click on the radio labeled "Keep ALL data saved so far."
         When I click on the button labeled "YES, Move to Production Status"
         And I close the iframe window
-        Then I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Completed & Archived Requests" table
+        Then I click on the icon labeled "Actions" in the row labeled "completed"
+        And I should see 'Project title: "A.6.4.0200.100"'
+        And I should see "Request Completed By: Test_Admin"
 
         Given I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
