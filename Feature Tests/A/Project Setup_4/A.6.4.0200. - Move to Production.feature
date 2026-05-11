@@ -51,7 +51,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         Given I click on the icon labeled "Actions" in the row labeled "Move to prod"
         Then I should see 'Project title: "A.6.4.0200.100"'
-        When I click on the icon labeled "Comment" in the row labeled "Move to prod"
+        When I click on the icon labeled "Approve request" in the row labeled "Move to prod"
         Then I should see "Move Project To Production Status"
 
         Given I click on the radio labeled "Keep ALL data saved so far."

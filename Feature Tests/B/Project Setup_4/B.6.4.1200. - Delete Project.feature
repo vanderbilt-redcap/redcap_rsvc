@@ -108,7 +108,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     Given I click on the icon labeled "Actions" in the row labeled "Delete project"
     Then I should see 'Project title: "B.6.4.1200.300.PROD"'
-    When I click on the icon labeled "Comment" in the row labeled "Delete project"
+    When I click on the icon labeled "Approve request" in the row labeled "Delete project"
     Then I should see "Permanently delete this project?"
 
     ##ACTION Delete project
@@ -119,6 +119,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     ##VERIFY
     And I close the iframe window
+    And I wait for 1 second
     Given I click on the icon labeled "Actions" in the row labeled "Delete project"
     Then I should see 'Project title: "B.6.4.1200.300.PROD"'
     And I should see "Request Completed By: Test_Admin"        
