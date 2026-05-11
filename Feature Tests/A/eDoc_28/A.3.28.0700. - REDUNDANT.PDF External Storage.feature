@@ -4,4 +4,4 @@ Feature: A.3.28.0700. Control Center: The system shall ensure that PDF snapshots
   I want to see that external storage is functioning as expected
 
   Scenario: A.3.28.0700.0100.  PDF snapshots stored in the File Repository are saved to the configured file storage location
-      #Redundant; verified in A.3.28.1200. 
+      #This feature test is REDUNDANT and can be viewed in A.3.28.1200. 

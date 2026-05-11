@@ -3,4 +3,4 @@ Feature: C.3.31.2700. User Interface: The system shall support the creation of n
     As a REDCap end user   
     I want to see a new record can be added by retrieving and saving the data in the adjudication table.
 
-    #This feature is fully tested in C.3.31.2000. lines 42-56.
+    #This feature test is REDUNDANT and can be viewed in C.3.31.2000. lines 42-56.

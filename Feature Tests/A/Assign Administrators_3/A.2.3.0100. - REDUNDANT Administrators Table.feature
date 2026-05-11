@@ -4,4 +4,4 @@ Feature: A.2.3.0100. Assign administrators and account managers
     I want to see that Control Center is functioning as expected
 
     Scenario: A.2.3.0100.100 View administrator accounts
-        #REDUNDANT - Tested in A.2.3.0200.100
+        #This feature test is REDUNDANT and can be viewed in A.2.3.0200.100

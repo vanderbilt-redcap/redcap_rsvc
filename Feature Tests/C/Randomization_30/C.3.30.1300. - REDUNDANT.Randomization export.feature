@@ -4,6 +4,8 @@ Feature: User Interface: The system shall support inclusion of randomization val
 
 Scenario: #REDUNDANT C.3.30.1300.0100. Export data with randomized values is accurate to allocation table
 
+#This feature test is REDUNDANT and can be viewed in C.3.30.1000 and C.3.30.1100
+
 # The requirement C.3.30.1300.0100 - "Export data with randomized values is accurate to allocation table" - is already covered by previous testing efforts:
 
 # C.3.30.1000.0200 verifies that allocation entries are assigned sequentially and correctly from the uploaded table.

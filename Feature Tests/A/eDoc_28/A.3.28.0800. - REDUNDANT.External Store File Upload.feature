@@ -5,7 +5,7 @@ Feature: A.3.28.0800. Control Center: The system shall store files uploaded via 
   So that I can ensure compliance with my institution’s storage policies
 
   Scenario: A.3.28.0800.0100. Verify external storage location for File Upload field
-    #Redundant; verified in A.3.28.1100.
+    #This feature test is REDUNDANT and can be viewed in A.3.28.1100.
 
     #CONTEXT
     # This verification must be performed manually by the local site administrator.
