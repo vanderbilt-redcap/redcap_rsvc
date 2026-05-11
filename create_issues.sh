@@ -28,11 +28,6 @@ fi
 # - We use awk to print the file because it will append a trailing newline if it is missing
 # - We use 'tr -d "\r"' to remove carriage returns in case the file has been edited on Windows
 awk 1 features.txt | tr -d "\r" | while read title; do
-    if [[ $title == *REDUNDANT* ]]; then
-      echo "Skipping REDUNDANT feature: $title"
-      continue
-    fi
-
     echo "Creating issue for: $title"
 
     # Create a GitHub issue
