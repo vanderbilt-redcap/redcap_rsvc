@@ -28,8 +28,6 @@ As an Admin I want to see that the system allows editing privileges of the “No
         
     #Validate the modification to ACG is successful and the updated privileges are displayed in the ACG listing page
         Then I should see "Access Control Group saved successfully!"
-        Then I should see a table header and rows containing the following values in a table:
-            |ACG Name   | Project Design and Setup|
-            |No Rights  | [✓] |
+        Then I should see an icon labeled "Full Access" in the column labeled "Project Design and Setup" and the row labeled "No Rights"
 
 #End
