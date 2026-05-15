@@ -76,7 +76,8 @@ Feature: C.3.31.3200. User Interface: The system shall support fetching clinical
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
-        And I wait for 10 seconds
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see "Demographics"
         And I should see "32"
 

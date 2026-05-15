@@ -70,6 +70,8 @@ Scenario: Setup
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see a table header and rows containing the following values in a table:
         | Category     | New | Updated | Total |
         | Demographics | 0   | 15      | 15    |
@@ -132,14 +134,14 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         When I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see "Demographics"
         And I should see "30"
         And I should see "Vital Signs"
         And I should see "6"
 
     #VERIFY_LOG
-        # Not sure why we have to wait for items to appear in the log
-        And I wait for 1 second
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
@@ -205,14 +207,14 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         When I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see "Demographics"
         And I should see "30"
         And I should see "Vital Signs"
         And I should see "6"
 
     #VERIFY_LOG
-        # Not sure why we have to wait for items to appear in the log
-        And I wait for 1 second
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
