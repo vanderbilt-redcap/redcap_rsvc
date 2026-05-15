@@ -47,7 +47,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -99,7 +99,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -152,7 +152,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -203,7 +203,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -252,7 +252,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"

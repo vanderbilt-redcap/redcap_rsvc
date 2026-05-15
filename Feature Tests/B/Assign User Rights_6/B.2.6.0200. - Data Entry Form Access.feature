@@ -88,7 +88,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     Then I should see "Record Home Page"
 
     ##VERIFY: Read Only for the instrument
@@ -106,7 +106,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     Then I should see "Record Home Page"
 
     ##VERIFY: Create survey record and then try to edit survey response for the instrument
@@ -123,7 +123,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     And I click on the link labeled "My Projects"
     And I click on the link labeled "B.2.6.0200.100"
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     Then I should see "Record Home Page"
 
     When I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
@@ -148,7 +148,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
 
     ##VERIFY: Not able to edit survey responses for the instrument
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     Then I should see "Record Home Page"
     When I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
     Then I should see "Survey response is read-only"

@@ -69,7 +69,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
         ###VERIFY Can edit existing record
         Given I click on the link labeled "Add / Edit Records"
-        And I select record ID "1" from arm name "Arm 1: Arm 1" on the View / Edit record page
+        And I select "1" on the dropdown field labeled "select record"
         And I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         And I clear field and enter "EDIT1" into the data entry form field labeled "Name"
         And I click on the button labeled "Save & Exit Form"
@@ -85,7 +85,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         Then I should NOT see the button labeled "Add new record for the arm selected above"
 
         ###VERIFY Can edit existing record
-        And I select record ID "1" from arm name "Arm 1: Arm 1" on the View / Edit record page
+        And I select "1" on the dropdown field labeled "select record"
         And I click the bubble to select a record for the "Text Validation" longitudinal instrument on event "Event 1"
         And I clear field and enter "EDIT2" into the data entry form field labeled "Name"
         And I click on the button labeled "Save & Exit Form"

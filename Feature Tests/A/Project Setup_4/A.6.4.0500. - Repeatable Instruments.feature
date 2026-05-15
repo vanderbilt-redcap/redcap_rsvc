@@ -70,7 +70,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            Given I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            Given I select "1" on the dropdown field labeled "select record"
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
 
             And I enter "MyName" into the data entry form field labeled "Name"
@@ -117,7 +117,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
             Then I should NOT see "Current instance:"
             And I click on the button labeled "Cancel"
@@ -152,7 +152,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             Then I should NOT see "(#3)"
 
             When I click on the button labeled "Add new"
@@ -196,7 +196,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I should NOT see "My repeat event name"
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             And I click the X to delete all data related to the event named "#2"
             And I click on the button labeled "Delete this instance of this event"
             Then I should see "successfully deleted entire event of data"

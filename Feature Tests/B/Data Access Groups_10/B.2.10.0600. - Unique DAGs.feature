@@ -15,7 +15,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Record assigned DAG
         Given I click on the link labeled "Add / Edit Records"
-        When I select record ID "3" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+        When I select "3" on the dropdown field labeled "select record"
         Then I should see "Record Home Page"
 
         Given I click on the button labeled "Choose action for record"
@@ -30,7 +30,7 @@ Feature: User Interface: The system shall provide the DAG unique group names in 
         And I should see "TestGroup1"
 
         Given I click on the link labeled "Add / Edit Records"
-        When I select record ID "4" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+        When I select "4" on the dropdown field labeled "select record"
         Then I should see "Record Home Page"
 
         Given I click on the button labeled "Choose action for record"
