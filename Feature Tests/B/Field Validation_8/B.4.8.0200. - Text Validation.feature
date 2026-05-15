@@ -179,7 +179,7 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see "Adding new Record ID 7."
 
         When I enter "TEST" into the data entry form field labeled "date YMD"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Date (Y-M-D)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Date (Y-M-D)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "date YMD"
