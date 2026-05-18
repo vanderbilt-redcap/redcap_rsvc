@@ -50,7 +50,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on a button labeled "Randomize"
         And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
         And I click on the button labeled "Randomize"
-        Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Placebo" (3).'
+        Then I should see 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Placebo" (3).'
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
 
@@ -60,7 +60,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on a button labeled "Randomize"
         And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
         And I click on the button labeled "Randomize"
-        Then I should see a dialog containing the following text: 'Record ID "7" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
+        Then I should see 'Record ID "7" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
 
@@ -71,7 +71,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on a button labeled "Randomize"
         And I click on the radio labeled "Other" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
         And I click on the button labeled "Randomize"
-        Then I should see a dialog containing the following text: 'Record ID "8" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
+        Then I should see 'Record ID "8" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
 
@@ -91,7 +91,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on the second button labeled "Randomize"
         And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
         And I click on the button labeled "Randomize"
-        Then I should see a dialog containing the following text: 'Record ID "9" was randomized for the field "Automatic Randomization" and assigned the value "Group 1" (A).'
+        Then I should see 'Record ID "9" was randomized for the field "Automatic Randomization" and assigned the value "Group 1" (A).'
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
 
@@ -101,7 +101,7 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         And I click on a second button labeled "Randomize"
         And I click on the radio labeled "Man" in the row labeled "Do you describe yourself as a man, a woman, or in some other way?"
         And I click on the button labeled "Randomize"
-        Then I should see a dialog containing the following text: 'Record ID "10" was randomized for the field "Automatic Randomization" and assigned the value "Group 2" (B).'
+        Then I should see 'Record ID "10" was randomized for the field "Automatic Randomization" and assigned the value "Group 2" (B).'
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
         And I logout

@@ -28,7 +28,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I click on the button labeled "Upload or download users, roles, and assignments"
         Then I should see "Upload users (CSV)"
         When I click on the link labeled "Upload users (CSV)"
-        Then I should see a dialog containing the following text: "Upload users (CSV)"
+        Then I should see "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Displayed below is a preview of all the changes you are about to commit."
@@ -40,7 +40,7 @@ Feature: User Interface: The system shall support the ability to limit access to
             | test_user4 |
 
         Given I click on the button labeled "Upload"
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
 
         When I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
@@ -60,10 +60,10 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##ACTION - Assign users rights for Test_User1; Lock/Unlock *Entire* Records (record level)
         Given I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking with E-signature authority"
-        Then I should see a dialog containing the following text: "NOTICE"
+        Then I should see "NOTICE"
         And I click on the button labeled "Close"
         Given I check the User Right named "Lock/Unlock *Entire* Records (record level)"
         And I click on the button labeled "Save Changes"
@@ -72,7 +72,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##ACTION - Assign users rights for Test_User2; Disable Lock/Unlock Records
         Given I click on the link labeled "Test User2"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
         And I click on the button labeled "Save Changes"
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##ACTION - Assign users rights for Test_User3; Enable Locking / Unlocking records
         Given I click on the link labeled "Test User3"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
         And I click on the button labeled "Save Changes"
@@ -90,7 +90,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         ##ACTION - Assign users rights for Test_User4;  Disable Lock/Unlock Records
         Given I click on the link labeled "Test User4"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
         When I click on the radio in the column labeled "View & Edit" and the row labeled "Text Validation"

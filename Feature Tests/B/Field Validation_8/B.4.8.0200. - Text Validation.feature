@@ -100,43 +100,43 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see "Adding new Record ID 6"
 
         When I enter "2023-09-01" into the data entry form field labeled "date YMD"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "2023-08-02 01:03" into the data entry form field labeled "Datetime"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "2023-10-02 01:03:01" into the data entry form field labeled "Datetime YMD HMSS"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "101" into the data entry form field labeled "Integer"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "6" into the data entry form field labeled "Number"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "5.1" into the data entry form field labeled "Number Decimal"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "5,1" into the data entry form field labeled "Number Comma"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "07:05" into the data entry form field labeled "Time HH:MM"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "01:59" into the data entry form field labeled "Time MM:SS"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close"
 
         When I enter "07:59:59" into the data entry form field labeled "Time HH:MM:SS"
-        And I should see a dialog containing the following text: "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
+        And I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
         When I click on the button labeled "Close"
 
         And I click on the button labeled "Save & Exit Form"
@@ -179,52 +179,52 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see "Adding new Record ID 7."
 
         When I enter "TEST" into the data entry form field labeled "date YMD"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Date (Y-M-D)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Date (Y-M-D)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "date YMD"
         And I clear field and enter "TEST" into the data entry form field labeled "Datetime"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime (Y-M-D H:M)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime (Y-M-D H:M)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Datetime"
         When I clear field and enter "Test" into the data entry form field labeled "Datetime YMD HMSS"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime w/ seconds (Y-M-D H:M:S)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime w/ seconds (Y-M-D H:M:S)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Datetime YMD HMSS"
         When I clear field and enter "TEST" into the data entry form field labeled "Integer"
-        And I should see a dialog containing the following text: "This value you provided is not an integer. Please try again."
+        And I should see "This value you provided is not an integer. Please try again."
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Integer"
         When I clear field and enter "TEST" into the data entry form field labeled "Number"
-        And I should see a dialog containing the following text: "This value you provided is not a number. Please try again."
+        And I should see "This value you provided is not a number. Please try again."
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Number"
         When I clear field and enter "TEST" into the data entry form field labeled "Number Decimal"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Number Decimal"
         When I clear field and enter "TEST" into the data entry form field labeled "Number Comma"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place - comma as decimal)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place - comma as decimal)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Number Comma"
         When I clear field and enter "9999" into the data entry form field labeled "Time HH:MM"
-        And I should see a dialog containing the following text: "The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g., 04:32 or 23:19)."
+        And I should see "The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g., 04:32 or 23:19)."
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM"
         When I clear field and enter "9999" into the data entry form field labeled "Time MM:SS"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (MM:SS)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (MM:SS)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time MM:SS"
         When I clear field and enter "9999" into the data entry form field labeled "Time HH:MM:SS"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (HH:MM:SS)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (HH:MM:SS)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
@@ -232,7 +232,7 @@ Feature: User Interface: The system shall support text validation for text field
 
         When I click on the link labeled "Text Validation"
         And I enter "TEST" into the data entry form field labeled "Email"
-        And I should see a dialog containing the following text: "This field must be a valid email address (like joe@user.com). Please re-enter it now."
+        And I should see "This field must be a valid email address (like joe@user.com). Please re-enter it now."
         And I click on the button labeled "Close"
         When I clear field and enter "" into the data entry form field labeled "Email"
 

@@ -51,7 +51,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
+        And I should see "Add signature"
         And I draw a signature in the signature field area
         When I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"

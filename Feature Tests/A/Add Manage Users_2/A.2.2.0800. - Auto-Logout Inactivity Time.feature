@@ -20,10 +20,10 @@ Feature: A.2.2.0800. Add/Manage users
     Then I should see a link labeled "My Projects"
 
     Given I wait for 2 minutes
-    Then I should see a dialog containing the following text: "REDCap Auto Logout Warning"
+    Then I should see "REDCap Auto Logout Warning"
 
     Given I wait for another 2 minutes
-    Then I should see a dialog containing the following text: "Due to inactivity, your REDCap session has expired"
+    Then I should see "Due to inactivity, your REDCap session has expired"
 
     Given I click on the button labeled "Log In"
     Then I should see "Please log in with your user name and password."
@@ -45,10 +45,10 @@ Feature: A.2.2.0800. Add/Manage users
     Given I logout
     And I successfully login to REDCap with the user "Test_User1"
     And I wait for 2 minutes
-    Then I should see a dialog containing the following text: "REDCap Auto Logout Warning"
+    Then I should see "REDCap Auto Logout Warning"
 
     Given I wait for 1 minute
-    Then I should see a dialog containing the following text: "Due to inactivity, your REDCap session has expired"
+    Then I should see "Due to inactivity, your REDCap session has expired"
 
     Given I click on the button labeled "Log In"
     Then I should see "Please log in with your user name and password."

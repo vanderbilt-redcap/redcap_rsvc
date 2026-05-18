@@ -27,7 +27,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         When I uncheck the checkbox labeled "Hide inactive"
         And I wait for 5 seconds
         And I uncheck the checkbox labeled "Participant Consent"
-        Then I should see a dialog containing the following text: "Set as inactive"
+        Then I should see "Set as inactive"
 
         Given I click on the button labeled "Set as inactive"
         Then I should see 'e-Consent has been successfully disabled for survey "participant_consent"'
@@ -58,7 +58,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
 
         Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
+        And I should see "Add signature"
         And I draw a signature in the signature field area
         When I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"
@@ -106,7 +106,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
 
         Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
+        And I should see "Add signature"
         And I draw a signature in the signature field area
         When I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"

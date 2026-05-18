@@ -21,7 +21,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see a dialog containing the following text: "Adding new user"
+        Then I should see "Adding new user"
 
         When I uncheck the User Right named "Project Setup & Design"
         And I check the radio labeled "No Access"
@@ -99,7 +99,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the link labeled "User Rights"
         And I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
 
         And I check the radio labeled "Read Only"
         And I click on the button labeled "Save Changes"
@@ -132,7 +132,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the link labeled "User Rights"
         And I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
 
         When I check the User Right named "Project Setup & Design"
         And I check the radio labeled "Full Access"
@@ -150,7 +150,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "Data Quality - Create & edit rules"
         And I check the User Right named "Data Quality - Execute rules"
         And I check the User Right named "REDCap Mobile App - Allow users to collect data offline in the mobile app"
-        Then I should see a dialog containing the following text: "Confirm Mobile App Privileges"
+        Then I should see "Confirm Mobile App Privileges"
         When I click on the button labeled "Yes, I understand"
         And I check the User Right named "REDCap Mobile App - Allow user to download data for all records to the app?"
         And I check the User Right named "API Export"
@@ -257,10 +257,10 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the link labeled "User Rights"
         And I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges"
-        Then I should see a dialog containing the following text: "Editing existing user"
+        Then I should see "Editing existing user"
 
         When I click on a button labeled "Remove user"
-        Then I should see a dialog containing the following text: "Remove user?"
+        Then I should see "Remove user?"
         And I click on the button labeled "Remove user"
 
         ##VERIFY_LOG: Verify Logging of Delete user

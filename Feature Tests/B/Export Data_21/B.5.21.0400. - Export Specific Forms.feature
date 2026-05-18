@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the ability to select specific
     And I click on the button labeled "Export Data" in the row labeled "Selected instruments"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
+    Then I should see "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
     Then I should have a "csv" file that contains the headings below

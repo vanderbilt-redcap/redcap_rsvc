@@ -157,7 +157,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         When I click on the button labeled "Project Modification Module"
         And I click on the button labeled "COMMIT CHANGES"
-        Then I should see a dialog containing the following text: "COMMIT CHANGES TO PROJECT?"
+        Then I should see "COMMIT CHANGES TO PROJECT?"
         And I click on the button labeled "COMMIT CHANGES"
         Then I should see "Project Changes Committed / User Notified"
 

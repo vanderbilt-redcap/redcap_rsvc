@@ -14,7 +14,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
     Given I click on the link labeled "User Rights"
     And I enter "TestRole2" into the field with the placeholder text of "Enter new role name"
     And I click on the button labeled "Create role"
-    Then I should see a dialog containing the following text: "Creating new role"
+    Then I should see "Creating new role"
 
     ##VERIFY_UR
     When I click on the button labeled "Create role"
@@ -37,7 +37,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     Given I click on the link labeled "User Rights"
     And I click on the link labeled "TestRole2"
-    Then I should see a dialog containing the following text: "Editing existing user role"
+    Then I should see "Editing existing user role"
 
     ##ACTION: User Rights Copy role
     Given I click on the button labeled "Copy role"
@@ -60,7 +60,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     ##ACTION: User Rights delete role
     Given I click on the button labeled "Delete role"
-    When I see a dialog containing the following text: "Delete role?"
+    When I should see "Delete role?"
     And I click on the button labeled "Delete role"
 
     ##VERIFY

@@ -35,7 +35,7 @@ As a REDCap administrator
     And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -47,7 +47,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -87,7 +87,7 @@ As a REDCap administrator
     And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -99,7 +99,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -140,7 +140,7 @@ As a REDCap administrator
     And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -152,7 +152,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -191,7 +191,7 @@ As a REDCap administrator
     And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -203,7 +203,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
@@ -240,7 +240,7 @@ As a REDCap administrator
     And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
-    And I see a dialog containing the following text: "Add signature"
+    And I should see "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature"
     Then I should see a link labeled "Remove signature"
@@ -252,7 +252,7 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select "1" on the dropdown field labeled "select record"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"

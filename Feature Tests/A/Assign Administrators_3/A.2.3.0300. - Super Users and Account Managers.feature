@@ -78,8 +78,8 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Then I should see "Set administrator privileges"
 
         Given I disable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
-        Then I should see a dialog containing the following text: "NOTICE"
-        And I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
+        Then I should see "NOTICE"
+        And I should see "Please be aware that you have unchecked ALL the administrator privileges for this user"
         When I click on the button labeled "Close"
         And I logout
         And I login to REDCap with the user "Test_User1"

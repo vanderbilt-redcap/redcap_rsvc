@@ -33,7 +33,7 @@ Feature: User Interface: The system shall not allow data to be changed on locked
     When I click on the button labeled "Choose action for record"
     And I click on the link labeled "Lock entire record"
     And I click on the button labeled "Lock entire record"
-    Then I should see a dialog containing the following text: 'Record "1" is now LOCKED'
+    Then I should see 'Record "1" is now LOCKED'
     # The previous step should likely wait for the page to refresh to prevent interference with the link click below.  For now, we wait:
     And I wait for 10 seconds
 

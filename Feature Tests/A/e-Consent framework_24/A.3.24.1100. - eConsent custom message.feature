@@ -12,7 +12,7 @@ Feature: Control Center: The system shall allow optional adding of a custom mess
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        Then I should see a dialog containing the following text: "Enable e-Consent for a Survey"
+        Then I should see "Enable e-Consent for a Survey"
 
         Given I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
         Then I should see "Enable e-Consent"
@@ -37,7 +37,7 @@ Feature: Control Center: The system shall allow optional adding of a custom mess
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        Then I should see a dialog containing the following text: "Enable e-Consent for a Survey"
+        Then I should see "Enable e-Consent for a Survey"
 
         Given I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey"
         Then I should see "Enable e-Consent"

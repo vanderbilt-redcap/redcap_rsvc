@@ -44,9 +44,9 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
 
     #VERIFY User can Randomize Manually, using Randomize Button
     When I click on a button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Below you may perform randomization for Record ID "1" on the field Randomization group 1 (rand_group).'
+    Then I should see 'Below you may perform randomization for Record ID "1" on the field Randomization group 1 (rand_group).'
     And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Record ID "1" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
+    Then I should see 'Record ID "1" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
     And I click on the button labeled "Close"
     Then I should see "Already randomized"
     And I should see the radio labeled "Randomization group 1" with option "Drug A" selected

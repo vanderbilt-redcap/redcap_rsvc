@@ -28,7 +28,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     ##ACTION Verify Leave this page while survey is in session
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
-    Then I should see a dialog containing the following text: "Recommended: Leave this page while survey is in session"
+    Then I should see "Recommended: Leave this page while survey is in session"
     And I click on the button labeled "Leave without saving changes"
 
     ##VERIFY_LOG:

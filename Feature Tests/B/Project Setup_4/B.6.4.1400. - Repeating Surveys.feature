@@ -53,12 +53,12 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     #SETUP modify repeat instrument
     Given I click on the link labeled "Setup"
     When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
-    Then I should see a dialog containing the following text: "WARNING"
+    Then I should see "WARNING"
     Given I click on the button labeled "Close"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And I check the checkbox labeled "Survey" in the row labeled "Event Three (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
-    Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+    Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
     # Wait for the page to reload automatically.  We used to click the close button, but that caused intermittent failures due to page reload timing.
     Then I should NOT see "Your settings for repeating instruments and/or events have been successfully saved."
 

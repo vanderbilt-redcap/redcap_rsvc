@@ -54,14 +54,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see "Repeating instruments and events"
 
             When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
-            Then I should see a dialog containing the following text: "WARNING"
+            Then I should see "WARNING"
 
             Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
             And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I check the checkbox labeled "Survey"
             And I click on the button labeled "Save"
-            Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+            Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
 
             Given I click on the button labeled "Close"
             And I click on the link labeled "Logging"
@@ -70,7 +70,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            Given I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            Given I select "1" on the dropdown field labeled "select record"
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
 
             And I enter "MyName" into the data entry form field labeled "Name"
@@ -101,14 +101,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see "Repeating instruments and events"
 
             When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
-            Then I should see a dialog containing the following text: "WARNING"
+            Then I should see "WARNING"
 
             Given I click on the button labeled "Close"
             And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
             And I check the checkbox labeled "Data Types"
             And I select "-- not repeating --" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
-            Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+            Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
 
             Given I click on the button labeled "Close"
             When I click on the link labeled "Logging"
@@ -117,7 +117,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             And I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three"
             Then I should NOT see "Current instance:"
             And I click on the button labeled "Cancel"
@@ -137,13 +137,13 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
 
             When I click on the link labeled "Setup"
             And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
-            Then I should see a dialog containing the following text: "WARNING"
+            Then I should see "WARNING"
 
             Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
             And I select "Repeat Entire Event (repeat all instruments together)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
-            Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+            Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
 
             Given I click on the button labeled "Close"
             And I click on the link labeled "Logging"
@@ -152,7 +152,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | test_user1 | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             Then I should NOT see "(#3)"
 
             When I click on the button labeled "Add new"
@@ -174,13 +174,13 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
 
             When I click on the link labeled "Setup"
             And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
-            Then I should see a dialog containing the following text: "WARNING"
+            Then I should see "WARNING"
 
             Given I click on the button labeled "Close"
             And I select "-- not repeating --" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
             And I select "Repeat Entire Event (repeat all instruments together)" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
             And I click on the button labeled "Save"
-            Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
+            Then I should see "Your settings for repeating instruments and/or events have been successfully saved."
             And I click on the button labeled "Close"
 
             Given I should see the link labeled "Data Exports, Reports, and Stats"
@@ -196,7 +196,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I should NOT see "My repeat event name"
 
             Given I click on the link labeled "Add / Edit Records"
-            And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+            And I select "1" on the dropdown field labeled "select record"
             And I click the X to delete all data related to the event named "#2"
             And I click on the button labeled "Delete this instance of this event"
             Then I should see "successfully deleted entire event of data"

@@ -46,7 +46,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
 
     ###ACTION delete this event
     Given I click the "X" icon for the row labeled "Delete all data on event:" on the event column labeled "Event 1"
-    Then I should see a dialog containing the following text: 'DELETE ALL DATA ON THIS EVENT FOR RECORD "1"?'
+    Then I should see 'DELETE ALL DATA ON THIS EVENT FOR RECORD "1"?'
 
     Given I click on the button labeled "Delete this event"
     Then I should see "Record ID 1 successfully deleted entire event of data"

@@ -43,7 +43,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         #And I want to export a snapshot of this feature here
         Given I click on the first button labeled "Choose action"
         And I click on the link labeled "Delete"
-        Then I should see a dialog containing the following text: "Delete the selected form?"
+        Then I should see "Delete the selected form?"
         And I click on the button labeled "Yes, delete it"
         Then I should see "The data collection instrument and all its fields have been successfully deleted"
 
@@ -53,7 +53,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Given I should see "As an Administrator, you may review and approve changes made to the project. To do so, navigate to the Project Modification Module."
         And I click on the button labeled "Project Modification Module"
         And I click on the button labeled "COMMIT CHANGES"
-        Then I should see a dialog containing the following text: "COMMIT CHANGES TO PROJECT?"
+        Then I should see "COMMIT CHANGES TO PROJECT?"
         And I click on the button labeled "COMMIT CHANGES"
 
         #This establishes what instruments are here now

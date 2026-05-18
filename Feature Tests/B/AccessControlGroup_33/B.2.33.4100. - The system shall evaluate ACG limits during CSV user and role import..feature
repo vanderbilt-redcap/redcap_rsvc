@@ -69,7 +69,7 @@ Feature: B.2.33.4100.: The system shall evaluate ACG limits during CSV user and 
         And I click on the button labeled "Upload or download users, roles, and assignments"
         Then I should see "Upload users (CSV)"
         When I click on the link labeled "Upload users (CSV)"
-        Then I should see a dialog containing the following text: "Upload users (CSV)"
+        Then I should see "Upload users (CSV)"
         Given I upload a "csv" format file located at "import_files/User_import_for_ACGs.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Error"
         And I should see "Errors occurred while processing your uploaded file, and thus it could not be successfully uploaded. Please fix the following errors and try again:"
@@ -82,7 +82,7 @@ Feature: B.2.33.4100.: The system shall evaluate ACG limits during CSV user and 
         And I click on the button labeled "Upload or download users, roles, and assignments"
         Then I should see "Upload users (CSV)"
         When I click on the link labeled "Upload users (CSV)"
-        Then I should see a dialog containing the following text: "Upload users (CSV)"
+        Then I should see "Upload users (CSV)"
         Given I upload a "csv" format file located at "import_files/User_import_for_ACG_roles.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Error"
         And I should see "Errors occurred while processing your uploaded file, and thus it could not be successfully uploaded. Please fix the following errors and try again:"

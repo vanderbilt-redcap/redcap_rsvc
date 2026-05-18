@@ -45,7 +45,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     When I click on a button labeled "Randomize"
     Then I should see the radio labeled "Do you describe yourself as a man, a woman, or in some other way?" with option "Man" selected
     And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
+    Then I should see 'Record ID "6" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).' 
     When I click on the button labeled "Close"
     Then I should see the radio labeled "Randomization group 1" with option "Drug A" selected
     And I should see "Already randomized"

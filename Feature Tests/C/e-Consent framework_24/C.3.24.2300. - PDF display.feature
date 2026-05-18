@@ -82,7 +82,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
    
       Given I click on the link labeled "Add signature"
-      And I see a dialog containing the following text: "Add signature"
+      And I should see "Add signature"
       And I draw a signature in the signature field area
       When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
@@ -190,7 +190,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
    
       Given I click on the link labeled "Add signature"
-      And I see a dialog containing the following text: "Add signature"
+      And I should see "Add signature"
       And I draw a signature in the signature field area
       When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"
@@ -250,7 +250,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
       Given I click on the link labeled "Add signature"
-      And I see a dialog containing the following text: "Add signature"
+      And I should see "Add signature"
       And I draw a signature in the signature field area
       When I click on the button labeled "Save signature"
       Then I should see a link labeled "Remove signature"

@@ -20,10 +20,10 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Then I should see "Upload users (CSV)"
 
         When I click on the link labeled "Upload users (CSV)"
-        Then I should see a dialog containing the following text: "Upload users (CSV)"
+        Then I should see "Upload users (CSV)"
 
         Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
+        Then I should see "Upload users (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table in the dialog box:
             | username   |
             | test_admin |
@@ -33,7 +33,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
             | test_user4 |
 
         Given I click on the button labeled "Upload"
-        Then I should see a dialog containing the following text: "SUCCESS!"
+        Then I should see "SUCCESS!"
         And I click on the button labeled "Close"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
@@ -120,7 +120,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
         When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
-        Then I should see a dialog containing the following text: "Data export was successful!"
+        Then I should see "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"
@@ -152,7 +152,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
         When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
-        Then I should see a dialog containing the following text: "Data export was successful!"
+        Then I should see "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"
@@ -182,7 +182,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Given I click on the button labeled "Export Data" for the report named "All data (all records and fields)"
         When I click on the radio labeled "CSV / Microsoft Excel (raw data)"
         And I click on the button labeled "Export Data"
-        Then I should see a dialog containing the following text: "Data export was successful!"
+        Then I should see "Data export was successful!"
 
         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
         And I click on the button labeled "Close"

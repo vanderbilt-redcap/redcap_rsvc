@@ -32,7 +32,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         Then I should see "Success! Your changes have been saved."
 
         Given I click on the link labeled "Add / Edit Records"
-        And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+        And I select "1" on the dropdown field labeled "select record"
         And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
         Then I should see "Editing existing Record ID 1"
         When I click on the link labeled "Upload file" in the row labeled "File Upload"

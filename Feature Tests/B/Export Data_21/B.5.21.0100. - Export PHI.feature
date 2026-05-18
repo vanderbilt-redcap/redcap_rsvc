@@ -69,7 +69,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     Given I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
+    Then I should see "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
 
@@ -88,7 +88,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Hash the Record ID field"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
+    Then I should see "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
 
@@ -107,7 +107,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Remove Notes/Essay box fields"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
+    Then I should see "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
     ##VERIFY: User can see all variables except for unvalidated fields and notes fields
@@ -124,7 +124,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Remove all date and datetime fields"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
+    Then I should see "Data export was successful!"
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
     ##VERIFY: User can see all variables except for date and datetime fields
@@ -166,8 +166,8 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I check the checkbox labeled "Also shift all survey completion timestamps by value between 0 and 364 days"
     And I click on the radio labeled "CSV / Microsoft Excel (raw data)"
     And I click on the button labeled "Export Data"
-    Then I should see a dialog containing the following text: "Data export was successful!"
-    And I should see a dialog containing the following text: "All dates within your data have been DATE SHIFTED to an unknown value between 0 and  364 days."
+    Then I should see "Data export was successful!"
+    And I should see "All dates within your data have been DATE SHIFTED to an unknown value between 0 and  364 days."
 
     Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format
     ##VERIFY:

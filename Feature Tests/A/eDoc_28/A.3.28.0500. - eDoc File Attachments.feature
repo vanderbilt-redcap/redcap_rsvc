@@ -23,7 +23,7 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     And I click on the button labeled "Close"
     
     Given I click on the link labeled "Add / Edit Records"
-    Given I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    Given I select "1" on the dropdown field labeled "select record"
     And I click on the icon in the column labeled "Event 1" and the row labeled "Data Types"
     And I click on the icon labeled "View data resolution workflow" in the row labeled "Name"
     And I click on the radio labeled "Open query"

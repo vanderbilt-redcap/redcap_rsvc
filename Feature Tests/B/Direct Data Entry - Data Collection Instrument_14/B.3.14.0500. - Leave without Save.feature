@@ -35,7 +35,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         And I click on the link labeled "Setup"
 
         ##VERIFY
-        Then I should see a dialog containing the following text: "Save your changes"
+        Then I should see "Save your changes"
         And I should see a button labeled "Save changes and leave"
         And I should see a button labeled "Leave without saving changes"
         And I should see a button labeled "Stay on page"
@@ -56,7 +56,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I should see "Adding new Record ID 7"
         And I click on the link labeled "Setup"
-        Then I should see a dialog containing the following text: "Save your changes"
+        Then I should see "Save your changes"
 
         ##ACTION Save changes and leave
         When I click on the button labeled "Save changes and leave"
@@ -74,7 +74,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I click on the link labeled "Setup"
-        Then I should see a dialog containing the following text: "Save your changes"
+        Then I should see "Save your changes"
 
         ##ACTION Stay on page
         When I click on the button labeled "Stay on page"

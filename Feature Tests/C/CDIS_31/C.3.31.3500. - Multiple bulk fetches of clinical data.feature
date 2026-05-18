@@ -78,6 +78,8 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see "Demographics"
         And I should see "30"
 
@@ -101,6 +103,8 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I click on the button labeled "Fetch data"
         And I click on "Fetch all"
         And I click on the button labeled "Run fetch"
+        And I should see "Fetching Data"
+        And I should see "Completed"
         Then I should see "Demographics"
         And I should see "30"
 
