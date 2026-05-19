@@ -111,5 +111,5 @@ Scenario: C.3.31.3700. User Interface: The system shall support the ability to r
         And I click on the link labeled "To-Do List"
         Then I should see "Pending Requests"
         And I should see "Clinical Data Mart revision"
-        And I should see "Test_User1"
+        And I should see "test_user1"
 #END
