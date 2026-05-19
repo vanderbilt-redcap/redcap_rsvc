@@ -103,6 +103,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I should see "Review record data before locking record"
     And I check the checkbox labeled "I approve the data that is contained in this record."
     And I click on the button labeled "Lock entire record"
+    Then I should see an icon labeled "The entire record was locked by test_admin"
     And I click on the icon in the column labeled "Event 2" and the row labeled "Text Validation"
     Then I should see "The entire record was locked by test_admin"
   
@@ -156,6 +157,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I should see "Review record data before locking record"
     And I check the checkbox labeled "I approve the data that is contained in this record."
     And I click on the button labeled "Lock entire record"
+    Then I should see an icon labeled "The entire record was locked by test_admin"
     And I click on the icon in the column labeled "Event 2" and the row labeled "Text Validation"
     Then I should see "The entire record was locked by test_admin"
     And I should see a checkbox labeled "Lock" that is disabled
