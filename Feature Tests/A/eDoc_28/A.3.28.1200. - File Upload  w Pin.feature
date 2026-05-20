@@ -45,6 +45,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Record-level Locking Enhancement: PDF confirmation & automatic external file storage"
     And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
+    And I enter "mycontainer" into the second input field labeled "Bucket/container name"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
 #SETUP 
