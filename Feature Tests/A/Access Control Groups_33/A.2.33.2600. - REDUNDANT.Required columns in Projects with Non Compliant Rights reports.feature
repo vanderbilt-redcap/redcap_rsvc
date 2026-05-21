@@ -5,6 +5,6 @@ Feature: A.2.33.2600.: The system shall include required columns in “Projects 
 
 
   Scenario: A.2.33.2600.: The system shall include required columns in “Projects with Non-Compliant Rights” reports.---Control Center → ACG Reports → ACG Reports
-     #REDUNDANT: This requirement is already validated in A.2.33.1000 (ACG Reports).
+    #This feature test is REDUNDANT and can be viewed in A.2.33.1000 (ACG Reports).
 
 #END
