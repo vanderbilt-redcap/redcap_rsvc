@@ -8,7 +8,7 @@ The Regulatory and Software Validation Committee (RSVC) is a dedicated group com
 
 ## Automated Validation Test Scripts
 
-Within this repository, you will find a collection of validation test scripts meticulously crafted by the Regulatory and Software Validation committee. These scripts are designed to assess and validate REDCap's core functionality comprehensively. Consortium partners and REDCap users can utilize these scripts to ensure the robustness and compliance of their REDCap installations.  These scripts are intended to be run using the [REDCap Cypress Developer Toolkit](https://github.com/vanderbilt-redcap/redcap_cypress_docker/blob/main/README.md).
+Within this repository, you will find a collection of validation test scripts meticulously crafted by the Regulatory and Software Validation committee. These scripts are designed to assess and validate REDCap's core functionality comprehensively. Consortium partners and REDCap users can utilize these scripts to ensure the robustness and compliance of their REDCap installations.  These scripts are intended to be run using the [REDCap Cypress Developer Toolkit](https://github.com/vanderbilt-redcap/redcap_cypress_docker/blob/main/README.md).  They [run daily on cloud.cypress.io](https://cloud.cypress.io/projects/pvu79o) against the latest development version of REDCap.
 
 ## Core vs. Non-Core Definitions
 
