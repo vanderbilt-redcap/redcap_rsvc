@@ -110,6 +110,7 @@ Feature: A.3.28.1600. Control Center: The system shall enforce the Restricted Up
     And I click on the link labeled "Alerts & Notifications"
     And I click on the button labeled "Add New Alert"
     And I click on the button labeled "Add attachment"
+    And I should see "Message Attachments"
     And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Choose File" to browse for the file
     Then I should see "ERROR: The file cannot be uploaded because its file type is not permitted."
     And I click on the button labeled "OK"
