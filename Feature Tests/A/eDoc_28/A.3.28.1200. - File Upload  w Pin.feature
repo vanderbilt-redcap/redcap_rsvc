@@ -45,6 +45,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Record-level Locking Enhancement: PDF confirmation & automatic external file storage"
     And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
+    And I enter "mycontainer" into the second input field labeled "Bucket/container name"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
 #SETUP 
@@ -103,6 +104,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I should see "Review record data before locking record"
     And I check the checkbox labeled "I approve the data that is contained in this record."
     And I click on the button labeled "Lock entire record"
+    Then I should see an icon labeled "The entire record was locked by test_admin"
     And I click on the icon in the column labeled "Event 2" and the row labeled "Text Validation"
     Then I should see "The entire record was locked by test_admin"
   
@@ -156,6 +158,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     Then I should see "Review record data before locking record"
     And I check the checkbox labeled "I approve the data that is contained in this record."
     And I click on the button labeled "Lock entire record"
+    Then I should see an icon labeled "The entire record was locked by test_admin"
     And I click on the icon in the column labeled "Event 2" and the row labeled "Text Validation"
     Then I should see "The entire record was locked by test_admin"
     And I should see a checkbox labeled "Lock" that is disabled

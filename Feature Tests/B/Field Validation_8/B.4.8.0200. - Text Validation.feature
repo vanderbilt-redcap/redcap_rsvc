@@ -184,12 +184,12 @@ Feature: User Interface: The system shall support text validation for text field
 
         When I clear field and enter "" into the data entry form field labeled "date YMD"
         And I clear field and enter "TEST" into the data entry form field labeled "Datetime"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime (Y-M-D H:M)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Datetime (Y-M-D H:M)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Datetime"
         When I clear field and enter "Test" into the data entry form field labeled "Datetime YMD HMSS"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Datetime w/ seconds (Y-M-D H:M:S)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Datetime w/ seconds (Y-M-D H:M:S)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Datetime YMD HMSS"
@@ -204,12 +204,12 @@ Feature: User Interface: The system shall support text validation for text field
 
         When I clear field and enter "" into the data entry form field labeled "Number"
         When I clear field and enter "TEST" into the data entry form field labeled "Number Decimal"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Number (1 decimal place)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Number Decimal"
         When I clear field and enter "TEST" into the data entry form field labeled "Number Comma"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Number (1 decimal place - comma as decimal)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Number (1 decimal place - comma as decimal)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Number Comma"
@@ -219,12 +219,12 @@ Feature: User Interface: The system shall support text validation for text field
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM"
         When I clear field and enter "9999" into the data entry form field labeled "Time MM:SS"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (MM:SS)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Time (MM:SS)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time MM:SS"
         When I clear field and enter "9999" into the data entry form field labeled "Time HH:MM:SS"
-        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (HH:MM:SS)"
+        And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Time (HH:MM:SS)"
         And I click on the button labeled "Close"
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
