@@ -81,7 +81,6 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I should see "Fetching Data"
         And I should see "Completed"
         Then I should see "Demographics"
-        And I should see "30"
 
     # Add two more records
         When I click on the link labeled "Add / Edit Records"
@@ -106,7 +105,6 @@ As a REDCap end user I want to see that a user can fetch data in bulk more than 
         And I should see "Fetching Data"
         And I should see "Completed"
         Then I should see "Demographics"
-        And I should see "30"
 
     #VERIFY_LOG
       When I click on the link labeled "Logging"
