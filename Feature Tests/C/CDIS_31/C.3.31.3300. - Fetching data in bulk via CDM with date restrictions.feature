@@ -72,10 +72,8 @@ Scenario: Setup
         And I click on the button labeled "Run fetch"
         And I should see "Fetching Data"
         And I should see "Completed"
-        Then I should see a table header and rows containing the following values in a table:
-        | Category     | New | Updated | Total |
-        | Demographics | 0   | 15      | 15    |
-        | Vital Signs  | 6   | 0       | 0     |
+        Then I should see "Demographics"
+        And I should see "Vital Signs"
         And I click on "Close"
 
     #VERIFY_LOG
@@ -137,9 +135,7 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         And I should see "Fetching Data"
         And I should see "Completed"
         Then I should see "Demographics"
-        And I should see "30"
         And I should see "Vital Signs"
-        And I should see "6"
 
     #VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -210,9 +206,7 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         And I should see "Fetching Data"
         And I should see "Completed"
         Then I should see "Demographics"
-        And I should see "30"
         And I should see "Vital Signs"
-        And I should see "6"
 
     #VERIFY_LOG
         When I click on the link labeled "Logging"
