@@ -37,6 +37,10 @@ Feature: A.2.33.0700.: The system shall support uploading and downloading ACG de
         And I click on the link labeled "Access Control Groups"
         When I click on the third link labeled "Access Control Groups"
         And I click on the button labeled "Upload or download ACGs"
-        And I click on the button labeled "Download ACGs (CSV raw)"
-        # Then I should see a file named "ACG_DownloadedGroups.csv" downloaded to my computer
+        And I click on the link labeled "Download ACGs (CSV raw)"
+        Then I should see the following values in the last file downloaded
+            | group_name |
+            | New_ACG_2  |
+            | New_ACG_1  |
+            | No Rights  |
 #END
