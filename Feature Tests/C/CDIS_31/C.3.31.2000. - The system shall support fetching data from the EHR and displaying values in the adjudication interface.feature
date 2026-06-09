@@ -54,7 +54,7 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
         And I should see "Morris"
         And I should see "Lockman"
         When I click on the button labeled "Save"
-        Then I should see "Data saved successfully!"
+        Then I should see "Data saved successfully"
         And I verify "Morris" is within the input field labeled "First Name"
         And I verify "Lockman" is within the input field labeled "Last Name"
         When I click on the button labeled "Save & Exit Form"

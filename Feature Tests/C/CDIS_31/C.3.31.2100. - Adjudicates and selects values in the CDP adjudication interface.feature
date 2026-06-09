@@ -60,7 +60,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I should see "Morris"
         And I should see "Lockman"
         And I click on the button labeled "Save"
-        Then I should see "Data saved successfully!"
+        Then I should see "Data saved successfully"
         Given I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 

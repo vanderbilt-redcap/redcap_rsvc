@@ -97,7 +97,7 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         Then I should see "Adjudicate data from External System"
         Then I should see "New items: 3"
         When I click on the button labeled "Save"
-        Then I should see "Data saved successfully!"
+        Then I should see "Data saved successfully"
         When I wait for background processes to finish
         Then I should NOT see "new items from source system"
 
