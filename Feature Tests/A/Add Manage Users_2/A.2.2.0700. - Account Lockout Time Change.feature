@@ -20,13 +20,13 @@ Feature: A.2.2.0700. Add/Manage users
 
         #Login with bad password; first failed attempt at logging in
         Given I enter "Test_User1" into the input field labeled "Username:"
-        And I enter "test" into the input field labeled "Password:"
+        And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
         Then I should see "ERROR: You entered an invalid user name or password!"
 
         #Try to login again with a bad password; we will be locked out
         Given I enter "Test_User1" into the input field labeled "Username:"
-        And I enter "test" into the input field labeled "Password:"
+        And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
         Then I should see "ACCESS DENIED!"
 
@@ -56,13 +56,13 @@ Feature: A.2.2.0700. Add/Manage users
 
         #Login with bad password; first failed attempt at logging in
         Given I enter "Test_User1" into the input field labeled "Username:"
-        And I enter "test" into the input field labeled "Password:"
+        And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
         Then I should see "ERROR: You entered an invalid user name or password!"
 
         #Try to login again with a bad password and we will be locked out
         Given I enter "Test_User1" into the input field labeled "Username:"
-        And I enter "test" into the input field labeled "Password:"
+        And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
         Then I should see "ACCESS DENIED!"
 
