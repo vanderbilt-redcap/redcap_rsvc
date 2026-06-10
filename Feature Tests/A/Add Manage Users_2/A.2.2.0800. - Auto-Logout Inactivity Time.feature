@@ -22,7 +22,7 @@ Feature: A.2.2.0800. Add/Manage users
     Given I wait for 2 minutes
     Then I should see "REDCap Auto Logout Warning"
 
-    Given I wait for another 2 minutes
+    Given I wait for 2 minutes
     Then I should see "Due to inactivity, your REDCap session has expired"
 
     Given I click on the button labeled "Log In"

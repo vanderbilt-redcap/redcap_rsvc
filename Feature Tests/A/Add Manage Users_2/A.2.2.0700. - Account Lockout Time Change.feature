@@ -36,7 +36,7 @@ Feature: A.2.2.0700. Add/Manage users
         Then I should see "ACCESS DENIED!"
 
         #2 minutes of waiting total; now we can login
-        Given I wait for another 1 minute
+        Given I wait for 1 minute
         When I attempt to login to REDCap with the user "Test_User1"
         Then I should see "My Projects"
         And I logout
