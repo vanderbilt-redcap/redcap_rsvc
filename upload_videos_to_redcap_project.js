@@ -106,7 +106,7 @@ class UploadVideosToREDCapProject {
                     })
 
                 }).then(async (folder_id) => {
-                    let dataToSave = await this.get_redundant_feature_data()
+                    let dataToSave = []
 
                     this.redcap_project_query(new URLSearchParams({
                         token: redcap_api_token, // Replace with actual token if not using environment variables
@@ -262,37 +262,6 @@ class UploadVideosToREDCapProject {
         }
 
         return Object.keys(referencedFiles).join("\n")
-    }
-
-    get_redundant_feature_data() {
-        return this.get_filenames_recursively(__dirname + '/Feature Tests/').then(a => {
-            const result = []
-            a.forEach(path => {
-                if(path.includes('REDUNDANT')){
-                    const parts = path.split('/')
-                    const filename = parts[parts.length - 1]
-                    const feature_content = fs.readFileSync(path, 'utf8')
-                    
-                    const record_data = {
-                        record_id: filename.split(' ')[0],
-                        feature_test_script: feature_content,
-                        testing_method: 'redundant',
-                    }
-                    
-                    const redundant_location_parts = feature_content.split('This feature test is REDUNDANT and can be viewed in ')
-                    if(redundant_location_parts.length === 2){
-                        record_data.test_header_redundant_loc = redundant_location_parts[1].trim().split(/\s+/)[0]
-                    }
-                    else{
-                        console.error(`The following file does not contain the expected REDUNDANT feature language: ${filename}`)
-                    }
-                    
-                    result.push(record_data)
-                }
-            })
-
-            return result
-        })
     }
 
     async get_filenames_recursively(dir) {
