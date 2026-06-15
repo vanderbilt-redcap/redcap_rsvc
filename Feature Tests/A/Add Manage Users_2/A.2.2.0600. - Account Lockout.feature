@@ -19,12 +19,12 @@ Feature: A.2.2.0600. Add/Manage users
     Given I logout
 
     Given I enter "Test_User1" into the input field labeled "Username:"
-    And I enter "test" into the input field labeled "Password:"
+    And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR: You entered an invalid user name or password!"
 
     Given I enter "Test_User1" into the input field labeled "Username:"
-    And I enter "test" into the input field labeled "Password:"
+    And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ACCESS DENIED!"
 
@@ -48,17 +48,17 @@ Feature: A.2.2.0600. Add/Manage users
     Given I logout
 
     Given I enter "Test_User1" into the input field labeled "Username:"
-    And I enter "test" into the input field labeled "Password:"
+    And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR"
 
     Given I enter "Test_User1" into the input field labeled "Username:"
-    And I enter "test" into the input field labeled "Password:"
+    And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR"
 
     Given I enter "Test_User1" into the input field labeled "Username:"
-    And I enter "test" into the input field labeled "Password:"
+    And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ACCESS DENIED!"
 

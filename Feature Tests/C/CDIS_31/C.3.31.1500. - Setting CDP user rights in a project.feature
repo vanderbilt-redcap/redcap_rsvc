@@ -136,7 +136,7 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         And I should see "Morris"
         And I should see "Lockman"
         When I click on the button labeled "Save"
-        Then I should see "Data saved successfully!"
+        Then I should see "Data saved successfully"
         When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout
