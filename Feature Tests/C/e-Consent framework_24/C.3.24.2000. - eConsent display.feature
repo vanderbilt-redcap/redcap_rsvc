@@ -129,6 +129,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I uncheck the checkbox labeled "Hide inactive"
       And I wait for 1 second
       And I check the checkbox in the row labeled "Participant Consent"
+      And I should see 'e-Consent has been successfully re-enabled for survey "participant_consent"'
+      And I click on the button labeled "OK"
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
          | [x]               | "Participant Consent" (participant_consent) |
