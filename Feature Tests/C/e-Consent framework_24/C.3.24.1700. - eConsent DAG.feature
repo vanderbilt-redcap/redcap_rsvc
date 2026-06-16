@@ -160,6 +160,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario:
     When I click on the button labeled "Save & Stay"
+    Then I should see "Your data was successfully saved, but you did not provide a value for some fields"
     And I click on the button labeled "Okay"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
