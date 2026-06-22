@@ -95,8 +95,7 @@ Feature: B.2.33.4800.: The system shall allow deleting scheduled ACG alerts.---C
        |        |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|This is a test alert to be deleted|Success|
 
     #Validate the alert can be deleted.
-        #And I check the checkbox for the alert with Alert ID "1" in the Compliance Alert Logs table
-        And I wait for 10 seconds
+        And I check the checkbox in the row labeled "This is a test alert to be deleted"
         And I click on the button labeled "Delete Selected Alerts"
         Then I should see "Delete 1 selected alert?"
         When I click on the button labeled "Delete"
