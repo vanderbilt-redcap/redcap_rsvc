@@ -1,5 +1,4 @@
-Feature: User Interface: Survey Distribution: The system shall provide a survey to be generated from within a participant record using these survey options: (Log out + Open survey | Open Survey link)
-
+Feature: User Interface – Open Survey Workflow: The system shall allow users to launch the survey associated with an existing participant record using the Log out + Open Survey or Open Survey options.
   As a REDCap end user
   I want to see that Survey Distribution is functioning as expected
 
