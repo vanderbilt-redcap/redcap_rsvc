@@ -17,7 +17,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the button labeled "Create"
         And I click on the last button labeled "Add instrument here"
         Then I should see "New instrument name:"
-        When I enter "New Form" into the input field labeled "New instrument name:" within the data collection instrument list
+        When I enter "New Form" into the input field labeled "New instrument name:"
         And I click on the last button labeled "Create"
         Then I should see "SUCCESS!"
 
