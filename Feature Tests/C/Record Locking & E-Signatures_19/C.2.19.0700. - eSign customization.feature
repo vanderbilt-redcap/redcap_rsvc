@@ -25,7 +25,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I uncheck the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Survey"
         And I check the checkbox in the column labeled "Display the Lock option for this instrument?" and the row labeled "Text Validation"
         And I check the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Text Validation"
-        And I enter "Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I enter "Test custom text" into the textarea field labeled "Text Validation"
 
         And I click on the button labeled "Save" in the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
@@ -35,7 +35,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
             | [ ]                                          | Survey                     | [ ]                                            |                         |
             | [x]                                          | Consent                    | [ ]                                            |                         |
 
-        Given I enter "Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        Given I enter "Test custom text" into the textarea field labeled "Data Types"
         And I click on the button labeled "Save" in the row labeled "Data Types"
 
         #FUNCTIONAL REQUIREMENT
@@ -89,7 +89,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         Then I should see "Record Locking Customization"
 
         When I click on the icon labeled "Edit" in the row labeled "Text Validation"
-        And I clear field and enter "Edit Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I clear field and enter "Edit Test custom text" into the textarea field labeled "Text Validation"
         And I click on the button labeled "Save" in the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
@@ -99,7 +99,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
             | [x]                                          | Consent                    | [ ]                                            |                         |
 
         When I click on the icon labeled "Edit" in the row labeled "Data Types"
-        And I clear field and enter "Edit Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        And I clear field and enter "Edit Test custom text" into the textarea field labeled "Data Types"
         And I click on the button labeled "Save" in the row labeled "Data Types"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
