@@ -1,4 +1,4 @@
-Feature: User Interface: Survey Distribution: The system shall prohibit the user from overwriting partially or fully completed survey response from a data entry form when using Open Survey link.
+Feature: User Interface – Open Survey Workflow: The system shall warn users before saving a data entry form after the user launches the same record’s survey using the Open Survey option, allowing the user to leave without saving or remain on the form.
 
   As a REDCap end user
   I want to see that Survey Feature is functioning as expected

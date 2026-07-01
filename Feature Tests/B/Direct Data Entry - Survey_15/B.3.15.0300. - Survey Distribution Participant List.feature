@@ -1,4 +1,4 @@
-Feature: The system shall allow creation of a participant list automatically using a designated email field when a survey is in any instrument position.
+Feature: User Interface – Survey Settings: The system shall allow users to designate any email-validated text field within the project as the survey-specific email invitation field.
 
   As a REDCap end user
   I want to see that Participant List is functioning as expected
