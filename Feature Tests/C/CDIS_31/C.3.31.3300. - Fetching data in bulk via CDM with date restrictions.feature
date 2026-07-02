@@ -123,6 +123,7 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         Then I should see "Study ID 2 successfully added."
 
         When I click on the link labeled "Clinical Data Mart"
+        And I should see a button labeled "Fetch data"
         And I click on the button labeled "Request a configuration change"
         And I enter "2017-07-01" into the input field labeled "from"
         And I enter "2017-07-31" into the input field labeled "to"
@@ -194,6 +195,7 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         Then I should see "Study ID 2 successfully edited."
 
         When I click on the link labeled "Clinical Data Mart"
+        And I should see a button labeled "Fetch data"
         And I click on the button labeled "Request a configuration change"
         And I enter "2000-01-01" into the input field labeled "from"
         And I enter "2030-12-31" into the input field labeled "to"

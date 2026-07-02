@@ -52,6 +52,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
     #Check email access #1
         When I click on the link labeled "Project Home"
         And I click on the link labeled "Clinical Data Mart"
+        And I should see a button labeled "Fetch data"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
         And I click on "Demographics"
@@ -69,6 +70,7 @@ Feature: C.3.31.1400. Control Center: The system shall support allowing or restr
         And I click on the link labeled "C.3.31.1400"
         And I click on the link labeled "Project Home"
         And I click on the link labeled "Clinical Data Mart"
+        And I should see a button labeled "Fetch data"
         And I click on the button labeled "Request a configuration change"
         And I enter "Email" into the field with the placeholder text of "type to search..."
         And I click on "Demographics"
