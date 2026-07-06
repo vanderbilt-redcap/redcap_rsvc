@@ -539,6 +539,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
         And I should NOT see "Delete entire records"
+        And I select "Arm 1: Arm 1" on the dropdown field labeled "Select the instruments to delete for the records specified below in Step 2."
         And I should see "Consent"
         And I should NOT see "Text Validation"
         And I should NOT see "Data Types"
