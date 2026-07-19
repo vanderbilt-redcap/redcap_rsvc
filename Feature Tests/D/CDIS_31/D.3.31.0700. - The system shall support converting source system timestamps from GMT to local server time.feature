@@ -64,7 +64,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
     Then I should see "Saving adjudicated data..."
     And I verify "Morris" is within the input field labeled "First Name"
     And I verify "Lockman" is within the input field labeled "Last Name"
-    When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    When I click on the button labeled "Save & Exit Form"
     Then I should see "Study ID 1 successfully edited."
 
     When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
@@ -76,7 +76,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
     And I should see "143.57605784691"
     And I click on the button labeled "Save"
     And I wait for 1 second
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Study ID 1 successfully edited."
 
     When I click on the link labeled "Control Center"
@@ -103,7 +103,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
     Then I should see "Saving adjudicated data..."
     And I verify "Morris" is within the input field labeled "First Name"
     And I verify "Lockman" is within the input field labeled "Last Name"
-    When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    When I click on the button labeled "Save & Exit Form"
     Then I should see "Study ID 2 successfully edited."
 
     When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
@@ -115,7 +115,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
     And I should see "143.57605784691"
     And I click on the button labeled "Save"
     And I wait for 1 second
-    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    And I click on the button labeled "Save & Exit Form"
     Then I should see "Study ID 2 successfully edited."
 
     And I logout 
