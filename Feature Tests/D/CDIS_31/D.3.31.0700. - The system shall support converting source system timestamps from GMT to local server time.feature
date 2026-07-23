@@ -45,9 +45,9 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
     Then I should see "Data saved"
 
     When I click on the link labeled "Standalone Launch"
-    And I wait for 2 seconds
     And I click on the button labeled "Login"
     And I click on the button labeled "Approve"
+    And I click on the link labeled "Go back to REDCap"
     And I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record"
     And I click the bubble for the row labeled "Demography" on the column labeled "Status"

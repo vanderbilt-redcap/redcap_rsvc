@@ -42,9 +42,9 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
 
     #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     Scenario: C.3.31.1900. User Interface: The system shall support limiting the fetching of temporal EHR data to records with a populated associated REDCap date or datetime field.
     # Add record and fetch data from EHR system
