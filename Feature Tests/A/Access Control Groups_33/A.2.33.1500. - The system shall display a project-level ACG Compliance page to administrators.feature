@@ -23,7 +23,7 @@ Feature: A.2.33.1500.: The system shall display a project-level ACG Compliance p
         Then I should see "Test User2" within the "4_NoAccess_Noexport" row of the column labeled "Username" of the User Rights table
 
         
-    Scenario: A.2.33.1500.: The system shall send ACG alerts only when triggered manually by an administrator.---Alerts Table & Compliance Alert Logs
+    Scenario: A.2.33.1500.: The system shall display a project-level ACG Compliance page to administrators.
         Given I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
         And I click on the button labeled "Enable Access Control Groups"

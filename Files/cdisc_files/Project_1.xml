@@ -138,6 +138,7 @@
 		<ItemRef ItemOID="redcap_survey_identifier" Mandatory="No" redcap:Variable="redcap_survey_identifier"/>
 		<ItemRef ItemOID="name" Mandatory="No" redcap:Variable="name"/>
 		<ItemRef ItemOID="email" Mandatory="No" redcap:Variable="email"/>
+		<ItemRef ItemOID="phone_number" Mandatory="No" redcap:Variable="phone_number"/>
 	</ItemGroupDef>
 	<ItemGroupDef OID="text_validation.text_validation_complete" Name="Form Status" Repeating="No">
 		<ItemRef ItemOID="text_validation_complete" Mandatory="No" redcap:Variable="text_validation_complete"/>
@@ -254,6 +255,9 @@
 	</ItemDef>
 	<ItemDef OID="email" Name="email" DataType="text" Length="999" redcap:Variable="email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:FieldAnnotation="@DEFAULT=&quot;email@test.edu&quot;">
 		<Question><TranslatedText>Email</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="phone_number" Name="phone_number" DataType="text" Length="999" redcap:Variable="phone_number" redcap:FieldType="text" redcap:TextValidationType="phone" redcap:FieldAnnotation="@DEFAULT=&quot;email@test.edu&quot;">
+		<Question><TranslatedText>Phone Number</TranslatedText></Question>
 	</ItemDef>
 	<ItemDef OID="text_validation_complete" Name="text_validation_complete" DataType="text" Length="1" redcap:Variable="text_validation_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
 		<Question><TranslatedText>Complete?</TranslatedText></Question>
