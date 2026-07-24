@@ -86,8 +86,8 @@ Feature: A.2.33.1000.: The system shall display system-wide ACG reports.---Contr
         When I click on the link labeled "Projects with Non-compliant Rights (non-expired)"
         Then I should see "Projects with Non-compliant Rights (excluding expired users)"
         And I should see a table header and rows containing the following values in a table:
-            |Project        |User Count   |Non-compliant Users                        |Access Control Groups |Non-compliant Rights |
-            |PID 13         |3            |test_admin test_user1 test_user2           |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution|
+            |Project        |User Count   |Non-compliant Users                                                     |Access Control Groups |Non-compliant Rights |
+            |PID 13         |3            |test_admin (Admin User) test_user1 (Test User1) test_user2 (Test User2) |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution|
        
         #Projects with Non-compliant Rights (all) Report
         When I click on the button labeled "Select report"
@@ -102,7 +102,7 @@ Feature: A.2.33.1000.: The system shall display system-wide ACG reports.---Contr
         Then I should see "Projects with Non-compliant Rights (including expired users)"
         And I should see a table header and rows containing the following values in a table:
             |Project        |User Count   |Non-compliant Users                        |Access Control Groups |Non-compliant Rights |
-            |PID 13         |3            |test_admin test_user1 test_user2           |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution|
+            |PID 13         |3            |test_admin (Admin User) test_user1 (Test User1) test_user2 (Test User2) |No Rights             |data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute lock_record_customize email_logging record_rename record_delete data_quality_resolution|
 
         #Users and Projects with Non-compliant Rights (non-expired) Report
         When I click on the button labeled "Select report"
