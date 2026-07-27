@@ -84,10 +84,9 @@ Feature: C.3.31.3700. User Interface: The system shall support the ability to re
         And I click on "My Projects"
         And I click on the link labeled "C.3.31.3700"
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
-        And I wait for 5 seconds
+        And I click on the link labeled "Go back to REDCap"
         Then I should see "C.3.31.3700"
 
 Scenario: C.3.31.3700. User Interface: The system shall support the ability to request a configuration change in a CDM-enabled project.

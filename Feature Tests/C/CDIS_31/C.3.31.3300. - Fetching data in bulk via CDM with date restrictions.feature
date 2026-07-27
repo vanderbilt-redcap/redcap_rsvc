@@ -61,9 +61,9 @@ Scenario: Setup
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.3300.100"
         And I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
         When I click on the link labeled "Clinical Data Mart"
         And I should see "date range is applied"
@@ -103,9 +103,9 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
 
     #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     # Add two records
         When I click on the link labeled "Add / Edit Records"
@@ -165,9 +165,9 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
 
     #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     # Add two records
         When I click on the link labeled "Add / Edit Records"

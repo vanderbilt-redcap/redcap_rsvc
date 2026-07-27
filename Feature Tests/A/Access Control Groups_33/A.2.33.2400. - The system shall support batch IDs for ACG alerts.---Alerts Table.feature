@@ -52,9 +52,9 @@ Feature: A.2.33.2400.: The system shall support batch IDs for ACG alerts.---Aler
 
         When I click on the link labeled "Compliance Alert Logs"
         Then I should see a table header and rows containing the following values in a table:
-            |Batch ID|Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                       |Alert Status|
-            |       |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|Alert message sent in one batch  |Success     |
-            |       |2       |        |Initial   |Users         |test_user2 (Test User2) |Test_User2 (Test User2) Test_User2@test.edu|Alert message sent in one batch  |Success     |
+            |Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                       |Alert Status|
+            |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|Alert message sent in one batch  |Success     |
+            |2       |        |Initial   |Users         |test_user2 (Test User2) |Test_User2 (Test User2) Test_User2@test.edu|Alert message sent in one batch  |Success     |
 
         #Sending a second batch of alerts to verify that new ID is generated for the new batch
         When I click on the link labeled "Project Compliance"
@@ -72,9 +72,9 @@ Feature: A.2.33.2400.: The system shall support batch IDs for ACG alerts.---Aler
 
         When I click on the link labeled "Compliance Alert Logs"
         Then I should see a table header and rows containing the following values in a table:
-            |Batch ID|Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                         |Alert Status|
-            |        |3       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|Alert message sent in second batch |Success     |
-            |        |4       |        |Initial   |Users         |test_user2 (Test User2) |Test_User2 (Test User2) Test_User2@test.edu|Alert message sent in second batch |Success     |
+            |Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                         |Alert Status|
+            |3       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|Alert message sent in second batch |Success     |
+            |4       |        |Initial   |Users         |test_user2 (Test User2) |Test_User2 (Test User2) Test_User2@test.edu|Alert message sent in second batch |Success     |
 
 
 

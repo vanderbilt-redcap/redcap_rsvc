@@ -46,9 +46,9 @@ Feature: C.3.31.2900. User Interface: The system shall support using the CDP Map
 
     #Request an access token    
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 second
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     Scenario: C.3.31.2900. User Interface: The system shall support using the CDP Mapping Helper tool to assist with linking REDCap fields to EHR source data.
         When I click on the link labeled "Mapping Helper"

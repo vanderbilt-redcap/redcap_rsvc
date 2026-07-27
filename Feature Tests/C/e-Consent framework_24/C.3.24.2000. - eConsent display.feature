@@ -26,8 +26,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       #VERIFY: Verify version enabled
       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
-         | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |            |             | 0                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+         | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+         | 1.0     |            |             | 0                           |                   |              | _Fake_Consent[311203].pdf               |                              |
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
       And I click on the button labeled "Close"
 
@@ -84,8 +84,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       #VERIFY: Verify version enabled
       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
-         | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+         | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+         | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
       And I click on the button labeled "Close"
 
@@ -138,8 +138,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       #VERIFY: Verify version enabled
       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
-         | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+         | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+         | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
 
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
       And I click on the button labeled "Close"
@@ -190,8 +190,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       #VERIFY: Verify number of records consented
       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
-         | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         |            | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+         | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+         | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
 
       And I click on the button labeled "Close"
 

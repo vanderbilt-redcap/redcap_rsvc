@@ -43,9 +43,9 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         Then I should see "Set up Clinical Data Pull from EHR"
             #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
         
         When I click on the button labeled "Set up mapping for Clinical Data Pull (CDP)"
         Then I should see "Clinical Data Pull from EHR"

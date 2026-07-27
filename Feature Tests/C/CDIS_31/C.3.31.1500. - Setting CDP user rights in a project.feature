@@ -119,9 +119,9 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.1500"
         And I click on the link labeled "Standalone Launch"
-        And I wait for 1 second
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
         
         And I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"

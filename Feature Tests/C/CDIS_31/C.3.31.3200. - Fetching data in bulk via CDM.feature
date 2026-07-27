@@ -50,9 +50,9 @@ Feature: C.3.31.3200. User Interface: The system shall support fetching clinical
 
     #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     # Add two records
         When I click on the link labeled "Add / Edit Records"

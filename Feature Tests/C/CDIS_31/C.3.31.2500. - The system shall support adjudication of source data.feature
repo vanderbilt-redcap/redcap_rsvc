@@ -53,10 +53,9 @@ Feature: C.3.31.2500. User Interface: The system shall support adjudication of s
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.31.2500"
         And I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
-        And I wait for 15 seconds 
+        And I click on the link labeled "Go back to REDCap"
         Then I should see "C.3.31.2500"
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"

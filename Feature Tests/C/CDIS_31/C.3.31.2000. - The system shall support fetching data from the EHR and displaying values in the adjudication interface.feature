@@ -38,9 +38,9 @@ Feature: C.3.31.2000. User Interface: The system shall support fetching data fro
 
     #Functional Requirement-Adding a record, fetching data from EHR, and viewing it in adjudication page.
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
         And I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"

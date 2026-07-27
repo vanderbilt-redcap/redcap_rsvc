@@ -42,9 +42,9 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
 
     #Requesting access token from EHR system
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
 
     # Add record and fetch data from EHR system
         When I click on the link labeled "Add / Edit Records"

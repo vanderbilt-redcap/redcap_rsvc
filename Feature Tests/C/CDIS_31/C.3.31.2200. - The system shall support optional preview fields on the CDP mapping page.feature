@@ -55,9 +55,9 @@ Feature: C.3.31.2200. User Interface: The system shall support optional preview 
 
     #VERIFY User Interface
         When I click on the link labeled "Standalone Launch"
-        And I wait for 2 seconds
         And I click on the button labeled "Login"
         And I click on the button labeled "Approve"
+        And I click on the link labeled "Go back to REDCap"
         And I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"

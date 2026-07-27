@@ -28,7 +28,7 @@ Feature: A.2.33.2100.: The system shall store ACG alert batches in the alerts ta
             | Test_User1     | Test User1      | Test_User1@test.edu           | No Rights          | 
             | Test_User2     | Test User2      | Test_User2@test.edu           | No Rights          | 
             | Test_User3     | Test User3      | Test_User3@test.edu           | No Rights          | 
-            | Test_User4     | Test_User4      | Test_User4@test.edu           | No Rights          |
+            | Test_User4     | Test User4      | Test_User4@test.edu           | No Rights          |
 
         Given I click on the link labeled "My Projects"
         And I click on the link labeled "A.2.33.2100."
@@ -44,7 +44,7 @@ Feature: A.2.33.2100.: The system shall store ACG alert batches in the alerts ta
         And I click on the button labeled "Ok"
         When I click on the link labeled "Compliance Alert Logs"
         Then I should see a table header and rows containing the following values in a table:
-            | Batch ID | Alert ID | Alert At | Alert Type | Alert Category | Affected Users          | Recipient                                  | Alert Text           | Alert Status |
-            |          | 1        |          | Initial    | Users          | test_user1 (Test User1) | Test_User1 (Test User1) Test_User1@test.edu | My email body content| Success       |
+            | Alert ID | Alert At | Alert Type | Alert Category | Affected Users          | Recipient                                   | Alert Text           | Alert Status  |
+            | 1        |          | Initial    | Users          | test_user1 (Test User1) | Test_User1 (Test User1) Test_User1@test.edu | My email body content| Success       |
 
 #END
