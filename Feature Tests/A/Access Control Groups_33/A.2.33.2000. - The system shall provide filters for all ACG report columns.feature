@@ -62,7 +62,7 @@ Feature: A.2.33.2000.: The system shall provide filters for all ACG report colum
        And I select "test_admin (Admin User)" on the dropdown field labeled "Filter users..."
        And I should see a table header and rows containing the following values in a table:
             | User       | Access Control Group  | Project Count      | Projects granting Non-compliant Rights to this User | Non-compliant Rights     |
-            | test_admin | No Rights             | 1                  | PID 13 a2332000                                     | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry data_entry mobile_app_download_data record_create participants data_quality_design data_quality_execute  |
+            | test_admin | No Rights             | 1                  | PID 13 a2332000                                     | data_export_instruments data_import_tool data_comparison_tool data_logging file_repository user_rights data_access_groups graphical reports design alerts calendar data_entry mobile_app mobile_app_download_data record_create participants data_quality_design data_quality_execute  |
 
        
     

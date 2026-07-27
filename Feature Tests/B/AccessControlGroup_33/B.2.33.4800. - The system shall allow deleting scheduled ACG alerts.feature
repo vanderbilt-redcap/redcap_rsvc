@@ -91,8 +91,8 @@ Feature: B.2.33.4800.: The system shall allow deleting scheduled ACG alerts.---C
     #Validate the alert is sent and appears in the Compliance Alert Logs.
         When I click on the link labeled "Compliance Alert Logs"
         Then I should see a table header and rows containing the following values in a table:
-       |Batch ID|Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                   |Alert Status|
-       |        |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|This is a test alert to be deleted|Success|
+       |Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text                   |Alert Status|
+       |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|This is a test alert to be deleted|Success|
 
     #Validate the alert can be deleted.
         And I check the checkbox in the row labeled "This is a test alert to be deleted"

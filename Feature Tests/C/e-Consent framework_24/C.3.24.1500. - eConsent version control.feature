@@ -50,9 +50,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario: #VERIFY: view all versions for Test 1
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf             |                              |
-      |            | test 1  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my test 1 consent form"      |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf             |                              |
+      | test 1  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my test 1 consent form"      |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     When I click on the button labeled "Close"
@@ -167,10 +167,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario: #view all versions for Test 1
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
-      |            | test 2  |                    | test_admin (Admin User) |                           0 |                   |              | consent.pdf                             |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      | test 2  |                    | test_admin (Admin User) |                           0 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
@@ -255,10 +255,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario: #view all versions
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
-      |            | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
@@ -270,10 +270,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario: #Cancel inactivation of version
     When I click on the button labeled "Cancel"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
-      |            | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
@@ -287,10 +287,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Consent form has been successfully removed"
     And I wait for 5 seconds
     And I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
-      |            | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | test 1  |                    | test_admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      | test 2  |                    | test_admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"

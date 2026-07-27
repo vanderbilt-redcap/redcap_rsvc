@@ -87,7 +87,7 @@ Feature: B.2.33.4700.: The system shall display past and scheduled ACG alerts.--
     #Validate the alert is sent, the alert will be listed in the "Compliance Alert Logs" page with the correct information.
         When I click on the link labeled "Compliance Alert Logs"
         Then I should see a table header and rows containing the following values in a table:
-       |Batch ID|Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text           |Alert Status|
-       |        |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|My email body content|Success|
+       |Alert ID|Alert At|Alert Type|Alert Category|Affected Users          |Recipient                                  |Alert Text           |Alert Status|
+       |1       |        |Initial   |Users         |test_user1 (Test User1) |Test_User1 (Test User1) Test_User1@test.edu|My email body content|Success|
 
 #END

@@ -33,9 +33,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
   Scenario: #VERIFY: view all versions for NO DAG
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | NO DAG  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | NO DAG  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
     When I click on the button labeled "Close"
     Then I should see "vNO DAG" in the row labeled "Participant Consent"
@@ -71,11 +71,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
       #VERIFY: view all versions
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
-      | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
-      |            | NO DAG  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
-      |            | DAG 1   |                    | test_admin (Admin User) |                           0 |                   |              | DAG1.pdf                                |                              |
-      |            | DAG 2   |                    | test_admin (Admin User) |                           0 |                   |              | DAG2.pdf                                |                              |
+      | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
+      |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      | NO DAG  |                    | test_admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+      | DAG 1   |                    | test_admin (Admin User) |                           0 |                   |              | DAG1.pdf                                |                              |
+      | DAG 2   |                    | test_admin (Admin User) |                           0 |                   |              | DAG2.pdf                                |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "DAG 1"
