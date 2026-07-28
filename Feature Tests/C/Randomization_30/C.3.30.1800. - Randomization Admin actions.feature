@@ -57,9 +57,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     And I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
-      |       | 0       |     1    |                   | No (0)           | Drug B (2)        |
-      |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)        |
+      | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+      | 0       |     1    |                   | No (0)           | Drug B (2)        |
+      | 1       |     0    |     2             | Yes (1)          | Drug A (1)        |
     And I click on the icon in the column labeled "View" and the row labeled "Drug B"
     Then I should see "View Allocation Table"
     And I should see a table header and rows containing the following values in a table:
@@ -84,9 +84,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     #VERIFY that the change to the target is reflected in the randomization dashboard
     When I click on the link labeled "Dashboard"
     Then I should see a table header and rows containing the following values in a table:
-      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group |
-      |       | 0       |     1    |                   | No (0)           | Placebo (3)        |
-      |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)         |
+      | Used    | Not Used | Allocated records | Stratification 1 |Randomization group |
+      | 0       |     1    |                   | No (0)           | Placebo (3)        |
+      | 1       |     0    |     2             | Yes (1)          | Drug A (1)         |
 
     #VERIFY: Logging
     Given I click on the link labeled "Logging"
@@ -160,9 +160,9 @@ Feature: Project Interface Administrator Access: The system shall support the ad
 
     When I click on the link labeled "Dashboard"
     Then I should see a table header and rows containing the following values in a table:
-      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
-      |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)        |
-      |       | 1       |     0    |     3             | No (0)           | Placebo (3)       |
+      | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+      | 1       |     0    |     2             | Yes (1)          | Drug A (1)        |
+      | 1       |     0    |     3             | No (0)           | Placebo (3)       |
 
     #VERIFY: Logging
     Given I click on the link labeled "Logging"

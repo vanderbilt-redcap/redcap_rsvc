@@ -86,9 +86,9 @@ Feature: B.2.33.4400.: The system shall provide filters on the ACG Compliance pa
         
         When I click on the button labeled "Display Users"
         Then I should see a table header and rows containing the following values in a table: 
-        || Username   | Full Name   | Email                | Expiration           | Access Control Group   | Non-compliant Rights    | Project Role                       |
-        || test_admin | Admin User  | test_admin@test.edu  | never                | No Rights              | 19 Non-compliant Rights | None                               |
-        || test_user1 | Test User1  | Test_User1@test.edu  | never                | New_ACG_2              | 8 Non-compliant Rights  | None                               |
+        | Username   | Full Name   | Email                | Expiration           | Access Control Group   | Non-compliant Rights    | Project Role                       |
+        | test_admin | Admin User  | test_admin@test.edu  | never                | No Rights              | 19 Non-compliant Rights | None                               |
+        | test_user1 | Test User1  | Test_User1@test.edu  | never                | New_ACG_2              | 8 Non-compliant Rights  | None                               |
 
 
 

@@ -19,7 +19,7 @@ Scenario: B.6.11.0900.0100. - If a REDCap Admin changes the Record Limit in the 
     And I click on the link labeled "User Activity Log"
     Then I should see "All User Activity for Today"  
     And I should see a table header and rows containing the following values in a table:
-         || Time             | User       | Event                                      |
-         || mm/dd/yyyy hh:mm | test_admin | Modify settings for single project (PID 13)|
+         | Time             | User       | Event                                      |
+         | mm/dd/yyyy hh:mm | test_admin | Modify settings for single project (PID 13)|
     
 #END
