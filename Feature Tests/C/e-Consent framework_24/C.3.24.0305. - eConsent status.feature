@@ -182,10 +182,12 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
             | Username            | Action                    | List of Data Changes OR Fields Exported                                                           |
             | [survey respondent] | e-Consent Certification 2 | e-Consent Certification            |
             |                     |                           | record = "2"                       |
+            |                     |                           | identifier = "email@test.edu"      |
             |                     |                           | event = "event_1_arm_1"            |
             |                     |                           | instrument = "participant_consent" |
             | [survey respondent] | e-Consent Certification 1 | e-Consent Certification            |
             |                     |                           | record = "1"                       |
+            |                     |                           | identifier = "email@test.edu"      |
             |                     |                           | event = "event_1_arm_1"            |
             |                     |                           | instrument = "participant_consent" |
 #END

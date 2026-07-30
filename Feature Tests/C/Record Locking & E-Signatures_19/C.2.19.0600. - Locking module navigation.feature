@@ -22,7 +22,7 @@ Feature: User Interface: The tool shall support the ability to navigate directly
         And I click on the button labeled "I understand. Let me make changes"
         And I click on the link labeled "E-signature and Locking Management"
         Then I should see a table header and rows containing the following values in a table:
-            | Record | Event Name             | Form Name       | Repeat Instance | Locked? | E-signed |             |
+            | Record | Event Name             | Form Name       | Repeat Instance | Locked? | E-signed | Options     |
             | 3      | Event 1 (Arm 1: Arm 1) | Text Validation |                 |         | N/A      | View record |
 
         And I click on the "View record" link within the e-signature and locking management table in the following row:

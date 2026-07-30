@@ -113,7 +113,7 @@ Feature: The system shall block assigning users to roles with privileges that ex
         And I click on the button labeled "Ok"
         Then I should see a table header and rows containing the following values in a table:
             | Role Name     | Username or users assigned to a role | 
-            |   —           | test_admin  (Admin User)             |
-            | 1_FullRights  | test_user1  (Test User1)             |   
+            |   —           | test_admin (Admin User)             |
+            | 1_FullRights  | test_user1 (Test User1)             |   
 
 #END

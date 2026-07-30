@@ -26,8 +26,8 @@ Scenario: A.6.11.0500.0100. - Given no record limit is set in the Control Center
     ##VERIFY_LOG:
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-        | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-        | mm/dd/yyyy hh:mm | test_admin | Create record5 | record_id = '5'   |
+        | Time / Date      | Username   | Action          | List of Data Changes OR Fields Exported |
+        | mm/dd/yyyy hh:mm | test_admin | Create record 5 | record_id = '5'   |
 
 Scenario: A.6.11.0500.0200. - Given a system-wide limit is set (e.g., 3 records), then new development-mode projects shall block creation of a 4th record.
     #Set limit in control center to 5

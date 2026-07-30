@@ -37,6 +37,6 @@ Feature: User Interface:The system shall provide the ability to display real-tim
         #VERIFY
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Username    | Action                   | List of Data Changes OR Fields Exported |
-            | test_admin  | Create record 50         | record_id = '50'                        |
+            | Username    | Action                    | List of Data Changes OR Fields Exported |
+            | test_admin  | Create record (import) 50 | record_id = '50'                        |
 #END

@@ -193,6 +193,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | [survey respondent] | e-Consent Certification 2                  | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "1.0" event = "event_1_arm_1" instrument = "participant_consent" |
             | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName' |
             | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
-            | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
+            | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1" identifier = "email@test.edu" event = "event_1_arm_1" instrument = "participant_consent"                                                           |
             | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName'                                                                                                            |
 #END

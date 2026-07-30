@@ -63,7 +63,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Update record1 | record_id = '1.A'                       |
+            | mm/dd/yyyy hh:mm | test_user1 | Update record 1 | record_id = '1.A'                       |
 
         ##VERIFY_DE - FIND SAME RECORD AFTER RENAME
         When I click on the link labeled "Data Exports, Reports, and Stats"

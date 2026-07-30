@@ -61,7 +61,7 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Delete record1 | record_id = '1'                         |
+            | mm/dd/yyyy hh:mm | test_user1 | Delete record 1 | record_id = '1'                         |
 
         ##VERIFY - COUNT OF ROWS
         When I click on the link labeled "Data Exports, Reports, and Stats"

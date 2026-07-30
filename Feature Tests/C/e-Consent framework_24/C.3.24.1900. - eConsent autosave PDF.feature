@@ -121,6 +121,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
          |                     |                           | instrument = "participant_consent"         |
          | [survey respondent] | e-Consent Certification 1 | e-Consent Certification                    |
          |                     |                           | record = "1"                               |
+         |                     |                           | identifier = "email@test.edu"              |
          |                     |                           | event = "event_1_arm_1"                    |
          |                     |                           | instrument = "participant_consent"         |
 #END

@@ -61,7 +61,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
             | E      | Outliers for numerical fields                 | -                                        | 2                   |
             | F      | Hidden fields that contain values***          | -                                        | 1                   |
             | G      | Multiple choice fields with invalid values    | -                                        | 1                   |
-            | H      | Incorrect values for calculated fields        | -                                        | 0                   |
+            | H      | Incorrect values for calculated fields        | -                                        | 32                  |
             | I      | Fields containing "missing data codes"        | -                                        | 4                   |
             | 1      | [radio]=9.9                                   | [radio]='9..9'                           | 1                   |
             | 2      | [ptname]<>[name]                              | [ptname]<>[name]                         | 8                   |
@@ -94,7 +94,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
             | E      | Outliers for numerical fields                 | -                                        | 2                   |
             | F      | Hidden fields that contain values***          | -                                        | 1                   |
             | G      | Multiple choice fields with invalid values    | -                                        | 1                   |
-            | H      | Incorrect values for calculated fields        | -                                        | 0                   |
+            | H      | Incorrect values for calculated fields        | -                                        | 32                  |
             | I      | Fields containing "missing data codes"        | -                                        | 4                   |
             | 1      | [radio]=9.9                                   | [radio]='9..9'                           | 1                   |
             | 2      | [ptname]<>[name]                              | [ptname]<>[name]                         | 8                   |

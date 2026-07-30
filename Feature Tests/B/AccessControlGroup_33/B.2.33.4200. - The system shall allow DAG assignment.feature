@@ -100,7 +100,7 @@ Feature: B.2.33.4200.: The system shall allow assigning Data Access Groups unles
         Then I should see "Upload User-DAG assignments (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table:
         | username    | redcap_data_access_group   | 
-        |test_admin   | test_admin | 
+        | test_admin  |            | 
         | test_user1  | testgroup2 |      
 
         When I click on the button labeled "Upload"

@@ -26,7 +26,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         #VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Instrument name | Fields |
-            | Text Validation | 3      |
+            | Text Validation | 4      |
             | Data Types      | 45     |
             | Survey          | 3      |
             | Consent         | 5      |

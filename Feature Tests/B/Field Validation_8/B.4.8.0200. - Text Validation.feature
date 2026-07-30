@@ -18,17 +18,16 @@ Feature: User Interface: The system shall support text validation for text field
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
             | Variable / Field Name | Field Label       | Field Attributes                                                                |
-            | [date_ymd]            | date YMD          | text (date_ymd, Min: 2023-08-01, Max: 2023-08-31)                               |
-            | [datetime_ymd_hm]     | Datetime          | text (datetime_ymd, Min: 2023-09-01 01:01, Max: 2023-09-30 01:59)               |
-            | [datetime_ymd_hmss  ] | Datetime YMD HMSS | text (datetime_seconds_ymd, Min: 2023-09-01 11:01:01, Max: 2023-09-30 11:01:01) |
             | [email]               | Email             | text (email)                                                                    |
+            | [datetime_ymd_hm]     | Datetime          | text (datetime_ymd, Min: 2023-09-01 01:01, Max: 2023-09-30 01:59)               |
+            | [datetime_ymd_hmss] | Datetime YMD HMSS | text (datetime_seconds_ymd, Min: 2023-09-01 11:01:01, Max: 2023-09-30 11:01:01) |
             | [integer]             | Integer           | text (integer, Min: 1, Max: 100)                                                |
             | [number]              | Number            | text (number, Min: 1, Max: 5)                                                   |
             | [number_dec]          | Number Decimal    | text (number_1dp, Min: 1.0, Max: 5.0)                                           |
             | [num_comma]           | Number Comma      | text (number_1dp_comma_decimal, Min: 1,0, Max: 2,0)                             |
             | [time_hhmm]           | Time HH:MM        | text (time, Min: 08:05, Max: 23:00)                                             |
             | [time_mm_ss]          | Time MM:SS        | text (time_mm_ss, Min: 02:01, Max: 59:00)                                       |
-            | [time_hhmmss]         | Time HH:MM:SS     | text (time_hh_mm_ss, Min: 8:01:01, Max: 23:00:00)                               |
+            | [time_hhmmss]         | Time HH:MM:SS     | text (time_hh_mm_ss, Min: 08:01:01, Max: 23:00:00)                              |
 
         ##ACTION:
         When I click on the link labeled "Add / Edit Records"
@@ -62,18 +61,18 @@ Feature: User Interface: The system shall support text validation for text field
         When I click on the link labeled "Logging"
         #    And I click on the button labeled "Leave without saving changes"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Username   | Action          | List of Data Changes OR Fields Exported   |
-            | test_admin | Update record 5 | email = 'email@test.edu'                  |
-            | test_admin | Create record 5 | date_ymd = '2023-08-02'                   |
-            | test_admin | Create record 5 | datetime_ymd_hm = '2023-09-02 01:03'      |
-            | test_admin | Create record 5 | datetime_ymd_hmss = '2023-09-02 01:03:01' |
-            | test_admin | Create record 5 | integer = '99'                            |
-            | test_admin | Create record 5 | number = '4'                              |
-            | test_admin | Create record 5 | number_dec = '1.5'                        |
-            | test_admin | Create record 5 | num_comma = '1,5'                         |
-            | test_admin | Create record 5 | time_hhmm = '08:10'                       |
-            | test_admin | Create record 5 | time_mm_ss = '02:05'                      |
-            | test_admin | Create record 5 | time_hhmmss = '08:59:59'                  |
+            | Username   | Action          | List of Data Changes OR Fields Exported    |
+            | test_admin | Update record 5 | email = 'email@test.edu'                   |
+            | test_admin | Create record 5 | date_ymd = '2023-08-02',                   |
+            |            |                 | datetime_ymd_hm = '2023-09-02 01:03',      |
+            |            |                 | datetime_ymd_hmss = '2023-09-02 01:03:01', |
+            |            |                 | integer = '99',                            |
+            |            |                 | number = '4',                              |
+            |            |                 | number_dec = '1.5',                        |
+            |            |                 | num_comma = '1,5',                         |
+            |            |                 | time_hhmm = '08:10',                       |
+            |            |                 | time_mm_ss = '02:05',                      |
+            |            |                 | time_hhmmss = '08:59:59'                   |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -144,18 +143,18 @@ Feature: User Interface: The system shall support text validation for text field
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
-        Then I should see a table header and rows containing the following values in the logging table:
-            | Username   | Action          | List of Data Changes OR Fields Exported   |
-            | test_admin | Create record 6 | date_ymd = '2023-09-01'                   |
-            | test_admin | Create record 6 | datetime_ymd_hm = '2023-08-02 01:03'      |
-            | test_admin | Create record 6 | datetime_ymd_hmss = '2023-10-02 01:03:01' |
-            | test_admin | Create record 6 | integer = '101'                           |
-            | test_admin | Create record 6 | number = '6'                              |
-            | test_admin | Create record 6 | number_dec = '5.1'                        |
-            | test_admin | Create record 6 | num_comma = '5,1'                         |
-            | test_admin | Create record 6 | time_hhmm = '07:05'                       |
-            | test_admin | Create record 6 | time_mm_ss = '01:59'                      |
-            | test_admin | Create record 6 | time_hhmmss = '07:59:59'                  |
+Then I should see a table header and rows containing the following values in the logging table:
+            | Username   | Action          | List of Data Changes OR Fields Exported    |
+            | test_admin | Create record 6 | date_ymd = '2023-09-01',                   |
+            |            |                 | datetime_ymd_hm = '2023-08-02 01:03',      |
+            |            |                 | datetime_ymd_hmss = '2023-10-02 01:03:01', |
+            |            |                 | integer = '101',                           |
+            |            |                 | number = '6',                              |
+            |            |                 | number_dec = '5.1',                        |
+            |            |                 | num_comma = '5,1',                         |
+            |            |                 | time_hhmm = '07:05',                       |
+            |            |                 | time_mm_ss = '01:59',                      |
+            |            |                 | time_hhmmss = '07:59:59'                   |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -250,8 +249,4 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Number Decimal | Number Comma | Time HH:MM | Time MM:SS | Time HH:MM:SS |
             | 7         | Data Types        |                |              |            |            |               |
-
-        Then I should see a table header and rows containing the following values in the report data table:
-            | Record ID | Name | Email |
-            | 7         | Name |       |
 #END

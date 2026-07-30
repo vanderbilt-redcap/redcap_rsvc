@@ -123,5 +123,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                         |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "Custom_ |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "Custom_ |
 #END
