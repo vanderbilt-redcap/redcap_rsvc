@@ -26,5 +26,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
       And I click on the button labeled "Save settings"
       Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes          |
-         | [x]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
+         | [x]               | "Participant Consent" (participant_consent) | File Repository                                    |                     | My custom note |
 #END
