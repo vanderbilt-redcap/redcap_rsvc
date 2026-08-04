@@ -78,8 +78,8 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
-        | mm/dd/yyyy hh:mm | SYSTEM | Update record 1 | first_name = 'Morris'|
         | mm/dd/yyyy hh:mm | SYSTEM | Update record 1 | last_name = 'Lockman'|
+        | mm/dd/yyyy hh:mm | SYSTEM | Update record 1 | first_name = 'Morris'|
         | mm/dd/yyyy hh:mm | SYSTEM | Update record 1 | dob = '1970-12-24'|
 
 #END

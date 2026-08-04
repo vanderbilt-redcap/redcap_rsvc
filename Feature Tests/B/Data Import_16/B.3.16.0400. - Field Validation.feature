@@ -39,9 +39,9 @@ Feature: User Interface: The system shall import only valid formats for text fie
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                 | List of Data Changes OR Fields Exported |
-            | test_admin | Create record (import) | record_id = '100'                       |
-            | test_admin | Create record (import) | record_id = '200'                       |
             | test_admin | Create record (import) | record_id = '300'                       |
+            | test_admin | Create record (import) | record_id = '200'                       |
+            | test_admin | Create record (import) | record_id = '100'                       |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION

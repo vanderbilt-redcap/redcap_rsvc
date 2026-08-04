@@ -30,9 +30,9 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups |
+            | RenameGroup3       |
             | TestGroup1         |
             | TestGroup2         |
-            | RenameGroup3       |
 
         #FUNCTIONAL REQUIREMENT - Cannot delete DAG with User
         ##ACTION: Add User with Basic custom rights
@@ -51,9 +51,9 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group          |
+            | RenameGroup3       | test_user1 (Test User1) |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
-            | RenameGroup3       | test_user1 (Test User1) |
 
         ##ACTION: Cannot Delete DAG with User
         And I wait for 2 seconds
@@ -65,9 +65,9 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         ##VERIFY
         And I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group          |
+            | RenameGroup3       | test_user1 (Test User1) |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
-            | RenameGroup3       | test_user1 (Test User1) |
 
         ##ACTION: Remove User from DAG
         When I select "test_user1 (Test User1)" on the dropdown field labeled "Assign user"
@@ -77,9 +77,9 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups | Users in group |
+            | RenameGroup3       |                |
             | TestGroup1         |                |
             | TestGroup2         |                |
-            | RenameGroup3       |                |
 
         ##ACTION: Delete DAG
         And I wait for 2 seconds

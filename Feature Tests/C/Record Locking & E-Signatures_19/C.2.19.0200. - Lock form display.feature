@@ -69,7 +69,7 @@ Feature: User Interface: The tool shall only display forms that are designated t
     ##VERIFY_LOG
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in a table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
+      | Username   | Action        | List of Data Changes OR Fields Exported |
       | test_admin | Manage/Design | Customize record locking               |
       | test_admin | Manage/Design | Customize record locking               |
       | test_admin | Manage/Design | Customize record locking               |

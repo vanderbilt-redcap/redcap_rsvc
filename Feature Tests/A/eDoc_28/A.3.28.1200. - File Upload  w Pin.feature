@@ -168,8 +168,8 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                | List of Data Changes OR Fields Exported             |
-        | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 1  | Action: Lock entire record Record: 1 - Arm 1: Arm 1 |
         | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 2  | Form: Text Validation                               |
+        | mm/dd/yyyy hh:mm | test_admin | Lock/Unlock Record 1  | Action: Lock entire record Record: 1 - Arm 1: Arm 1 |
 
   Scenario: #VERIFY FILE REPO
     And I click on the link labeled "File Repository"

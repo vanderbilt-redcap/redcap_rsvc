@@ -261,7 +261,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                                                   |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "3" identifier = "email@test.edu" consent_form_version = "DAG 2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "2" identifier = "email@test.edu" consent_form_version = "DAG 1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "3" identifier = "email@test.edu" consent_form_data_access_group = "testgroup2" consent_form_version = "DAG 2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "2" identifier = "email@test.edu" consent_form_data_access_group = "testgroup1" consent_form_version = "DAG 1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
       | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "NO DAG" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
 #END

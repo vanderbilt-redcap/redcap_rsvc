@@ -30,6 +30,6 @@ Feature: A.2.33.0600.: The system shall allow designating one ACG as the Default
         When I click on the button labeled "Save Group"
         Then I should see a table header and rows containing the following values in a table:
         |ACG Name|
-        |No Rights|
         |New_ACG_1|
+        |No Rights|
 #END

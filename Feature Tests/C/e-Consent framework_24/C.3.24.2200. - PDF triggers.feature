@@ -256,10 +256,10 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =   |
+         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =     |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
-         | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                              |
+         | test_admin          | Create record 2 (Event 1 (Arm 1: Arm 1)) | record_id = '2'                                                                                                                                                         |
          | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
 #END

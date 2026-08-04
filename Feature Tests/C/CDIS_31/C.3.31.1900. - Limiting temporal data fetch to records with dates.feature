@@ -83,7 +83,7 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                        | List of Data Changes OR Fields Exported                              |
-        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24'     |
         | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | body_weight = '96.904762289757', na = '143.57605784691'              |
+        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | first_name = 'Morris', last_name = 'Lockman', dob = '1970-12-24'     |
 
 #END

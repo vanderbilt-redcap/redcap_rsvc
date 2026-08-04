@@ -165,9 +165,9 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
             | Variable / Field Name | Field Label         | Field Attributes |
-            | [add]                 | Add Field           | text             |
-            | [radio_button_manual] | Radio Button Manual | Choice Abc123    |
             | [notesbox_2]          | Notes box           | notes            |
+            | [radio_button_manual] | Radio Button Manual | Choice Abc123    |
+            | [add]                 | Add Field           | text             |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

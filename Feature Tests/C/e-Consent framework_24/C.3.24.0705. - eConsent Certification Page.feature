@@ -76,6 +76,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
             | [survey respondent] | e-Consent                                  | e-Consent Certification                         |
             |                     | Certification                              | record = "1"                                    |
             |                     | 1                                          | identifier = "email@test.edu"                   |
+            |                     |                                            | consent_form_version = "1.0"                    |
             |                     |                                            | event = "event_1_arm_1"                         |
             |                     |                                            | instrument = "participant_consent"              |
             | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName'   |

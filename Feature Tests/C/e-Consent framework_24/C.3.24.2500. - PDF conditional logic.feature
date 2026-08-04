@@ -70,8 +70,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | [x]    |               | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
       | [x]    |               | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
       | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
       ##VERIFY_Logging - Manage/Designof the triggers
     When I click on the link labeled "Logging"

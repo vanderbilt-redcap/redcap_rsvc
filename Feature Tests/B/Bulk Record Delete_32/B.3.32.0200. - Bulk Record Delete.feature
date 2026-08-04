@@ -358,11 +358,11 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID |
+            | 10        |
+            | 11        |
             | 6         |
             | 8         |
             | 9         |
-            | 10        |
-            | 11        |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -403,9 +403,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the link labeled "Arm 2:"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID |
-            | 9         |
             | 10        |
             | 11        |
+            | 9         |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -448,9 +448,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the link labeled "Arm 2:"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID |
-            | 9         |
             | 10        |
             | 11        |
+            | 9         |
         And I should see the "Incomplete (no data saved)" icon for the "Data Types" instrument on event "Event 1" for record "9"
 
         ##VERIFY_LOG
@@ -496,9 +496,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the link labeled "Arm 2:"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID |
-            | 9         |
             | 10        |
             | 11        |
+            | 9         |
         And I should see the "Incomplete (no data saved)" icon for the "Data Types" instrument on event "Event 1" for record "10"
 
         ##VERIFY_LOG

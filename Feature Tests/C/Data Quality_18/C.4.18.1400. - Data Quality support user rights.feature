@@ -50,7 +50,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                         | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                         | 32                  |
             | I      | Fields containing "missing data codes"                                    | -                                         | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                           | 1                   |
+            | 1      | [radio]=9.9                                                               | [radio]='9..9'                            | 1                   |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                          | 8                   |
 
         #FUNCTIONAL_REQUIREMENT
@@ -60,7 +60,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values | Status           | Exclude |
-            | 6  Event 1 (Arm 1: Arm 1) | email = HelloWorld                  | Validation error | exclude |
+            | 6 Event 1 (Arm 1: Arm 1)  | email = HelloWorld                  | Validation error | exclude |
 
         And I click on the button labeled "Close"
         And I logout
@@ -86,7 +86,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                        | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                        | 32                  |
             | I      | Fields containing "missing data codes"                                    | -                                        | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                          | ERROR               |
+            | 1      | [radio]=9.9                                                               | [radio]='9..9'                           | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
         When I click on the link labeled "view" in the row labeled "C"
@@ -94,7 +94,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values                             | Status           | Exclude |
-            | 6  Event 1 (Arm 1: Arm 1) | email = [cannot display data] (Reason: Lack of user privileges) | Validation error | exclude |
+            | 6 Event 1 (Arm 1: Arm 1)  | email = [cannot display data] (Reason: Lack of user privileges) | Validation error | exclude |
 
         And I click on the button labeled "Close"
 

@@ -78,7 +78,9 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action                        | List of Data Changes OR Fields Exported                              |
-        | mm/dd/yyyy hh:mm | test_admin | Update record  1              | visit_date = '2017-07-14', labs_vital_signs_complete = '0'           |
-        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | body_weight = '96.904762289757'                                      |
+        | mm/dd/yyyy hh:mm | test_admin | Update record (CDP) 1         | body_weight = '96.904762289757',                                     |
+        |                  |            |                               | na = '143.57605784691',                                              |
+        |                  |            |                               | visit_date = '2017-07-14',                                           |
+        |                  |            |                               | labs_vital_signs_complete = '0'                                      |
 
 #END

@@ -99,8 +99,8 @@ I want to verify that the File Upload field enhancement requires a password or P
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                             |
-        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | file_upload =                                                       |
-        | mm/dd/yyyy hh:mm | test_admin | Update record 5  | Document upload was confirmed with password (field = 'file_upload') |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 6  | file_upload =                                                       |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 6  | Document upload was confirmed with password (field = 'file_upload') |
         | mm/dd/yyyy hh:mm | test_admin | Update record 5  | file_upload =                                                       |
         | mm/dd/yyyy hh:mm | test_admin | Update record 5  | Document upload was confirmed with password (field = 'file_upload') |
         | mm/dd/yyyy hh:mm | test_admin | Create record 5  |                                                                     |
