@@ -97,9 +97,9 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                           |
             | test_user1 | Manage/Design | Create event                                                      |
-            |            |               | (Event: Event 4, Arm: Arm 1, Days Offset: 0, Offset Range: -0/+0) |
+            |            |               | (Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0) |
             | test_user1 | Manage/Design | Create arm                                                        |
-            |            |               | (Arm 2: Arm 2)                                                    |
+            |            |               | (Arm 3: Arm 3)                                                    |
 
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Arm 3:Arm 3"

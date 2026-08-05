@@ -88,7 +88,7 @@ Feature: The system shall block assignment of privileges that exceed the user’
         And I should see "participants"
         And I click on the button labeled "Ok"
         Then I should see a table header and rows containing the following values in a table:
-            | Role Name | Username or users assigned to a role | 
+            | Role name | Username or users assigned to a role | 
             |   —       | test_admin (Admin User)             |
             |   —       | test_user1 (Test User1)             |   
 

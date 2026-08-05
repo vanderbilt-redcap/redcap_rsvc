@@ -26,6 +26,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
 
         ##ACTION: Edit DAG
         When I click on a table cell containing the text "TestGroup3" in the data access groups table and clear field and enter "RenameGroup3"
+        And I wait for 1 second
 
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
