@@ -54,6 +54,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     When I click on the button labeled "Example #2 (all possible combos)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
     Then I upload a "csv" format file located at "downloads/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
     
     #Adding Allocation table for automation
     When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
