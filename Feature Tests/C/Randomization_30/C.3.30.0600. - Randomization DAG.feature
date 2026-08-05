@@ -117,7 +117,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
       | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group 2  rand_group_2|
       | 0       |     1    |                     | DAG 1 (1)                                  | Drug B (2)                        |
       | 0       |     1    |                     | DAG 1 (1)                                  | Placebo (3)                       |
-      | 0       |     0    |                     | DAG 2 (2)                                  | Drug A (1)                        |
+      | 0       |     1    |                     | DAG 2 (2)                                  | Drug A (1)                        |
       | 0       |     1    |                     | DAG 2 (2)                                  | Drug B (2)                        |
       | 0       |     1    |                     | DAG 2 (2)                                  | Placebo (3)                       |
       | 1       |     0    |     1-1             | DAG 1 (1)                                  | Drug A (1)                        |
