@@ -48,9 +48,9 @@ Feature: Project Interface Administrator Access: The system shall support admini
     When  I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
-      |       | 0       |     1    |                   | No (0)           | Drug B (2)        |
-      |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |
+      | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+      | 0       |     1    |                   | No (0)           | Drug B (2)        |
+      | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |
     #C.3.30.1700.0200. User with dashboard rights cannot access View Allocation Table. 
     And I should NOT see a table with header "View"
     And I logout
@@ -60,9 +60,9 @@ Feature: Project Interface Administrator Access: The system shall support admini
     When  I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-      |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group| View |
-      |       | 0       |     1    |                   | No (0)           | Drug B (2)        |      |
-      |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |      |
+      | Used    | Not Used | Allocated records | Stratification 1 |Randomization group| View |
+      | 0       |     1    |                   | No (0)           | Drug B (2)        |      |
+      | 1       |     0    |     1             | Yes (1)          | Drug A (1)        |      |
     When I click on the icon in the column labeled "View" and the row labeled "Drug B"
     Then I should see "View Allocation Table"
 #End

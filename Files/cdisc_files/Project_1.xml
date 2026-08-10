@@ -256,7 +256,7 @@
 	<ItemDef OID="email" Name="email" DataType="text" Length="999" redcap:Variable="email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:FieldAnnotation="@DEFAULT=&quot;email@test.edu&quot;">
 		<Question><TranslatedText>Email</TranslatedText></Question>
 	</ItemDef>
-	<ItemDef OID="phone_number" Name="phone_number" DataType="text" Length="999" redcap:Variable="phone_number" redcap:FieldType="text" redcap:TextValidationType="phone" redcap:FieldAnnotation="@DEFAULT=&quot;email@test.edu&quot;">
+	<ItemDef OID="phone_number" Name="phone_number" DataType="text" Length="999" redcap:Variable="phone_number" redcap:FieldType="text" redcap:TextValidationType="phone">
 		<Question><TranslatedText>Phone Number</TranslatedText></Question>
 	</ItemDef>
 	<ItemDef OID="text_validation_complete" Name="text_validation_complete" DataType="text" Length="1" redcap:Variable="text_validation_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">

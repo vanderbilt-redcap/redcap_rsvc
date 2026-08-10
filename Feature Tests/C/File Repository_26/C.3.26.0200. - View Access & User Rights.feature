@@ -91,11 +91,11 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
-            | 1_FullRights            | test_user1          |
-            |                         | test_user2          |
+            | —                       | test_admin (Admin User) |
+            | —                       | test_user3 (Test User3) |
+            | —                       | test_user4 (Test User4) |
+            | 1_FullRights            | test_user1 (Test User1) |
+            |                         | test_user2 (Test User2) |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
             | 4_NoAccess_Noexport     | [No users assigned] |
@@ -108,12 +108,12 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user4          |
-            | 1_FullRights            | test_user1          |
-            |                         | test_user2          |
+            | —                       | test_admin (Admin User) |
+            | —                       | test_user4 (Test User4) |
+            | 1_FullRights            | test_user1 (Test User1) |
+            |                         | test_user2 (Test User2) |
             | 2_Edit_RemoveID         | [No users assigned] |
-            | 3_ReadOnly_Deidentified | test_user3          |
+            | 3_ReadOnly_Deidentified | test_user3 (Test User3) |
             | 4_NoAccess_Noexport     | [No users assigned] |
             | TestRole                | [No users assigned] |
 
@@ -124,12 +124,12 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "successfully ASSIGNED to the user role"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | 1_FullRights            | test_user1          |
-            |                         | test_user2          |
+            | —                       | test_admin (Admin User) |
+            | 1_FullRights            | test_user1 (Test User1) |
+            |                         | test_user2 (Test User2) |
             | 2_Edit_RemoveID         | [No users assigned] |
-            | 3_ReadOnly_Deidentified | test_user3          |
-            |                         | test_user4          |
+            | 3_ReadOnly_Deidentified | test_user3 (Test User3) |
+            |                         | test_user4 (Test User4) |
             | 4_NoAccess_Noexport     | [No users assigned] |
             | TestRole                | [No users assigned] |
 
@@ -141,12 +141,12 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "has been assigned to Data Access Group"
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups        | Users in group |
-            | TestGroup1                | test_user1     |
+            | TestGroup1                | test_user1 (Test User1) |
             | TestGroup2                |                |
-            | [Not assigned to a group] | test_admin     |
-            |                           | test_user2     |
-            |                           | test_user3     |
-            |                           | test_user4     |
+            | [Not assigned to a group] | test_admin (Admin User), |
+            |                           | test_user2 (Test User2), |
+            |                           | test_user3 (Test User3), |
+            |                           | test_user4 (Test User4)  |
 
         When I select "test_user2 (Test User2)" on the dropdown field labeled "Assign user"
         And I select "TestGroup2" on the dropdown field labeled "to"
@@ -154,11 +154,11 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "has been assigned to Data Access Group"
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups        | Users in group |
-            | TestGroup1                | test_user1     |
-            | TestGroup2                | test_user2     |
-            | [Not assigned to a group] | test_admin     |
-            |                           | test_user3     |
-            |                           | test_user4     |
+            | TestGroup1                | test_user1 (Test User1) |
+            | TestGroup2                | test_user2 (Test User2) |
+            | [Not assigned to a group] | test_admin (Admin User), |
+            |                           | test_user3 (Test User3), |
+            |                           | test_user4 (Test User4) |
 
         When I select "test_user3 (Test User3)" on the dropdown field labeled "Assign user"
         And I select "TestGroup1" on the dropdown field labeled "to"
@@ -166,11 +166,11 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "has been assigned to Data Access Group"
         Then I should see a table header and rows containing the following values in a table:
             | Data Access Groups        | Users in group |
-            | TestGroup1                | test_user1     |
-            |                           | test_user3     |
-            | TestGroup2                | test_user2     |
-            | [Not assigned to a group] | test_admin     |
-            |                           | test_user4     |
+            | TestGroup1                | test_user1 (Test User1), |
+            |                           | test_user3 (Test User3)  |
+            | TestGroup2                | test_user2 (Test User2)  |
+            | [Not assigned to a group] | test_admin (Admin User), |
+            |                           | test_user4 (Test User4)  |
 
     #"Test_User4" is not assigned to a DAG
         And I logout
@@ -213,17 +213,16 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Data Export Files    |
             | PDF Snapshot Archive |
             | Recycle Bin          |
-            | TestGroup1_Folder    |
             | Role1_Folder         |
+            | TestGroup1_Folder    |
 
         When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
             | /import_files/user_list_for_project_1.csv |
-
     ##VERIFY file uploaded in folder
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
-            | TestGroup1_Folder           |                  |                         |
             | Role1_Folder                |                  |                         |
+            | TestGroup1_Folder           |                  |                         |
             | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
     ##ACTION Upload to top tier file repo (all users will see file) - using the Select files to upload button
@@ -235,8 +234,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Data Export Files    |
             | PDF Snapshot Archive |
             | Recycle Bin          |
-            | TestGroup1_Folder    |
             | Role1_Folder         |
+            | TestGroup1_Folder    |
 
         When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
             | /import_files/testusers_bulkupload.csv |
@@ -256,8 +255,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Data Export Files           |
             | PDF Snapshot Archive        |
             | Recycle Bin                 |
-            | TestGroup1_Folder           |
             | Role1_Folder                |
+            | TestGroup1_Folder           |
             | testusers_bulkupload.csv    |
             | user_list_for_project_1.csv |
 
@@ -286,8 +285,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Data Export Files    |
             | PDF Snapshot Archive |
             | Recycle Bin          |
-            | TestGroup1_Folder    |
             | Role1_Folder         |
+            | TestGroup1_Folder    |
 
         And I should see "Data Export Files"
         And I click on the link labeled "Role1_Folder"
@@ -316,8 +315,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Data Export Files    |
             | PDF Snapshot Archive |
             | Recycle Bin          |
-            | TestGroup1_Folder    |
             | Role1_Folder         |
+            | TestGroup1_Folder    |
 
         Given I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -359,7 +358,6 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##ACTION Unable to access DAG folder
         When I click on the link labeled "File Repository"
         And I should see "All Files"
-
     ##VERIFY See file uploaded by Test_User1
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        |
@@ -367,8 +365,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | PDF Snapshot Archive        |
             | Recycle Bin                 |
             | Role1_Folder                |
-            | user_list_for_project_1.csv |
             | testusers_bulkupload.csv    |
+            | user_list_for_project_1.csv |
 
         And I should NOT see "TestGroup1_Folder"
 
@@ -396,9 +394,9 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##VERIFY uploaded in subfolder
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
-            | user-list-for-project-1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user2. |
             | File_Upload.docx            | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
             | instrument_designation.csv  | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
+            | user-list-for-project-1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user2. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Auto-archive file in DAG TestGroup2
@@ -421,15 +419,14 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "File Repository"
     ##ACTION Unable to access Role folder
     ##VERIFY See file uploaded by Test_User1
-
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                        | Time Uploaded    | Comments                |
             | Data Export Files           |                  |                         |
             | PDF Snapshot Archive        |                  |                         |
             | Recycle Bin                 |                  |                         |
             | TestGroup1_Folder           |                  |                         |
-            | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
             | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
+            | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
         And I should NOT see "Role1_Folder"
 
@@ -515,10 +512,10 @@ Feature: User Interface: The system shall support limiting file repository user 
     ##ACTION Auto-archive access all file
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
-        Then I should see a table header and rows containing the following values in the file repository table:
+                Then I should see a table header and rows containing the following values in the file repository table:
             | Record | Survey                           | File Storage Time | Type      |
-            | 1-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
             | 2-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | 1-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
   Scenario: Delete folders - unable to delete with file in folder
 
@@ -543,7 +540,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Recycle Bin                 |                  |                         |
             | TestGroup1_Folder           |                  |                         |
             | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
-            | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
+            | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
     ##ACTION Cancel Remove files from folder
         When I click on the link labeled "TestGroup1_Folder"
@@ -586,7 +583,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Recycle Bin                 |                  |                         |
             | TestGroup1_Folder           |                  |                         |
             | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
-            | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
+            | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
     ##ACTION C.3.26.500.100 Delete folders
         And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
@@ -599,7 +596,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | PDF Snapshot Archive        |                  |                         |
             | Recycle Bin                 |                  |                         |
             | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
-            | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
+            | user_list_for_project_1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
         And I should NOT see "TestGroup1_Folder"
 

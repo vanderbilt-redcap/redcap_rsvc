@@ -23,8 +23,8 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         And I click on the button labeled "Add user"
         Then I should see a table header and rows containing the following values in a table:
             | Role | Username or users assigned to a role | Expiration | Data Access Group |
-            |   —   | test_admin  (Admin User)                         |   never         | —                 |
-            |   —   | test_user1  (Test User1)                         |   never         | Test_Group1       |
+            |   —   | test_admin (Admin User)                         |   never         | —                 |
+            |   —   | test_user1 (Test User1)                         |   never         | Test_Group1       |
 
         #SETUP_PRODUCTION
         Given I click on the link labeled "Setup"

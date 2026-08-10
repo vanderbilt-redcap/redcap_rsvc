@@ -35,7 +35,7 @@ Scenario: B.6.11.0600.0100. - Given a project-level override is set to 5 records
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-        | mm/dd/yyyy hh:mm | test_admin | Create record5 | record_id = '5'   |
+        | mm/dd/yyyy hh:mm | test_admin | Create record 5 | record_id = '5'   |
         
     #Action/Validation: Adding new record when max record limit is set.
     When I click on the link labeled "Add / Edit Records"

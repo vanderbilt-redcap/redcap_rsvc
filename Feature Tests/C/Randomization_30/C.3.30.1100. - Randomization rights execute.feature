@@ -89,9 +89,9 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-            |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
-            |       | 0       |     1    |                   | No (0)           | Drug B (2)        |   
-            |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)        | 
+            | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+            | 0       |     1    |                   | No (0)           | Drug B (2)        |   
+            | 1       |     0    |     2             | Yes (1)          | Drug A (1)        | 
 
   Scenario: C.3.30.1100.0300. Record's randomized value matches allocation table.  
     #This feature test is REDUNDANT and can be viewed in C.3.30.0200 and C.3.30.0300

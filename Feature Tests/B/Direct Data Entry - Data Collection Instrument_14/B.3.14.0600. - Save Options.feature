@@ -149,12 +149,12 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action          | List of Data Changes OR Fields Exported |
-            | test_user1 | Update record11 | name = 'SAVE & GO TO NEXT RECORD'       |
-            | test_user1 | Create record11 | name = 'SAVE & EXIT RECORD'             |
-            | test_user1 | Create record10 | name = 'SAVE & EXIT FORM'               |
-            | test_user1 | Create record9  | name = 'SAVE & MARK COMPLETE'           |
-            | test_user1 | Create record8  | name = 'SAVE & GO TO NEXT FORM'         |
-            | test_user1 | Create record7  | name = 'SAVE & STAY'                    |
+            | test_user1 | Update record 11 | name = 'SAVE & GO TO NEXT RECORD'       |
+            | test_user1 | Create record 11 | name = 'SAVE & EXIT RECORD'             |
+            | test_user1 | Create record 10 | name = 'SAVE & EXIT FORM'               |
+            | test_user1 | Create record 9  | name = 'SAVE & MARK AS COMPLETE'        |
+            | test_user1 | Create record 8  | name = 'SAVE & GO TO NEXT FORM'         |
+            | test_user1 | Create record 7  | name = 'SAVE & STAY'                    |
 
         ##VERIFY_DE:
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -167,7 +167,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
             | Record ID | Event Name             | Name                     |
             | 7         | Event 1 (Arm 1: Arm 1) | SAVE & STAY              |
             | 8         | Event 1 (Arm 1: Arm 1) | SAVE & GO TO NEXT FORM   |
-            | 9         | Event 1 (Arm 1: Arm 1) | SAVE & MARK COMPLETE     |
+            | 9         | Event 1 (Arm 1: Arm 1) | SAVE & MARK AS COMPLETE  |
             | 10        | Event 1 (Arm 1: Arm 1) | SAVE & EXIT FORM         |
             | 11        | Event 1 (Arm 1: Arm 1) | SAVE & GO TO NEXT RECORD |
             | 12        | Event 1 (Arm 1: Arm 1) |                          |

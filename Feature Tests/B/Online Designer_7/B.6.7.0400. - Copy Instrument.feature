@@ -22,7 +22,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         Then I should see a table header and rows containing the following values in a table:
             | Instrument name | Fields |
-            | Text Validation | 3      |
+            | Text Validation | 4      |
             | Data Types      | 45     |
             | Survey          | 3      |
             | Consent         | 5      |
@@ -40,11 +40,11 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I should see "Text Validation 2"
         And I should see a table header and rows containing the following values in a table:
             | Instrument name   | Fields |
-            | Text Validation   | 3      |
+            | Text Validation   | 4      |
             | Data Types        | 45     |
             | Survey            | 3      |
             | Consent           | 5      |
-            | Text Validation 2 | 2      |
+            | Text Validation 2 | 3      |
 
         ##VERIFY INSTRUMENT
         When I click on the link labeled "Text Validation 2"

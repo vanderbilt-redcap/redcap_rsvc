@@ -58,7 +58,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username            | Action           | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response5 | survey_complete = '2'                   |
+      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response 5 | survey_complete = '2'                   |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Edit survey response
@@ -77,7 +77,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record5 | name_survey = 'Name_EDITRESPONSE'       |
+      | mm/dd/yyyy hh:mm | test_user1 | Update record 5 | name_survey = 'Name_EDITRESPONSE'       |
 
     #VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"

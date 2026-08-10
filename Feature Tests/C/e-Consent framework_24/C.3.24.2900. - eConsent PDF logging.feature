@@ -69,7 +69,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the link labeled "e-Consent Framework"
       Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Edit settings | Survey              | Location(s) to save the signed consent snapshot                    |
-         | [x]               |               | Participant Consent | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]               |               | Participant Consent | File Repository Specified field:[event_1_arm_1][participant_file]  |
 
    Scenario: Add record for snapshot
       #Add record

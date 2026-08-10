@@ -30,8 +30,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     And I click on the button labeled "Save settings"
     Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-      | [x]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         |       |
-
+      | [x]               | "Participant Consent" (participant_consent) | File Repository                                    |                     |       |
   Scenario: Add record
         ##ACTION: add record to get participant signature
     When I click on the link labeled "Add / Edit Records"
@@ -94,5 +93,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                          |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" event = "event_1_arm_1" instrument = "participant_consent" |
 #END

@@ -13,14 +13,14 @@ Feature: User Interface: The system shall support ranges for the following data 
 
         #BUTTONS ARE TOGGLES - LABEL IS OPPOSITE OF CURRENT STATE
         Then I should see "Validation Types Currently Available for Use in All Projects"
-        And I should see a button labeled "Enable" in the row labeled "Time (MM:SS)"
-        When I click on the button labeled "Enable" in the row labeled "Time (MM:SS)"
+        And I should see a button labeled "Publish" in the row labeled "Time (MM:SS)"
+        When I click on the button labeled "Publish" in the row labeled "Time (MM:SS)"
         Then I should see a button labeled "Disable" in the row labeled "Time (MM:SS)"
 
-        When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place - comma as decimal)"
+        When I click on the button labeled "Publish" in the row labeled "Number (1 decimal place - comma as decimal)"
         Then I should see a button labeled "Disable" in the row labeled "Number (1 decimal place - comma as decimal)"
 
-        When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place)"
+        When I click on the button labeled "Publish" in the row labeled "Number (1 decimal place)"
         Then I should see a button labeled "Disable" in the row labeled "Number (1 decimal place)"
 
         #SETUP_PRODUCTION PROJECT
@@ -131,16 +131,16 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported   |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2023-08-02'                   |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2023-09-02 12:12'      |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2023-09-02 12:12:12' |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | integer = '3'                             |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | number = '3'                              |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | number_dec = '1.5'                        |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | num_comma = '1,5'                         |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '11:11'                       |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '11:11'                      |
-            | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '11:11:11'                  |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2023-08-02'                   |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2023-09-02 12:12'      |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2023-09-02 12:12:12' |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | integer = '3'                             |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | number = '3'                              |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | number_dec = '1.5'                        |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | num_comma = '1,5'                         |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '11:11'                       |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '11:11'                      |
+            | test_admin | Create record 5 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '11:11:11'                  |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -173,7 +173,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
-            | test_admin | Create record6 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2022-08-02'                 |
+            | test_admin | Create record 6 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2022-08-02'                 |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -202,7 +202,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
-            | test_admin | Create record7 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2022-08-02 12:12'    |
+            | test_admin | Create record 7 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2022-08-02 12:12'    |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -230,7 +230,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported   |
-            | test_admin | Create record8 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2022-08-02 12:12:12' |
+            | test_admin | Create record 8 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2022-08-02 12:12:12' |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -258,7 +258,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
-            | test_admin | Create record9 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '07:07'                     |
+            | test_admin | Create record 9 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '07:07'                     |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -286,7 +286,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record10 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '07:07:07'                |
+            | test_admin | Create record 10 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '07:07:07'                |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -314,7 +314,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record11 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '01:00'                    |
+            | test_admin | Create record 11 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '01:00'                    |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -342,7 +342,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record12 (Event 1 (Arm 1: Arm 1)) | integer = '0'                           |
+            | test_admin | Create record 12 (Event 1 (Arm 1: Arm 1)) | integer = '0'                           |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -370,7 +370,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record13 (Event 1 (Arm 1: Arm 1)) | number = '0'                            |
+            | test_admin | Create record 13 (Event 1 (Arm 1: Arm 1)) | number = '0'                            |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -398,7 +398,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record14 (Event 1 (Arm 1: Arm 1)) | number_dec = '0.0'                      |
+            | test_admin | Create record 14 (Event 1 (Arm 1: Arm 1)) | number_dec = '0.0'                      |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -426,7 +426,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record15 (Event 1 (Arm 1: Arm 1)) | num_comma = '0,0'                       |
+            | test_admin | Create record 15 (Event 1 (Arm 1: Arm 1)) | num_comma = '0,0'                       |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -453,7 +453,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record16 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2024-08-02'                 |
+            | test_admin | Create record 16 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2024-08-02'                 |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -481,7 +481,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record17 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2024-08-02 12:12'    |
+            | test_admin | Create record 17 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2024-08-02 12:12'    |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -509,7 +509,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported   |
-            | test_admin | Create record18 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2024-08-02 12:12:12' |
+            | test_admin | Create record 18 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2024-08-02 12:12:12' |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -537,7 +537,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record19 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '23:07'                     |
+            | test_admin | Create record 19 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '23:07'                     |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -565,7 +565,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record20 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '23:07:07'                |
+            | test_admin | Create record 20 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '23:07:07'                |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -593,7 +593,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record21 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '59:01'                    |
+            | test_admin | Create record 21 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '59:01'                    |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -621,7 +621,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record22 (Event 1 (Arm 1: Arm 1)) | integer = '200'                         |
+            | test_admin | Create record 22 (Event 1 (Arm 1: Arm 1)) | integer = '200'                         |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -649,7 +649,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record23 (Event 1 (Arm 1: Arm 1)) | number = '10'                           |
+            | test_admin | Create record 23 (Event 1 (Arm 1: Arm 1)) | number = '10'                           |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -677,7 +677,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record24 (Event 1 (Arm 1: Arm 1)) | number_dec = '6.0'                      |
+            | test_admin | Create record 24 (Event 1 (Arm 1: Arm 1)) | number_dec = '6.0'                      |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -705,7 +705,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
-            | test_admin | Create record25 (Event 1 (Arm 1: Arm 1)) | num_comma = '3,0'                       |
+            | test_admin | Create record 25 (Event 1 (Arm 1: Arm 1)) | num_comma = '3,0'                       |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"

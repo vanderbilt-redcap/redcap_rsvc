@@ -60,8 +60,8 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Assign user to data access group        |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | user = 'test_user1'                     |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | group = 'TestGroup1'                    |
+      |                  |            |               | user = 'test_user1',                    |
+      |                  |            |               | group = 'TestGroup1'                    |
     And I logout
 
     Given I login to REDCap with the user "Test_User1"
@@ -75,7 +75,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     ##VERIFY_UR: DAG assignment
     When I click on the link labeled "User Rights"
     Then I should see a table header and rows containing the following values in a table:
-      | Role name | Username   | Data Access Groups |
+      | Role name | Username   | Data Access Group  |
       | —         | test_user1 | TestGroup1         |
 
     ##VERIFY_RSD:
@@ -112,7 +112,7 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     ##VERIFY_UR
     When I click on the link labeled "User Rights"
     Then I should see a table header and rows containing the following values in a table:
-      | Role name | Username   | Data Access Groups |
+      | Role name | Username   | Data Access Group  |
       | —         | test_user1 |                    |
 
     ##VERIFY_RSD:
@@ -129,9 +129,9 @@ Feature: B.2.10.0200. User Interface: The system shall support adding and removi
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Remove user from data access group      |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | user = 'test_user1'                     |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | group = 'TestGroup1'                    |
+      |                  |            |               | user = 'test_user1',                    |
+      |                  |            |               | group = 'TestGroup1'                    |
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Assign user to data access group        |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | user = 'test_user1'                     |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | group = 'TestGroup1'                    |
+      |                  |            |               | user = 'test_user1',                    |
+      |                  |            |               | group = 'TestGroup1'                    |
 #End

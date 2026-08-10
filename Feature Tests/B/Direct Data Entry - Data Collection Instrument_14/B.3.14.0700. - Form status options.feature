@@ -73,8 +73,8 @@ Feature: Saving Data: The system shall support the following statuses for data i
         When I click on the button labeled "View Report"
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Event Name             | Complete? text_validation_complete |
-            | 7         | Event 1 (Arm 1: Arm 1) | Complete (2)                       |
-            | 1         | Event 2 (Arm 1: Arm 1) | Unverified (1)                     |
             | 1         | Event 1 (Arm 1: Arm 1) | Incomplete (0)                     |
+            | 1         | Event 2 (Arm 1: Arm 1) | Unverified (1)                     |
             | 3         | Event 1 (Arm 1: Arm 1) | Incomplete (0)                     |
+            | 7         | Event 1 (Arm 1: Arm 1) | Complete (2)                       |
 #END

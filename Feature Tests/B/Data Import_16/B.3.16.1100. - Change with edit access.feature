@@ -40,7 +40,7 @@ Feature: User Interface: The system shall allow data to be changed only by a use
         And I click on the link labeled "Logging"
          Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action   | List of Data Changes OR Fields Exported |
-            | test_admin | Add User | Test_User1                              |
+            | test_admin | Add user | Test_User1                              |
             
         Given I logout
 

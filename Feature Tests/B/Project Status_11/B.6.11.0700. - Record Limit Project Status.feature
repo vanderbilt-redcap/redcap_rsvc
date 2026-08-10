@@ -112,6 +112,6 @@ Scenario: B.6.11.0700.0300. - If an admin removed the override in production, th
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-        | mm/dd/yyyy hh:mm | test_admin | Create record5 | record_id = '5'   |
+        | mm/dd/yyyy hh:mm | test_admin | Create record 5 | record_id = '5'   |
 
 #END

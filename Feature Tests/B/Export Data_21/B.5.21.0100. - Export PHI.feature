@@ -23,10 +23,10 @@ Feature: User Interface: The system shall support the ability to identify data a
     When I click on the link labeled "Codebook"
     Then I should see a table header and rows containing the following values in the codebook table:
       | Variable / Field Name | Field Label  | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
-      | [identifier]          | Identifier   | text, Identifier                                                       |
-      | [identifier_2]        | Identifier 2 | text, Identifier                                                       |
       | [ptname]              | Name         | text                                                                   |
       | [radio]               | radio        | radio, Identifier                                                      |
+      | [identifier]          | Identifier   | text, Identifier                                                       |
+      | [identifier_2]        | Identifier 2 | text, Identifier                                                       |
 
 
     ##ACTION: change identifier status
@@ -36,29 +36,29 @@ Feature: User Interface: The system shall support the ability to identify data a
     When I click on the link labeled "Check For Identifiers"
     Then I should see a table header and rows containing the following values in a table:
       | Variable Name | Field Label   | Identifier? |
-      | identifier    | Identifier    | [x]         |
-      | identifier_2  | Identifier  2 | [x]         |
       | ptname        | Name          | [ ]         |
       | radio         | radio         | [x]         |
+      | identifier    | Identifier    | [x]         |
+      | identifier_2  | Identifier 2  | [x]         |
 
     When I uncheck the checkbox labeled "identifier_2"
     And I check the checkbox labeled "ptname"
     And I click on the button labeled "Update Identifiers"
     Then I should see a table header and rows containing the following values in a table:
       | Variable Name | Field Label  | Identifier? |
-      | identifier    | Identifier   | [x]         |
-      | identifier_2  | Identifier 2 | [ ]         |
       | ptname        | Name         | [x]         |
       | radio         | radio        | [x]         |
+      | identifier    | Identifier   | [x]         |
+      | identifier_2  | Identifier 2 | [ ]         |
 
     ##VERIFY_CODEBOOK
     When I click on the link labeled "Codebook"
     Then I should see a table header and rows containing the following values in the codebook table:
       | Variable / Field Name | Field Label  | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
-      | [identifier]          | Identifier   | text, Identifier                                                       |
-      | [identifier_2]        | Identifier 2 | text                                                                   |
       | [ptname]              | Name         | text, Identifier                                                       |
       | [radio]               | radio        | radio, Identifier                                                      |
+      | [identifier]          | Identifier   | text, Identifier                                                       |
+      | [identifier_2]        | Identifier 2 | text                                                                   |
 
     ##VERIFY_DE
     When I click on the link labeled "Data Exports, Reports, and Stats"

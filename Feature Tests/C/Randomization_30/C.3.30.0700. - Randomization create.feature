@@ -66,7 +66,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         When I click on the link labeled "Summary"
         Then I should see a table header and rows containing the following values in a table:
             | # | Target       | Stratification   | Randomization ID |
-            | 2 | rand_group   | strat_1          | 2                |
+            | 1 | rand_group   | strat_1          | 2                |
 
     Scenario: C.3.30.0700.2200 Upload invalid allocation table in DEVELOPMENT
         When I click on the icon in the column labeled "Setup" and the row labeled "1"
@@ -330,7 +330,7 @@ Feature: C.3.30.0700 User Interface: The system shall ensure users with Randomiz
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Save randomization model (rid=8)        |
+            | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Save randomization model - blinded (rid=8)        |
 
     Scenario: C.3.30.0700.1000. Save randomization model.
         #REDUNDANT - Tested in C.3.30.0700.0200 | C.3.30.0700.0300 | C.3.30.0700.0500 | C.3.30.0700.0600 | C.3.30.0700.0700 | C.3.30.0700.0800 | C.3.30.0700.0900 | 

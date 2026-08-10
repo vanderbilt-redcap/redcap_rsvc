@@ -81,13 +81,13 @@ Scenario: Setup
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Fetch data for Clinical Data Mart (granular mode)|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Weight' vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Mass Index', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_time = '2017-07-14 01:17', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
-        And I should NOT see "[instance = 7],[record_id] = '1'"
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_fhir_id = '7ea634a6-1142-4c4f-a4a1-157c58f1abd8', vitals_time = '2017-07-14 01:17', vitals_value = '96.904762289757', vitals_unit = 'kg', vitals_loinc_code = '29463-7', vitals_label = 'Body Weight', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_fhir_id = '2629853b-cadb-4380-98a3-9ea84ee6192b', vitals_time = '2017-07-14 01:17', vitals_value = '29.247372703006', vitals_unit = 'kg/m2', vitals_loinc_code = '39156-5', vitals_label = 'Body Mass Index', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '149.63431436302', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8480-6', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '110.60053004248', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8462-4', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_fhir_id = '6fab7f31-2ade-434e-acea-c7b99c5536fe', vitals_time = '2017-07-14 01:17', vitals_value = '182.02419982138', vitals_unit = 'cm', vitals_loinc_code = '8302-2', vitals_label = 'Body Height', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_value = '37.175668772971', vitals_unit = 'Cel', vitals_loinc_code = '8331-1', vitals_label = 'Oral temperature', vital_signs_complete = '2' |
+      And I should NOT see "[instance = 7],[record_id] = '1'"
     
 Scenario: C.3.31.3300.200 User Interface: The system shall support restricting bulk EHR data pulls for all records when a global CDM date or datetime filter is added to the fetch request.
     #Create New Project with CDM Date limits
@@ -143,12 +143,12 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Fetch data for Clinical Data Mart (granular mode)|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Weight' vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Mass Index', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_time = '2017-07-14 01:17', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_fhir_id = '7ea634a6-1142-4c4f-a4a1-157c58f1abd8', vitals_time = '2017-07-14 01:17', vitals_value = '96.904762289757', vitals_unit = 'kg', vitals_loinc_code = '29463-7', vitals_label = 'Body Weight', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_fhir_id = '2629853b-cadb-4380-98a3-9ea84ee6192b', vitals_time = '2017-07-14 01:17', vitals_value = '29.247372703006', vitals_unit = 'kg/m2', vitals_loinc_code = '39156-5', vitals_label = 'Body Mass Index', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '149.63431436302', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8480-6', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '110.60053004248', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8462-4', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_fhir_id = '6fab7f31-2ade-434e-acea-c7b99c5536fe', vitals_time = '2017-07-14 01:17', vitals_value = '182.02419982138', vitals_unit = 'cm', vitals_loinc_code = '8302-2', vitals_label = 'Body Height', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_value = '37.175668772971', vitals_unit = 'Cel', vitals_loinc_code = '8331-1', vitals_label = 'Oral temperature', vital_signs_complete = '2' |
         And I should NOT see "[instance = 7]"
     
 Scenario: C.3.31.3300.300 User Interface: The system shall support restricting bulk EHR data pulls by date for an individual record.
@@ -215,11 +215,11 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         Then I should see a table header and rows containing the following values in the logging table:
         | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
         | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Fetch data for Clinical Data Mart (granular mode)|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Weight' vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Mass Index', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_time = '2017-07-14 01:17', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_time = '2017-07-14 01:17', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_time = '2017-07-14 01:17', vitals_label = 'Body Height', vital_signs_complete = '2'|
-        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_label = 'Oral temperature', vital_signs_complete = '2'|
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 6], vitals_fhir_id = '7ea634a6-1142-4c4f-a4a1-157c58f1abd8', vitals_time = '2017-07-14 01:17', vitals_value = '96.904762289757', vitals_unit = 'kg', vitals_loinc_code = '29463-7', vitals_label = 'Body Weight', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 5], vitals_fhir_id = '2629853b-cadb-4380-98a3-9ea84ee6192b', vitals_time = '2017-07-14 01:17', vitals_value = '29.247372703006', vitals_unit = 'kg/m2', vitals_loinc_code = '39156-5', vitals_label = 'Body Mass Index', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 4], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '149.63431436302', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8480-6', vitals_label = 'Systolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 3], vitals_fhir_id = 'a52a9fc7-9602-42aa-be78-262010cfdb3c', vitals_time = '2017-07-14 01:17', vitals_value = '110.60053004248', vitals_unit = 'mm[Hg]', vitals_loinc_code = '8462-4', vitals_label = 'Diastolic Blood Pressure', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | [instance = 2], vitals_fhir_id = '6fab7f31-2ade-434e-acea-c7b99c5536fe', vitals_time = '2017-07-14 01:17', vitals_value = '182.02419982138', vitals_unit = 'cm', vitals_loinc_code = '8302-2', vitals_label = 'Body Height', vital_signs_complete = '2' |
+        | mm/dd/yyyy hh:mm | test_admin | Update record 1 | vitals_time = '2017-07-02 01:17', vitals_value = '37.175668772971', vitals_unit = 'Cel', vitals_loinc_code = '8331-1', vitals_label = 'Oral temperature', vital_signs_complete = '2' |
         And I should NOT see "[instance = 7]"
 #END

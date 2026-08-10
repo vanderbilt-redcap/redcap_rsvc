@@ -63,6 +63,6 @@ Feature: User Interface – Open Survey Workflow: The system shall allow users t
     And I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username            | Action           | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response5 | survey_complete = '2'                   |
-      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response6 | survey_complete = '2'                   |
+      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response 6 | survey_complete = '2'                   |
+      | mm/dd/yyyy hh:mm | [survey respondent] | Update Response 5 | survey_complete = '2'                   |
 #END

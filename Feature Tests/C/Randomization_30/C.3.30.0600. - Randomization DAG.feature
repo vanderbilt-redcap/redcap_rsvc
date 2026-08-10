@@ -54,6 +54,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     When I click on the button labeled "Example #2 (all possible combos)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
     Then I upload a "csv" format file located at "downloads/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    Then I should see "Already uploaded" in the row labeled "for use in DEVELOPMENT status"
     
     #Adding Allocation table for automation
     When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -116,7 +117,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
       | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group 2  rand_group_2|
       | 0       |     1    |                     | DAG 1 (1)                                  | Drug B (2)                        |
       | 0       |     1    |                     | DAG 1 (1)                                  | Placebo (3)                       |
-      | 0       |     0    |                     | DAG 2 (2)                                  | Drug A (1)                        |
+      | 0       |     1    |                     | DAG 2 (2)                                  | Drug A (1)                        |
       | 0       |     1    |                     | DAG 2 (2)                                  | Drug B (2)                        |
       | 0       |     1    |                     | DAG 2 (2)                                  | Placebo (3)                       |
       | 1       |     0    |     1-1             | DAG 1 (1)                                  | Drug A (1)                        |

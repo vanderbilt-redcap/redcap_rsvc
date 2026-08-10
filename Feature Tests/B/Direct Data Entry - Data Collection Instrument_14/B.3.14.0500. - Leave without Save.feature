@@ -67,7 +67,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Create record7 |                                         |
+            | mm/dd/yyyy hh:mm | test_user1 | Create record 7 |                                         |
 
         #FUNCTIONAL_REQUIREMENT
         Given I click on the link labeled "Add / Edit Records"

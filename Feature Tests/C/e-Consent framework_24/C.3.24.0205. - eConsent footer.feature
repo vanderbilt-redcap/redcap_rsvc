@@ -77,8 +77,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
-            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [event_1_arm_1][coo_sign]         |
 
         When I click on the button labeled "Add new trigger"
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
@@ -206,10 +206,10 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                                    |
-            | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"                                             |
             | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "combo_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"      |
+            | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"                                             |
             | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "coo_sign (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"        |
-            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"                                                          |
+            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" event = "event_1_arm_1" instrument = "coordinator_signature"                            |
             | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
-            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
+            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "1.0" event = "event_1_arm_1" instrument = "participant_consent" |
 #END

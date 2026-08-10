@@ -384,11 +384,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     # We would expect to see ONLY the raw value (100) in the report data table
 
     Given I see a table header and rows containing the following values in the report data table:
-      | Record ID | Repeat Instrument | Event Name             | Radio Button Manual |
-      | 1         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
-      | 2         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
-      | 3         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
-      | 4         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
+      | Record ID | Event Name             | Repeat Instrument | Radio Button Manual |
+      | 1         | Event 1 (Arm 1: Arm 1) | Data Types        | (100)               |
+      | 2         | Event 1 (Arm 1: Arm 1) | Data Types        | (100)               |
+      | 3         | Event 1 (Arm 1: Arm 1) | Data Types        | (100)               |
+      | 4         | Event 1 (Arm 1: Arm 1) | Data Types        | (100)               |
 
     When I click on the link labeled "Designer"
 

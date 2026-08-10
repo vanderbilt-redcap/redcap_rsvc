@@ -71,7 +71,7 @@ Feature: C.3.31.0300. Control Center: The system shall support enabling and disa
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date | Username | Action | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Enable Clinical Data Pull (CDP) module|
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | CDIS settings updated|
+      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Enable Clinical Data Pull (CDP) module|
 
 #END

@@ -49,7 +49,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Create record5 | record_id = '5'   |
+            | mm/dd/yyyy hh:mm | test_admin | Create record 5 | record_id = '5'   |
 
 
     Scenario: B.6.11.0800.0200. - If limit is set (e.g., 3), a 4th record attempt via any method (form, survey, import) must be blocked    
@@ -140,7 +140,7 @@ Feature: B.6.11.0800. User Interface: The system shall allow setting a record li
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Create record2 | record_id = '2'   |
+            | mm/dd/yyyy hh:mm | test_admin | Create record 2 | record_id = '2'   |
 
         When I click on the link labeled "Add / Edit Records"
         Then I should see "You are currently using 2 of 2 test records allowed while in Development status"

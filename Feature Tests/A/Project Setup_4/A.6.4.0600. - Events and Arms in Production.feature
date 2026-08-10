@@ -35,7 +35,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/Design | Create arm                              |
-            | test_user1 | Manage/Design | Arm 3: Arm 3                            |
+            |            |               | (Arm 3: Arm 3)                          |
 
         Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
@@ -48,10 +48,10 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I should see a table with 26 rows
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 3: Arm 3                                                    |
             | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0 |
+            |            |               | (Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0) |
+            | test_user1 | Manage/Design | Create arm                                                      |
+            |            |               | (Arm 3: Arm 3)                                                    |
 
         Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
@@ -95,11 +95,11 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
-            | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 2: Arm 2                                                    |
-            | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0 |
+            | Username   | Action        | List of Data Changes OR Fields Exported                           |
+            | test_user1 | Manage/Design | Create event                                                      |
+            |            |               | (Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0) |
+            | test_user1 | Manage/Design | Create arm                                                        |
+            |            |               | (Arm 3: Arm 3)                                                    |
 
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Arm 3:Arm 3"
@@ -236,11 +236,11 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
-            | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 4: Arm 4                                                    |
-            | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 4, Days Offset: 0, Offset Range: -0/+0 |
+            | Username   | Action        | List of Data Changes OR Fields Exported                           |
+            | test_user1 | Manage/Design | Create event                                                      |
+            |            |               | (Event: Event 1, Arm: Arm 4, Days Offset: 0, Offset Range: -0/+0) |
+            | test_user1 | Manage/Design | Create arm                                                        |
+            |            |               | (Arm 4: Arm 4)                                                    |
 
         Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"

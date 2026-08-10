@@ -121,20 +121,20 @@ Feature: User Interface: The system shall support data quality rule creation.
     ##VERIFY_LOG
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
+      | Username   | Action        | List of Data Changes OR Fields Exported |
       | test_admin | Manage/Design | Delete data quality rule               |
       | test_admin | Manage/Design | Execute data quality rule: Rule 4      |
       | test_admin | Manage/Design | Execute data quality rule: Rule 3      |
       | test_admin | Manage/Design | Execute data quality rule: Rule 2      |
       | test_admin | Manage/Design | Execute data quality rule: Rule 1      |
-      | test_admin | Manage/Design | Execute data quality rule: Rule H      |
       | test_admin | Manage/Design | Execute data quality rule: Rule I      |
-      | test_admin | Manage/Design | Execute data quality rule: Rule F      |
+      | test_admin | Manage/Design | Execute data quality rule: Rule H      |
       | test_admin | Manage/Design | Execute data quality rule: Rule G      |
+      | test_admin | Manage/Design | Execute data quality rule: Rule F      |
       | test_admin | Manage/Design | Execute data quality rule: Rule E      |
-      | test_admin | Manage/Design | Execute data quality rule: Rule B      |
       | test_admin | Manage/Design | Execute data quality rule: Rule D      |
       | test_admin | Manage/Design | Execute data quality rule: Rule C      |
+      | test_admin | Manage/Design | Execute data quality rule: Rule B      |
       | test_admin | Manage/Design | Execute data quality rule: Rule A      |
       | test_admin | Manage/Design | Edit data quality rule                 |
       | test_admin | Manage/Design | Upload Data Quality Rules              |
