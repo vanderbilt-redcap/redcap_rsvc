@@ -19,6 +19,7 @@ Feature: User Interface: The system shall support text validation for text field
         Then I should see a table header and rows containing the following values in the codebook table:
             | Variable / Field Name | Field Label       | Field Attributes                                                                |
             | [email]               | Email             | text (email)                                                                    |
+            | [date_ymd]            | date YMD          | text (date_ymd, Min: 2023-08-01, Max: 2023-08-31)                               |
             | [datetime_ymd_hm]     | Datetime          | text (datetime_ymd, Min: 2023-09-01 01:01, Max: 2023-09-30 01:59)               |
             | [datetime_ymd_hmss] | Datetime YMD HMSS | text (datetime_seconds_ymd, Min: 2023-09-01 11:01:01, Max: 2023-09-30 11:01:01) |
             | [integer]             | Integer           | text (integer, Min: 1, Max: 100)                                                |
