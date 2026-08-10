@@ -854,12 +854,6 @@
 	</SubjectData>
 	<SubjectData SubjectKey="4" redcap:RecordIdField="record_id">
 		<StudyEventData StudyEventOID="Event.event_1_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="event_1_arm_1">
-			<FormData FormOID="Form.text_validation" FormRepeatKey="1">
-				<ItemGroupData ItemGroupOID="text_validation.record_id" ItemGroupRepeatKey="1">
-					<ItemData ItemOID="record_id" Value="4"/>
-					<ItemData ItemOID="redcap_data_access_group" Value="testgroup2"/>
-				</ItemGroupData>
-			</FormData>
 			<FormData FormOID="Form.data_types" FormRepeatKey="1">
 				<ItemGroupData ItemGroupOID="" ItemGroupRepeatKey="1">
 					<ItemData ItemOID="textbox" Value="text box"/>
