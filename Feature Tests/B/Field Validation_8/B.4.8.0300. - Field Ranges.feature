@@ -13,14 +13,14 @@ Feature: User Interface: The system shall support ranges for the following data 
 
         #BUTTONS ARE TOGGLES - LABEL IS OPPOSITE OF CURRENT STATE
         Then I should see "Validation Types Currently Available for Use in All Projects"
-        And I should see a button labeled "Publish" in the row labeled "Time (MM:SS)"
-        When I click on the button labeled "Publish" in the row labeled "Time (MM:SS)"
+        And I should see a button labeled "Enable" in the row labeled "Time (MM:SS)"
+        When I click on the button labeled "Enable" in the row labeled "Time (MM:SS)"
         Then I should see a button labeled "Disable" in the row labeled "Time (MM:SS)"
 
-        When I click on the button labeled "Publish" in the row labeled "Number (1 decimal place - comma as decimal)"
+        When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place - comma as decimal)"
         Then I should see a button labeled "Disable" in the row labeled "Number (1 decimal place - comma as decimal)"
 
-        When I click on the button labeled "Publish" in the row labeled "Number (1 decimal place)"
+        When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place)"
         Then I should see a button labeled "Disable" in the row labeled "Number (1 decimal place)"
 
         #SETUP_PRODUCTION PROJECT
