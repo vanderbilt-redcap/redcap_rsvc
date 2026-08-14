@@ -104,5 +104,17 @@ Feature: C.3.30.1000. User Interface: The system shall support the sequential as
         Then I should see 'Record ID "10" was randomized for the field "Automatic Randomization" and assigned the value "Group 2" (B).'
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
+
+        #Validation that the records were randomized correctly and that the logging table contains the expected values.
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+        | Username   | Action                                   | List of Data Changes OR Fields Exported                                                              |
+        | test_user1 | Update record 10                         |                                                                                                      |
+        | test_user1 | Randomize Record 10                      | Randomize record                                                                                     |
+        | test_user1 | Create record 10                         | record_id = '10', auto_rand = 'B', gender = '0', randomization_complete = '0'                        |
+        | test_user1 | Update record 9                          |                                                                                                      |
+        | test_user1 | Randomize Record 9                       | Randomize record                                                                                     |
+        | test_user1 | Create record 9                          | record_id = '9', auto_rand = 'A', gender = '0', randomization_complete = '0'                        |
+
         And I logout
 #End
