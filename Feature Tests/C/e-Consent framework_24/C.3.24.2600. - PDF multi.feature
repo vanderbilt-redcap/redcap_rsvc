@@ -53,6 +53,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "multi data form same event" into the input field labeled "File name:"
     And I click on the button labeled "Save"
     Then I should see "Saved!"
+    Then I click on the button labeled "OK"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                         | Type of trigger | Save snapshot when...                                 | Scope of the snapshot | Location(s) to save the snapshot |
       | [x]    |               | 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
