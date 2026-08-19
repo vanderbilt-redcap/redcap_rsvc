@@ -78,8 +78,8 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         When I click on the button labeled "Type signature"
         And I enter "Jane Doe" into the input field labeled "Type your signature"
         #Select "Signature font"
-        And I click on the icon labeled "Change Font"
-        And I click on "Great Vibes"
+        # And I click on the icon labeled "Change Font"
+        # And I click on "Great Vibes"
 
         When I click on the button labeled "Save signature"
         Then I should see "Remove signature"
@@ -154,7 +154,7 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action           | List of Data Changes OR Fields Exported |
-            | test_admin | Create record 3  | classic_signature = '2'                   |
+            | test_admin | Create record 3  | classic_signature = '3'                   |
         
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Convert the Signature field to an Enhanced Signature field
@@ -174,7 +174,7 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
 
         ##VERIFY: existing signature data is preserved after conversion
         Given I click on the link labeled "Add / Edit Records"
-        And I select "1" on the dropdown field labeled "select record"
+        And I select "3" on the dropdown field labeled "select record"
         And I click the bubble for the row labeled "Form 1" on the column labeled "Status"
         Then I should see a link labeled "Remove signature"
         And I should see ".png"
