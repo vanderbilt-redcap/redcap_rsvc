@@ -78,8 +78,8 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         When I click on the button labeled "Type signature"
         And I enter "Jane Doe" into the input field labeled "Type your signature"
         #Select "Signature font"
-        # And I click on the icon labeled "Change Font"
-        # And I click on "Great Vibes"
+        And I click on the icon labeled "Change Font"
+        And I click on "Great Vibes"
 
         When I click on the button labeled "Save signature"
         Then I should see "Remove signature"
