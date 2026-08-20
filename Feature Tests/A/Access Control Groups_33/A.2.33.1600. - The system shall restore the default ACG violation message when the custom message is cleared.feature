@@ -1,9 +1,24 @@
 Feature: A.2.33.1600.: The system shall restore the default ACG violation message when the custom message is cleared.---Control Center
 
+    URS ID: URS.33.1600.
+    FRS ID: A.2.33.1600.
+ 
+    Requirement Specification:
+        Control Center: The system shall restore the default ACG violation message when the custom message is cleared.
+ 
+    Functional Design Description:
+        REDCap shall restore the default Access Control Group violation message when the custom message is cleared.
+ 
+    Scenario References:
+        A.2.33.1600.100. Restore the default ACG violation message when the custom message is cleared.---Control Center
+ 
+    Related Requirements and Dependencies:
+        No known Related Requirements and Dependencies
+
     As an Admin
     I want to see that I can restore the default ACG violation message when the custom message is cleared.
 
-    Scenario: A.2.33.1600.: The system shall restore the default ACG violation message when the custom message is cleared.---Control Center
+    Scenario: A.2.33.1600.100: The system shall restore the default ACG violation message when the custom message is cleared.---Control Center
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
