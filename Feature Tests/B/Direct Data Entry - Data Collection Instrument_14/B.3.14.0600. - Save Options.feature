@@ -119,7 +119,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
 
         Given I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "11" and click on the bubble
-        When I clear field and enter "SAVE & GO TO NEXT RECORD" into the data entry form field labeled "Name"
+        When I enter "SAVE & GO TO NEXT RECORD" into the data entry form field labeled "Name"
         And I click on the button labeled "More save options"
         And I click on the link labeled "Save & Go To Next Record"
         

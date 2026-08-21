@@ -95,7 +95,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Given I click on the button labeled "Return to list of instruments"
         And I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
-        And I clear field and enter Choices of "9..9, Choice99" into the open "Edit Field" dialog box
+        And I enter Choices of "9..9, Choice99" into the open "Edit Field" dialog box
         And I enter Choices of "100, Choice100" into the open "Edit Field" dialog box
         And I enter Choices of "101, Choice101" into the open "Edit Field" dialog box
         And I enter Choices of "Abc123, Choice Abc123" into the open "Edit Field" dialog box

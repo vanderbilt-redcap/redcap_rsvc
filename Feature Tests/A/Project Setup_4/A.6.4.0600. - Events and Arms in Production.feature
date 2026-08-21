@@ -59,7 +59,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Rename Arm 2"
         Then I should see a button labeled "Save"
 
-        Given I clear field and enter "Arm 2" into the input field labeled "Arm name"
+        Given I enter "Arm 2" into the input field labeled "Arm name"
         And I click on the button labeled "Save"
         Then I should see "Arm name:  Arm 2"
 
@@ -319,7 +319,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Rename Arm 1"
         Then I should see a button labeled "Save"
 
-        Given I clear field and enter "Arm One" into the input field labeled "Arm name"
+        Given I enter "Arm One" into the input field labeled "Arm name"
         And I click on the button labeled "Save"
         Then I should see "Arm name:  Arm One"
 

@@ -53,7 +53,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:"
       And I click on "" in the textarea field labeled "When the following logic becomes true"
       And I wait for 1 second
-      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
+      And I enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor"
       And I click on the button labeled "Update & Close Editor"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -78,10 +78,10 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
 
-      When I clear field and enter "FirstName" into the input field labeled "First Name"
-      And I clear field and enter "LastName" into the input field labeled "Last Name"
-      And I clear field and enter "email@test.edu" into the input field labeled "email"
-      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+      When I enter "FirstName" into the input field labeled "First Name"
+      And I enter "LastName" into the input field labeled "Last Name"
+      And I enter "email@test.edu" into the input field labeled "email"
+      And I enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
       Given I click on the link labeled "Add signature"
@@ -110,10 +110,10 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click on the survey option label containing "Open survey" label
       Then I should see "Please complete the survey"
 
-      When I clear field and enter "FirstName" into the input field labeled "First Name"
-      And I clear field and enter "LastName" into the input field labeled "Last Name"
-      And I clear field and enter "email@test.edu" into the input field labeled "email"
-      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+      When I enter "FirstName" into the input field labeled "First Name"
+      And I enter "LastName" into the input field labeled "Last Name"
+      And I enter "email@test.edu" into the input field labeled "email"
+      And I enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
       Given I click on the link labeled "Add signature"

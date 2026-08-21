@@ -44,7 +44,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "1 multi data form same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='1' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
+    And I enter "[trigger1]='1' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -64,7 +64,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "2 multi data form and survey same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='2' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
+    And I enter "[trigger1]='2' and [trigger2]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "3 multi survey same event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[trigger1]='2' and [trigger2]='2'" into the textarea field labeled "Logic Editor"
+    And I enter "[trigger1]='2' and [trigger2]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -105,7 +105,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "4 multi data form different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the textarea field labeled "Logic Editor"
+    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -127,7 +127,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "5 multi data form and survey different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
+    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -150,7 +150,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I enter "6 multi survey different event" into the input field labeled "Name of trigger"
     And I click on "" in the textarea field labeled "When the following logic becomes true"
     And I wait for 1 second
-    And I clear field and enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
+    And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -177,10 +177,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -227,10 +227,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -272,10 +272,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -324,10 +324,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -343,10 +343,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
     And I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -379,10 +379,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -400,10 +400,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the link labeled "Record ID 5"
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     And I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -434,10 +434,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -458,10 +458,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the survey option label containing "Open survey" label
     And I should see "Please complete the survey below"
     And I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
-    And I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    And I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:

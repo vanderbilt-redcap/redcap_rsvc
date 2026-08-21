@@ -19,7 +19,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
     Then I should see "check one or more"
     And I click on the button labeled "Close"
 
-    Given I clear field and enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
+    Given I enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
     And I enable the Administrator Privilege "Set administrator privileges" for a new administrator
     And I click on the button labeled "Add"
     Then I should see 'The user "Test_User1" has now been granted one or more administrator privileges'

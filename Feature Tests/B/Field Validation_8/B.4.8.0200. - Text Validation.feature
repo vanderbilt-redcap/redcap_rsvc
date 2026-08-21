@@ -54,7 +54,7 @@ Feature: User Interface: The system shall support text validation for text field
         When I click on the link labeled "Text Validation"
         Then I should see "Editing existing Record ID 5"
 
-        When I clear field and enter "email@test.edu" into the data entry form field labeled "Email"
+        When I enter "email@test.edu" into the data entry form field labeled "Email"
         And I click on the button labeled "Save & Stay"
         Then I should see "Record ID 5 successfully edited."
 
@@ -182,59 +182,59 @@ Then I should see a table header and rows containing the following values in the
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Date (Y-M-D)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "date YMD"
-        And I clear field and enter "TEST" into the data entry form field labeled "Datetime"
+        When I enter "" into the data entry form field labeled "date YMD"
+        And I enter "TEST" into the data entry form field labeled "Datetime"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Datetime (Y-M-D H:M)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Datetime"
-        When I clear field and enter "Test" into the data entry form field labeled "Datetime YMD HMSS"
+        When I enter "" into the data entry form field labeled "Datetime"
+        When I enter "Test" into the data entry form field labeled "Datetime YMD HMSS"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Datetime w/ seconds (Y-M-D H:M:S)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Datetime YMD HMSS"
-        When I clear field and enter "TEST" into the data entry form field labeled "Integer"
+        When I enter "" into the data entry form field labeled "Datetime YMD HMSS"
+        When I enter "TEST" into the data entry form field labeled "Integer"
         And I should see "This value you provided is not an integer. Please try again."
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Integer"
-        When I clear field and enter "TEST" into the data entry form field labeled "Number"
+        When I enter "" into the data entry form field labeled "Integer"
+        When I enter "TEST" into the data entry form field labeled "Number"
         And I should see "This value you provided is not a number. Please try again."
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Number"
-        When I clear field and enter "TEST" into the data entry form field labeled "Number Decimal"
+        When I enter "" into the data entry form field labeled "Number"
+        When I enter "TEST" into the data entry form field labeled "Number Decimal"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Number (1 decimal place)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Number Decimal"
-        When I clear field and enter "TEST" into the data entry form field labeled "Number Comma"
+        When I enter "" into the data entry form field labeled "Number Decimal"
+        When I enter "TEST" into the data entry form field labeled "Number Comma"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Number (1 decimal place - comma as decimal)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Number Comma"
-        When I clear field and enter "9999" into the data entry form field labeled "Time HH:MM"
+        When I enter "" into the data entry form field labeled "Number Comma"
+        When I enter "9999" into the data entry form field labeled "Time HH:MM"
         And I should see "The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g., 04:32 or 23:19)."
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Time HH:MM"
-        When I clear field and enter "9999" into the data entry form field labeled "Time MM:SS"
+        When I enter "" into the data entry form field labeled "Time HH:MM"
+        When I enter "9999" into the data entry form field labeled "Time MM:SS"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Time (MM:SS)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Time MM:SS"
-        When I clear field and enter "9999" into the data entry form field labeled "Time HH:MM:SS"
+        When I enter "" into the data entry form field labeled "Time MM:SS"
+        When I enter "9999" into the data entry form field labeled "Time HH:MM:SS"
         And I should see "The value you provided could not be validated because it does not follow the expected format. Please try again.\nRequired format: Time (HH:MM:SS)"
         And I click on the button labeled "Close"
 
-        When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
+        When I enter "" into the data entry form field labeled "Time HH:MM:SS"
         And I click on the button labeled "Save & Stay"
 
         When I click on the link labeled "Text Validation"
         And I enter "TEST" into the data entry form field labeled "Email"
         And I should see "This field must be a valid email address (like joe@user.com). Please re-enter it now."
         And I click on the button labeled "Close"
-        When I clear field and enter "" into the data entry form field labeled "Email"
+        When I enter "" into the data entry form field labeled "Email"
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"

@@ -33,7 +33,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     #FUNCTIONAL_REQUIREMENT
     ##ACTION:  edit report name
 
-    When I clear field and enter "C.5.22.0200.100 REPORT_EDIT" into the input field labeled "Name of Report:"
+    When I enter "C.5.22.0200.100 REPORT_EDIT" into the input field labeled "Name of Report:"
     And I click on the button labeled "Save Report"
     Then I should see "Your report has been saved!"
 
@@ -45,7 +45,7 @@ Feature: User Interface:  The system shall support the ability to create, modify
     Then I should see "Edit Existing Report:"
     And I should see "C.5.22.0200.100 REPORT_EDIT"
 
-    When I clear field and enter "C.5.22.0200.100 REPORT_EDIT2" into the input field labeled "Name of Report:"
+    When I enter "C.5.22.0200.100 REPORT_EDIT2" into the input field labeled "Name of Report:"
     And I click on the button labeled "Save Report"
     Then I should see "Your report has been saved!"
 

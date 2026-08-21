@@ -215,7 +215,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
     And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
     And I click on "" in the textarea field labeled "Trigger logic"
     And I wait for 2 seconds
-    And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor"
+    And I enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor"
     And I click on the button labeled "Update & Close Editor"
     And I click on the button labeled "Save trigger option"
     And I logout

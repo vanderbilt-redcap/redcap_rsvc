@@ -52,7 +52,7 @@ Feature: User Interface – Open Survey Workflow: The system shall warn users be
     Given I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
     When I click on the button labeled "Stay on page"
-    And I clear field and enter "Overwrite Name" into the data entry form field labeled "Name"
+    And I enter "Overwrite Name" into the data entry form field labeled "Name"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 6 successfully edited."
 

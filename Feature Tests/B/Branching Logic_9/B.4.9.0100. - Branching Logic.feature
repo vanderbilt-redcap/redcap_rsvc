@@ -56,7 +56,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on the icon labeled "Branching Logic" in the row labeled "ptname"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax"
         And I wait for 1 second
-        And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor"
+        And I enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Save"
         Then I should see "Also edit Branching Logic for OTHER fields?"
@@ -67,7 +67,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         When I click on the icon labeled "Branching Logic" in the row labeled "text2"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax"
         And I wait for 1 second
-        And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor"
+        And I enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Save"
         Then I should see "Also edit Branching Logic for OTHER fields?"

@@ -51,11 +51,11 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
 
-        And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
-        And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
-        And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
-        And I clear field and enter "2000-01-01" into the data entry form field labeled "Date of Birth"
-        And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
+        And I enter "FirstName" into the data entry form field labeled "First Name"
+        And I enter "LastName" into the data entry form field labeled "Last Name"
+        And I enter "email@test.edu" into the data entry form field labeled "email"
+        And I enter "2000-01-01" into the data entry form field labeled "Date of Birth"
+        And I enter "MyName" into the data entry form field labeled "Participant's Name Typed"
 
         Given I click on the link labeled "Add signature"
         And I should see "Add signature"
@@ -99,11 +99,11 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
 
-        And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
-        And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
-        And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
-        And I clear field and enter "2000-01-01" into the data entry form field labeled "Date of Birth"
-        And I clear field and enter "MyName" into the data entry form field labeled "Participant's Name Typed"
+        And I enter "FirstName" into the data entry form field labeled "First Name"
+        And I enter "LastName" into the data entry form field labeled "Last Name"
+        And I enter "email@test.edu" into the data entry form field labeled "email"
+        And I enter "2000-01-01" into the data entry form field labeled "Date of Birth"
+        And I enter "MyName" into the data entry form field labeled "Participant's Name Typed"
 
         Given I click on the link labeled "Add signature"
         And I should see "Add signature"

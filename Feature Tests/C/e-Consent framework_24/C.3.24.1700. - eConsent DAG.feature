@@ -112,10 +112,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should see "This is my NO DAG consent form"
 
   Scenario:
-    When I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
     And I draw a signature in the signature field area
@@ -170,10 +170,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should NOT see "This is my NO DAG consent form"
 
   Scenario:
-    When I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
     And I draw a signature in the signature field area
@@ -225,10 +225,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I should see the consent pdf has loaded in the iframe
     #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
     And I should NOT see "This is my NO DAG consent form"
-    When I clear field and enter "FirstName" into the input field labeled "First Name"
-    And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "email"
-    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I enter "FirstName" into the input field labeled "First Name"
+    And I enter "LastName" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
     And I draw a signature in the signature field area

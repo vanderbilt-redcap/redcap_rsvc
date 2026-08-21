@@ -132,7 +132,7 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     When I click on the button labeled "Edit response"
     Then I should see "now editing"
 
-    When I clear field and enter "Edited Name" into the data entry form field labeled "Name"
+    When I enter "Edited Name" into the data entry form field labeled "Name"
     And I click on the button labeled "More save options"
     And I click on the link labeled "Save & Stay"
     Then I should see "successfully edited"
