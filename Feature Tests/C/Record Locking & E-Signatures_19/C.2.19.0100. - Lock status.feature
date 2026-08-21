@@ -70,7 +70,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I click on the button labeled "I understand. Let me make changes"
 
         And I click on the icon labeled "Edit" in the row labeled "Text Validation"
-        And I enter "New custom text" into the textarea field labeled "Text Validation"
+        And I clear field and enter "New custom text" into the textarea field labeled "Text Validation"
         And I click on the button labeled "Save" in the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |

@@ -279,7 +279,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the Edit image for the field named "Radio Button Manual"
 
     #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
-    And I enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
+    And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
@@ -323,7 +323,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the Edit image for the field named "Radio Button Manual"
 
     #We are deleting the third option and renaming "100, Choice100" to "101, Choice100" in one step
-    And I enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
+    And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100" into the open "Edit Field" dialog box
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
@@ -396,7 +396,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the Edit image for the field named "Radio Button Manual"
 
     #We are adding the third option of "102, Choice102"
-    And I enter Choices of "9..9, Choice99{enter}101, Choice100{enter}102, Choice102" in the open "Edit Field" dialog box
+    And I clear field and enter Choices of "9..9, Choice99{enter}101, Choice100{enter}102, Choice102" in the open "Edit Field" dialog box
 
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"

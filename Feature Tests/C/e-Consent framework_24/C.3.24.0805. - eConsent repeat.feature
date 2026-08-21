@@ -74,10 +74,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -117,10 +117,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -152,10 +152,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -188,10 +188,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -231,10 +231,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
@@ -273,10 +273,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"

@@ -41,7 +41,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
         And I click on "" in the textarea field labeled "Enter logic for new rule"
         And I wait for 1 second
-        And I enter "[integer]='1'" in the textarea field labeled "Logic Editor"
+        And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I click on the button labeled "Add"
         ##VERIFY

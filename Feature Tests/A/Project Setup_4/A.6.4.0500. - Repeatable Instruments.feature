@@ -159,7 +159,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click the bubble to add a record for the "Survey" longitudinal instrument on event "(NEW)"
             Then I should see "Editing existing Record ID 1"
 
-            When I enter "My repeat event name" into the data entry form field labeled "Name"
+            When I clear field and enter "My repeat event name" into the data entry form field labeled "Name"
             And I click on the button labeled "Save & Exit Form"
             Then I should see "(#3)"
 

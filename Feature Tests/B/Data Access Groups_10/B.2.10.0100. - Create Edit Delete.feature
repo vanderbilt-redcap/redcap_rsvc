@@ -25,7 +25,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
             | TestGroup3         |
 
         ##ACTION: Edit DAG
-        When I click on a table cell containing the text "TestGroup3" in the data access groups table and enter "RenameGroup3"
+        When I click on a table cell containing the text "TestGroup3" in the data access groups table and clear field and enter "RenameGroup3"
         And I wait for 1 second
 
         ##VERIFY

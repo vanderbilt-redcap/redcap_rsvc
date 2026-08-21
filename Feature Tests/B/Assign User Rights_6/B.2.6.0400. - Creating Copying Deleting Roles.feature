@@ -41,7 +41,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     ##ACTION: User Rights Copy role
     Given I click on the button labeled "Copy role"
-    And I enter "Copy role" into the input field labeled "New role name:"
+    And I clear field and enter "Copy role" into the input field labeled "New role name:"
     And I click on the button labeled "Copy role"
     And I click on the button labeled "Cancel"
 

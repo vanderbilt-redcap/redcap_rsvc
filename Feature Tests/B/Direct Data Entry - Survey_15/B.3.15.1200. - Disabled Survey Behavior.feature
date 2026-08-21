@@ -62,7 +62,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
 
     #Survey
     Then I should see "Please complete the survey below."
-    And I enter "B.3.15.1200.100" into the data entry form field labeled "Name"
+    And I clear field and enter "B.3.15.1200.100" into the data entry form field labeled "Name"
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey"
 

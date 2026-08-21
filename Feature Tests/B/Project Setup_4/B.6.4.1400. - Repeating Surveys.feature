@@ -85,11 +85,11 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey below."
 
-    Given I enter "Name_survey" into the data entry form field labeled "Name"
+    Given I clear field and enter "Name_survey" into the data entry form field labeled "Name"
     And I click on the button labeled "Take this survey again"
     Then I should see "Please complete the survey below."
 
-    Given I enter "Name_survey2" into the data entry form field labeled "Name"
+    Given I clear field and enter "Name_survey2" into the data entry form field labeled "Name"
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
 

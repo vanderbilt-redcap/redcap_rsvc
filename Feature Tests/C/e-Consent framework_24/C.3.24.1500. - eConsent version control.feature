@@ -82,10 +82,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "This is my test 1 consent form"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I should see "Add signature"
     And I draw a signature in the signature field area
@@ -144,7 +144,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Close"
         #Add unique version
-    And I enter "test 2" into the input field labeled "Consent form version:"
+    And I clear field and enter "test 2" into the input field labeled "Consent form version:"
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:"
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG"
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language"
@@ -202,10 +202,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:
     Given I click on the link labeled "Add signature"
@@ -322,10 +322,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "consent.pdf"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "email"
-    And I enter "2000-01-01" into the input field labeled "Date of Birth"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:
     Given I click on the link labeled "Add signature"

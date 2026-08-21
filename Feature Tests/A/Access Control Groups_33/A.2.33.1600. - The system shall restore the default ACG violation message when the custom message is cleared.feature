@@ -54,7 +54,7 @@ Feature: A.2.33.1600.: The system shall restore the default ACG violation messag
         And I click on the button labeled "Set custom ACG error message"
         And I click on "" in the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
         And I wait for 2 seconds
-        And I enter "" into the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
+        And I clear field and enter "" into the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
         And I click on the button labeled "Save"
         Then I should see "Custom ACG error message successfully saved!"
 

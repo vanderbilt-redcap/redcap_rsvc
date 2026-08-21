@@ -21,7 +21,7 @@ Feature: User Interface: The system shall support the ability to run custom data
         When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
         And I click on "" in the textarea field labeled "Enter logic for new rule"
         And I wait for 1 second
-        And I enter "[integer]<>'1999'" in the textarea field labeled "Logic Editor"
+        And I clear field and enter "[integer]<>'1999'" in the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I check the checkbox labeled "Execute in real time on data entry forms"
         And I click on the button labeled "Add"
@@ -34,7 +34,7 @@ Feature: User Interface: The system shall support the ability to run custom data
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
-        And I enter "2000" into the data entry form field labeled "Integer"
+        And I clear field and enter "2000" into the data entry form field labeled "Integer"
         And I click on the button labeled "Close"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "WARNING: Data Quality rules were violated!"

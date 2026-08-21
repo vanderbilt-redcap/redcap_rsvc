@@ -52,10 +52,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "email"
-        And I enter "2000-01-01" into the input field labeled "Date of Birth"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -118,10 +118,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "email"
-        And I enter "2000-01-01" into the input field labeled "Date of Birth"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -153,7 +153,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         # If we don't wait, there is an odd intermittent where the focus jumps down to the lower part of the page interrupting typing into the following field
         And I wait for 2 seconds
 
-        When I enter "NewFirstName" into the input field labeled "First Name"
+        When I clear field and enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1"
         And I wait for 1 second

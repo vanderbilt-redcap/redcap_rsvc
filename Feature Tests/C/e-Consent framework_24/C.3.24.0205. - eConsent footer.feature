@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
         And I click on "" in the textarea field labeled "When the following logic becomes true"
         And I wait for 1 second
-        And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
+        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
         And I click on the button labeled "Update & Close Editor"
         And I check the checkbox labeled "Save to File Repository"
         And I check the checkbox labeled "Save to specified field"
@@ -112,10 +112,10 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "email"
-        And I enter "2000-01-01" into the input field labeled "Date of Birth"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -143,7 +143,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Please complete the survey"
-        And I enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
+        And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
         
         Given I click on the link labeled "Add signature"
         And I should see "Add signature"

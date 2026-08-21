@@ -38,7 +38,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         #FUNCTIONAL_REQUIREMENT
         Given I click the bubble to add a record for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Incomplete (W/ data)
-        And I enter "Incomplete with data" into the data entry form field labeled "Name"
+        And I clear field and enter "Incomplete with data" into the data entry form field labeled "Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully added."
 

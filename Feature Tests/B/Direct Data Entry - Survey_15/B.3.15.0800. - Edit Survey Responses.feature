@@ -69,7 +69,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     When I click on the button labeled "Edit response"
     Then I should see "(now editing)"
 
-    Given I enter "Name_EDITRESPONSE" into the data entry form field labeled "Name"
+    Given I clear field and enter "Name_EDITRESPONSE" into the data entry form field labeled "Name"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record ID 5 successfully edited"
 

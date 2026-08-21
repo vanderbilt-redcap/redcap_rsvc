@@ -42,7 +42,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
 
-    Given I enter "Name_B.3.15.0100.100" into the data entry form field labeled "Name"
+    Given I clear field and enter "Name_B.3.15.0100.100" into the data entry form field labeled "Name"
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey"
     And I click on the button labeled "Close survey"

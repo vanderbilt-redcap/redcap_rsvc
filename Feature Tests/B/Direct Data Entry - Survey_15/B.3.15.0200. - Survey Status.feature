@@ -39,7 +39,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
 
-    Given I enter "Name_survey" into the data entry form field labeled "Name"
+    Given I clear field and enter "Name_survey" into the data entry form field labeled "Name"
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey"
 
