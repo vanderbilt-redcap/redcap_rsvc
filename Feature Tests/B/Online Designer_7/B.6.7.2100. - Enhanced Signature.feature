@@ -115,7 +115,7 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action            | List of Data Changes OR Fields Exported |
-            | test_user1 | Create record 1   | enhanced_signature = '1'                   |
+            | test_user1 | Create record 2   | enhanced_signature = '2'                |
 
     Scenario: B.6.7.2100.0400 Existing Signature field converts to an Enhanced Signature field without loss of existing signature data
         #SETUP adding a classic signature field to a project
