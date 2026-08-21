@@ -161,8 +161,8 @@ Feature: A.2.67.0200. Control Center: The system shall allow REDCap users to be 
     Then I should see "Project Administrator Groups"
     When I click on the button labeled "Add or remove admins" in the row labeled "New PAG 1"
     And I click on the icon in the column labeled "Remove" and the row labeled "test_user1"
-    And I click on the button labeled "Unassign user from PAG"
-    Then I should see "The project was successfully unassigned from the PAG!"
+    And I click on the button labeled "Remove user as project-level admin"
+    Then I should see "User successfully removed as a project-level admin!"
     And I click on the button labeled "Close"
     Given I logout
     And I login to REDCap with the user "Test_User1"
