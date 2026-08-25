@@ -28,7 +28,7 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
     When I click on the link labeled "Control Center"
     And I click on the link labeled "REDCap Plus"
     And I click on the button labeled "Enter a REDCap+ subscription key"
-    And I enter "[SUBSCRIPTION_KEY]" into the textarea field labeled "Enter a REDCap+ subscription key"
+    And I enter a REDCap+ subscription key into the textarea field labeled "Enter a REDCap+ subscription key"
     And I click on the button labeled "Save key"
     Then I should see "REDCap+ subscription activated!"
     And I click on the link labeled "Project Administrator Groups"

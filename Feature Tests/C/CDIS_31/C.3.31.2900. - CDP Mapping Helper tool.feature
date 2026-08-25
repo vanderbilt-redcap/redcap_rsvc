@@ -56,7 +56,7 @@ Feature: C.3.31.2900. User Interface: The system shall support using the CDP Map
         And I click on the button labeled "Fetch"
     #Verify returned data show expected values
         Then I should see "Morris Lockman"
-        And I should see "Total entries: 120"
+        And I should see "All fetched entries\n120"
         And I should see "Gender: M"
         And I should see "DOB: 1970-12-24"
         And I should see "Age: 55"
