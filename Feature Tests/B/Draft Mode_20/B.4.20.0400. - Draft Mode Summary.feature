@@ -31,7 +31,7 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
 
         When I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
-        And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
+        And I enter "102, Choice102" in the textarea field labeled "Choices"
         And I click on the button labeled "Save"
         And I click on the Add Field input button below the field named "Radio Button Manual"
 
