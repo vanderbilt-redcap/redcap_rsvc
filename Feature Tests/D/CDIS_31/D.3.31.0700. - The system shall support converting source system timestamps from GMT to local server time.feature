@@ -70,6 +70,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
 
     When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
     And I enter "2017-07-14" into the input field labeled "Visit date"
+    And I press the "Tab" key
     #Verify Temporal data does appear when a date is entered
     Then I should see "Body weight"
     And I should see "96.904762289757"
@@ -110,6 +111,7 @@ Feature: D.3.31.0700. Control Center: The system shall support converting source
 
     When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
     And I enter "2017-07-14" into the input field labeled "Visit date"
+    And I press the "Tab" key
     #Verify Temporal data does appear when a date is entered
     Then I should see "Body weight"
     And I should see "96.904762289757"
