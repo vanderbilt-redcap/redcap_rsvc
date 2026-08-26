@@ -26,7 +26,7 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
 
     #Setup REDCap+ and create initial PAG
     When I click on the link labeled "Control Center"
-    And I click on the link labeled "REDCap Plus"
+    And I click on the link labeled "REDCap+"
     And I click on the button labeled "Enter a REDCap+ subscription key"
     And I enter a REDCap+ subscription key into the textarea field labeled "Enter a REDCap+ subscription key"
     And I click on the button labeled "Save key"
