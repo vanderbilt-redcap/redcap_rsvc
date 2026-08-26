@@ -174,7 +174,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     When I click on the link labeled "Data Types"
     And I click on the button labeled "Dismiss"
     And I click on the Edit image for the field named "Radio Button Manual"
-    And I enter "102, Choice102" in the textarea field labeled "Choices"
+    And I enter "9..9, Choice99{enter}100, Choice100{enter}101, Choice101{enter}102, Choice102" in the textarea field labeled "Choices"
     And I click on the button labeled "Save"
     And I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit"
