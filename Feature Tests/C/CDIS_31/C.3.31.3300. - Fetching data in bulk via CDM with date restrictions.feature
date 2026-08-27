@@ -112,6 +112,7 @@ Scenario: C.3.31.3300.200 User Interface: The system shall support restricting b
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I press the "Tab" key
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully added."
 
@@ -174,6 +175,7 @@ Scenario: C.3.31.3300.300 User Interface: The system shall support restricting b
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I press the "Tab" key
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully added."
         When I click the bubble for the row labeled "Project Settings" on the column labeled "Status"

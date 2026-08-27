@@ -43,8 +43,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
         #DATA WILL BE LOST
         # Edit existing second row from value of 100 to 101
         # Delete third row
-        And I clear field and enter Choices of "9..9, Choice99" into the open "Edit Field" dialog box
-        And I enter Choices of "101, Choice100" into the open "Edit Field" dialog box
+        And I enter "9..9, Choice99{enter}101, Choice100" in the textarea field labeled "Choices"
 
         #DATA MISMATCH
         And I click on the button labeled "Save"

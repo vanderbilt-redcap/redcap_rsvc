@@ -33,7 +33,7 @@ Feature: User Interface: The system shall require changes made to data collectio
     #ACTION: Make changes to instrument
     When I click on the link labeled "Data Types"
     And I click on the Edit image for the field named "Radio Button Manual"
-    And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
+    And I enter "9..9, Choice99{enter}100, Choice100{enter}101, Choice101{enter}102, Choice102" in the textarea field labeled "Choices"
     And I click on the button labeled "Save"
 
     ##VERIFY INSTRUMENT

@@ -26,7 +26,7 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
 
     #Setup REDCap+ and create initial PAG
     When I click on the link labeled "Control Center"
-    And I click on the link labeled "REDCap Plus"
+    And I click on the link labeled "REDCap+"
     And I click on the button labeled "Enter a REDCap+ subscription key"
     And I enter a REDCap+ subscription key into the textarea field labeled "Enter a REDCap+ subscription key"
     And I click on the button labeled "Save key"
@@ -93,8 +93,8 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
     #Remove Test User 4 from both PAGs.
     When I click on the button labeled "Add or remove admins" in the row labeled "New PAG 1"
     And I click on the icon in the column labeled "Remove" and the row labeled "test_user4"
-    And I click on the button labeled "Unassign user from PAG"
-    Then I should see "The user was successfully removed from the PAG!"
+    And I click on the button labeled "Remove user as project-level admin"
+    Then I should see "User successfully removed as a project-level admin!"
     And I click on the button labeled "Close"
 
     When I click on the link labeled "Control Center"
@@ -102,8 +102,8 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
     Then I should see "Project Administrator Groups"
     When I click on the button labeled "Add or remove admins" in the row labeled "New PAG 2"
     And I click on the icon in the column labeled "Remove" and the row labeled "test_user4"
-    And I click on the button labeled "Unassign user from PAG"
-    Then I should see "The user was successfully removed from the PAG!"
+    And I click on the button labeled "Remove user as project-level admin"
+    Then I should see "User successfully removed as a project-level admin!"
     And I click on the button labeled "Close"
     Then I should NOT see "Test_User4"
     And I should see a table header and rows containing the following values in a table:
