@@ -69,6 +69,5 @@ Feature: C.3.31.2200. User Interface: The system shall support optional preview 
         And I should see "name-family:"
         And I should see "birthDate:"
         And I should see "address-state:"
-        And I logout
 
 #END
