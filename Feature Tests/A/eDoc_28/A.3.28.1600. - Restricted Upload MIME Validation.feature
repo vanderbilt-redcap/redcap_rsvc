@@ -98,7 +98,7 @@ Feature: A.3.28.1600. Control Center: The system shall enforce the Restricted Up
     #LOCATION 4: Send-It
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Send-It"
-    And I enter "test@user.com" into the input field labeled "To:"
+    And I enter "test@user.com" into the textarea field labeled "To:"
     And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file" to browse for the file
     Then I should see "ERROR: The file cannot be uploaded because its file type is not permitted."
     And I click on the button labeled "OK"

@@ -14,7 +14,7 @@ Feature: B.3.14.1300. - User Interface: Add/Edit Records: The system shall suppo
 
         ##ACTION: Select a non-default Data Search target
         When I select "Record ID" on the dropdown field labeled "Choose a field to search"
-        And I click on the button labeled "Remember this selection"
+        And I check the checkbox labeled "Remember this selection"
 
         ##VERIFY: The selected Data Search target is retained after navigating away and returning
         And I click on the link labeled "My Projects"

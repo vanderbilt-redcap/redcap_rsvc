@@ -26,7 +26,7 @@ Feature: A.2.33.1700.: The system shall send ACG alerts only when triggered manu
     Scenario: A.2.33.1700.: The system shall send ACG alerts only when triggered manually by an administrator.---Alerts Table & Compliance Alert Logs
         Given I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:

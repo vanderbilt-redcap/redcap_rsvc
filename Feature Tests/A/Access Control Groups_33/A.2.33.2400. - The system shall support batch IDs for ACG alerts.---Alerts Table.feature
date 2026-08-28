@@ -23,7 +23,7 @@ Feature: A.2.33.2400.: The system shall support batch IDs for ACG alerts.---Aler
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:

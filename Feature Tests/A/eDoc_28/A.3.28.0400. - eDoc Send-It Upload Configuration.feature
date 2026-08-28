@@ -34,7 +34,7 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     Then I should see "Your system configuration values have now been changed!"
 
     When I click on the link labeled "Send-It"
-    And I enter "test@user.com" into the input field labeled "To:"
+    And I enter "test@user.com" into the textarea field labeled "To:"
     And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Select a file" to browse for the file
     And I should see "The file you are attempting to upload is too large"
     And I click on the button labeled "Close"
