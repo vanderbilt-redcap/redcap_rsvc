@@ -101,7 +101,7 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         And I click on the link labeled "Add signature"
         Then I should see "Add signature"
 
-        When I click on the button labeled "Draw signature"
+        When I click on "Draw signature"
         And I draw a signature in the signature field area
         And I click on the button labeled "Save signature"
         Then I should see a link labeled "Remove signature"
