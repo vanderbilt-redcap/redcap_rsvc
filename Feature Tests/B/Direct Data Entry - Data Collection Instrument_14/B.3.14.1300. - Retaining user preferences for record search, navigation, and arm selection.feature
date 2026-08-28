@@ -71,7 +71,7 @@ Feature: B.3.14.1300. - User Interface: Add/Edit Records: The system shall suppo
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Enable arm synchronization between Add/Edit Records and Record Status Dashboard
         When I click on the link labeled "Add / Edit Records"
-        And I click on the button labeled "Maintain arm selection with Record Status Dashboard"
+        And I click on the checkbox labeled "Maintain arm selection with Record Status Dashboard"
         Then I should see "Add / Edit Records"
         And I should see "Arm 2"
 
