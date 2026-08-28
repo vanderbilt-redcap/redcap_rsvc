@@ -45,7 +45,7 @@ Scenario: #SETUP
     When I click on the third link labeled "Access Control Groups"
     And I enter "New_ACG_1" into the input field labeled "Create new Access Control Group"
     And I click on "Create ACG"
-    And I click on the button labeled "No (overrides the user-level setting)"
+    And I click on the radio labeled "No (overrides the user-level setting)"
     And I click on the checkbox labeled "Project Design and Setup"
     And I click on the checkbox labeled "Data Access Groups"
     And I click on the checkbox labeled "Manage MyCap Participants"
