@@ -75,7 +75,7 @@ Scenario: #SETUP
     And I click on the third link labeled "Access Control Groups"
     And I enter "New_ACG_2" into the input field labeled "Create new Access Control Group"
     And I click on "Create ACG"
-    And I click on the button labeled "Yes (overrides the user-level setting)"
+    And I click on the radio labeled "Yes (overrides the user-level setting)"
     And I click on the checkbox labeled "Project Design and Setup"
     And I click on the radio labeled "Full Access"
     And I click on the checkbox labeled "Data Access Groups"
