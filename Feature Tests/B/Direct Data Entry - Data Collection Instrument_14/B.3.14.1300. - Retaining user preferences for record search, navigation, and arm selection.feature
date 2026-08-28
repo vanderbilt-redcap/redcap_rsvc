@@ -29,7 +29,7 @@ Feature: B.3.14.1300. - User Interface: Add/Edit Records: The system shall suppo
         Then I should see "Add / Edit Records"
 
         ##ACTION: Enable the preference to navigate directly to the Record Home Page on search result selection
-        And I click on the button labeled "Record Home Page"
+        And I click on the radio labeled "Record Home Page"
 
         ##ACTION: Search for an existing record and select the result
         And I enter "1" into the input field labeled "Search query"
