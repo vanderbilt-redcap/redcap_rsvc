@@ -75,7 +75,6 @@ Feature: B.6.7.2100. Field Creation: The system shall support the creation of En
         And I click on the button labeled "Add new record"
         And I click on the link labeled "Add signature"
         Then I should see "Add signature"
-        When I click on the link labeled "Add signature"
         And I enter "Jane Doe" into the input field labeled "Type your signature"
         #Select "Signature font"
         And I click on the icon labeled "Change Font"
