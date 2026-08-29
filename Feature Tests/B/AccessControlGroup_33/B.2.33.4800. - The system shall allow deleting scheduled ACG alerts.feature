@@ -83,7 +83,7 @@ Feature: B.2.33.4800.: The system shall allow deleting scheduled ACG alerts.---C
         And I enter "Test Delete Alert" into the input field labeled "Subject:"
         And I enter "This is a test alert to be deleted" into the textarea field labeled "Email Body:"
         Then I should see "Send Reminder?"      
-        When I click on the button labeled "Yes, send a reminder"
+        When I click on the checkbox labeled "Yes, send a reminder"
         And I enter "Test Delete Alert Reminder" into the input field labeled "Reminder Subject:"
         And I enter "Reminder test delete" into the textarea field labeled "Reminder Body:"
         And I click on the button labeled "Send Alerts"
