@@ -73,7 +73,7 @@ Feature: A.2.6.0700. - Control Center - User Settings: The system shall support 
         Then I should see 'ERROR: The user "test_user6" cannot be added because it does not match any existing user account in this REDCap system. Their user account must be created before you can grant them project access. Please double‑check the spelling of the username.'
 
   Scenario: A.2.6.0700.400 Display the standard error message when adding a user without an existing account is prohibited and no custom message is configured.
-        #REDUNDENT AND CAN BE SEEN IN .200 and .400 above.
+        #REDUNDANT AND CAN BE SEEN IN .200 and .400 above.
   Scenario: A.2.6.0700.500 Display the administrator-configured error message when adding a user without an existing account is prohibited and custom message text is configured.
         Given I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
