@@ -265,11 +265,11 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
             | mm/dd/yyyy hh:mm | test_user1 | Delete record 3 | record_id = '3'                                                                                                                                                                        |
 
 
- #Arm 2 Setup and Testing
  Scenario: #SETUP adding new records to arm 2
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 5."
 
@@ -278,6 +278,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 6."
 
@@ -286,6 +287,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 7."
 
@@ -294,6 +296,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 8."
 
@@ -302,6 +305,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 9."
 
@@ -310,6 +314,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 10."
 
@@ -318,12 +323,13 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         When I click on the link labeled "Add / Edit Records"
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+        And I wait for 1 second
         And I click on the button labeled "Add new record for the arm selected above"
         Then I should see "Adding new Record ID 11."
 
         When I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 11 successfully added."    
-    ##FUNCTIONAL_REQUIREMENT
+  
     Scenario: B.3.32.0200.500: Bulk Delete Records Using Custom List for arm 2
         When I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
@@ -564,4 +570,118 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action          | List of Data Changes OR Fields Exported   |
             | mm/dd/yyyy hh:mm | test_user1 | Update record 1 | name_consent = '', email_consent = '', dob = '', consent_complete = ''|
+        And I logout
+    Scenario: B.3.32.0200.1000: Bulk Delete Records Using Background Process
+        Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+
+        When I click on the button labeled "Bulk Record Delete"
+        Then I should see "Bulk Record Delete"
+        And I wait for 2 seconds
+        And I click on the radio labeled "Select records from a list"
+        Then I should see "Step 3: Select records to delete"
+        And I wait for 2 seconds
+
+        #Note: We need the space before the digits because REDCap has them in the label
+        Given I click on the checkbox labeled " 1"
+        And I click on the checkbox labeled " 4"
+        And I click on the button labeled "Delete"
+        And I check the checkbox labeled "Delete records using a background process?"
+
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
+        Then I should see " SUCCESS! Your background deletion request was successfully submitted."
+        And I click on the button labeled "Close"
+        Then I should see "Showing 1 to 1 of 1 entries"
+        And I should see a table header and rows containing the following values in a table:
+            | Status      | Deletion Time   | Completion Time          | Uploader     | Records Provided| Records Deleted |Total Deletion Time (minutes)| Errors|
+            | Queued      | mm/dd/yyyy hh:mm |                         | Test_Admin   | 2               |                 |                          | 0     |
+        
+        #Halt the background process
+        And I click on the button labeled "Halt deletion"
+        Then I should see "Halt this background delete?"
+        And I click on the button labeled "Yes, halt it now"
+        Then I should see "The background deletion process has been successfully cancelled."
+        When I click on the button labeled "Close"
+        And I click on the link labeled "Logging"
+        Then I should NOT see "Delete record 1 (Arm 1: Arm 1)"
+        And I should NOT see "Delete record 4 (Arm 1: Arm 1)"  
+        
+        #Create a new background deletion request and then run the background process and check that the deletion completes successfully
+        Given I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+
+        When I click on the button labeled "Bulk Record Delete"
+        Then I should see "Bulk Record Delete"
+        And I wait for 2 seconds
+        And I click on the radio labeled "Select records from a list"
+        Then I should see "Step 3: Select records to delete"
+        And I wait for 2 seconds
+
+        #Note: We need the space before the digits because REDCap has them in the label
+        Given I click on the checkbox labeled " 1"
+        And I click on the checkbox labeled " 4"
+        And I click on the button labeled "Delete"
+        And I check the checkbox labeled "Delete records using a background process?"
+
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
+        Then I should see " SUCCESS! Your background deletion request was successfully submitted."
+        And I click on the button labeled "Close"
+        Then I should see a table header and rows containing the following values in a table:
+            | Status      | Deletion Time   | Completion Time          | Uploader     | Records Provided| Records Deleted |Total Deletion Time (minutes)| Errors|
+            | Queued      | mm/dd/yyyy hh:mm |                         | Test_Admin   | 2               |                 |                          | 0     |
+        
+        And I wait for background processes to finish
+        And I wait for 3 seconds
+        And I click on the link labeled "View Background Deletions"
+        Then I should see a table header and rows containing the following values in a table:
+            | Status         | Deletion Time    | Completion Time         | Uploader     | Records Provided| Records Deleted |Total Deletion Time (minutes)| Errors|
+            | Completed      | mm/dd/yyyy hh:mm |                         | Test_Admin   | 2               |                 |                          | 0     |
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+            | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported                             |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 4 (Arm 1: Arm 1) | record_id = '4'                               |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 1 (Arm 1: Arm 1) | record_id = '1'                               |
+        #Delete Records from a report
+        Given I click on the link labeled "Setup"
+        And I click on the link labeled "Other Functionality"
+
+        When I click on the button labeled "Bulk Record Delete"
+        Then I should see "Bulk Record Delete"
+        When I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
+        And I wait for 2 seconds
+        And I click on the radio labeled "All records from a report"
+        Then I should see a dropdown labeled "Select report"
+        When I select "Test Report" on the dropdown field labeled "All records from a report"
+        
+        And I click on the link labeled "Test Report"
+        And I click on the button labeled "Delete"
+        And I check the checkbox labeled "Delete records using a background process?"
+        And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
+        And I click on the button labeled "Delete"
+        Then I should see "Deletion request submitted and will be processed soon"
+        And I click on the button labeled "Close"
+        Then I should see a table header and rows containing the following values in a table:
+            | Status         | Deletion Time    | Completion Time         | Uploader     | Records Provided| Records Deleted |Total Deletion Time (minutes)| Errors|
+            | Queued      | mm/dd/yyyy hh:mm |                            | Test_Admin   | 3               |                 |                          | 0     |
+       
+        And I wait for background processes to finish
+        And I wait for 3 seconds
+        And I click on the link labeled "View Background Deletions"
+        Then I should see a table header and rows containing the following values in a table:
+            | Status         | Deletion Time    | Completion Time         | Uploader     | Records Provided| Records Deleted |Total Deletion Time (minutes)| Errors|
+            | Completed      | mm/dd/yyyy hh:mm |                         | Test_Admin   | 3               |                 |                          | 0     |
+       
+        #Validate Logging
+        When I click on the link labeled "Logging"
+        Then I should see a table header and rows containing the following values in the logging table:
+            | Time / Date      | Username           | Action           | List of Data Changes OR Fields Exported |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 11 (Arm 1: Arm 1) | record_id = '11'          |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 10 (Arm 1: Arm 1) | record_id = '10'          |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 9 (Arm 1: Arm 1)  | record_id = '9'          |
+
+        #Verify Email was sent when background deletion is completed
+        And I verify that an email was sent to "a@b.com" with a subject containing "D" and content containing "E"
 #END
