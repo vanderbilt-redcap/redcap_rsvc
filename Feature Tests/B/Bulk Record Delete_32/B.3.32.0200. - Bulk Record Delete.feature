@@ -587,7 +587,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Given I click on the checkbox labeled " 1"
         And I click on the checkbox labeled " 4"
         And I click on the button labeled "Delete"
-        And I click on the radio labeled "Delete records using a background process?"
+        And I check the checkbox labeled "Delete records using a background process?"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
@@ -623,7 +623,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Given I click on the checkbox labeled " 1"
         And I click on the checkbox labeled " 4"
         And I click on the button labeled "Delete"
-        And I click on the radio labeled "Delete records using a background process?"
+        And I check the checkbox labeled "Delete records using a background process?"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
@@ -658,7 +658,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         
         And I click on the link labeled "Test Report"
         And I click on the button labeled "Delete"
-        And I click on the radio labeled "Delete records using a background process?"
+        And I check the checkbox labeled "Delete records using a background process?"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
         And I click on the button labeled "Delete"
         Then I should see "Deletion request submitted and will be processed soon"
