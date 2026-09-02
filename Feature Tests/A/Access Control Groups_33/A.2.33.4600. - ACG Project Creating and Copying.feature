@@ -42,7 +42,7 @@ Scenario: #SETUP
         |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights            |
 
     #Create a new ACG without project creation rights
-    When I click on the third link labeled "Access Control Groups"
+    When I click on the tab labeled "Access Control Groups"
     And I enter "New_ACG_1" into the input field labeled "Create new Access Control Group"
     And I click on "Create ACG"
     And I click on the radio labeled "No (overrides the user-level setting)"
@@ -72,7 +72,7 @@ Scenario: #SETUP
 
     #Create a new ACG with project creation rights
     When I click on the link labeled "User Assignments"
-    And I click on the third link labeled "Access Control Groups"
+    And I click on the tab labeled "Access Control Groups"
     And I enter "New_ACG_2" into the input field labeled "Create new Access Control Group"
     And I click on "Create ACG"
     And I click on the radio labeled "Yes (overrides the user-level setting)"
@@ -111,7 +111,7 @@ Scenario: #SETUP
         |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          |
         |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
 
-    When I click on the third link labeled "Access Control Groups"
+    When I click on the tab labeled "Access Control Groups"
     And I click on the link labeled "User Assignments"
     And I click on the button labeled "Enter edit mode"
     Then I should see "Exit edit mode"

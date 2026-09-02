@@ -18,7 +18,7 @@ Feature: A.2.33.0500.: The system shall allow editing existing ACGs.---Control C
             |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         Then I should see an icon labeled "No Access" in the column labeled "Project Design and Setup" and the row labeled "No Rights"
         And I click on the link labeled "No Rights"
         And I click on the checkbox labeled "Project Design and Setup"

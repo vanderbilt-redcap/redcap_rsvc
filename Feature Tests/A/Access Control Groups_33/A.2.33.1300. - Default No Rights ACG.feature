@@ -18,7 +18,7 @@ Feature: A.2.33.1300.: The system shall create a default “No Rights” ACG.---
             |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         Then I should see a table header and rows containing the following values in a table:
             |ACG Name   |
             |No Rights  |

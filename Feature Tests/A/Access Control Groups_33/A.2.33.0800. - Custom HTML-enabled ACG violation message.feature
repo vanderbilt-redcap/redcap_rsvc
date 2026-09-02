@@ -12,7 +12,7 @@ Feature: A.2.33.0800.: The system shall allow defining a custom HTML-enabled ACG
         When I click on the button labeled "Enable"
         Then I should see "ACG enabled"
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         And I click on the button labeled "Set custom ACG error message"
         When I enter "The user privileges below do not comply with the user's Access Control Group privileges. The user cannot be given any of the privileges below and cannot be assigned to a user role that has any of these privileges. Please try again." into the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
         And I click on the button labeled "Save"

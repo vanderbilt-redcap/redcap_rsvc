@@ -27,7 +27,7 @@ Feature: A.2.33.1600.: The system shall restore the default ACG violation messag
         When I click on the button labeled "Enable"
         Then I should see "ACG enabled"
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         And I click on the button labeled "Set custom ACG error message"
         When I enter "Custom message goes here." into the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
         And I click on the button labeled "Save"
@@ -50,7 +50,7 @@ Feature: A.2.33.1600.: The system shall restore the default ACG violation messag
 
         Given I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the third link labeled "Access Control Groups"
+        And I click on the tab labeled "Access Control Groups"
         And I click on the button labeled "Set custom ACG error message"
         And I click on "" in the textarea field labeled "Optional custom error message to display when an ACG compliance violation occurs:"
         And I wait for 2 seconds

@@ -24,7 +24,7 @@ Feature: A.2.33.0700.: The system shall support uploading and downloading ACG de
             |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         And I click on the button labeled "Upload or download ACGs"
         And I upload a "csv" format file located at "import_files/ACG_DownloadedGroups.csv", by clicking the button near "Upload ACGs (CSV)" to browse for the file
         And I click on the button labeled "Confirm Import"
@@ -35,7 +35,7 @@ Feature: A.2.33.0700.: The system shall support uploading and downloading ACG de
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         And I click on the button labeled "Upload or download ACGs"
         And I click on the link labeled "Download ACGs (CSV raw)"
         Then I should see the following values in the last file downloaded

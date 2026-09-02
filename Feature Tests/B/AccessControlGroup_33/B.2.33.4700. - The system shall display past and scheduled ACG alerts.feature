@@ -29,7 +29,7 @@ Feature: B.2.33.4700.: The system shall display past and scheduled ACG alerts.--
             |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
-        When I click on the third link labeled "Access Control Groups"
+        When I click on the tab labeled "Access Control Groups"
         And I wait for 1 second
         And I click on the button labeled "Upload or download ACGs"
         And I upload a "csv" format file located at "import_files/ACG_DownloadedGroups.csv", by clicking the button near "Upload ACGs (CSV)" to browse for the file
