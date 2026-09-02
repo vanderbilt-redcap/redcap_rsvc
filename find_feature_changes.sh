@@ -161,7 +161,7 @@ END {
 
         if(file_added == 0 && file_deleted == 0){
                 printf feature
-                cmd = "sh push_lines_changes.sh \"" feature "\" " 0 " " 0 " " 0 " " 0 " " 0 " " 0
+                cmd = "sh push_lines_changes.sh \"" feature "\" " 0 " " 0 " " 0 " " 0 " " 0 " " 0 " " package_sequence
                 return_code = system(cmd)
         } else {
               cmd = "sh push_lines_changes.sh \"" feature "\" " \
@@ -170,7 +170,8 @@ END {
                     file_deleted " " \
                     pure_deleted " " \
                     file_total " " \
-                    mod
+                    mod " " \
+                    package_sequence
               return_code = system(cmd)
         }
       }
@@ -247,17 +248,8 @@ if [ "$upload" = true ]; then
     CURL="$CURL --ssl-revoke-best-effort"
   fi
 
-  PROJECT_LTS_VERSION=`$CURL -X POST "$REDCAP_API_URL" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -d "token=$REDCAP_API_TOKEN" \
-    -d "content=project" \
-    -d "format=json" \
-    -d "returnFormat=json" |cut -d'"' -f 6|cut -d' ' -f 6`
-
-  if [[ "$CUR_TAG" != "V$PROJECT_LTS_VERSION-ABC" ]]; then
-    echo "Tag and project LTS version do not match ($CUR_TAG vs. $PROJECT_LTS_VERSION)"
-    exit
-  fi
+  echo "Enter the package_sequence value (1,2,3 etc.) matching the records we want to update:"
+  read PACKAGE_SEQUENCE
 fi
 
 #Generate a temporary file of all features
@@ -265,7 +257,7 @@ ALL_FEATURE_FILES=$(git ls-files '*.feature')
 echo "$ALL_FEATURE_FILES" > all_features.txt.tmp
 
 # Get the line changes for .feature files between the dates
-git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --ignore-space-change | awk -F'\t' -v upload="$upload" "$awk_script"
+git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --ignore-space-change | awk -F'\t' -v upload="$upload" -v package_sequence="$PACKAGE_SEQUENCE" "$awk_script"
 
 #Remove the temporary file
 rm all_features.txt.tmp
