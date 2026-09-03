@@ -19,9 +19,7 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATARename1.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
         Then I should see "Instructions for Data Review"
         And I click on the button labeled "Import Data"
-        Then I should see "Import Successful!"
-        And I should see "30"
-        And I should see "records were created or modified during the import"
+        Then I should see "Import Successful! 30 records were created or modified during the import"
 
         #VERIFY
         Given I click on the link labeled "Record Status Dashboard"
