@@ -220,9 +220,6 @@ Feature: A.2.67.0300. - Control Center: The system shall allow projects to be as
     And I click on the button labeled "View all projects"
     Then I should NOT see "PAG Admin Project"
 
-    # Wait to avoid a difficult to troubleshoot cloud only automation issue
-    And I wait for 1 second
-
     #Checking that test user 2 has access to the PAG Admin Project
     Given I logout
     And I login to REDCap with the user "Test_User2"
