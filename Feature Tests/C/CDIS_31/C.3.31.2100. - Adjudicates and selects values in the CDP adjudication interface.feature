@@ -51,6 +51,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I press the "Tab" key
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"
@@ -68,6 +69,7 @@ Feature: C.3.31.2100. User Interface: The system shall support importing EHR dat
     Scenario: C.3.31.2100. User Interface: The system shall support importing EHR data into REDCap only after a user adjudicates and selects values in the CDP adjudication interface. 
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date"
+        And I press the "Tab" key
         And I should see "Last fetch time:"
         And I click on the button labeled "Save"
         Then I should see "96.904762289757" in the data entry form field "Body weight" 

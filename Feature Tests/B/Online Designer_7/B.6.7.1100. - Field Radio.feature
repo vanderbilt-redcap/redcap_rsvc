@@ -35,10 +35,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I select "Multiple Choice - Radio Buttons (Single Answer)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Radio Button Manual" into the Field Label of the open "Add New Field" dialog box
         And I enter "radio_button_manual" into the Variable Name of the open "Add New Field" dialog box
-        And I enter Choices of "9..9, Choice99" into the open "Add New Field" dialog box
-        And I enter Choices of "100, Choice100" into the open "Add New Field" dialog box
-        And I enter Choices of "101, Choice101" into the open "Add New Field" dialog box
-        And I enter Choices of "Abc123, Choice Abc123" into the open "Add New Field" dialog box
+        And I enter "9..9, Choice99{enter}100, Choice100{enter}101, Choice101{enter}Abc123, Choice Abc123" in the textarea field labeled "Choices"
         And I should see "Save"
         And I click on the button labeled "Save"
 

@@ -52,6 +52,7 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I press the "Tab" key
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"
@@ -70,6 +71,7 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
 
         When I click the bubble for the row labeled "Labs Vital Signs" on the column labeled "Status"
         And I enter "2017-07-14" into the input field labeled "Visit date"
+        And I press the "Tab" key
     #Verify Temporal data does appear when a date is entered
         Then I should see "Body weight"
         And I should see "96.904762289757"

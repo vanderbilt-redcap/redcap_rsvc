@@ -39,9 +39,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I select "Multiple Choice - Drop-down List (Single Answer)" from the Field Type dropdown of the open "Add New Field" dialog box
     And I enter "Multiple Choice Dropdown Manual" into the Field Label of the open "Add New Field" dialog box
     And I enter "multiple_dropdown_manual" into the Variable Name of the open "Add New Field" dialog box
-    And I enter Choices of "5, DDChoice5" into the open "Add New Field" dialog box
-    And I enter Choices of "7, DDChoice7" into the open "Add New Field" dialog box
-    And I enter Choices of "6, DDChoice6" into the open "Add New Field" dialog box
+    And I enter "5, DDChoice5{enter}7, DDChoice7{enter}6, DDChoice6" in the textarea field labeled "Choices"
     And I click on the button labeled "Save"
 
     #VERIFY

@@ -6,7 +6,7 @@ Feature: A.2.33.0100.: The system shall allow enabling and disabling Access Cont
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:
@@ -18,7 +18,7 @@ Feature: A.2.33.0100.: The system shall allow enabling and disabling Access Cont
             |Test_User3     |Test User3      |Test_User3@test.edu           | No Rights          | 
             |Test_User4     |Test User4      |Test_User4@test.edu           | No Rights          |
        
-        When I click on the button labeled "ACG enabled"
+        When I click on "ACG enabled"
         Then I should see "Disable the Access Control Groups feature?"
 
         When I click on the button labeled "Disable"

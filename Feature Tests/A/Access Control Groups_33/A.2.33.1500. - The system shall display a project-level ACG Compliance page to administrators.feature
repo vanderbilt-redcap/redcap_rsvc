@@ -26,7 +26,7 @@ Feature: A.2.33.1500.: The system shall display a project-level ACG Compliance p
     Scenario: A.2.33.1500.: The system shall display a project-level ACG Compliance page to administrators.
         Given I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         Then I should see a table header and rows containing the following values in a table:

@@ -16,7 +16,7 @@ Feature: The system shall hide ACG functionality when ACGs are disabled.---Syste
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         #Validate that the ACG functionality is present when ACGs are enabled
@@ -37,7 +37,7 @@ Feature: The system shall hide ACG functionality when ACGs are disabled.---Syste
     Scenario: A.2.33.1100. The system shall hide ACG functionality when ACGs are disabled.---System-Level (Control Center + All Projects)
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "ACG enabled"
+        And I click on "ACG enabled"
         And I click on the button labeled "Disable"
         #Validate that the ACG functionality is not present when ACGs are disabled in the control center.
         Then I should see "Enable Access Control Groups"

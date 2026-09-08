@@ -15,7 +15,7 @@ Feature: The system shall reapply ACG rules when ACGs are re-enabled.---System-L
         Then I should see 'User "Test_User1" was successfully added'
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         #Validate that the ACG functionality is present when ACGs are enabled
@@ -38,7 +38,7 @@ Feature: The system shall reapply ACG rules when ACGs are re-enabled.---System-L
         And I should see "Compliance Alert Logs"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "ACG enabled"
+        And I click on "ACG enabled"
         And I click on the button labeled "Disable"
         #Validate that the ACG functionality is not present when ACGs are disabled in the control center.
         Then I should see "Enable Access Control Groups"
@@ -50,7 +50,7 @@ Feature: The system shall reapply ACG rules when ACGs are re-enabled.---System-L
      Scenario: A.2.33.1200. The system shall reapply ACG rules when ACGs are re-enabled.---System-Level Enforcement
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Access Control Groups"
-        And I click on the button labeled "Enable Access Control Groups"
+        And I click on "Enable Access Control Groups"
         Then I should see "Enable the Access Control Groups feature?"
         When I click on the button labeled "Enable"
         #Validate that the ACG functionality is present when ACGs are re-enabled

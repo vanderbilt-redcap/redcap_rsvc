@@ -59,6 +59,7 @@ Scenario: C.3.31.3800.200 User Interface: The system shall will auto fetch and a
         And I click on the button labeled "Add new record"
         And I click the bubble for the row labeled "Demography" on the column labeled "Status"
         And I enter "cd9e9826-aea1-4682-adc0-c1d97633bf31" into the input field labeled "Medical record number"
+        And I press the "Tab" key
         Then I should see "Are the values below correct for"
         And I should see "name-given:"
         And I should see "name-family:"

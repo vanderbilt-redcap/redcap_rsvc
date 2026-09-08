@@ -32,10 +32,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         When I select "Checkboxes (Multiple Answers)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Checkbox" into the Field Label of the open "Add New Field" dialog box
         And I enter "checkbox" into the Variable Name of the open "Add New Field" dialog box
-        And I enter Choices of "1, Checkbox1" into the open "Add New Field" dialog box
-        And I enter Choices of "2, Checkbox2" into the open "Add New Field" dialog box
-        And I enter Choices of "3, Checkbox3" into the open "Add New Field" dialog box
-        And I enter Choices of "Abc123, Checkbox Abc123" into the open "Add New Field" dialog box
+        And I enter "1, Checkbox1{enter}2, Checkbox2{enter}3, Checkbox3{enter}Abc123, Checkbox Abc123" in the textarea field labeled "Choices"
         And I click on the button labeled "Save"
         Then I should see the field labeled "Checkbox"
         And I should see the multiselect field labeled "checkbox" with the options below

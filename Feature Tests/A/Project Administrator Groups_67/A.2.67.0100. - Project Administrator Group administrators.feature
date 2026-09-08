@@ -24,7 +24,7 @@ Feature: A.2.67.0100. Control Center: The system shall support Project Administr
 Scenario: A.2.67.0100.200 PAG management is available in REDCap+
     Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Control Center"
-    Given I click on the link labeled "REDCap Plus"
+    Given I click on the link labeled "REDCap+"
     And I click on the button labeled "Enter a REDCap+ subscription key"
     And I enter a REDCap+ subscription key into the textarea field labeled "Enter a REDCap+ subscription key"    
     And I click on the button labeled "Save key"

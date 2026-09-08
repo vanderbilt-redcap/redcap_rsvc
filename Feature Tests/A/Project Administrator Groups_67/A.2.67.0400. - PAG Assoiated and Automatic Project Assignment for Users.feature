@@ -16,7 +16,7 @@ Feature: A.2.67.0400. - Control Center: The system shall allow users to be assoc
   Scenario: REDCap+ Setup
     Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Control Center"
-    And I click on the link labeled "REDCap Plus"
+    And I click on the link labeled "REDCap+"
     And I click on the button labeled "Enter a REDCap+ subscription key"
     And I enter a REDCap+ subscription key into the textarea field labeled "Enter a REDCap+ subscription key"
     And I click on the button labeled "Save key"

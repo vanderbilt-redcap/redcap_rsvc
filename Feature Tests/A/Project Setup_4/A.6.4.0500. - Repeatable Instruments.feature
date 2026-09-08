@@ -93,8 +93,8 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the button labeled "View Report"
 
             Then I should see table rows containing the following values in the report data table:
-                  | Event Three (Arm 1: Arm 1) | Survey | 1 | Name MyName      |
-                  | Event Three (Arm 1: Arm 1) | Survey | 2 | Name MyOtherName |
+                  | Event Three (Arm 1: Arm 1) | Survey | 1 | MyName      |
+                  | Event Three (Arm 1: Arm 1) | Survey | 2 | MyOtherName |
             And I should NOT see "Data Types"
 
             Given I click on the link labeled "Setup"

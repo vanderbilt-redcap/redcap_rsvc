@@ -21,9 +21,7 @@ Feature: User Interface:The system shall provide the ability to display real-tim
         Then I should see "Instructions for Data Review"
 
         When I click on the button labeled "Import Data"
-        Then I should see "Import Successful!"
-        And I should see "75"
-        And I should see "records were created or modified during the import"
+        Then I should see "Import Successful! 75 records were created or modified during the import"
 
         Given I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in a table:
