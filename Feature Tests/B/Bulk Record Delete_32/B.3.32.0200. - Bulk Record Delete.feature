@@ -142,8 +142,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
-        Given I click on the checkbox labeled " 2"
-        And I click on the checkbox labeled " 6"
+        Given I click on the checkbox labeled "2"
+        And I click on the checkbox labeled "6"
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
@@ -584,8 +584,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
-        Given I click on the checkbox labeled " 1"
-        And I click on the checkbox labeled " 4"
+        Given I click on the checkbox labeled "1"
+        And I click on the checkbox labeled "4"
         And I click on the button labeled "Delete"
         And I check the checkbox labeled "Delete records using a background process?"
 
@@ -620,8 +620,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
-        Given I click on the checkbox labeled " 1"
-        And I click on the checkbox labeled " 4"
+        Given I click on the checkbox labeled "1"
+        And I click on the checkbox labeled "4"
         And I click on the button labeled "Delete"
         And I check the checkbox labeled "Delete records using a background process?"
 
@@ -656,7 +656,6 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         Then I should see a dropdown labeled "Select report"
         When I select "Test Report" on the dropdown field labeled "All records from a report"
         
-        And I click on the link labeled "Test Report"
         And I click on the button labeled "Delete"
         And I check the checkbox labeled "Delete records using a background process?"
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
@@ -678,10 +677,9 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username           | Action           | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 11 (Arm 1: Arm 1) | record_id = '11'          |
-            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 10 (Arm 1: Arm 1) | record_id = '10'          |
-            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 9 (Arm 1: Arm 1)  | record_id = '9'          |
-
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 11 (Arm 2: Arm Two) | record_id = '11'          |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 10 (Arm 2: Arm Two) | record_id = '10'          |
+            | mm/dd/yyyy hh:mm |SYSTEM (Test_Admin) | Delete record 9 (Arm 2: Arm Two)  | record_id = '9'          |
         #Verify Email was sent when background deletion is completed
-        And I verify that an email was sent to "a@b.com" with a subject containing "D" and content containing "E"
+        And I verify that an email was sent to "test_admin@test.edu" with a subject containing "Your bulk record deletion has completed" and content containing "3 of the 3 records selected were successfully deleted. A total of 0 errors occurred during the process."
 #END
