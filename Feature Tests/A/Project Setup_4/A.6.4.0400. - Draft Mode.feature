@@ -366,7 +366,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     When I click on the link labeled "Data Types"
     And I click on the Edit image for the field named "Radio Button Manual"
     Then I should see "Edit Field"
-    When I verify Choice of "101, Choice100" in the open "Edit Field" dialog box
+    When I verify "101, Choice100" is within the textarea field labeled "Choices"
     Then I click on the button labeled "Cancel"
 
     When I click on the link labeled "Data Exports, Reports, and Stats"
