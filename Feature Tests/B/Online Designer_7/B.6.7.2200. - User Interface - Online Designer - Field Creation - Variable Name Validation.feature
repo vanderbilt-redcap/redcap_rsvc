@@ -16,6 +16,7 @@ Feature: B.6.7.2200.: User Interface - Online Designer - Field Creation - Variab
         And I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
         And I enter "Text Box" into the Field Label of the open "Add New Field" dialog box
         When I enter "abcdefghijklmnopqrstuvwxyzz" into the input field labeled "Variable Name"
+        And I press the "Tab" key
         Then I should see "Variable names are recommended to be no more than 26 characters in length because of the risk of them being truncated during analysis in a statistical software package. However, it is allowable to keep it as its current value, if you wish." 
         And I click on the button labeled "Close"
         And I click on the button labeled "Save"  
@@ -129,6 +130,7 @@ Feature: B.6.7.2200.: User Interface - Online Designer - Field Creation - Variab
         And I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
         And I enter "Different User Field" into the Field Label of the open "Add New Field" dialog box
         When I enter "abcdefghijklmnopqrstuvwxyzc" into the input field labeled "Variable Name"
+        And I press the "Tab" key
         Then I should see "Variable names are recommended to be no more than 26 characters in length because of the risk of them being truncated during analysis in a statistical software package. However, it is allowable to keep it as its current value, if you wish."
         And I click on the button labeled "Close"
         And I click on the button labeled "Save"
