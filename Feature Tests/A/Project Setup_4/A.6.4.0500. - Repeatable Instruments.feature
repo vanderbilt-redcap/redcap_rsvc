@@ -79,7 +79,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I enter "MyOtherName" into the data entry form field labeled "Name"
             Given I click on the button labeled "Save & Exit Form"
 
-            And I click on the icon in the row labeled "Instance #1"
+            And I click on the link in the row labeled "Instance #1"
             Then I should see "Current instance:"
 
             Given I click on the link labeled "Record ID 1"

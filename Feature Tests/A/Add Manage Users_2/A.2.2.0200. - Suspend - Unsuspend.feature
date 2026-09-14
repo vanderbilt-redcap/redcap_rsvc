@@ -47,6 +47,8 @@ Feature: A.2.2.0200 Add/Manage users
     Then I should see "Test_User1"
 
     When I click on the button labeled "Suspend user account"
+    Then I should see "Do you wish to suspend"
+    Then I click on the button labeled "Okay"
     Then I should see "Success! The user has now been suspended from REDCap"
 
     Given I click on the button labeled "Close"
@@ -74,8 +76,8 @@ Feature: A.2.2.0200 Add/Manage users
     Then I should see "Test_User1"
 
     And I remember to click cancel on the confirmation dialog that appears after the following step
-    When I click on the link labeled "unsuspend user"
-    Then I should see "unsuspend user"
+    When I click on the button labeled "unsuspend user"
+    Then I should see "Do you wish to unsuspend"
 
     Given I logout
     And I login to REDCap with the user "Test_User1"
@@ -91,7 +93,9 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the link labeled "unsuspend user"
+    When I click on the button labeled "unsuspend user"
+    Then I should see "Do you wish to unsuspend"
+    And I click on the button labeled "Okay"
     Then I should see "Success! The user has now been unsuspended and will now be able to access REDCap again"
 
     When I click on the button labeled "Close"

@@ -32,7 +32,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Date/time widget icon
-    Given I click on the date picker widget on the field labeled "datetime YMD HMSS"
+    Given I click on the icon labeled "Click to select a date/time" in the row labeled "datetime YMD HMSS"
     And I select "Aug" in the dropdown of the open date picker widget for "datetime YMD HMSS"
     And I select "2023" in the dropdown of the open date picker widget for "datetime YMD HMSS"
     And I click on the link labeled "1"

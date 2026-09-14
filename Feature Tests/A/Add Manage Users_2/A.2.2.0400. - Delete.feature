@@ -44,6 +44,8 @@ Feature: A.2.2.0400. Add/Manage users
     #FUNCTIONAL REQUIREMENT
     ##ACTION Delete user
     When I click on the button labeled "Delete user from system"
+    Then I should see "Are you sure you wish to delete"
+    Then I click on the button labeled "Okay"
     Then I should see "The user 'Delete_User' has now been removed and deleted from all REDCap projects"
     And I click on the button labeled "Close"
 

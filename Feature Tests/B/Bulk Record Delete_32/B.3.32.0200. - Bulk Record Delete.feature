@@ -394,8 +394,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
 
         #Note: We need the space before the digits because REDCap has them in the label
         When I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
-        And I click on the checkbox labeled " 6"
-        And I click on the checkbox labeled " 8"
+        And I click on the checkbox labeled "6"
+        And I click on the checkbox labeled "8"
         And I click on the button labeled "Delete"
 
         And I enter "delete" into the input field labeled 'TYPE "DELETE" BELOW'
