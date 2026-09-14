@@ -91,6 +91,7 @@ Feature: B.6.7.2200.: User Interface - Online Designer - Field Creation - Variab
         And I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:"
         And I enter "Duplicate field" into the Field Label of the open "Add New Field" dialog box
         When I enter "duplicate_name" into the input field labeled "Variable Name"
+        And I press the "Tab" key
         Then I should see "The variable name 'duplicate_name' already exists in this project and thus cannot be duplicated. Please enter another value."
         And I click on the button labeled "Close"
         And I enter "duplicate_name_2" into the input field labeled "Variable Name"
