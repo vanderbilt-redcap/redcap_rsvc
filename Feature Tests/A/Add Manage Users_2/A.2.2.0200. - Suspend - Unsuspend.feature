@@ -47,6 +47,8 @@ Feature: A.2.2.0200 Add/Manage users
     Then I should see "Test_User1"
 
     When I click on the button labeled "Suspend user account"
+    Then I should see "Do you wish to suspend"
+    Then I click on the button labeled "Okay"
     Then I should see "Success! The user has now been suspended from REDCap"
 
     Given I click on the button labeled "Close"
