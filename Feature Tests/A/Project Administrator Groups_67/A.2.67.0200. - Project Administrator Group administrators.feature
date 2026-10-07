@@ -86,7 +86,7 @@ Feature: A.2.67.0200. Control Center: The system shall allow REDCap users to be 
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Project Administrator Groups"
     Then I should see "Project Administrator Groups"
-    When I click on the button labeled "View & Manage" 
+    When I click on the button labeled "View & Manage" in the column labeled "Projects Assigned to PAG" and the row labeled "New PAG 1"
     And I click on the button labeled "Add project"
     And I click on "Search for a project..."
     And I click on "PAG Admin Project"
