@@ -34,7 +34,10 @@ Feature: User Interface: The system shall provide the ability to create a new re
             | 7         |        |
         And I should see the "Unverified" icon for the "Form 1" instrument for record "1"
         And I should see the "Unverified" icon for the "Form 1" instrument for record "10"
-        And I should see the "Showing 1 to 10 of 30 entries"
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID | Form 1 |
+            | 1         |        |
+            | 30        |        |
 
         When I click on the link labeled "Setup"
         And I click on the button labeled "Disable" in the row labeled "Auto-numbering for records"
@@ -62,7 +65,16 @@ Feature: User Interface: The system shall provide the ability to create a new re
             | 7         |        |
         And I should see the "Unverified" icon for the "Form 1" instrument for record "1"
         And I should see the "Unverified" icon for the "Form 1" instrument for record "10"
-        And I should see the "Showing 1 to 10 of 36 entries"
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID | Form 1 |
+            | 1         |        |
+            | 30        |        |
+            | 100       |        |
+            | 200       |        |
+            | 300       |        |
+            | 700       |        |
+            | 800       |        |
+            | 900       |        |
         
         #VERIFY
         When I click on the link labeled "Logging"
