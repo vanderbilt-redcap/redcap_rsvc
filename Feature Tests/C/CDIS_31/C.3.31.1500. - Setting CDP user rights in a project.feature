@@ -136,8 +136,10 @@ Feature: C.3.31.1500. Project Setup: The system shall support assigning user pri
         Then I should see "Adjudicate data from External System"
         And I should see "Morris"
         And I should see "Lockman"
-        When I click on the button labeled "Save"
-        Then I should see "Data saved successfully"
+        And I check the checkbox labeled "Select suggested"
+        When I click on the button labeled "Save this page"
+        Then I should see "Your selected values were saved. Continue reviewing the remaining fields."
+        When I click on the button labeled "Ok"
         When I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
         And I logout

@@ -64,8 +64,10 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
     #Verify Temporal data does not appear without date populated
         And I should NOT see "Body weight"
         And I should NOT see "Sodium (Na)"
-        And I click on the button labeled "Save"
-        Then I should see "Data saved successfully"
+        And I check the checkbox labeled "Select suggested"
+        When I click on the button labeled "Save this page"
+        Then I should see "Your selected values were saved. Continue reviewing the remaining fields."
+        When I click on the button labeled "Ok"
         Given I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
 
@@ -77,8 +79,10 @@ Feature: C.3.31.1900. User Interface: The system shall support limiting the fetc
         And I should see "96.904762289757"
         And I should see "Sodium (Na)"
         And I should see "143.57605784691"
-        And I click on the button labeled "Save"
-        And I wait for 1 second
+        And I check the checkbox labeled "Select suggested"
+        When I click on the button labeled "Save this page"
+        Then I should see "Your selected values were saved. Continue reviewing the remaining fields."
+        When I click on the button labeled "Ok"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Study ID 1 successfully edited."
    
