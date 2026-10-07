@@ -24,8 +24,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the link labeled "Arm 1"
     Then I should see a table header and rows containing the following values in a table:
       | Data Collection Instrument       | Event 1 (1) | Event 2 (2) | Event Three (3) |
-      | Coordinator Signature(survey)    | [x]         |             | [x]            |
       | Participant Consent(survey)      | [x]         |             | [x]            |
+      | Coordinator Signature(survey)    | [x]         |             | [x]            |
       | Pdfs And Combined Signatures Pdf | [x]         |             | [x]            |
 
   Scenario:
