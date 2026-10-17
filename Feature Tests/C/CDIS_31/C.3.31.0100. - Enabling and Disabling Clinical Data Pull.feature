@@ -50,7 +50,7 @@ Feature: C.3.31.0100. Control Center- The system shall support enabling and disa
         Then I should see "Clinical Data Interoperability Services"
         When I select "Enable" on the dropdown field labeled "Clinical Data Pull"
         And I click on the button labeled "Save Changes"
-        Then I should see "Loading"
+        Then I should see the dropdown field labeled "Clinical Data Pull" with the option "Enabled" selected
 
      #SET UP CDP
         When I click on the link labeled "My Projects"
