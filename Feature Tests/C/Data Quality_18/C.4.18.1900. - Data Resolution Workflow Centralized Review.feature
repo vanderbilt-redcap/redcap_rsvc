@@ -144,4 +144,6 @@ Feature: User Interface: The system shall support centralized review and managem
         Then the downloaded CSV with filename "C4181900_DataResolutionDashboard_yyyy-mm-dd_hhmm.csv" has a value "test_user1" for column "User Assigned"
         Then the downloaded CSV with filename "C4181900_DataResolutionDashboard_yyyy-mm-dd_hhmm.csv" has a value "2" for column "Number of comments"
         #Manual: Close file
+
+    
 #END
