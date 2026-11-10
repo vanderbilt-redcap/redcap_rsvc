@@ -48,7 +48,7 @@ Feature: A.2.2.0200 Add/Manage users
 
     When I click on the button labeled "Suspend user account"
     Then I should see "Do you wish to suspend"
-    Then I click on the button labeled "Okay"
+    Then I click on the button labeled "Suspend"
     Then I should see "Success! The user has now been suspended from REDCap"
 
     Given I click on the button labeled "Close"
@@ -95,7 +95,7 @@ Feature: A.2.2.0200 Add/Manage users
 
     When I click on the button labeled "unsuspend user"
     Then I should see "Do you wish to unsuspend"
-    And I click on the button labeled "Okay"
+    And I click on the button labeled "unsuspend user"
     Then I should see "Success! The user has now been unsuspended and will now be able to access REDCap again"
 
     When I click on the button labeled "Close"
