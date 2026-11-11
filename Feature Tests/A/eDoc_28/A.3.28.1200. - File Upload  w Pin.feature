@@ -180,6 +180,51 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
       | Record ID 3 |
       | Text Validation |
       | Data Types |
-
   Scenario: Stop external storage services
     Then if running via automation, stop external storage services
+
+Scenario: Unlock an entire record and verify logging
+    When I click on the link labeled "Record Status Dashboard"
+    And I click on the link labeled "3"
+    Then I should see an icon labeled "The entire record was locked by test_admin"
+    When I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Unlock entire record"
+    And I click on the button labeled "Unlock entire record"
+    Then I should see 'Record "3" is now UNLOCKED'
+    #REDCap reloads the record home page after displaying the confirmation.
+    And I wait for 5 seconds
+    When I click on the button labeled "Choose action for record"
+    Then I should see a link labeled "Lock entire record"
+    When I click on the link labeled "Setup"
+    #Verify the entire record has been unlocked.
+    And I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+        | Username   | Action               | List of Data Changes OR Fields Exported               |
+        | test_admin | Lock/Unlock Record 3 | Action: Unlock entire record Record: 3 - Arm 1: Arm 1 |
+
+  Scenario: Unlock an e-signed instrument and verify signature invalidation and logging
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "2" and click on the bubble
+    Then I should see "Instrument locked by test_admin"
+    And I should see "E-signed by test_admin"
+    When I click on the button labeled "Unlock form"
+    Then I should see "Unlocking this form will also negate the current e-signature"
+    When I click on the button labeled "Unlock"
+    Then I should see "UNLOCK SUCCESSFUL!"
+    When I click on the button labeled "Close"
+    Then I should see a checkbox labeled "Lock" that is unchecked
+    And I should see a checkbox labeled "E-signature" that is unchecked
+    And I should NOT see "E-signed by test_admin"
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "2" and click on the bubble
+    Then I should see a checkbox labeled "Lock" that is unchecked
+    And I should see a checkbox labeled "E-signature" that is unchecked
+    And I should NOT see "E-signed by test_admin"
+    #Verify that the record is unlocked and that the e-signature is negated
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+        | Username   | Action               | List of Data Changes OR Fields Exported                                   |
+        | test_admin | E-signature 2        | Action: Negate e-signature Record: 2 Form: Text Validation Event: Event 1 |
+        | test_admin | Lock/Unlock Record 2 | Action: Unlock instrument Record: 2 Form: Text Validation Event: Event 1  |
+
+#END
