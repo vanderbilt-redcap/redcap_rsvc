@@ -9,6 +9,10 @@ I want to verify that the File Upload field enhancement requires a password or P
 #M The test requires several things to be setup. First in Security and Authentication ensure that you enable "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN" Also, The regular File Upload Storage is configure (eDocs) Then finally Configure the File Vault for File Uploads in the Modules/Services Configuration 
 #Later in the test, we enable When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.) 
 
+  Scenario: Start external storage services
+    # Start these right away to give them plenty of time to spin up before we need them
+    Then if running via automation, start external storage services
+
   Scenario: A.3.28.1100.0100 – One 6-digit PIN per session (trigger more than one File Upload event)
 #FUNCTIONAL_REQUIREMENT  
 ###ACTION: Setup in control center - admin only 
@@ -39,7 +43,7 @@ I want to verify that the File Upload field enhancement requires a password or P
     Then I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable this system-level setting for password verification"
     And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "Enable the external storage device and choose storage method (SFTP, WebDAV, Azure, S3):"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
-    And I enter "redcap-part11" into the first input field labeled "Bucket/container name"
+    And I enter "mycontainer" into the first input field labeled "Bucket/container name"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
 #SETUP 

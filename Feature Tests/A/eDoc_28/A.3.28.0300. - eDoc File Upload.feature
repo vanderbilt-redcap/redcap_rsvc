@@ -53,7 +53,8 @@ Feature: Control Center: The system shall allow administrators to configure the 
     Given I click on the link labeled "Upload file" in the row labeled "File Upload"
     When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Upload file" to browse for the file, and clicking the button labeled "Upload file" to upload the file
     Then I should see an alert box with the following text: "thus exceeding the maximum file size limit of 1 MB"
-    Then I should see "There was an error during file upload"
+    Then I should see "The file or signature exceeds the upload size limit"
+    Then I click on the button labeled "Close" 
     Then I click on the button labeled "Close" 
 
     #VERIFY: Small file upload succeeds
