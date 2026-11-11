@@ -180,10 +180,8 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
       | Record ID 3 |
       | Text Validation |
       | Data Types |
-  Scenario: Stop external storage services
-    Then if running via automation, stop external storage services
 
-Scenario: Unlock an entire record and verify logging
+  Scenario: Unlock an entire record and verify logging
     When I click on the link labeled "Record Status Dashboard"
     And I click on the link labeled "3"
     Then I should see an icon labeled "The entire record was locked by test_admin"
@@ -226,5 +224,8 @@ Scenario: Unlock an entire record and verify logging
         | Username   | Action               | List of Data Changes OR Fields Exported                                   |
         | test_admin | E-signature 2        | Action: Negate e-signature Record: 2 Form: Text Validation Event: Event 1 |
         | test_admin | Lock/Unlock Record 2 | Action: Unlock instrument Record: 2 Form: Text Validation Event: Event 1  |
+
+  Scenario: Stop external storage services
+    Then if running via automation, stop external storage services
 
 #END
