@@ -28,12 +28,12 @@ Feature: A.2.2.0700. Add/Manage users
         Given I enter "Test_User1" into the input field labeled "Username:"
         And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
-        Then I should see "ACCESS DENIED!"
+        Then I should see "You entered an invalid user name or password"
 
         #Try logging in again after 1 minute
         Given I wait for 1 minute
         Given I attempt to login to REDCap with the user "Test_User1"
-        Then I should see "ACCESS DENIED!"
+        Then I should see "You entered an invalid user name or password"
 
         #2 minutes of waiting total; now we can login
         Given I wait for 1 minute
@@ -64,7 +64,7 @@ Feature: A.2.2.0700. Add/Manage users
         Given I enter "Test_User1" into the input field labeled "Username:"
         And I enter "incorrect-password-123" into the input field labeled "Password:"
         And I click on the button labeled "Log In"
-        Then I should see "ACCESS DENIED!"
+        Then I should see "You entered an invalid user name or password"
 
         #We only have to wait for 1 minute total this time
         Given I wait for 1 minute

@@ -26,7 +26,7 @@ Feature: A.2.2.0600. Add/Manage users
     Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
-    Then I should see "ACCESS DENIED!"
+    Then I should see "You entered an invalid user name or password"
 
     Given I wait for 2 minutes
 
@@ -60,7 +60,7 @@ Feature: A.2.2.0600. Add/Manage users
     Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "incorrect-password-123" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
-    Then I should see "ACCESS DENIED!"
+    Then I should see "You entered an invalid user name or password"
 
     Given I wait for 1 minute
 
