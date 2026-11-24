@@ -52,6 +52,7 @@ Feature: B.3.14.1000. The system shall allow users to delete all data on the cur
     Then I should see "" in the data entry form field "Name"
     And I should see "" in the data entry form field "Email"
     And I click on the button labeled "Cancel"
+    Then I should see "Record ID 2 data entry cancelled - not saved."
 
     ##VERIFY_LOG
     When I click on the link labeled "Logging"
@@ -59,4 +60,33 @@ Feature: B.3.14.1000. The system shall allow users to delete all data on the cur
       | Username   | Action          | List of Data Changes OR Fields Exported |
       | test_user1 | Update record 2 | email = ''                              |
       | test_user1 | Update record 2 | text_validation_complete = ''           |
+
+  Scenario: B.3.14.1000.200 Require a 'reason' when making changes to existing records?
+    When I click on the link labeled "Setup"
+    And I click on the button labeled "Additional customizations"
+    And I check the checkbox labeled "Require a 'reason' when making changes to existing records?"
+    And I click on the button labeled "Save"
+    Then I should see "Success! Your changes have been saved."
+   
+   ##ACTION
+    When I click on the link labeled "Record Status Dashboard"
+    And I locate the bubble for the "Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
+    Then I should see "Name" in the data entry form field "Name"
+    And I should see "email@test.edu" in the data entry form field "Email"
+    And I should see a button labeled "Delete data for THIS FORM only"
+    #FUNCTIONAL_REQUIREMENT
+    When I click on the button labeled "Delete data for THIS FORM only"
+    And I click on the button labeled "Delete data for THIS FORM only"
+    And I enter "Data is not correct" into the textarea field labeled "Reason for changes:"
+    And I click on the button labeled "Save Changes"
+    Then I should see "Record ID 1 successfully edited."
+    When I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Incomplete (no data saved)" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+
+    #Validate Logging
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+      | Username   | Action          | List of Data Changes OR Fields Exported | Reason for Data Change(s) |
+      | test_user1 | Update record 1 | name_consent = '', email_consent = '', dob = '', consent_complete = ''|Data is not correct|
+
 #END
