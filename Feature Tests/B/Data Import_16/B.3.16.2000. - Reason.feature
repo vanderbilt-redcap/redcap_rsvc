@@ -18,10 +18,11 @@ Feature: User Interface: The system shall provide the ability to require a reaso
         When I click on the button labeled "Additional customizations"
         And I check the checkbox labeled "Require a 'reason' when making changes to existing records?"
         And I click on the button labeled "Save"
+        Then I should see "Success! Your changes have been saved."
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION
-        When I click on the link labeled "Data Import Tool"
+        Given I click on the link labeled "Data Import Tool"
         And I upload a "csv" format file located at "import_files/B.3.16.2000.100data.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
         Then I should see "The data you uploaded from the file is displayed in the Data Display Table below"
         Then I should see "Please supply a reason for the data changes for EACH existing record in the text boxes"

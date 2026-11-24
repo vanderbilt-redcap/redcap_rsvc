@@ -12,17 +12,15 @@ Feature: User Interface: The system shall support editing of user defined rules.
         Given I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"
         When I click on the button labeled "Save Changes"
         And I should see "Your system configuration values have now been changed!"
-        Then I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User1"
-        And I create a new project named "C.4.18.0700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
-
+        When I create a new project named "C.4.18.0700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far"
         And I click on the button labeled "YES, Move to Production Status"
-        Then I should see "Project status:  Production"
+        Then I should see "C.4.18.2500.100"
+
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
         And I click on the link labeled "test_user1"
